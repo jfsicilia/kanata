@@ -1,0 +1,338 @@
+;; La configuración para fasttyping la pillé de la siguiente web.
+;; https://github.com/jtroo/kanata/discussions/1656#discussioncomment-14382030
+(defcfg
+  process-unmapped-keys yes
+;;  danger-enable-cmd yes
+)
+
+(defvar
+  ;; Time config
+  tap_time 220
+  hold_time 160
+
+  ;; Key combos.
+  tab_next C-tab
+  tab_prev C-S-tab
+
+  vi_tab_prev (macro esc S-; b p r e v i o u s ret)
+  vi_tab_next (macro esc S-; b n e x t ret)
+
+  vi_left_pane (macro esc S-; w i n c m d spc h ret)
+  vi_right_pane (macro esc S-; w i n c m d spc l ret)
+  vi_above_pane (macro esc S-; w i n c m d spc k ret)
+  vi_below_pane (macro esc S-; w i n c m d spc j ret)
+
+  ;; Window movement.
+  wnd_up M-up
+  wnd_down M-down
+  wnd_left M-left
+  wnd_right M-right
+  wnd_max M-m
+
+  move_wnd_next_screen M-S-right
+  move_wnd_prev_screen M-S-left
+  move_wnd_next_desktop M-C-S-right
+  move_wnd_prev_desktop M-C-S-left
+
+  ;; Desktop/Screen switching.
+  next_desktop M-C-right
+  prev_desktop M-C-left
+  next_screen M-S-down 
+  prev_screen M-S-up
+
+  ;;hist_next A-right
+  ;;hist_prev A-left
+  
+  ;;open_launcher M-/
+)
+
+(defvirtualkeys
+  vklalt lalt  ;; Used to mimic lalt+tab with lctl+tab.
+
+  vkalt_chars XX ;; Used to toggle alternative characters layout for other 
+                 ;; languages.
+
+  vkfasttyping XX ;; Used to allow fasttyping without triggering modifiers 
+                  ;; combos with homrowmod.
+)
+
+;; Fasttyping aware typing.
+(deftemplate type (action)
+  (multi
+    (fork
+      (hold-for-duration 55 vkfasttyping)
+      XX
+      (lctl rctl lalt ralt lmet rmet)
+    )
+    $action
+  )
+)
+
+;; Homerow allows modifiers and letters typing. This templates is aware of
+;; fasttyping to avoid triggering modifiers when you are typing letters fast.
+(deftemplate homerowmod (timeouttap timeouthold keytap keyhold)
+  (switch
+    ((input virtual vkfasttyping)) (t! type $keytap) break
+    () (tap-hold $timeouttap $timeouthold
+         (t! type $keytap)
+         $keyhold
+       ) break
+  )
+)
+
+;; Composes letters with tildes. For example: á, é, ...
+(deftemplate tilde (letter)
+ (multi (macro bspc rctl (unmod (lsft rsft) ') $letter))
+) 
+
+;; Composes letters with birgulilla. For example: ñ, ...
+(deftemplate birgulilla (letter)
+  (macro bspc rctl S-grave $letter)
+)
+
+;; Composes letters with dieresis. For example: ü, ...
+(deftemplate dieresis (letter)
+  (macro bspc rctl S-' $letter)
+)
+
+;; Composes euro letter: €
+(deftemplate euro ()
+  (macro bspc rctl = c)
+)
+
+;; Allows to write alternative characters if letters are typed twice/triple
+;; in a short time.
+(deftemplate alt_char (letter)
+  ;; Only apply 2 times in a row detection if no modifier is pressed.
+  (fork 
+    (tap-dance-eager 500 (
+      ;; 1 tap
+      (t! type $letter) 
+      ;; 2 taps
+      (if-not-equal $letter n (t! type (t! tilde $letter)))
+      (if-equal $letter n (t! type (t! birgulilla $letter)))
+      ;; 3 taps
+      (if-equal $letter e (t! type (t! euro)))
+      (if-equal $letter u (t! type(t! dieresis u)))
+    ))
+    (t! type $letter) ;; If modifier is pressed then use the letter instead.
+    (lctl rctl lmet rmet lalt ralt)
+  )
+)
+
+;; Shorter tap and hold template with default values.
+(deftemplate th (tap hold)
+  (tap-hold-press $tap_time $hold_time $tap $hold)
+)
+
+;; Simulate alt-tab with lctl instead of alt.
+(deftemplate lctl_mimics ()
+  (multi 
+    (t! th lctl (multi lctl (layer-toggle lctl_mimics_layout))) 
+    (on-release release-vkey vklalt) ;; Release vklalt (lctl+tab mimics lalt+tab)
+  )
+)
+
+;; Simulate alt-` by issuing alt-tab.
+(deftemplate lalt_mimics ()
+  (multi lalt (layer-toggle lalt_mimics_layout))
+)
+  
+;; Simulate ctrl-tab with lmet instead of ctrl.
+(deftemplate lmet_mimics ()
+  (t! th lmet (multi lmet (layer-toggle lmet_mimics_layout)))
+)
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft lsgt z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt prnt rctl
+) ;;""
+
+;; My default keyboard mapping maps: lclt in the physical lalt key, 
+;; lalt in the physical lmet key, lmelt in the physical lctl key. This
+;; resembles the ctrl | alt | cmd layout of mac computers.
+(deflayer default
+  esc   f1    f2   f3   f4   f5   f6   f7   f8    f9   f10  f11  f12 
+  grv   1     2    3    4    5    6    7    8     9    0    -    =    bspc
+  @tab  @q    @w   @e   @r   @t   @y   @u   @i    @o   @p   [    ]    \
+  @caps @a    @s   @d   @f   @g   @h   @j   @k    @l   @;   '    ret
+  @lsft @altc @z   @x   @c   @v   @b   @n   @m    ,    .    /    @rsft
+  @lmet @lalt @lctl          spc            ralt  prnt rctl
+) ;;""
+
+;; Default keyboard mapping with alternative chars (for spanish writing)
+;; for a, e, i, o, u and n.
+(deflayer default_alt
+  esc   f1    f2   f3   f4   f5   f6   f7   f8    f9   f10  f11  f12 
+  grv   1     2    3    4    5    6    7    8     9    0    -    =    bspc
+  @tab  @q    @w    @!e @r   @t   @y   @!u  @!i   @!o  @p   [    ]    \
+  @caps @!a   @s   @d   @f   @g   @h   @j   @k    @l   @;   '    ret
+  @lsft @altc @z   @x   @c   @v   @b   @!n  @m    ,    .    /    @rsft
+  @lmet @lalt @lctl          spc            ralt  prnt rctl
+) ;;""
+
+(defalias
+  ;; lctl behaves normally except that lctl+tab mimics alt+tab functionality,
+  ;; and lctl+` mimics alt+`.
+  lctl (t! lctl_mimics)
+
+  ;; lalt behaves normally except lalt+tab that mimics lalt+`
+  lalt (t! lalt_mimics)
+
+  ;; lmet behaves normally except that lmet+tab mimics ctrl+tab functionality
+  ;; (tipically goes to next/previous tab/editor).
+  lmet (t! lmet_mimics) 
+
+  ;; gui enables gui_layer for commanding desktops, tabs, panes, windows.
+  gui (layer-toggle gui_layer)
+
+  ;; lsft and rsft behaves normally except that lsft+rsft goes to next tab and
+  ;; rsft+lsft goes to prev tab.
+  lsft (multi lsft (layer-toggle lsft_layer))
+  rsft (multi rsft (layer-toggle rsft_layer))
+
+  ;; tab behaves as tab when tapped and new layer when hold.
+  tab (t! th tab (layer-toggle tab_layer))
+
+  ;; caps behaves as esc when tapped and gui modifiers when hold.
+  caps (t! th esc @lctl)
+
+  ;; Changes the default layout between normal chars and alternative chars (á, ñ, ...)
+  toggle_default (multi 
+    (on-press toggle-virtualkey vkalt_chars)
+    (switch
+      ((input virtual vkalt_chars)) (layer-switch default) break
+      ()  (layer-switch default_alt) break
+    )
+  )
+
+  ;; Alternative Chars toggle key.
+  altc (t! th @toggle_default @gui)  
+
+  ;; mod row.
+  a (t! homerowmod $tap_time 450 a @lmet)
+  s (t! homerowmod $tap_time 400 s @lalt)
+  d (t! homerowmod $tap_time 300 d @lsft)
+  f (t! homerowmod $tap_time 160 f @lctl)
+  j (t! homerowmod $tap_time 160 j @lctl)
+  k (t! homerowmod $tap_time 300 k @rsft)
+  l (t! homerowmod $tap_time 400 l @lalt)
+  ; (t! homerowmod $tap_time 450 ; @lmet)
+
+  q (t! type q) w (t! type w) e (t! type e) r (t! type r) t (t! type t)
+  y (t! type y) u (t! type u) i (t! type i) o (t! type o) p (t! type p)
+  ;; a (t! type a) s (t! type s) d (t! type d) f (t! type f) 
+  g (t! type g) h (t! type h)
+  ;;  j (t! type j) k (t! typek) l (t! type l)
+  z (t! type z) x (t! type x) c (t! type c) v (t! type v) b (t! type b) 
+  n (t! type n) m (t! type m) 
+
+  ;; Alternative characters for other languages.
+  !a (t! homerowmod $tap_time 450 (t! alt_char a) @lmet)
+  !e (t! alt_char e) 
+  !i (t! alt_char i) 
+  !o (t! alt_char o)  
+  !u (t! alt_char u) 
+  !n (t! alt_char n) 
+)
+  
+(deflayermap (lctl_mimics_layout)
+  ;; lctl is configured in the physical lalt key (like the cmd key in mac).
+  ;; Special treatment is used to allow lctl+tab to mimic alt+tab to switch apps.
+  ;; Virtual key vklalt (lalt) is "pressed" on first tab press and will be
+  ;; "released" when lclt is released.
+  grv (switch 
+        ((input virtual vklalt)) (unmod (lctl) grv) break
+        () (multi (on-press press-vkey vklalt) lalt (unmod (lctl) grv)) break
+  )
+  tab (switch 
+        ((input virtual vklalt)) (unmod (lctl) tab) break
+        () (multi (on-press press-vkey vklalt) lalt (unmod (lctl) tab)) break
+  )
+  [ (multi (release-key lctl) A-left)
+  ] (multi (release-key lctl) A-right) 
+) ;;""
+
+(deflayermap (lalt_mimics_layout)
+  ;; alt+tab works as alt+`
+  tab grv
+)
+
+(deflayermap (lmet_mimics_layout)
+  ;; lmet is configured in the physical lctl key.
+  ;; lmet+tab mimics original lctl+tab functionality (typically next tab in 
+  ;; browsers and editors).
+  ;;tab (multi lctl (unmod (lmet) tab))
+  tab (multi (release-key lmet) (fork $tab_next $tab_prev (lsft rsft)))
+)
+
+(deflayermap (lsft_layer)
+  rsft (multi (release-key lsft) $tab_next)
+)
+
+(deflayermap (rsft_layer)
+  lsft (multi (release-key rsft) $tab_prev)
+)
+
+(deflayermap (tab_layer)
+  r lrld
+)
+
+(deflayermap (gui_layer)
+  s (t! th XX (layer-toggle workspaces_layer))
+  d (t! th XX (layer-toggle panes_layer))
+  f (t! th XX (layer-toggle tabs_layer))
+  lalt (t! th XX (layer-toggle tabs_layer)) 
+  lmet (t! th XX (layer-toggle panes_layer)) 
+  lctl (t! th XX (layer-toggle workspaces_layer)) 
+
+  spc $wnd_max
+
+  h $wnd_left
+  l (t! th $wnd_right (layer-toggle workspaces_layer))
+  k (t! th $wnd_up (layer-toggle panes_layer))
+  j (t! th $wnd_down (layer-toggle tabs_layer))
+)
+
+(deflayermap (workspaces_layer)
+  j $next_screen 
+  k $prev_screen
+  l $next_desktop
+  h $prev_desktop
+
+  spc (t! th _ (layer-toggle move_workspaces_layer))
+)
+
+(deflayermap (move_workspaces_layer)
+  j $move_wnd_next_screen 
+  k $move_wnd_prev_screen 
+  l $move_wnd_next_desktop 
+  h $move_wnd_prev_desktop 
+)
+
+(deflayermap (tabs_layer)
+  h $vi_tab_prev
+  l $vi_tab_next
+
+  spc (t! th _ (layer-toggle move_tabs_layer))
+)
+
+(deflayermap (move_tabs_layer)
+)
+
+(deflayermap (panes_layer)
+  h $vi_left_pane
+  j $vi_below_pane
+  k $vi_above_pane
+  l $vi_right_pane
+
+  spc (t! th _ (layer-toggle move_panes_layer))
+)
+
+(deflayermap (move_panes_layer)
+)
+
