@@ -5,22 +5,60 @@
 ;;  danger-enable-cmd yes
 )
 
+(defvirtualkeys
+  vk_lalt lalt  ;; Used to mimic lalt+tab with lctl+tab.
+
+  vk_alt_chars XX ;; Used to toggle alternative characters layout for other 
+                 ;; languages.
+
+  vk_fast_typing XX ;; Used to allow fasttyping without triggering modifiers 
+                  ;; combos with homrowmod.
+
+  vk_chrome XX
+  vk_foot XX
+  vk_nvim XX
+  vk_zellij XX
+  vk_obsidian XX
+)
+
+
 (defvar
   ;; Time config
   tap_time 220
   hold_time 160
 
   ;; Key combos.
-  tab_next C-tab
-  tab_prev C-S-tab
+  tab_next (switch 
+      ((input virtual vk_chrome)) C-tab break
+      ((input virtual vk_nvim)) (macro esc S-; b n e x t ret) break
+      () C-tab break
+  )
+  tab_prev (switch 
+      ((input virtual vk_chrome)) C-S-tab break
+      ((input virtual vk_nvim)) (macro esc S-; b p r e v i o u s ret) break
+      () C-S-tab break
+  )
 
-  vi_tab_prev (macro esc S-; b p r e v i o u s ret)
-  vi_tab_next (macro esc S-; b n e x t ret)
-
-  vi_left_pane (macro esc S-; w i n c m d spc h ret)
-  vi_right_pane (macro esc S-; w i n c m d spc l ret)
-  vi_above_pane (macro esc S-; w i n c m d spc k ret)
-  vi_below_pane (macro esc S-; w i n c m d spc j ret)
+  left_pane (switch
+    ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc h ret) break
+    ((input virtual vk_zellij)) A-left break
+    () XX break
+  )
+  right_pane (switch
+    ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc l ret) break
+    ((input virtual vk_zellij)) A-right break
+    () XX break
+  )
+  above_pane (switch
+    ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc k ret) break
+    ((input virtual vk_zellij)) A-up break
+    () XX break
+  )
+  below_pane (switch
+    ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc j ret) break
+    ((input virtual vk_zellij)) A-down break
+    () XX break
+  )
 
   ;; Window movement.
   wnd_up M-up
@@ -46,21 +84,11 @@
   ;;open_launcher M-/
 )
 
-(defvirtualkeys
-  vklalt lalt  ;; Used to mimic lalt+tab with lctl+tab.
-
-  vkalt_chars XX ;; Used to toggle alternative characters layout for other 
-                 ;; languages.
-
-  vkfasttyping XX ;; Used to allow fasttyping without triggering modifiers 
-                  ;; combos with homrowmod.
-)
-
 ;; Fasttyping aware typing.
 (deftemplate type (action)
   (multi
     (fork
-      (hold-for-duration 55 vkfasttyping)
+      (hold-for-duration 55 vk_fast_typing)
       XX
       (lctl rctl lalt ralt lmet rmet)
     )
@@ -72,7 +100,7 @@
 ;; fasttyping to avoid triggering modifiers when you are typing letters fast.
 (deftemplate homerowmod (timeouttap timeouthold keytap keyhold)
   (switch
-    ((input virtual vkfasttyping)) (t! type $keytap) break
+    ((input virtual vk_fast_typing)) (t! type $keytap) break
     () (tap-hold $timeouttap $timeouthold
          (t! type $keytap)
          $keyhold
@@ -129,7 +157,7 @@
 (deftemplate lctl_mimics ()
   (multi 
     (t! th lctl (multi lctl (layer-toggle lctl_mimics_layout))) 
-    (on-release release-vkey vklalt) ;; Release vklalt (lctl+tab mimics lalt+tab)
+    (on-release release-vkey vk_lalt) ;; Release vk_lalt (lctl+tab mimics lalt+tab)
   )
 )
 
@@ -203,9 +231,9 @@
 
   ;; Changes the default layout between normal chars and alternative chars (á, ñ, ...)
   toggle_default (multi 
-    (on-press toggle-virtualkey vkalt_chars)
+    (on-press toggle-virtualkey vk_alt_chars)
     (switch
-      ((input virtual vkalt_chars)) (layer-switch default) break
+      ((input virtual vk_alt_chars)) (layer-switch default) break
       ()  (layer-switch default_alt) break
     )
   )
@@ -214,19 +242,21 @@
   altc (t! th @toggle_default @gui)  
 
   ;; mod row.
-  a (t! homerowmod $tap_time 450 a @lmet)
+  a (t! homerowmod $tap_time 450 a @gui)
   s (t! homerowmod $tap_time 400 s @lalt)
   d (t! homerowmod $tap_time 300 d @lsft)
   f (t! homerowmod $tap_time 160 f @lctl)
+  g (t! homerowmod $tap_time 160 g @lmet)
+  h (t! homerowmod $tap_time 160 h @lmet)
   j (t! homerowmod $tap_time 160 j @lctl)
   k (t! homerowmod $tap_time 300 k @rsft)
   l (t! homerowmod $tap_time 400 l @lalt)
-  ; (t! homerowmod $tap_time 450 ; @lmet)
+  ; (t! homerowmod $tap_time 450 ; @gui)
 
   q (t! type q) w (t! type w) e (t! type e) r (t! type r) t (t! type t)
   y (t! type y) u (t! type u) i (t! type i) o (t! type o) p (t! type p)
   ;; a (t! type a) s (t! type s) d (t! type d) f (t! type f) 
-  g (t! type g) h (t! type h)
+  ;; g (t! type g) h (t! type h)
   ;;  j (t! type j) k (t! typek) l (t! type l)
   z (t! type z) x (t! type x) c (t! type c) v (t! type v) b (t! type b) 
   n (t! type n) m (t! type m) 
@@ -243,15 +273,15 @@
 (deflayermap (lctl_mimics_layout)
   ;; lctl is configured in the physical lalt key (like the cmd key in mac).
   ;; Special treatment is used to allow lctl+tab to mimic alt+tab to switch apps.
-  ;; Virtual key vklalt (lalt) is "pressed" on first tab press and will be
+  ;; Virtual key vk_lalt (lalt) is "pressed" on first tab press and will be
   ;; "released" when lclt is released.
   grv (switch 
-        ((input virtual vklalt)) (unmod (lctl) grv) break
-        () (multi (on-press press-vkey vklalt) lalt (unmod (lctl) grv)) break
+        ((input virtual vk_lalt)) (unmod (lctl) grv) break
+        () (multi (on-press press-vkey vk_lalt) lalt (unmod (lctl) grv)) break
   )
   tab (switch 
-        ((input virtual vklalt)) (unmod (lctl) tab) break
-        () (multi (on-press press-vkey vklalt) lalt (unmod (lctl) tab)) break
+        ((input virtual vk_lalt)) (unmod (lctl) tab) break
+        () (multi (on-press press-vkey vk_lalt) lalt (unmod (lctl) tab)) break
   )
   [ (multi (release-key lctl) A-left)
   ] (multi (release-key lctl) A-right) 
@@ -315,8 +345,8 @@
 )
 
 (deflayermap (tabs_layer)
-  h $vi_tab_prev
-  l $vi_tab_next
+  h $tab_prev
+  l $tab_next
 
   spc (t! th _ (layer-toggle move_tabs_layer))
 )
@@ -325,10 +355,10 @@
 )
 
 (deflayermap (panes_layer)
-  h $vi_left_pane
-  j $vi_below_pane
-  k $vi_above_pane
-  l $vi_right_pane
+  h $left_pane
+  j $below_pane
+  k $above_pane
+  l $right_pane
 
   spc (t! th _ (layer-toggle move_panes_layer))
 )
