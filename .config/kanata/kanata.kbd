@@ -27,59 +27,68 @@
   tap_time 220
   hold_time 160
 
+  lgui a
+  rgui ;
+
   ;; Key combos.
-  tab_next (switch 
+  combo_tab_next (switch 
       ((input virtual vk_chrome)) C-tab break
       ((input virtual vk_nvim)) (macro esc S-; b n e x t ret) break
       () C-tab break
   )
-  tab_prev (switch 
+  combo_tab_prev (switch 
       ((input virtual vk_chrome)) C-S-tab break
       ((input virtual vk_nvim)) (macro esc S-; b p r e v i o u s ret) break
       () C-S-tab break
   )
 
-  left_pane (switch
+  combo_left_pane (switch
     ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc h ret) break
     ((input virtual vk_zellij)) A-left break
     () XX break
   )
-  right_pane (switch
+  combo_right_pane (switch
     ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc l ret) break
     ((input virtual vk_zellij)) A-right break
     () XX break
   )
-  above_pane (switch
+  combo_above_pane (switch
     ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc k ret) break
     ((input virtual vk_zellij)) A-up break
     () XX break
   )
-  below_pane (switch
+  combo_below_pane (switch
     ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc j ret) break
     ((input virtual vk_zellij)) A-down break
     () XX break
   )
 
   ;; Window movement.
-  wnd_up M-up
-  wnd_down M-down
-  wnd_left M-left
-  wnd_right M-right
-  wnd_max M-m
+  combo_wnd_up M-up
+  combo_wnd_down M-down
+  combo_wnd_left M-left
+  combo_wnd_right M-right
+  combo_wnd_max M-m
 
-  move_wnd_next_screen M-S-right
-  move_wnd_prev_screen M-S-left
-  move_wnd_next_desktop M-C-S-right
-  move_wnd_prev_desktop M-C-S-left
+  combo_move_wnd_next_screen M-S-right
+  combo_move_wnd_prev_screen M-S-left
+  combo_move_wnd_next_desktop M-C-S-right
+  combo_move_wnd_prev_desktop M-C-S-left
 
   ;; Desktop/Screen switching.
-  next_desktop M-C-right
-  prev_desktop M-C-left
-  next_screen M-S-down 
-  prev_screen M-S-up
+  combo_next_desktop M-C-right
+  combo_prev_desktop M-C-left
+  combo_next_screen M-S-down 
+  combo_prev_screen M-S-up
 
-  ;;hist_next A-right
-  ;;hist_prev A-left
+  combo_hist_next (switch
+    ((input virtual vk_chrome)) A-right break
+    () XX break
+  )
+  combo_hist_prev (switch
+    ((input virtual vk_chrome)) A-left break
+    () XX break
+  )
   
   ;;open_launcher M-/
 )
@@ -156,19 +165,19 @@
 ;; Simulate alt-tab with lctl instead of alt.
 (deftemplate lctl_mimics ()
   (multi 
-    (t! th lctl (multi lctl (layer-toggle lctl_mimics_layout))) 
+    (t! th lctl (multi lctl (layer-toggle lctl_layer))) 
     (on-release release-vkey vk_lalt) ;; Release vk_lalt (lctl+tab mimics lalt+tab)
   )
 )
 
 ;; Simulate alt-` by issuing alt-tab.
 (deftemplate lalt_mimics ()
-  (multi lalt (layer-toggle lalt_mimics_layout))
+  (multi lalt (layer-toggle lalt_layout))
 )
   
 ;; Simulate ctrl-tab with lmet instead of ctrl.
 (deftemplate lmet_mimics ()
-  (t! th lmet (multi lmet (layer-toggle lmet_mimics_layout)))
+  (t! th lmet (multi lmet (layer-toggle lmet_layout)))
 )
 
 (defsrc
@@ -270,7 +279,7 @@
   !n (t! alt_char n) 
 )
   
-(deflayermap (lctl_mimics_layout)
+(deflayermap (lctl_layer)
   ;; lctl is configured in the physical lalt key (like the cmd key in mac).
   ;; Special treatment is used to allow lctl+tab to mimic alt+tab to switch apps.
   ;; Virtual key vk_lalt (lalt) is "pressed" on first tab press and will be
@@ -283,29 +292,35 @@
         ((input virtual vk_lalt)) (unmod (lctl) tab) break
         () (multi (on-press press-vkey vk_lalt) lalt (unmod (lctl) tab)) break
   )
-  [ (multi (release-key lctl) A-left)
-  ] (multi (release-key lctl) A-right) 
+  [ (multi (release-key lctl) $combo_hist_prev)
+  ] (multi (release-key lctl) $combo_hist_next) 
+  $lgui (t! th a (multi (release-key lctl) (layer-toggle tabs_layer)))
+  $rgui (t! th ; (multi (release-key lctl) (layer-toggle tabs_layer)))
 ) ;;""
 
-(deflayermap (lalt_mimics_layout)
+(deflayermap (lalt_layout)
   ;; alt+tab works as alt+`
   tab grv
+  $lgui (t! th a (multi (release-key lalt) (layer-toggle workspaces_layer)))
+  $rgui (t! th ; (multi (release-key lalt) (layer-toggle workspaces_layer)))
 )
 
-(deflayermap (lmet_mimics_layout)
+(deflayermap (lmet_layout)
   ;; lmet is configured in the physical lctl key.
   ;; lmet+tab mimics original lctl+tab functionality (typically next tab in 
   ;; browsers and editors).
   ;;tab (multi lctl (unmod (lmet) tab))
-  tab (multi (release-key lmet) (fork $tab_next $tab_prev (lsft rsft)))
+  tab (multi (release-key lmet) (fork $combo_tab_next $combo_tab_prev (lsft rsft)))
 )
 
 (deflayermap (lsft_layer)
-  rsft (multi (release-key lsft) $tab_next)
+  rsft (multi (release-key lsft) $combo_tab_next)
+  $lgui (t! th a (multi (release-key lsft) (layer-toggle panes_layer)))
+  $rgui (t! th ; (multi (release-key lsft) (layer-toggle panes_layer)))
 )
 
 (deflayermap (rsft_layer)
-  lsft (multi (release-key rsft) $tab_prev)
+  lsft (multi (release-key rsft) $combo_tab_prev)
 )
 
 (deflayermap (tab_layer)
@@ -320,33 +335,33 @@
   lmet (t! th XX (layer-toggle panes_layer)) 
   lctl (t! th XX (layer-toggle workspaces_layer)) 
 
-  spc $wnd_max
+  spc $combo_wnd_max
 
-  h $wnd_left
-  l (t! th $wnd_right (layer-toggle workspaces_layer))
-  k (t! th $wnd_up (layer-toggle panes_layer))
-  j (t! th $wnd_down (layer-toggle tabs_layer))
+  h $combo_wnd_left
+  l (t! th $combo_wnd_right (layer-toggle workspaces_layer))
+  k (t! th $combo_wnd_up (layer-toggle panes_layer))
+  j (t! th $combo_wnd_down (layer-toggle tabs_layer))
 )
 
 (deflayermap (workspaces_layer)
-  j $next_screen 
-  k $prev_screen
-  l $next_desktop
-  h $prev_desktop
+  j $combo_next_screen 
+  k $combo_prev_screen
+  l $combo_next_desktop
+  h $combo_prev_desktop
 
   spc (t! th _ (layer-toggle move_workspaces_layer))
 )
 
 (deflayermap (move_workspaces_layer)
-  j $move_wnd_next_screen 
-  k $move_wnd_prev_screen 
-  l $move_wnd_next_desktop 
-  h $move_wnd_prev_desktop 
+  j $combo_move_wnd_next_screen 
+  k $combo_move_wnd_prev_screen 
+  l $combo_move_wnd_next_desktop 
+  h $combo_move_wnd_prev_desktop 
 )
 
 (deflayermap (tabs_layer)
-  h $tab_prev
-  l $tab_next
+  h $combo_tab_prev
+  l $combo_tab_next
 
   spc (t! th _ (layer-toggle move_tabs_layer))
 )
@@ -355,10 +370,10 @@
 )
 
 (deflayermap (panes_layer)
-  h $left_pane
-  j $below_pane
-  k $above_pane
-  l $right_pane
+  h $combo_left_pane
+  j $combo_below_pane
+  k $combo_above_pane
+  l $combo_right_pane
 
   spc (t! th _ (layer-toggle move_panes_layer))
 )
