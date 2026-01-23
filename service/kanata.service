@@ -1,0 +1,9 @@
+[Unit]
+Description=Kanata Service
+
+[Service]
+ExecStart=/home/juan/.cargo/bin/kanata -p 10101 -c /home/juan/.config/kanata/kanata.kbd
+Restart=no
+
+[Install]
+WantedBy=default.target
