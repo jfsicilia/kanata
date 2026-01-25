@@ -390,7 +390,11 @@
 
 (deflayermap (tab_layer)
   ;; tab+r reloads kanata configuration.
-  r lrld
+  r (fork 
+    lrld 
+    (multi (release-key lsft) (release-key rsft) (macro RA-spc 300 s y s t e m c t l spc - - u s e r spc r e s t a r t spc k w a n a t a 300 ent)) 
+    (lsft rsft)
+  )
 )
 
 (deflayermap (gui_layer)
