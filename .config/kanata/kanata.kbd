@@ -20,6 +20,7 @@
 ;;  danger-enable-cmd yes
 )
 
+;; Virtual Keys ============================================================
 (defvirtualkeys
   vk_lalt lalt  ;; Used to mimic lalt+tab with lctl+tab.
 
@@ -41,6 +42,7 @@
 )
 
 
+;; Variables ===============================================================
 (defvar
   ;; Time config
   tap_time 220
@@ -52,41 +54,74 @@
 
   ;; Key combos ============================================================
 
-  ;; Tabs combos ===========================================================
+  ;; == Seek & Select combos ===============================================
+  combo_fast_file (switch 
+      ((input virtual vk_chrome)) XX break
+      ((input virtual vk_nvim)) XX break
+      ((input virtual vk_obsidian)) C-A-o break
+      () C-tab break
+  )
+  combo_fast_opened_files (switch 
+      ((input virtual vk_chrome)) XX break
+      ((input virtual vk_nvim)) XX break
+      ((input virtual vk_obsidian)) C-S-A-o break
+      () C-tab break
+ )
+
+  ;; == Tabs combos ========================================================
   combo_tab_next (switch 
       ((input virtual vk_chrome)) C-tab break
+      ((input virtual vk_zellij)) (macro C-g t l ret) break
       ((input virtual vk_nvim)) (macro esc S-; b n e x t ret) break
       () C-tab break
   )
   combo_tab_prev (switch 
       ((input virtual vk_chrome)) C-S-tab break
+      ((input virtual vk_zellij)) (macro C-g t h ret) break
       ((input virtual vk_nvim)) (macro esc S-; b p r e v i o u s ret) break
       () C-S-tab break
   )
 
-  ;; Panes combos ==========================================================
-  combo_left_pane (switch
-    ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc h ret) break
-    ((input virtual vk_zellij)) A-left break
-    () XX break
-  )
-  combo_right_pane (switch
-    ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc l ret) break
-    ((input virtual vk_zellij)) A-right break
-    () XX break
-  )
-  combo_above_pane (switch
-    ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc k ret) break
-    ((input virtual vk_zellij)) A-up break
-    () XX break
-  )
-  combo_below_pane (switch
-    ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc j ret) break
-    ((input virtual vk_zellij)) A-down break
-    () XX break
+  combo_tab_toggle (switch 
+      ((input virtual vk_chrome)) A-w break
+      ((input virtual vk_zellij)) (macro C-g t tab ret) break
+      ((input virtual vk_nvim)) (macro S-; b S-3 ret) break
+      () XX break
   )
 
-  ;; Window combos =========================================================
+
+  ;; == Panes combos =======================================================
+  combo_pane_left (switch
+    ;;((input virtual vk_zellij)) A-left break
+    ((input virtual vk_zellij)) (macro C-g p h ret) break
+    ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc h ret) break
+    () XX break
+  )
+  combo_pane_right (switch
+    ;;((input virtual vk_zellij)) A-right break
+    ((input virtual vk_zellij)) (macro C-g p l ret) break
+    ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc l ret) break
+    () XX break
+  )
+  combo_pane_above (switch
+    ;;((input virtual vk_zellij)) A-up break
+    ((input virtual vk_zellij)) (macro C-g p k ret) break
+    ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc k ret) break
+    () XX break
+  )
+  combo_pane_below (switch
+    ;;((input virtual vk_zellij)) A-down break
+    ((input virtual vk_zellij)) (macro C-g p j ret) break
+    ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc j ret) break
+    () XX break
+  )
+  combo_pane_max (switch 
+      ((input virtual vk_zellij)) (macro C-g p f ret) break
+      ;; ((input virtual vk_nvim)) (macro S-; b S-3 ret) break
+      () XX break
+  )
+
+  ;; == Window combos ======================================================
   combo_wnd_up M-up
   combo_wnd_down M-down
   combo_wnd_left M-left
@@ -98,13 +133,13 @@
   combo_move_wnd_next_desktop M-C-S-right
   combo_move_wnd_prev_desktop M-C-S-left
 
-  ;; Desktop combos ========================================================
+  ;; == Desktop combos =====================================================
   combo_next_desktop M-C-right
   combo_prev_desktop M-C-left
   combo_next_screen M-S-down 
   combo_prev_screen M-S-up
 
-  ;; History combos ========================================================
+  ;; == History combos =====================================================
   combo_hist_next (switch
     ((input virtual vk_chrome)) A-right break
     () XX break
@@ -114,7 +149,7 @@
     () XX break
   )
 
-  ;; Editor combos =========================================================
+  ;; == Editor combos ======================================================
   ;; Ctrl+b can't be bound in foot, so kanata intercepts it send the 
   ;; corresponding correct foot's keybinding for page up.
   combo_page_up (switch
@@ -129,6 +164,10 @@
     () C-f break
   )
 )
+
+;; Templates ===============================================================
+
+;; == Homerowmod & Fasttyping ==============================================
 
 ;; Fasttyping aware typing.
 (deftemplate type (action)
@@ -153,6 +192,8 @@
        ) break
   )
 )
+
+;; == Spanish letters templates ============================================
 
 ;; Composes letters with tildes. For example: á, é, ...
 (deftemplate tilde (letter)
@@ -199,23 +240,78 @@
   (tap-hold-press $tap_time $hold_time $tap $hold)
 )
 
-;; This template is used to match lctl+<key> and issue passed combo. If 
-;; lctl is also pressed with other modifier (lalt, lsft, ...) then it 
-;; ignores the passed combo, and pass through the combination.
+;; If pressed twice, in a short period, issue the combo.
+(deftemplate 2x (combo)
+  (tap-dance-eager 300 (XX $combo))
+)
+
+;; If pressed 3-times, in a short period, issue the combo.
+(deftemplate 3x (combo)
+  (tap-dance-eager 400 (XX XX $combo))
+)
+
+(deftemplate release1 (k1)
+  (release-key $k1)
+)
+(deftemplate release2 (k1 k2)
+  (release-key $k1) (release-key $k2)
+)
+(deftemplate release3 (k1 k2 k3)
+  (release-key $k1) (release-key $k2) (release-key $k3)
+)
+(deftemplate release4 (k1 k2 k3 k4)
+  (release-key $k1) (release-key $k2) (release-key $k3) (release-key $k4)
+)
+
+;; Use for lctl+key combos. If no more modifiers (other than lctl) are pressed 
+;; it issues the $combo with the lctl released, otherwise does 
+;; nothing, to let match the lctl+<other modifier>+key by other binding.
 (deftemplate lctl_combo (combo)
-  (fork (multi (release-key lctl) $combo) _ (lalt ralt lsft rsft lmet rmet))
+  (fork (multi (t! release1 lctl) $combo) _ (lalt ralt lsft rsft lmet rmet))
 )
+;; Use for lalt+key combos. If no more modifiers (other than lalt) are pressed 
+;; it issues the $combo with the lalt released, otherwise does 
+;; nothing, to let match the lalt+<other modifier>+key by other binding.
 (deftemplate lalt_combo (combo)
-  (fork (multi (release-key lalt) $combo) _ (lctl rctl lsft rsft lmet rmet))
+  (fork (multi (t! release1 lalt) $combo) _ (lctl rctl lsft rsft lmet rmet))
 )
+;; Use for lmet+key combos. If no more modifiers (other than lmet) are pressed 
+;; it issues the $combo with the lmet released, otherwise does 
+;; nothing, to let match the lmet+<other modifier>+key by other binding.
 (deftemplate lmet_combo (combo)
-  (fork (multi (release-key lmet) $combo) _ (lctl rctl lsft rsft lalt ralt))
+  (fork (multi (t! release1 lmet) $combo) _ (lctl rctl lsft rsft lalt ralt))
+)
+
+;; Use for lctl+[lsft/rsft]+key combos. If no more modifiers (other than 
+;; lctl/sft) are pressed it issues lctl_combo/lctl+lsft_combo/lctl+rsft_combo 
+;; (depending if lshift/rshift is pressed or not) with the lctl released, 
+;; otherwise does nothing, to let match the 
+;; lctl+[lsft/rsft]+<other modifier>+key by other binding.
+(deftemplate lctl_Xsft_combo (lctl_combo lctl+lsft_combo lctl+rsft_combo)
+  (switch
+    (lalt ralt lmet rmet) _ break
+    (lsft) (multi (t! release2 lctl lsft) $lctl+lsft_combo) break
+    (rsft) (multi (t! release2 lctl rsft) $lctl+rsft_combo) break
+    () (multi (t! release1 lctl) $lctl_combo) break
+  )
+)
+;; Use for lctl+[sft]+key combos. If no more modifiers (other than lctl/sft) 
+;; are pressed it issues lctl_combo/lctl+sft_combo (depending if shift is 
+;; pressed or not) with the lctl released, otherwise does 
+;; nothing, to let match the lctl+[sft]+<other modifier>+key by other binding.
+(deftemplate lctl_sft_combo (lctl_combo lctl+sft_combo)
+  (switch
+    (lalt ralt lmet rmet) _ break
+    (lsft rsft) (multi (t! release3 lctl lsft rsft) $lctl+sft_combo) break
+    () (multi (t! release1 lctl) $lctl_combo) break
+  )
 )
 
 ;; Simulate lctl when pressing lalt.
 (deftemplate lctl_mimics ()
   (multi 
-    (t! th lctl (multi lctl (layer-toggle lctl_layer))) 
+    ;; If lctl is pressed twice, in a short period, it issues a tab toggle.
+    (t! th (t! 2x $combo_tab_toggle) (multi lctl (layer-toggle lctl_layer))) 
     (on-release release-vkey vk_lalt) ;; (lctl+tab mimics lalt+tab)
   )
 )
@@ -256,7 +352,7 @@
 (deflayer default_alt
   esc   f1    f2   f3   f4   f5   f6   f7   f8    f9   f10  f11  f12 
   grv   1     2    3    4    5    6    7    8     9    0    -    =    bspc
-  @tab  @q    @w    @!e @r   @t   @y   @!u  @!i   @!o  @p   [    ]    \
+  @tab  @q    @w   @!e  @r   @t   @y   @!u  @!i   @!o  @p   [    ]    \
   @caps @!a   @s   @d   @f   @g   @h   @j   @k    @l   @;   '    ret
   @lsft @altc @z   @x   @c   @v   @b   @!n  @m    ,    .    /    @rsft
   @lmet @lalt @lctl          spc            ralt  prnt rctl
@@ -355,6 +451,11 @@
   ] (t! lctl_combo $combo_hist_next) 
   b (t! lctl_combo $combo_page_up)
   f (t! lctl_combo $combo_page_down)
+
+  spc (switch
+    ((input real lalt)) (t! lctl_sft_combo $combo_fast_file $combo_fast_opened_files) break
+    () _ break
+  )
 ) ;;""
 
 (deflayermap (lalt_layout)
@@ -407,7 +508,7 @@
   d (t! th XX (layer-toggle panes_layer))
   lmet (t! th XX (layer-toggle panes_layer)) 
   ;; gui+lctl/f -> tabs manipulation.
-  f (t! th XX (layer-toggle tabs_layer))
+  f (t! th (t! 2x $combo_tab_toggle) (layer-toggle tabs_layer))
   lalt (t! th XX (layer-toggle tabs_layer)) 
 
 
@@ -451,12 +552,12 @@
 
 (deflayermap (panes_layer)
   ;; panes manipulation
-  h $combo_left_pane
-  j $combo_below_pane
-  k $combo_above_pane
-  l $combo_right_pane
+  h $combo_pane_left
+  j $combo_pane_below
+  k $combo_pane_above
+  l $combo_pane_right
 
-  spc (t! th _ (layer-toggle move_panes_layer))
+  spc (t! th $combo_pane_max (layer-toggle move_panes_layer))
 )
 
 (deflayermap (move_panes_layer)
