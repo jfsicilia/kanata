@@ -10,7 +10,7 @@
 ;; gui is a custom modifier key that eases the access to windows (gui), 
 ;; desktops (gui+lalt), panes (gui+lsft) and tabs (gui+lctl) combos.
 ;;
-;; I use the spanish key for < and > (under capslock and a key), to toggle
+;; I use the spanish key for < > (under capslock and a key), to toggle
 ;; between US keyboard and custom ES keyboard (same as US keyboard, but
 ;; if you press some keys 2 or 3 times in a row you get for example: á, é, ü,
 ;; ñ, €.
@@ -55,18 +55,28 @@
   ;; Key combos ============================================================
 
   ;; == Seek & Select combos ===============================================
-  combo_fast_file (switch 
-      ((input virtual vk_chrome)) XX break
-      ((input virtual vk_nvim)) XX break
-      ((input virtual vk_obsidian)) C-A-o break
-      () C-tab break
+  combo_select_files (switch 
+    ((input virtual vk_chrome)) C-S-a break
+    ((input virtual vk_nvim)) (macro , s f) break
+    ((input virtual vk_obsidian)) C-A-o break
+    () XX break
   )
-  combo_fast_opened_files (switch 
-      ((input virtual vk_chrome)) XX break
-      ((input virtual vk_nvim)) XX break
-      ((input virtual vk_obsidian)) C-S-A-o break
-      () C-tab break
- )
+  combo_select_opened_files (switch 
+    ((input virtual vk_chrome)) XX break
+    ((input virtual vk_nvim)) (macro , spc) break
+    ((input virtual vk_obsidian)) C-S-A-o break
+    () XX break
+  )
+  combo_select_folders (switch 
+    ((input virtual vk_chrome)) XX break
+    ((input virtual vk_nvim)) XX break
+    ((input virtual vk_obsidian)) C-S-o break
+    () XX break
+  )
+  combo_select_command (switch
+    ((input virtual vk_obsidian)) C-A-p break
+    () XX break
+  )
 
   ;; == Tabs combos ========================================================
   combo_tab_next (switch 
@@ -133,6 +143,8 @@
   combo_move_wnd_next_desktop M-C-S-right
   combo_move_wnd_prev_desktop M-C-S-left
 
+  combo_close_app A-f4
+
   ;; == Desktop combos =====================================================
   combo_next_desktop M-C-right
   combo_prev_desktop M-C-left
@@ -198,7 +210,7 @@
 ;; Composes letters with tildes. For example: á, é, ...
 (deftemplate tilde (letter)
  (multi (macro bspc rctl (unmod (lsft rsft) ') $letter))
-) 
+);;"" 
 
 ;; Composes letters with birgulilla. For example: ñ, ...
 (deftemplate birgulilla (letter)
@@ -266,46 +278,123 @@
 ;; Use for lctl+key combos. If no more modifiers (other than lctl) are pressed 
 ;; it issues the $combo with the lctl released, otherwise does 
 ;; nothing, to let match the lctl+<other modifier>+key by other binding.
-(deftemplate lctl_combo (combo)
-  (fork (multi (t! release1 lctl) $combo) _ (lalt ralt lsft rsft lmet rmet))
-)
+;;(deftemplate lctl_combo (combo)
+;;  (fork (multi (t! release1 lctl) $combo) _ (lalt ralt lsft rsft lmet rmet))
+;;)
 ;; Use for lalt+key combos. If no more modifiers (other than lalt) are pressed 
 ;; it issues the $combo with the lalt released, otherwise does 
 ;; nothing, to let match the lalt+<other modifier>+key by other binding.
-(deftemplate lalt_combo (combo)
-  (fork (multi (t! release1 lalt) $combo) _ (lctl rctl lsft rsft lmet rmet))
-)
+;;(deftemplate lalt_combo (combo)
+;;  (fork (multi (t! release1 lalt) $combo) _ (lctl rctl lsft rsft lmet rmet))
+;;)
 ;; Use for lmet+key combos. If no more modifiers (other than lmet) are pressed 
 ;; it issues the $combo with the lmet released, otherwise does 
 ;; nothing, to let match the lmet+<other modifier>+key by other binding.
-(deftemplate lmet_combo (combo)
-  (fork (multi (t! release1 lmet) $combo) _ (lctl rctl lsft rsft lalt ralt))
-)
+;;(deftemplate lmet_combo (combo)
+;;  (fork (multi (t! release1 lmet) $combo) _ (lctl rctl lsft rsft lalt ralt))
+;;)
 
 ;; Use for lctl+[lsft/rsft]+key combos. If no more modifiers (other than 
 ;; lctl/sft) are pressed it issues lctl_combo/lctl+lsft_combo/lctl+rsft_combo 
 ;; (depending if lshift/rshift is pressed or not) with the lctl released, 
 ;; otherwise does nothing, to let match the 
 ;; lctl+[lsft/rsft]+<other modifier>+key by other binding.
-(deftemplate lctl_Xsft_combo (lctl_combo lctl+lsft_combo lctl+rsft_combo)
+(deftemplate _inv_mod_ (mod)
+  (if-equal $mod lctl (lalt ralt lmet rmet))
+  (if-equal $mod lalt (lctl rctl lmet rmet))
+  (if-equal $mod lmet (lctl rctl lalt ralt))
+)
+(deftemplate _combo_ (mod mod_combo mod+lsft_combo mod+rsft_combo)
   (switch
-    (lalt ralt lmet rmet) _ break
-    (lsft) (multi (t! release2 lctl lsft) $lctl+lsft_combo) break
-    (rsft) (multi (t! release2 lctl rsft) $lctl+rsft_combo) break
-    () (multi (t! release1 lctl) $lctl_combo) break
+    (t! _inv_mod_ $mod) _ break
+    (lsft) (multi (t! release2 $mod lsft) $mod+lsft_combo) break
+    (rsft) (multi (t! release2 $mod rsft) $mod+rsft_combo) break
+    () (multi (t! release1 $mod) $mod_combo) break
   )
 )
+(deftemplate lctl_combo (lctl_combo lctl+lsft_combo lctl+rsft_combo)
+  (t! _combo_ lctl $lctl_combo $lctl+lsft_combo $lctl+rsft_combo)
+)
+(deftemplate lalt_combo (lalt_combo lalt+lsft_combo lalt+rsft_combo)
+  (t! _combo_ lalt $lalt_combo $lalt+lsft_combo $lalt+rsft_combo)
+)
+(deftemplate lmet_combo (lmet_combo lmet+lsft_combo lmet+rsft_combo)
+  (t! _combo_ lmet $lmet_combo $lmet+lsft_combo $lmet+rsft_combo)
+)
+(deftemplate real_lalt_combo (lctl_combo lctl+lsft_combo lctl+rsft_combo)
+  (switch
+    ((input real lalt)) (t! lctl_combo $lctl_combo $lctl+lsft_combo $lctl+rsft_combo) break
+    () _ break
+  )
+)
+(deftemplate real_lmet_combo (lalt_combo lalt+lsft_combo lalt+rsft_combo)
+  (switch
+    ((input real lmet)) (t! lalt_combo $lalt_combo $lalt+lsft_combo $lalt+rsft_combo) break
+    () _ break
+  )
+)
+(deftemplate real_lctl_combo (lmet_combo lmet+lsft_combo lmet+rsft_combo)
+  (switch
+    ((input real lmet)) (t! lmet_combo $lmet_combo $lmet_combo $lmet_combo) break
+    () _ break
+  )
+)
+
+;;(deftemplate lctl_Xsft_combo (lctl_combo lctl+lsft_combo lctl+rsft_combo)
+;;  (switch
+;;    (lalt ralt lmet rmet) _ break
+;;    (lsft) (multi (t! release2 lctl lsft) $lctl+lsft_combo) break
+;;    (rsft) (multi (t! release2 lctl rsft) $lctl+rsft_combo) break
+;;    () (multi (t! release1 lctl) $lctl_combo) break
+;;  )
+;;)
+;;(deftemplate lalt_Xsft_combo (lalt_combo lalt+lsft_combo lalt+rsft_combo)
+;;  (switch
+;;    (lctl rctl lmet rmet) _ break
+;;    (lsft) (multi (t! release2 lalt lsft) $lalt+lsft_combo) break
+;;    (rsft) (multi (t! release2 lalt rsft) $lalt+rsft_combo) break
+;;    () (multi (t! release1 lalt) $lalt_combo) break
+;;  )
+;;)
+;;(deftemplate lmet_Xsft_combo (lmet_combo lmet+lsft_combo lmet+rsft_combo)
+;;  (switch
+;;    (lctl rctl lalt ralt) _ break
+;;    (lsft) (multi (t! release2 lmet lsft) $lmet+lsft_combo) break
+;;    (rsft) (multi (t! release2 lmet rsft) $lmet+rsft_combo) break
+;;    () (multi (t! release1 lmet) $lmet) break
+;;  )
+;;)
+;;(deftemplate real_lalt_Xsft_combo (lctl_combo lctl+lsft_combo lctl+rsft_combo)
+;;  (switch
+;;    ((input real lalt)) (t! lctl_Xsft_combo $lctl_combo $lctl+lsft_combo $lctl+rsft_combo) break
+;;    () _ break
+;;  )
+;;)
+;;(deftemplate real_lmet_Xsft_combo (lalt_combo lalt+lsft_combo lalt+rsft_combo)
+;;  (switch
+;;    ((input real lmet)) (t! lalt_Xsft_combo $lalt_combo $lalt+lsft_combo $lalt+rsft_combo) break
+;;    () _ break
+;;  )
+;;)
+;;(deftemplate real_lctl_Xsft_combo (lmet_combo lmet+lsft_combo lmet+rsft_combo)
+;;  (switch
+;;    ((input real lmet)) (t! lmet_Xsft_combo $lmet_combo $lmet_combo $lmet_combo) break
+;;    () _ break
+;;  )
+;;)
+
+
 ;; Use for lctl+[sft]+key combos. If no more modifiers (other than lctl/sft) 
 ;; are pressed it issues lctl_combo/lctl+sft_combo (depending if shift is 
 ;; pressed or not) with the lctl released, otherwise does 
 ;; nothing, to let match the lctl+[sft]+<other modifier>+key by other binding.
-(deftemplate lctl_sft_combo (lctl_combo lctl+sft_combo)
-  (switch
-    (lalt ralt lmet rmet) _ break
-    (lsft rsft) (multi (t! release3 lctl lsft rsft) $lctl+sft_combo) break
-    () (multi (t! release1 lctl) $lctl_combo) break
-  )
-)
+;;(deftemplate lctl_sft_combo (lctl_combo lctl+sft_combo)
+;;  (switch
+;;    (lalt ralt lmet rmet) _ break
+;;    (lsft rsft) (multi (t! release3 lctl lsft rsft) $lctl+sft_combo) break
+;;    () (multi (t! release1 lctl) $lctl_combo) break
+;;  )
+;;)
 
 ;; Simulate lctl when pressing lalt.
 (deftemplate lctl_mimics ()
@@ -447,15 +536,17 @@
   $rgui (t! th ; (multi (release-key lctl) (layer-toggle tabs_layer)))
 
   ;; key combos.
-  [ (t! lctl_combo $combo_hist_prev)
-  ] (t! lctl_combo $combo_hist_next) 
-  b (t! lctl_combo $combo_page_up)
-  f (t! lctl_combo $combo_page_down)
+  [ (t! lctl_combo $combo_hist_prev _ _)
+  ] (t! lctl_combo $combo_hist_next _ _) 
+  b (t! lctl_combo $combo_page_up _ _)
+  f (t! lctl_combo $combo_page_down _ _)
+  q (t! lctl_combo $combo_close_app _ _) ;; ""
 
-  spc (switch
-    ((input real lalt)) (t! lctl_sft_combo $combo_fast_file $combo_fast_opened_files) break
-    () _ break
-  )
+  spc (t! real_lalt_combo $combo_select_files $combo_select_opened_files $combo_select_folders)
+  ;; spc (switch
+  ;;   ((input real lalt)) (t! lctl_Xsft_combo $combo_select_files $combo_select_opened_files $combo_select_folders) break
+  ;;   () _ break
+  ;; )
 ) ;;""
 
 (deflayermap (lalt_layout)
@@ -465,6 +556,8 @@
   ;; Allow gui+lalt and lalt+gui to work as expected.
   $lgui (t! th a (multi (release-key lalt) (layer-toggle workspaces_layer)))
   $rgui (t! th ; (multi (release-key lalt) (layer-toggle workspaces_layer)))
+
+  spc (t! real_lmet_combo $combo_select_command _ _)
 )
 
 (deflayermap (lmet_layout)
