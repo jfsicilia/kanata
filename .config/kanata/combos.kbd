@@ -1,0 +1,129 @@
+(defvar
+  ;; Key combos ============================================================
+
+  ;; == Seek & Select combos ===============================================
+  combo_select_files (switch 
+    ((input virtual vk_chrome)) C-S-a break
+    ((input virtual vk_nvim)) (macro , s f) break
+    ((input virtual vk_obsidian)) C-A-o break
+    () XX break
+  )
+  combo_select_opened_files (switch 
+    ((input virtual vk_chrome)) XX break
+    ((input virtual vk_nvim)) (macro , spc) break
+    ((input virtual vk_obsidian)) C-S-A-o break
+    () XX break
+  )
+  combo_select_folders (switch 
+    ((input virtual vk_chrome)) XX break
+    ((input virtual vk_nvim)) XX break
+    ((input virtual vk_obsidian)) C-S-o break
+    () XX break
+  )
+  combo_select_command (switch
+    ((input virtual vk_obsidian)) C-A-p break
+    () XX break
+  )
+  combo_select_symbol (switch
+    ((input virtual vk_obsidian)) A-S-o break
+    () XX break
+  )
+
+  ;; == Tabs combos ========================================================
+  combo_tab_next (switch 
+      ((input virtual vk_chrome)) C-tab break
+      ((input virtual vk_zellij)) (macro C-g t l ret) break
+      ((input virtual vk_nvim)) (macro esc S-; b n e x t ret) break
+      () C-tab break
+  )
+  combo_tab_prev (switch 
+      ((input virtual vk_chrome)) C-S-tab break
+      ((input virtual vk_zellij)) (macro C-g t h ret) break
+      ((input virtual vk_nvim)) (macro esc S-; b p r e v i o u s ret) break
+      () C-S-tab break
+  )
+
+  combo_tab_toggle (switch 
+      ((input virtual vk_chrome)) A-w break
+      ((input virtual vk_zellij)) (macro C-g t tab ret) break
+      ((input virtual vk_nvim)) (macro S-; b S-3 ret) break
+      () XX break
+  )
+
+
+  ;; == Panes combos =======================================================
+  combo_pane_left (switch
+    ;;((input virtual vk_zellij)) A-left break
+    ((input virtual vk_zellij)) (macro C-g p h ret) break
+    ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc h ret) break
+    () XX break
+  )
+  combo_pane_right (switch
+    ;;((input virtual vk_zellij)) A-right break
+    ((input virtual vk_zellij)) (macro C-g p l ret) break
+    ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc l ret) break
+    () XX break
+  )
+  combo_pane_above (switch
+    ;;((input virtual vk_zellij)) A-up break
+    ((input virtual vk_zellij)) (macro C-g p k ret) break
+    ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc k ret) break
+    () XX break
+  )
+  combo_pane_below (switch
+    ;;((input virtual vk_zellij)) A-down break
+    ((input virtual vk_zellij)) (macro C-g p j ret) break
+    ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc j ret) break
+    () XX break
+  )
+  combo_pane_max (switch 
+      ((input virtual vk_zellij)) (macro C-g p f ret) break
+      ;; ((input virtual vk_nvim)) (macro S-; b S-3 ret) break
+      () XX break
+  )
+
+  ;; == Window combos ======================================================
+  combo_wnd_up M-up
+  combo_wnd_down M-down
+  combo_wnd_left M-left
+  combo_wnd_right M-right
+  combo_wnd_max M-m
+
+  combo_move_wnd_next_screen M-S-right
+  combo_move_wnd_prev_screen M-S-left
+  combo_move_wnd_next_desktop M-C-S-right
+  combo_move_wnd_prev_desktop M-C-S-left
+
+  combo_close_app A-f4
+
+  ;; == Desktop combos =====================================================
+  combo_next_desktop M-C-right
+  combo_prev_desktop M-C-left
+  combo_next_screen M-S-down 
+  combo_prev_screen M-S-up
+
+  ;; == History combos =====================================================
+  combo_hist_next (switch
+    ((input virtual vk_chrome)) A-right break
+    () XX break
+  )
+  combo_hist_prev (switch
+    ((input virtual vk_chrome)) A-left break
+    () XX break
+  )
+
+  ;; == Editor combos ======================================================
+  ;; Ctrl+b can't be bound in foot, so kanata intercepts it send the 
+  ;; corresponding correct foot's keybinding for page up.
+  combo_page_up (switch
+    ((input virtual vk_foot)) S-pgup break
+    () C-b break
+  )
+
+  ;; Ctrl+f can't be bound in foot, so kanata intercepts it send the 
+  ;; corresponding correct foot's keybinding for page down.
+  combo_page_down (switch
+    ((input virtual vk_foot)) S-pgdn break
+    () C-f break
+  )
+)
