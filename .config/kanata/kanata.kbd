@@ -5,7 +5,7 @@
 ;; used by holding keys in the keyword home row. This is the layout I use:
 ;;
 ;;   a    s    d    f    g    h    j    k    l    ;
-;;  lgui lalt lsft lctl lmet lmet lctl rsft lalt rgui
+;;  gui  lalt lsft lctl lmet lmet lctl rsft lalt gui
 ;;
 ;; gui is a custom modifier key that eases the access to windows (gui), 
 ;; desktops (gui+lalt), panes (gui+lsft) and tabs (gui+lctl) combos.
@@ -53,100 +53,125 @@
   tap_time 220
   hold_time 160
 
-  ;; a key and ; key are used as <gui> modifier key when hold.
-  lgui a
-  rgui ;
+  a/gui a
+  s/lalt s
+  d/lsft d
+  f/lctl f
+  g/lmet g
+  h/lmet h
+  j/lctl j
+  k/rsft k
+  l/lalt l
+  ;/gui ;
+
+  esc/edit caps
+  altc lsgt
+  !lmet lctl
+  !lalt lmet
+  !lctl lalt
+  apps ralt
+  bookm prnt
 )
 
 ;; Key combos ============================================================
-(include combos.kbd)
+(include actions.kbd)
 
 ;; Templates ===============================================================
 (include templates.kbd)
 
 (defsrc
-  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    f    g    h    j    k    l    ;    '    ret
-  lsft lsgt z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt prnt rctl
+  esc        f1         f2         f3         f4         f5         f6         f7         f8         f9         f10        f11        f12     
+  grv        1          2          3          4          5          6          7          8          9          0          -          =      bspc
+  tab        q          w          e          r          t          y          u          i          o          p          [          ]      \
+  caps       a          s          d          f          g          h          j          k          l          ;          '          ret
+  lsft       lsgt       z          x          c          v          b          n          m          ,          .          /          rsft   
+  lctl       lmet       lalt                             spc                              ralt       prnt       rctl
 ) ;;""
 
 ;; My default keyboard mapping maps: lclt in the physical lalt key, 
 ;; lalt in the physical lmet key, lmelt in the physical lctl key. This
 ;; resembles the ctrl | alt | cmd layout of mac computers.
 (deflayer default
-  esc   f1    f2   f3   f4   f5   f6   f7   f8    f9   f10  f11  f12 
-  grv   1     2    3    4    5    6    7    8     9    0    -    =    bspc
-  @tab  @q    @w   @e   @r   @t   @y   @u   @i    @o   @p   [    ]    \
-  @caps @a    @s   @d   @f   @g   @h   @j   @k    @l   @;   '    ret
-  @lsft @altc @z   @x   @c   @v   @b   @n   @m    ,    .    /    @rsft
-  @lmet @lalt @lctl          spc            ralt  @prnt rctl
+  esc        f1         f2         f3         f4         f5         f6         f7         f8         f9         f10        f11        f12 
+  grv        1          2          3          4          5          6          7          8          9          0          -          =      bspc
+  @tab       @q         @w         @e         @r         @t         @y         @u         @i         @o         @p         [          ]      \
+  @esc/edit  @a/gui     @s/lalt    @d/lsft    @f/lctl    @g/lmet    @h/lmet    @j/lctl    @k/rsft    @l/lalt    @;/gui     '          ret
+  @lsft      @altc      @z         @x         @c         @v         @b         @n         @m         ,          .          /          @rsft  
+  @!lmet     @!lalt     @!lctl                           spc                              @apps      @bookm     rctl      
 ) ;;""
 
 ;; Default keyboard mapping with alternative chars (for spanish writing)
 ;; for a, e, i, o, u and n.
 (deflayer default_alt
-  esc   f1    f2   f3   f4   f5   f6   f7   f8    f9   f10  f11  f12 
-  grv   1     2    3    4    5    6    7    8     9    0    -    =    bspc
-  @tab  @q    @w   @!e  @r   @t   @y   @!u  @!i   @!o  @p   [    ]    \
-  @caps @!a   @s   @d   @f   @g   @h   @j   @k    @l   @;   '    ret
-  @lsft @altc @z   @x   @c   @v   @b   @!n  @m    ,    .    /    @rsft
-  @lmet @lalt @lctl          spc            ralt  @prnt rctl
+  esc        f1         f2         f3         f4         f5         f6         f7         f8         f9         f10        f11        f12 
+  grv        1          2          3          4          5          6          7          8          9          0          -          =      bspc
+  @tab       @q         @w         @!e        @r         @t         @y         @!u        @!i        @!o        @p         [          ]      \
+  @esc/edit  @!a/gui    @s/lalt    @d/lsft    @f/lctl    @g/lmet    @h/lmet    @j/lctl    @k/rsft    @l/lalt    @;/gui     '          ret
+  @lsft      @altc      @z         @x         @c         @v         @b         @!n        @m         ,          .          /          @rsft  
+  @!lmet     @!lalt     @!lctl                           spc                              @apps      @bookm     rctl      
 ) ;;""
 
 (defalias
-  ;; lalt behaves as lctl.
-  lctl (t! lctl_mimics)
+  lctl (multi 
+    ;; If lctl is pressed twice, in a short period, it issues a tab toggle.
+    (t! th (t! 2x $action_tab_toggle) (t! mod_layer_toggle lctl lctl_layer))
+    (on-release release-vkey vk_lalt) ;; (lctl+tab mimics lalt+tab)
+  )
+  !lctl (multi 
+    ;; If lctl is pressed twice, in a short period, it issues a tab toggle.
+    (t! th (t! 2x $action_tab_toggle) (t! mod_2layer_toggle lctl lctl_layer !lctl_layer))
+    (on-release release-vkey vk_lalt) ;; (lctl+tab mimics lalt+tab)
+  )
 
   ;; lalt behaves normally except lalt+tab that mimics lalt+`
-  lalt (t! lalt_mimics)
+  lalt (t! th lalt (t! mod_layer_toggle lalt lalt_layer))
+  !lalt (t! th lalt (t! mod_2layer_toggle lalt lalt_layer !lalt_layer))
 
   ;; lmet behaves normally except that lmet+tab mimics ctrl+tab functionality
   ;; (tipically goes to next/previous tab/editor).
-  lmet (t! lmet_mimics) 
+  lmet (t! th lmet (t! mod_layer_toggle lmet lmet_layer))
+  !lmet (t! th lmet (t! mod_2layer_toggle lmet lmet_layer !lmet_layer))
 
   ;; gui enables gui_layer for commanding desktops, tabs, panes, windows.
   gui (layer-toggle gui_layer)
 
   ;; lsft and rsft behaves normally except that lsft+rsft goes to next tab and
   ;; rsft+lsft goes to prev tab.
-  lsft (multi lsft (layer-toggle lsft_layer))
-  rsft (multi rsft (layer-toggle rsft_layer))
+  lsft (t! th (t! 2x $action_tab_prev) (t! mod_layer_toggle lsft lsft_layer))
+  rsft (t! th (t! 2x $action_tab_next) (t! mod_layer_toggle rsft rsft_layer))
 
   ;; tab behaves as tab when tapped and new layer when hold.
   tab (t! th tab (layer-toggle tab_layer))
 
   ;; prnt behaves as prnt when tapped and new layer when hold.
-  prnt (t! th prnt (layer-toggle prnt_layer))
+  bookm (t! th prnt (layer-toggle prnt_layer))
+
+  apps _
 
   ;; caps behaves as esc when tapped and gui modifiers when hold.
-  caps (t! th esc @lctl)
+  esc/edit (t! th esc (layer-toggle edit_layer))
 
-  ;; Changes the default layout between normal chars and alternative chars (á, ñ, ...)
-  toggle_default (multi 
+  ;; Alternative Chars toggle key. Changes the default layout between normal 
+  ;; chars and alternative chars (á, ñ, ...)
+  toggle_kbd_lang (multi 
     (on-press toggle-virtualkey vk_alt_chars)
     (switch
       ((input virtual vk_alt_chars)) (layer-switch default) break
       ()  (layer-switch default_alt) break
     )
   )
+  altc (t! th @toggle_kbd_lang (layer-toggle altc_layer))  
 
-  ;; Alternative Chars toggle key.
-  altc (t! th @toggle_default @gui)  
-
-  ;; mod row.
-  a (t! homerowmod $tap_time 450 a @gui)
-  s (t! homerowmod $tap_time 400 s @lalt)
-  d (t! homerowmod $tap_time 300 d @lsft)
-  f (t! homerowmod $tap_time 160 f @lctl)
-  g (t! homerowmod $tap_time 160 g @lmet)
-  h (t! homerowmod $tap_time 160 h @lmet)
-  j (t! homerowmod $tap_time 160 j @lctl)
-  k (t! homerowmod $tap_time 300 k @rsft)
-  l (t! homerowmod $tap_time 400 l @lalt)
-  ; (t! homerowmod $tap_time 450 ; @gui)
+  a/gui  (t! homerowmod $tap_time 450 a @gui)
+  s/lalt (t! homerowmod $tap_time 400 s @lalt)
+  d/lsft (t! homerowmod $tap_time 300 d @lsft)
+  f/lctl (t! homerowmod $tap_time 160 f @lctl)
+  g/lmet (t! homerowmod $tap_time 160 g @lmet)
+  h/lmet (t! homerowmod $tap_time 160 h @lmet)
+  j/lctl (t! homerowmod $tap_time 160 j @lctl)
+  k/rsft (t! homerowmod $tap_time 300 k @rsft)
+  l/lalt (t! homerowmod $tap_time 400 l @lalt)
+  ;/gui  (t! homerowmod $tap_time 450 ; @gui)
 
   q (t! type q) w (t! type w) e (t! type e) r (t! type r) t (t! type t)
   y (t! type y) u (t! type u) i (t! type i) o (t! type o) p (t! type p)
@@ -157,14 +182,17 @@
   n (t! type n) m (t! type m) 
 
   ;; Alternative characters for other languages.
-  !a (t! homerowmod $tap_time 450 (t! alt_char a) @lmet)
-  !e (t! alt_char e) 
-  !i (t! alt_char i) 
-  !o (t! alt_char o)  
-  !u (t! alt_char u) 
-  !n (t! alt_char n) 
+  !a/gui (t! homerowmod $tap_time 450 (t! alt_char a) @gui)
+  !e     (t! alt_char e) 
+  !i     (t! alt_char i) 
+  !o     (t! alt_char o)  
+  !u     (t! alt_char u) 
+  !n     (t! alt_char n) 
+
+  ;; "" ALIAS """"""""""""""""""""""""
 )
   
+;; "" LCTL_LAYER """""""""""""""""""
 (deflayermap (lctl_layer)
   ;; lctl is configured in the physical lalt key (like the cmd key in mac).
   ;; Special treatment is used to allow lctl+tab to mimic alt+tab to switch 
@@ -184,127 +212,334 @@
   )
 
   ;; Allow gui+lctl and lctl+gui to work as expected.
-  $lgui (t! th a (multi (release-key lctl) (layer-toggle tabs_layer)))
-  $rgui (t! th ; (multi (release-key lctl) (layer-toggle tabs_layer)))
+  $a/gui (t! th a (multi (release-key lctl) (layer-toggle tabs_layer)))
+  $;/gui (t! th ; (multi (release-key lctl) (layer-toggle tabs_layer)))
 
   ;; key combos.
-  [ (t! 1mod_combo lctl $combo_hist_prev)  
-  ] (t! 1mod_combo lctl $combo_hist_next) ;; ""
-  b (t! 1mod_combo lctl $combo_page_up)
-  f (t! 1mod_combo lctl $combo_page_down)
-  q (t! 1mod_combo lctl $combo_close_app) 
+  [ (t! 1mod_combo lctl $action_hist_prev)  
+  ] (t! 1mod_combo lctl $action_hist_next) ;; ""
+  b (t! 1mod_combo lctl $action_page_up)
+  f (t! 1mod_combo lctl $action_page_down)
+  q (t! 1mod_combo lctl $action_close_app) 
 
-  t (t! 1mod+sft_combo lctl $combo_tab_new $combo_tab_undo_close $combo_tab_undo_close) 
-  w (t! 1mod_combo lctl $combo_tab_close) 
+  t (t! 1mod+sft_combo lctl $action_tab_new $action_tab_undo_close $action_tab_undo_close) 
+  w (t! 1mod_combo lctl $action_tab_close) 
 
-  spc (t! real_2mod+sft_combo lalt lmet lctl lalt
-    $combo_omnisearch_files $combo_omnisearch_file $combo_omnisearch_file
-    $combo_select_files $combo_select_opened_files $combo_select_folders)
+  ;; == LALT =========================
+  $!lalt  (t! th lalt (t! mod_layer_toggle lalt lctl+lalt_layer))
+  $s/lalt (t! th s    (t! mod_layer_toggle lalt lctl+lalt_layer))
+  $l/lalt (t! th l    (t! mod_layer_toggle lalt lctl+lalt_layer))
 
-  lmet (t! th _ (multi lalt (layer-toggle lctl+lalt_layer)))
-  s (t! th s (multi lalt (layer-toggle lctl+lalt_layer)))
-) ;;""
+  ;; == LMET =========================
+  $!lmet  (t! th lmet (t! mod_layer_toggle lmet lctl+lmet_layer))
+  $g/lmet (t! th g    (t! mod_layer_toggle lmet lctl+lmet_layer))
+  $h/lmet (t! th h    (t! mod_layer_toggle lmet lctl+lmet_layer))
+  
+;; "" LCTL_LAYER """""""""""""""""""
+) 
 
-(deflayermap (lctl+lalt_layer)
+;; "" !LCTL_LAYER """""""""""""""""""
+(deflayermap (!lctl_layer)
+  spc (t! 1mod+sft_combo lctl 
+         $action_select_files $action_select_opened_files $action_select_folders)
+
+  ;; == LALT =========================
+  $!lalt  (t! th lalt (t! mod_2layer_toggle lalt lctl+lalt_layer !lctl+lalt_layer))
+  $s/lalt (t! th s    (t! mod_2layer_toggle lalt lctl+lalt_layer !lctl+lalt_layer))
+  $l/lalt (t! th l    (t! mod_2layer_toggle lalt lctl+lalt_layer !lctl+lalt_layer))
+                                                                 
+  ;; == LMET =========================                           
+  $!lmet  (t! th lmet (t! mod_2layer_toggle lmet lctl+lmet_layer !lctl+lmet_layer))
+  $g/lmet (t! th g    (t! mod_2layer_toggle lmet lctl+lmet_layer !lctl+lmet_layer))
+  $h/lmet (t! th h    (t! mod_2layer_toggle lmet lctl+lmet_layer !lctl+lmet_layer))
+
+;; "" !LCTL_LAYER """""""""""""""""""
 )
 
-(deflayermap (lalt_layout)
+;; "" LALT_LAYER """""""""""""""""""
+(deflayermap (lalt_layer)
   ;; lalt is configured in the physical lmet key (like the opt key in mac).
   ;; alt+tab works as alt+`
   tab grv
   ;; Allow gui+lalt and lalt+gui to work as expected.
-  $lgui (t! th a (multi (release-key lalt) (layer-toggle workspaces_layer)))
-  $rgui (t! th ; (multi (release-key lalt) (layer-toggle workspaces_layer)))
+  $a/gui (t! th a (multi (release-key lalt) (layer-toggle workspaces_layer)))
+  $;/gui (t! th ; (multi (release-key lalt) (layer-toggle workspaces_layer)))
 
-  spc (t! real_1mod_combo lmet lalt $combo_select_command)
+
+  ;; == LCTL =========================
+  $!lctl  (t! th lctl (t! mod_layer_toggle lctl lctl+lalt_layer))
+  $f/lctl (t! th f    (t! mod_layer_toggle lctl lctl+lalt_layer))
+  $j/lctl (t! th j    (t! mod_layer_toggle lctl lctl+lalt_layer))
+
+  ;; == LMET =========================
+  $!lmet  (t! th lmet (t! mod_layer_toggle lmet lctl+lmet_layer))
+  $g/lmet (t! th g    (t! mod_layer_toggle lmet lctl+lmet_layer))
+  $h/lmet (t! th h    (t! mod_layer_toggle lmet lctl+lmet_layer))
+ 
+;; "" LALT_LAYER """""""""""""""""""
+) 
+
+;; "" !LALT_LAYER """""""""""""""""""
+(deflayermap (!lalt_layer)
+  spc (t! 1mod_combo lalt $action_select_command)
+
+  ;; == LCTL =========================
+  $!lctl  (t! th lctl (t! mod_2layer_toggle lctl lctl+lalt_layer !lctl+lalt_layer))
+  $f/lctl (t! th f    (t! mod_2layer_toggle lctl lctl+lalt_layer !lctl+lalt_layer))
+  $j/lctl (t! th j    (t! mod_2layer_toggle lctl lctl+lalt_layer !lctl+lalt_layer))
+                                                                 
+  ;; == LMET =========================                           
+  $!lmet  (t! th lmet (t! mod_2layer_toggle lmet lctl+lmet_layer !lctl+lmet_layer))
+  $g/lmet (t! th g    (t! mod_2layer_toggle lmet lctl+lmet_layer !lctl+lmet_layer))
+  $h/lmet (t! th h    (t! mod_2layer_toggle lmet lctl+lmet_layer !lctl+lmet_layer))
+
+;; "" !LALT_LAYER """""""""""""""""""
 )
 
-(deflayermap (lmet_layout)
+;; "" LMET_LAYER """""""""""""""""""
+(deflayermap (lmet_layer)
   ;; lmet is configured in the physical lctl key.
 
   ;; lmet+tab mimics original lctl+tab functionality (typically next tab in 
   ;; browsers and editors).
-  tab (multi (release-key lmet) (fork $combo_tab_next $combo_tab_prev (lsft rsft)))
+  tab (multi (release-key lmet) (fork $action_tab_next $action_tab_prev (lsft rsft)))
 
-  spc (t! real_1mod_combo lctl lmet $combo_select_symbol) 
+
+  ;; == LALT =========================
+  $!lalt  (t! th lalt (t! mod_layer_toggle lalt lalt+lmet_layer))
+  $s/lalt (t! th s    (t! mod_layer_toggle lalt lalt+lmet_layer))
+  $l/lalt (t! th l    (t! mod_layer_toggle lalt lalt+lmet_layer))
+
+  ;; == LCTL =========================
+  $!lctl  (t! th lctl (t! mod_layer_toggle lctl lctl+lmet_layer))
+  $f/lctl (t! th f    (t! mod_layer_toggle lctl lctl+lmet_layer))
+  $j/lctl (t! th j    (t! mod_layer_toggle lctl lctl+lmet_layer))
+  
+;; "" LMET_LAYER """""""""""""""""""
+) 
+
+;; "" !LMET_LAYER """""""""""""""""""
+(deflayermap (!lmet_layer)
+  spc (t! 1mod_combo lmet $action_select_symbol) 
+
+  ;; == LALT =========================
+  $!lalt  (t! th lalt (t! mod_2layer_toggle lalt lalt+lmet_layer !lalt+lmet_layer))
+  $s/lalt (t! th s    (t! mod_2layer_toggle lalt lalt+lmet_layer !lalt+lmet_layer))
+  $l/lalt (t! th l    (t! mod_2layer_toggle lalt lalt+lmet_layer !lalt+lmet_layer))
+                                                                 
+  ;; == LCTL =========================                           
+  $!lctl  (t! th lctl (t! mod_2layer_toggle lctl lctl+lmet_layer !lctl+lmet_layer))
+  $f/lctl (t! th f    (t! mod_2layer_toggle lctl lctl+lmet_layer !lctl+lmet_layer))
+  $j/lctl (t! th j    (t! mod_2layer_toggle lctl lctl+lmet_layer !lctl+lmet_layer))
+
+;; "" !LMET_LAYER """""""""""""""""""
 )
 
+
+;; "" LCTL+LALT_LAYER """""""""""""""""""
+(deflayermap (lctl+lalt_layer)
+
+  ;; == LMET =========================
+  $!lmet  (t! th lmet (t! mod_layer_toggle lmet lctl+lalt+lmet_layer))
+  $g/lmet (t! th g    (t! mod_layer_toggle lmet lctl+lalt+lmet_layer))
+  $h/lmet (t! th h    (t! mod_layer_toggle lmet lctl+lalt+lmet_layer))
+
+;; "" LCTL+LALT_LAYER """""""""""""""""""
+) 
+
+;; "" !LCTL+LALT_LAYER """""""""""""""""""
+(deflayermap (!lctl+lalt_layer)
+  spc (t! 2mod+sft_combo lctl lalt 
+    $action_omnisearch_files $action_omnisearch_file $action_omnisearch_file)
+  
+  ;; == LMET =========================
+  $!lmet  (t! th lmet (t! mod_2layer_toggle lmet lctl+lalt+lmet_layer !lctl+lalt+lmet_layer))
+  $g/lmet (t! th g    (t! mod_2layer_toggle lmet lctl+lalt+lmet_layer !lctl+lalt+lmet_layer))
+  $h/lmet (t! th h    (t! mod_2layer_toggle lmet lctl+lalt+lmet_layer !lctl+lalt+lmet_layer))
+;; "" !LCTL+LALT_LAYER """""""""""""""""""
+)
+
+;; "" LCTL+LMET_LAYER """""""""""""""""""
+(deflayermap (lctl+lmet_layer)
+  ;; == LALT =========================
+  $!lalt  (t! th lalt (t! mod_layer_toggle lalt lctl+lalt+lmet_layer))
+  $s/lalt (t! th s    (t! mod_layer_toggle lalt lctl+lalt+lmet_layer))
+  $l/lalt (t! th l    (t! mod_layer_toggle lalt lctl+lalt+lmet_layer))
+
+;; "" LCTL+LMET_LAYER """""""""""""""""""
+) 
+
+;; "" !LCTL+LMET_LAYER """""""""""""""""""
+(deflayermap (!lctl+lmet_layer)
+  ;; == LALT =========================
+  $!lalt  (t! th lalt (t! mod_2layer_toggle lalt lctl+lalt+lmet_layer !lctl+lalt+lmet_layer))
+  $s/lalt (t! th s    (t! mod_2layer_toggle lalt lctl+lalt+lmet_layer !lctl+lalt+lmet_layer))
+  $l/lalt (t! th l    (t! mod_2layer_toggle lalt lctl+lalt+lmet_layer !lctl+lalt+lmet_layer))
+
+;; "" !LCTL+LMET_LAYER """""""""""""""""""
+)
+
+;; "" LALT+LMET_LAYER """""""""""""""""""
+(deflayermap (lalt+lmet_layer)
+  ;; == LCTL =========================
+  $!lctl  (t! th lctl (t! mod_layer_toggle lctl lctl+lalt+lmet_layer))
+  $f/lctl (t! th f    (t! mod_layer_toggle lctl lctl+lalt+lmet_layer))
+  $j/lctl (t! th j    (t! mod_layer_toggle lctl lctl+lalt+lmet_layer))
+  
+;; "" LALT+LMET_LAYER """""""""""""""""""
+) 
+
+;; "" !LALT+LMET_LAYER """""""""""""""""""
+(deflayermap (!lalt+lmet_layer)
+  ;; == LCTL =========================
+  $!lctl  (t! th lctl (t! mod_2layer_toggle lctl lctl+lalt+lmet_layer !lctl+lalt+lmet_layer))
+  $f/lctl (t! th f    (t! mod_2layer_toggle lctl lctl+lalt+lmet_layer !lctl+lalt+lmet_layer))
+  $j/lctl (t! th j    (t! mod_2layer_toggle lctl lctl+lalt+lmet_layer !lctl+lalt+lmet_layer))
+;; "" !LALT+LMET_LAYER """""""""""""""""""
+)
+
+;; "" LCTL+LALT+LMET_LAYER """""""""""""""""""
+(deflayermap (lctl+lalt+lmet_layer)
+
+;; "" LCTL+LALT+LMET_LAYER """""""""""""""""""
+) 
+
+;; "" !LCTL+LALT+LMET_LAYER """""""""""""""""""
+(deflayermap (!lctl+lalt+lmet_layer)
+
+;; "" !LCTL+LALT+LMET_LAYER """""""""""""""""""
+) 
+
+
+;; "" LSFT_LAYER """"""""""""""""""""""""""""""
 (deflayermap (lsft_layer)
   ;; Pressing lsft+rsft (in that order) issues tab_next combo.
-  rsft (multi (release-key lsft) $combo_tab_next)
+  rsft (multi (release-key lsft) $action_tab_next)
 
   ;; Allow gui+lsft and lsft+gui to work as expected.
-  $lgui (t! th a (multi (release-key lsft) (layer-toggle panes_layer)))
-  $rgui (t! th ; (multi (release-key lsft) (layer-toggle panes_layer)))
+  $a/gui (t! th a (multi (release-key lsft) (layer-toggle panes_layer)))
+  $;/gui (t! th ; (multi (release-key lsft) (layer-toggle panes_layer)))
+
+;; "" LSFT_LAYER """"""""""""""""""""""""""""""
 )
 
+;; "" RSFT_LAYER """"""""""""""""""""""""""""""
 (deflayermap (rsft_layer)
   ;; Pressing rsft+lsft (in that order) issues tab_prev combo.
-  lsft (multi (release-key rsft) $combo_tab_prev)
+  lsft (multi (release-key rsft) $action_tab_prev)
+
+  $a/gui (t! th a (multi (release-key rsft) (layer-toggle panes_layer)))
+  $;/gui (t! th ; (multi (release-key rsft) (layer-toggle panes_layer)))
+;; "" RSFT_LAYER """"""""""""""""""""""""""""""
 )
 
+;; "" TAB_LAYER """"""""""""""""""""""""""""""
 (deflayermap (tab_layer)
   ;; tab+r reloads kanata configuration.
   r (fork 
     lrld 
-    (multi (t! release2 lsft rsft) (macro RA-spc 300 s y s t e m c t l spc - - u s e r spc r e s t a r t spc k w a n a t a 300 ent)) 
+    (multi (t! release2 lsft rsft) $action_restart_kwanata)
     (lsft rsft)
   )
+;; "" TAB_LAYER """"""""""""""""""""""""""""""
 )
 
+;; "" PRNT_LAYER """""""""""""""""""""""""""""
 (deflayermap (prnt_layer)
-  spc $combo_select_fav
+  spc $action_select_fav
+;; "" PRNT_LAYER """""""""""""""""""""""""""""
 )
 
+;; "" EDIT_LAYER +"""""""""""""""""""""""""""""
+(deflayermap (edit_layer)
+  j down
+  k up
+  h left
+  l right
+  
+;; "" EDIT_LAYER """"""""""""""""""""""""""""""
+)
+
+;; "" ALTC_LAYER +"""""""""""""""""""""""""""""
+(deflayermap (altc_layer)
+  u 7
+  i 8
+  o 9
+  j 4
+  k 5 
+  l 6
+  m 1
+  , 2
+  . 3
+  spc 0
+  ralt .
+;; "" ALTC_LAYER """"""""""""""""""""""""""""""
+)
+
+;; "" GUI_LAYER """"""""""""""""""""""""""""""
 (deflayermap (gui_layer)
   ;; gui button enables windows, desktops, panes and tabs access.
   
-  ;; gui+lctl/s -> desktops manipulation.
-  s (t! th XX (layer-toggle workspaces_layer))
-  lctl (t! th XX (layer-toggle workspaces_layer)) 
-  ;; gui+lsft/d -> panes manipulation.
-  d (t! th XX (layer-toggle panes_layer))
-  lmet (t! th XX (layer-toggle panes_layer)) 
-  ;; gui+lctl/f -> tabs manipulation.
-  f (t! th (t! 2x $combo_tab_toggle) (layer-toggle tabs_layer))
-  lalt (t! th XX (layer-toggle tabs_layer)) 
+  ;; Desktops manipulation.
+  $s/lalt (t! th XX (layer-toggle workspaces_layer))
+  $!lmet (t! th XX (layer-toggle workspaces_layer)) 
 
+  ;; Panes manipulation.
+  $d/lsft (t! th XX (layer-toggle panes_layer))
+  $!lalt (t! th XX (layer-toggle panes_layer)) 
 
-  ;; gui+spc/h/l/k/j -> window manipulation.
-  spc $combo_wnd_max
-  h $combo_wnd_left
-  l (t! th $combo_wnd_right (layer-toggle workspaces_layer))
-  k (t! th $combo_wnd_up (layer-toggle panes_layer))
-  j (t! th $combo_wnd_down (layer-toggle tabs_layer))
+  ;; Tabs manipulation.
+  $f/lctl (t! th $action_tab_toggle (layer-toggle tabs_layer))
+  $!lctl (t! th $action_tab_toggle (layer-toggle tabs_layer)) 
+
+  ;; Window manipulation.
+  spc $action_wnd_max
+  h $action_wnd_left
+  $l/lalt (t! th $action_wnd_right (layer-toggle workspaces_layer))
+  $k/rsft (t! th $action_wnd_up (layer-toggle panes_layer))
+  $j/lctl (t! th $action_wnd_down (layer-toggle tabs_layer))
+;; "" GUI_LAYER """"""""""""""""""""""""""""""
 )
 
 ;; == Workspaces layer =====================================================
 (deflayermap (workspaces_layer)
   ;; desktop/screen manipulation
-  j $combo_next_screen 
-  k $combo_prev_screen
-  l $combo_next_desktop
-  h $combo_prev_desktop
+  j $action_next_screen 
+  k $action_prev_screen
+  l $action_next_desktop
+  h $action_prev_desktop
 
   spc (t! th _ (layer-toggle move_workspaces_layer))
 )
 
 (deflayermap (move_workspaces_layer)
   ;; desktop/screen manipulation
-  j $combo_move_wnd_next_screen 
-  k $combo_move_wnd_prev_screen 
-  l $combo_move_wnd_next_desktop 
-  h $combo_move_wnd_prev_desktop 
+  j $action_move_wnd_next_screen 
+  k $action_move_wnd_prev_screen 
+  l $action_move_wnd_next_desktop 
+  h $action_move_wnd_prev_desktop 
 )
 
 ;; == Tabs layer ==========================================================
 (deflayermap (tabs_layer)
   ;; tabs manipulation
-  h $combo_tab_prev
-  l $combo_tab_next
-  t (fork $combo_tab_new $combo_tab_undo_close (lsft rsft))
+  h     $action_tab_prev
+  left  $action_tab_prev
+  l     $action_tab_next
+  right $action_tab_next
 
-  w $combo_tab_close
+  t (fork $action_tab_new $action_tab_undo_close (lsft rsft))
+  w $action_tab_close
+
+  1 $action_tab_goto_1
+  2 $action_tab_goto_2
+  3 $action_tab_goto_3
+  4 $action_tab_goto_4
+  5 $action_tab_goto_5
+  6 $action_tab_goto_6
+  7 $action_tab_goto_7
+  8 $action_tab_goto_8
+  9 $action_tab_goto_last
 
   spc (t! th _ (layer-toggle move_tabs_layer))
 )
@@ -316,12 +551,21 @@
 ;; == Panes layer =========================================================
 (deflayermap (panes_layer)
   ;; panes manipulation
-  h $combo_pane_left
-  j $combo_pane_below
-  k $combo_pane_above
-  l $combo_pane_right
+  h     $action_pane_left
+  left  $action_pane_left
+  j     $action_pane_below
+  down  $action_pane_below
+  k     $action_pane_above
+  up    $action_pane_above
+  l     $action_pane_right
+  right $action_pane_right
 
-  spc (t! th $combo_pane_max (layer-toggle move_panes_layer))
+  -     $action_pane_h_split
+  \     $action_pane_v_split
+
+  w     $action_pane_close
+
+  spc (t! th $action_pane_max (layer-toggle move_panes_layer))
 )
 
 (deflayermap (move_panes_layer)

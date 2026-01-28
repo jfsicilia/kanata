@@ -75,6 +75,24 @@
   (tap-hold-press $tap_time $hold_time $tap $hold)
 )
 
+(deftemplate lt (layer)
+  (layer-toggle $layer)
+)
+(deftemplate 2lt (base_layer top_layer)
+  (layer-toggle $base_layer) (layer-toggle $top_layer)
+)
+
+(deftemplate mod_layer_toggle (mod layer)
+  (multi $mod (layer-toggle $layer)) 
+)
+(deftemplate 2layer_toggle (base_layer top_layer)
+  (multi (layer-toggle $base_layer) (layer-toggle $top_layer)) 
+)
+(deftemplate mod_2layer_toggle (mod base_layer top_layer)
+  (multi $mod (layer-toggle $base_layer) (layer-toggle $top_layer))
+)
+
+
 ;; If pressed twice, in a short period, issue the combo.
 (deftemplate 2x (combo)
   (tap-dance-eager 300 (XX $combo))
@@ -193,209 +211,244 @@
   (if-equal $mod1 rmet (if-equal $mod2 ralt (lctl rctl)))
 )
 
-;; It will issue the mod_combo if mod is pressed and no other modifier is
-;; pressed.
-(deftemplate 1mod_combo (mod mod_combo)
+(deftemplate 1mod_combo (mod1 action)
+  (t! unmod1 $mod1 $action) 
+)
+(deftemplate 1mod+sft_combo (mod1 action lsft_action rsft_action)
   (switch
-    (t! _inv_1mod_ $mod) _ break
-    ($mod) (t! unmod1 $mod $mod_combo) break
-    () _ break
+    (lsft) (t! unmod2 $mod1 lsft $lsft_action) break
+    (rsft) (t! unmod2 $mod1 rsft $rsft_action) break
+    () (t! unmod1 $mod1 $action) break
   )
 )
-;; It will issue the mod_combo if real key is pressed mod is pressed and no other modifier is
-;; pressed.
-(deftemplate real_1mod_combo (real mod combo)
+
+(deftemplate 2mod_combo (mod1 mod2 action)
+  (t! unmod2 $mod1 $mod2 $action) 
+)
+(deftemplate 2mod+sft_combo (mod1 mod2 action lsft_action rsft_action)
   (switch
-    ((input real $real)) (t! 1mod_combo $mod $combo) break
-    () _ break
+    (lsft) (t! unmod3 $mod1 $mod2 lsft $lsft_action) break
+    (rsft) (t! unmod3 $mod1 $mod2 rsft $rsft_action) break
+    () (t! unmod2 $mod1 $mod2 $action) break
   )
 )
 
-(deftemplate 1mod+sft_combo (mod mod_combo mod+lsft_combo mod+rsft_combo)
+
+(deftemplate 3mod_combo (mod1 mod2 mod3 action)
+  (t! unmod3 $mod1 $mod2 $mod3 $action) 
+)
+(deftemplate 3mod+sft_combo (mod1 mod2 mod3 action lsft_action rsft_action)
   (switch
-    (t! _inv_1mod_ $mod) _ break
-    ((and $mod lsft)) (t! unmod2 $mod lsft $mod+lsft_combo) break
-    ((and $mod rsft)) (t! unmod2 $mod rsft $mod+rsft_combo) break
-    ($mod) (t! unmod1 $mod $mod_combo) break
-    () _ break
-  )
-)
-(deftemplate real_1mod+sft_combo (real mod mod_combo mod+lsft_combo mod+rsft_combo)
-  (switch
-    ((input real $real)) (t! 1mod+sft_combo $mod $mod_combo $mod+lsft_combo $mod+rsft_combo) break
-    () _ break
-  )
-)
-
-(deftemplate 2mod_combo (mod1 mod2 mod1+mod2_combo mod1_combo)
-  (switch
-    (t! _inv_2mods_ $mod1 $mod2) _ break
-    ((and $mod1 $mod2)) (t! unmod2 $mod1 $mod2 $mod1+mod2_combo) break
-    ($mod1) (t! unmod1 $mod1 $mod1_combo) break
-    () _ break
-  )
-)
-
-(deftemplate real_2mod_combo (real1 real2 mod1 mod2 mod1+mod2_combo mod1_combo)
-  (switch
-    ((and (input real $real1) (input real $real2))) 
-      (t! 2mod_combo $mod1 $mod2 $mod1+mod2_combo $mod1_combo) 
-      break
-    ((input real $real1)) 
-      (t! 1mod_combo $mod1 $mod1_combo) 
-      break
-    () _ break
-  )
-)
-
-(deftemplate 2mod+sft_combo (mod1 mod2 
-                             mod1+mod2_combo mod1+mod2+lsft_combo mod1+mod2+rsft_combo 
-                             mod1_combo mod1+lsft_combo mod1+rsft_combo)
-  (switch
-    (t! _inv_2mods_ $mod1 $mod2) _ break
-    ((and $mod1 $mod2 lsft)) (t! unmod3 $mod1 $mod2 lsft $mod1+mod2+lsft_combo) break
-    ((and $mod1 $mod2 rsft)) (t! unmod3 $mod1 $mod2 rsft $mod1+mod2+rsft_combo) break
-    ((and $mod1 $mod2)) (t! unmod2 $mod1 $mod2 $mod1+mod2_combo) break
-    ((and $mod1 lsft)) (t! unmod2 $mod1 lsft $mod1+lsft_combo) break
-    ((and $mod1 rsft)) (t! unmod2 $mod1 rsft $mod1+rsft_combo) break
-    ($mod1) (t! unmod1 $mod1 $mod1_combo) break
-    () _ break
-  )
-)
-
-(deftemplate real_2mod+sft_combo (real1 real2 mod1 mod2 
-                                  mod1+mod2_combo mod1+mod2+lsft_combo mod1+mod2+rsft_combo 
-                                  mod1_combo mod1+lsft_combo mod1+rsft_combo)
-  (switch
-    ((and (input real $real1) (input real $real2))) 
-      (t! 2mod+sft_combo $mod1 $mod2 $mod1+mod2_combo $mod1+mod2+lsft_combo $mod1+mod2+rsft_combo $mod1_combo $mod1+lsft_combo $mod1+rsft_combo) 
-      break
-    ((input real $real1)) 
-      (t! 1mod+sft_combo $mod1 $mod1_combo $mod1+lsft_combo $mod1+rsft_combo) 
-      break
-    () _ break
-  )
-)
-
-(deftemplate 3mod_combo (mod1 mod2 mod3 mod1+mod2+mod3_combo mod1+mod2_combo mod1+mod3_combo mod1_combo)
-  (switch
-    ((and $mod1 $mod2 $mod3)) (t! unmod3 $mod1 $mod2 $mod3 $mod1+mod2+mod3_combo) break
-    ((and $mod1 $mod2)) (t! unmod2 $mod1 $mod2 $mod1+mod2_combo) break
-    ((and $mod1 $mod3)) (t! unmod2 $mod1 $mod3 $mod1+mod3_combo) break
-    ($mod1) (t! unmod1 $mod1 $mod1_combo) break
-    () _ break
-  )
-)
-
-(deftemplate real_3mod_combo (real1 real2 real3 mod1 mod2 mod3 mod1+mod2+mod3_combo mod1+mod2_combo mod1+mod3_combo mod1_combo)
-  (switch
-    ((and (input real $real1) (input real $real2) (input real $real3))) 
-      (t! 3mod_combo $mod1 $mod2 $mod3 $mod1+mod2+mod3_combo $mod1+mod2_combo $mod1+mod3_combo $mod1_combo) 
-      break
-    ((and (input real $real1) (input real $real2))) 
-      (t! 2mod_combo $mod1 $mod2 $mod1+mod2_combo $mod1_combo) 
-      break
-    ((and (input real $real1) (input real $real3))) 
-      (t! 2mod_combo $mod1 $mod3 $mod1+mod3_combo $mod1_combo) 
-      break
-    ((input real $real1)) 
-      (t! 1mod_combo $mod1 $mod1_combo) 
-      break
-    () _ break
-  )
-)
-
-(deftemplate 3mod+sft_combo (mod1 mod2 mod3 
-                             mod1+mod2+mod3_combo mod1+mod2+mod3+lsft_combo mod1+mod2+mod3+rsft_combo 
-                             mod1+mod2_combo mod1+mod2+lsft_combo mod1+mod2+rsft_combo 
-                             mod1+mod3_combo mod1+mod3+lsft_combo mod1+mod3+rsft_combo 
-                             mod1_combo mod1+lsft_combo mod1+rsft_combo)
-  (switch
-    ((and $mod1 $mod2 $mod3 lsft)) 
-      (t! unmod4 $mod1 $mod2 $mod3 lsft $mod1+mod2+mod3+lsft_combo) 
-      break
-    ((and $mod1 $mod2 $mod3 rsft)) 
-      (t! unmod4 $mod1 $mod2 $mod3 rsft $mod1+mod2+mod3+rsft_combo) 
-      break
-    ((and $mod1 $mod2 $mod3)) 
-      (t! unmod3 $mod1 $mod2 $mod3 $mod1+mod2+mod3_combo) 
-      break
-    ((and $mod1 $mod2 lsft)) 
-      (t! unmod3 $mod1 $mod2 lsft $mod1+mod2+lsft_combo) 
-      break
-    ((and $mod1 $mod2 rsft)) 
-      (t! unmod3 $mod1 $mod2 rsft $mod1+mod2+rsft_combo) 
-      break
-    ((and $mod1 $mod2)) 
-      (t! unmod2 $mod1 $mod2 $mod1+mod2_combo) 
-      break
-    ((and $mod1 $mod3 lsft)) 
-      (t! unmod3 $mod1 $mod3 lsft $mod1+mod3+lsft_combo) 
-      break
-    ((and $mod1 $mod3 rsft)) 
-      (t! unmod3 $mod1 $mod3 rsft $mod1+mod3+rsft_combo) 
-      break
-    ((and $mod1 $mod3)) 
-      (t! unmod2 $mod1 $mod3 $mod1+mod3_combo) 
-      break
-    ((and $mod1 lsft)) 
-      (t! unmod2 $mod1 lsft $mod1+lsft_combo) 
-      break
-    ((and $mod1 rsft)) 
-      (t! unmod2 $mod1 rsft $mod1+rsft_combo) 
-      break
-    ($mod1) (t! unmod1 $mod1 $mod1_combo) break
-    () _ break
-  )
-)
-
-(deftemplate real_3mod+sft_combo (real1 real2 real3 mod1 mod2 mod3 
-                                  mod1+mod2+mod3_combo mod1+mod2+mod3+lsft_combo mod1+mod2+mod3+rsft_combo 
-                                  mod1+mod2_combo mod1+mod2+lsft_combo mod1+mod2+rsft_combo 
-                                  mod1+mod3_combo mod1+mod3+lsft_combo mod1+mod3+rsft_combo 
-                                  mod1_combo mod1+lsft_combo mod1+rsft_combo)
-  (switch
-    ((and (input real $real1) (input real $real2) (input real $real3))) 
-      (t! 3mod+sft_combo $mod1 $mod2 $mod3 
-                     $mod1+mod2+mod3_combo $mod1+mod2+mod3+lsft_combo $mod1+mod2+mod3+rsft_combo 
-                     $mod1+mod2_combo $mod1+mod2+lsft_combo $mod1+mod2+rsft_combo 
-                     $mod1+mod3_combo $mod1+mod3+lsft_combo $mod1+mod3+rsft_combo 
-                     $mod1_combo $mod1+lsft_combo $mod1+rsft_combo) 
-      break
-    ((and (input real $real1) (input real $real2))) 
-      (t! 2mod+sft_combo $mod1 $mod2 
-                         $mod1+mod2_combo $mod1+mod2+lsft_combo $mod1+mod2+rsft_combo 
-                         $mod1_combo $mod1+lsft_combo $mod1+rsft_combo) 
-      break
-    ((and (input real $real1) (input real $real3))) 
-      (t! 2mod+sft_combo $mod1 $mod3 
-                         $mod1+mod3_combo $mod1+mod3+lsft_combo $mod1+mod3+rsft_combo 
-                         $mod1_combo $mod1+lsft_combo $mod1+rsft_combo) 
-      break
-    ((input real $real1)) 
-      (t! 1mod+sft_combo $mod1 $mod1_combo $mod1+lsft_combo $mod1+rsft_combo) 
-      break
-    () _ break
+    (lsft) (t! unmod4 $mod1 $mod2 $mod3 lsft $lsft_action) break
+    (rsft) (t! unmod4 $mod1 $mod2 $mod3 rsft $rsft_action) break
+    () (t! unmod3 $mod1 $mod2 $mod3 $action) break
   )
 )
 
 
-;; Simulate lctl when pressing lalt.
-(deftemplate lctl_mimics ()
-  (multi 
-    ;; If lctl is pressed twice, in a short period, it issues a tab toggle.
-    (t! th (t! 2x $combo_tab_toggle) (multi lctl (layer-toggle lctl_layer))) 
-    (on-release release-vkey vk_lalt) ;; (lctl+tab mimics lalt+tab)
-  )
-)
+;;;; It will issue the mod_combo if mod is pressed and no other modifier is
+;;;; pressed.
+;;(deftemplate 1mod_combo (mod mod_combo)
+;;  (switch
+;;    (t! _inv_1mod_ $mod) _ break
+;;    ($mod) (t! unmod1 $mod $mod_combo) break
+;;    () _ break
+;;  )
+;;)
+;;;; It will issue the mod_combo if real key is pressed mod is pressed and no other modifier is
+;;;; pressed.
+;;(deftemplate real_1mod_combo (real mod combo)
+;;  (switch
+;;    ((input real $real)) (t! 1mod_combo $mod $combo) break
+;;    () _ break
+;;  )
+;;)
+;;
+;;(deftemplate 1mod+sft_combo (mod mod_combo mod+lsft_combo mod+rsft_combo)
+;;  (switch
+;;    (t! _inv_1mod_ $mod) _ break
+;;    ((and $mod lsft)) (t! unmod2 $mod lsft $mod+lsft_combo) break
+;;    ((and $mod rsft)) (t! unmod2 $mod rsft $mod+rsft_combo) break
+;;    ($mod) (t! unmod1 $mod $mod_combo) break
+;;    () _ break
+;;  )
+;;)
+;;(deftemplate real_1mod+sft_combo (real mod mod_combo mod+lsft_combo mod+rsft_combo)
+;;  (switch
+;;    ((input real $real)) (t! 1mod+sft_combo $mod $mod_combo $mod+lsft_combo $mod+rsft_combo) break
+;;    () _ break
+;;  )
+;;)
+;;
+;;(deftemplate 2mod_combo (mod1 mod2 mod1+mod2_combo mod1_combo)
+;;  (switch
+;;    (t! _inv_2mods_ $mod1 $mod2) _ break
+;;    ((and $mod1 $mod2)) (t! unmod2 $mod1 $mod2 $mod1+mod2_combo) break
+;;    ($mod1) (t! unmod1 $mod1 $mod1_combo) break
+;;    () _ break
+;;  )
+;;)
+;;
+;;(deftemplate real_2mod_combo (real1 real2 mod1 mod2 mod1+mod2_combo mod1_combo)
+;;  (switch
+;;    ((and (input real $real1) (input real $real2))) 
+;;      (t! 2mod_combo $mod1 $mod2 $mod1+mod2_combo $mod1_combo) 
+;;      break
+;;    ((input real $real1)) 
+;;      (t! 1mod_combo $mod1 $mod1_combo) 
+;;      break
+;;    () _ break
+;;  )
+;;)
+;;
+;;(deftemplate 2mod+sft_combo (mod1 mod2 
+;;                             mod1+mod2_combo mod1+mod2+lsft_combo mod1+mod2+rsft_combo 
+;;                             mod1_combo mod1+lsft_combo mod1+rsft_combo)
+;;  (switch
+;;    (t! _inv_2mods_ $mod1 $mod2) _ break
+;;    ((and $mod1 $mod2 lsft)) (t! unmod3 $mod1 $mod2 lsft $mod1+mod2+lsft_combo) break
+;;    ((and $mod1 $mod2 rsft)) (t! unmod3 $mod1 $mod2 rsft $mod1+mod2+rsft_combo) break
+;;    ((and $mod1 $mod2)) (t! unmod2 $mod1 $mod2 $mod1+mod2_combo) break
+;;    ((and $mod1 lsft)) (t! unmod2 $mod1 lsft $mod1+lsft_combo) break
+;;    ((and $mod1 rsft)) (t! unmod2 $mod1 rsft $mod1+rsft_combo) break
+;;    ($mod1) (t! unmod1 $mod1 $mod1_combo) break
+;;    () _ break
+;;  )
+;;)
+;;
+;;(deftemplate real_2mod+sft_combo (real1 real2 mod1 mod2 
+;;                                  mod1+mod2_combo mod1+mod2+lsft_combo mod1+mod2+rsft_combo 
+;;                                  mod1_combo mod1+lsft_combo mod1+rsft_combo)
+;;  (switch
+;;    ((and (input real $real1) (input real $real2))) 
+;;      (t! 2mod+sft_combo $mod1 $mod2 $mod1+mod2_combo $mod1+mod2+lsft_combo $mod1+mod2+rsft_combo $mod1_combo $mod1+lsft_combo $mod1+rsft_combo) 
+;;      break
+;;    ((input real $real1)) 
+;;      (t! 1mod+sft_combo $mod1 $mod1_combo $mod1+lsft_combo $mod1+rsft_combo) 
+;;      break
+;;    () _ break
+;;  )
+;;)
+;;
+;;(deftemplate 3mod_combo (mod1 mod2 mod3 mod1+mod2+mod3_combo mod1+mod2_combo mod1+mod3_combo mod1_combo)
+;;  (switch
+;;    ((and $mod1 $mod2 $mod3)) (t! unmod3 $mod1 $mod2 $mod3 $mod1+mod2+mod3_combo) break
+;;    ((and $mod1 $mod2)) (t! unmod2 $mod1 $mod2 $mod1+mod2_combo) break
+;;    ((and $mod1 $mod3)) (t! unmod2 $mod1 $mod3 $mod1+mod3_combo) break
+;;    ($mod1) (t! unmod1 $mod1 $mod1_combo) break
+;;    () _ break
+;;  )
+;;)
+;;
+;;(deftemplate real_3mod_combo (real1 real2 real3 mod1 mod2 mod3 mod1+mod2+mod3_combo mod1+mod2_combo mod1+mod3_combo mod1_combo)
+;;  (switch
+;;    ((and (input real $real1) (input real $real2) (input real $real3))) 
+;;      (t! 3mod_combo $mod1 $mod2 $mod3 $mod1+mod2+mod3_combo $mod1+mod2_combo $mod1+mod3_combo $mod1_combo) 
+;;      break
+;;    ((and (input real $real1) (input real $real2))) 
+;;      (t! 2mod_combo $mod1 $mod2 $mod1+mod2_combo $mod1_combo) 
+;;      break
+;;    ((and (input real $real1) (input real $real3))) 
+;;      (t! 2mod_combo $mod1 $mod3 $mod1+mod3_combo $mod1_combo) 
+;;      break
+;;    ((input real $real1)) 
+;;      (t! 1mod_combo $mod1 $mod1_combo) 
+;;      break
+;;    () _ break
+;;  )
+;;)
+;;
+;;(deftemplate 3mod+sft_combo (mod1 mod2 mod3 
+;;                             mod1+mod2+mod3_combo mod1+mod2+mod3+lsft_combo mod1+mod2+mod3+rsft_combo 
+;;                             mod1+mod2_combo mod1+mod2+lsft_combo mod1+mod2+rsft_combo 
+;;                             mod1+mod3_combo mod1+mod3+lsft_combo mod1+mod3+rsft_combo 
+;;                             mod1_combo mod1+lsft_combo mod1+rsft_combo)
+;;  (switch
+;;    ((and $mod1 $mod2 $mod3 lsft)) 
+;;      (t! unmod4 $mod1 $mod2 $mod3 lsft $mod1+mod2+mod3+lsft_combo) 
+;;      break
+;;    ((and $mod1 $mod2 $mod3 rsft)) 
+;;      (t! unmod4 $mod1 $mod2 $mod3 rsft $mod1+mod2+mod3+rsft_combo) 
+;;      break
+;;    ((and $mod1 $mod2 $mod3)) 
+;;      (t! unmod3 $mod1 $mod2 $mod3 $mod1+mod2+mod3_combo) 
+;;      break
+;;    ((and $mod1 $mod2 lsft)) 
+;;      (t! unmod3 $mod1 $mod2 lsft $mod1+mod2+lsft_combo) 
+;;      break
+;;    ((and $mod1 $mod2 rsft)) 
+;;      (t! unmod3 $mod1 $mod2 rsft $mod1+mod2+rsft_combo) 
+;;      break
+;;    ((and $mod1 $mod2)) 
+;;      (t! unmod2 $mod1 $mod2 $mod1+mod2_combo) 
+;;      break
+;;    ((and $mod1 $mod3 lsft)) 
+;;      (t! unmod3 $mod1 $mod3 lsft $mod1+mod3+lsft_combo) 
+;;      break
+;;    ((and $mod1 $mod3 rsft)) 
+;;      (t! unmod3 $mod1 $mod3 rsft $mod1+mod3+rsft_combo) 
+;;      break
+;;    ((and $mod1 $mod3)) 
+;;      (t! unmod2 $mod1 $mod3 $mod1+mod3_combo) 
+;;      break
+;;    ((and $mod1 lsft)) 
+;;      (t! unmod2 $mod1 lsft $mod1+lsft_combo) 
+;;      break
+;;    ((and $mod1 rsft)) 
+;;      (t! unmod2 $mod1 rsft $mod1+rsft_combo) 
+;;      break
+;;    ($mod1) (t! unmod1 $mod1 $mod1_combo) break
+;;    () _ break
+;;  )
+;;)
+;;
+;;(deftemplate real_3mod+sft_combo (real1 real2 real3 mod1 mod2 mod3 
+;;                                  mod1+mod2+mod3_combo mod1+mod2+mod3+lsft_combo mod1+mod2+mod3+rsft_combo 
+;;                                  mod1+mod2_combo mod1+mod2+lsft_combo mod1+mod2+rsft_combo 
+;;                                  mod1+mod3_combo mod1+mod3+lsft_combo mod1+mod3+rsft_combo 
+;;                                  mod1_combo mod1+lsft_combo mod1+rsft_combo)
+;;  (switch
+;;    ((and (input real $real1) (input real $real2) (input real $real3))) 
+;;      (t! 3mod+sft_combo $mod1 $mod2 $mod3 
+;;                     $mod1+mod2+mod3_combo $mod1+mod2+mod3+lsft_combo $mod1+mod2+mod3+rsft_combo 
+;;                     $mod1+mod2_combo $mod1+mod2+lsft_combo $mod1+mod2+rsft_combo 
+;;                     $mod1+mod3_combo $mod1+mod3+lsft_combo $mod1+mod3+rsft_combo 
+;;                     $mod1_combo $mod1+lsft_combo $mod1+rsft_combo) 
+;;      break
+;;    ((and (input real $real1) (input real $real2))) 
+;;      (t! 2mod+sft_combo $mod1 $mod2 
+;;                         $mod1+mod2_combo $mod1+mod2+lsft_combo $mod1+mod2+rsft_combo 
+;;                         $mod1_combo $mod1+lsft_combo $mod1+rsft_combo) 
+;;      break
+;;    ((and (input real $real1) (input real $real3))) 
+;;      (t! 2mod+sft_combo $mod1 $mod3 
+;;                         $mod1+mod3_combo $mod1+mod3+lsft_combo $mod1+mod3+rsft_combo 
+;;                         $mod1_combo $mod1+lsft_combo $mod1+rsft_combo) 
+;;      break
+;;    ((input real $real1)) 
+;;      (t! 1mod+sft_combo $mod1 $mod1_combo $mod1+lsft_combo $mod1+rsft_combo) 
+;;      break
+;;    () _ break
+;;  )
+;;)
 
-;; Simulate lalt when pressing lmet.
-(deftemplate lalt_mimics ()
-  (multi lalt (layer-toggle lalt_layout))
-)
-  
-;; Simulate lmet when pressing lctl.
-(deftemplate lmet_mimics ()
-  (t! th lmet (multi lmet (layer-toggle lmet_layout)))
-)
 
+;;;; Simulate lctl when pressing lalt.
+;;(deftemplate lctl_mimics ()
+;;  (multi 
+;;    ;; If lctl is pressed twice, in a short period, it issues a tab toggle.
+;;    (t! th (t! 2x $combo_tab_toggle) (multi lctl (layer-toggle lctl_layer))) 
+;;    (on-release release-vkey vk_lalt) ;; (lctl+tab mimics lalt+tab)
+;;  )
+;;)
+;;
+;;;; Simulate lalt when pressing lmet.
+;;(deftemplate lalt_mimics ()
+;;  (multi lalt (layer-toggle lalt_layout))
+;;)
+;;  
+;;;; Simulate lmet when pressing lctl.
+;;(deftemplate lmet_mimics ()
+;;  (t! th lmet (multi lmet (layer-toggle lmet_layout)))
+;;)
+;;
