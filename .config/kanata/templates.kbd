@@ -263,7 +263,9 @@
   )
 )
 
-(deftemplate real_2mod+sft_combo (real1 real2 mod1 mod2 mod1+mod2_combo mod1+mod2+lsft_combo mod1+mod2+rsft_combo mod1_combo mod1+lsft_combo mod1+rsft_combo)
+(deftemplate real_2mod+sft_combo (real1 real2 mod1 mod2 
+                                  mod1+mod2_combo mod1+mod2+lsft_combo mod1+mod2+rsft_combo 
+                                  mod1_combo mod1+lsft_combo mod1+rsft_combo)
   (switch
     ((and (input real $real1) (input real $real2))) 
       (t! 2mod+sft_combo $mod1 $mod2 $mod1+mod2_combo $mod1+mod2+lsft_combo $mod1+mod2+rsft_combo $mod1_combo $mod1+lsft_combo $mod1+rsft_combo) 
