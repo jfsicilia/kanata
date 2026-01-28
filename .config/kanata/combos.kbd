@@ -28,28 +28,57 @@
     ((input virtual vk_obsidian)) A-S-o break
     () XX break
   )
+  combo_omnisearch_files (switch
+    ((input virtual vk_obsidian)) C-A-m break
+    () XX break
+  )
+  combo_omnisearch_file (switch
+    ((input virtual vk_obsidian)) C-A-S-m break
+    () XX break
+  )
+  
+  ;; == Favs combos ========================================================
+  combo_select_fav (switch
+    ((input virtual vk_obsidian)) C-o break
+    () XX break
+  ) 
 
   ;; == Tabs combos ========================================================
   combo_tab_next (switch 
-      ((input virtual vk_chrome)) C-tab break
-      ((input virtual vk_zellij)) (macro C-g t l ret) break
-      ((input virtual vk_nvim)) (macro esc S-; b n e x t ret) break
-      () C-tab break
+    ((input virtual vk_chrome)) C-tab break
+    ((input virtual vk_zellij)) (macro C-g t l ret) break
+    ((input virtual vk_nvim)) (macro esc S-; b n e x t ret) break
+    ((input virtual vk_obsidian)) C-pgdn break
+    () C-tab break
   )
   combo_tab_prev (switch 
-      ((input virtual vk_chrome)) C-S-tab break
-      ((input virtual vk_zellij)) (macro C-g t h ret) break
-      ((input virtual vk_nvim)) (macro esc S-; b p r e v i o u s ret) break
-      () C-S-tab break
+    ((input virtual vk_chrome)) C-S-tab break
+    ((input virtual vk_zellij)) (macro C-g t h ret) break
+    ((input virtual vk_nvim)) (macro esc S-; b p r e v i o u s ret) break
+    ((input virtual vk_obsidian)) C-pgup break
+    () C-S-tab break
   )
 
   combo_tab_toggle (switch 
-      ((input virtual vk_chrome)) A-w break
-      ((input virtual vk_zellij)) (macro C-g t tab ret) break
-      ((input virtual vk_nvim)) (macro S-; b S-3 ret) break
-      () XX break
+    ((input virtual vk_chrome)) A-w break
+    ((input virtual vk_zellij)) (macro C-g t tab ret) break
+    ((input virtual vk_nvim)) (macro S-; b S-3 ret) break
+    ((input virtual vk_obsidian)) A-q break
+    () XX break
   )
 
+  combo_tab_new (switch
+    ((input virtual vk_obsidian)) A-C-t break
+    () XX break
+  )
+  combo_tab_close (switch
+    ((input virtual vk_obsidian)) A-C-w break
+    () XX break
+  )
+  combo_tab_undo_close (switch
+    ((input virtual vk_obsidian)) A-C-S-t break
+    () XX break
+  )
 
   ;; == Panes combos =======================================================
   combo_pane_left (switch
