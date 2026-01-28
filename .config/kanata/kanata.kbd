@@ -82,7 +82,7 @@
   @tab  @q    @w   @e   @r   @t   @y   @u   @i    @o   @p   [    ]    \
   @caps @a    @s   @d   @f   @g   @h   @j   @k    @l   @;   '    ret
   @lsft @altc @z   @x   @c   @v   @b   @n   @m    ,    .    /    @rsft
-  @lmet @lalt @lctl          spc            ralt  prnt rctl
+  @lmet @lalt @lctl          spc            ralt  @prnt rctl
 ) ;;""
 
 ;; Default keyboard mapping with alternative chars (for spanish writing)
@@ -93,7 +93,7 @@
   @tab  @q    @w   @!e  @r   @t   @y   @!u  @!i   @!o  @p   [    ]    \
   @caps @!a   @s   @d   @f   @g   @h   @j   @k    @l   @;   '    ret
   @lsft @altc @z   @x   @c   @v   @b   @!n  @m    ,    .    /    @rsft
-  @lmet @lalt @lctl          spc            ralt  prnt rctl
+  @lmet @lalt @lctl          spc            ralt  @prnt rctl
 ) ;;""
 
 (defalias
@@ -117,6 +117,9 @@
 
   ;; tab behaves as tab when tapped and new layer when hold.
   tab (t! th tab (layer-toggle tab_layer))
+
+  ;; prnt behaves as prnt when tapped and new layer when hold.
+  prnt (t! th prnt (layer-toggle prnt_layer))
 
   ;; caps behaves as esc when tapped and gui modifiers when hold.
   caps (t! th esc @lctl)
@@ -185,16 +188,25 @@
   $rgui (t! th ; (multi (release-key lctl) (layer-toggle tabs_layer)))
 
   ;; key combos.
-;;  [ (t! 1mod_combo lctl $combo_hist_prev)
-  [ (t! 1mod_combo lctl $combo_hist_prev) 
-  ] (t! 1mod_combo lctl $combo_hist_next) 
+  [ (t! 1mod_combo lctl $combo_hist_prev)  
+  ] (t! 1mod_combo lctl $combo_hist_next) ;; ""
   b (t! 1mod_combo lctl $combo_page_up)
   f (t! 1mod_combo lctl $combo_page_down)
-  q (t! 1mod_combo lctl $combo_close_app) ;; ""
+  q (t! 1mod_combo lctl $combo_close_app) 
 
-  spc (t! real_1mod+sft_combo lalt lctl 
+  t (t! 1mod+sft_combo lctl $combo_tab_new $combo_tab_undo_close $combo_tab_undo_close) 
+  w (t! 1mod_combo lctl $combo_tab_close) 
+
+  spc (t! real_2mod+sft_combo lalt lmet lctl lalt
+    $combo_omnisearch_files $combo_omnisearch_file $combo_omnisearch_file
     $combo_select_files $combo_select_opened_files $combo_select_folders)
+
+  lmet (t! th _ (multi lalt (layer-toggle lctl+lalt_layer)))
+  s (t! th s (multi lalt (layer-toggle lctl+lalt_layer)))
 ) ;;""
+
+(deflayermap (lctl+lalt_layer)
+)
 
 (deflayermap (lalt_layout)
   ;; lalt is configured in the physical lmet key (like the opt key in mac).
@@ -240,6 +252,10 @@
   )
 )
 
+(deflayermap (prnt_layer)
+  spc $combo_select_fav
+)
+
 (deflayermap (gui_layer)
   ;; gui button enables windows, desktops, panes and tabs access.
   
@@ -262,6 +278,7 @@
   j (t! th $combo_wnd_down (layer-toggle tabs_layer))
 )
 
+;; == Workspaces layer =====================================================
 (deflayermap (workspaces_layer)
   ;; desktop/screen manipulation
   j $combo_next_screen 
@@ -280,10 +297,14 @@
   h $combo_move_wnd_prev_desktop 
 )
 
+;; == Tabs layer ==========================================================
 (deflayermap (tabs_layer)
   ;; tabs manipulation
   h $combo_tab_prev
   l $combo_tab_next
+  t (fork $combo_tab_new $combo_tab_undo_close (lsft rsft))
+
+  w $combo_tab_close
 
   spc (t! th _ (layer-toggle move_tabs_layer))
 )
@@ -292,6 +313,7 @@
   ;; tabs manipulation
 )
 
+;; == Panes layer =========================================================
 (deflayermap (panes_layer)
   ;; panes manipulation
   h $combo_pane_left
