@@ -2,56 +2,56 @@
   ;; Key combos ============================================================
 
   ;; == Seek & Select combos ===============================================
-  combo_select_files (switch 
+  action_select_files (switch 
     ((input virtual vk_chrome)) C-S-a break
     ((input virtual vk_nvim)) (macro , s f) break
     ((input virtual vk_obsidian)) C-A-o break
     () XX break
   )
-  combo_select_opened_files (switch 
+  action_select_opened_files (switch 
     ((input virtual vk_chrome)) XX break
     ((input virtual vk_nvim)) (macro , spc) break
     ((input virtual vk_obsidian)) C-S-A-o break
     () XX break
   )
-  combo_select_folders (switch 
+  action_select_folders (switch 
     ((input virtual vk_chrome)) XX break
     ((input virtual vk_nvim)) XX break
     ((input virtual vk_obsidian)) C-S-o break
     () XX break
   )
-  combo_select_command (switch
+  action_select_command (switch
     ((input virtual vk_obsidian)) C-A-p break
     () XX break
   )
-  combo_select_symbol (switch
+  action_select_symbol (switch
     ((input virtual vk_obsidian)) A-S-o break
     () XX break
   )
-  combo_omnisearch_files (switch
+  action_omnisearch_files (switch
     ((input virtual vk_obsidian)) C-A-m break
     () XX break
   )
-  combo_omnisearch_file (switch
+  action_omnisearch_file (switch
     ((input virtual vk_obsidian)) C-A-S-m break
     () XX break
   )
   
   ;; == Favs combos ========================================================
-  combo_select_fav (switch
+  action_select_fav (switch
     ((input virtual vk_obsidian)) C-o break
     () XX break
   ) 
 
   ;; == Tabs combos ========================================================
-  combo_tab_next (switch 
+  action_tab_next (switch 
     ((input virtual vk_chrome)) C-tab break
     ((input virtual vk_zellij)) (macro C-g t l ret) break
     ((input virtual vk_nvim)) (macro esc S-; b n e x t ret) break
     ((input virtual vk_obsidian)) C-pgdn break
     () C-tab break
   )
-  combo_tab_prev (switch 
+  action_tab_prev (switch 
     ((input virtual vk_chrome)) C-S-tab break
     ((input virtual vk_zellij)) (macro C-g t h ret) break
     ((input virtual vk_nvim)) (macro esc S-; b p r e v i o u s ret) break
@@ -59,7 +59,7 @@
     () C-S-tab break
   )
 
-  combo_tab_toggle (switch 
+  action_tab_toggle (switch 
     ((input virtual vk_chrome)) A-w break
     ((input virtual vk_zellij)) (macro C-g t tab ret) break
     ((input virtual vk_nvim)) (macro S-; b S-3 ret) break
@@ -67,76 +67,141 @@
     () XX break
   )
 
-  combo_tab_new (switch
+  action_tab_new (switch
+    ((input virtual vk_chrome)) C-t break
     ((input virtual vk_obsidian)) A-C-t break
     () XX break
   )
-  combo_tab_close (switch
+  action_tab_close (switch
+    ((input virtual vk_chrome)) C-w break
     ((input virtual vk_obsidian)) A-C-w break
     () XX break
   )
-  combo_tab_undo_close (switch
+  action_tab_undo_close (switch
+    ((input virtual vk_chrome)) C-S-t break
     ((input virtual vk_obsidian)) A-C-S-t break
     () XX break
   )
 
+  action_tab_goto_1 (switch
+    ((input virtual vk_chrome)) C-1 break
+    ((input virtual vk_obsidian)) C-1 break
+    () XX break
+  )
+  action_tab_goto_2 (switch
+    ((input virtual vk_chrome)) C-2 break
+    ((input virtual vk_obsidian)) C-2 break
+    () XX break
+  )
+  action_tab_goto_3 (switch
+    ((input virtual vk_chrome)) C-3 break
+    ((input virtual vk_obsidian)) C-3 break
+    () XX break
+  )
+  action_tab_goto_4 (switch
+    ((input virtual vk_chrome)) C-4 break
+    ((input virtual vk_obsidian)) C-4 break
+    () XX break
+  )
+  action_tab_goto_5 (switch
+    ((input virtual vk_chrome)) C-5 break
+    ((input virtual vk_obsidian)) C-5 break
+    () XX break
+  )
+  action_tab_goto_6 (switch
+    ((input virtual vk_chrome)) C-6 break
+    ((input virtual vk_obsidian)) C-6 break
+    () XX break
+  )
+  action_tab_goto_7 (switch
+    ((input virtual vk_chrome)) C-7 break
+    ((input virtual vk_obsidian)) C-7 break
+    () XX break
+  )
+  action_tab_goto_8 (switch
+    ((input virtual vk_chrome)) C-8 break
+    ((input virtual vk_obsidian)) C-8 break
+    () XX break
+  )
+  action_tab_goto_last (switch
+    ((input virtual vk_chrome)) C-9 break
+    ((input virtual vk_obsidian)) C-9 break
+    () XX break
+  )
+
   ;; == Panes combos =======================================================
-  combo_pane_left (switch
+  action_pane_left (switch
     ;;((input virtual vk_zellij)) A-left break
+    ((input virtual vk_obsidian)) A-left break
     ((input virtual vk_zellij)) (macro C-g p h ret) break
     ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc h ret) break
     () XX break
   )
-  combo_pane_right (switch
+  action_pane_right (switch
     ;;((input virtual vk_zellij)) A-right break
+    ((input virtual vk_obsidian)) A-right break
     ((input virtual vk_zellij)) (macro C-g p l ret) break
     ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc l ret) break
     () XX break
   )
-  combo_pane_above (switch
+  action_pane_above (switch
     ;;((input virtual vk_zellij)) A-up break
+    ((input virtual vk_obsidian)) A-up break
     ((input virtual vk_zellij)) (macro C-g p k ret) break
     ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc k ret) break
     () XX break
   )
-  combo_pane_below (switch
+  action_pane_below (switch
     ;;((input virtual vk_zellij)) A-down break
+    ((input virtual vk_obsidian)) A-down break
     ((input virtual vk_zellij)) (macro C-g p j ret) break
     ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc j ret) break
     () XX break
   )
-  combo_pane_max (switch 
-      ((input virtual vk_zellij)) (macro C-g p f ret) break
-      ;; ((input virtual vk_nvim)) (macro S-; b S-3 ret) break
-      () XX break
+  action_pane_max (switch 
+    ((input virtual vk_zellij)) (macro C-g p f ret) break
+    ;; ((input virtual vk_nvim)) (macro S-; b S-3 ret) break
+    () XX break
+  )
+  action_pane_h_split (switch
+    ((input virtual vk_obsidian)) A-- break
+    () XX break
+  )
+  action_pane_v_split (switch
+    ((input virtual vk_obsidian)) A-\ break
+    () XX break
+  )
+  action_pane_close (switch
+    ((input virtual vk_obsidian)) A-w break
+    () XX break
   )
 
   ;; == Window combos ======================================================
-  combo_wnd_up M-up
-  combo_wnd_down M-down
-  combo_wnd_left M-left
-  combo_wnd_right M-right
-  combo_wnd_max M-m
+  action_wnd_up M-up
+  action_wnd_down M-down
+  action_wnd_left M-left
+  action_wnd_right M-right
+  action_wnd_max M-m
 
-  combo_move_wnd_next_screen M-S-right
-  combo_move_wnd_prev_screen M-S-left
-  combo_move_wnd_next_desktop M-C-S-right
-  combo_move_wnd_prev_desktop M-C-S-left
+  action_move_wnd_next_screen M-S-right
+  action_move_wnd_prev_screen M-S-left
+  action_move_wnd_next_desktop M-C-S-right
+  action_move_wnd_prev_desktop M-C-S-left
 
-  combo_close_app A-f4
+  action_close_app A-f4
 
   ;; == Desktop combos =====================================================
-  combo_next_desktop M-C-right
-  combo_prev_desktop M-C-left
-  combo_next_screen M-S-down 
-  combo_prev_screen M-S-up
+  action_next_desktop M-C-right
+  action_prev_desktop M-C-left
+  action_next_screen M-S-down 
+  action_prev_screen M-S-up
 
   ;; == History combos =====================================================
-  combo_hist_next (switch
+  action_hist_next (switch
     ((input virtual vk_chrome)) A-right break
     () XX break
   )
-  combo_hist_prev (switch
+  action_hist_prev (switch
     ((input virtual vk_chrome)) A-left break
     () XX break
   )
@@ -144,15 +209,18 @@
   ;; == Editor combos ======================================================
   ;; Ctrl+b can't be bound in foot, so kanata intercepts it send the 
   ;; corresponding correct foot's keybinding for page up.
-  combo_page_up (switch
+  action_page_up (switch
     ((input virtual vk_foot)) S-pgup break
     () C-b break
   )
 
   ;; Ctrl+f can't be bound in foot, so kanata intercepts it send the 
   ;; corresponding correct foot's keybinding for page down.
-  combo_page_down (switch
+  action_page_down (switch
     ((input virtual vk_foot)) S-pgdn break
     () C-f break
   )
+
+  action_restart_kwanata (macro RA-spc 300 s y s t e m c t l spc - - u s e r spc r e s t a r t spc k w a n a t a 300 ent)
+
 )
