@@ -68,183 +68,299 @@
   )
 )
 
-;; == Misc ================================================================
+;; == Util ================================================================
 
 ;; Shorter tap and hold template with default values.
 (deftemplate th (tap hold)
   (tap-hold-press $tap_time $hold_time $tap $hold)
 )
 
-(deftemplate lt (layer)
-  (layer-toggle $layer)
-)
-(deftemplate 2lt (base_layer top_layer)
-  (layer-toggle $base_layer) (layer-toggle $top_layer)
-)
-
+;; Hold modifier and toggle layer.
 (deftemplate mod_layer_toggle (mod layer)
   (multi $mod (layer-toggle $layer)) 
 )
-(deftemplate 2layer_toggle (base_layer top_layer)
-  (multi (layer-toggle $base_layer) (layer-toggle $top_layer)) 
-)
+;; Hold modifier and toggle base layer and then top layer. This 
+;; simulates a hierachy of layers (top layer will inherit the functinality
+;; of base layer and can overwrite any binding at will).
 (deftemplate mod_2layer_toggle (mod base_layer top_layer)
   (multi $mod (layer-toggle $base_layer) (layer-toggle $top_layer))
 )
 
-
-;; If pressed twice, in a short period, issue the combo.
-(deftemplate 2x (combo)
-  (tap-dance-eager 300 (XX $combo))
+;; If pressed twice, in a short period, issue the action.
+(deftemplate 2x (action)
+  (tap-dance-eager 300 (XX $action))
 )
 
-;; If pressed 3-times, in a short period, issue the combo.
-(deftemplate 3x (combo)
-  (tap-dance-eager 400 (XX XX $combo))
+;; If pressed 3-times, in a short period, issue the action.
+(deftemplate 3x (action)
+  (tap-dance-eager 400 (XX XX $action))
 )
 
-;; Release 1 modifier.
-(deftemplate release1 (mod1)
-  (release-key $mod1)
-)
-;; Release 2 modifiers.
-(deftemplate release2 (mod1 mod2)
-  (release-key $mod1) (release-key $mod2)
-)
-;; Release 3 modifiers.
-(deftemplate release3 (mod1 mod2 mod3)
-  (release-key $mod1) (release-key $mod2) (release-key $mod3)
-)
-;; Release 4 modifiers.
-(deftemplate release4 (mod1 mod2 mod3 mod4)
-  (release-key $mod1) (release-key $mod2) (release-key $mod3) (release-key $mod4)
-)
-;; Hold 1 modifier until all keys are released. It uses virtual keys to
-;; allow this functionality (vk_lctl for lctl, ...)
-(deftemplate hold1 (mod1)
-  (if-equal $mod1 lctl (multi (on-press press-virtualkey vk_lctl) 
-    (on-physical-idle 25 release-virtualkey vk_lctl)))
-  (if-equal $mod1 lalt (multi (on-press press-virtualkey vk_lalt) 
-    (on-physical-idle 25 release-virtualkey vk_lalt)))
-  (if-equal $mod1 lmet (multi (on-press press-virtualkey vk_lmet) 
-    (on-physical-idle 25 release-virtualkey vk_lmet)))
-  (if-equal $mod1 rctl (multi (on-press press-virtualkey vk_rctl) 
-    (on-physical-idle 25 release-virtualkey vk_rctl)))
-  (if-equal $mod1 ralt (multi (on-press press-virtualkey vk_ralt) 
-    (on-physical-idle 25 release-virtualkey vk_ralt)))
-  (if-equal $mod1 rmet (multi (on-press press-virtualkey vk_rmet) 
-    (on-physical-idle 25 release-virtualkey vk_rmet)))
-  (if-equal $mod1 lsft (multi (on-press press-virtualkey vk_lsft) 
-    (on-physical-idle 25 release-virtualkey vk_lsft)))
-  (if-equal $mod1 rsft (multi (on-press press-virtualkey vk_rsft) 
-    (on-physical-idle 25 release-virtualkey vk_rsft)))
-)
-;; Hold 2 modifiers until all keys are released. It uses virtual keys to
-;; allow this functionality (vk_lctl for lctl, ...)
-(deftemplate hold2 (mod1 mod2)
-  (t! hold1 $mod1) (t! hold1 $mod2)
-)
-;; Hold 3 modifiers until all keys are released. It uses virtual keys to
-;; allow this functionality (vk_lctl for lctl, ...)
-(deftemplate hold3 (mod1 mod2 mod3)
-  (t! hold1 $mod1) (t! hold1 $mod2) (t! hold1 $mod3)
-)
-;; Hold 4 modifiers until all keys are released. It uses virtual keys to
-;; allow this functionality (vk_lctl for lctl, ...)
-(deftemplate hold4 (mod1 mod2 mod3 mod4)
-  (t! hold1 $mod1) (t! hold1 $mod2) (t! hold1 $mod3) (t! hold1 $mod4)
-)
-;; Releases 1 modifier, issues action, and holds again modifier.
-(deftemplate unmod1 (mod1 action)
-  (multi (t! release1 $mod1) $action (t! hold1 $mod1))
-)
-;; Releases 2 modifiers, issues action, and holds again modifiers.
-(deftemplate unmod2 (mod1 mod2 action)
-  (multi (t! release2 $mod1 $mod2) $action (t! hold2 $mod1 $mod2))
-)
-;; Releases 3 modifiers, issues action, and holds again modifiers.
-(deftemplate unmod3 (mod1 mod2 mod3 action)
-  (multi (t! release3 $mod1 $mod2 $mod3) $action (t! hold3 $mod1 $mod2 $mod3))
-)
-;; Releases 4 modifiers, issues action, and holds again modifiers.
-(deftemplate unmod4 (mod1 mod2 mod3 mod4 action)
-  (multi (t! release4 $mod1 $mod2 $mod3 $mod4) $action (t! hold4 $mod1 $mod2 $mod3 $mod4))
+;; Relase all modifiers and then issue action.
+(deftemplate unmod_all (action)
+  (multi (release-key lctl) (release-key rctl)
+         (release-key lalt) (release-key ralt)
+         (release-key lmet) (release-key rmet)
+         (release-key lsft) (release-key rsft)
+         $action)
 )
 
-;; Returns a list of all other modifiers (for example, for lctl it will return
-;; (lalt ralt lmet rmet).
-(deftemplate _inv_1mod_ (mod)
-  (if-equal $mod lctl (lalt ralt lmet rmet))
-  (if-equal $mod rctl (lalt ralt lmet rmet))
-  (if-equal $mod lalt (lctl rctl lmet rmet))
-  (if-equal $mod ralt (lctl rctl lmet rmet))
-  (if-equal $mod lmet (lctl rctl lalt ralt))
-  (if-equal $mod rmet (lctl rctl lalt ralt))
-)
+;;(deftemplate lt (layer)
+;;  (layer-toggle $layer)
+;;)
+;;(deftemplate 2lt (base_layer top_layer)
+;;  (layer-toggle $base_layer) (layer-toggle $top_layer)
+;;)
 
-;; Returns a list of all other modifiers (for example, for lctl lalt it will 
-;; return (lmet rmet).
-(deftemplate _inv_2mods_ (mod1 mod2)
-  (if-equal $mod1 lctl (if-equal $mod2 lalt (lmet rmet)))
-  (if-equal $mod1 lctl (if-equal $mod2 lmet (lalt ralt)))
-  (if-equal $mod1 rctl (if-equal $mod2 lalt (lmet rmet)))
-  (if-equal $mod1 rctl (if-equal $mod2 lmet (lalt ralt)))
-  (if-equal $mod1 lalt (if-equal $mod2 lctl (lmet rmet)))
-  (if-equal $mod1 lalt (if-equal $mod2 lmet (lctl rctl)))
-  (if-equal $mod1 ralt (if-equal $mod2 lctl (lmet rmet)))
-  (if-equal $mod1 ralt (if-equal $mod2 lmet (lctl rctl)))
-  (if-equal $mod1 lmet (if-equal $mod2 lctl (lalt ralt)))
-  (if-equal $mod1 lmet (if-equal $mod2 lalt (lctl rctl)))
-  (if-equal $mod1 rmet (if-equal $mod2 lctl (lalt ralt)))
-  (if-equal $mod1 rmet (if-equal $mod2 lalt (lctl rctl)))
-  (if-equal $mod1 lctl (if-equal $mod2 ralt (lmet rmet)))
-  (if-equal $mod1 lctl (if-equal $mod2 rmet (lalt ralt)))
-  (if-equal $mod1 rctl (if-equal $mod2 ralt (lmet rmet)))
-  (if-equal $mod1 rctl (if-equal $mod2 rmet (lalt ralt)))
-  (if-equal $mod1 lalt (if-equal $mod2 rctl (lmet rmet)))
-  (if-equal $mod1 lalt (if-equal $mod2 rmet (lctl rctl)))
-  (if-equal $mod1 ralt (if-equal $mod2 rctl (lmet rmet)))
-  (if-equal $mod1 ralt (if-equal $mod2 rmet (lctl rctl)))
-  (if-equal $mod1 lmet (if-equal $mod2 rctl (lalt ralt)))
-  (if-equal $mod1 lmet (if-equal $mod2 ralt (lctl rctl)))
-  (if-equal $mod1 rmet (if-equal $mod2 rctl (lalt ralt)))
-  (if-equal $mod1 rmet (if-equal $mod2 ralt (lctl rctl)))
-)
+;;(deftemplate 2layer_toggle (base_layer top_layer)
+;;  (multi (layer-toggle $base_layer) (layer-toggle $top_layer)) 
+;;)
 
-(deftemplate 1mod_combo (mod1 action)
-  (t! unmod1 $mod1 $action) 
-)
-(deftemplate 1mod+sft_combo (mod1 action lsft_action rsft_action)
+;;;; Release 1 modifier.
+;;(deftemplate release1 (mod1)
+;;  (release-key $mod1)
+;;)
+;;
+;;;; Release 2 modifiers.
+;;(deftemplate release2 (mod1 mod2)
+;;  (release-key $mod1) (release-key $mod2)
+;;)
+;;;; Release 3 modifiers.
+;;(deftemplate release3 (mod1 mod2 mod3)
+;;  (release-key $mod1) (release-key $mod2) (release-key $mod3)
+;;)
+;;;; Release 4 modifiers.
+;;(deftemplate release4 (mod1 mod2 mod3 mod4)
+;;  (release-key $mod1) (release-key $mod2) (release-key $mod3) (release-key $mod4)
+;;)
+
+;;(deftemplate _release_active_mods ()
+;;    (switch
+;;      (lctl) (macro l c t l) fallthrough
+;;      (rctl) (macro r c t l) fallthrough
+;;      (lalt) (macro l a l t) fallthrough
+;;      (ralt) (macro r a l t) fallthrough
+;;      (lmet) (macro l m e t) fallthrough
+;;      (rmet) (macro r m e t) fallthrough
+;;      () (macro n o n e) break
+;;    )
+;;)
+;;(deftemplate _release_active_mods ()
+;;    (switch
+;;      (lctl) (multi (release-key lctl) (on-press press-virtualkey vk_lctl_flag)) fallthrough
+;;      (rctl) (multi (release-key rctl) (on-press press-virtualkey vk_rctl_flag)) fallthrough
+;;      (lalt) (multi (release-key lalt) (on-press press-virtualkey vk_lalt_flag)) fallthrough
+;;      (ralt) (multi (release-key ralt) (on-press press-virtualkey vk_ralt_flag)) fallthrough
+;;      (lmet) (multi (release-key lmet) (on-press press-virtualkey vk_lmet_flag)) fallthrough
+;;      (rmet) (multi (release-key rmet) (on-press press-virtualkey vk_rmet_flag)) fallthrough
+;;    )
+;;)
+
+
+;;(deftemplate _release_active_mods ()
+;;    (switch
+;;      ((input real lctl)) (release-key lctl) fallthrough
+;;      ((input real rctl)) (release-key rctl) fallthrough
+;;      ((input real lalt)) (release-key lalt) fallthrough
+;;      ((input real ralt)) (release-key ralt) fallthrough
+;;      ((input real lmet)) (release-key lmet) fallthrough
+;;      ((input real rmet)) (release-key rmet) fallthrough
+;;      () XX break
+;;    )
+;;)
+
+
+;;(deftemplate _restore_active_mods ()
+;;    (switch
+;;      (vk_lctl_flag) (multi (on-press press-virtualkey vk_lctl) 
+;;                            (on-physical-idle 25 release-virtualkey vk_lctl)
+;;                            (on-physical-idle 25 release-virtualkey vk_lctl_flag)) fallthrough
+;;      (vk_rctl_flag) (multi (on-press press-virtualkey vk_rctl) 
+;;                            (on-physical-idle 25 release-virtualkey vk_rctl) 
+;;                            (on-physical-idle 25 release-virtualkey vk_rctl_flag)) fallthrough
+;;      (vk_lalt_flag) (multi (on-press press-virtualkey vk_lalt) 
+;;                            (on-physical-idle 25 release-virtualkey vk_lalt) 
+;;                            (on-physical-idle 25 release-virtualkey vk_lalt_flag)) fallthrough
+;;      (vk_ralt_flag) (multi (on-press press-virtualkey vk_ralt) 
+;;                            (on-physical-idle 25 release-virtualkey vk_ralt) 
+;;                            (on-physical-idle 25 release-virtualkey vk_ralt_flag)) fallthrough
+;;      (vk_lmet_flag) (multi (on-press press-virtualkey vk_lmet) 
+;;                            (on-physical-idle 25 release-virtualkey vk_lmet) 
+;;                            (on-physical-idle 25 release-virtualkey vk_lmet_flag)) fallthrough
+;;      (vk_rmet_flag) (multi (on-press press-virtualkey vk_rmet) 
+;;                            (on-physical-idle 25 release-virtualkey vk_rmet) 
+;;                            (on-physical-idle 25 release-virtualkey vk_rmet_flag)) fallthrough
+;;    )
+;;)
+;;
+;;(deftemplate unmod&remod (action)
+;;  ;;(multi (t! _release_active_mods) $action (t! _release_active_mods))
+;;  (multi (t! _release_active_mods) $action)
+;;)
+
+;;;; Hold 1 modifier until all keys are released. It uses virtual keys to
+;;;; allow this functionality (vk_lctl for lctl, ...)
+;;(deftemplate hold1 (mod1)
+;;  (if-equal $mod1 lctl (multi (on-press press-virtualkey vk_lctl) 
+;;    (on-physical-idle 25 release-virtualkey vk_lctl)))
+;;  (if-equal $mod1 lalt (multi (on-press press-virtualkey vk_lalt) 
+;;    (on-physical-idle 25 release-virtualkey vk_lalt)))
+;;  (if-equal $mod1 lmet (multi (on-press press-virtualkey vk_lmet) 
+;;    (on-physical-idle 25 release-virtualkey vk_lmet)))
+;;  (if-equal $mod1 rctl (multi (on-press press-virtualkey vk_rctl) 
+;;    (on-physical-idle 25 release-virtualkey vk_rctl)))
+;;  (if-equal $mod1 ralt (multi (on-press press-virtualkey vk_ralt) 
+;;    (on-physical-idle 25 release-virtualkey vk_ralt)))
+;;  (if-equal $mod1 rmet (multi (on-press press-virtualkey vk_rmet) 
+;;    (on-physical-idle 25 release-virtualkey vk_rmet)))
+;;  (if-equal $mod1 lsft (multi (on-press press-virtualkey vk_lsft) 
+;;    (on-physical-idle 25 release-virtualkey vk_lsft)))
+;;  (if-equal $mod1 rsft (multi (on-press press-virtualkey vk_rsft) 
+;;    (on-physical-idle 25 release-virtualkey vk_rsft)))
+;;)
+;;;; Hold 2 modifiers until all keys are released. It uses virtual keys to
+;;;; allow this functionality (vk_lctl for lctl, ...)
+;;(deftemplate hold2 (mod1 mod2)
+;;  (t! hold1 $mod1) (t! hold1 $mod2)
+;;)
+;;;; Hold 3 modifiers until all keys are released. It uses virtual keys to
+;;;; allow this functionality (vk_lctl for lctl, ...)
+;;(deftemplate hold3 (mod1 mod2 mod3)
+;;  (t! hold1 $mod1) (t! hold1 $mod2) (t! hold1 $mod3)
+;;)
+;;;; Hold 4 modifiers until all keys are released. It uses virtual keys to
+;;;; allow this functionality (vk_lctl for lctl, ...)
+;;(deftemplate hold4 (mod1 mod2 mod3 mod4)
+;;  (t! hold1 $mod1) (t! hold1 $mod2) (t! hold1 $mod3) (t! hold1 $mod4)
+;;)
+;;;; Releases 1 modifier, issues action, and holds again modifier.
+;;(deftemplate unmod1 (mod1 action)
+;;  (multi (t! release1 $mod1) $action)
+;;  ;;(multi (t! release1 $mod1) $action (t! hold1 $mod1))
+;;)
+;;;; Releases 2 modifiers, issues action, and holds again modifiers.
+;;(deftemplate unmod2 (mod1 mod2 action)
+;;  (multi (t! release2 $mod1 $mod2) $action (t! hold2 $mod1 $mod2))
+;;)
+;;;; Releases 3 modifiers, issues action, and holds again modifiers.
+;;(deftemplate unmod3 (mod1 mod2 mod3 action)
+;;  (multi (t! release3 $mod1 $mod2 $mod3) $action (t! hold3 $mod1 $mod2 $mod3))
+;;)
+;;;; Releases 4 modifiers, issues action, and holds again modifiers.
+;;(deftemplate unmod4 (mod1 mod2 mod3 mod4 action)
+;;  (multi (t! release4 $mod1 $mod2 $mod3 $mod4) $action (t! hold4 $mod1 $mod2 $mod3 $mod4))
+;;)
+
+
+
+;;;; Returns a list of all other modifiers (for example, for lctl it will return
+;;;; (lalt ralt lmet rmet).
+;;(deftemplate _inv_1mod_ (mod)
+;;  (if-equal $mod lctl (lalt ralt lmet rmet))
+;;  (if-equal $mod rctl (lalt ralt lmet rmet))
+;;  (if-equal $mod lalt (lctl rctl lmet rmet))
+;;  (if-equal $mod ralt (lctl rctl lmet rmet))
+;;  (if-equal $mod lmet (lctl rctl lalt ralt))
+;;  (if-equal $mod rmet (lctl rctl lalt ralt))
+;;)
+;;
+;;;; Returns a list of all other modifiers (for example, for lctl lalt it will 
+;;;; return (lmet rmet).
+;;(deftemplate _inv_2mods_ (mod1 mod2)
+;;  (if-equal $mod1 lctl (if-equal $mod2 lalt (lmet rmet)))
+;;  (if-equal $mod1 lctl (if-equal $mod2 lmet (lalt ralt)))
+;;  (if-equal $mod1 rctl (if-equal $mod2 lalt (lmet rmet)))
+;;  (if-equal $mod1 rctl (if-equal $mod2 lmet (lalt ralt)))
+;;  (if-equal $mod1 lalt (if-equal $mod2 lctl (lmet rmet)))
+;;  (if-equal $mod1 lalt (if-equal $mod2 lmet (lctl rctl)))
+;;  (if-equal $mod1 ralt (if-equal $mod2 lctl (lmet rmet)))
+;;  (if-equal $mod1 ralt (if-equal $mod2 lmet (lctl rctl)))
+;;  (if-equal $mod1 lmet (if-equal $mod2 lctl (lalt ralt)))
+;;  (if-equal $mod1 lmet (if-equal $mod2 lalt (lctl rctl)))
+;;  (if-equal $mod1 rmet (if-equal $mod2 lctl (lalt ralt)))
+;;  (if-equal $mod1 rmet (if-equal $mod2 lalt (lctl rctl)))
+;;  (if-equal $mod1 lctl (if-equal $mod2 ralt (lmet rmet)))
+;;  (if-equal $mod1 lctl (if-equal $mod2 rmet (lalt ralt)))
+;;  (if-equal $mod1 rctl (if-equal $mod2 ralt (lmet rmet)))
+;;  (if-equal $mod1 rctl (if-equal $mod2 rmet (lalt ralt)))
+;;  (if-equal $mod1 lalt (if-equal $mod2 rctl (lmet rmet)))
+;;  (if-equal $mod1 lalt (if-equal $mod2 rmet (lctl rctl)))
+;;  (if-equal $mod1 ralt (if-equal $mod2 rctl (lmet rmet)))
+;;  (if-equal $mod1 ralt (if-equal $mod2 rmet (lctl rctl)))
+;;  (if-equal $mod1 lmet (if-equal $mod2 rctl (lalt ralt)))
+;;  (if-equal $mod1 lmet (if-equal $mod2 ralt (lctl rctl)))
+;;  (if-equal $mod1 rmet (if-equal $mod2 rctl (lalt ralt)))
+;;  (if-equal $mod1 rmet (if-equal $mod2 ralt (lctl rctl)))
+;;)
+;;
+;;(deftemplate combo (action)
+;;  $action
+;;)
+;;(deftemplate Xsft_combo (action lsft_action rsft_action)
+;;  (switch
+;;    (lsft) (t! unmod1 lsft $lsft_action) break
+;;    (rsft) (t! unmod1 rsft $rsft_action) break
+;;    () $action break
+;;  )
+;;)
+;;(deftemplate sft_combo (action sft_action)
+;;  (t! Xsft_combo $action $sft_action $sft_action)
+;;)
+
+(deftemplate Xsft_switch (action lsft_action rsft_action)
   (switch
-    (lsft) (t! unmod2 $mod1 lsft $lsft_action) break
-    (rsft) (t! unmod2 $mod1 rsft $rsft_action) break
-    () (t! unmod1 $mod1 $action) break
+    (lsft) $lsft_action break
+    (rsft) $rsft_action break
+    () $action break
   )
 )
-
-(deftemplate 2mod_combo (mod1 mod2 action)
-  (t! unmod2 $mod1 $mod2 $action) 
-)
-(deftemplate 2mod+sft_combo (mod1 mod2 action lsft_action rsft_action)
-  (switch
-    (lsft) (t! unmod3 $mod1 $mod2 lsft $lsft_action) break
-    (rsft) (t! unmod3 $mod1 $mod2 rsft $rsft_action) break
-    () (t! unmod2 $mod1 $mod2 $action) break
-  )
+(deftemplate sft_switch (action sft_action)
+  (t! Xsft_switch $action $sft_action $sft_action)
 )
 
-
-(deftemplate 3mod_combo (mod1 mod2 mod3 action)
-  (t! unmod3 $mod1 $mod2 $mod3 $action) 
-)
-(deftemplate 3mod+sft_combo (mod1 mod2 mod3 action lsft_action rsft_action)
-  (switch
-    (lsft) (t! unmod4 $mod1 $mod2 $mod3 lsft $lsft_action) break
-    (rsft) (t! unmod4 $mod1 $mod2 $mod3 rsft $rsft_action) break
-    () (t! unmod3 $mod1 $mod2 $mod3 $action) break
-  )
-)
-
+;;(deftemplate 1unmod_combo (mod1 action)
+;;  (t! unmod1 $mod1 $action) 
+;;)
+;;(deftemplate 1unmod+Xsft_combo (mod1 action lsft_action rsft_action)
+;;  (switch
+;;    (lsft) (t! unmod2 $mod1 lsft $lsft_action) break
+;;    (rsft) (t! unmod2 $mod1 rsft $rsft_action) break
+;;    () (t! unmod1 $mod1 $action) break
+;;  )
+;;)
+;;(deftemplate 1unmod+sft_combo (mod1 action sft_action)
+;;  (t! 1unmod+Xsft_combo $mod1 $action $sft_action $sft_action)
+;;)
+;;
+;;(deftemplate 2unmod_combo (mod1 mod2 action)
+;;  (t! unmod2 $mod1 $mod2 $action) 
+;;)
+;;(deftemplate 2unmod+Xsft_combo (mod1 mod2 action lsft_action rsft_action)
+;;  (switch
+;;    (lsft) (t! unmod3 $mod1 $mod2 lsft $lsft_action) break
+;;    (rsft) (t! unmod3 $mod1 $mod2 rsft $rsft_action) break
+;;    () (t! unmod2 $mod1 $mod2 $action) break
+;;  )
+;;)
+;;(deftemplate 2unmod+sft_combo (mod1 mod2 action sft_action)
+;;  (t! 2unmod+Xsft_combo $mod1 $mod2 $action $sft_action $sft_action)
+;;)
+;;
+;;
+;;(deftemplate 3unmod_combo (mod1 mod2 mod3 action)
+;;  (t! unmod3 $mod1 $mod2 $mod3 $action) 
+;;)
+;;(deftemplate 3unmod+Xsft_combo (mod1 mod2 mod3 action lsft_action rsft_action)
+;;  (switch
+;;    (lsft) (t! unmod4 $mod1 $mod2 $mod3 lsft $lsft_action) break
+;;    (rsft) (t! unmod4 $mod1 $mod2 $mod3 rsft $rsft_action) break
+;;    () (t! unmod3 $mod1 $mod2 $mod3 $action) break
+;;  )
+;;)
+;;(deftemplate 3unmod+sft_combo (mod1 mod2 mod3 action sft_action)
+;;  (t! 3unmod+Xsft_combo $mod1 $mod2 $mod3 $action $sft_action $sft_action)
+;;)
+;;
 
 ;;;; It will issue the mod_combo if mod is pressed and no other modifier is
 ;;;; pressed.

@@ -2,225 +2,326 @@
   ;; Key combos ============================================================
 
   ;; == Seek & Select combos ===============================================
-  action_select_files (switch 
+  action_select_files (t! unmod_all (switch 
     ((input virtual vk_chrome)) C-S-a break
     ((input virtual vk_nvim)) (macro , s f) break
     ((input virtual vk_obsidian)) C-A-o break
     () XX break
-  )
-  action_select_opened_files (switch 
+  ))
+  action_select_opened_files (t! unmod_all (switch 
     ((input virtual vk_chrome)) XX break
     ((input virtual vk_nvim)) (macro , spc) break
     ((input virtual vk_obsidian)) C-S-A-o break
     () XX break
-  )
-  action_select_folders (switch 
+  ))
+  action_select_folders (t! unmod_all (switch 
     ((input virtual vk_chrome)) XX break
     ((input virtual vk_nvim)) XX break
     ((input virtual vk_obsidian)) C-S-o break
     () XX break
-  )
-  action_select_command (switch
+  ))
+  action_select_command (t! unmod_all (switch
     ((input virtual vk_obsidian)) C-A-p break
     () XX break
-  )
-  action_select_symbol (switch
+  ))
+  action_select_symbol (t! unmod_all (switch
     ((input virtual vk_obsidian)) A-S-o break
     () XX break
-  )
-  action_omnisearch_files (switch
+  ))
+  action_omnisearch_files (t! unmod_all (switch
     ((input virtual vk_obsidian)) C-A-m break
     () XX break
-  )
-  action_omnisearch_file (switch
+  ))
+  action_omnisearch_file (t! unmod_all (switch
     ((input virtual vk_obsidian)) C-A-S-m break
     () XX break
-  )
+  ))
   
   ;; == Favs combos ========================================================
-  action_select_fav (switch
+  action_select_fav (t! unmod_all (switch
     ((input virtual vk_obsidian)) C-o break
     () XX break
-  ) 
+  )) 
+
+  ;; == Settings combos ====================================================
+  action_settings (t! unmod_all (switch
+    ((input virtual vk_obsidian)) C-A-, break
+    () XX break
+  ))
+ 
 
   ;; == Tabs combos ========================================================
-  action_tab_next (switch 
+  action_tab_next (t! unmod_all (switch 
     ((input virtual vk_chrome)) C-tab break
     ((input virtual vk_zellij)) (macro C-g t l ret) break
     ((input virtual vk_nvim)) (macro esc S-; b n e x t ret) break
     ((input virtual vk_obsidian)) C-pgdn break
     () C-tab break
-  )
-  action_tab_prev (switch 
+  ))
+  action_tab_prev (t! unmod_all (switch 
     ((input virtual vk_chrome)) C-S-tab break
     ((input virtual vk_zellij)) (macro C-g t h ret) break
     ((input virtual vk_nvim)) (macro esc S-; b p r e v i o u s ret) break
     ((input virtual vk_obsidian)) C-pgup break
     () C-S-tab break
-  )
+  ))
 
-  action_tab_toggle (switch 
+  action_tab_toggle (t! unmod_all (switch 
     ((input virtual vk_chrome)) A-w break
     ((input virtual vk_zellij)) (macro C-g t tab ret) break
     ((input virtual vk_nvim)) (macro S-; b S-3 ret) break
     ((input virtual vk_obsidian)) A-q break
     () XX break
-  )
+  ))
 
-  action_tab_new (switch
+  action_tab_new (t! unmod_all (switch
     ((input virtual vk_chrome)) C-t break
     ((input virtual vk_obsidian)) A-C-t break
     () XX break
-  )
-  action_tab_close (switch
+  ))
+  action_tab_close (t! unmod_all (switch
     ((input virtual vk_chrome)) C-w break
     ((input virtual vk_obsidian)) A-C-w break
+    ((input virtual vk_nvim)) C-w break
     () XX break
-  )
-  action_tab_undo_close (switch
+  ))
+  action_tab_undo_close (t! unmod_all (switch
     ((input virtual vk_chrome)) C-S-t break
     ((input virtual vk_obsidian)) A-C-S-t break
     () XX break
-  )
+  ))
 
-  action_tab_goto_1 (switch
+  action_tab_goto_1 (t! unmod_all (switch
     ((input virtual vk_chrome)) C-1 break
     ((input virtual vk_obsidian)) C-1 break
+    ((input virtual vk_nvim)) (macro , Digit1) break
     () XX break
-  )
-  action_tab_goto_2 (switch
+  ))
+  action_tab_goto_2 (t! unmod_all (switch
     ((input virtual vk_chrome)) C-2 break
     ((input virtual vk_obsidian)) C-2 break
+    ((input virtual vk_nvim)) (macro , Digit2) break
     () XX break
-  )
-  action_tab_goto_3 (switch
+  ))
+  action_tab_goto_3 (t! unmod_all (switch
     ((input virtual vk_chrome)) C-3 break
     ((input virtual vk_obsidian)) C-3 break
+    ((input virtual vk_nvim)) (macro , Digit3) break
     () XX break
-  )
-  action_tab_goto_4 (switch
+  ))
+  action_tab_goto_4 (t! unmod_all (switch
     ((input virtual vk_chrome)) C-4 break
     ((input virtual vk_obsidian)) C-4 break
+    ((input virtual vk_nvim)) (macro , Digit4) break
     () XX break
-  )
-  action_tab_goto_5 (switch
+  ))
+  action_tab_goto_5 (t! unmod_all (switch
     ((input virtual vk_chrome)) C-5 break
     ((input virtual vk_obsidian)) C-5 break
+    ((input virtual vk_nvim)) (macro , Digit5) break
     () XX break
-  )
-  action_tab_goto_6 (switch
+  ))
+  action_tab_goto_6 (t! unmod_all (switch
     ((input virtual vk_chrome)) C-6 break
     ((input virtual vk_obsidian)) C-6 break
+    ((input virtual vk_nvim)) (macro , Digit6) break
     () XX break
-  )
-  action_tab_goto_7 (switch
+  ))
+  action_tab_goto_7 (t! unmod_all (switch
     ((input virtual vk_chrome)) C-7 break
     ((input virtual vk_obsidian)) C-7 break
+    ((input virtual vk_nvim)) (macro , Digit7) break
     () XX break
-  )
-  action_tab_goto_8 (switch
+  ))
+  action_tab_goto_8 (t! unmod_all (switch
     ((input virtual vk_chrome)) C-8 break
     ((input virtual vk_obsidian)) C-8 break
+    ((input virtual vk_nvim)) (macro , Digit8) break
     () XX break
-  )
-  action_tab_goto_last (switch
+  ))
+  action_tab_goto_last (t! unmod_all (switch
     ((input virtual vk_chrome)) C-9 break
     ((input virtual vk_obsidian)) C-9 break
+    ((input virtual vk_nvim)) (macro , Digit9) break
     () XX break
-  )
+  ))
 
   ;; == Panes combos =======================================================
-  action_pane_left (switch
+  action_pane_left (t! unmod_all (switch
     ;;((input virtual vk_zellij)) A-left break
     ((input virtual vk_obsidian)) A-left break
     ((input virtual vk_zellij)) (macro C-g p h ret) break
     ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc h ret) break
     () XX break
-  )
-  action_pane_right (switch
+  ))
+  action_pane_right (t! unmod_all (switch
     ;;((input virtual vk_zellij)) A-right break
     ((input virtual vk_obsidian)) A-right break
     ((input virtual vk_zellij)) (macro C-g p l ret) break
     ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc l ret) break
     () XX break
-  )
-  action_pane_above (switch
+  ))
+  action_pane_above (t! unmod_all (switch
     ;;((input virtual vk_zellij)) A-up break
     ((input virtual vk_obsidian)) A-up break
     ((input virtual vk_zellij)) (macro C-g p k ret) break
     ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc k ret) break
     () XX break
-  )
-  action_pane_below (switch
+  ))
+  action_pane_below (t! unmod_all (switch
     ;;((input virtual vk_zellij)) A-down break
     ((input virtual vk_obsidian)) A-down break
     ((input virtual vk_zellij)) (macro C-g p j ret) break
     ((input virtual vk_nvim)) (macro esc S-; w i n c m d spc j ret) break
     () XX break
-  )
-  action_pane_max (switch 
+  ))
+  action_pane_toggle (t! unmod_all (switch 
+    ((input virtual vk_obsidian)) A-q break
+    () XX break
+  ))
+  action_pane_max (t! unmod_all (switch 
     ((input virtual vk_zellij)) (macro C-g p f ret) break
     ;; ((input virtual vk_nvim)) (macro S-; b S-3 ret) break
+    ((input virtual vk_obsidian)) (macro A-s A-S-s) break
     () XX break
-  )
-  action_pane_h_split (switch
+  ))
+  action_pane_h_split (t! unmod_all (switch
     ((input virtual vk_obsidian)) A-- break
     () XX break
-  )
-  action_pane_v_split (switch
+  ))
+  action_pane_v_split (t! unmod_all (switch
     ((input virtual vk_obsidian)) A-\ break
     () XX break
-  )
-  action_pane_close (switch
+  ))
+  action_pane_close (t! unmod_all (switch
     ((input virtual vk_obsidian)) A-w break
     () XX break
-  )
+  ))
+  action_pane_bookmarks (t! unmod_all (switch
+    ((input virtual vk_obsidian)) A-b break
+    () XX break
+  ))
+  action_pane_calendar (t! unmod_all (switch
+    ((input virtual vk_obsidian)) A-c break
+    () XX break
+  ))
+  action_pane_day (t! unmod_all (switch
+    ((input virtual vk_obsidian)) A-d break
+    () XX break
+  ))
+  action_pane_!day (t! unmod_all (switch
+    ((input virtual vk_obsidian)) A-S-d break
+    () XX break
+  ))
+  action_pane_explorer (t! unmod_all (switch
+    ((input virtual vk_obsidian)) A-e break
+    () XX break
+  ))
+  action_pane_find (t! unmod_all (switch
+    ((input virtual vk_obsidian)) C-A-S-f break
+    () XX break
+  ))
+  action_pane_go (t! unmod_all (switch
+    ((input virtual vk_obsidian)) C-A-o break
+    () XX break
+  ))
+  action_pane_main (t! unmod_all (switch
+    ((input virtual vk_obsidian)) A-m break
+    () XX break
+  ))
+  action_pane_outline (t! unmod_all (switch
+    ((input virtual vk_obsidian)) A-o break
+    () XX break
+  ))
+  action_pane_properties (t! unmod_all (switch
+    ((input virtual vk_obsidian)) A-p break
+    () XX break
+  ))
+  action_pane_recent (t! unmod_all (switch
+    ((input virtual vk_obsidian)) A-r break
+    () XX break
+  ))
+  action_pane_left_sidebar (t! unmod_all (switch
+    ((input virtual vk_obsidian)) A-s break
+    () XX break
+  ))
+  action_pane_tags (t! unmod_all (switch
+    ((input virtual vk_obsidian)) A-t break
+    () XX break
+  ))
+  action_pane_vertical_tabs (t! unmod_all (switch
+    ((input virtual vk_obsidian)) (macro A-v m) break
+    () XX break
+  ))
+  action_pane_graph (t! unmod_all (switch
+    ((input virtual vk_obsidian)) A-g break
+    () XX break
+  ))
+  action_pane_backlinks (t! unmod_all (switch
+    ((input virtual vk_obsidian)) A-, break
+    () XX break
+  ))
+  action_pane_outlinks (t! unmod_all (switch
+    ((input virtual vk_obsidian)) A-. break
+    () XX break
+  ))
 
   ;; == Window combos ======================================================
-  action_wnd_up M-up
-  action_wnd_down M-down
-  action_wnd_left M-left
-  action_wnd_right M-right
-  action_wnd_max M-m
+  action_wnd_up    (t! unmod_all  M-up)
+  action_wnd_down  (t! unmod_all M-down)
+  action_wnd_left  (t! unmod_all M-left)
+  action_wnd_right (t! unmod_all M-right)
+  action_wnd_max   (t! unmod_all M-m)
 
-  action_move_wnd_next_screen M-S-right
-  action_move_wnd_prev_screen M-S-left
-  action_move_wnd_next_desktop M-C-S-right
-  action_move_wnd_prev_desktop M-C-S-left
+  action_move_wnd_next_screen  (t! unmod_all M-S-right)
+  action_move_wnd_prev_screen  (t! unmod_all M-S-left)
+  action_move_wnd_next_desktop (t! unmod_all M-C-S-right)
+  action_move_wnd_prev_desktop (t! unmod_all M-C-S-left)
 
-  action_close_app A-f4
+  action_close_app (t! unmod_all A-f4)
 
   ;; == Desktop combos =====================================================
-  action_next_desktop M-C-right
-  action_prev_desktop M-C-left
-  action_next_screen M-S-down 
-  action_prev_screen M-S-up
+  ;;action_next_desktop M-C-right
+  ;;action_prev_desktop M-C-left
+  action_next_desktop (t! unmod_all M-C-right)
+  action_prev_desktop (t! unmod_all M-C-left)
+  action_next_screen  (t! unmod_all M-S-down)
+  action_prev_screen  (t! unmod_all M-S-up)
 
   ;; == History combos =====================================================
-  action_hist_next (switch
-    ((input virtual vk_chrome)) A-right break
+  ;; Ctrl+] ;;""
+  action_hist_next (t! unmod_all (switch
+    ((input virtual vk_chrome))   A-right                 break
+    ((input virtual vk_obsidian)) C-A-right               break
+    ((input virtual vk_nvim))     C-i                     break 
     () XX break
-  )
-  action_hist_prev (switch
-    ((input virtual vk_chrome)) A-left break
+  ))
+  ;; Ctrl+[
+  action_hist_prev (t! unmod_all (switch
+    ((input virtual vk_chrome))   A-left                  break
+    ((input virtual vk_obsidian)) C-A-left                break
+    ((input virtual vk_nvim))     C-o                     break 
     () XX break
-  )
+  ))
 
   ;; == Editor combos ======================================================
   ;; Ctrl+b can't be bound in foot, so kanata intercepts it send the 
   ;; corresponding correct foot's keybinding for page up.
-  action_page_up (switch
+  action_page_up (t! unmod_all (switch
     ((input virtual vk_foot)) S-pgup break
+    ((input virtual vk_obsidian)) C-b break
     () C-b break
-  )
+  ))
 
   ;; Ctrl+f can't be bound in foot, so kanata intercepts it send the 
   ;; corresponding correct foot's keybinding for page down.
-  action_page_down (switch
+  action_page_down (t! unmod_all (switch
     ((input virtual vk_foot)) S-pgdn break
+    ((input virtual vk_obsidian)) C-f break
     () C-f break
-  )
+  ))
 
-  action_restart_kwanata (macro RA-spc 300 s y s t e m c t l spc - - u s e r spc r e s t a r t spc k w a n a t a 300 ent)
+  action_restart_kwanata (t! unmod_all 
+    (macro RA-spc 300 s y s t e m c t l spc - - u s e r spc r e s t a r t spc k w a n a t a 300 ent))
 
 )

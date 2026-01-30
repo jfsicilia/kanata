@@ -21,14 +21,23 @@
 
 ;; Virtual Keys ============================================================
 (defvirtualkeys
-  vk_lctl lctl
-  vk_rctl rctl
+;;  vk_lctl lctl
+;;  vk_rctl rctl
   vk_lalt lalt  ;; Used to mimic lalt+tab with lctl+tab.
-  vk_ralt ralt  ;; Used to mimic lalt+tab with lctl+tab.
-  vk_lmet lmet
-  vk_rmet rmet
-  vk_lsft lsft
-  vk_rsft rsft
+;;  vk_ralt ralt  ;; Used to mimic lalt+tab with lctl+tab.
+;;  vk_lmet lmet
+;;  vk_rmet rmet
+;;  vk_lsft lsft
+;;  vk_rsft rsft
+;;
+;;  vk_lctl_flag XX
+;;  vk_rctl_flag XX
+;;  vk_lalt_flag XX
+;;  vk_ralt_flag XX
+;;  vk_lmet_flag XX
+;;  vk_rmet_flag XX
+;;  vk_lsft_flag XX
+;;  vk_rsft_flag XX
 
   vk_alt_chars XX ;; Used to toggle alternative characters layout for other 
                   ;; languages.
@@ -65,7 +74,7 @@
   ;/gui ;
 
   esc/edit caps
-  altc lsgt
+  lang/num lsgt
   !lmet lctl
   !lalt lmet
   !lctl lalt
@@ -96,7 +105,7 @@
   grv        1          2          3          4          5          6          7          8          9          0          -          =      bspc
   @tab       @q         @w         @e         @r         @t         @y         @u         @i         @o         @p         [          ]      \
   @esc/edit  @a/gui     @s/lalt    @d/lsft    @f/lctl    @g/lmet    @h/lmet    @j/lctl    @k/rsft    @l/lalt    @;/gui     '          ret
-  @lsft      @altc      @z         @x         @c         @v         @b         @n         @m         ,          .          /          @rsft  
+  @lsft      @lang/num  @z         @x         @c         @v         @b         @n         @m         ,          .          /          @rsft  
   @!lmet     @!lalt     @!lctl                           spc                              @apps      @bookm     rctl      
 ) ;;""
 
@@ -107,7 +116,7 @@
   grv        1          2          3          4          5          6          7          8          9          0          -          =      bspc
   @tab       @q         @w         @!e        @r         @t         @y         @!u        @!i        @!o        @p         [          ]      \
   @esc/edit  @!a/gui    @s/lalt    @d/lsft    @f/lctl    @g/lmet    @h/lmet    @j/lctl    @k/rsft    @l/lalt    @;/gui     '          ret
-  @lsft      @altc      @z         @x         @c         @v         @b         @!n        @m         ,          .          /          @rsft  
+  @lsft      @lang/num  @z         @x         @c         @v         @b         @!n        @m         ,          .          /          @rsft  
   @!lmet     @!lalt     @!lctl                           spc                              @apps      @bookm     rctl      
 ) ;;""
 
@@ -123,9 +132,9 @@
     (on-release release-vkey vk_lalt) ;; (lctl+tab mimics lalt+tab)
   )
 
-  ;; lalt behaves normally except lalt+tab that mimics lalt+`
-  lalt (t! th lalt (t! mod_layer_toggle lalt lalt_layer))
-  !lalt (t! th lalt (t! mod_2layer_toggle lalt lalt_layer !lalt_layer))
+  ;; If lalt is pressed twice, in a short period, it issues a pane toggle.
+  lalt (t! th (t! 2x $action_pane_toggle) (t! mod_layer_toggle lalt lalt_layer))
+  !lalt (t! th (t! 2x $action_pane_toggle) (t! mod_2layer_toggle lalt lalt_layer !lalt_layer))
 
   ;; lmet behaves normally except that lmet+tab mimics ctrl+tab functionality
   ;; (tipically goes to next/previous tab/editor).
@@ -160,7 +169,7 @@
       ()  (layer-switch default_alt) break
     )
   )
-  altc (t! th @toggle_kbd_lang (layer-toggle altc_layer))  
+  lang/num (t! th @toggle_kbd_lang (layer-toggle lang/num_layer))  
 
   a/gui  (t! homerowmod $tap_time 450 a @gui)
   s/lalt (t! homerowmod $tap_time 400 s @lalt)
@@ -216,14 +225,23 @@
   $;/gui (t! th ; (multi (release-key lctl) (layer-toggle tabs_layer)))
 
   ;; key combos.
-  [ (t! 1mod_combo lctl $action_hist_prev)  
-  ] (t! 1mod_combo lctl $action_hist_next) ;; ""
-  b (t! 1mod_combo lctl $action_page_up)
-  f (t! 1mod_combo lctl $action_page_down)
-  q (t! 1mod_combo lctl $action_close_app) 
 
-  t (t! 1mod+sft_combo lctl $action_tab_new $action_tab_undo_close $action_tab_undo_close) 
-  w (t! 1mod_combo lctl $action_tab_close) 
+  ;; History
+  [ $action_hist_prev
+  ] $action_hist_next
+
+  ;; Edit
+  b $action_page_up
+  f $action_page_down
+
+  q $action_close_app
+
+  ;; Settings
+  , $action_settings
+
+  ;; Tabs
+  t (t! sft_switch $action_tab_new $action_tab_undo_close) 
+  w $action_tab_close
 
   ;; == LALT =========================
   $!lalt  (t! th lalt (t! mod_layer_toggle lalt lctl+lalt_layer))
@@ -240,8 +258,7 @@
 
 ;; "" !LCTL_LAYER """""""""""""""""""
 (deflayermap (!lctl_layer)
-  spc (t! 1mod+sft_combo lctl 
-         $action_select_files $action_select_opened_files $action_select_folders)
+  spc (t! Xsft_switch $action_select_files $action_select_opened_files $action_select_folders)
 
   ;; == LALT =========================
   $!lalt  (t! th lalt (t! mod_2layer_toggle lalt lctl+lalt_layer !lctl+lalt_layer))
@@ -265,7 +282,6 @@
   $a/gui (t! th a (multi (release-key lalt) (layer-toggle workspaces_layer)))
   $;/gui (t! th ; (multi (release-key lalt) (layer-toggle workspaces_layer)))
 
-
   ;; == LCTL =========================
   $!lctl  (t! th lctl (t! mod_layer_toggle lctl lctl+lalt_layer))
   $f/lctl (t! th f    (t! mod_layer_toggle lctl lctl+lalt_layer))
@@ -281,7 +297,7 @@
 
 ;; "" !LALT_LAYER """""""""""""""""""
 (deflayermap (!lalt_layer)
-  spc (t! 1mod_combo lalt $action_select_command)
+  spc $action_select_command
 
   ;; == LCTL =========================
   $!lctl  (t! th lctl (t! mod_2layer_toggle lctl lctl+lalt_layer !lctl+lalt_layer))
@@ -320,7 +336,7 @@
 
 ;; "" !LMET_LAYER """""""""""""""""""
 (deflayermap (!lmet_layer)
-  spc (t! 1mod_combo lmet $action_select_symbol) 
+  spc $action_select_symbol
 
   ;; == LALT =========================
   $!lalt  (t! th lalt (t! mod_2layer_toggle lalt lalt+lmet_layer !lalt+lmet_layer))
@@ -349,8 +365,7 @@
 
 ;; "" !LCTL+LALT_LAYER """""""""""""""""""
 (deflayermap (!lctl+lalt_layer)
-  spc (t! 2mod+sft_combo lctl lalt 
-    $action_omnisearch_files $action_omnisearch_file $action_omnisearch_file)
+  spc (t! sft_switch $action_omnisearch_files $action_omnisearch_file)
   
   ;; == LMET =========================
   $!lmet  (t! th lmet (t! mod_2layer_toggle lmet lctl+lalt+lmet_layer !lctl+lalt+lmet_layer))
@@ -400,7 +415,6 @@
 
 ;; "" LCTL+LALT+LMET_LAYER """""""""""""""""""
 (deflayermap (lctl+lalt+lmet_layer)
-
 ;; "" LCTL+LALT+LMET_LAYER """""""""""""""""""
 ) 
 
@@ -438,7 +452,8 @@
   ;; tab+r reloads kanata configuration.
   r (fork 
     lrld 
-    (multi (t! release2 lsft rsft) $action_restart_kwanata)
+    $action_restart_kwanata
+;;    (multi (t! release2 lsft rsft) $action_restart_kwanata)
     (lsft rsft)
   )
 ;; "" TAB_LAYER """"""""""""""""""""""""""""""
@@ -460,8 +475,8 @@
 ;; "" EDIT_LAYER """"""""""""""""""""""""""""""
 )
 
-;; "" ALTC_LAYER +"""""""""""""""""""""""""""""
-(deflayermap (altc_layer)
+;; "" LANG_NUM_LAYER """"""""""""""""""""""""""
+(deflayermap (lang/num_layer)
   u 7
   i 8
   o 9
@@ -473,7 +488,7 @@
   . 3
   spc 0
   ralt .
-;; "" ALTC_LAYER """"""""""""""""""""""""""""""
+;; "" LANG_NUM_LAYER """"""""""""""""""""""""""""""
 )
 
 ;; "" GUI_LAYER """"""""""""""""""""""""""""""
@@ -485,8 +500,8 @@
   $!lmet (t! th XX (layer-toggle workspaces_layer)) 
 
   ;; Panes manipulation.
-  $d/lsft (t! th XX (layer-toggle panes_layer))
-  $!lalt (t! th XX (layer-toggle panes_layer)) 
+  $d/lsft (t! th $action_pane_toggle (layer-toggle panes_layer))
+  $!lalt (t! th $action_pane_toggle (layer-toggle panes_layer)) 
 
   ;; Tabs manipulation.
   $f/lctl (t! th $action_tab_toggle (layer-toggle tabs_layer))
@@ -564,6 +579,22 @@
   \     $action_pane_v_split
 
   w     $action_pane_close
+
+  ;; toggle/open panes
+  b     $action_pane_bookmarks
+  c     $action_pane_calendar
+  d     (t! sft_switch $action_pane_day $action_pane_!day)
+  e     $action_pane_explorer
+  g     $action_pane_go
+  m     $action_pane_main
+  o     $action_pane_outline
+  p     $action_pane_properties
+  s     $action_pane_left_sidebar
+  t     $action_pane_tags
+  v     $action_pane_vertical_tabs
+  ;     $action_pane_graph
+  ,     $action_pane_backlinks
+  .     $action_pane_outlinks
 
   spc (t! th $action_pane_max (layer-toggle move_panes_layer))
 )
