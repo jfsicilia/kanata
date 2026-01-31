@@ -105,6 +105,39 @@
          $action)
 )
 
+;;(deftemplate Xsft_switch (action lsft_action rsft_action)
+;;  (switch
+;;    (lsft) $lsft_action break
+;;    (rsft) $rsft_action break
+;;    () $action break
+;;  )
+;;)
+;;
+;;(deftemplate sft_switch (action sft_action)
+;;  (t! Xsft_switch $action $sft_action $sft_action)
+;;)
+;;
+;;(deftemplate spc_switch (action spc_action)
+;;  (switch
+;;    (spc) $spc_action break
+;;    () $action break
+;;  )
+;;)
+
+;;(deftemplate spc/Xsft_switch (action spc/lsft_action spc/rsft_action)
+;;  (switch
+;;    (spc) $spc/lsft_action break
+;;    (lsft) $spc/lsft_action break
+;;    (rsft) $spc/rsft_action break
+;;    () $action break
+;;  )
+;;)
+;;
+;;(deftemplate spc/sft_switch (action spc/sft_action)
+;;  (t! spc/Xsft_switch $action $spc/sft_action $spc/sft_action)
+;;)
+
+
 ;;(deftemplate lt (layer)
 ;;  (layer-toggle $layer)
 ;;)
@@ -306,17 +339,6 @@
 ;;(deftemplate sft_combo (action sft_action)
 ;;  (t! Xsft_combo $action $sft_action $sft_action)
 ;;)
-
-(deftemplate Xsft_switch (action lsft_action rsft_action)
-  (switch
-    (lsft) $lsft_action break
-    (rsft) $rsft_action break
-    () $action break
-  )
-)
-(deftemplate sft_switch (action sft_action)
-  (t! Xsft_switch $action $sft_action $sft_action)
-)
 
 ;;(deftemplate 1unmod_combo (mod1 action)
 ;;  (t! unmod1 $mod1 $action) 
