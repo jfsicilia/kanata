@@ -21,48 +21,34 @@
 
 ;; Virtual Keys ============================================================
 (defvirtualkeys
-;;  vk_lctl lctl
-;;  vk_rctl rctl
   vk_lalt lalt  ;; Used to mimic lalt+tab with lctl+tab.
-;;  vk_ralt ralt  ;; Used to mimic lalt+tab with lctl+tab.
-;;  vk_lmet lmet
-;;  vk_rmet rmet
-;;  vk_lsft lsft
-;;  vk_rsft rsft
-;;
-;;  vk_lctl_flag XX
-;;  vk_rctl_flag XX
-;;  vk_lalt_flag XX
-;;  vk_ralt_flag XX
-;;  vk_lmet_flag XX
-;;  vk_rmet_flag XX
-;;  vk_lsft_flag XX
-;;  vk_rsft_flag XX
 
-  vk_alt_chars XX ;; Used to toggle alternative characters layout for other 
-                  ;; languages.
+  vk_alt_chars    XX ;; Used to toggle alternative characters layout for other 
+                    ;; languages.
 
-  vk_fast_typing XX ;; Used to allow fasttyping without triggering modifiers 
-                    ;; combos with homrowmod.
+  vk_fast_typing  XX ;; Used to allow fasttyping without triggering modifiers 
+                     ;; combos with homrowmod.
 
   ;; These virtual keys are used by an external program that detects the active 
   ;; window and tells kanata which app is, by pressing one of the next 
   ;; virtual keys. When there is a change in the active window, previous
   ;; virtual key is released and new virtual key is pressed.
-  vk_chrome XX
-  vk_foot XX
-  vk_nvim XX
-  vk_zellij XX
-  vk_obsidian XX
+  vk_chrome       XX
+  vk_foot         XX
+  vk_nvim         XX
+  vk_zellij       XX
+  vk_obsidian     XX
 )
 
 ;; Variables ===============================================================
 (defvar
   ;; Time config
-  tap_time 220
+  tap_time  220
   hold_time 160
 
-  a/gui a
+  ;; Homerowmod, keys in middle line of keyboard behaves as normal when
+  ;; tap and modifiers when hold (gui, alt, sft, ctl and met).
+  a/gui  a
   s/lalt s
   d/lsft d
   f/lctl f
@@ -71,14 +57,24 @@
   j/lctl j
   k/rsft k
   l/lalt l
-  ;/gui ;
+  ;/gui  ;
 
+  ;; Caps behaves like esc when tap and edit layer while hold.
   esc/edit caps
+  ;; <> Key (Spanish keyboard) behaves like lang toggle when tap and num layer 
+  ;; while hold.
   lang/num lsgt
+
+  ;; Y use physical lalt key as lctl, physical lmet key as lalt and physical
+  ;; lctl key as lmet.
   !lmet lctl
   !lalt lmet
   !lctl lalt
+
+  ;; Physical ralt key will be used for apps launching/focusing.
   apps ralt
+
+  ;; Physical prnt key will be used for bookmarks.
   bookm prnt
 )
 
@@ -123,39 +119,46 @@
 (defalias
   lctl (multi 
     ;; If lctl is pressed twice, in a short period, it issues a tab toggle.
+    ;; If hold switch to lctl_layer.
     (t! th (t! 2x $action_tab_toggle) (t! mod_layer_toggle lctl lctl_layer))
     (on-release release-vkey vk_lalt) ;; (lctl+tab mimics lalt+tab)
   )
   !lctl (multi 
-    ;; If lctl is pressed twice, in a short period, it issues a tab toggle.
+    ;; If lctl is pressed twice, in a short period, it issues a tab toggle. 
+    ;; If hold switch to lctl_layer and !lctl_layer on top of it.
     (t! th (t! 2x $action_tab_toggle) (t! mod_2layer_toggle lctl lctl_layer !lctl_layer))
     (on-release release-vkey vk_lalt) ;; (lctl+tab mimics lalt+tab)
   )
 
   ;; If lalt is pressed twice, in a short period, it issues a pane toggle.
+  ;; If hold switch to lalt_layer.
   lalt (t! th (t! 2x $action_pane_toggle) (t! mod_layer_toggle lalt lalt_layer))
+  ;; If lalt is pressed twice, in a short period, it issues a pane toggle.
+  ;; If hold switch to lalt_layer and !lalt_layer on top of it.
   !lalt (t! th (t! 2x $action_pane_toggle) (t! mod_2layer_toggle lalt lalt_layer !lalt_layer))
 
-  ;; lmet behaves normally except that lmet+tab mimics ctrl+tab functionality
-  ;; (tipically goes to next/previous tab/editor).
+  ;; If hold switch to lmet_layer.
   lmet (t! th lmet (t! mod_layer_toggle lmet lmet_layer))
+  ;; If hold switch to lmet_layer and !lmet_layer on top of it.
   !lmet (t! th lmet (t! mod_2layer_toggle lmet lmet_layer !lmet_layer))
 
-  ;; gui enables gui_layer for commanding desktops, tabs, panes, windows.
+  ;; Switch to gui_layer, that enables commanding desktops, tabs, panes, windows.
   gui (layer-toggle gui_layer)
 
   ;; lsft and rsft behaves normally except that lsft+rsft goes to next tab and
-  ;; rsft+lsft goes to prev tab.
+  ;; rsft+lsft goes to prev tab. Also tapping twice on lsft or rsft goes
+  ;; to previous tab or next tab respectively.
   lsft (t! th (t! 2x $action_tab_prev) (t! mod_layer_toggle lsft lsft_layer))
   rsft (t! th (t! 2x $action_tab_next) (t! mod_layer_toggle rsft rsft_layer))
 
-  ;; tab behaves as tab when tapped and new layer when hold.
+  ;; tab behaves as tab when tapped and tab-layer when hold.
   tab (t! th tab (layer-toggle tab_layer))
 
-  ;; prnt behaves as prnt when tapped and new layer when hold.
-  bookm (t! th prnt (layer-toggle prnt_layer))
+  ;; Pyhsical prnt behaves as prnt when tapped and bookm_layer when hold.
+  bookm (t! th $bookm (layer-toggle bookm_layer))
 
-  apps _
+  ;; Physical ralt behaves switches apps_layer when hold.
+  apps (t! th $apps (layer-toggle apps_layer)) 
 
   ;; caps behaves as esc when tapped and gui modifiers when hold.
   esc/edit (t! th esc (layer-toggle edit_layer))
@@ -201,7 +204,9 @@
   ;; "" ALIAS """"""""""""""""""""""""
 )
   
-;; "" LCTL_LAYER """""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" LCTL_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lctl_layer)
   ;; lctl is configured in the physical lalt key (like the cmd key in mac).
   ;; Special treatment is used to allow lctl+tab to mimic alt+tab to switch 
@@ -228,7 +233,7 @@
 
   ;; History
   [ $action_hist_prev
-  ] $action_hist_next
+  ] $action_hist_next ;; ""
 
   ;; Edit
   b $action_page_up
@@ -256,7 +261,9 @@
 ;; "" LCTL_LAYER """""""""""""""""""
 ) 
 
-;; "" !LCTL_LAYER """""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" !LCTL_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lctl_layer)
   spc (t! Xsft_switch $action_select_files $action_select_opened_files $action_select_folders)
 
@@ -273,7 +280,9 @@
 ;; "" !LCTL_LAYER """""""""""""""""""
 )
 
-;; "" LALT_LAYER """""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" LALT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lalt_layer)
   ;; lalt is configured in the physical lmet key (like the opt key in mac).
   ;; alt+tab works as alt+`
@@ -295,7 +304,9 @@
 ;; "" LALT_LAYER """""""""""""""""""
 ) 
 
-;; "" !LALT_LAYER """""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" !LALT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lalt_layer)
   spc $action_select_command
 
@@ -312,7 +323,10 @@
 ;; "" !LALT_LAYER """""""""""""""""""
 )
 
-;; "" LMET_LAYER """""""""""""""""""
+
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" LMET_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lmet_layer)
   ;; lmet is configured in the physical lctl key.
 
@@ -334,7 +348,9 @@
 ;; "" LMET_LAYER """""""""""""""""""
 ) 
 
-;; "" !LMET_LAYER """""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" !LMET_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lmet_layer)
   spc $action_select_symbol
 
@@ -352,7 +368,9 @@
 )
 
 
-;; "" LCTL+LALT_LAYER """""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" LCTL+LALT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lctl+lalt_layer)
 
   ;; == LMET =========================
@@ -363,7 +381,9 @@
 ;; "" LCTL+LALT_LAYER """""""""""""""""""
 ) 
 
-;; "" !LCTL+LALT_LAYER """""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" !LCTL+LALT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lctl+lalt_layer)
   spc (t! sft_switch $action_omnisearch_files $action_omnisearch_file)
   
@@ -371,10 +391,13 @@
   $!lmet  (t! th lmet (t! mod_2layer_toggle lmet lctl+lalt+lmet_layer !lctl+lalt+lmet_layer))
   $g/lmet (t! th g    (t! mod_2layer_toggle lmet lctl+lalt+lmet_layer !lctl+lalt+lmet_layer))
   $h/lmet (t! th h    (t! mod_2layer_toggle lmet lctl+lalt+lmet_layer !lctl+lalt+lmet_layer))
+
 ;; "" !LCTL+LALT_LAYER """""""""""""""""""
 )
 
-;; "" LCTL+LMET_LAYER """""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" LCTL+LMET_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lctl+lmet_layer)
   ;; == LALT =========================
   $!lalt  (t! th lalt (t! mod_layer_toggle lalt lctl+lalt+lmet_layer))
@@ -384,7 +407,9 @@
 ;; "" LCTL+LMET_LAYER """""""""""""""""""
 ) 
 
-;; "" !LCTL+LMET_LAYER """""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" !LCTL+LMET_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lctl+lmet_layer)
   ;; == LALT =========================
   $!lalt  (t! th lalt (t! mod_2layer_toggle lalt lctl+lalt+lmet_layer !lctl+lalt+lmet_layer))
@@ -394,7 +419,9 @@
 ;; "" !LCTL+LMET_LAYER """""""""""""""""""
 )
 
-;; "" LALT+LMET_LAYER """""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" LALT+LMET_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lalt+lmet_layer)
   ;; == LCTL =========================
   $!lctl  (t! th lctl (t! mod_layer_toggle lctl lctl+lalt+lmet_layer))
@@ -404,28 +431,38 @@
 ;; "" LALT+LMET_LAYER """""""""""""""""""
 ) 
 
-;; "" !LALT+LMET_LAYER """""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" !LALT+LMET_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lalt+lmet_layer)
   ;; == LCTL =========================
   $!lctl  (t! th lctl (t! mod_2layer_toggle lctl lctl+lalt+lmet_layer !lctl+lalt+lmet_layer))
   $f/lctl (t! th f    (t! mod_2layer_toggle lctl lctl+lalt+lmet_layer !lctl+lalt+lmet_layer))
   $j/lctl (t! th j    (t! mod_2layer_toggle lctl lctl+lalt+lmet_layer !lctl+lalt+lmet_layer))
+
 ;; "" !LALT+LMET_LAYER """""""""""""""""""
 )
 
-;; "" LCTL+LALT+LMET_LAYER """""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" LCTL+LALT+LMET_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lctl+lalt+lmet_layer)
+
 ;; "" LCTL+LALT+LMET_LAYER """""""""""""""""""
 ) 
 
-;; "" !LCTL+LALT+LMET_LAYER """""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" !LCTL+LALT+LMET_LAYER """""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lctl+lalt+lmet_layer)
 
 ;; "" !LCTL+LALT+LMET_LAYER """""""""""""""""""
 ) 
 
 
-;; "" LSFT_LAYER """"""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lsft_layer)
   ;; Pressing lsft+rsft (in that order) issues tab_next combo.
   rsft (multi (release-key lsft) $action_tab_next)
@@ -437,35 +474,41 @@
 ;; "" LSFT_LAYER """"""""""""""""""""""""""""""
 )
 
-;; "" RSFT_LAYER """"""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (rsft_layer)
   ;; Pressing rsft+lsft (in that order) issues tab_prev combo.
   lsft (multi (release-key rsft) $action_tab_prev)
 
   $a/gui (t! th a (multi (release-key rsft) (layer-toggle panes_layer)))
   $;/gui (t! th ; (multi (release-key rsft) (layer-toggle panes_layer)))
+
 ;; "" RSFT_LAYER """"""""""""""""""""""""""""""
 )
 
-;; "" TAB_LAYER """"""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" TAB_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (tab_layer)
   ;; tab+r reloads kanata configuration.
-  r (fork 
-    lrld 
-    $action_restart_kwanata
-;;    (multi (t! release2 lsft rsft) $action_restart_kwanata)
-    (lsft rsft)
-  )
+  r (fork lrld $action_restart_kwanata (lsft rsft))
+
 ;; "" TAB_LAYER """"""""""""""""""""""""""""""
 )
 
-;; "" PRNT_LAYER """""""""""""""""""""""""""""
-(deflayermap (prnt_layer)
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" BOOKM_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (bookm_layer)
   spc $action_select_fav
-;; "" PRNT_LAYER """""""""""""""""""""""""""""
+
+;; "" BOOKM_LAYER """""""""""""""""""""""""""""
 )
 
-;; "" EDIT_LAYER +"""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" EDIT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (edit_layer)
   j down
   k up
@@ -475,7 +518,9 @@
 ;; "" EDIT_LAYER """"""""""""""""""""""""""""""
 )
 
-;; "" LANG_NUM_LAYER """"""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" LANG_NUM_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lang/num_layer)
   u 7
   i 8
@@ -488,10 +533,19 @@
   . 3
   spc 0
   ralt .
+
 ;; "" LANG_NUM_LAYER """"""""""""""""""""""""""""""
 )
 
-;; "" GUI_LAYER """"""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" APPS_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (apps_layer)
+)
+
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" GUI_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (gui_layer)
   ;; gui button enables windows, desktops, panes and tabs access.
   
@@ -513,10 +567,13 @@
   $l/lalt (t! th $action_wnd_right (layer-toggle workspaces_layer))
   $k/rsft (t! th $action_wnd_up (layer-toggle panes_layer))
   $j/lctl (t! th $action_wnd_down (layer-toggle tabs_layer))
+
 ;; "" GUI_LAYER """"""""""""""""""""""""""""""
 )
 
-;; == Workspaces layer =====================================================
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" Workspaces layer """"""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (workspaces_layer)
   ;; desktop/screen manipulation
   j $action_next_screen 
@@ -525,17 +582,26 @@
   h $action_prev_desktop
 
   spc (t! th _ (layer-toggle move_workspaces_layer))
+
+  ;; "" Workspaces layer """"""""""""""""""""
 )
 
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" Move workspaces layer """""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (move_workspaces_layer)
   ;; desktop/screen manipulation
   j $action_move_wnd_next_screen 
   k $action_move_wnd_prev_screen 
   l $action_move_wnd_next_desktop 
   h $action_move_wnd_prev_desktop 
+
+  ;; "" Move workspaces layer """"""""""""""""""""
 )
 
-;; == Tabs layer ==========================================================
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" Tabs layer """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (tabs_layer)
   ;; tabs manipulation
   h     $action_tab_prev
@@ -557,13 +623,22 @@
   9 $action_tab_goto_last
 
   spc (t! th _ (layer-toggle move_tabs_layer))
+
+  ;; "" Tabs layer """"""""""""""""""""
 )
 
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" Move tabs layer """""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (move_tabs_layer)
   ;; tabs manipulation
+
+  ;; "" Move tabs layer """""""""""""""
 )
 
-;; == Panes layer =========================================================
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" Panes layer """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (panes_layer)
   ;; panes manipulation
   h     $action_pane_left
@@ -597,9 +672,16 @@
   .     $action_pane_outlinks
 
   spc (t! th $action_pane_max (layer-toggle move_panes_layer))
+
+  ;; "" Panes layer """"""""""""""""""""""""
 )
 
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" Move panes layer """"""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (move_panes_layer)
   ;; panes manipulation
+
+  ;; "" Move panes layer """"""""""""""""""
 )
 
