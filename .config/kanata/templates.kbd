@@ -76,15 +76,32 @@
 )
 
 ;; Hold modifier and toggle layer.
-(deftemplate mod_layer_toggle (mod layer)
+(deftemplate toggle_mod_layer (mod layer)
   (multi $mod (layer-toggle $layer)) 
 )
+
 ;; Hold modifier and toggle base layer and then top layer. This 
 ;; simulates a hierachy of layers (top layer will inherit the functinality
 ;; of base layer and can overwrite any binding at will).
-(deftemplate mod_2layer_toggle (mod base_layer top_layer)
+(deftemplate toggle_mod_2layer (mod base_layer top_layer)
   (multi $mod (layer-toggle $base_layer) (layer-toggle $top_layer))
 )
+
+(deftemplate toggle_2layer (base_layer top_layer)
+  (multi (layer-toggle $base_layer) (layer-toggle $top_layer))
+)
+
+;; Hold modifier and toggle base layer and then top layer. This 
+;; simulates a hierachy of layers (top layer will inherit the functinality
+;; of base layer and can overwrite any binding at will).
+(deftemplate toggle_mod_3layer (mod base_layer medium_layer top_layer)
+  (multi $mod (layer-toggle $base_layer) (layer-toggle $medium_layer) (layer-toggle $top_layer))
+)
+
+(deftemplate toggle_3layer (base_layer medium_layer top_layer)
+  (multi (layer-toggle $base_layer) (layer-toggle $medium_layer) (layer-toggle $top_layer))
+)
+
 
 ;; If pressed twice, in a short period, issue the action.
 (deftemplate 2x (action)
