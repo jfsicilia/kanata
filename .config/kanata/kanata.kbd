@@ -5,10 +5,12 @@
 
 ;; Virtual Keys ============================================================
 (defvirtualkeys
-  ;; These virtual keys are used by an external program that detects the active 
-  ;; window and tells kanata which app is, by pressing one of the next 
-  ;; virtual keys. When there is a change in the active window, previous
-  ;; virtual key is released and new virtual key is pressed.
+  ;; These virtual keys are used by an external program that detects the active
+  ;; window and tells Kanata which app is active by pressing one of the following
+  ;; virtual keys. When the active window changes, the previously pressed
+  ;; virtual key is released and a new virtual key is pressed.
+  ;; These virtual keys enable the possibility of having tailored bindings
+  ;; per application.
   vk_chrome       XX
   vk_foot         XX
   vk_nvim         XX
@@ -22,7 +24,7 @@
 (include templates.kbd)
 
 ;; Apps layer toggle template ============================================
-(deftemplate _toggle_app_layer (mod alt layer)
+(deftemplate toggle_app_layer (mod alt layer)
   (switch
     (t! _app_layer_condition $mod $alt $layer "chrome") 
     (t! _app_layer_condition $mod $alt $layer "foot") 
@@ -35,14 +37,11 @@
   )
 )
 
-;; Layers  ===============================================================
-(include layers.kbd)
+;; Setup =================================================================
+(include setup.kbd)
 
 ;; Actions ===============================================================
 (include actions.kbd)
-
-;; Setup =================================================================
-(include setup.kbd)
 
 ;; Default keybindings ===================================================
 (include kb_default.kbd)
