@@ -1,90 +1,3 @@
-;; The fasttyping config was get from... 
-;; https://github.com/jtroo/kanata/discussions/1656#discussioncomment-14382030
-
-;; This configuration enables homerowmod where the modifier keys can be
-;; used by holding keys in the keyword home row. This is the layout I use:
-;;
-;;   a    s    d    f    g    h    j    k    l    ;
-;;  gui  lalt lsft lctl lmet lmet lctl rsft lalt gui
-;;
-;; gui is a custom modifier key that eases the access to windows (gui), 
-;; desktops (gui+lalt), panes (gui+lsft) and tabs (gui+lctl) combos.
-;;
-;; I use the spanish key for < > (under capslock and a key), to toggle
-;; between US keyboard and custom ES keyboard (same as US keyboard, but
-;; if you press some keys 2 or 3 times in a row you get for example: á, é, ü,
-;; ñ, €.
-;;
-;; Layers index:
-;;
-;;   1.  default
-;;   2.  !default
-
-;;   3.  lctl_layer                   
-;;   4.  sft+lctl_layer               
-;;   5.  !lctl_layer                  
-;;   6.  !sft+lctl_layer              
-;;  
-;;   7.  lalt_layer                   
-;;   8.  sft+lalt_layer               
-;;   9.  !lalt_layer                  
-;;   10. !sft+lalt_layer              
-;;  
-;;  11.  lmet_layer                   
-;;  12.  sft+lmet_layer               
-;;  13.  !lmet_layer                  
-;;  14.  !sft+lmet_layer              
-;;  
-;;  15.  lctl+lalt_layer              
-;;  16.  sft+lctl+lalt_layer          
-;;  17.  !lctl+lalt_layer             
-;;  18.  !sft+lctl+lalt_layer         
-;;  
-;;  19.  lctl+lmet_layer              
-;;  20.  sft+lctl+lmet_layer          
-;;  21.  !lctl+lmet_layer             
-;;  22.  !sft+lctl+lmet_layer         
-;;  
-;;  23.  lalt+lmet_layer              
-;;  24.  sft+lalt+lmet_layer          
-;;  25.  !lalt+lmet_layer             
-;;  26.  !sft+lalt+lmet_layer         
-;;  
-;;  27.  lctl+lalt+lmet_layer         
-;;  28.  sft+lctl+lalt+lmet_layer     
-;;  29.  !lctl+lalt+lmet_layer        
-;;  30.  !sft+lctl+lalt+lmet_layer    
-;;  
-;;  31.  lsft_layer                   
-;;  32.  rsft_layer                   
-;;  
-;;  33.  opts_layer                    
-;;  34.  sft+opts_layer                
-;;  
-;;  35.  bookmarks_layer                  
-;;  36.  sft+bookmarks_layer              
-;;  
-;;  37.  omni_layer                   
-;;  38.  sft+omni_layer               
-;;  
-;;  39.  num_layer               
-;;  40.  sft+num_layer           
-;;  
-;;  41.  apps_layer                   
-;;  42.  sft+apps_layer               
-;;  
-;;  43.  gui_layer                    
-;;  44.  sft+gui_layer                
-;;  
-;;  45.  workspaces_layer             
-;;  46.  sft_workspaces_layer         
-;;  
-;;  47.  tabs_layer             
-;;  48.  sft_tabs_layer         
-;;  
-;;  49.  panes_layer             
-;;  50.  sft_panes_layer         
-
 (defcfg
   process-unmapped-keys yes
 ;;  danger-enable-cmd yes
@@ -92,1032 +5,143 @@
 
 ;; Virtual Keys ============================================================
 (defvirtualkeys
-  vk_lalt lalt  ;; Used to mimic lalt+tab with lctl+tab.
-
-  vk_alt_chars    XX ;; Used to toggle alternative characters layout for other 
-                     ;; languages.
-
-  vk_fast_typing  XX ;; Used to allow fasttyping without triggering modifiers 
-                     ;; combos with homrowmod.
+  ;; These virtual keys are used by an external program that detects the active 
+  ;; window and tells kanata which app is, by pressing one of the next 
+  ;; virtual keys. When there is a change in the active window, previous
+  ;; virtual key is released and new virtual key is pressed.
+  vk_chrome       XX
+  vk_foot         XX
+  vk_nvim         XX
+  vk_zellij       XX
+  vk_obsidian     XX
+  vk_dolphin      XX
+  ;; vk_@app@      XX
 )
 
-;; Variables ===============================================================
-(defvar
-  ;; Time config
-  tap_time  220
-  hold_time 160
-
-  ;; Homerowmod, keys in middle line of keyboard behaves as normal when
-  ;; tap and modifiers when hold (gui, alt, sft, ctl and met).
-  a/gui  a
-  s/lalt s
-  d/lsft d
-  f/lctl f
-  g/lmet g
-  h/lmet h
-  j/lctl j
-  k/rsft k
-  l/lalt l
-  ;/gui  ;
-
-  ;; Caps behaves like esc when tap and omni layer while hold.
-  esc/omni caps
-  ;; <> Key (Spanish keyboard) behaves like lang toggle when tap and num layer 
-  ;; while hold.
-  lang/num lsgt
-
-  ;; Y use physical lalt key as lctl, physical lmet key as lalt and physical
-  ;; lctl key as lmet.
-  !lmet lctl
-  !lalt lmet
-  !lctl lalt
-
-  ;; Physical ralt key will be used for apps launching/focusing.
-  apps ralt
-
-  ;; Physical prnt key will be used for bookmarks.
-  bookmarks prnt
-)
-
-
-(defsrc
-  esc        f1         f2         f3         f4         f5         f6         f7         f8         f9         f10        f11        f12    del
-  grv        1          2          3          4          5          6          7          8          9          0          -          =      bspc
-  tab        q          w          e          r          t          y          u          i          o          p          [          ]      \
-  caps       a          s          d          f          g          h          j          k          l          ;          '          ret
-  lsft       lsgt       z          x          c          v          b          n          m          ,          .          /          rsft   
-  lctl       lmet       lalt                             spc                              ralt       prnt       rctl
-) ;;""
-
-;; My default keyboard mapping maps: lclt in the physical lalt key, 
-;; lalt in the physical lmet key, lmelt in the physical lctl key. This
-;; resembles the ctrl | alt | cmd layout of mac computers.
-(deflayer default
-  esc        f1         f2         f3         f4         f5         f6         f7         f8         f9         f10        f11        f12    del 
-  grv        1          2          3          4          5          6          7          8          9          0          -          =      bspc
-  @tab/opts  @q         @w         @e         @r         @t         @y         @u         @i         @o         @p         [          ]      \
-  @esc/omni  @a/gui     @s/lalt    @d/lsft    @f/lctl    @g/lmet    @h/lmet    @j/lctl    @k/rsft    @l/lalt    @;/gui     '          ret
-  @lsft      @lang/num  @z         @x         @c         @v         @b         @n         @m         ,          .          /          @rsft  
-  @!lmet     @!lalt     @!lctl                           spc                              @apps      @bookmarks rctl      
-) ;;""
-
-;; Default keyboard mapping with alternative chars (for spanish writing)
-;; for a, e, i, o, u and n.
-(deflayer !default
-  esc        f1         f2         f3         f4         f5         f6         f7         f8         f9         f10        f11        f12    del
-  grv        1          2          3          4          5          6          7          8          9          0          -          =      bspc
-  @tab/opts  @q         @w         @!e        @r         @t         @y         @!u        @!i        @!o        @p         [          ]      \
-  @esc/omni  @!a/gui    @s/lalt    @d/lsft    @f/lctl    @g/lmet    @h/lmet    @j/lctl    @k/rsft    @l/lalt    @;/gui     '          ret
-  @lsft      @lang/num  @z         @x         @c         @v         @b         @!n        @m         ,          .          /          @rsft  
-  @!lmet     @!lalt     @!lctl                           spc                              @apps      @bookmarks rctl      
-) ;;""
-
-;; Templates =============================================================
 (include templates.kbd)
+;; (deftemplate mytestA (mod alt)
+;;     (if-equal (concat $mod $alt X) X             
+;;       (macro n o m o d))
+;;     (if-equal (concat $mod $alt)   !             
+;;       (macro n o m o d a l t))
+;;     (if-in-list (concat $mod $alt) (lctl lalt lmet)  
+;;       (macro m o d))
+;;     (if-in-list (concat $mod $alt) (lctl! lalt! lmet!) 
+;;       (macro m o d a l t))
+;; )
 
-;; Apps ==================================================================
-(include apps.kbd)
+(deftemplate _app_layer_condition (mod alt layer app)
+    (if-equal (concat $mod $alt X) X             
+      ((input virtual (concat "vk_" $app))) (t! toggle_2layer $layer (concat $app "_" $layer)) break
+    )
+    (if-equal (concat $mod $alt)   !             
+      ((input virtual (concat "vk_" $app))) (t! toggle_3layer $layer (concat "!" $layer) (concat $app "_" $layer))      break
+    )
+    (if-in-list (concat $mod $alt) (lctl lalt lmet lsft rsft)  
+      ((input virtual (concat "vk_" $app))) (t! toggle_mod_2layer $mod $layer (concat $app "_" $layer)) break
+    )
+    (if-in-list (concat $mod $alt) (lctl! lalt! lmet! lsft! rsft!) 
+      ((input virtual (concat "vk_" $app))) (t! toggle_mod_3layer $mod $layer (concat "!" $layer) (concat $app "_!" $layer)) break
+    )
+)
+(deftemplate _default_layer_condition (mod alt layer)
+    (if-equal (concat $mod $alt X) X             
+      () (layer-toggle $layer) break
+    )
+    (if-equal (concat $mod $alt)   !             
+      () (t! toggle_2layer $layer (concat "!" $layer)) break
+    )
+    (if-in-list (concat $mod $alt) (lctl lalt lmet lsft rsft)  
+      () (t! toggle_mod_layer $mod $layer) break
+    )
+    (if-in-list (concat $mod $alt) (lctl! lalt! lmet! lsft! rsft!) 
+      () (t! toggle_mod_2layer $mod $layer (concat "!" $layer)) break
+    )
+)
 
-;; Key combos ============================================================
+;; Apps layer toggle =============================================
+(deftemplate _toggle_app_layer (mod alt layer)
+  (switch
+    (t! _app_layer_condition $mod $alt $layer "chrome") 
+    (t! _app_layer_condition $mod $alt $layer "foot") 
+    (t! _app_layer_condition $mod $alt $layer "obsidian") 
+    (t! _app_layer_condition $mod $alt $layer "dolphin") 
+    (t! _app_layer_condition $mod $alt $layer "nvim") 
+    (t! _app_layer_condition $mod $alt $layer "zellij") 
+    ;; (t! _app_layer_condition $mod $alt $layer "@app@") 
+    (t! _default_layer_condition $mod $alt $layer)
+  )
+)
+
+;;;; Apps layer toggle =============================================
+;;(deftemplate toggle_app_layer (layer)
+;;  (switch
+;;    ((input virtual vk_chrome))   (t! toggle_2layer $layer (concat "chrome_" $layer))      break
+;;    ((input virtual vk_foot))     (t! toggle_2layer $layer (concat "foot_" $layer))        break
+;;    ((input virtual vk_obsidian)) (t! toggle_2layer $layer (concat "obsidian_" $layer))    break
+;;    ((input virtual vk_dolphin))  (t! toggle_2layer $layer (concat "dolphin_" $layer))     break
+;;    ((input virtual vk_nvim))     (t! toggle_2layer $layer (concat "nvim_" $layer))        break
+;;    ((input virtual vk_zellij))   (t! toggle_2layer $layer (concat "zellij_" $layer))      break
+;;    ;; ((input virtual vk_@APP@))   (t! toggle_2layer $layer (concat "@APP@_" $layer))      break
+;;    () (layer-toggle $layer) break
+;;  )
+;;)
+;;
+;;(deftemplate toggle_app_!layer (layer)
+;;  (switch
+;;    ((input virtual vk_chrome))   (t! toggle_3layer $layer (concat "!" $layer) (concat "chrome_!" $layer))      break
+;;    ((input virtual vk_foot))     (t! toggle_3layer $layer (concat "!" $layer) (concat "foot_!" $layer))        break
+;;    ((input virtual vk_obsidian)) (t! toggle_3layer $layer (concat "!" $layer) (concat "obsidian_!" $layer))    break
+;;    ((input virtual vk_dolphin))  (t! toggle_3layer $layer (concat "!" $layer) (concat "dolphin_!" $layer))     break
+;;    ((input virtual vk_nvim))     (t! toggle_3layer $layer (concat "!" $layer) (concat "nvim_!" $layer))        break
+;;    ((input virtual vk_zellij))   (t! toggle_3layer $layer (concat "!" $layer) (concat "zellij_!" $layer))      break
+;;    ;; ((input virtual vk_@APP@))   (t! toggle_3layer $layer (concat "!" $layer) (concat "@APP@_!" $layer))      break
+;;    () (t! toggle_2layer $layer (concat "!" $layer)) break
+;;  )
+;;)
+;;
+;;(deftemplate toggle_mod_app_layer (mod layer)
+;;  (switch
+;;    ((input virtual vk_chrome))   (t! toggle_mod_2layer $mod $layer (concat "chrome_" $layer))      break
+;;    ((input virtual vk_foot))     (t! toggle_mod_2layer $mod $layer (concat "foot_" $layer))        break
+;;    ((input virtual vk_obsidian)) (t! toggle_mod_2layer $mod $layer (concat "obsidian_" $layer))    break
+;;    ((input virtual vk_dolphin))  (t! toggle_mod_2layer $mod $layer (concat "dolphin_" $layer))     break
+;;    ((input virtual vk_nvim))     (t! toggle_mod_2layer $mod $layer (concat "nvim_" $layer))        break
+;;    ((input virtual vk_zellij))   (t! toggle_mod_2layer $mod $layer (concat "zellij_" $layer))      break
+;;    ;; ((input virtual vk_@APP@))   (t! toggle_mod_2layer $mod $layer (concat "@APP@_" $layer))      break
+;;    () (t! toggle_mod_layer $mod $layer) break
+;;  )
+;;)
+;;
+;;(deftemplate toggle_mod_app_!layer (mod layer)
+;;  (switch
+;;    ((input virtual vk_chrome))   (t! toggle_mod_3layer $mod $layer (concat "!" $layer) (concat "chrome_!" $layer))      break
+;;    ((input virtual vk_foot))     (t! toggle_mod_3layer $mod $layer (concat "!" $layer) (concat "foot_!" $layer))        break
+;;    ((input virtual vk_obsidian)) (t! toggle_mod_3layer $mod $layer (concat "!" $layer) (concat "obsidian_!" $layer))    break
+;;    ((input virtual vk_dolphin))  (t! toggle_mod_3layer $mod $layer (concat "!" $layer) (concat "dolphin_!" $layer))     break
+;;    ((input virtual vk_nvim))     (t! toggle_mod_3layer $mod $layer (concat "!" $layer) (concat "nvim_!" $layer))        break
+;;    ((input virtual vk_zellij))   (t! toggle_mod_3layer $mod $layer (concat "!" $layer) (concat "zellij_!" $layer))      break
+;;    ;; ((input virtual vk_@APP@))   (t! toggle_mod_3layer $mod $layer (concat "!" $layer) (concat "@APP@_!" $layer))      break
+;;    () (t! toggle_mod_2layer $mod $layer (concat "!" $layer)) break
+;;  )
+;;)
+
+;; Layers  ===============================================================
+(include layers.kbd)
+
+;; Actions ===============================================================
 (include actions.kbd)
 
-;; Load apps keybindings =================================================
+;; General keybindings ===================================================
+(include main.kbd)
+
+;; Apps specific keybindings =============================================
 (include chrome.kbd)
 (include foot.kbd)
 (include zellij.kbd)
 (include nvim.kbd)
 (include dolphin.kbd)
 (include obsidian.kbd)
-;; (include @APP@.kbd)
+;; (include @app@.kbd)
 
-(defalias
-  lctl (multi 
-    ;; If lctl is pressed twice, in a short period, it issues a tab toggle.
-    ;; If hold switch to lctl_layer.
-    (t! th (t! 2x $action_tab_toggle) $toggle_lctl_layer)
-    (on-release release-vkey vk_lalt) ;; (lctl+tab mimics lalt+tab)
-  )
-  !lctl (multi 
-    ;; If lctl is pressed twice, in a short period, it issues a tab toggle. 
-    ;; If hold switch to lctl_layer and !lctl_layer on top of it.
-    (t! th (t! 2x $action_tab_toggle) $toggle_!lctl_layer)
-    (on-release release-vkey vk_lalt) ;; (lctl+tab mimics lalt+tab)
-  )
-
-  ;; If lalt is pressed twice, in a short period, it issues a pane toggle.
-  ;; If hold switch to lalt_layer.
-  lalt (t! th (t! 2x $action_pane_toggle) $toggle_lalt_layer)
-  ;; If lalt is pressed twice, in a short period, it issues a pane toggle.
-  ;; If hold switch to lalt_layer and !lalt_layer on top of it.
-  !lalt (t! th (t! 2x $action_pane_toggle) $toggle_!lalt_layer)
-
-  ;; If hold switch to lmet_layer.
-  lmet (t! th lmet $toggle_lmet_layer)
-  ;; If hold switch to lmet_layer and !lmet_layer on top of it.
-  !lmet (t! th lmet $toggle_!lmet_layer)
-
-  ;; Switch to gui_layer, that enables commanding desktops, tabs, panes, windows.
-  gui $toggle_gui_layer
-
-  ;; lsft and rsft behaves normally except that lsft+rsft goes to next tab and
-  ;; rsft+lsft goes to prev tab. Also tapping twice on lsft or rsft goes
-  ;; to previous tab or next tab respectively.
-  lsft (t! th (t! 2x $action_tab_prev) $toggle_lsft_layer)
-  rsft (t! th (t! 2x $action_tab_next) $toggle_rsft_layer)
-
-  ;; tab behaves as tab when tapped and opts_layer when hold.
-  tab/opts (t! th tab $toggle_opts_layer)
-
-  ;; Pyhsical prnt behaves as prnt when tapped and bookmarks_layer when hold.
-  bookmarks (t! th $bookmarks $toggle_bookmarks_layer)
-
-  ;; Physical ralt behaves switches apps_layer when hold.
-  apps (t! th $apps $toggle_apps_layer) 
-
-  omni  $toggle_omni_layer
-
-  ;; caps behaves as esc when tapped and gui modifiers when hold.
-  esc/omni (t! th esc @omni)
-
-  ;; Alternative Chars toggle key. Changes the default layout between normal 
-  ;; chars and alternative chars (á, ñ, ...)
-  toggle_kbd_lang (multi 
-    (on-press toggle-virtualkey vk_alt_chars)
-    (switch
-      ((input virtual vk_alt_chars)) (layer-switch default) break
-      ()  (layer-switch !default) break
-    )
-  )
-
-  lang/num (t! th @toggle_kbd_lang $toggle_num_layer)
-
-  a/gui  (t! homerowmod $tap_time $hold_time a @gui)
-  s/lalt (t! homerowmod $tap_time $hold_time s @lalt)
-  d/lsft (t! homerowmod $tap_time $hold_time d @lsft)
-  f/lctl (t! homerowmod $tap_time $hold_time f @lctl)
-  g/lmet (t! homerowmod $tap_time $hold_time g @lmet)
-  h/lmet (t! homerowmod $tap_time $hold_time h @lmet)
-  j/lctl (t! homerowmod $tap_time $hold_time j @lctl)
-  k/rsft (t! homerowmod $tap_time $hold_time k @rsft)
-  l/lalt (t! homerowmod $tap_time $hold_time l @lalt)
-  ;/gui  (t! homerowmod $tap_time $hold_time ; @gui)
-
-  q (t! type q) w (t! type w) e (t! type e) r (t! type r) t (t! type t)
-  y (t! type y) u (t! type u) i (t! type i) o (t! type o) p (t! type p)
-  ;; a (t! type a) s (t! type s) d (t! type d) f (t! type f) 
-  ;; g (t! type g) h (t! type h)
-  ;;  j (t! type j) k (t! typek) l (t! type l)
-  z (t! type z) x (t! type x) c (t! type c) v (t! type v) b (t! type b) 
-  n (t! type n) m (t! type m) 
-
-  ;; Alternative characters for other languages.
-  !a/gui (t! homerowmod $tap_time $hold_time (t! alt_char a) @gui)
-  !e     (t! alt_char e) 
-  !i     (t! alt_char i) 
-  !o     (t! alt_char o)  
-  !u     (t! alt_char u) 
-  !n     (t! alt_char n) 
-
-  ;; "" ALIAS """"""""""""""""""""""""
-)
-
-  
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" LCTL_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (lctl_layer)
-  ;; lctl is configured in the physical lalt key (like the cmd key in mac).
-  ;; Special treatment is used to allow lctl+tab to mimic alt+tab to switch 
-  ;; apps and lctl+` to mimic alt+` to switch apps of the same class.
-
-  ;; == FOCUS APP ===================
-  ;; Virtual key vk_lalt is "pressed" on first tab pressed and will be
-  ;; "released" when lclt is released.
-  tab (switch 
-        ((input virtual vk_lalt)) (unmod (lctl) tab) break
-        () (multi (on-press press-vkey vk_lalt) lalt (unmod (lctl) tab)) break
-  )
-  ;; Virtual key vk_lalt is "pressed" on first ` pressed and will be
-  ;; "released" when lclt is released.
-  grv (switch 
-        ((input virtual vk_lalt)) (unmod (lctl) grv) break
-        () (multi (on-press press-vkey vk_lalt) lalt (unmod (lctl) grv)) break
-  )
-  
-  ;; == WORKSPACES ===================
-  $a/gui (t! th _ (multi (release-key lctl) $toggle_tabs_layer))
-  $;/gui (t! th _ (multi (release-key lctl) $toggle_tabs_layer))
-
-  ;; == LALT =========================
-  $!lalt  (t! th _ $toggle_lctl+lalt_layer)
-  $s/lalt (t! th _ $toggle_lctl+lalt_layer)
-  $l/lalt (t! th _ $toggle_lctl+lalt_layer)
-
-  ;; == LMET =========================
-  $!lmet  (t! th _ $toggle_lctl+lmet_layer)
-  $g/lmet (t! th _ $toggle_lctl+lmet_layer)
-  $h/lmet (t! th _ $toggle_lctl+lmet_layer)
-
-  ;; == SPC/LSFT/RSFT ================
-  spc     (t! th _ $toggle_lsft+lctl_layer)
-  $d/lsft (t! th _ $toggle_lsft+lctl_layer)
-  lsft    (t! th _ $toggle_lsft+lctl_layer)
-  $k/rsft (t! th _ $toggle_rsft+lctl_layer)
-  rsft    (t! th _ $toggle_rsft+lctl_layer)
-  
-;; "" LCTL_LAYER """""""""""""""""""
-) 
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SFT+LCTL_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (sft+lctl_layer)
-
-  ;; == KEY COMBOS ===================
-;;  t $action_lctl+!t
-
-;; "" SFT+LCTL_LAYER """""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" !LCTL_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (!lctl_layer)
-
-  ;; == KEY COMBOS ===================
-;;  spc $action_select_files 
-
-  ;; Nav
- ;; b $action_!lctl+b
-
-  ;; == WORKSPACES ===================
-  $a/gui (t! th _ (multi (release-key $!lctl) $toggle_tabs_layer))
-  $;/gui (t! th _ (multi (release-key $!lctl) $toggle_tabs_layer))
-
-  ;; == LALT =========================
-  $!lalt  (t! th _ $toggle_!lctl+lalt_layer)
-  $s/lalt (t! th _ $toggle_!lctl+lalt_layer)
-  $l/lalt (t! th _ $toggle_!lctl+lalt_layer)
-                                                                 
-  ;; == LMET =========================                           
-  $!lmet  (t! th _ $toggle_!lctl+lmet_layer)
-  $g/lmet (t! th _ $toggle_!lctl+lmet_layer)
-  $h/lmet (t! th _ $toggle_!lctl+lmet_layer)
-
-  ;; == LSFT/RSFT ====================
-  $d/lsft (t! th _ $toggle_!lsft+lctl_layer)
-  lsft    (t! th _ $toggle_!lsft+lctl_layer)
-  $k/rsft (t! th _ $toggle_!rsft+lctl_layer)
-  rsft    (t! th _ $toggle_!rsft+lctl_layer)
-
-;; "" !LCTL_LAYER """""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" !SFT+LCTL_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (!sft+lctl_layer)
-  ;; == KEY COMBOS ===================
-  spc (fork $action_select_opened_files $action_select_folders (rsft)) 
-
-;; "" !SFT+LCTL_LAYER """""""""""""""
-)
-
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" LALT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (lalt_layer)
-  ;; == KEY COMBOS ===================
-
-  ;; lalt is configured in the physical lmet key (like the opt key in mac).
-  ;; alt+tab works as alt+`
-  tab grv
-
-  ;; == WORKSPACES ===================
-  $a/gui (t! th _ (multi (release-key lalt) $toggle_workspaces_layer))
-  $;/gui (t! th _ (multi (release-key lalt) $toggle_workspaces_layer))
-
-  ;; == LCTL =========================
-  $!lctl  (t! th _ $toggle_lalt+lctl_layer)
-  $f/lctl (t! th _ $toggle_lalt+lctl_layer)
-  $j/lctl (t! th _ $toggle_lalt+lctl_layer)
-
-  ;; == LMET =========================
-  $!lmet  (t! th _ $toggle_lalt+lmet_layer)
-  $g/lmet (t! th _ $toggle_lalt+lmet_layer)
-  $h/lmet (t! th _ $toggle_lalt+lmet_layer)
- 
-  ;; == SPC/LSFT/RSFT ================
-  spc     (t! th _ $toggle_lsft+lalt_layer)
-  $d/lsft (t! th _ $toggle_lsft+lalt_layer)
-  lsft    (t! th _ $toggle_lsft+lalt_layer)
-  $k/rsft (t! th _ $toggle_rsft+lalt_layer)
-  rsft    (t! th _ $toggle_rsft+lalt_layer)
-
-;; "" LALT_LAYER """""""""""""""""""
-) 
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SFT+LALT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (sft+lalt_layer)
-
-;; "" SFT+LALT_LAYER """""""""""""""""""""""""""""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" !LALT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (!lalt_layer)
-
-  ;; == KEY COMBOS ===================
-  spc $action_select_command
-
-  ;; == WORKSPACES ===================
-  $a/gui (t! th _ (multi (release-key $!lalt) $toggle_panes_layer))
-  $;/gui (t! th _ (multi (release-key $!lalt) $toggle_panes_layer))
-
-  ;; == LCTL =========================
-  $!lctl  (t! th _ $toggle_!lalt+lctl_layer)
-  $f/lctl (t! th _ $toggle_!lalt+lctl_layer)
-  $j/lctl (t! th _ $toggle_!lalt+lctl_layer)
-                                                                 
-  ;; == LMET =========================                           
-  $!lmet  (t! th _ $toggle_!lalt+lmet_layer)
-  $g/lmet (t! th _ $toggle_!lalt+lmet_layer)
-  $h/lmet (t! th _ $toggle_!lalt+lmet_layer)
-
-  ;; == LSFT/RSFT ====================
-  $d/lsft (t! th _ $toggle_!lsft+lalt_layer)
-  lsft    (t! th _ $toggle_!lsft+lalt_layer)
-  $k/rsft (t! th _ $toggle_!rsft+lalt_layer)
-  rsft    (t! th _ $toggle_!rsft+lalt_layer)
-
-;; "" !LALT_LAYER """""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" !SFT+LALT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (!sft+lalt_layer)
-
-;; "" !SFT+LALT_LAYER """""""""""""""
-)
-
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" LMET_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (lmet_layer)
-
-  ;; == KEY COMBOS ===================
-
-  ;; lmet+tab mimics original lctl+tab functionality (typically next tab in 
-  ;; browsers and editors).
-  tab (multi (release-key lmet) (fork $action_tab_next $action_tab_prev (lsft rsft)))
-
-  ;; == LALT =========================
-  $!lalt  (t! th _ $toggle_lmet+lalt_layer)
-  $s/lalt (t! th _ $toggle_lmet+lalt_layer)
-  $l/lalt (t! th _ $toggle_lmet+lalt_layer)
-
-  ;; == LCTL =========================
-  $!lctl  (t! th _ $toggle_lmet+lctl_layer)
-  $f/lctl (t! th _ $toggle_lmet+lctl_layer)
-  $j/lctl (t! th _ $toggle_lmet+lctl_layer)
-  
-  ;; == SPC/LSFT/RSFT ================
-  spc     (t! th _ $toggle_lsft+lmet_layer)
-  $d/lsft (t! th _ $toggle_lsft+lmet_layer)
-  lsft    (t! th _ $toggle_lsft+lmet_layer)
-  $k/rsft (t! th _ $toggle_rsft+lmet_layer)
-  rsft    (t! th _ $toggle_rsft+lmet_layer)
-
-;; "" LMET_LAYER """""""""""""""""""
-) 
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SFT+LMET_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (sft+lmet_layer)
-
-;; "" SFT+LMET_LAYER """""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" !LMET_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (!lmet_layer)
-
-  ;; == KEY COMBOS ===================
-  spc $action_select_symbol
-
-  ;; == WORKSPACES =========================
-  $a/gui (t! th _ (multi (release-key $!lmet) $toggle_workspaces_layer))
-  $;/gui (t! th _ (multi (release-key $!lmet) $toggle_workspaces_layer))
-
-  ;; == LALT =========================
-  $!lalt  (t! th _ $toggle_!lmet+lalt_layer)
-  $s/lalt (t! th _ $toggle_!lmet+lalt_layer)
-  $l/lalt (t! th _ $toggle_!lmet+lalt_layer)
-                                                                 
-  ;; == LCTL =========================                           
-  $!lctl  (t! th _ $toggle_!lmet+lctl_layer)
-  $f/lctl (t! th _ $toggle_!lmet+lctl_layer)
-  $j/lctl (t! th _ $toggle_!lmet+lctl_layer)
-  
-  ;; == SPC/LSFT/RSFT ================
-  $d/lsft (t! th _ $toggle_!lsft+lmet_layer)
-  lsft    (t! th _ $toggle_!lsft+lmet_layer)
-  $k/rsft (t! th _ $toggle_!rsft+lmet_layer)
-  rsft    (t! th _ $toggle_!rsft+lmet_layer)
-
-;; "" !LMET_LAYER """""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" !SFT+LMET_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (!sft+lmet_layer)
-
-;; "" !SFT+LMET_LAYER """"""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" LCTL+LALT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (lctl+lalt_layer)
-
-  ;; == LMET =========================
-  $!lmet  (t! th _ $toggle_lctl+lalt+lmet_layer)
-  $g/lmet (t! th _ $toggle_lctl+lalt+lmet_layer)
-  $h/lmet (t! th _ $toggle_lctl+lalt+lmet_layer)
-
-  ;; == LSFT/RSFT ====================
-  $d/lsft (t! th _ $toggle_lsft+lctl+lalt_layer)
-  lsft    (t! th _ $toggle_lsft+lctl+lalt_layer)
-  $k/rsft (t! th _ $toggle_rsft+lctl+lalt_layer)
-  rsft    (t! th _ $toggle_rsft+lctl+lalt_layer)
-;; "" LCTL+LALT_LAYER """""""""""""""""""
-) 
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SFT+LCTL+LALT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (sft+lctl+lalt_layer)
-
-;; "" SFT+LCTL+LALT_LAYER """""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" !LCTL+LALT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (!lctl+lalt_layer)
-
-  ;; == KEY COMBOS ===================
-  spc $action_omnisearch_files
-  
-  ;; == LMET =========================
-  $!lmet  (t! th _ $toggle_!lctl+lalt+lmet_layer)
-  $g/lmet (t! th _ $toggle_!lctl+lalt+lmet_layer)
-  $h/lmet (t! th _ $toggle_!lctl+lalt+lmet_layer)
-
-  ;; == LSFT/RSFT ====================
-  $d/lsft (t! th _ $toggle_!lsft+lctl+lalt_layer)
-  lsft    (t! th _ $toggle_!lsft+lctl+lalt_layer)
-  $k/rsft (t! th _ $toggle_!rsft+lctl+lalt_layer)
-  rsft    (t! th _ $toggle_!rsft+lctl+lalt_layer)
-
-;; "" !LCTL+LALT_LAYER """""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" !SFT+LCTL+LALT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (!sft+lctl+lalt_layer)
-
-  ;; == KEY COMBOS ===================
-  spc $action_omnisearch_file
-
-;; "" !SFT+LCTL+LALT_LAYER """""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" LCTL+LMET_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (lctl+lmet_layer)
-  ;; == LALT =========================
-  $!lalt  (t! th _ $toggle_lctl+lmet+lalt_layer)
-  $s/lalt (t! th _ $toggle_lctl+lmet+lalt_layer)
-  $l/lalt (t! th _ $toggle_lctl+lmet+lalt_layer)
-
-  ;; == LSFT/RSFT ====================
-  $d/lsft (t! th _ $toggle_lsft+lctl+lmet_layer)
-  lsft    (t! th _ $toggle_lsft+lctl+lmet_layer)
-  $k/rsft (t! th _ $toggle_rsft+lctl+lmet_layer)
-  rsft    (t! th _ $toggle_rsft+lctl+lmet_layer)
-
-;; "" LCTL+LMET_LAYER """""""""""""""""""
-) 
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SFT+LCTL+LMET_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (sft+lctl+lmet_layer)
-
-;; "" SFT+LCTL+LMET_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" !LCTL+LMET_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (!lctl+lmet_layer)
-  ;; == LALT =========================
-  $!lalt  (t! th _ $toggle_!lctl+lmet+lalt_layer)
-  $s/lalt (t! th _ $toggle_!lctl+lmet+lalt_layer)
-  $l/lalt (t! th _ $toggle_!lctl+lmet+lalt_layer)
-
-  ;; == LSFT/RSFT ====================
-  $d/lsft (t! th _ $toggle_!lsft+lctl+lmet_layer)
-  lsft    (t! th _ $toggle_!lsft+lctl+lmet_layer)
-  $k/rsft (t! th _ $toggle_!rsft+lctl+lmet_layer)
-  rsft    (t! th _ $toggle_!rsft+lctl+lmet_layer)
-  
-;; "" !LCTL+LMET_LAYER """""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" !SFT+LCTL+LMET_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (!sft+lctl+lmet_layer)
-
-;; "" !SFT+LCTL+LMET_LAYER """""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" LALT+LMET_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (lalt+lmet_layer)
-  ;; == LCTL =========================
-  $!lctl  (t! th _ $toggle_lalt+lmet+lctl_layer)
-  $f/lctl (t! th _ $toggle_lalt+lmet+lctl_layer)
-  $j/lctl (t! th _ $toggle_lalt+lmet+lctl_layer)  
-
-  ;; == LSFT/RSFT ====================
-  $d/lsft (t! th _ $toggle_lsft+lalt+lmet_layer)
-  lsft    (t! th _ $toggle_lsft+lalt+lmet_layer)
-  $k/rsft (t! th _ $toggle_rsft+lalt+lmet_layer)
-  rsft    (t! th _ $toggle_rsft+lalt+lmet_layer)
-
-;; "" LALT+LMET_LAYER """""""""""""""""""
-) 
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SFT+LALT+LMET_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (sft+lalt+lmet_layer)
-
-;; "" SFT+LALT+LMET_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" !LALT+LMET_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (!lalt+lmet_layer)
-  ;; == LCTL =========================
-  $!lctl  (t! th _ $toggle_!lalt+lmet+lctl_layer)
-  $f/lctl (t! th _ $toggle_!lalt+lmet+lctl_layer)
-  $j/lctl (t! th _ $toggle_!lalt+lmet+lctl_layer)
-
-  ;; == LSFT/RSFT ====================
-  $d/lsft (t! th _ $toggle_!lsft+lalt+lmet_layer)
-  lsft    (t! th _ $toggle_!lsft+lalt+lmet_layer)
-  $k/rsft (t! th _ $toggle_!rsft+lalt+lmet_layer)
-  rsft    (t! th _ $toggle_!rsft+lalt+lmet_layer)
-;; "" !LALT+LMET_LAYER """""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" !SFT+LALT+LMET_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (!sft+lalt+lmet_layer)
-
-;; "" !SFT+LALT+LMET_LAYER """""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" LCTL+LALT+LMET_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (lctl+lalt+lmet_layer)
-  ;; == LSFT/RSFT ====================
-  $d/lsft (t! th _ $toggle_lsft+lctl+lalt+lmet_layer)
-  lsft    (t! th _ $toggle_lsft+lctl+lalt+lmet_layer)
-  $k/rsft (t! th _ $toggle_rsft+lctl+lalt+lmet_layer)
-  rsft    (t! th _ $toggle_rsft+lctl+lalt+lmet_layer)
-
-;; "" LCTL+LALT+LMET_LAYER """""""""""""""""""
-) 
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SFT+LCTL+LALT+LMET_LAYER """"""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (sft+lctl+lalt+lmet_layer)
-;; "" SFT+LCTL+LALT+LMET_LAYER """""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" !LCTL+LALT+LMET_LAYER """""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (!lctl+lalt+lmet_layer)
-
-  ;; == LSFT/RSFT ====================
-  $d/lsft (t! th _ $toggle_!lsft+lctl+lalt+lmet_layer)
-  lsft    (t! th _ $toggle_!lsft+lctl+lalt+lmet_layer)
-  $k/rsft (t! th _ $toggle_!rsft+lctl+lalt+lmet_layer)
-  rsft    (t! th _ $toggle_!rsft+lctl+lalt+lmet_layer)
-
-;; "" !LCTL+LALT+LMET_LAYER """""""""""""""""""
-) 
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" !SFT+LCTL+LALT+LMET_LAYER """""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (!sft+lctl+lalt+lmet_layer)
-
-;; "" !SFT+LCTL+LALT+LMET_LAYER """""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (lsft_layer)
-  ;; Pressing lsft+rsft (in that order) issues tab_next action.
-  rsft (multi (release-key lsft) $action_tab_next)
-
-  
-  ;; == PANES ========================
-  $a/gui (t! th _ (multi (release-key lsft) $toggle_panes_layer))
-  $;/gui (t! th _ (multi (release-key lsft) $toggle_panes_layer))
-
-;; "" LSFT_LAYER """"""""""""""""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (rsft_layer)
-  ;; Pressing rsft+lsft (in that order) issues tab_prev combo.
-  lsft (multi (release-key rsft) $action_tab_prev)
-
-  ;; == PANES ========================
-  $a/gui (t! th _ (multi (release-key rsft) $toggle_panes_layer))
-  $;/gui (t! th _ (multi (release-key rsft) $toggle_panes_layer))
-
-;; "" RSFT_LAYER """"""""""""""""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" OPTS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (opts_layer)
-  ;; tab+r reloads kanata configuration.
-  r lrld
-
-
-  ;; == SPC/SFT ======================
-  spc  (t! th _ $toggle_lsft+opts_layer)
-  lsft (t! th _ $toggle_lsft+opts_layer)
-  rsft (t! th _ $toggle_rsft+opts_layer)
-  
-;; "" OPTS_LAYER """"""""""""""""""""""""""""""
-)
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SFT+OPTS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (sft+opts_layer)
-  r $action_restart_kwanata
-;; "" SFT+OPTS_LAYER """"""""""""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" BOOKMARKS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (bookmarks_layer)
-
-  ;; == SPC/SFT ======================
-  spc  (t! th $action_select_fav $toggle_lsft+bookmarks_layer)
-  lsft (t! th _                  $toggle_lsft+bookmarks_layer)
-  rsft (t! th _                  $toggle_lsft+bookmarks_layer)
-  
-;; "" BOOKMARKS_LAYER """""""""""""""""""""""""""""
-)
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SFT+BOOKMARKS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (sft+bookmarks_layer)
-;; "" SFT+BOOKMARKS_LAYER """""""""""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" OMNI_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (omni_layer)
-  ;; == KEY COMBOS ===================
-  j $action_down  
-  k $action_up    
-  h $action_left  
-  l $action_right 
-
-  b $action_page_up
-  f $action_page_down
-
-  o $action_open
-  p $action_parent
-  [ $action_hist_prev
-  ] $action_hist_next
-
-  w $action_tab_close
-  q $action_close_app
-
-  e $action_rename
-  d $action_duplicate
-  a $action_select_all 
-  n $action_new 
-
-  x $action_cut
-  c $action_copy
-  v $action_paste
-  z $action_undo
-
-  s $action_search
-  r $action_replace
-
-  g $action_go
-
-  , $action_settings
-
-  '   $action_view
-  ent $action_edit
-  \   $action_explore
-
-  bspc del 
-
-  ;; a b c d e f g h j k l n o p q r s v w x z
-  ;; i m t u y
-
-  ;; == SPC/SFT ======================
-  spc  (t! th $action_toggle_select $toggle_lsft+omni_layer)
-  lsft (t! th _                     $toggle_lsft+omni_layer)
-  rsft (t! th _                     $toggle_rsft+omni_layer)
-  
-;; "" OMNI_LAYER """"""""""""""""""""""""""""""
-)
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SFT+OMNI_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (sft+omni_layer)
-
-  ;; == KEY COMBOS ===================
-  a (fork $action_clear_select $action_invert_select (rsft))
-  n (fork $action_!new $action_!!new (rsft))
-
-  '   (fork $action_!view    $action_!!view    (rsft)) 
-  ent (fork $action_!edit    $action_!!edit    (rsft))
-  \   (fork $action_!explore $action_!!explore (rsft))
-
-  z $action_redo
-
-  s $action_!search
-  r (fork $action_!replace $action_!!replace (rsft))
-
-  ;;g (fork $action_!go $action_!!go (rsft))
-
-  , $action_settings
-
-;; "" SFT+OMNI_LAYER """"""""""""""""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" NUM_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (num_layer)
-
-  ;; == KEY COMBOS ===================
-  u 7
-  i 8
-  o 9
-  j 4
-  k 5 
-  l 6
-  m 1
-  , 2
-  . 3
-  ralt .
-
-  ;; == SPC/SFT ======================
-  spc  (t! th 0 $toggle_lsft+num_layer)
-  lsft (t! th _ $toggle_lsft+num_layer)
-  rsft (t! th _ $toggle_rsft+num_layer)
-  
-;; "" NUM_LAYER """"""""""""""""""""""""""""""
-)
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SFT+NUM_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (sft+num_layer)
-
-;; "" SFT+NUM_LAYER """"""""""""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" APPS_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (apps_layer)
-
-  ;; == SPC/SFT ======================
-  spc  (t! th $action_apps_launcher $toggle_lsft+apps_layer)
-  lsft (t! th _                     $toggle_lsft+apps_layer)
-  rsft (t! th _                     $toggle_lsft+apps_layer)
-  
-  ;; "" APPS_LAYER """"""""""""""""""""""""""""""""
-)
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SFT+APPS_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (sft+apps_layer)
-
-  ;; "" SFT+APPS_LAYER """"""""""""""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" GUI_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (gui_layer)
-  ;; gui button enables windows, desktops, panes and tabs access.
-  
-  ;; == WORKSPACES ===================
-  $s/lalt (t! th XX $toggle_workspaces_layer)
-  $!lmet  (t! th XX $toggle_workspaces_layer)
-
-  ;; == PANES ========================
-  $d/lsft (t! th $action_pane_toggle $toggle_panes_layer)
-  $!lalt  (t! th $action_pane_toggle $toggle_panes_layer)
-
-
-  ;; == TABS =========================
-  $f/lctl (t! th $action_tab_toggle $toggle_tabs_layer)
-  $!lctl  (t! th $action_tab_toggle $toggle_tabs_layer)
-
-  ;; == WINDOWS ======================
-  h $action_wnd_left
-  $l/lalt (t! th $action_wnd_right $toggle_workspaces_layer)
-  $k/rsft (t! th $action_wnd_up    $toggle_panes_layer)
-  $j/lctl (t! th $action_wnd_down  $toggle_tabs_layer)
-
-  ;; == SPC/SFT ======================
-  spc  (t! th $action_wnd_max $toggle_lsft+gui_layer)
-  lsft (t! th _               $toggle_lsft+gui_layer)
-  rsft (t! th _               $toggle_rsft+gui_layer)
-
-;; "" GUI_LAYER """"""""""""""""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SFT+GUI_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (sft+gui_layer)
-
-;; "" SFT+GUI_LAYER """"""""""""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" WORKSPACES LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (workspaces_layer)
-  ;; == KEY COMBOS ===================
-  j $action_next_screen   
-  k $action_prev_screen   
-  l $action_next_desktop  
-  h $action_prev_desktop  
-
-  ;; == SPC/SFT ======================
-  spc  (t! th _ $toggle_lsft+workspaces_layer)
-  lsft (t! th _ $toggle_lsft+workspaces_layer)
-  rsft (t! th _ $toggle_rsft+workspaces_layer)
-  
-  ;; "" WORKSPACES LAYER """"""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SFT+WORKSPACES_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (sft+workspaces_layer)
-  ;; == KEY COMBOS ===================
-  j $action_move_wnd_next_screen 
-  k $action_move_wnd_prev_screen 
-  l $action_move_wnd_next_desktop 
-  h $action_move_wnd_prev_desktop 
-
-  ;; "" SFT+WORKSPACES_LAYER """"""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" TABS LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (tabs_layer)
-  ;; == KEY COMBOS ===================
-  h     $action_tab_prev
-  left  $action_tab_prev
-  l     $action_tab_next
-  right $action_tab_next
-
-  t     $action_tab_new 
-  w     $action_tab_close
-
-  1     $action_tab_goto_1
-  2     $action_tab_goto_2
-  3     $action_tab_goto_3
-  4     $action_tab_goto_4
-  5     $action_tab_goto_5
-  6     $action_tab_goto_6
-  7     $action_tab_goto_7
-  8     $action_tab_goto_8
-  9     $action_tab_goto_last
-
-  ;; == SPC/SFT ======================
-  spc  (t! th _ $toggle_lsft+tabs_layer)
-  lsft (t! th _ $toggle_lsft+tabs_layer)
-  rsft (t! th _ $toggle_lsft+tabs_layer)
-
-  ;; "" TABS LAYER """"""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SFT+TABS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (sft+tabs_layer)
-
-  ;; == KEY COMBOS ===================
-  t $action_tab_undo_close
-
-  ;; "" SFT+TABS_LAYER """""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" PANES LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (panes_layer)
-  ;; == KEY COMBOS ===================
-  h     $action_pane_left
-  left  $action_pane_left
-  j     $action_pane_below
-  down  $action_pane_below
-  k     $action_pane_above
-  up    $action_pane_above
-  l     $action_pane_right
-  right $action_pane_right
-
-  -     $action_pane_h_split
-  \     $action_pane_v_split ;;""
-
-  w     $action_pane_close
-
-  ;; toggle/open panes
-  b     $action_pane_bookmarks
-  c     $action_pane_calendar
-  d     $action_pane_day
-  e     $action_pane_explorer 
-  g     $action_pane_go
-  m     $action_pane_main
-  o     $action_pane_outline
-  p     $action_pane_properties
-  s     $action_pane_left_sidebar
-  t     $action_pane_tags
-  v     $action_pane_vertical_tabs
-  ;     $action_pane_graph
-  ,     $action_pane_backlinks
-  .     $action_pane_outlinks
-
-  ;; == SPC/SFT ======================
-  spc (t! th $action_pane_max $toggle_lsft+panes_layer)
-  lsft (t! th _               $toggle_lsft+panes_layer)
-  rsft (t! th _               $toggle_lsft+panes_layer) 
-
-  ;; "" PANES_LAYER """"""""""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SFT+PANES_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (sft+panes_layer)
-  ;; == KEY COMBOS ===================
-  d $action_pane_!day
-  e $action_pane_!explorer
-  p $action_pane_!properties
-  s $action_pane_right_sidebar
-  . $action_pane_!outlinks
-
-  ;; "" SFT+PANES_LAYER """"""""""""""""""
-)
 
