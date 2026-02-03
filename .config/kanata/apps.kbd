@@ -13,15 +13,6 @@
   ;; vk_@APP@      XX
 )
 
-(deftemplate include_apps_kbd ()
-  (include chrome.kbd)
-  (include foot.kbd)
-  (include zellij.kbd)
-  (include nvim.kbd)
-  (include dolphin.kbd)
-  (include obsidian.kbd)
-)
-
 (deftemplate toggle_app_layer (layer)
   (switch
     ((input virtual vk_chrome))   (t! toggle_2layer $layer (concat "chrome_" $layer))      break

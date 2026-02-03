@@ -290,64 +290,40 @@
   ;; Special treatment is used to allow lctl+tab to mimic alt+tab to switch 
   ;; apps and lctl+` to mimic alt+` to switch apps of the same class.
 
+  ;; == FOCUS APP ===================
   ;; Virtual key vk_lalt is "pressed" on first tab pressed and will be
-  ;; "released" when lclt is released (see lctl_mimics template).
+  ;; "released" when lclt is released.
   tab (switch 
         ((input virtual vk_lalt)) (unmod (lctl) tab) break
         () (multi (on-press press-vkey vk_lalt) lalt (unmod (lctl) tab)) break
   )
   ;; Virtual key vk_lalt is "pressed" on first ` pressed and will be
-  ;; "released" when lclt is released (see lctl_mimics template).
+  ;; "released" when lclt is released.
   grv (switch 
         ((input virtual vk_lalt)) (unmod (lctl) grv) break
         () (multi (on-press press-vkey vk_lalt) lalt (unmod (lctl) grv)) break
   )
-
-  ;; == KEY COMBOS ===================
-  b $action_lctl+b
-  c $action_lctl+c
-  e $action_lctl+e
-  f $action_lctl+f
-  i $action_lctl+i
-  j $action_lctl+j
-  m $action_lctl+m
-  n $action_lctl+n
-  p $action_lctl+p
-  o $action_lctl+o
-  q $action_lctl+q
-  r $action_lctl+r
-  t $action_lctl+t
-  u $action_lctl+u
-  v $action_lctl+v
-  w $action_lctl+w
-  x $action_lctl+x
-  y $action_lctl+y
-  z $action_lctl+z
-  , $action_lctl+,
-  [ $action_lctl+[
-  ] $action_lctl+] ;; ""
   
   ;; == WORKSPACES ===================
-  $a/gui (t! th $action_lctl+a (multi (release-key lctl) $toggle_tabs_layer))
-  $;/gui (t! th ;              (multi (release-key lctl) $toggle_tabs_layer))
+  $a/gui (t! th _ (multi (release-key lctl) $toggle_tabs_layer))
+  $;/gui (t! th _ (multi (release-key lctl) $toggle_tabs_layer))
 
   ;; == LALT =========================
-  $!lalt  (t! th lalt           $toggle_lctl+lalt_layer)
-  $s/lalt (t! th $action_lctl+s $toggle_lctl+lalt_layer)
-  $l/lalt (t! th $action_lctl+l $toggle_lctl+lalt_layer)
+  $!lalt  (t! th _ $toggle_lctl+lalt_layer)
+  $s/lalt (t! th _ $toggle_lctl+lalt_layer)
+  $l/lalt (t! th _ $toggle_lctl+lalt_layer)
 
   ;; == LMET =========================
-  $!lmet  (t! th lmet           $toggle_lctl+lmet_layer)
-  $g/lmet (t! th $action_lctl+g $toggle_lctl+lmet_layer)
-  $h/lmet (t! th $action_lctl+h $toggle_lctl+lmet_layer)
+  $!lmet  (t! th _ $toggle_lctl+lmet_layer)
+  $g/lmet (t! th _ $toggle_lctl+lmet_layer)
+  $h/lmet (t! th _ $toggle_lctl+lmet_layer)
 
   ;; == SPC/LSFT/RSFT ================
-  spc     (t! th _              $toggle_lsft+lctl_layer)
-  $d/lsft (t! th $action_lctl+d $toggle_lsft+lctl_layer)
-  lsft    (t! th _              $toggle_lsft+lctl_layer)
-  $k/rsft (t! th $action_lctl+k $toggle_rsft+lctl_layer)
-  rsft    (t! th _              $toggle_rsft+lctl_layer)
- 
+  spc     (t! th _ $toggle_lsft+lctl_layer)
+  $d/lsft (t! th _ $toggle_lsft+lctl_layer)
+  lsft    (t! th _ $toggle_lsft+lctl_layer)
+  $k/rsft (t! th _ $toggle_rsft+lctl_layer)
+  rsft    (t! th _ $toggle_rsft+lctl_layer)
   
 ;; "" LCTL_LAYER """""""""""""""""""
 ) 
@@ -358,7 +334,7 @@
 (deflayermap (sft+lctl_layer)
 
   ;; == KEY COMBOS ===================
-  t $action_lctl+!t
+;;  t $action_lctl+!t
 
 ;; "" SFT+LCTL_LAYER """""""""""""""
 )
@@ -369,20 +345,24 @@
 (deflayermap (!lctl_layer)
 
   ;; == KEY COMBOS ===================
-  spc $action_select_files 
+;;  spc $action_select_files 
 
   ;; Nav
-  b $action_!lctl+b
+ ;; b $action_!lctl+b
+
+  ;; == WORKSPACES ===================
+  $a/gui (t! th _ (multi (release-key $!lctl) $toggle_tabs_layer))
+  $;/gui (t! th _ (multi (release-key $!lctl) $toggle_tabs_layer))
 
   ;; == LALT =========================
-  $!lalt  (t! th lalt $toggle_!lctl+lalt_layer)
-  $s/lalt (t! th s    $toggle_!lctl+lalt_layer)
-  $l/lalt (t! th l    $toggle_!lctl+lalt_layer)
+  $!lalt  (t! th _ $toggle_!lctl+lalt_layer)
+  $s/lalt (t! th _ $toggle_!lctl+lalt_layer)
+  $l/lalt (t! th _ $toggle_!lctl+lalt_layer)
                                                                  
   ;; == LMET =========================                           
-  $!lmet  (t! th lmet $toggle_!lctl+lmet_layer)
-  $g/lmet (t! th g    $toggle_!lctl+lmet_layer)
-  $h/lmet (t! th h    $toggle_!lctl+lmet_layer)
+  $!lmet  (t! th _ $toggle_!lctl+lmet_layer)
+  $g/lmet (t! th _ $toggle_!lctl+lmet_layer)
+  $h/lmet (t! th _ $toggle_!lctl+lmet_layer)
 
   ;; == LSFT/RSFT ====================
   $d/lsft (t! th _ $toggle_!lsft+lctl_layer)
@@ -397,6 +377,7 @@
 ;; "" !SFT+LCTL_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!sft+lctl_layer)
+  ;; == KEY COMBOS ===================
   spc (fork $action_select_opened_files $action_select_folders (rsft)) 
 
 ;; "" !SFT+LCTL_LAYER """""""""""""""
@@ -414,18 +395,18 @@
   tab grv
 
   ;; == WORKSPACES ===================
-  $a/gui (t! th a (multi (release-key lalt) $toggle_workspaces_layer))
-  $;/gui (t! th ; (multi (release-key lalt) $toggle_workspaces_layer))
+  $a/gui (t! th _ (multi (release-key lalt) $toggle_workspaces_layer))
+  $;/gui (t! th _ (multi (release-key lalt) $toggle_workspaces_layer))
 
   ;; == LCTL =========================
-  $!lctl  (t! th lctl $toggle_lalt+lctl_layer)
-  $f/lctl (t! th f    $toggle_lalt+lctl_layer)
-  $j/lctl (t! th j    $toggle_lalt+lctl_layer)
+  $!lctl  (t! th _ $toggle_lalt+lctl_layer)
+  $f/lctl (t! th _ $toggle_lalt+lctl_layer)
+  $j/lctl (t! th _ $toggle_lalt+lctl_layer)
 
   ;; == LMET =========================
-  $!lmet  (t! th lmet $toggle_lalt+lmet_layer)
-  $g/lmet (t! th g    $toggle_lalt+lmet_layer)
-  $h/lmet (t! th h    $toggle_lalt+lmet_layer)
+  $!lmet  (t! th _ $toggle_lalt+lmet_layer)
+  $g/lmet (t! th _ $toggle_lalt+lmet_layer)
+  $h/lmet (t! th _ $toggle_lalt+lmet_layer)
  
   ;; == SPC/LSFT/RSFT ================
   spc     (t! th _ $toggle_lsft+lalt_layer)
@@ -453,15 +434,19 @@
   ;; == KEY COMBOS ===================
   spc $action_select_command
 
+  ;; == WORKSPACES ===================
+  $a/gui (t! th _ (multi (release-key $!lalt) $toggle_panes_layer))
+  $;/gui (t! th _ (multi (release-key $!lalt) $toggle_panes_layer))
+
   ;; == LCTL =========================
-  $!lctl  (t! th lctl $toggle_!lalt+lctl_layer)
-  $f/lctl (t! th f    $toggle_!lalt+lctl_layer)
-  $j/lctl (t! th j    $toggle_!lalt+lctl_layer)
+  $!lctl  (t! th _ $toggle_!lalt+lctl_layer)
+  $f/lctl (t! th _ $toggle_!lalt+lctl_layer)
+  $j/lctl (t! th _ $toggle_!lalt+lctl_layer)
                                                                  
   ;; == LMET =========================                           
-  $!lmet  (t! th lmet $toggle_!lalt+lmet_layer)
-  $g/lmet (t! th g    $toggle_!lalt+lmet_layer)
-  $h/lmet (t! th h    $toggle_!lalt+lmet_layer)
+  $!lmet  (t! th _ $toggle_!lalt+lmet_layer)
+  $g/lmet (t! th _ $toggle_!lalt+lmet_layer)
+  $h/lmet (t! th _ $toggle_!lalt+lmet_layer)
 
   ;; == LSFT/RSFT ====================
   $d/lsft (t! th _ $toggle_!lsft+lalt_layer)
@@ -493,14 +478,14 @@
   tab (multi (release-key lmet) (fork $action_tab_next $action_tab_prev (lsft rsft)))
 
   ;; == LALT =========================
-  $!lalt  (t! th lalt $toggle_lmet+lalt_layer)
-  $s/lalt (t! th s    $toggle_lmet+lalt_layer)
-  $l/lalt (t! th l    $toggle_lmet+lalt_layer)
+  $!lalt  (t! th _ $toggle_lmet+lalt_layer)
+  $s/lalt (t! th _ $toggle_lmet+lalt_layer)
+  $l/lalt (t! th _ $toggle_lmet+lalt_layer)
 
   ;; == LCTL =========================
-  $!lctl  (t! th lctl $toggle_lmet+lctl_layer)
-  $f/lctl (t! th f    $toggle_lmet+lctl_layer)
-  $j/lctl (t! th j    $toggle_lmet+lctl_layer)
+  $!lctl  (t! th _ $toggle_lmet+lctl_layer)
+  $f/lctl (t! th _ $toggle_lmet+lctl_layer)
+  $j/lctl (t! th _ $toggle_lmet+lctl_layer)
   
   ;; == SPC/LSFT/RSFT ================
   spc     (t! th _ $toggle_lsft+lmet_layer)
@@ -528,15 +513,19 @@
   ;; == KEY COMBOS ===================
   spc $action_select_symbol
 
+  ;; == WORKSPACES =========================
+  $a/gui (t! th _ (multi (release-key $!lmet) $toggle_workspaces_layer))
+  $;/gui (t! th _ (multi (release-key $!lmet) $toggle_workspaces_layer))
+
   ;; == LALT =========================
-  $!lalt  (t! th lalt $toggle_!lmet+lalt_layer)
-  $s/lalt (t! th s    $toggle_!lmet+lalt_layer)
-  $l/lalt (t! th l    $toggle_!lmet+lalt_layer)
+  $!lalt  (t! th _ $toggle_!lmet+lalt_layer)
+  $s/lalt (t! th _ $toggle_!lmet+lalt_layer)
+  $l/lalt (t! th _ $toggle_!lmet+lalt_layer)
                                                                  
   ;; == LCTL =========================                           
-  $!lctl  (t! th lctl $toggle_!lmet+lctl_layer)
-  $f/lctl (t! th f    $toggle_!lmet+lctl_layer)
-  $j/lctl (t! th j    $toggle_!lmet+lctl_layer)
+  $!lctl  (t! th _ $toggle_!lmet+lctl_layer)
+  $f/lctl (t! th _ $toggle_!lmet+lctl_layer)
+  $j/lctl (t! th _ $toggle_!lmet+lctl_layer)
   
   ;; == SPC/LSFT/RSFT ================
   $d/lsft (t! th _ $toggle_!lsft+lmet_layer)
@@ -561,9 +550,9 @@
 (deflayermap (lctl+lalt_layer)
 
   ;; == LMET =========================
-  $!lmet  (t! th lmet $toggle_lctl+lalt+lmet_layer)
-  $g/lmet (t! th g    $toggle_lctl+lalt+lmet_layer)
-  $h/lmet (t! th h    $toggle_lctl+lalt+lmet_layer)
+  $!lmet  (t! th _ $toggle_lctl+lalt+lmet_layer)
+  $g/lmet (t! th _ $toggle_lctl+lalt+lmet_layer)
+  $h/lmet (t! th _ $toggle_lctl+lalt+lmet_layer)
 
   ;; == LSFT/RSFT ====================
   $d/lsft (t! th _ $toggle_lsft+lctl+lalt_layer)
@@ -590,9 +579,9 @@
   spc $action_omnisearch_files
   
   ;; == LMET =========================
-  $!lmet  (t! th lmet $toggle_!lctl+lalt+lmet_layer)
-  $g/lmet (t! th g    $toggle_!lctl+lalt+lmet_layer)
-  $h/lmet (t! th h    $toggle_!lctl+lalt+lmet_layer)
+  $!lmet  (t! th _ $toggle_!lctl+lalt+lmet_layer)
+  $g/lmet (t! th _ $toggle_!lctl+lalt+lmet_layer)
+  $h/lmet (t! th _ $toggle_!lctl+lalt+lmet_layer)
 
   ;; == LSFT/RSFT ====================
   $d/lsft (t! th _ $toggle_!lsft+lctl+lalt_layer)
@@ -619,9 +608,9 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lctl+lmet_layer)
   ;; == LALT =========================
-  $!lalt  (t! th lalt $toggle_lctl+lmet+lalt_layer)
-  $s/lalt (t! th s    $toggle_lctl+lmet+lalt_layer)
-  $l/lalt (t! th l    $toggle_lctl+lmet+lalt_layer)
+  $!lalt  (t! th _ $toggle_lctl+lmet+lalt_layer)
+  $s/lalt (t! th _ $toggle_lctl+lmet+lalt_layer)
+  $l/lalt (t! th _ $toggle_lctl+lmet+lalt_layer)
 
   ;; == LSFT/RSFT ====================
   $d/lsft (t! th _ $toggle_lsft+lctl+lmet_layer)
@@ -645,9 +634,9 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lctl+lmet_layer)
   ;; == LALT =========================
-  $!lalt  (t! th lalt $toggle_!lctl+lmet+lalt_layer)
-  $s/lalt (t! th s    $toggle_!lctl+lmet+lalt_layer)
-  $l/lalt (t! th l    $toggle_!lctl+lmet+lalt_layer)
+  $!lalt  (t! th _ $toggle_!lctl+lmet+lalt_layer)
+  $s/lalt (t! th _ $toggle_!lctl+lmet+lalt_layer)
+  $l/lalt (t! th _ $toggle_!lctl+lmet+lalt_layer)
 
   ;; == LSFT/RSFT ====================
   $d/lsft (t! th _ $toggle_!lsft+lctl+lmet_layer)
@@ -671,9 +660,9 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lalt+lmet_layer)
   ;; == LCTL =========================
-  $!lctl  (t! th lctl $toggle_lalt+lmet+lctl_layer)
-  $f/lctl (t! th f    $toggle_lalt+lmet+lctl_layer)
-  $j/lctl (t! th j    $toggle_lalt+lmet+lctl_layer)  
+  $!lctl  (t! th _ $toggle_lalt+lmet+lctl_layer)
+  $f/lctl (t! th _ $toggle_lalt+lmet+lctl_layer)
+  $j/lctl (t! th _ $toggle_lalt+lmet+lctl_layer)  
 
   ;; == LSFT/RSFT ====================
   $d/lsft (t! th _ $toggle_lsft+lalt+lmet_layer)
@@ -697,9 +686,9 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lalt+lmet_layer)
   ;; == LCTL =========================
-  $!lctl  (t! th lctl $toggle_!lalt+lmet+lctl_layer)
-  $f/lctl (t! th f    $toggle_!lalt+lmet+lctl_layer)
-  $j/lctl (t! th j    $toggle_!lalt+lmet+lctl_layer)
+  $!lctl  (t! th _ $toggle_!lalt+lmet+lctl_layer)
+  $f/lctl (t! th _ $toggle_!lalt+lmet+lctl_layer)
+  $j/lctl (t! th _ $toggle_!lalt+lmet+lctl_layer)
 
   ;; == LSFT/RSFT ====================
   $d/lsft (t! th _ $toggle_!lsft+lalt+lmet_layer)
@@ -768,8 +757,8 @@
 
   
   ;; == PANES ========================
-  $a/gui (t! th a (multi (release-key lsft) $toggle_panes_layer))
-  $;/gui (t! th ; (multi (release-key lsft) $toggle_panes_layer))
+  $a/gui (t! th _ (multi (release-key lsft) $toggle_panes_layer))
+  $;/gui (t! th _ (multi (release-key lsft) $toggle_panes_layer))
 
 ;; "" LSFT_LAYER """"""""""""""""""""""""""""""
 )
@@ -782,8 +771,8 @@
   lsft (multi (release-key rsft) $action_tab_prev)
 
   ;; == PANES ========================
-  $a/gui (t! th a (multi (release-key rsft) $toggle_panes_layer))
-  $;/gui (t! th ; (multi (release-key rsft) $toggle_panes_layer))
+  $a/gui (t! th _ (multi (release-key rsft) $toggle_panes_layer))
+  $;/gui (t! th _ (multi (release-key rsft) $toggle_panes_layer))
 
 ;; "" RSFT_LAYER """"""""""""""""""""""""""""""
 )
