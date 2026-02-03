@@ -476,6 +476,21 @@
   $a/gui (t! th _ (multi (release-key lsft) $toggle_panes_layer))
   $;/gui (t! th _ (multi (release-key lsft) $toggle_panes_layer))
 
+  $apps      (t! th _ $toggle_lsft+apps_layer)
+  $lang/num  (t! th _ $toggle_lsft+num_layer)
+  $tab/opts  (t! th _ $toggle_lsft+opts_layer)
+  $bookmarks (t! th _ $toggle_lsft+bookmarks_layer)
+  $esc/omni  (t! th _ $toggle_lsft+omni_layer)
+  $f/lctl    (t! th _ $toggle_lsft+lctl_layer)
+  $j/lctl    (t! th _ $toggle_lsft+lctl_layer)
+  $g/lmet    (t! th _ $toggle_lsft+lmet_layer)
+  $h/lmet    (t! th _ $toggle_lsft+lmet_layer)
+  $s/lalt    (t! th _ $toggle_lsft+lalt_layer)
+  $l/lalt    (t! th _ $toggle_lsft+lalt_layer)
+  $!lctl     (t! th _ $toggle_!lsft+lctl_layer)
+  $!lalt     (t! th _ $toggle_!lsft+lalt_layer)
+  $!lmet     (t! th _ $toggle_!lsft+lmet_layer)
+
 ;; "" LSFT_LAYER """"""""""""""""""""""""""""""
 )
 
@@ -489,6 +504,21 @@
   ;; == PANES ========================
   $a/gui (t! th _ (multi (release-key rsft) $toggle_panes_layer))
   $;/gui (t! th _ (multi (release-key rsft) $toggle_panes_layer))
+
+  $apps      (t! th _ $toggle_rsft+apps_layer)
+  $lang/num  (t! th _ $toggle_rsft+num_layer)
+  $tab/opts  (t! th _ $toggle_rsft+opts_layer)
+  $bookmarks (t! th _ $toggle_rsft+bookmarks_layer)
+  $esc/omni  (t! th _ $toggle_rsft+omni_layer)
+  $f/lctl    (t! th _ $toggle_rsft+lctl_layer)
+  $j/lctl    (t! th _ $toggle_rsft+lctl_layer)
+  $g/lmet    (t! th _ $toggle_rsft+lmet_layer)
+  $h/lmet    (t! th _ $toggle_rsft+lmet_layer)
+  $s/lalt    (t! th _ $toggle_rsft+lalt_layer)
+  $l/lalt    (t! th _ $toggle_rsft+lalt_layer)
+  $!lctl     (t! th _ $toggle_!rsft+lctl_layer)
+  $!lalt     (t! th _ $toggle_!lsft+lalt_layer)
+  $!lmet     (t! th _ $toggle_!lsft+lmet_layer)
 
 ;; "" RSFT_LAYER """"""""""""""""""""""""""""""
 )
