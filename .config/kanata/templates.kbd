@@ -122,6 +122,35 @@
          $action)
 )
 
+(deftemplate _app_layer_condition (mod alt layer app)
+    (if-equal (concat $mod $alt X) X             
+      ((input virtual (concat "vk_" $app))) (t! toggle_2layer $layer (concat $app "_" $layer)) break
+    )
+    (if-equal (concat $mod $alt)   !             
+      ((input virtual (concat "vk_" $app))) (t! toggle_3layer $layer (concat "!" $layer) (concat $app "_" $layer))      break
+    )
+    (if-in-list (concat $mod $alt) (lctl lalt lmet lsft rsft)  
+      ((input virtual (concat "vk_" $app))) (t! toggle_mod_2layer $mod $layer (concat $app "_" $layer)) break
+    )
+    (if-in-list (concat $mod $alt) (lctl! lalt! lmet! lsft! rsft!) 
+      ((input virtual (concat "vk_" $app))) (t! toggle_mod_3layer $mod $layer (concat "!" $layer) (concat $app "_!" $layer)) break
+    )
+)
+
+(deftemplate _default_layer_condition (mod alt layer)
+    (if-equal (concat $mod $alt X) X             
+      () (layer-toggle $layer) break
+    )
+    (if-equal (concat $mod $alt)   !             
+      () (t! toggle_2layer $layer (concat "!" $layer)) break
+    )
+    (if-in-list (concat $mod $alt) (lctl lalt lmet lsft rsft)  
+      () (t! toggle_mod_layer $mod $layer) break
+    )
+    (if-in-list (concat $mod $alt) (lctl! lalt! lmet! lsft! rsft!) 
+      () (t! toggle_mod_2layer $mod $layer (concat "!" $layer)) break
+    )
+)
 ;;(deftemplate Xsft_switch (action lsft_action rsft_action)
 ;;  (switch
 ;;    (lsft) $lsft_action break

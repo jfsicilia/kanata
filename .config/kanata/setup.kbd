@@ -1,0 +1,160 @@
+;; The fasttyping config was get from... 
+;; https://github.com/jtroo/kanata/discussions/1656#discussioncomment-14382030
+
+;; This configuration enables homerowmod where the modifier keys can be
+;; used by holding keys in the keyword home row. This is the layout I use:
+;;
+;;   a    s    d    f    g    h    j    k    l    ;
+;;  gui  lalt lsft lctl lmet lmet lctl rsft lalt gui
+;;
+;; gui is a custom modifier key that eases the access to windows (gui), 
+;; desktops (gui+lalt), panes (gui+lsft) and tabs (gui+lctl) combos.
+;;
+;; I use the spanish key for < > (under capslock and a key), to toggle
+;; between US keyboard and custom ES keyboard (same as US keyboard, but
+;; if you press some keys 2 or 3 times in a row you get for example: á, é, ü,
+;; ñ, €.
+;;
+
+;; Virtual Keys ============================================================
+(defvirtualkeys
+  vk_lalt lalt  ;; Used to mimic lalt+tab with lctl+tab.
+
+  vk_alt_chars    XX ;; Used to toggle alternative characters layout for other 
+                     ;; languages.
+
+  vk_fast_typing  XX ;; Used to allow fasttyping without triggering modifiers 
+                     ;; combos with homrowmod.
+)
+
+;; Variables ===============================================================
+(defvar
+  ;; Time config
+  tap_time  220
+  hold_time 160
+
+  ;; Homerowmod, keys in middle line of keyboard behaves as normal when
+  ;; tap and modifiers when hold (gui, alt, sft, ctl and met).
+  a/gui  a
+  s/lalt s
+  d/lsft d
+  f/lctl f
+  g/lmet g
+  h/lmet h
+  j/lctl j
+  k/rsft k
+  l/lalt l
+  ;/gui  ;
+
+  ;; Caps behaves like esc when tap and omni layer while hold.
+  esc/omni caps
+  ;; <> Key (Spanish keyboard) behaves like lang toggle when tap and num layer 
+  ;; while hold.
+  lang/num lsgt
+
+  ;; Y use physical lalt key as lctl, physical lmet key as lalt and physical
+  ;; lctl key as lmet.
+  !lmet lctl
+  !lalt lmet
+  !lctl lalt
+
+  ;; Physical ralt key will be used for apps launching/focusing.
+  apps ralt
+
+  ;; Physical prnt key will be used for bookmarks.
+  bookmarks prnt
+)
+
+
+(defalias
+  lctl (multi 
+    ;; If lctl is pressed twice, in a short period, it issues a tab toggle.
+    ;; If hold switch to lctl_layer.
+    (t! th (t! 2x $action_tab_toggle) $toggle_lctl_layer)
+    (on-release release-vkey vk_lalt) ;; (lctl+tab mimics lalt+tab)
+  )
+  !lctl (multi 
+    ;; If lctl is pressed twice, in a short period, it issues a tab toggle. 
+    ;; If hold switch to lctl_layer and !lctl_layer on top of it.
+    (t! th (t! 2x $action_tab_toggle) $toggle_!lctl_layer)
+    (on-release release-vkey vk_lalt) ;; (lctl+tab mimics lalt+tab)
+  )
+
+  ;; If lalt is pressed twice, in a short period, it issues a pane toggle.
+  ;; If hold switch to lalt_layer.
+  lalt (t! th (t! 2x $action_pane_toggle) $toggle_lalt_layer)
+  ;; If lalt is pressed twice, in a short period, it issues a pane toggle.
+  ;; If hold switch to lalt_layer and !lalt_layer on top of it.
+  !lalt (t! th (t! 2x $action_pane_toggle) $toggle_!lalt_layer)
+
+  ;; If hold switch to lmet_layer.
+  lmet (t! th lmet $toggle_lmet_layer)
+  ;; If hold switch to lmet_layer and !lmet_layer on top of it.
+  !lmet (t! th lmet $toggle_!lmet_layer)
+
+  ;; Switch to gui_layer, that enables commanding desktops, tabs, panes, windows.
+  gui $toggle_gui_layer
+
+  ;; lsft and rsft behaves normally except that lsft+rsft goes to next tab and
+  ;; rsft+lsft goes to prev tab. Also tapping twice on lsft or rsft goes
+  ;; to previous tab or next tab respectively.
+  lsft (t! th (t! 2x $action_tab_prev) $toggle_lsft_layer)
+  rsft (t! th (t! 2x $action_tab_next) $toggle_rsft_layer)
+
+  ;; tab behaves as tab when tapped and opts_layer when hold.
+  tab/opts (t! th tab $toggle_opts_layer)
+
+  ;; Pyhsical prnt behaves as prnt when tapped and bookmarks_layer when hold.
+  bookmarks (t! th $bookmarks $toggle_bookmarks_layer)
+
+  ;; Physical ralt behaves switches apps_layer when hold.
+  apps (t! th $apps $toggle_apps_layer) 
+
+  omni  $toggle_omni_layer
+
+  ;; caps behaves as esc when tapped and gui modifiers when hold.
+  esc/omni (t! th esc @omni)
+
+  ;; Alternative Chars toggle key. Changes the default layout between normal 
+  ;; chars and alternative chars (á, ñ, ...)
+  toggle_kbd_lang (multi 
+    (on-press toggle-virtualkey vk_alt_chars)
+    (switch
+      ((input virtual vk_alt_chars)) (layer-switch default) break
+      ()  (layer-switch !default) break
+    )
+  )
+
+  lang/num (t! th @toggle_kbd_lang $toggle_num_layer)
+
+  a/gui  (t! homerowmod $tap_time $hold_time a @gui)
+  s/lalt (t! homerowmod $tap_time $hold_time s @lalt)
+  d/lsft (t! homerowmod $tap_time $hold_time d @lsft)
+  f/lctl (t! homerowmod $tap_time $hold_time f @lctl)
+  g/lmet (t! homerowmod $tap_time $hold_time g @lmet)
+  h/lmet (t! homerowmod $tap_time $hold_time h @lmet)
+  j/lctl (t! homerowmod $tap_time $hold_time j @lctl)
+  k/rsft (t! homerowmod $tap_time $hold_time k @rsft)
+  l/lalt (t! homerowmod $tap_time $hold_time l @lalt)
+  ;/gui  (t! homerowmod $tap_time $hold_time ; @gui)
+
+  q (t! type q) w (t! type w) e (t! type e) r (t! type r) t (t! type t)
+  y (t! type y) u (t! type u) i (t! type i) o (t! type o) p (t! type p)
+  ;; a (t! type a) s (t! type s) d (t! type d) f (t! type f) 
+  ;; g (t! type g) h (t! type h)
+  ;;  j (t! type j) k (t! typek) l (t! type l)
+  z (t! type z) x (t! type x) c (t! type c) v (t! type v) b (t! type b) 
+  n (t! type n) m (t! type m) 
+
+  ;; Alternative characters for other languages.
+  !a/gui (t! homerowmod $tap_time $hold_time (t! alt_char a) @gui)
+  !e     (t! alt_char e) 
+  !i     (t! alt_char i) 
+  !o     (t! alt_char o)  
+  !u     (t! alt_char u) 
+  !n     (t! alt_char n) 
+
+  ;; "" ALIAS """"""""""""""""""""""""
+)
+
+  

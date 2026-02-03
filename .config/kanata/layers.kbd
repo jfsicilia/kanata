@@ -67,8 +67,40 @@
 ;;  
 ;;  49.  panes_layer             
 ;;  50.  sft_panes_layer         
-(defvar
 
+(defsrc
+  esc        f1         f2         f3         f4         f5         f6         f7         f8         f9         f10        f11        f12    del
+  grv        1          2          3          4          5          6          7          8          9          0          -          =      bspc
+  tab        q          w          e          r          t          y          u          i          o          p          [          ]      \
+  caps       a          s          d          f          g          h          j          k          l          ;          '          ret
+  lsft       lsgt       z          x          c          v          b          n          m          ,          .          /          rsft   
+  lctl       lmet       lalt                             spc                              ralt       prnt       rctl
+) ;;""
+
+;; My default keyboard mapping maps: lclt in the physical lalt key, 
+;; lalt in the physical lmet key, lmelt in the physical lctl key. This
+;; resembles the ctrl | alt | cmd layout of mac computers.
+(deflayer default
+  esc        f1         f2         f3         f4         f5         f6         f7         f8         f9         f10        f11        f12    del 
+  grv        1          2          3          4          5          6          7          8          9          0          -          =      bspc
+  @tab/opts  @q         @w         @e         @r         @t         @y         @u         @i         @o         @p         [          ]      \
+  @esc/omni  @a/gui     @s/lalt    @d/lsft    @f/lctl    @g/lmet    @h/lmet    @j/lctl    @k/rsft    @l/lalt    @;/gui     '          ret
+  @lsft      @lang/num  @z         @x         @c         @v         @b         @n         @m         ,          .          /          @rsft  
+  @!lmet     @!lalt     @!lctl                           spc                              @apps      @bookmarks rctl      
+) ;;""
+
+;; Default keyboard mapping with alternative chars (for spanish writing)
+;; for a, e, i, o, u and n.
+(deflayer !default
+  esc        f1         f2         f3         f4         f5         f6         f7         f8         f9         f10        f11        f12    del
+  grv        1          2          3          4          5          6          7          8          9          0          -          =      bspc
+  @tab/opts  @q         @w         @!e        @r         @t         @y         @!u        @!i        @!o        @p         [          ]      \
+  @esc/omni  @!a/gui    @s/lalt    @d/lsft    @f/lctl    @g/lmet    @h/lmet    @j/lctl    @k/rsft    @l/lalt    @;/gui     '          ret
+  @lsft      @lang/num  @z         @x         @c         @v         @b         @!n        @m         ,          .          /          @rsft  
+  @!lmet     @!lalt     @!lctl                           spc                              @apps      @bookmarks rctl      
+) ;;""
+
+(defvar
   ;; ===== LAYERS NOT DEPENDENT ON THE RUNNING APP ==========================
 
   ;; Apps layer

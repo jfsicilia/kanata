@@ -18,113 +18,22 @@
   ;; vk_@app@      XX
 )
 
+;; Templates =============================================================
 (include templates.kbd)
-;; (deftemplate mytestA (mod alt)
-;;     (if-equal (concat $mod $alt X) X             
-;;       (macro n o m o d))
-;;     (if-equal (concat $mod $alt)   !             
-;;       (macro n o m o d a l t))
-;;     (if-in-list (concat $mod $alt) (lctl lalt lmet)  
-;;       (macro m o d))
-;;     (if-in-list (concat $mod $alt) (lctl! lalt! lmet!) 
-;;       (macro m o d a l t))
-;; )
 
-(deftemplate _app_layer_condition (mod alt layer app)
-    (if-equal (concat $mod $alt X) X             
-      ((input virtual (concat "vk_" $app))) (t! toggle_2layer $layer (concat $app "_" $layer)) break
-    )
-    (if-equal (concat $mod $alt)   !             
-      ((input virtual (concat "vk_" $app))) (t! toggle_3layer $layer (concat "!" $layer) (concat $app "_" $layer))      break
-    )
-    (if-in-list (concat $mod $alt) (lctl lalt lmet lsft rsft)  
-      ((input virtual (concat "vk_" $app))) (t! toggle_mod_2layer $mod $layer (concat $app "_" $layer)) break
-    )
-    (if-in-list (concat $mod $alt) (lctl! lalt! lmet! lsft! rsft!) 
-      ((input virtual (concat "vk_" $app))) (t! toggle_mod_3layer $mod $layer (concat "!" $layer) (concat $app "_!" $layer)) break
-    )
-)
-(deftemplate _default_layer_condition (mod alt layer)
-    (if-equal (concat $mod $alt X) X             
-      () (layer-toggle $layer) break
-    )
-    (if-equal (concat $mod $alt)   !             
-      () (t! toggle_2layer $layer (concat "!" $layer)) break
-    )
-    (if-in-list (concat $mod $alt) (lctl lalt lmet lsft rsft)  
-      () (t! toggle_mod_layer $mod $layer) break
-    )
-    (if-in-list (concat $mod $alt) (lctl! lalt! lmet! lsft! rsft!) 
-      () (t! toggle_mod_2layer $mod $layer (concat "!" $layer)) break
-    )
-)
-
-;; Apps layer toggle =============================================
+;; Apps layer toggle template ============================================
 (deftemplate _toggle_app_layer (mod alt layer)
   (switch
     (t! _app_layer_condition $mod $alt $layer "chrome") 
     (t! _app_layer_condition $mod $alt $layer "foot") 
-    (t! _app_layer_condition $mod $alt $layer "obsidian") 
-    (t! _app_layer_condition $mod $alt $layer "dolphin") 
     (t! _app_layer_condition $mod $alt $layer "nvim") 
     (t! _app_layer_condition $mod $alt $layer "zellij") 
+    (t! _app_layer_condition $mod $alt $layer "obsidian") 
+    (t! _app_layer_condition $mod $alt $layer "dolphin") 
     ;; (t! _app_layer_condition $mod $alt $layer "@app@") 
     (t! _default_layer_condition $mod $alt $layer)
   )
 )
-
-;;;; Apps layer toggle =============================================
-;;(deftemplate toggle_app_layer (layer)
-;;  (switch
-;;    ((input virtual vk_chrome))   (t! toggle_2layer $layer (concat "chrome_" $layer))      break
-;;    ((input virtual vk_foot))     (t! toggle_2layer $layer (concat "foot_" $layer))        break
-;;    ((input virtual vk_obsidian)) (t! toggle_2layer $layer (concat "obsidian_" $layer))    break
-;;    ((input virtual vk_dolphin))  (t! toggle_2layer $layer (concat "dolphin_" $layer))     break
-;;    ((input virtual vk_nvim))     (t! toggle_2layer $layer (concat "nvim_" $layer))        break
-;;    ((input virtual vk_zellij))   (t! toggle_2layer $layer (concat "zellij_" $layer))      break
-;;    ;; ((input virtual vk_@APP@))   (t! toggle_2layer $layer (concat "@APP@_" $layer))      break
-;;    () (layer-toggle $layer) break
-;;  )
-;;)
-;;
-;;(deftemplate toggle_app_!layer (layer)
-;;  (switch
-;;    ((input virtual vk_chrome))   (t! toggle_3layer $layer (concat "!" $layer) (concat "chrome_!" $layer))      break
-;;    ((input virtual vk_foot))     (t! toggle_3layer $layer (concat "!" $layer) (concat "foot_!" $layer))        break
-;;    ((input virtual vk_obsidian)) (t! toggle_3layer $layer (concat "!" $layer) (concat "obsidian_!" $layer))    break
-;;    ((input virtual vk_dolphin))  (t! toggle_3layer $layer (concat "!" $layer) (concat "dolphin_!" $layer))     break
-;;    ((input virtual vk_nvim))     (t! toggle_3layer $layer (concat "!" $layer) (concat "nvim_!" $layer))        break
-;;    ((input virtual vk_zellij))   (t! toggle_3layer $layer (concat "!" $layer) (concat "zellij_!" $layer))      break
-;;    ;; ((input virtual vk_@APP@))   (t! toggle_3layer $layer (concat "!" $layer) (concat "@APP@_!" $layer))      break
-;;    () (t! toggle_2layer $layer (concat "!" $layer)) break
-;;  )
-;;)
-;;
-;;(deftemplate toggle_mod_app_layer (mod layer)
-;;  (switch
-;;    ((input virtual vk_chrome))   (t! toggle_mod_2layer $mod $layer (concat "chrome_" $layer))      break
-;;    ((input virtual vk_foot))     (t! toggle_mod_2layer $mod $layer (concat "foot_" $layer))        break
-;;    ((input virtual vk_obsidian)) (t! toggle_mod_2layer $mod $layer (concat "obsidian_" $layer))    break
-;;    ((input virtual vk_dolphin))  (t! toggle_mod_2layer $mod $layer (concat "dolphin_" $layer))     break
-;;    ((input virtual vk_nvim))     (t! toggle_mod_2layer $mod $layer (concat "nvim_" $layer))        break
-;;    ((input virtual vk_zellij))   (t! toggle_mod_2layer $mod $layer (concat "zellij_" $layer))      break
-;;    ;; ((input virtual vk_@APP@))   (t! toggle_mod_2layer $mod $layer (concat "@APP@_" $layer))      break
-;;    () (t! toggle_mod_layer $mod $layer) break
-;;  )
-;;)
-;;
-;;(deftemplate toggle_mod_app_!layer (mod layer)
-;;  (switch
-;;    ((input virtual vk_chrome))   (t! toggle_mod_3layer $mod $layer (concat "!" $layer) (concat "chrome_!" $layer))      break
-;;    ((input virtual vk_foot))     (t! toggle_mod_3layer $mod $layer (concat "!" $layer) (concat "foot_!" $layer))        break
-;;    ((input virtual vk_obsidian)) (t! toggle_mod_3layer $mod $layer (concat "!" $layer) (concat "obsidian_!" $layer))    break
-;;    ((input virtual vk_dolphin))  (t! toggle_mod_3layer $mod $layer (concat "!" $layer) (concat "dolphin_!" $layer))     break
-;;    ((input virtual vk_nvim))     (t! toggle_mod_3layer $mod $layer (concat "!" $layer) (concat "nvim_!" $layer))        break
-;;    ((input virtual vk_zellij))   (t! toggle_mod_3layer $mod $layer (concat "!" $layer) (concat "zellij_!" $layer))      break
-;;    ;; ((input virtual vk_@APP@))   (t! toggle_mod_3layer $mod $layer (concat "!" $layer) (concat "@APP@_!" $layer))      break
-;;    () (t! toggle_mod_2layer $mod $layer (concat "!" $layer)) break
-;;  )
-;;)
 
 ;; Layers  ===============================================================
 (include layers.kbd)
@@ -132,16 +41,19 @@
 ;; Actions ===============================================================
 (include actions.kbd)
 
-;; General keybindings ===================================================
-(include main.kbd)
+;; Setup =================================================================
+(include setup.kbd)
 
-;; Apps specific keybindings =============================================
-(include chrome.kbd)
-(include foot.kbd)
-(include zellij.kbd)
-(include nvim.kbd)
-(include dolphin.kbd)
-(include obsidian.kbd)
+;; Default keybindings ===================================================
+(include kb_default.kbd)
+
+;; Apps' specific keybindings =============================================
+(include kb_chrome.kbd)
+(include kb_foot.kbd)
+(include kb_nvim.kbd)
+(include kb_zellij.kbd)
+(include kb_obsidian.kbd)
+(include kb_dolphin.kbd)
 ;; (include @app@.kbd)
 
 
