@@ -75,33 +75,6 @@
   (tap-hold-press $tap_time $hold_time $tap $hold)
 )
 
-;; Hold modifier and toggle layer.
-(deftemplate toggle_mod_layer (mod layer)
-  (multi $mod (layer-toggle $layer)) 
-)
-
-;; Hold modifier and toggle base layer and then top layer. This 
-;; simulates a hierachy of layers (top layer will inherit the functinality
-;; of base layer and can overwrite any binding at will).
-(deftemplate toggle_mod_2layer (mod base_layer top_layer)
-  (multi $mod (layer-toggle $base_layer) (layer-toggle $top_layer))
-)
-
-(deftemplate toggle_2layer (base_layer top_layer)
-  (multi (layer-toggle $base_layer) (layer-toggle $top_layer))
-)
-
-;; Hold modifier and toggle base layer and then top layer. This 
-;; simulates a hierachy of layers (top layer will inherit the functinality
-;; of base layer and can overwrite any binding at will).
-(deftemplate toggle_mod_3layer (mod base_layer medium_layer top_layer)
-  (multi $mod (layer-toggle $base_layer) (layer-toggle $medium_layer) (layer-toggle $top_layer))
-)
-
-(deftemplate toggle_3layer (base_layer medium_layer top_layer)
-  (multi (layer-toggle $base_layer) (layer-toggle $medium_layer) (layer-toggle $top_layer))
-)
-
 
 ;; If pressed twice, in a short period, issue the action.
 (deftemplate 2x (action)
@@ -122,39 +95,48 @@
          $action)
 )
 
-;; See toggle_app_layer template.
-;; This template allows dynamic conditioning based on mod (modifier) and 
-;; alt (alternative) parameters.
-(deftemplate _app_layer_condition (mod alt layer app)
-    (if-equal (concat $mod $alt X) X             
-      ((input virtual (concat "vk_" $app))) (t! toggle_2layer $layer (concat $app "_" $layer)) break
-    )
-    (if-equal (concat $mod $alt)   !             
-      ((input virtual (concat "vk_" $app))) (t! toggle_3layer $layer (concat "!" $layer) (concat $app "_" $layer))      break
-    )
-    (if-in-list (concat $mod $alt) (lctl lalt lmet lsft rsft)  
-      ((input virtual (concat "vk_" $app))) (t! toggle_mod_2layer $mod $layer (concat $app "_" $layer)) break
-    )
-    (if-in-list (concat $mod $alt) (lctl! lalt! lmet! lsft! rsft!) 
-      ((input virtual (concat "vk_" $app))) (t! toggle_mod_3layer $mod $layer (concat "!" $layer) (concat $app "_!" $layer)) break
-    )
+(deftemplate toggle_layer (layer)
+  (layer-toggle $layer)
+)
+
+(deftemplate toggle_2layer (base_layer top_layer)
+  (multi (layer-toggle $base_layer) (layer-toggle $top_layer))
+)
+
+(deftemplate toggle_3layer (base_layer medium_layer top_layer)
+  (multi (layer-toggle $base_layer) (layer-toggle $medium_layer) (layer-toggle $top_layer))
+)
+
+;; Hold modifier and toggle layer.
+(deftemplate toggle_mod_layer (mod layer)
+  (multi $mod (layer-toggle $layer)) 
+)
+
+;; Hold modifier and toggle base layer and then top layer. This 
+;; simulates a hierachy of layers (top layer will inherit the functinality
+;; of base layer and can overwrite any binding at will).
+(deftemplate toggle_mod_2layer (mod base_layer top_layer)
+  (multi $mod (layer-toggle $base_layer) (layer-toggle $top_layer))
+)
+
+;; Hold modifier and toggle base layer and then top layer. This 
+;; simulates a hierachy of layers (top layer will inherit the functinality
+;; of base layer and can overwrite any binding at will).
+(deftemplate toggle_mod_3layer (mod base_layer medium_layer top_layer)
+  (multi $mod (layer-toggle $base_layer) (layer-toggle $medium_layer) (layer-toggle $top_layer))
 )
 
 ;; See toggle_app_layer template.
 ;; This template allows dynamic conditioning based on mod (modifier) and 
 ;; alt (alternative) parameters.
-(deftemplate _default_layer_condition (mod alt layer)
-    (if-equal (concat $mod $alt X) X             
-      () (layer-toggle $layer) break
-    )
-    (if-equal (concat $mod $alt)   !             
-      () (t! toggle_2layer $layer (concat "!" $layer)) break
-    )
-    (if-in-list (concat $mod $alt) (lctl lalt lmet lsft rsft)  
-      () (t! toggle_mod_layer $mod $layer) break
-    )
+(deftemplate toggle_mod_alt_layer (mod alt layer)
+    (if-equal (concat $mod $alt X) X 
+      (t! toggle_layer $layer))
+    (if-equal (concat $mod $alt)   ! 
+      (t! toggle_2layer $layer (concat "!" $layer)))
+    (if-in-list (concat $mod $alt) (lctl lalt lmet lsft rsft) 
+      (t! toggle_mod_layer $mod $layer)) 
     (if-in-list (concat $mod $alt) (lctl! lalt! lmet! lsft! rsft!) 
-      () (t! toggle_mod_2layer $mod $layer (concat "!" $layer)) break
-    )
+      (t! toggle_mod_2layer $mod $layer (concat "!" $layer) )) 
 )
 

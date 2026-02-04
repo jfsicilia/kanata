@@ -3,7 +3,7 @@
 ;;  danger-enable-cmd yes
 )
 
-;; Virtual Keys ============================================================
+;; Apps Virtual Keys ============================================================
 (defvirtualkeys
   ;; These virtual keys are used by an external program that detects the active
   ;; window and tells Kanata which app is active by pressing one of the following
@@ -17,42 +17,22 @@
   vk_zellij       XX
   vk_obsidian     XX
   vk_dolphin      XX
-  ;; vk_@app@      XX
 )
 
 ;; Templates =============================================================
 (include templates.kbd)
 
-;; Apps layer toggle template ============================================
-(deftemplate toggle_app_layer (mod alt layer)
-  (switch
-    (t! _app_layer_condition $mod $alt $layer "chrome") 
-    (t! _app_layer_condition $mod $alt $layer "foot") 
-    (t! _app_layer_condition $mod $alt $layer "nvim") 
-    (t! _app_layer_condition $mod $alt $layer "zellij") 
-    (t! _app_layer_condition $mod $alt $layer "obsidian") 
-    (t! _app_layer_condition $mod $alt $layer "dolphin") 
-    ;; (t! _app_layer_condition $mod $alt $layer "@app@") 
-    (t! _default_layer_condition $mod $alt $layer)
-  )
-)
-
 ;; Setup =================================================================
 (include setup.kbd)
+(include layers.kbd)
 
 ;; Actions ===============================================================
-(include actions.kbd)
-
-;; Default keybindings ===================================================
-(include kb_default.kbd)
-
-;; Apps' specific keybindings =============================================
-(include kb_chrome.kbd)
-(include kb_foot.kbd)
-(include kb_nvim.kbd)
-(include kb_zellij.kbd)
-(include kb_obsidian.kbd)
-(include kb_dolphin.kbd)
-;; (include @app@.kbd)
+(include actions/actions.kbd)
+(include actions/actions_chrome.kbd)
+(include actions/actions_foot.kbd)
+(include actions/actions_nvim.kbd)
+(include actions/actions_zellij.kbd)
+(include actions/actions_obsidian.kbd)
+(include actions/actions_dolphin.kbd)
 
 

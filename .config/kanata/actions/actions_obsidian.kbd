@@ -1,0 +1,123 @@
+(defvar
+;; LCTL actions ==========================================================
+obsidian_action_lctl+a                         $obsidian_action_select_all_text
+obsidian_action_lctl+b                         C-b
+obsidian_action_!lctl+b                        C-A-b
+obsidian_action_!lctl+e                        C-A-e
+obsidian_action_lctl+f                         C-f 
+obsidian_action_!lctl+p                        C-A-o
+obsidian_action_!lctl+!p                       C-A-p
+obsidian_action_!lctl+r                        C-A-M-e 
+obsidian_action_lctl+t                         A-C-t
+obsidian_action_lctl+!t                        A-C-S-t
+obsidian_action_lctl+[                         C-A-left
+obsidian_action_lctl+]                         C-A-right
+obsidian_action_lctl+;                         (macro C-A-M-e 50 ;) 
+
+;; == Format combos ======================================================
+obsidian_action_bold                           C-A-b
+
+;; == Seek & Select combos ===============================================
+obsidian_action_select_files                   C-A-o
+obsidian_action_select_opened_files            C-S-A-o
+obsidian_action_select_folders                 C-S-o
+obsidian_action_select_command                 C-A-p
+obsidian_action_select_symbol                  A-S-o
+obsidian_action_omnisearch_files               C-A-m
+obsidian_action_omnisearch_file                C-A-S-m
+
+;; == Favs combos ========================================================
+obsidian_action_select_fav                     C-o
+
+;; == Settings combos ====================================================
+obsidian_action_settings                       C-A-,
+
+;; == Tabs combos ========================================================
+obsidian_action_tab_next                       C-pgdn
+obsidian_action_tab_prev                       C-pgup
+obsidian_action_tab_toggle                     A-q
+obsidian_action_tab_new                        A-C-t
+obsidian_action_tab_close                      A-C-w
+obsidian_action_tab_undo_close                 A-C-S-t
+obsidian_action_tab_goto_1                     C-1
+obsidian_action_tab_goto_2                     C-2
+obsidian_action_tab_goto_3                     C-3
+obsidian_action_tab_goto_4                     C-4
+obsidian_action_tab_goto_5                     C-5
+obsidian_action_tab_goto_6                     C-6
+obsidian_action_tab_goto_7                     C-7
+obsidian_action_tab_goto_8                     C-8
+obsidian_action_tab_goto_last                  C-9
+
+;; == Panes combos =======================================================
+obsidian_action_pane_left                      A-left
+obsidian_action_pane_right                     A-right
+obsidian_action_pane_above                     A-up
+obsidian_action_pane_below                     A-down
+obsidian_action_pane_toggle                    A-q
+obsidian_action_pane_max                       (macro A-s A-S-s)
+obsidian_action_pane_h_split                   A--
+obsidian_action_pane_v_split                   A-\
+obsidian_action_pane_close                     A-w
+obsidian_action_pane_bookmarks                 A-b
+obsidian_action_pane_calendar                  A-c
+obsidian_action_pane_day                       A-d
+obsidian_action_pane_!day                      A-S-d
+obsidian_action_pane_explorer                  A-e
+obsidian_action_pane_!explorer                 A-S-e
+obsidian_action_pane_find                      C-A-S-f
+obsidian_action_pane_go                        C-A-o
+obsidian_action_pane_main                      A-m
+obsidian_action_pane_outline                   A-o
+obsidian_action_pane_properties                A-p
+obsidian_action_pane_!properties               A-S-p
+obsidian_action_pane_recent                    A-r
+obsidian_action_pane_left_sidebar              A-s
+obsidian_action_pane_right_sidebar             A-S-s
+obsidian_action_pane_tags                      A-t
+obsidian_action_pane_vertical_tabs             (macro A-v m)
+obsidian_action_pane_graph                     A-g
+obsidian_action_pane_backlinks                 A-,
+obsidian_action_pane_outlinks                  A-.
+obsidian_action_pane_!outlinks                 A-S-.
+
+;; == History combos =====================================================
+obsidian_action_hist_next                      C-A-right
+obsidian_action_hist_prev                      C-A-left
+
+;; == Text combos ======================================================
+obsidian_action_select_all_text                (macro g g S-v S-g)
+
+;; == Omni combos ======================================================
+obsidian_action_page_up                        C-b
+obsidian_action_page_down                      C-f
+obsidian_action_copy                           C-A-c
+obsidian_action_cut                            C-A-x
+obsidian_action_paste                          C-A-v
+obsidian_action_rename                         C-A-r
+obsidian_action_duplicate                      C-A-d
+obsidian_action_toggle_select                  C-spc
+obsidian_action_select_all                     C-A-a
+obsidian_action_invert_select                  A-S-a
+obsidian_action_clear_select                   C-A-S-a
+obsidian_action_new                            C-A-n
+obsidian_action_!new                           C-A-S-n
+obsidian_action_!!new                          C-A-s
+obsidian_action_open                           right
+obsidian_action_parent                         left
+obsidian_action_view                           (macro C-A-p S-o p e n spc w i t h spc S-c h r o m e)
+obsidian_action_!view                          (macro C-A-p S-o p e n spc w i t h spc S-c h r o m e)
+obsidian_action_!!view                         (macro C-A-p S-o p e n spc w i t h spc S-c h r o m e)
+obsidian_action_edit                           (macro C-A-p S-o p e n spc w i t h spc n v i m)
+obsidian_action_!edit                          (macro C-A-p S-o p e n spc w i t h spc n v i m)
+obsidian_action_!!edit                         (macro C-A-p S-o p e n spc w i t h spc n v i m)
+obsidian_action_explore                        (macro C-A-p S-o p e n spc w i t h spc t e r m i n a l)
+obsidian_action_!explore                       (macro C-A-p S-o p e n spc w i t h spc t e r m i n a l)
+obsidian_action_!!explore                      (macro C-A-p S-o p e n spc w i t h spc t e r m i n a l)
+obsidian_action_search                         C-A-f
+obsidian_action_!search                        C-A-S-f
+obsidian_action_replace                        C-A-h
+obsidian_action_!replace                       C-A-S-h
+obsidian_action_!!replace                      C-M-h
+obsidian_action_go                             C-A-o
+)

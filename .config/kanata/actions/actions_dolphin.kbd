@@ -1,0 +1,5 @@
+(defvar
+;; == Edit combos ======================================================
+dolphin_action_open                           ent
+dolphin_action_parent                         bspc
+)

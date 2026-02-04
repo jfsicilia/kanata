@@ -1,0 +1,26 @@
+(defvar
+;; == Seek & Select combos ===============================================
+chrome_action_select_files                   C-S-a
+chrome_action_select_opened_files            XX
+chrome_action_select_folders                 XX
+;; == Tabs combos ========================================================
+chrome_action_tab_next                       C-tab
+chrome_action_tab_prev                       C-S-tab
+chrome_action_tab_toggle                     A-w
+chrome_action_tab_new                        C-t
+chrome_action_tab_close                      C-w
+chrome_action_tab_undo_close                 C-S-t
+chrome_action_tab_goto_1                     C-1
+chrome_action_tab_goto_2                     C-2
+chrome_action_tab_goto_3                     C-3
+chrome_action_tab_goto_4                     C-4
+chrome_action_tab_goto_5                     C-5
+chrome_action_tab_goto_6                     C-6
+chrome_action_tab_goto_7                     C-7
+chrome_action_tab_goto_8                     C-8
+chrome_action_tab_goto_last                  C-9
+;; == History combos =====================================================
+chrome_action_hist_next                      A-right
+chrome_action_hist_prev                      A-left
+chrome_action_go                             C-l
+)

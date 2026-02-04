@@ -1,0 +1,9 @@
+(defvar
+;; == Edit combos ======================================================
+;; Ctrl+b can't be bound in foot, so kanata intercepts it send the
+;; corresponding correct foot's keybinding for page up.
+foot_action_page_up                        S-pgup
+;; Ctrl+f can't be bound in foot, so kanata intercepts it send the
+;; corresponding correct foot's keybinding for page down.
+foot_action_page_down                      S-pgdn
+)

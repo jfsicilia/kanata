@@ -1,0 +1,12 @@
+(defvar
+;; == Tabs combos ========================================================
+zellij_action_tab_next                       (macro C-g t l ret)
+zellij_action_tab_prev                       (macro C-g t h ret)
+zellij_action_tab_toggle                     (macro C-g t tab ret)
+;; == Panes combos =======================================================
+zellij_action_pane_left                      (macro C-g p h ret)
+zellij_action_pane_right                     (macro C-g p l ret)
+zellij_action_pane_above                     (macro C-g p k ret)
+zellij_action_pane_below                     (macro C-g p j ret)
+zellij_action_pane_max                       (macro C-g p f ret)
+)
