@@ -36,14 +36,14 @@ def rewrite_defvirtualkeys(lines, apps):
 
             # inside defvirtualkeys
             while i < len(lines):
-                l = lines[i]
-                if l.strip().startswith(";;"):
-                    out.append(l)
-                elif l.strip() == ")":
+                line = lines[i]
+                if line.strip().startswith(";;"):
+                    out.append(line)
+                elif line.strip() == ")":
                     # insert vk_<app> lines before closing
                     for app in apps:
                         out.append(f"  vk_{app:<12} XX\n")
-                    out.append(l)
+                    out.append(line)
                     break
                 i += 1
         i += 1
