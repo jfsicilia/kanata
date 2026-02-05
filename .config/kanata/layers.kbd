@@ -668,7 +668,7 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (opts_layer)
   ;; tab+r reloads kanata configuration.
-  r (multi lrld (cmd kanata_sync_apps.py))
+  r (multi (cmd kanata_sync_apps.py -f) lrld)
 
   ;; == SPC/SFT ======================
   spc  (t! th _ $toggle_lsft+opts_layer)

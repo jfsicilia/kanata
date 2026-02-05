@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
+import argparse
 import re
+import sys
 from pathlib import Path
 
 KANATA_EXT = "kbd"
@@ -123,7 +125,18 @@ def sync_actions():
     return out
 
 
-def main():
+def ask_confirmation():
+    answer = (
+        input(
+            f"This will overwrite {KANATA_FILE} and {ACTIONS_FILE} files. Continue? [y/N]: "
+        )
+        .strip()
+        .lower()
+    )
+    return answer in ("y", "yes")
+
+
+def main(force: bool):
     apps = find_apps()
 
     if not apps:
@@ -131,13 +144,60 @@ def main():
             f"No {ACTIONS_PREFIX}<app>.{KANATA_EXT} files found in {ACTIONS_FOLDER}"
         )
 
+    if not force:
+        if not ask_confirmation():
+            print("Aborted.")
+            sys.exit(1)
+
+    # ---- write kanata file ----
     text = KANATA_FILE.read_text().splitlines(keepends=True)
     result = autogen_kanata_file(text, apps)
     KANATA_FILE.write_text("".join(result), encoding="utf-8")
 
+    # ---- write actions file ----
     result = sync_actions()
     ACTIONS_FILE.write_text("".join(result), encoding="utf-8")
 
+    print("Files updated successfully.")
+
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(
+        description=(
+            "Synchronize kanata configuration files based on detected app action files.\n\n"
+            f"The script scans app action definitions in the {ACTIONS_FOLDER} folder. If an app "
+            f"defines its own actions in a file named {ACTIONS_PREFIX}<app>.{KANATA_EXT}, "
+            f"the app is added to {KANATA_FILE}, and app's actions are added to "
+            f"{ACTIONS_FILE}."
+        ),
+        formatter_class=argparse.RawTextHelpFormatter,
+    )
+
+    parser.add_argument(
+        "-f",
+        "--force",
+        action="store_true",
+        help="Overwrite files without asking for confirmation",
+    )
+
+    args = parser.parse_args()
+    main(force=args.force)
+
+# def main():
+#     apps = find_apps()
+#
+#     if not apps:
+#         raise RuntimeError(
+#             f"No {ACTIONS_PREFIX}<app>.{KANATA_EXT} files found in {ACTIONS_FOLDER}"
+#         )
+#
+#     text = KANATA_FILE.read_text().splitlines(keepends=True)
+#     result = autogen_kanata_file(text, apps)
+#     KANATA_FILE.write_text("".join(result), encoding="utf-8")
+#
+#     result = sync_actions()
+#     ACTIONS_FILE.write_text("".join(result), encoding="utf-8")
+#
+#
+# if __name__ == "__main__":
+#     main()
