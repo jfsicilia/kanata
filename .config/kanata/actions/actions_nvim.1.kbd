@@ -7,12 +7,18 @@ nvim_action_lctl+f                         C-f
 ;;nvim_action_lctl+!t                        $action_tab_undo_close
 nvim_action_lctl+[                         C-o
 nvim_action_lctl+]                         C-i
+
 ;; == Seek & Select combos ===============================================
-nvim_action_select_files                   (macro , s f)
-nvim_action_select_opened_files            (macro , spc)
-nvim_action_select_folders                 XX
+;; !lctl+spc
+nvim_action_select_files                 (macro esc S-; S-t e l e s c o p e spc f i n d S-- f i l e s ret)
+;; !lctl+lsft+spc
+nvim_action_select_opened_files          (macro esc S-; S-t e l e s c o p e spc b u f f e r s ret)
+;; !lctl+rsft+spc
+nvim_action_select_folders               XX
+
 ;; == Tabs combos ========================================================
 nvim_action_tab_next                       (macro esc S-; b n e x t ret)
+nvim_action_!tab_next                       (macro esc S-; b n e x t ret)
 nvim_action_tab_prev                       (macro esc S-; b p r e v i o u s ret)
 nvim_action_tab_toggle                     (macro S-; b S-3 ret)
 nvim_action_tab_close                      C-w
@@ -25,6 +31,7 @@ nvim_action_tab_goto_6                     (macro , Digit6)
 nvim_action_tab_goto_7                     (macro , Digit7)
 nvim_action_tab_goto_8                     (macro , Digit8)
 nvim_action_tab_goto_last                  (macro , Digit9)
+
 ;; == Panes combos =======================================================
 nvim_action_pane_left                      (macro esc S-; w i n c m d spc h ret)
 nvim_action_pane_right                     (macro esc S-; w i n c m d spc l ret)
@@ -43,8 +50,8 @@ nvim_action_select_all_text                (macro g g S-v S-g)
 ;; == Edit combos ======================================================
 nvim_action_page_up                        C-b
 nvim_action_page_down                      C-f
-nvim_action_up                             C-k
-nvim_action_down                           C-j
-nvim_action_left                           C-h
-nvim_action_right                          C-l
+nvim_action_up                             up
+nvim_action_down                           down
+nvim_action_left                           left
+nvim_action_right                          right
 )

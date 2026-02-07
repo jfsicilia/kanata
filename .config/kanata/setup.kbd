@@ -36,23 +36,29 @@
   ;; Homerowmod, keys in middle line of keyboard behaves as normal when
   ;; tap and modifiers when hold (gui, alt, sft, ctl and met).
   a/gui  a
-  s/lalt s
-  d/lsft d
-  f/lctl f
+  s/lalt s  ;; s key works as s when tap and lalt when hold.
+  s/work s  ;; Also s key works as workspaces key after gui key is hold.
+  d/lsft d  ;; d key works as d when tap and lsft when hold.
+  d/pane d  ;; Also d key works as panes key after gui key is hold.
+  f/lctl f  ;; f key works as f when tap and lctl when hold.
+  f/tabs f  ;; Also f key works as tabs key after gui key is hold.
   g/lmet g
   h/lmet h
-  j/lctl j
-  k/rsft k
-  l/lalt l
+  j/lctl j  ;; j key works as j when tap and lctl when hold.
+  j/tabs j  ;; Also j key works as tabs key after gui key is hold.
+  k/rsft k  ;; k key works as k when tap and rsft when hold.
+  k/pane k  ;; Also k key works as panes key after gui key is hold.
+  l/lalt l  ;; l key works as l when tap and lalt when hold.
+  l/work l  ;; Also l key works as workspaces key after gui key is hold.
   ;/gui  ;
 
   ;; Tab behaves like tab when tap and opts layer while hold.
   tab/opts tab
   ;; Caps behaves like esc when tap and omni layer while hold.
   esc/omni caps
-  ;; <> Key (Spanish keyboard) behaves like lang toggle when tap and num layer 
-  ;; while hold.
-  lang/num lsgt
+  ;; <> Key (Spanish keyboard) behaves like lang toggle when tap and alternative
+  ;; gui layer while hold.
+  lang/!gui lsgt
   ;; Physical ralt key will be used for apps launching/focusing.
   apps ralt
   ;; Physical prnt key will be used for bookmarks.
@@ -82,7 +88,7 @@
   grv        1          2          3          4          5          6          7          8          9          0          -          =      bspc
   @tab/opts  @q         @w         @e         @r         @t         @y         @u         @i         @o         @p         [          ]      \
   @esc/omni  @a/gui     @s/lalt    @d/lsft    @f/lctl    @g/lmet    @h/lmet    @j/lctl    @k/rsft    @l/lalt    @;/gui     '          ret
-  @lsft      @lang/num  @z         @x         @c         @v         @b         @n         @m         ,          .          /          @rsft  
+  @lsft      @lang/!gui @z         @x         @c         @v         @b         @n         @m         ,          .          /          @rsft  
   @!lmet     @!lalt     @!lctl                           spc                              @apps      @bookmarks rctl      
 ) ;;""
 
@@ -93,7 +99,7 @@
   grv        1          2          3          4          5          6          7          8          9          0          -          =      bspc
   @tab/opts  @q         @w         @!e        @r         @t         @y         @!u        @!i        @!o        @p         [          ]      \
   @esc/omni  @!a/gui    @s/lalt    @d/lsft    @f/lctl    @g/lmet    @h/lmet    @j/lctl    @k/rsft    @l/lalt    @;/gui     '          ret
-  @lsft      @lang/num  @z         @x         @c         @v         @b         @!n        @m         ,          .          /          @rsft  
+  @lsft      @lang/!gui @z         @x         @c         @v         @b         @!n        @m         ,          .          /          @rsft  
   @!lmet     @!lalt     @!lctl                           spc                              @apps      @bookmarks rctl      
 ) ;;""
 
@@ -156,7 +162,7 @@
     )
   )
 
-  lang/num (t! th @toggle_kbd_lang $toggle_num_layer)
+  lang/!gui (t! th @toggle_kbd_lang $toggle_!gui_layer)
 
   a/gui  (t! homerowmod $tap_time $hold_time a @gui)
   s/lalt (t! homerowmod $tap_time $hold_time s @lalt)
@@ -190,73 +196,75 @@
 
 ;; Layers index:
 ;;
-;;   1.  default
-;;   2.  !default
+;;    default
+;;    !default
 
-;;   3.  lctl_layer                   
-;;   4.  sft+lctl_layer               
-;;   5.  !lctl_layer                  
-;;   6.  !sft+lctl_layer              
+;;    lctl_layer                   
+;;    sft+lctl_layer               
+;;    !lctl_layer                  
+;;    !sft+lctl_layer              
 ;;  
-;;   7.  lalt_layer                   
-;;   8.  sft+lalt_layer               
-;;   9.  !lalt_layer                  
-;;   10. !sft+lalt_layer              
+;;    lalt_layer                   
+;;    sft+lalt_layer               
+;;    !lalt_layer                  
+;;  . !sft+lalt_layer              
 ;;  
-;;  11.  lmet_layer                   
-;;  12.  sft+lmet_layer               
-;;  13.  !lmet_layer                  
-;;  14.  !sft+lmet_layer              
+;;    lmet_layer                   
+;;    sft+lmet_layer               
+;;    !lmet_layer                  
+;;    !sft+lmet_layer              
 ;;  
-;;  15.  lctl+lalt_layer              
-;;  16.  sft+lctl+lalt_layer          
-;;  17.  !lctl+lalt_layer             
-;;  18.  !sft+lctl+lalt_layer         
+;;    lctl+lalt_layer              
+;;    sft+lctl+lalt_layer          
+;;    !lctl+lalt_layer             
+;;    !sft+lctl+lalt_layer         
 ;;  
-;;  19.  lctl+lmet_layer              
-;;  20.  sft+lctl+lmet_layer          
-;;  21.  !lctl+lmet_layer             
-;;  22.  !sft+lctl+lmet_layer         
+;;    lctl+lmet_layer              
+;;    sft+lctl+lmet_layer          
+;;    !lctl+lmet_layer             
+;;    !sft+lctl+lmet_layer         
 ;;  
-;;  23.  lalt+lmet_layer              
-;;  24.  sft+lalt+lmet_layer          
-;;  25.  !lalt+lmet_layer             
-;;  26.  !sft+lalt+lmet_layer         
+;;    lalt+lmet_layer              
+;;    sft+lalt+lmet_layer          
+;;    !lalt+lmet_layer             
+;;    !sft+lalt+lmet_layer         
 ;;  
-;;  27.  lctl+lalt+lmet_layer         
-;;  28.  sft+lctl+lalt+lmet_layer     
-;;  29.  !lctl+lalt+lmet_layer        
-;;  30.  !sft+lctl+lalt+lmet_layer    
+;;    lctl+lalt+lmet_layer         
+;;    sft+lctl+lalt+lmet_layer     
+;;    !lctl+lalt+lmet_layer        
+;;    !sft+lctl+lalt+lmet_layer    
 ;;  
-;;  31.  lsft_layer                   
-;;  32.  rsft_layer                   
+;;    lsft_layer                   
+;;    rsft_layer                   
 ;;  
-;;  33.  opts_layer                    
-;;  34.  sft+opts_layer                
+;;    opts_layer                    
+;;    sft+opts_layer                
 ;;  
-;;  35.  bookmarks_layer                  
-;;  36.  sft+bookmarks_layer              
+;;    bookmarks_layer                  
+;;    sft+bookmarks_layer              
 ;;  
-;;  37.  omni_layer                   
-;;  38.  sft+omni_layer               
+;;    omni_layer                   
+;;    sft+omni_layer               
 ;;  
-;;  39.  num_layer               
-;;  40.  sft+num_layer           
+;;    num_layer               
+;;    sft+num_layer           
 ;;  
-;;  41.  apps_layer                   
-;;  42.  sft+apps_layer               
+;;    apps_layer                   
+;;    sft+apps_layer               
 ;;  
-;;  43.  gui_layer                    
-;;  44.  sft+gui_layer                
+;;    gui_layer                    
+;;    sft+gui_layer                
+;;    !gui_layer                    
+;;    sft+!gui_layer                
 ;;  
-;;  45.  workspaces_layer             
-;;  46.  sft_workspaces_layer         
+;;    workspaces_layer             
+;;    sft_workspaces_layer         
 ;;  
-;;  47.  tabs_layer             
-;;  48.  sft_tabs_layer         
+;;    tabs_layer             
+;;    sft_tabs_layer         
 ;;  
-;;  49.  panes_layer             
-;;  50.  sft_panes_layer         
+;;    panes_layer             
+;;    sft_panes_layer         
 
 (defvar
   ;; Apps layer
@@ -278,21 +286,34 @@
   toggle_gui_layer                   (t! toggle_mod_alt_layer ""   "" gui_layer)
   toggle_lsft+gui_layer              (t! toggle_mod_alt_layer lsft "" lsft+gui_layer)
   toggle_rsft+gui_layer              (t! toggle_mod_alt_layer rsft "" rsft+gui_layer)
+  ;; !Gui layer
+  toggle_!gui_layer                  (t! toggle_mod_alt_layer ""   "!" gui_layer)
+  toggle_!lsft+gui_layer             (t! toggle_mod_alt_layer lsft "!" lsft+gui_layer)
+  toggle_!rsft+gui_layer             (t! toggle_mod_alt_layer rsft "!" rsft+gui_layer)
   
   ;; Workspaces layer
-  toggle_workspaces_layer            (t! toggle_mod_alt_layer ""   "" workspaces_layer)
-  toggle_lsft+workspaces_layer       (t! toggle_mod_alt_layer lsft "" lsft+workspaces_layer)   
-  toggle_rsft+workspaces_layer       (t! toggle_mod_alt_layer rsft "" rsft+workspaces_layer)  
+  toggle_workspaces_layer            (t! toggle_mod_alt_layer ""   ""  workspaces_layer)
+  toggle_lsft+workspaces_layer       (t! toggle_mod_alt_layer lsft ""  lsft+workspaces_layer)   
+  toggle_rsft+workspaces_layer       (t! toggle_mod_alt_layer rsft ""  rsft+workspaces_layer)  
+  toggle_!workspaces_layer           (t! toggle_mod_alt_layer ""   "!" workspaces_layer)
+  toggle_!lsft+workspaces_layer      (t! toggle_mod_alt_layer lsft "!" lsft+workspaces_layer)   
+  toggle_!rsft+workspaces_layer      (t! toggle_mod_alt_layer rsft "!" rsft+workspaces_layer)  
 
   ;; Tabs layer
   toggle_tabs_layer                  (t! toggle_mod_alt_layer ""   ""  tabs_layer)   
   toggle_lsft+tabs_layer             (t! toggle_mod_alt_layer lsft ""  lsft+tabs_layer)
   toggle_rsft+tabs_layer             (t! toggle_mod_alt_layer rsft ""  rsft+tabs_layer)
+  toggle_!tabs_layer                 (t! toggle_mod_alt_layer ""   "!" tabs_layer)   
+  toggle_!lsft+tabs_layer            (t! toggle_mod_alt_layer lsft "!" lsft+tabs_layer)
+  toggle_!rsft+tabs_layer            (t! toggle_mod_alt_layer rsft "!" rsft+tabs_layer)
 
   ;; Panes layer
   toggle_panes_layer                 (t! toggle_mod_alt_layer ""   ""  panes_layer)   
   toggle_lsft+panes_layer            (t! toggle_mod_alt_layer lsft ""  lsft+panes_layer)
   toggle_rsft+panes_layer            (t! toggle_mod_alt_layer rsft ""  rsft+panes_layer)
+  toggle_!panes_layer                (t! toggle_mod_alt_layer ""   "!" panes_layer)   
+  toggle_!lsft+panes_layer           (t! toggle_mod_alt_layer lsft "!" lsft+panes_layer)
+  toggle_!rsft+panes_layer           (t! toggle_mod_alt_layer rsft "!" rsft+panes_layer)
 
   ;; Bookmarks layer
   toggle_bookmarks_layer             (t! toggle_mod_alt_layer ""   ""  bookmarks_layer)  
@@ -310,85 +331,85 @@
 
   ;; LCtl layers.
   toggle_lctl_layer                  (t! toggle_mod_alt_layer lctl ""  lctl_layer)
-  toggle_!lctl_layer                 (t! toggle_mod_alt_layer lctl "!" lctl_layer)
   toggle_lsft+lctl_layer             (t! toggle_mod_alt_layer lsft ""  lsft+lctl_layer)
   toggle_rsft+lctl_layer             (t! toggle_mod_alt_layer rsft ""  rsft+lctl_layer)
+  toggle_!lctl_layer                 (t! toggle_mod_alt_layer lctl "!" lctl_layer)
   toggle_!lsft+lctl_layer            (t! toggle_mod_alt_layer lsft "!" lsft+lctl_layer)
   toggle_!rsft+lctl_layer            (t! toggle_mod_alt_layer rsft "!" rsft+lctl_layer)
   ;; LCtl+LAlt layers.
   toggle_lctl+lalt_layer             (t! toggle_mod_alt_layer lalt ""  lctl+lalt_layer) 
-  toggle_!lctl+lalt_layer            (t! toggle_mod_alt_layer lalt "!" lctl+lalt_layer) 
   toggle_lsft+lctl+lalt_layer        (t! toggle_mod_alt_layer lsft ""  lsft+lctl+lalt_layer)
   toggle_rsft+lctl+lalt_layer        (t! toggle_mod_alt_layer rsft ""  rsft+lctl+lalt_layer)
+  toggle_!lctl+lalt_layer            (t! toggle_mod_alt_layer lalt "!" lctl+lalt_layer) 
   toggle_!lsft+lctl+lalt_layer       (t! toggle_mod_alt_layer lsft "!" lsft+lctl+lalt_layer)
   toggle_!rsft+lctl+lalt_layer       (t! toggle_mod_alt_layer rsft "!" rsft+lctl+lalt_layer)
   ;; LCtl+Lmet layers.
   toggle_lctl+lmet_layer             (t! toggle_mod_alt_layer lmet ""  lctl+lmet_layer) 
-  toggle_!lctl+lmet_layer            (t! toggle_mod_alt_layer lmet "!" lctl+lmet_layer) 
   toggle_lsft+lctl+lmet_layer        (t! toggle_mod_alt_layer lsft ""  lsft+lctl+lmet_layer)
   toggle_rsft+lctl+lmet_layer        (t! toggle_mod_alt_layer rsft ""  rsft+lctl+lmet_layer)
+  toggle_!lctl+lmet_layer            (t! toggle_mod_alt_layer lmet "!" lctl+lmet_layer) 
   toggle_!lsft+lctl+lmet_layer       (t! toggle_mod_alt_layer lsft "!" lsft+lctl+lmet_layer)
   toggle_!rsft+lctl+lmet_layer       (t! toggle_mod_alt_layer rsft "!" rsft+lctl+lmet_layer)
 
   ;; LAlt layers.
   toggle_lalt_layer                  (t! toggle_mod_alt_layer lalt ""  lalt_layer)
-  toggle_!lalt_layer                 (t! toggle_mod_alt_layer lalt "!" lalt_layer)
   toggle_lsft+lalt_layer             (t! toggle_mod_alt_layer lsft ""  lsft+lalt_layer)
   toggle_rsft+lalt_layer             (t! toggle_mod_alt_layer rsft ""  rsft+lalt_layer)
+  toggle_!lalt_layer                 (t! toggle_mod_alt_layer lalt "!" lalt_layer)
   toggle_!lsft+lalt_layer            (t! toggle_mod_alt_layer lsft "!" lsft+lalt_layer)
   toggle_!rsft+lalt_layer            (t! toggle_mod_alt_layer rsft "!" rsft+lalt_layer)
   ;; LAlt+LCtl layers.
   toggle_lalt+lctl_layer             (t! toggle_mod_alt_layer lctl ""  lctl+lalt_layer) 
-  toggle_!lalt+lctl_layer            (t! toggle_mod_alt_layer lctl "!" lctl+lalt_layer) 
   toggle_lsft_lalt+lctl_layer        (t! toggle_mod_alt_layer lsft ""  lsft+lctl+lalt_layer) 
   toggle_rsft_lalt+lctl_layer        (t! toggle_mod_alt_layer rsft ""  rsft+lctl+lalt_layer) 
+  toggle_!lalt+lctl_layer            (t! toggle_mod_alt_layer lctl "!" lctl+lalt_layer) 
   toggle_!lsft+lalt+lctl_layer       (t! toggle_mod_alt_layer lsft "!" lsft+lctl+lalt_layer) 
   toggle_!rsft+lalt+lctl_layer       (t! toggle_mod_alt_layer rsft "!" rsft+lctl+lalt_layer) 
   ;; LAlt+LMet layers.
   toggle_lalt+lmet_layer             (t! toggle_mod_alt_layer lmet ""  lalt+lmet_layer) 
-  toggle_!lalt+lmet_layer            (t! toggle_mod_alt_layer lmet "!" lalt+lmet_layer) 
   toggle_lsft+lalt+lmet_layer        (t! toggle_mod_alt_layer lsft ""  lsft+lalt+lmet_layer) 
   toggle_rsft+lalt+lmet_layer        (t! toggle_mod_alt_layer rsft ""  rsft+lalt+lmet_layer) 
+  toggle_!lalt+lmet_layer            (t! toggle_mod_alt_layer lmet "!" lalt+lmet_layer) 
   toggle_!lsft+lalt+lmet_layer       (t! toggle_mod_alt_layer lsft "!" lsft+lalt+lmet_layer) 
   toggle_!rsft+lalt+lmet_layer       (t! toggle_mod_alt_layer rsft "!" rsft+lalt+lmet_layer) 
 
   ;; LMet layers.
   toggle_lmet_layer                  (t! toggle_mod_alt_layer lmet ""  lmet_layer)
-  toggle_!lmet_layer                 (t! toggle_mod_alt_layer lmet "!" lmet_layer)
   toggle_lsft+lmet_layer             (t! toggle_mod_alt_layer lsft ""  lsft+lmet_layer)
   toggle_rsft+lmet_layer             (t! toggle_mod_alt_layer rsft ""  rsft+lmet_layer)
+  toggle_!lmet_layer                 (t! toggle_mod_alt_layer lmet "!" lmet_layer)
   toggle_!lsft+lmet_layer            (t! toggle_mod_alt_layer lsft "!" lsft+lmet_layer)
   toggle_!rsft+lmet_layer            (t! toggle_mod_alt_layer rsft "!" rsft+lmet_layer)
   ;; LMet+LCtl layers.
   toggle_lmet+lctl_layer             (t! toggle_mod_alt_layer lctl ""  lctl+lmet_layer) 
-  toggle_!lmet+lctl_layer            (t! toggle_mod_alt_layer lctl "!" lctl+lmet_layer) 
   toggle_lsft+_lmet+lctl_layer       (t! toggle_mod_alt_layer lsft ""  lsft+lctl+lmet_layer) 
   toggle_rsft+_lmet+lctl_layer       (t! toggle_mod_alt_layer rsft ""  rsft+lctl+lmet_layer) 
+  toggle_!lmet+lctl_layer            (t! toggle_mod_alt_layer lctl "!" lctl+lmet_layer) 
   toggle_!lsft+lmet+lctl_layer       (t! toggle_mod_alt_layer lsft "!" lsft+lctl+lmet_layer) 
   toggle_!rsft+lmet+lctl_layer       (t! toggle_mod_alt_layer rsft "!" rsft+lctl+lmet_layer) 
   ;; LMet+LAlt layers.
   toggle_lmet+lalt_layer             (t! toggle_mod_alt_layer lalt ""  lalt+lmet_layer) 
-  toggle_!lmet+lalt_layer            (t! toggle_mod_alt_layer lalt "!" lalt+lmet_layer) 
   toggle_lsft+lmet+lalt_layer        (t! toggle_mod_alt_layer lsft ""  lsft+lalt+lmet_layer) 
   toggle_rsft+lmet+lalt_layer        (t! toggle_mod_alt_layer rsft ""  rsft+lalt+lmet_layer) 
+  toggle_!lmet+lalt_layer            (t! toggle_mod_alt_layer lalt "!" lalt+lmet_layer) 
   toggle_!lsft+lmet+lalt_layer       (t! toggle_mod_alt_layer lsft "!" lsft+lalt+lmet_layer) 
   toggle_!rsft+lmet+lalt_layer       (t! toggle_mod_alt_layer rsft "!" rsft+lalt+lmet_layer) 
 
   ;; LCtl+LAlt+LMet
   toggle_lctl+lalt+lmet_layer        (t! toggle_mod_alt_layer lmet ""  lctl+lalt+lmet_layer) 
-  toggle_!lctl+lalt+lmet_layer       (t! toggle_mod_alt_layer lmet "!" lctl+lalt+lmet_layer) 
   toggle_lctl+lmet+lalt_layer        (t! toggle_mod_alt_layer lalt ""  lctl+lalt+lmet_layer) 
-  toggle_!lctl+lmet+lalt_layer       (t! toggle_mod_alt_layer lalt "!" lctl+lalt+lmet_layer) 
   toggle_lalt+lctl+lmet_layer        (t! toggle_mod_alt_layer lmet ""  lctl+lalt+lmet_layer) 
-  toggle_!lalt+lctl+lmet_layer       (t! toggle_mod_alt_layer lmet "!" lctl+lalt+lmet_layer) 
   toggle_lalt+lmet+lctl_layer        (t! toggle_mod_alt_layer lctl ""  lctl+lalt+lmet_layer) 
-  toggle_!lalt+lmet+lctl_layer       (t! toggle_mod_alt_layer lctl "!" lctl+lalt+lmet_layer) 
   toggle_lmet+lctl+lalt_layer        (t! toggle_mod_alt_layer lalt ""  lctl+lalt+lmet_layer) 
-  toggle_!lmet+lctl+lalt_layer       (t! toggle_mod_alt_layer lalt "!" lctl+lalt+lmet_layer) 
   toggle_lmet+lalt+lctl_layer        (t! toggle_mod_alt_layer lctl ""  lctl+lalt+lmet_layer) 
-  toggle_!lmet+lalt+lctl_layer       (t! toggle_mod_alt_layer lctl "!" lctl+lalt+lmet_layer) 
   toggle_lsft+lctl+lalt+lmet_layer   (t! toggle_mod_alt_layer lsft ""  lsft+lctl+lalt+lmet_layer)
   toggle_rsft+lctl+lalt+lmet_layer   (t! toggle_mod_alt_layer rsft ""  rsft+lctl+lalt+lmet_layer)
+  toggle_!lctl+lalt+lmet_layer       (t! toggle_mod_alt_layer lmet "!" lctl+lalt+lmet_layer) 
+  toggle_!lctl+lmet+lalt_layer       (t! toggle_mod_alt_layer lalt "!" lctl+lalt+lmet_layer) 
+  toggle_!lalt+lctl+lmet_layer       (t! toggle_mod_alt_layer lmet "!" lctl+lalt+lmet_layer) 
+  toggle_!lalt+lmet+lctl_layer       (t! toggle_mod_alt_layer lctl "!" lctl+lalt+lmet_layer) 
+  toggle_!lmet+lctl+lalt_layer       (t! toggle_mod_alt_layer lalt "!" lctl+lalt+lmet_layer) 
+  toggle_!lmet+lalt+lctl_layer       (t! toggle_mod_alt_layer lctl "!" lctl+lalt+lmet_layer) 
   toggle_!lsft+lctl+lalt+lmet_layer  (t! toggle_mod_alt_layer lsft "!" lsft+lctl+lalt+lmet_layer)
   toggle_!rsft+lctl+lalt+lmet_layer  (t! toggle_mod_alt_layer rsft "!" rsft+lctl+lalt+lmet_layer)
 )

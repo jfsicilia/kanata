@@ -1,0 +1,24 @@
+(defvar
+;; == Tabs combos ========================================================
+tmux_action_tab_next                       (macro C-b n)
+tmux_action_tab_prev                       (macro C-b p)
+tmux_action_tab_toggle                     (macro C-b l)
+tmux_action_tab_goto_1                     (macro C-b 1)
+tmux_action_tab_goto_2                     (macro C-b 2)
+tmux_action_tab_goto_3                     (macro C-b 3)
+tmux_action_tab_goto_4                     (macro C-b 4)
+tmux_action_tab_goto_5                     (macro C-b 5)
+tmux_action_tab_goto_6                     (macro C-b 6)
+tmux_action_tab_goto_7                     (macro C-b 7)
+tmux_action_tab_goto_8                     (macro C-b 8)
+tmux_action_tab_goto_last                  (macro C-b 9)
+
+
+;; == Panes combos =======================================================
+tmux_action_pane_left                      (macro C-b left)
+tmux_action_pane_right                     (macro C-b right)
+tmux_action_pane_above                     (macro C-b up)
+tmux_action_pane_below                     (macro C-b down) 
+tmux_action_pane_h_split                   (macro C-b S-') 
+tmux_action_pane_v_split                   (macro C-b S-5) 
+)
