@@ -1,6 +1,6 @@
 (defvar
 ;; LCTL actions ==========================================================
-nvim_action_lctl+a                         $action_select_all_text
+nvim_action_lctl+a                         $action_select_all
 nvim_action_lctl+b                         C-b
 nvim_action_lctl+f                         C-f
 ;;nvim_action_lctl+t                         $action_tab_new
@@ -45,7 +45,7 @@ nvim_action_hist_next                      C-i
 nvim_action_hist_prev                      C-o
 
 ;; == Text combos ======================================================
-nvim_action_select_all_text                (macro g g S-v S-g)
+nvim_action_select_all                     (macro g g S-v S-g)
 
 ;; == Edit combos ======================================================
 nvim_action_page_up                        C-b
