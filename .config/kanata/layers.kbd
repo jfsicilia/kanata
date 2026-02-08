@@ -252,7 +252,7 @@
 
   ;; lmet+tab mimics original lctl+tab functionality (typically next tab in 
   ;; browsers and editors).
-  tab (multi (release-key lmet) (fork $action_tab_next $action_tab_prev (lsft rsft)))
+  tab $action_tab_next
 
   ;; == LALT =========================
   $!lalt  (t! th _ $toggle_lmet+lalt_layer)
@@ -279,6 +279,7 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lsft+lmet_layer)
 
+  tab $action_tab_prev
 ;; "" LSFT+LMET_LAYER """""""""""""""
 )
 
@@ -287,6 +288,7 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (rsft+lmet_layer)
 
+  tab $action_tab_prev
 ;; "" RSFT+LMET_LAYER """""""""""""""
 )
 
@@ -788,21 +790,18 @@
 (deflayermap (lsft+omni_layer)
 
   ;; == KEY COMBOS ===================
-  a (fork $action_clear_select $action_invert_select (rsft))
-  n (fork $action_!new $action_!!new (rsft))
+  a   $action_clear_select
+  n   $action_!new
 
-  '   (fork $action_!view    $action_!!view    (rsft)) 
-  ent (fork $action_!edit    $action_!!edit    (rsft))
-  \   (fork $action_!explore $action_!!explore (rsft))
+  '   $action_!view    
+  ent $action_!edit   
+  \   $action_!explore
 
-  z $action_redo
+  z   $action_redo
 
-  s $action_!search
-  r (fork $action_!replace $action_!!replace (rsft))
+  s   $action_!search
+  r   $action_!replace 
 
-  ;;g (fork $action_!go $action_!!go (rsft))
-
-  , $action_settings
 
 ;; "" LSFT+OMNI_LAYER """"""""""""""""""""""""""""""
 )
@@ -813,21 +812,18 @@
 (deflayermap (rsft+omni_layer)
 
   ;; == KEY COMBOS ===================
-  a (fork $action_clear_select $action_invert_select (rsft))
-  n (fork $action_!new $action_!!new (rsft))
+  a   $action_invert_select 
+  n   $action_!!new 
 
-  '   (fork $action_!view    $action_!!view    (rsft)) 
-  ent (fork $action_!edit    $action_!!edit    (rsft))
-  \   (fork $action_!explore $action_!!explore (rsft))
+  '   $action_!!view 
+  ent $action_!!edit  
+  \   $action_!!explore
 
-  z $action_redo
+  z   $action_redo
 
-  s $action_!search
-  r (fork $action_!replace $action_!!replace (rsft))
+  s   $action_!search
+  r   $action_!!replace
 
-  ;;g (fork $action_!go $action_!!go (rsft))
-
-  , $action_settings
 
 ;; "" RSFT+OMNI_LAYER """"""""""""""""""""""""""""""
 )
@@ -908,28 +904,28 @@
   ;; gui button enables windows, desktops, panes and tabs access.
   
   ;; == WORKSPACES ===================
-  $s/lalt (t! th XX $toggle_workspaces_layer)
-  $!lmet  (t! th XX $toggle_workspaces_layer)
+  $s/work      (t! th XX $toggle_workspaces_layer)
+  $!lmet/work  (t! th XX $toggle_workspaces_layer)
 
   ;; == PANES ========================
-  $d/lsft (t! th $action_pane_toggle $toggle_panes_layer)
-  $!lalt  (t! th $action_pane_toggle $toggle_panes_layer)
+  $d/pane      (t! th $action_pane_toggle $toggle_panes_layer)
+  $!lalt/pane  (t! th $action_pane_toggle $toggle_panes_layer)
 
 
   ;; == TABS =========================
-  $f/lctl (t! th $action_tab_toggle $toggle_tabs_layer)
-  $!lctl  (t! th $action_tab_toggle $toggle_tabs_layer)
+  $f/tabs      (t! th $action_tab_toggle $toggle_tabs_layer)
+  $!lctl/tabs  (t! th $action_tab_toggle $toggle_tabs_layer)
 
   ;; == WINDOWS ======================
-  h $action_wnd_left
-  $l/lalt (t! th $action_wnd_right $toggle_workspaces_layer)
-  $k/rsft (t! th $action_wnd_up    $toggle_panes_layer)
-  $j/lctl (t! th $action_wnd_down  $toggle_tabs_layer)
+  h            $action_wnd_left
+  $l/work      (t! th $action_wnd_right $toggle_workspaces_layer)
+  $k/pane      (t! th $action_wnd_up    $toggle_panes_layer)
+  $j/tabs      (t! th $action_wnd_down  $toggle_tabs_layer)
 
   ;; == SPC/SFT ======================
-  spc  (t! th $action_wnd_max $toggle_lsft+gui_layer)
-  lsft (t! th _               $toggle_lsft+gui_layer)
-  rsft (t! th _               $toggle_rsft+gui_layer)
+  spc          (t! th $action_wnd_max $toggle_lsft+gui_layer)
+  lsft         (t! th _               $toggle_lsft+gui_layer)
+  rsft         (t! th _               $toggle_rsft+gui_layer)
 
 ;; "" GUI_LAYER """"""""""""""""""""""""""""""
 )
@@ -1124,28 +1120,27 @@
   ;; gui button enables windows, desktops, panes and tabs access.
   
   ;; == WORKSPACES ===================
-  $s/lalt (t! th XX $toggle_!workspaces_layer)
-  $!lmet  (t! th XX $toggle_!workspaces_layer)
+  $s/work      (t! th XX $toggle_!workspaces_layer)
+  $!lmet/work  (t! th XX $toggle_!workspaces_layer)
 
   ;; == PANES ========================
-  $d/lsft (t! th $!action_pane_toggle $toggle_!panes_layer)
-  $!lalt  (t! th $!action_pane_toggle $toggle_!panes_layer)
-
+  $d/pane      (t! th $!action_pane_toggle $toggle_!panes_layer)
+  $!lalt/pane  (t! th $!action_pane_toggle $toggle_!panes_layer)
 
   ;; == TABS =========================
-  $f/lctl (t! th $!action_tab_toggle $toggle_!tabs_layer)
-  $!lctl  (t! th $!action_tab_toggle $toggle_!tabs_layer)
+  $f/tabs      (t! th $!action_tab_toggle $toggle_!tabs_layer)
+  $!lctl/tabs  (t! th $!action_tab_toggle $toggle_!tabs_layer)
 
   ;; == WINDOWS ======================
-  h $action_wnd_left
-  $l/lalt (t! th $action_wnd_right $toggle_!workspaces_layer)
-  $k/rsft (t! th $action_wnd_up    $toggle_!panes_layer)
-  $j/lctl (t! th $action_wnd_down  $toggle_!tabs_layer)
+  h            $action_wnd_left
+  $l/work      (t! th $action_wnd_right $toggle_!workspaces_layer)
+  $k/pane      (t! th $action_wnd_up    $toggle_!panes_layer)
+  $j/tabs      (t! th $action_wnd_down  $toggle_!tabs_layer)
 
   ;; == SPC/SFT ======================
-  spc  (t! th $action_wnd_max $toggle_!lsft+gui_layer)
-  lsft (t! th _               $toggle_!lsft+gui_layer)
-  rsft (t! th _               $toggle_!rsft+gui_layer)
+  spc          (t! th $action_wnd_max $toggle_!lsft+gui_layer)
+  lsft         (t! th _               $toggle_!lsft+gui_layer)
+  rsft         (t! th _               $toggle_!rsft+gui_layer)
 
 ;; "" !GUI_LAYER """"""""""""""""""""""""""""""
 )

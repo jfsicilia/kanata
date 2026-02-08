@@ -64,11 +64,12 @@
   ;; Physical prnt key will be used for bookmarks.
   bookmarks prnt
 
-  ;; Y use physical lalt key as lctl, physical lmet key as lalt and physical
-  ;; lctl key as lmet.
-  !lmet lctl
-  !lalt lmet
-  !lctl lalt
+  !lmet lctl       ;; Physical lctl is used as lmet
+  !lmet/work lctl  ;; Also physical lctl key works as workspaces key after gui key is hold.
+  !lalt lmet       ;; Physical lmet is used as lalt
+  !lalt/pane lmet  ;; Also physical lmet key works as panes key after gui key is hold.
+  !lctl lalt       ;; Physical lalt is used as lctl
+  !lctl/tabs lalt  ;; Also physical lalt key works as tabs key after gui key is hold.
 )
 
 (defsrc
@@ -193,78 +194,6 @@
 
   ;; "" ALIAS """"""""""""""""""""""""
 )
-
-;; Layers index:
-;;
-;;    default
-;;    !default
-
-;;    lctl_layer                   
-;;    sft+lctl_layer               
-;;    !lctl_layer                  
-;;    !sft+lctl_layer              
-;;  
-;;    lalt_layer                   
-;;    sft+lalt_layer               
-;;    !lalt_layer                  
-;;  . !sft+lalt_layer              
-;;  
-;;    lmet_layer                   
-;;    sft+lmet_layer               
-;;    !lmet_layer                  
-;;    !sft+lmet_layer              
-;;  
-;;    lctl+lalt_layer              
-;;    sft+lctl+lalt_layer          
-;;    !lctl+lalt_layer             
-;;    !sft+lctl+lalt_layer         
-;;  
-;;    lctl+lmet_layer              
-;;    sft+lctl+lmet_layer          
-;;    !lctl+lmet_layer             
-;;    !sft+lctl+lmet_layer         
-;;  
-;;    lalt+lmet_layer              
-;;    sft+lalt+lmet_layer          
-;;    !lalt+lmet_layer             
-;;    !sft+lalt+lmet_layer         
-;;  
-;;    lctl+lalt+lmet_layer         
-;;    sft+lctl+lalt+lmet_layer     
-;;    !lctl+lalt+lmet_layer        
-;;    !sft+lctl+lalt+lmet_layer    
-;;  
-;;    lsft_layer                   
-;;    rsft_layer                   
-;;  
-;;    opts_layer                    
-;;    sft+opts_layer                
-;;  
-;;    bookmarks_layer                  
-;;    sft+bookmarks_layer              
-;;  
-;;    omni_layer                   
-;;    sft+omni_layer               
-;;  
-;;    num_layer               
-;;    sft+num_layer           
-;;  
-;;    apps_layer                   
-;;    sft+apps_layer               
-;;  
-;;    gui_layer                    
-;;    sft+gui_layer                
-;;    !gui_layer                    
-;;    sft+!gui_layer                
-;;  
-;;    workspaces_layer             
-;;    sft_workspaces_layer         
-;;  
-;;    tabs_layer             
-;;    sft_tabs_layer         
-;;  
-;;    panes_layer             
-;;    sft_panes_layer         
 
 (defvar
   ;; Apps layer
