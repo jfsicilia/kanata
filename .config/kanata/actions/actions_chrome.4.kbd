@@ -30,6 +30,7 @@
 ;; chrome_action_lctl+z                 
 ;; chrome_action_lctl+,                 
 ;; chrome_action_lctl+.                 
+;; chrome_action_lctl+/                 
 ;; chrome_action_lctl+;                 
 ;; chrome_action_lctl+'                 
 ;; chrome_action_lctl+[                 
@@ -131,13 +132,13 @@ chrome_action_tab_prev                       C-S-tab
 ;; gui + tabs (tap) | 2x !lctl/tabs
 ;; !gui + tabs (tap)
 chrome_action_tab_toggle                     A-w
-;; gui + tabs + t
+;; gui + tabs + t | omni + t
 ;; !gui + tabs + t
 chrome_action_tab_new                        C-t
-;; gui + tabs + w
+;; gui + tabs + w | omni + w
 ;; !gui + tabs + w
 chrome_action_tab_close                      C-w
-;; gui + tabs + lsft + t
+;; gui + tabs + lsft + t | omni + lsft + t
 ;; !gui + tabs + lsft + t
 chrome_action_tab_undo_close                 C-S-t
 
@@ -246,7 +247,7 @@ chrome_action_hist_next                      A-right
 ;; omni + [
 chrome_action_hist_prev                      A-left
 
-;; == Omni combos ======================================================
+;; == Edit combos ======================================================
 ;; omni + b
 ;; chrome_action_page_up                
 
@@ -273,6 +274,8 @@ chrome_action_hist_prev                      A-left
 ;; chrome_action_undo                   
 ;; omni + lsft + z
 ;; chrome_action_redo                   
+
+;; == File Manager combos ===============================================
 ;; omni + e
 ;; chrome_action_rename                 
 ;; omni + d

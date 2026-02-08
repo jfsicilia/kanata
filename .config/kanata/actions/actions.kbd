@@ -90,7 +90,6 @@
   ;; LCTL actions ==========================================================
   action_lctl+a (t! unmod_all (switch ;;@autogen@ 
     ((input virtual vk_nvim)) $nvim_action_lctl+a break
-    ((input virtual vk_obsidian)) $obsidian_action_lctl+a break
     () C-a break
   ))
   action_lctl+b (t! unmod_all (switch ;;@autogen@ 
@@ -184,6 +183,9 @@
   action_lctl+.  (t! unmod_all (switch ;;@autogen@ 
     () C-.  break
   ))
+  action_lctl+/  (t! unmod_all (switch ;;@autogen@ 
+    () C-/  break
+  ))
   action_lctl+;  (t! unmod_all (switch ;;@autogen@ 
     ((input virtual vk_obsidian)) $obsidian_action_lctl+; break
     () C-;  break
@@ -243,6 +245,7 @@
 
   ;; !LCTL actions ==========================================================
   action_!lctl+a (t! unmod_all (switch ;;@autogen@ 
+    ((input virtual vk_obsidian)) $obsidian_action_!lctl+a break
     () C-a break
   ))
   action_!lctl+b (t! unmod_all (switch ;;@autogen@ 
@@ -337,6 +340,9 @@
   ))
   action_!lctl+.  (t! unmod_all (switch ;;@autogen@ 
     () C-.  break
+  ))
+  action_!lctl+/  (t! unmod_all (switch ;;@autogen@ 
+    () C-/  break
   ))
   action_!lctl+;  (t! unmod_all (switch ;;@autogen@ 
     () C-;  break
@@ -502,19 +508,19 @@
     ((input virtual vk_nvim)) $nvim_action_tab_toggle break
     () XX break
   ))
-  ;; gui + tabs + t 
+  ;; gui + tabs + t | omni + t
   action_tab_new (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_chrome)) $chrome_action_tab_new break
     ((input virtual vk_obsidian)) $obsidian_action_tab_new break
     () XX break
   ))
-  ;; !gui + tabs + t
+  ;; !gui + tabs + t 
   !action_tab_new (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_tab_new break
     ((input virtual vk_chrome)) $chrome_action_tab_new break
     () XX break
   ))
-  ;; gui + tabs + w
+  ;; gui + tabs + w | omni + w
   action_tab_close (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_tab_close break
     ((input virtual vk_chrome)) $chrome_action_tab_close break
@@ -528,7 +534,7 @@
     ((input virtual vk_nvim)) $nvim_action_tab_close break
     () XX break
   ))
-  ;; gui + tabs + lsft + t 
+  ;; gui + tabs + lsft + t | omni + lsft + t
   action_tab_undo_close (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_chrome)) $chrome_action_tab_undo_close break
     ((input virtual vk_obsidian)) $obsidian_action_tab_undo_close break
@@ -938,6 +944,7 @@
   ;; gui + work + spc/sft + h | !gui + work + spc/sft + h 
   action_move_wnd_prev_desktop (t! unmod_all M-C-S-left)
 
+  ;; omni + q
   action_close_app (t! unmod_all A-f4)
 
   ;; == Desktop combos =====================================================
@@ -966,7 +973,7 @@
     () XX break
   ))
 
-  ;; == Omni combos ======================================================
+  ;; == Edit combos ======================================================
   ;; omni + b
   action_page_up (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_page_up break
@@ -1028,6 +1035,8 @@
   action_redo (t! unmod_all (switch ;;@autogen@
     () C-S-z break
   ))
+
+  ;; == File Manager combos ===============================================
   ;; omni + e
   action_rename (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_rename break
@@ -1169,6 +1178,14 @@
     () XX break
   ))
 
+  ;; omni + i
+  ;; omni + m
+  ;; omni + q
+  ;; omni + u
+  ;; omni + u
+  ;; omni + w
+  ;; omni + y
+  ;; omni + y
 
   ;; == Misc combos =__=====================================================
   ;; opts + lsft/rsft + r 

@@ -30,6 +30,7 @@ nvim_action_lctl+f                         C-f
 ;; nvim_action_lctl+z                 
 ;; nvim_action_lctl+,                 
 ;; nvim_action_lctl+.                 
+;; nvim_action_lctl+/                 
 ;; nvim_action_lctl+;                 
 ;; nvim_action_lctl+'                 
 nvim_action_lctl+[                         C-o
@@ -131,13 +132,13 @@ nvim_action_tab_prev                       (macro esc S-; b p r e v i o u s ret)
 ;; gui + tabs (tap) | 2x !lctl/tabs
 ;; !gui + tabs (tap)
 nvim_action_tab_toggle                     (macro S-; b S-3 ret)
-;; gui + tabs + t
+;; gui + tabs + t | omni + t
 ;; !gui + tabs + t
 ;; nvim_action_tab_new                
-;; gui + tabs + w
+;; gui + tabs + w | omni + w
 ;; !gui + tabs + w
 nvim_action_tab_close                      C-w
-;; gui + tabs + lsft + t
+;; gui + tabs + lsft + t | omni + lsft + t
 ;; !gui + tabs + lsft + t
 ;; nvim_action_tab_undo_close         
 
@@ -246,7 +247,7 @@ nvim_action_hist_next                      C-i
 ;; omni + [
 nvim_action_hist_prev                      C-o
 
-;; == Omni combos ======================================================
+;; == Edit combos ======================================================
 ;; omni + b
 nvim_action_page_up                        C-b
 
@@ -273,6 +274,8 @@ nvim_action_right                          right
 ;; nvim_action_undo                   
 ;; omni + lsft + z
 ;; nvim_action_redo                   
+
+;; == File Manager combos ===============================================
 ;; omni + e
 ;; nvim_action_rename                 
 ;; omni + d

@@ -30,6 +30,7 @@
 ;; tmux_action_lctl+z                 
 ;; tmux_action_lctl+,                 
 ;; tmux_action_lctl+.                 
+;; tmux_action_lctl+/                 
 ;; tmux_action_lctl+;                 
 ;; tmux_action_lctl+'                 
 ;; tmux_action_lctl+[                 
@@ -131,13 +132,13 @@ tmux_action_tab_prev                       (macro C-b p)
 ;; gui + tabs (tap) | 2x !lctl/tabs
 ;; !gui + tabs (tap)
 tmux_action_tab_toggle                     (macro C-b l)
-;; gui + tabs + t
+;; gui + tabs + t | omni + t
 ;; !gui + tabs + t
 ;; tmux_action_tab_new                
-;; gui + tabs + w
+;; gui + tabs + w | omni + w
 ;; !gui + tabs + w
 ;; tmux_action_tab_close              
-;; gui + tabs + lsft + t
+;; gui + tabs + lsft + t | omni + lsft + t
 ;; !gui + tabs + lsft + t
 ;; tmux_action_tab_undo_close         
 
@@ -246,7 +247,7 @@ tmux_action_pane_v_split                   (macro C-b S-5)
 ;; omni + [
 ;; tmux_action_hist_prev              
 
-;; == Omni combos ======================================================
+;; == Edit combos ======================================================
 ;; omni + b
 ;; tmux_action_page_up                
 
@@ -273,6 +274,8 @@ tmux_action_pane_v_split                   (macro C-b S-5)
 ;; tmux_action_undo                   
 ;; omni + lsft + z
 ;; tmux_action_redo                   
+
+;; == File Manager combos ===============================================
 ;; omni + e
 ;; tmux_action_rename                 
 ;; omni + d

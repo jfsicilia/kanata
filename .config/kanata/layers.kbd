@@ -19,27 +19,64 @@
         ((input virtual vk_lalt)) (unmod (lctl) grv) break
         () (multi (on-press press-vkey vk_lalt) lalt (unmod (lctl) grv)) break
   )
+
+  ;; a $action_lctl+a (see $a/gui)
+  b $action_lctl+b
+  c $action_lctl+c
+  ;; d $action_lctl+d (see $d/rsft)
+  e $action_lctl+e
+  f $action_lctl+f
+  ;; g $action_lctl+g (see $g/lmet)
+  ;; h $action_lctl+h (see $h/lmet)
+  i $action_lctl+i
+  j $action_lctl+j
+  ;; k $action_lctl+k (see $k/rsft)
+  ;; l $action_lctl+l (see $l/lalt)
+  m $action_lctl+m
+  n $action_lctl+n
+  o $action_lctl+o
+  p $action_lctl+p
+  q $action_lctl+q
+  r $action_lctl+r
+  ;; s $action_lctl+s (see $s/lalt)
+  t $action_lctl+t
+  u $action_lctl+u
+  v $action_lctl+v
+  w $action_lctl+w
+  x $action_lctl+x
+  y $action_lctl+y
+  z $action_lctl+z
+  , $action_lctl+,
+  . $action_lctl+.
+  / $action_lctl+/
+  ;; ; $action_lctl+; (see $;/gui)
+  ' $action_lctl+'
+  [ $action_lctl+[
+  ] $action_lctl+]  ;;""
+  \ $action_lctl+\
+  - $action_lctl+-
+  = $action_lctl+=
   
   ;; == WORKSPACES ===================
-  $a/gui     (t! th _ (multi (release-key lctl) $toggle_tabs_layer))
-  $;/gui     (t! th _ (multi (release-key lctl) $toggle_tabs_layer))
+  $a/gui     (t! th $action_lctl+a (multi (release-key lctl) $toggle_tabs_layer))
+  $;/gui     (t! th $action_lctl+; (multi (release-key lctl) $toggle_tabs_layer))
   $lang/!gui (t! th _ (multi (release-key lctl) $toggle_!tabs_layer))
 
   ;; == LALT =========================
   $!lalt  (t! th _ $toggle_lctl+lalt_layer)
-  $s/lalt (t! th _ $toggle_lctl+lalt_layer)
-  $l/lalt (t! th _ $toggle_lctl+lalt_layer)
+  $s/lalt (t! th $action_lctl+s $toggle_lctl+lalt_layer)
+  $l/lalt (t! th $action_lctl+l $toggle_lctl+lalt_layer)
 
   ;; == LMET =========================
   $!lmet  (t! th _ $toggle_lctl+lmet_layer)
-  $g/lmet (t! th _ $toggle_lctl+lmet_layer)
-  $h/lmet (t! th _ $toggle_lctl+lmet_layer)
+  $g/lmet (t! th $action_lctl+g $toggle_lctl+lmet_layer)
+  $h/lmet (t! th $action_lctl+g $toggle_lctl+lmet_layer)
 
   ;; == SPC/LSFT/RSFT ================
   spc     (t! th _ $toggle_lsft+lctl_layer)
-  $d/lsft (t! th _ $toggle_lsft+lctl_layer)
+  $d/lsft (t! th $action_lctl+d $toggle_lsft+lctl_layer)
   lsft    (t! th _ $toggle_lsft+lctl_layer)
-  $k/rsft (t! th _ $toggle_rsft+lctl_layer)
+  $k/rsft (t! th $action_lctl+k $toggle_rsft+lctl_layer)
   rsft    (t! th _ $toggle_rsft+lctl_layer)
   
 ;; "" LCTL_LAYER """""""""""""""""""
@@ -51,7 +88,6 @@
 (deflayermap (lsft+lctl_layer)
 
   ;; == KEY COMBOS ===================
-  ;; t $action_lctl+!t
 
   ;; == LALT =========================
   $!lalt  (t! th _ $toggle_lsft+lctl+lalt_layer)
@@ -95,8 +131,42 @@
   ;; == KEY COMBOS ===================
   spc $action_select_files 
 
-  ;; Nav
- ;; b $action_!lctl+b
+  ;; a $action_!lctl+a (see $a/gui)
+  b $action_!lctl+b
+  c $action_!lctl+c
+  ;; d $action_!lctl+d (see $d/rsft)
+  e $action_!lctl+e
+  f $action_!lctl+f
+  ;; g $action_!lctl+g (see $g/lmet)
+  ;; h $action_!lctl+h (see $h/lmet)
+  i $action_!lctl+i
+  j $action_!lctl+j
+  ;; k $action_!lctl+k (see $k/rsft)
+  ;; l $action_!lctl+l (see $l/lalt)
+  m $action_!lctl+m
+  n $action_!lctl+n
+  o $action_!lctl+o
+  p $action_!lctl+p
+  q $action_!lctl+q
+  r $action_!lctl+r
+  ;; s $action_!lctl+s (see $s/lalt)
+  t $action_!lctl+t
+  u $action_!lctl+u
+  v $action_!lctl+v
+  w $action_!lctl+w
+  x $action_!lctl+x
+  y $action_!lctl+y
+  z $action_!lctl+z
+  , $action_!lctl+,
+  . $action_!lctl+.
+  / $action_!lctl+/
+  ;; ; $action_!lctl+; (see $;/gui)
+  ' $action_!lctl+'
+  [ $action_!lctl+[
+  ] $action_!lctl+]  
+  \ $action_!lctl+\  ;;""
+  - $action_!lctl+-
+  = $action_!lctl+=
 
   ;; == WORKSPACES ===================
   $a/gui     (t! th _ (multi (release-key $!lctl) $toggle_tabs_layer))
@@ -674,8 +744,7 @@
 ;; "" OPTS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (opts_layer)
-  ;; tab+r reloads kanata configuration.
-  r (multi (cmd kanata_sync_apps.py -f) lrld)
+  r (multi  lrld)
 
   ;; == SPC/SFT ======================
   spc  (t! th _ $toggle_lsft+opts_layer)
@@ -689,7 +758,7 @@
 ;; "" LSFT+OPTS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lsft+opts_layer)
-  r $action_restart_kwanata
+  r (multi (cmd kanata_sync_apps.py -f) (cmd kanata_sync_all_apps_interfaces.sh)) 
 
 ;; "" LSFT+OPTS_LAYER """"""""""""""""""""""""""
 )
@@ -762,6 +831,7 @@
 
   s $action_search
   r $action_replace
+  t $action_tab_new
 
   g $action_go
 
@@ -801,6 +871,7 @@
 
   s   $action_!search
   r   $action_!replace 
+  t   $action_tab_undo_close
 
 
 ;; "" LSFT+OMNI_LAYER """"""""""""""""""""""""""""""
@@ -823,6 +894,7 @@
 
   s   $action_!search
   r   $action_!!replace
+  t   $action_tab_undo_close
 
 
 ;; "" RSFT+OMNI_LAYER """"""""""""""""""""""""""""""

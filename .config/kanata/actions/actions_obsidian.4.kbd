@@ -1,7 +1,7 @@
 (defvar
 
 ;; LCTL actions ==========================================================
-obsidian_action_lctl+a                         $obsidian_select_all_text
+;; obsidian_action_lctl+a                 
 obsidian_action_lctl+b                         $obsidian_action_page_up
 ;; obsidian_action_lctl+c                 
 ;; obsidian_action_lctl+d                 
@@ -30,6 +30,7 @@ obsidian_action_lctl+!t                        $obsidian_action_tab_undo_close
 ;; obsidian_action_lctl+z                 
 obsidian_action_lctl+,                         $obsidian_action_settings
 ;; obsidian_action_lctl+.                 
+;; obsidian_action_lctl+/                 
 obsidian_action_lctl+;                         (macro C-A-M-e 50 ;) 
 ;; obsidian_action_lctl+'                 
 obsidian_action_lctl+[                         $obsidian_action_hist_prev
@@ -49,11 +50,11 @@ obsidian_action_lctl+]                         $obsidian_action_hist_next  ;;""
 ;; obsidian_action_lctl+0                 
 
 ;; !LCTL actions ==========================================================
-;; obsidian_action_!lctl+a                
-obsidian_action_!lctl+b                        $obsidian_bold_text
+obsidian_action_!lctl+a                        (macro g g S-v S-g)
+obsidian_action_!lctl+b                        C-A-b
 ;; obsidian_action_!lctl+c                
 ;; obsidian_action_!lctl+d                
-obsidian_action_!lctl+e                        $obsidian_toggle_edit_mode
+obsidian_action_!lctl+e                        C-A-e
 ;; obsidian_action_!lctl+f                
 ;; obsidian_action_!lctl+g                
 ;; obsidian_action_!lctl+h                
@@ -67,7 +68,7 @@ obsidian_action_!lctl+e                        $obsidian_toggle_edit_mode
 obsidian_action_!lctl+p                        $obsidian_action_select_files
 obsidian_action_!lctl+!p                       $obsidian_action_select_command
 ;; obsidian_action_!lctl+q                
-obsidian_action_!lctl+r                        $obsidian_toggle_source_mode
+obsidian_action_!lctl+r                        C-A-S-e
 ;; obsidian_action_!lctl+s                
 ;; obsidian_action_!lctl+t                
 ;; obsidian_action_!lctl+!t               
@@ -131,13 +132,13 @@ obsidian_action_tab_prev                       C-pgup
 ;; gui + tabs (tap) | 2x !lctl/tabs
 ;; !gui + tabs (tap)
 obsidian_action_tab_toggle                     A-q
-;; gui + tabs + t
+;; gui + tabs + t | omni + t
 ;; !gui + tabs + t
 obsidian_action_tab_new                        A-C-t
-;; gui + tabs + w
+;; gui + tabs + w | omni + w
 ;; !gui + tabs + w
 obsidian_action_tab_close                      A-C-w
-;; gui + tabs + lsft + t
+;; gui + tabs + lsft + t | omni + lsft + t
 ;; !gui + tabs + lsft + t
 obsidian_action_tab_undo_close                 A-C-S-t
 
@@ -246,7 +247,7 @@ obsidian_action_hist_next                      C-A-right
 ;; omni + [
 obsidian_action_hist_prev                      C-A-left
 
-;; == Omni combos ======================================================
+;; == Edit combos ======================================================
 ;; omni + b
 obsidian_action_page_up                        C-b
 
@@ -273,6 +274,8 @@ obsidian_action_paste                          C-A-v
 ;; obsidian_action_undo                   
 ;; omni + lsft + z
 ;; obsidian_action_redo                   
+
+;; == File Manager combos ===============================================
 ;; omni + e
 obsidian_action_rename                         C-A-r
 ;; omni + d

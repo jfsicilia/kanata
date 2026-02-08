@@ -30,6 +30,7 @@
 ;; zellij_action_lctl+z                 
 ;; zellij_action_lctl+,                 
 ;; zellij_action_lctl+.                 
+;; zellij_action_lctl+/                 
 ;; zellij_action_lctl+;                 
 ;; zellij_action_lctl+'                 
 ;; zellij_action_lctl+[                 
@@ -131,13 +132,13 @@ zellij_action_tab_prev                       (macro C-g t h ret)
 ;; gui + tabs (tap) | 2x !lctl/tabs
 ;; !gui + tabs (tap)
 zellij_action_tab_toggle                     (macro C-g t tab ret)
-;; gui + tabs + t
+;; gui + tabs + t | omni + t
 ;; !gui + tabs + t
 ;; zellij_action_tab_new                
-;; gui + tabs + w
+;; gui + tabs + w | omni + w
 ;; !gui + tabs + w
 ;; zellij_action_tab_close              
-;; gui + tabs + lsft + t
+;; gui + tabs + lsft + t | omni + lsft + t
 ;; !gui + tabs + lsft + t
 ;; zellij_action_tab_undo_close         
 
@@ -246,7 +247,7 @@ zellij_action_pane_max                       (macro C-g p f ret)
 ;; omni + [
 ;; zellij_action_hist_prev              
 
-;; == Omni combos ======================================================
+;; == Edit combos ======================================================
 ;; omni + b
 ;; zellij_action_page_up                
 
@@ -273,6 +274,8 @@ zellij_action_pane_max                       (macro C-g p f ret)
 ;; zellij_action_undo                   
 ;; omni + lsft + z
 ;; zellij_action_redo                   
+
+;; == File Manager combos ===============================================
 ;; omni + e
 ;; zellij_action_rename                 
 ;; omni + d

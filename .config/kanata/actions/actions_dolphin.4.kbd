@@ -30,6 +30,7 @@
 ;; dolphin_action_lctl+z                 
 ;; dolphin_action_lctl+,                 
 ;; dolphin_action_lctl+.                 
+;; dolphin_action_lctl+/                 
 ;; dolphin_action_lctl+;                 
 ;; dolphin_action_lctl+'                 
 ;; dolphin_action_lctl+[                 
@@ -131,13 +132,13 @@
 ;; gui + tabs (tap) | 2x !lctl/tabs
 ;; !gui + tabs (tap)
 ;; dolphin_action_tab_toggle             
-;; gui + tabs + t
+;; gui + tabs + t | omni + t
 ;; !gui + tabs + t
 ;; dolphin_action_tab_new                
-;; gui + tabs + w
+;; gui + tabs + w | omni + w
 ;; !gui + tabs + w
 ;; dolphin_action_tab_close              
-;; gui + tabs + lsft + t
+;; gui + tabs + lsft + t | omni + lsft + t
 ;; !gui + tabs + lsft + t
 ;; dolphin_action_tab_undo_close         
 
@@ -246,7 +247,7 @@
 ;; omni + [
 ;; dolphin_action_hist_prev              
 
-;; == Omni combos ======================================================
+;; == Edit combos ======================================================
 ;; omni + b
 ;; dolphin_action_page_up                
 
@@ -273,6 +274,8 @@
 ;; dolphin_action_undo                   
 ;; omni + lsft + z
 ;; dolphin_action_redo                   
+
+;; == File Manager combos ===============================================
 ;; omni + e
 ;; dolphin_action_rename                 
 ;; omni + d
