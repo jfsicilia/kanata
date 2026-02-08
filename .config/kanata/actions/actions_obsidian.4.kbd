@@ -1,60 +1,116 @@
 (defvar
-;; == Text combos ========================================================
-obsidian_select_all_text                       (macro g g S-v S-g)
-obsidian_bold_text                             C-A-b
-;; == Text modes combos ==================================================
-obsidian_toggle_edit_mode                      C-A-e
-obsidian_toggle_source_mode                    C-A-M-e 
 
 ;; LCTL actions ==========================================================
-;; Select all text
 obsidian_action_lctl+a                         $obsidian_select_all_text
-;; Page up
 obsidian_action_lctl+b                         $obsidian_action_page_up
-;; Page down
+;; obsidian_action_lctl+c                 
+;; obsidian_action_lctl+d                 
+;; obsidian_action_lctl+e                 
 obsidian_action_lctl+f                         $obsidian_action_page_down
-;; New tab
+;; obsidian_action_lctl+g                 
+;; obsidian_action_lctl+h                 
+;; obsidian_action_lctl+i                 
+;; obsidian_action_lctl+j                 
+;; obsidian_action_lctl+k                 
+;; obsidian_action_lctl+l                 
+;; obsidian_action_lctl+m                 
+;; obsidian_action_lctl+n                 
+;; obsidian_action_lctl+o                 
+;; obsidian_action_lctl+p                 
+;; obsidian_action_lctl+q                 
+;; obsidian_action_lctl+r                 
+;; obsidian_action_lctl+s                 
 obsidian_action_lctl+t                         $obsidian_action_tab_new
-;; Undo close tab
 obsidian_action_lctl+!t                        $obsidian_action_tab_undo_close
-;; Goto back
-obsidian_action_lctl+[                         $obsidian_action_hist_prev
-;; Goto forward
-obsidian_action_lctl+]                         $obsidian_action_hist_next
-;; Vimium
-obsidian_action_lctl+;                         (macro C-A-M-e 50 ;) 
-;; Show settings.
+;; obsidian_action_lctl+u                 
+;; obsidian_action_lctl+v                 
+;; obsidian_action_lctl+w                 
+;; obsidian_action_lctl+x                 
+;; obsidian_action_lctl+y                 
+;; obsidian_action_lctl+z                 
 obsidian_action_lctl+,                         $obsidian_action_settings
-;; ""
+;; obsidian_action_lctl+.                 
+obsidian_action_lctl+;                         (macro C-A-M-e 50 ;) 
+;; obsidian_action_lctl+'                 
+obsidian_action_lctl+[                         $obsidian_action_hist_prev
+obsidian_action_lctl+]                         $obsidian_action_hist_next  ;;""
+;; obsidian_action_lctl+\                 
+;; obsidian_action_lctl+-                 
+;; obsidian_action_lctl+=                 
+;; obsidian_action_lctl+1                 
+;; obsidian_action_lctl+2                 
+;; obsidian_action_lctl+3                 
+;; obsidian_action_lctl+4                 
+;; obsidian_action_lctl+5                 
+;; obsidian_action_lctl+6                 
+;; obsidian_action_lctl+7                 
+;; obsidian_action_lctl+8                 
+;; obsidian_action_lctl+9                 
+;; obsidian_action_lctl+0                 
 
 ;; !LCTL actions ==========================================================
-;; Bold
+;; obsidian_action_!lctl+a                
 obsidian_action_!lctl+b                        $obsidian_bold_text
-;; Toggle edit mode.
+;; obsidian_action_!lctl+c                
+;; obsidian_action_!lctl+d                
 obsidian_action_!lctl+e                        $obsidian_toggle_edit_mode
-;; Select file.
+;; obsidian_action_!lctl+f                
+;; obsidian_action_!lctl+g                
+;; obsidian_action_!lctl+h                
+;; obsidian_action_!lctl+i                
+;; obsidian_action_!lctl+j                
+;; obsidian_action_!lctl+k                
+;; obsidian_action_!lctl+l                
+;; obsidian_action_!lctl+m                
+;; obsidian_action_!lctl+n                
+;; obsidian_action_!lctl+o                
 obsidian_action_!lctl+p                        $obsidian_action_select_files
-;; Select command.
 obsidian_action_!lctl+!p                       $obsidian_action_select_command
-;; Toggle source mode.
+;; obsidian_action_!lctl+q                
 obsidian_action_!lctl+r                        $obsidian_toggle_source_mode
-;; Show settings.
+;; obsidian_action_!lctl+s                
+;; obsidian_action_!lctl+t                
+;; obsidian_action_!lctl+!t               
+;; obsidian_action_!lctl+u                
+;; obsidian_action_!lctl+v                
+;; obsidian_action_!lctl+w                
+;; obsidian_action_!lctl+x                
+;; obsidian_action_!lctl+y                
+;; obsidian_action_!lctl+z                
 obsidian_action_!lctl+,                        $obsidian_action_settings
+;; obsidian_action_!lctl+.                
+;; obsidian_action_!lctl+;                
+;; obsidian_action_!lctl+'                
+;; obsidian_action_!lctl+[                
+;; obsidian_action_!lctl+]                
+;; obsidian_action_!lctl+\                
+;; obsidian_action_!lctl+-                
+;; obsidian_action_!lctl+=                
+;; obsidian_action_!lctl+1                
+;; obsidian_action_!lctl+2                
+;; obsidian_action_!lctl+3                
+;; obsidian_action_!lctl+4                
+;; obsidian_action_!lctl+5                
+;; obsidian_action_!lctl+6                
+;; obsidian_action_!lctl+7                
+;; obsidian_action_!lctl+8                
+;; obsidian_action_!lctl+9                
+;; obsidian_action_!lctl+0                
 
 ;; == Seek & Select combos ===============================================
-;; !lctl + spc
+;; !lctl+spc
 obsidian_action_select_files                   C-A-o
-;; !lctl + lsft + spc
+;; !lctl+lsft+spc
 obsidian_action_select_opened_files            C-S-A-o
-;; !lctl + rsft + spc
+;; !lctl+rsft+spc
 obsidian_action_select_folders                 C-S-o
-;; !laltalt + spc
+;; !lalt+spc
 obsidian_action_select_command                 C-A-p
-;; !lmet + spc
+;; !lmet+spc
 obsidian_action_select_symbol                  A-S-o
-;; !lctl + !lalt + spc
+;; !lctl+!lalt+spc
 obsidian_action_omnisearch_files               C-A-m
-;; !lctl + !lalt + lsft + spc
+;; !lctl+!lalt+lsft+spc
 obsidian_action_omnisearch_file                C-A-S-m
 
 ;; == Favs combos ========================================================
@@ -66,111 +122,211 @@ obsidian_action_select_fav                     C-o
 obsidian_action_settings                       C-A-,
 
 ;; == Tabs combos ========================================================
-;; gui + tabs + l | gui + tabs + right | lsft + rsft | 2x rsft | !met + tab | !gui + tabs + l | !gui + tabs + right  
+;; gui + tabs + l | gui + tabs + right | lsft + rsft | 2x rsft | !met + tab
+;; !gui + tabs + l | !gui + tabs + right
 obsidian_action_tab_next                       C-pgdn
-;; gui + tabs + h | gui + tabs + left  | rsft + lsft | 2x lsft | !met + sft + tab | !gui + tabs + h | !gui + tabs + left  
+;; gui + tabs + h | gui + tabs + left | rsft + lsft | 2x lsft | !met + sft + tab
+;; !gui + tabs + h | !gui + tabs + left
 obsidian_action_tab_prev                       C-pgup
-;; gui + tabs (tap) | 2x !lctl/tabs | !gui + tabs (tap) 
+;; gui + tabs (tap) | 2x !lctl/tabs
+;; !gui + tabs (tap)
 obsidian_action_tab_toggle                     A-q
-;; gui + tabs + t | !gui + tabs + t
+;; gui + tabs + t
+;; !gui + tabs + t
 obsidian_action_tab_new                        A-C-t
-;; gui + tabs + w | !gui + tabs + w
+;; gui + tabs + w
+;; !gui + tabs + w
 obsidian_action_tab_close                      A-C-w
-;; gui + tabs + lsft + t | !gui + tabs + lsft + t 
+;; gui + tabs + lsft + t
+;; !gui + tabs + lsft + t
 obsidian_action_tab_undo_close                 A-C-S-t
-;; gui + tabs + 1 | !gui + tabs + 1
+
+;; gui + tabs + 1
+;; !gui + tabs + 1
 obsidian_action_tab_goto_1                     C-1
-;; gui + tabs + 2 | !gui + tabs + 2
+;; gui + tabs + 2
+;; !gui + tabs + 2
 obsidian_action_tab_goto_2                     C-2
-;; gui + tabs + 3 | !gui + tabs + 3
+;; gui + tabs + 3
+;; !gui + tabs + 3
 obsidian_action_tab_goto_3                     C-3
-;; gui + tabs + 4 | !gui + tabs + 4
+;; gui + tabs + 4
+;; !gui + tabs + 4
 obsidian_action_tab_goto_4                     C-4
-;; gui + tabs + 5 | !gui + tabs + 5
+;; gui + tabs + 5
+;; !gui + tabs + 5
 obsidian_action_tab_goto_5                     C-5
-;; gui + tabs + 6 | !gui + tabs + 6
+;; gui + tabs + 6
+;; !gui + tabs + 6
 obsidian_action_tab_goto_6                     C-6
-;; gui + tabs + 7 | !gui + tabs + 7
+;; gui + tabs + 7
+;; !gui + tabs + 7
 obsidian_action_tab_goto_7                     C-7
-;; gui + tabs + 8 | !gui + tabs + 8
+;; gui + tabs + 8
+;; !gui + tabs + 8
 obsidian_action_tab_goto_8                     C-8
-;; gui + tabs + 9 | !gui + tabs + 9
+;; gui + tabs + 9
+;; !gui + tabs + 9
 obsidian_action_tab_goto_last                  C-9
 
 ;; == Panes combos =======================================================
-;; gui + pane + h | gui + pane + left | !gui + tabs + h | !gui + tabs + left  
+;; gui + pane + h | gui + pane + left
+;; !gui + tabs + h | !gui + tabs + left
 obsidian_action_pane_left                      A-left
-;; gui + pane + l | gui + pane + right | !gui + tabs + l | !gui + tabs + right  
+;; gui + pane + l | gui + pane + right
+;; !gui + tabs + l | !gui + tabs + right
 obsidian_action_pane_right                     A-right
-;; gui + pane + k | gui + pane + up | !gui + tabs + k | !gui + tabs + up
+;; gui + pane + k | gui + pane + up
+;; !gui + tabs + k | !gui + tabs + up
 obsidian_action_pane_above                     A-up
-;; gui + pane + j | gui + pane + down | !gui + tabs + j | !gui + tabs + down
+;; gui + pane + j | gui + pane + down
+;; !gui + tabs + j | !gui + tabs + down
 obsidian_action_pane_below                     A-down
+;; gui + pane (tap) | 2x !lalt/pane
+;; !gui + pane (tap)
 obsidian_action_pane_toggle                    A-q
+;; gui + pane + spc
+;; !gui + pane + spc
 obsidian_action_pane_max                       (macro A-s A-S-s)
+;; gui + pane + -
+;; !gui + pane + -
 obsidian_action_pane_h_split                   A--
-obsidian_action_pane_v_split                   A-\
+;; gui + pane + \
+;; !gui + pane + \
+obsidian_action_pane_v_split                   A-\       ;;""
+;; gui + pane + w
+;; !gui + pane + w
 obsidian_action_pane_close                     A-w
+;; gui + pane + b
 obsidian_action_pane_bookmarks                 A-b
+;; gui + pane + c
 obsidian_action_pane_calendar                  A-c
+;; gui + pane + d
 obsidian_action_pane_day                       A-d
+;; gui + pane + lsft + d
 obsidian_action_pane_!day                      A-S-d
+;; gui + pane + e
 obsidian_action_pane_explorer                  A-e
+;; gui + pane + lsft + e
 obsidian_action_pane_!explorer                 A-S-e
+;; gui + pane + f
 obsidian_action_pane_find                      C-A-S-f
+;; gui + pane + g
 obsidian_action_pane_go                        $obsidian_action_select_files                  
+;; gui + pane + m
 obsidian_action_pane_main                      A-m
+;; gui + pane + o
 obsidian_action_pane_outline                   A-o
+;; gui + pane + p
 obsidian_action_pane_properties                A-p
+;; gui + pane + lsft + p
 obsidian_action_pane_!properties               A-S-p
+;; gui + pane + r
 obsidian_action_pane_recent                    A-r
+;; gui + pane + s
 obsidian_action_pane_left_sidebar              A-s
+;; gui + pane + lsft + d
 obsidian_action_pane_right_sidebar             A-S-s
+;; gui + pane + t
 obsidian_action_pane_tags                      A-t
+;; gui + pane + v
 obsidian_action_pane_vertical_tabs             (macro A-v m)
+;; gui + pane + ;
 obsidian_action_pane_graph                     A-g
+;; gui + pane + ,
 obsidian_action_pane_backlinks                 A-,
+;; gui + pane + .
 obsidian_action_pane_outlinks                  A-.
+;; gui + pane + lsft + .
 obsidian_action_pane_!outlinks                 A-S-.
-;; ""
 
 ;; == History combos =====================================================
-;; omni + ]                                     
+;; omni + ]
 obsidian_action_hist_next                      C-A-right
 ;; omni + [
 obsidian_action_hist_prev                      C-A-left
-;; ""
 
 ;; == Omni combos ======================================================
+;; omni + b
 obsidian_action_page_up                        C-b
+
+;; omni + f
 obsidian_action_page_down                      C-f
+
+;; omni + k
+;; obsidian_action_up                     
+;; omni + j
+;; obsidian_action_down                   
+;; omni + h
+;; obsidian_action_left                   
+;; omni + l
+;; obsidian_action_right                  
+
+;; omni + c
 obsidian_action_copy                           C-A-c
+
+;; omni + x
 obsidian_action_cut                            C-A-x
+;; omni + v
 obsidian_action_paste                          C-A-v
+;; omni + z
+;; obsidian_action_undo                   
+;; omni + lsft + z
+;; obsidian_action_redo                   
+;; omni + e
 obsidian_action_rename                         C-A-r
+;; omni + d
 obsidian_action_duplicate                      C-A-d
+;; omni + spc
 obsidian_action_toggle_select                  C-spc
+;; omni + a
 obsidian_action_select_all                     C-A-a
-obsidian_action_invert_select                  A-S-a
+;; omni + lsft + a
 obsidian_action_clear_select                   C-A-S-a
+;; omni + rsft + a
+obsidian_action_invert_select                  A-S-a
+;; omni + n
 obsidian_action_new                            C-A-n
+;; omni + lsft + n
 obsidian_action_!new                           C-A-S-n
+;; omni + rsft + n
 obsidian_action_!!new                          C-A-s
+
+;; omni + o
 obsidian_action_open                           right
+;; omni + p
 obsidian_action_parent                         left
+
+;; omni + '
 obsidian_action_view                           (macro C-A-p S-o p e n spc w i t h spc S-c h r o m e)
+;; omni + lsft + '
 obsidian_action_!view                          (macro C-A-p S-o p e n spc w i t h spc S-c h r o m e)
+;; omni + rsft + '
 obsidian_action_!!view                         (macro C-A-p S-o p e n spc w i t h spc S-c h r o m e)
+;; omni + ent
 obsidian_action_edit                           (macro C-A-p S-o p e n spc w i t h spc n v i m)
+;; omni + lsft + ent
 obsidian_action_!edit                          (macro C-A-p S-o p e n spc w i t h spc n v i m)
+;; omni + rsft + ent
 obsidian_action_!!edit                         (macro C-A-p S-o p e n spc w i t h spc n v i m)
+;; omni + \
 obsidian_action_explore                        (macro C-A-p S-o p e n spc w i t h spc t e r m i n a l)
+;; omni + lsft + \
 obsidian_action_!explore                       (macro C-A-p S-o p e n spc w i t h spc t e r m i n a l)
+;; omni + rsft + \
 obsidian_action_!!explore                      (macro C-A-p S-o p e n spc w i t h spc t e r m i n a l)
+;; omni + s
 obsidian_action_search                         C-A-f
+;; omni + lsft + s
 obsidian_action_!search                        $obsidian_action_pane_find
+;; omni + rsft + s
+;; obsidian_action_!!search               
+;; omni + r
 obsidian_action_replace                        C-A-h
+;; omni + lsft + r
 obsidian_action_!replace                       C-A-S-h
+;; omni + rsft + r
 obsidian_action_!!replace                      C-M-h
+;; omni + g
 obsidian_action_go                             $obsidian_action_select_files                  
 )

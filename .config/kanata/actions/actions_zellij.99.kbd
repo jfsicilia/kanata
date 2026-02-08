@@ -1,12 +1,332 @@
 (defvar
+
+;; LCTL actions ==========================================================
+;; zellij_action_lctl+a                 
+;; zellij_action_lctl+b                 
+;; zellij_action_lctl+c                 
+;; zellij_action_lctl+d                 
+;; zellij_action_lctl+e                 
+;; zellij_action_lctl+f                 
+;; zellij_action_lctl+g                 
+;; zellij_action_lctl+h                 
+;; zellij_action_lctl+i                 
+;; zellij_action_lctl+j                 
+;; zellij_action_lctl+k                 
+;; zellij_action_lctl+l                 
+;; zellij_action_lctl+m                 
+;; zellij_action_lctl+n                 
+;; zellij_action_lctl+o                 
+;; zellij_action_lctl+p                 
+;; zellij_action_lctl+q                 
+;; zellij_action_lctl+r                 
+;; zellij_action_lctl+s                 
+;; zellij_action_lctl+t                 
+;; zellij_action_lctl+!t                
+;; zellij_action_lctl+u                 
+;; zellij_action_lctl+v                 
+;; zellij_action_lctl+w                 
+;; zellij_action_lctl+x                 
+;; zellij_action_lctl+y                 
+;; zellij_action_lctl+z                 
+;; zellij_action_lctl+,                 
+;; zellij_action_lctl+.                 
+;; zellij_action_lctl+;                 
+;; zellij_action_lctl+'                 
+;; zellij_action_lctl+[                 
+;; zellij_action_lctl+]                 
+;; zellij_action_lctl+\                 
+;; zellij_action_lctl+-                 
+;; zellij_action_lctl+=                 
+;; zellij_action_lctl+1                 
+;; zellij_action_lctl+2                 
+;; zellij_action_lctl+3                 
+;; zellij_action_lctl+4                 
+;; zellij_action_lctl+5                 
+;; zellij_action_lctl+6                 
+;; zellij_action_lctl+7                 
+;; zellij_action_lctl+8                 
+;; zellij_action_lctl+9                 
+;; zellij_action_lctl+0                 
+
+;; !LCTL actions ==========================================================
+;; zellij_action_!lctl+a                
+;; zellij_action_!lctl+b                
+;; zellij_action_!lctl+c                
+;; zellij_action_!lctl+d                
+;; zellij_action_!lctl+e                
+;; zellij_action_!lctl+f                
+;; zellij_action_!lctl+g                
+;; zellij_action_!lctl+h                
+;; zellij_action_!lctl+i                
+;; zellij_action_!lctl+j                
+;; zellij_action_!lctl+k                
+;; zellij_action_!lctl+l                
+;; zellij_action_!lctl+m                
+;; zellij_action_!lctl+n                
+;; zellij_action_!lctl+o                
+;; zellij_action_!lctl+p                
+;; zellij_action_!lctl+!p               
+;; zellij_action_!lctl+q                
+;; zellij_action_!lctl+r                
+;; zellij_action_!lctl+s                
+;; zellij_action_!lctl+t                
+;; zellij_action_!lctl+!t               
+;; zellij_action_!lctl+u                
+;; zellij_action_!lctl+v                
+;; zellij_action_!lctl+w                
+;; zellij_action_!lctl+x                
+;; zellij_action_!lctl+y                
+;; zellij_action_!lctl+z                
+;; zellij_action_!lctl+,                
+;; zellij_action_!lctl+.                
+;; zellij_action_!lctl+;                
+;; zellij_action_!lctl+'                
+;; zellij_action_!lctl+[                
+;; zellij_action_!lctl+]                
+;; zellij_action_!lctl+\                
+;; zellij_action_!lctl+-                
+;; zellij_action_!lctl+=                
+;; zellij_action_!lctl+1                
+;; zellij_action_!lctl+2                
+;; zellij_action_!lctl+3                
+;; zellij_action_!lctl+4                
+;; zellij_action_!lctl+5                
+;; zellij_action_!lctl+6                
+;; zellij_action_!lctl+7                
+;; zellij_action_!lctl+8                
+;; zellij_action_!lctl+9                
+;; zellij_action_!lctl+0                
+
+;; == Seek & Select combos ===============================================
+;; !lctl+spc
+;; zellij_action_select_files           
+;; !lctl+lsft+spc
+;; zellij_action_select_opened_files    
+;; !lctl+rsft+spc
+;; zellij_action_select_folders         
+;; !lalt+spc
+;; zellij_action_select_command         
+;; !lmet+spc
+;; zellij_action_select_symbol          
+;; !lctl+!lalt+spc
+;; zellij_action_omnisearch_files       
+;; !lctl+!lalt+lsft+spc
+;; zellij_action_omnisearch_file        
+
+;; == Favs combos ========================================================
+;; bookm + spc
+;; zellij_action_select_fav             
+
+;; == Settings combos ====================================================
+;; omni + ,
+;; zellij_action_settings               
+
 ;; == Tabs combos ========================================================
+;; gui + tabs + l | gui + tabs + right | lsft + rsft | 2x rsft | !met + tab
+;; !gui + tabs + l | !gui + tabs + right
 zellij_action_tab_next                       (macro C-g t l ret)
+;; gui + tabs + h | gui + tabs + left | rsft + lsft | 2x lsft | !met + sft + tab
+;; !gui + tabs + h | !gui + tabs + left
 zellij_action_tab_prev                       (macro C-g t h ret)
+;; gui + tabs (tap) | 2x !lctl/tabs
+;; !gui + tabs (tap)
 zellij_action_tab_toggle                     (macro C-g t tab ret)
+;; gui + tabs + t
+;; !gui + tabs + t
+;; zellij_action_tab_new                
+;; gui + tabs + w
+;; !gui + tabs + w
+;; zellij_action_tab_close              
+;; gui + tabs + lsft + t
+;; !gui + tabs + lsft + t
+;; zellij_action_tab_undo_close         
+
+;; gui + tabs + 1
+;; !gui + tabs + 1
+;; zellij_action_tab_goto_1             
+;; gui + tabs + 2
+;; !gui + tabs + 2
+;; zellij_action_tab_goto_2             
+;; gui + tabs + 3
+;; !gui + tabs + 3
+;; zellij_action_tab_goto_3             
+;; gui + tabs + 4
+;; !gui + tabs + 4
+;; zellij_action_tab_goto_4             
+;; gui + tabs + 5
+;; !gui + tabs + 5
+;; zellij_action_tab_goto_5             
+;; gui + tabs + 6
+;; !gui + tabs + 6
+;; zellij_action_tab_goto_6             
+;; gui + tabs + 7
+;; !gui + tabs + 7
+;; zellij_action_tab_goto_7             
+;; gui + tabs + 8
+;; !gui + tabs + 8
+;; zellij_action_tab_goto_8             
+;; gui + tabs + 9
+;; !gui + tabs + 9
+;; zellij_action_tab_goto_last          
+
 ;; == Panes combos =======================================================
+;; gui + pane + h | gui + pane + left
+;; !gui + tabs + h | !gui + tabs + left
 zellij_action_pane_left                      (macro C-g p h ret)
+;; gui + pane + l | gui + pane + right
+;; !gui + tabs + l | !gui + tabs + right
 zellij_action_pane_right                     (macro C-g p l ret)
+;; gui + pane + k | gui + pane + up
+;; !gui + tabs + k | !gui + tabs + up
 zellij_action_pane_above                     (macro C-g p k ret)
+;; gui + pane + j | gui + pane + down
+;; !gui + tabs + j | !gui + tabs + down
 zellij_action_pane_below                     (macro C-g p j ret)
+;; gui + pane (tap) | 2x !lalt/pane
+;; !gui + pane (tap)
+;; zellij_action_pane_toggle            
+;; gui + pane + spc
+;; !gui + pane + spc
 zellij_action_pane_max                       (macro C-g p f ret)
+;; gui + pane + -
+;; !gui + pane + -
+;; zellij_action_pane_h_split           
+;; gui + pane + \
+;; !gui + pane + \
+;; zellij_action_pane_v_split           
+;; gui + pane + w
+;; !gui + pane + w
+;; zellij_action_pane_close             
+;; gui + pane + b
+;; zellij_action_pane_bookmarks         
+;; gui + pane + c
+;; zellij_action_pane_calendar          
+;; gui + pane + d
+;; zellij_action_pane_day               
+;; gui + pane + lsft + d
+;; zellij_action_pane_!day              
+;; gui + pane + e
+;; zellij_action_pane_explorer          
+;; gui + pane + lsft + e
+;; zellij_action_pane_!explorer         
+;; gui + pane + f
+;; zellij_action_pane_find              
+;; gui + pane + g
+;; zellij_action_pane_go                
+;; gui + pane + m
+;; zellij_action_pane_main              
+;; gui + pane + o
+;; zellij_action_pane_outline           
+;; gui + pane + p
+;; zellij_action_pane_properties        
+;; gui + pane + lsft + p
+;; zellij_action_pane_!properties       
+;; gui + pane + r
+;; zellij_action_pane_recent            
+;; gui + pane + s
+;; zellij_action_pane_left_sidebar      
+;; gui + pane + lsft + d
+;; zellij_action_pane_right_sidebar     
+;; gui + pane + t
+;; zellij_action_pane_tags              
+;; gui + pane + v
+;; zellij_action_pane_vertical_tabs     
+;; gui + pane + ;
+;; zellij_action_pane_graph             
+;; gui + pane + ,
+;; zellij_action_pane_backlinks         
+;; gui + pane + .
+;; zellij_action_pane_outlinks          
+;; gui + pane + lsft + .
+;; zellij_action_pane_!outlinks         
+
+;; == History combos =====================================================
+;; omni + ]
+;; zellij_action_hist_next              
+;; omni + [
+;; zellij_action_hist_prev              
+
+;; == Omni combos ======================================================
+;; omni + b
+;; zellij_action_page_up                
+
+;; omni + f
+;; zellij_action_page_down              
+
+;; omni + k
+;; zellij_action_up                     
+;; omni + j
+;; zellij_action_down                   
+;; omni + h
+;; zellij_action_left                   
+;; omni + l
+;; zellij_action_right                  
+
+;; omni + c
+;; zellij_action_copy                   
+
+;; omni + x
+;; zellij_action_cut                    
+;; omni + v
+;; zellij_action_paste                  
+;; omni + z
+;; zellij_action_undo                   
+;; omni + lsft + z
+;; zellij_action_redo                   
+;; omni + e
+;; zellij_action_rename                 
+;; omni + d
+;; zellij_action_duplicate              
+;; omni + spc
+;; zellij_action_toggle_select          
+;; omni + a
+;; zellij_action_select_all             
+;; omni + lsft + a
+;; zellij_action_clear_select           
+;; omni + rsft + a
+;; zellij_action_invert_select          
+;; omni + n
+;; zellij_action_new                    
+;; omni + lsft + n
+;; zellij_action_!new                   
+;; omni + rsft + n
+;; zellij_action_!!new                  
+
+;; omni + o
+;; zellij_action_open                   
+;; omni + p
+;; zellij_action_parent                 
+
+;; omni + '
+;; zellij_action_view                   
+;; omni + lsft + '
+;; zellij_action_!view                  
+;; omni + rsft + '
+;; zellij_action_!!view                 
+;; omni + ent
+;; zellij_action_edit                   
+;; omni + lsft + ent
+;; zellij_action_!edit                  
+;; omni + rsft + ent
+;; zellij_action_!!edit                 
+;; omni + \
+;; zellij_action_explore                
+;; omni + lsft + \
+;; zellij_action_!explore               
+;; omni + rsft + \
+;; zellij_action_!!explore              
+;; omni + s
+;; zellij_action_search                 
+;; omni + lsft + s
+;; zellij_action_!search                
+;; omni + rsft + s
+;; zellij_action_!!search               
+;; omni + r
+;; zellij_action_replace                
+;; omni + lsft + r
+;; zellij_action_!replace               
+;; omni + rsft + r
+;; zellij_action_!!replace              
+;; omni + g
+;; zellij_action_go                     
 )

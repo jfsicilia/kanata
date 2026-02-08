@@ -1145,7 +1145,6 @@
   ))
   ;; omni + rsft + s
   action_!!search (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_!search break
     () XX break
   ))
   ;; omni + r

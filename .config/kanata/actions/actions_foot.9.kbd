@@ -1,9 +1,332 @@
 (defvar
-;; == Edit combos ======================================================
-;; Ctrl+b can't be bound in foot, so kanata intercepts it send the
-;; corresponding correct foot's keybinding for page up.
+
+;; LCTL actions ==========================================================
+;; foot_action_lctl+a                 
+;; foot_action_lctl+b                 
+;; foot_action_lctl+c                 
+;; foot_action_lctl+d                 
+;; foot_action_lctl+e                 
+;; foot_action_lctl+f                 
+;; foot_action_lctl+g                 
+;; foot_action_lctl+h                 
+;; foot_action_lctl+i                 
+;; foot_action_lctl+j                 
+;; foot_action_lctl+k                 
+;; foot_action_lctl+l                 
+;; foot_action_lctl+m                 
+;; foot_action_lctl+n                 
+;; foot_action_lctl+o                 
+;; foot_action_lctl+p                 
+;; foot_action_lctl+q                 
+;; foot_action_lctl+r                 
+;; foot_action_lctl+s                 
+;; foot_action_lctl+t                 
+;; foot_action_lctl+!t                
+;; foot_action_lctl+u                 
+;; foot_action_lctl+v                 
+;; foot_action_lctl+w                 
+;; foot_action_lctl+x                 
+;; foot_action_lctl+y                 
+;; foot_action_lctl+z                 
+;; foot_action_lctl+,                 
+;; foot_action_lctl+.                 
+;; foot_action_lctl+;                 
+;; foot_action_lctl+'                 
+;; foot_action_lctl+[                 
+;; foot_action_lctl+]                 
+;; foot_action_lctl+\                 
+;; foot_action_lctl+-                 
+;; foot_action_lctl+=                 
+;; foot_action_lctl+1                 
+;; foot_action_lctl+2                 
+;; foot_action_lctl+3                 
+;; foot_action_lctl+4                 
+;; foot_action_lctl+5                 
+;; foot_action_lctl+6                 
+;; foot_action_lctl+7                 
+;; foot_action_lctl+8                 
+;; foot_action_lctl+9                 
+;; foot_action_lctl+0                 
+
+;; !LCTL actions ==========================================================
+;; foot_action_!lctl+a                
+;; foot_action_!lctl+b                
+;; foot_action_!lctl+c                
+;; foot_action_!lctl+d                
+;; foot_action_!lctl+e                
+;; foot_action_!lctl+f                
+;; foot_action_!lctl+g                
+;; foot_action_!lctl+h                
+;; foot_action_!lctl+i                
+;; foot_action_!lctl+j                
+;; foot_action_!lctl+k                
+;; foot_action_!lctl+l                
+;; foot_action_!lctl+m                
+;; foot_action_!lctl+n                
+;; foot_action_!lctl+o                
+;; foot_action_!lctl+p                
+;; foot_action_!lctl+!p               
+;; foot_action_!lctl+q                
+;; foot_action_!lctl+r                
+;; foot_action_!lctl+s                
+;; foot_action_!lctl+t                
+;; foot_action_!lctl+!t               
+;; foot_action_!lctl+u                
+;; foot_action_!lctl+v                
+;; foot_action_!lctl+w                
+;; foot_action_!lctl+x                
+;; foot_action_!lctl+y                
+;; foot_action_!lctl+z                
+;; foot_action_!lctl+,                
+;; foot_action_!lctl+.                
+;; foot_action_!lctl+;                
+;; foot_action_!lctl+'                
+;; foot_action_!lctl+[                
+;; foot_action_!lctl+]                
+;; foot_action_!lctl+\                
+;; foot_action_!lctl+-                
+;; foot_action_!lctl+=                
+;; foot_action_!lctl+1                
+;; foot_action_!lctl+2                
+;; foot_action_!lctl+3                
+;; foot_action_!lctl+4                
+;; foot_action_!lctl+5                
+;; foot_action_!lctl+6                
+;; foot_action_!lctl+7                
+;; foot_action_!lctl+8                
+;; foot_action_!lctl+9                
+;; foot_action_!lctl+0                
+
+;; == Seek & Select combos ===============================================
+;; !lctl+spc
+;; foot_action_select_files           
+;; !lctl+lsft+spc
+;; foot_action_select_opened_files    
+;; !lctl+rsft+spc
+;; foot_action_select_folders         
+;; !lalt+spc
+;; foot_action_select_command         
+;; !lmet+spc
+;; foot_action_select_symbol          
+;; !lctl+!lalt+spc
+;; foot_action_omnisearch_files       
+;; !lctl+!lalt+lsft+spc
+;; foot_action_omnisearch_file        
+
+;; == Favs combos ========================================================
+;; bookm + spc
+;; foot_action_select_fav             
+
+;; == Settings combos ====================================================
+;; omni + ,
+;; foot_action_settings               
+
+;; == Tabs combos ========================================================
+;; gui + tabs + l | gui + tabs + right | lsft + rsft | 2x rsft | !met + tab
+;; !gui + tabs + l | !gui + tabs + right
+;; foot_action_tab_next               
+;; gui + tabs + h | gui + tabs + left | rsft + lsft | 2x lsft | !met + sft + tab
+;; !gui + tabs + h | !gui + tabs + left
+;; foot_action_tab_prev               
+;; gui + tabs (tap) | 2x !lctl/tabs
+;; !gui + tabs (tap)
+;; foot_action_tab_toggle             
+;; gui + tabs + t
+;; !gui + tabs + t
+;; foot_action_tab_new                
+;; gui + tabs + w
+;; !gui + tabs + w
+;; foot_action_tab_close              
+;; gui + tabs + lsft + t
+;; !gui + tabs + lsft + t
+;; foot_action_tab_undo_close         
+
+;; gui + tabs + 1
+;; !gui + tabs + 1
+;; foot_action_tab_goto_1             
+;; gui + tabs + 2
+;; !gui + tabs + 2
+;; foot_action_tab_goto_2             
+;; gui + tabs + 3
+;; !gui + tabs + 3
+;; foot_action_tab_goto_3             
+;; gui + tabs + 4
+;; !gui + tabs + 4
+;; foot_action_tab_goto_4             
+;; gui + tabs + 5
+;; !gui + tabs + 5
+;; foot_action_tab_goto_5             
+;; gui + tabs + 6
+;; !gui + tabs + 6
+;; foot_action_tab_goto_6             
+;; gui + tabs + 7
+;; !gui + tabs + 7
+;; foot_action_tab_goto_7             
+;; gui + tabs + 8
+;; !gui + tabs + 8
+;; foot_action_tab_goto_8             
+;; gui + tabs + 9
+;; !gui + tabs + 9
+;; foot_action_tab_goto_last          
+
+;; == Panes combos =======================================================
+;; gui + pane + h | gui + pane + left
+;; !gui + tabs + h | !gui + tabs + left
+;; foot_action_pane_left              
+;; gui + pane + l | gui + pane + right
+;; !gui + tabs + l | !gui + tabs + right
+;; foot_action_pane_right             
+;; gui + pane + k | gui + pane + up
+;; !gui + tabs + k | !gui + tabs + up
+;; foot_action_pane_above             
+;; gui + pane + j | gui + pane + down
+;; !gui + tabs + j | !gui + tabs + down
+;; foot_action_pane_below             
+;; gui + pane (tap) | 2x !lalt/pane
+;; !gui + pane (tap)
+;; foot_action_pane_toggle            
+;; gui + pane + spc
+;; !gui + pane + spc
+;; foot_action_pane_max               
+;; gui + pane + -
+;; !gui + pane + -
+;; foot_action_pane_h_split           
+;; gui + pane + \
+;; !gui + pane + \
+;; foot_action_pane_v_split           
+;; gui + pane + w
+;; !gui + pane + w
+;; foot_action_pane_close             
+;; gui + pane + b
+;; foot_action_pane_bookmarks         
+;; gui + pane + c
+;; foot_action_pane_calendar          
+;; gui + pane + d
+;; foot_action_pane_day               
+;; gui + pane + lsft + d
+;; foot_action_pane_!day              
+;; gui + pane + e
+;; foot_action_pane_explorer          
+;; gui + pane + lsft + e
+;; foot_action_pane_!explorer         
+;; gui + pane + f
+;; foot_action_pane_find              
+;; gui + pane + g
+;; foot_action_pane_go                
+;; gui + pane + m
+;; foot_action_pane_main              
+;; gui + pane + o
+;; foot_action_pane_outline           
+;; gui + pane + p
+;; foot_action_pane_properties        
+;; gui + pane + lsft + p
+;; foot_action_pane_!properties       
+;; gui + pane + r
+;; foot_action_pane_recent            
+;; gui + pane + s
+;; foot_action_pane_left_sidebar      
+;; gui + pane + lsft + d
+;; foot_action_pane_right_sidebar     
+;; gui + pane + t
+;; foot_action_pane_tags              
+;; gui + pane + v
+;; foot_action_pane_vertical_tabs     
+;; gui + pane + ;
+;; foot_action_pane_graph             
+;; gui + pane + ,
+;; foot_action_pane_backlinks         
+;; gui + pane + .
+;; foot_action_pane_outlinks          
+;; gui + pane + lsft + .
+;; foot_action_pane_!outlinks         
+
+;; == History combos =====================================================
+;; omni + ]
+;; foot_action_hist_next              
+;; omni + [
+;; foot_action_hist_prev              
+
+;; == Omni combos ======================================================
+;; omni + b
 foot_action_page_up                        S-pgup
-;; Ctrl+f can't be bound in foot, so kanata intercepts it send the
-;; corresponding correct foot's keybinding for page down.
+
+;; omni + f
 foot_action_page_down                      S-pgdn
+
+;; omni + k
+;; foot_action_up                     
+;; omni + j
+;; foot_action_down                   
+;; omni + h
+;; foot_action_left                   
+;; omni + l
+;; foot_action_right                  
+
+;; omni + c
+;; foot_action_copy                   
+
+;; omni + x
+;; foot_action_cut                    
+;; omni + v
+;; foot_action_paste                  
+;; omni + z
+;; foot_action_undo                   
+;; omni + lsft + z
+;; foot_action_redo                   
+;; omni + e
+;; foot_action_rename                 
+;; omni + d
+;; foot_action_duplicate              
+;; omni + spc
+;; foot_action_toggle_select          
+;; omni + a
+;; foot_action_select_all             
+;; omni + lsft + a
+;; foot_action_clear_select           
+;; omni + rsft + a
+;; foot_action_invert_select          
+;; omni + n
+;; foot_action_new                    
+;; omni + lsft + n
+;; foot_action_!new                   
+;; omni + rsft + n
+;; foot_action_!!new                  
+
+;; omni + o
+;; foot_action_open                   
+;; omni + p
+;; foot_action_parent                 
+
+;; omni + '
+;; foot_action_view                   
+;; omni + lsft + '
+;; foot_action_!view                  
+;; omni + rsft + '
+;; foot_action_!!view                 
+;; omni + ent
+;; foot_action_edit                   
+;; omni + lsft + ent
+;; foot_action_!edit                  
+;; omni + rsft + ent
+;; foot_action_!!edit                 
+;; omni + \
+;; foot_action_explore                
+;; omni + lsft + \
+;; foot_action_!explore               
+;; omni + rsft + \
+;; foot_action_!!explore              
+;; omni + s
+;; foot_action_search                 
+;; omni + lsft + s
+;; foot_action_!search                
+;; omni + rsft + s
+;; foot_action_!!search               
+;; omni + r
+;; foot_action_replace                
+;; omni + lsft + r
+;; foot_action_!replace               
+;; omni + rsft + r
+;; foot_action_!!replace              
+;; omni + g
+;; foot_action_go                     
 )

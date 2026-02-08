@@ -1,5 +1,332 @@
 (defvar
-;; == Edit combos ======================================================
+
+;; LCTL actions ==========================================================
+;; dolphin_action_lctl+a                 
+;; dolphin_action_lctl+b                 
+;; dolphin_action_lctl+c                 
+;; dolphin_action_lctl+d                 
+;; dolphin_action_lctl+e                 
+;; dolphin_action_lctl+f                 
+;; dolphin_action_lctl+g                 
+;; dolphin_action_lctl+h                 
+;; dolphin_action_lctl+i                 
+;; dolphin_action_lctl+j                 
+;; dolphin_action_lctl+k                 
+;; dolphin_action_lctl+l                 
+;; dolphin_action_lctl+m                 
+;; dolphin_action_lctl+n                 
+;; dolphin_action_lctl+o                 
+;; dolphin_action_lctl+p                 
+;; dolphin_action_lctl+q                 
+;; dolphin_action_lctl+r                 
+;; dolphin_action_lctl+s                 
+;; dolphin_action_lctl+t                 
+;; dolphin_action_lctl+!t                
+;; dolphin_action_lctl+u                 
+;; dolphin_action_lctl+v                 
+;; dolphin_action_lctl+w                 
+;; dolphin_action_lctl+x                 
+;; dolphin_action_lctl+y                 
+;; dolphin_action_lctl+z                 
+;; dolphin_action_lctl+,                 
+;; dolphin_action_lctl+.                 
+;; dolphin_action_lctl+;                 
+;; dolphin_action_lctl+'                 
+;; dolphin_action_lctl+[                 
+;; dolphin_action_lctl+]                 
+;; dolphin_action_lctl+\                 
+;; dolphin_action_lctl+-                 
+;; dolphin_action_lctl+=                 
+;; dolphin_action_lctl+1                 
+;; dolphin_action_lctl+2                 
+;; dolphin_action_lctl+3                 
+;; dolphin_action_lctl+4                 
+;; dolphin_action_lctl+5                 
+;; dolphin_action_lctl+6                 
+;; dolphin_action_lctl+7                 
+;; dolphin_action_lctl+8                 
+;; dolphin_action_lctl+9                 
+;; dolphin_action_lctl+0                 
+
+;; !LCTL actions ==========================================================
+;; dolphin_action_!lctl+a                
+;; dolphin_action_!lctl+b                
+;; dolphin_action_!lctl+c                
+;; dolphin_action_!lctl+d                
+;; dolphin_action_!lctl+e                
+;; dolphin_action_!lctl+f                
+;; dolphin_action_!lctl+g                
+;; dolphin_action_!lctl+h                
+;; dolphin_action_!lctl+i                
+;; dolphin_action_!lctl+j                
+;; dolphin_action_!lctl+k                
+;; dolphin_action_!lctl+l                
+;; dolphin_action_!lctl+m                
+;; dolphin_action_!lctl+n                
+;; dolphin_action_!lctl+o                
+;; dolphin_action_!lctl+p                
+;; dolphin_action_!lctl+!p               
+;; dolphin_action_!lctl+q                
+;; dolphin_action_!lctl+r                
+;; dolphin_action_!lctl+s                
+;; dolphin_action_!lctl+t                
+;; dolphin_action_!lctl+!t               
+;; dolphin_action_!lctl+u                
+;; dolphin_action_!lctl+v                
+;; dolphin_action_!lctl+w                
+;; dolphin_action_!lctl+x                
+;; dolphin_action_!lctl+y                
+;; dolphin_action_!lctl+z                
+;; dolphin_action_!lctl+,                
+;; dolphin_action_!lctl+.                
+;; dolphin_action_!lctl+;                
+;; dolphin_action_!lctl+'                
+;; dolphin_action_!lctl+[                
+;; dolphin_action_!lctl+]                
+;; dolphin_action_!lctl+\                
+;; dolphin_action_!lctl+-                
+;; dolphin_action_!lctl+=                
+;; dolphin_action_!lctl+1                
+;; dolphin_action_!lctl+2                
+;; dolphin_action_!lctl+3                
+;; dolphin_action_!lctl+4                
+;; dolphin_action_!lctl+5                
+;; dolphin_action_!lctl+6                
+;; dolphin_action_!lctl+7                
+;; dolphin_action_!lctl+8                
+;; dolphin_action_!lctl+9                
+;; dolphin_action_!lctl+0                
+
+;; == Seek & Select combos ===============================================
+;; !lctl+spc
+;; dolphin_action_select_files           
+;; !lctl+lsft+spc
+;; dolphin_action_select_opened_files    
+;; !lctl+rsft+spc
+;; dolphin_action_select_folders         
+;; !lalt+spc
+;; dolphin_action_select_command         
+;; !lmet+spc
+;; dolphin_action_select_symbol          
+;; !lctl+!lalt+spc
+;; dolphin_action_omnisearch_files       
+;; !lctl+!lalt+lsft+spc
+;; dolphin_action_omnisearch_file        
+
+;; == Favs combos ========================================================
+;; bookm + spc
+;; dolphin_action_select_fav             
+
+;; == Settings combos ====================================================
+;; omni + ,
+;; dolphin_action_settings               
+
+;; == Tabs combos ========================================================
+;; gui + tabs + l | gui + tabs + right | lsft + rsft | 2x rsft | !met + tab
+;; !gui + tabs + l | !gui + tabs + right
+;; dolphin_action_tab_next               
+;; gui + tabs + h | gui + tabs + left | rsft + lsft | 2x lsft | !met + sft + tab
+;; !gui + tabs + h | !gui + tabs + left
+;; dolphin_action_tab_prev               
+;; gui + tabs (tap) | 2x !lctl/tabs
+;; !gui + tabs (tap)
+;; dolphin_action_tab_toggle             
+;; gui + tabs + t
+;; !gui + tabs + t
+;; dolphin_action_tab_new                
+;; gui + tabs + w
+;; !gui + tabs + w
+;; dolphin_action_tab_close              
+;; gui + tabs + lsft + t
+;; !gui + tabs + lsft + t
+;; dolphin_action_tab_undo_close         
+
+;; gui + tabs + 1
+;; !gui + tabs + 1
+;; dolphin_action_tab_goto_1             
+;; gui + tabs + 2
+;; !gui + tabs + 2
+;; dolphin_action_tab_goto_2             
+;; gui + tabs + 3
+;; !gui + tabs + 3
+;; dolphin_action_tab_goto_3             
+;; gui + tabs + 4
+;; !gui + tabs + 4
+;; dolphin_action_tab_goto_4             
+;; gui + tabs + 5
+;; !gui + tabs + 5
+;; dolphin_action_tab_goto_5             
+;; gui + tabs + 6
+;; !gui + tabs + 6
+;; dolphin_action_tab_goto_6             
+;; gui + tabs + 7
+;; !gui + tabs + 7
+;; dolphin_action_tab_goto_7             
+;; gui + tabs + 8
+;; !gui + tabs + 8
+;; dolphin_action_tab_goto_8             
+;; gui + tabs + 9
+;; !gui + tabs + 9
+;; dolphin_action_tab_goto_last          
+
+;; == Panes combos =======================================================
+;; gui + pane + h | gui + pane + left
+;; !gui + tabs + h | !gui + tabs + left
+;; dolphin_action_pane_left              
+;; gui + pane + l | gui + pane + right
+;; !gui + tabs + l | !gui + tabs + right
+;; dolphin_action_pane_right             
+;; gui + pane + k | gui + pane + up
+;; !gui + tabs + k | !gui + tabs + up
+;; dolphin_action_pane_above             
+;; gui + pane + j | gui + pane + down
+;; !gui + tabs + j | !gui + tabs + down
+;; dolphin_action_pane_below             
+;; gui + pane (tap) | 2x !lalt/pane
+;; !gui + pane (tap)
+;; dolphin_action_pane_toggle            
+;; gui + pane + spc
+;; !gui + pane + spc
+;; dolphin_action_pane_max               
+;; gui + pane + -
+;; !gui + pane + -
+;; dolphin_action_pane_h_split           
+;; gui + pane + \
+;; !gui + pane + \
+;; dolphin_action_pane_v_split           
+;; gui + pane + w
+;; !gui + pane + w
+;; dolphin_action_pane_close             
+;; gui + pane + b
+;; dolphin_action_pane_bookmarks         
+;; gui + pane + c
+;; dolphin_action_pane_calendar          
+;; gui + pane + d
+;; dolphin_action_pane_day               
+;; gui + pane + lsft + d
+;; dolphin_action_pane_!day              
+;; gui + pane + e
+;; dolphin_action_pane_explorer          
+;; gui + pane + lsft + e
+;; dolphin_action_pane_!explorer         
+;; gui + pane + f
+;; dolphin_action_pane_find              
+;; gui + pane + g
+;; dolphin_action_pane_go                
+;; gui + pane + m
+;; dolphin_action_pane_main              
+;; gui + pane + o
+;; dolphin_action_pane_outline           
+;; gui + pane + p
+;; dolphin_action_pane_properties        
+;; gui + pane + lsft + p
+;; dolphin_action_pane_!properties       
+;; gui + pane + r
+;; dolphin_action_pane_recent            
+;; gui + pane + s
+;; dolphin_action_pane_left_sidebar      
+;; gui + pane + lsft + d
+;; dolphin_action_pane_right_sidebar     
+;; gui + pane + t
+;; dolphin_action_pane_tags              
+;; gui + pane + v
+;; dolphin_action_pane_vertical_tabs     
+;; gui + pane + ;
+;; dolphin_action_pane_graph             
+;; gui + pane + ,
+;; dolphin_action_pane_backlinks         
+;; gui + pane + .
+;; dolphin_action_pane_outlinks          
+;; gui + pane + lsft + .
+;; dolphin_action_pane_!outlinks         
+
+;; == History combos =====================================================
+;; omni + ]
+;; dolphin_action_hist_next              
+;; omni + [
+;; dolphin_action_hist_prev              
+
+;; == Omni combos ======================================================
+;; omni + b
+;; dolphin_action_page_up                
+
+;; omni + f
+;; dolphin_action_page_down              
+
+;; omni + k
+;; dolphin_action_up                     
+;; omni + j
+;; dolphin_action_down                   
+;; omni + h
+;; dolphin_action_left                   
+;; omni + l
+;; dolphin_action_right                  
+
+;; omni + c
+;; dolphin_action_copy                   
+
+;; omni + x
+;; dolphin_action_cut                    
+;; omni + v
+;; dolphin_action_paste                  
+;; omni + z
+;; dolphin_action_undo                   
+;; omni + lsft + z
+;; dolphin_action_redo                   
+;; omni + e
+;; dolphin_action_rename                 
+;; omni + d
+;; dolphin_action_duplicate              
+;; omni + spc
+;; dolphin_action_toggle_select          
+;; omni + a
+;; dolphin_action_select_all             
+;; omni + lsft + a
+;; dolphin_action_clear_select           
+;; omni + rsft + a
+;; dolphin_action_invert_select          
+;; omni + n
+;; dolphin_action_new                    
+;; omni + lsft + n
+;; dolphin_action_!new                   
+;; omni + rsft + n
+;; dolphin_action_!!new                  
+
+;; omni + o
 dolphin_action_open                           ent
+;; omni + p
 dolphin_action_parent                         bspc
+
+;; omni + '
+;; dolphin_action_view                   
+;; omni + lsft + '
+;; dolphin_action_!view                  
+;; omni + rsft + '
+;; dolphin_action_!!view                 
+;; omni + ent
+;; dolphin_action_edit                   
+;; omni + lsft + ent
+;; dolphin_action_!edit                  
+;; omni + rsft + ent
+;; dolphin_action_!!edit                 
+;; omni + \
+;; dolphin_action_explore                
+;; omni + lsft + \
+;; dolphin_action_!explore               
+;; omni + rsft + \
+;; dolphin_action_!!explore              
+;; omni + s
+;; dolphin_action_search                 
+;; omni + lsft + s
+;; dolphin_action_!search                
+;; omni + rsft + s
+;; dolphin_action_!!search               
+;; omni + r
+;; dolphin_action_replace                
+;; omni + lsft + r
+;; dolphin_action_!replace               
+;; omni + rsft + r
+;; dolphin_action_!!replace              
+;; omni + g
+;; dolphin_action_go                     
 )
