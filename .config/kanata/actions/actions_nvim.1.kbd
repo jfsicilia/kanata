@@ -2,11 +2,11 @@
 
 ;; LCTL actions ==========================================================
 ;; nvim_action_lctl+a                 
-nvim_action_lctl+b                         C-b
+;; nvim_action_lctl+b                 
 ;; nvim_action_lctl+c                 
 ;; nvim_action_lctl+d                 
 ;; nvim_action_lctl+e                 
-nvim_action_lctl+f                         C-f
+;; nvim_action_lctl+f                 
 ;; nvim_action_lctl+g                 
 ;; nvim_action_lctl+h                 
 ;; nvim_action_lctl+i                 
@@ -20,8 +20,8 @@ nvim_action_lctl+f                         C-f
 ;; nvim_action_lctl+q                 
 ;; nvim_action_lctl+r                 
 ;; nvim_action_lctl+s                 
-;;nvim_action_lctl+t                         $action_tab_new
-;;nvim_action_lctl+!t                        $action_tab_undo_close
+;; nvim_action_lctl+t                 
+;; nvim_action_lctl+!t                
 ;; nvim_action_lctl+u                 
 ;; nvim_action_lctl+v                 
 ;; nvim_action_lctl+w                 
@@ -33,8 +33,8 @@ nvim_action_lctl+f                         C-f
 ;; nvim_action_lctl+/                 
 ;; nvim_action_lctl+;                 
 ;; nvim_action_lctl+'                 
-nvim_action_lctl+[                         C-o
-nvim_action_lctl+]                         C-i
+;; nvim_action_lctl+[                 
+;; nvim_action_lctl+]                 
 ;; nvim_action_lctl+\                 
 ;; nvim_action_lctl+-                 
 ;; nvim_action_lctl+=                 
@@ -208,7 +208,7 @@ nvim_action_pane_v_split                   (macro S-; v s ret)
 ;; gui + pane + lsft + d
 ;; nvim_action_pane_!day              
 ;; gui + pane + e
-;; nvim_action_pane_explorer          
+nvim_action_pane_explorer                  (macro esc S-; S-n e o t r e e spc t o g g l e ent)
 ;; gui + pane + lsft + e
 ;; nvim_action_pane_!explorer         
 ;; gui + pane + f
@@ -297,9 +297,9 @@ nvim_action_select_all                     (macro g g S-v S-g)
 ;; nvim_action_!!new                  
 
 ;; omni + o
-;; nvim_action_open                   
+nvim_action_open                          C-] ;; Follow tag in help ""
 ;; omni + p
-;; nvim_action_parent                 
+nvim_action_parent                        C-t ;; Go back to preceding tag
 
 ;; omni + '
 ;; nvim_action_view                   
