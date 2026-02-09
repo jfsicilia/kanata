@@ -21,7 +21,7 @@ def get_app_from_filename(path: Path) -> str:
     return m.group(1)
 
 
-def read_existing_app_actions(path: Path):
+def read_existing_app_actions(path: Path) -> dict[str, str]:
     """ """
     actions = {}
     if path.exists():
@@ -34,7 +34,12 @@ def read_existing_app_actions(path: Path):
     return actions
 
 
-def gen_app_actions(app, actions, actions_comments, app_actions):
+def gen_app_actions(
+    app: str,
+    actions: list[str],
+    actions_comments: dict[str, list[str]],
+    app_actions: dict[str, str],
+) -> list[str]:
     result = []
     result.append("(defvar")
     for action in actions:
@@ -47,7 +52,8 @@ def gen_app_actions(app, actions, actions_comments, app_actions):
     return result
 
 
-def process_actions(app, app_actions):
+def process_actions(app: str, app_actions: dict[str, str]) -> list[str]:
+
     lines = ACTIONS_FILE.read_text().splitlines()
     i = 0
     comments = []

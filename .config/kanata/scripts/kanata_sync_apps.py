@@ -4,6 +4,7 @@ import argparse
 import re
 import sys
 from pathlib import Path
+from typing import Optional
 
 KANATA_EXT = "kbd"
 KANATA_FOLDER = Path.home() / ".config" / "kanata"
@@ -18,6 +19,7 @@ REVERSE_ACTION_FLAG = "!"
 ACTION_END = ")"
 APP_ACTION_RE = re.compile(r"^\s*(\w+)_action_(.+?)\s")
 
+# Section definition regular expresion.
 AUTOGEN_SECTION_RE = re.compile(r";;\s+@autogen@")
 
 VK_LINE_RE = re.compile(r"\(\(input virtual vk_")
@@ -27,15 +29,16 @@ FILENAME_RE = re.compile(
 )
 
 
-def find_apps():
-    files_with_order = []
+def find_apps() -> list[tuple[str, str]]:
+    """ """
+    files_with_order: list[tuple[Optional[int], str, str]] = []
 
     for p in ACTIONS_FOLDER.glob(f"{ACTIONS_PREFIX}*.{KANATA_EXT}"):
         m = FILENAME_RE.match(p.name)
         if m:
-            app_name = m.group(1)
-            order_str = m.group(2)
-            order = int(order_str) if order_str else None
+            app_name: str = m.group(1)
+            order_str: str = m.group(2)
+            order: Optional[int] = int(order_str) if order_str else None
             files_with_order.append((order, app_name, p.name))
 
     files_with_order.sort(key=lambda x: x[0] if x[0] is not None else 0)
@@ -44,7 +47,10 @@ def find_apps():
     return [(app_name, app_file) for _, app_name, app_file in files_with_order]
 
 
-def autogen_kanata_file(lines, apps):
+def autogen_kanata_file(lines: list[str], apps) -> list[str]:
+    f"""
+    Generates the dynamic part of the {KANATA_FILE}
+    """
     out = []
 
     for line in lines:
@@ -76,7 +82,7 @@ def autogen_kanata_file(lines, apps):
     return out
 
 
-def load_app_actions(app_name, app_file):
+def load_app_actions(app_name: str, app_file: str) -> set[str]:
     f"""
     Returns a set of action names (without '{ACTIONS_PREFIX}' prefix)
     """
@@ -92,7 +98,7 @@ def load_app_actions(app_name, app_file):
     return actions
 
 
-def sync_actions():
+def sync_actions() -> list[str]:
     non_reversed_apps = find_apps()
     reversed_apps = non_reversed_apps[::-1]
     app_actions = {
@@ -150,7 +156,7 @@ def sync_actions():
     return out
 
 
-def ask_confirmation():
+def ask_confirmation() -> bool:
     answer = (
         input(
             f"This will overwrite {KANATA_FILE} and {ACTIONS_FILE} files. Continue? [y/N]: "
