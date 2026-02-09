@@ -80,6 +80,7 @@
 ;; foot_action_!lctl+z                
 ;; foot_action_!lctl+,                
 ;; foot_action_!lctl+.                
+;; foot_action_!lctl+/                
 ;; foot_action_!lctl+;                
 ;; foot_action_!lctl+'                
 ;; foot_action_!lctl+[                

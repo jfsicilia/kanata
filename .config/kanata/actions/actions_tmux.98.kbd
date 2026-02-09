@@ -80,6 +80,7 @@
 ;; tmux_action_!lctl+z                
 ;; tmux_action_!lctl+,                
 ;; tmux_action_!lctl+.                
+;; tmux_action_!lctl+/                
 ;; tmux_action_!lctl+;                
 ;; tmux_action_!lctl+'                
 ;; tmux_action_!lctl+[                

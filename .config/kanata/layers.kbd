@@ -20,42 +20,7 @@
         () (multi (on-press press-vkey vk_lalt) lalt (unmod (lctl) grv)) break
   )
 
-  ;; a $action_lctl+a (see $a/gui)
-  b $action_lctl+b
-  c $action_lctl+c
-  ;; d $action_lctl+d (see $d/rsft)
-  e $action_lctl+e
-  f $action_lctl+f
-  ;; g $action_lctl+g (see $g/lmet)
-  ;; h $action_lctl+h (see $h/lmet)
-  i $action_lctl+i
-  j $action_lctl+j
-  ;; k $action_lctl+k (see $k/rsft)
-  ;; l $action_lctl+l (see $l/lalt)
-  m $action_lctl+m
-  n $action_lctl+n
-  o $action_lctl+o
-  p $action_lctl+p
-  q $action_lctl+q
-  r $action_lctl+r
-  ;; s $action_lctl+s (see $s/lalt)
-  t $action_lctl+t
-  u $action_lctl+u
-  v $action_lctl+v
-  w $action_lctl+w
-  x $action_lctl+x
-  y $action_lctl+y
-  z $action_lctl+z
-  , $action_lctl+,
-  . $action_lctl+.
-  / $action_lctl+/
-  ;; ; $action_lctl+; (see $;/gui)
-  ' $action_lctl+'
-  [ $action_lctl+[
-  ] $action_lctl+]  ;;""
-  \ $action_lctl+\
-  - $action_lctl+-
-  = $action_lctl+=
+  (t! map_keys_with_pattern_except (a d g h k l s ;) "$action_lctl+")
   
   ;; == WORKSPACES ===================
   $a/gui     (t! th $action_lctl+a (multi (release-key lctl) $toggle_tabs_layer))
@@ -88,6 +53,7 @@
 (deflayermap (lsft+lctl_layer)
 
   ;; == KEY COMBOS ===================
+  (t! default_map_keys_except (s l g h))
 
   ;; == LALT =========================
   $!lalt  (t! th _ $toggle_lsft+lctl+lalt_layer)
@@ -108,7 +74,7 @@
 (deflayermap (rsft+lctl_layer)
 
   ;; == KEY COMBOS ===================
-;;  t $action_lctl+!t
+  (t! default_map_keys_except (s l g h))
 
   ;; == LALT =========================
   $!lalt  (t! th _ $toggle_rsft+lctl+lalt_layer)
@@ -131,62 +97,27 @@
   ;; == KEY COMBOS ===================
   spc $action_select_files 
 
-  ;; a $action_!lctl+a (see $a/gui)
-  b $action_!lctl+b
-  c $action_!lctl+c
-  ;; d $action_!lctl+d (see $d/rsft)
-  e $action_!lctl+e
-  f $action_!lctl+f
-  ;; g $action_!lctl+g (see $g/lmet)
-  ;; h $action_!lctl+h (see $h/lmet)
-  i $action_!lctl+i
-  j $action_!lctl+j
-  ;; k $action_!lctl+k (see $k/rsft)
-  ;; l $action_!lctl+l (see $l/lalt)
-  m $action_!lctl+m
-  n $action_!lctl+n
-  o $action_!lctl+o
-  p $action_!lctl+p
-  q $action_!lctl+q
-  r $action_!lctl+r
-  ;; s $action_!lctl+s (see $s/lalt)
-  t $action_!lctl+t
-  u $action_!lctl+u
-  v $action_!lctl+v
-  w $action_!lctl+w
-  x $action_!lctl+x
-  y $action_!lctl+y
-  z $action_!lctl+z
-  , $action_!lctl+,
-  . $action_!lctl+.
-  / $action_!lctl+/
-  ;; ; $action_!lctl+; (see $;/gui)
-  ' $action_!lctl+'
-  [ $action_!lctl+[
-  ] $action_!lctl+]  
-  \ $action_!lctl+\  ;;""
-  - $action_!lctl+-
-  = $action_!lctl+=
+  (t! map_keys_with_pattern_except (a d g h k l s ;) "$action_!lctl+")
 
   ;; == WORKSPACES ===================
-  $a/gui     (t! th _ (multi (release-key $!lctl) $toggle_tabs_layer))
-  $;/gui     (t! th _ (multi (release-key $!lctl) $toggle_tabs_layer))
+  $a/gui     (t! th $action_!lctl+a (multi (release-key $!lctl) $toggle_tabs_layer))
+  $;/gui     (t! th $action_!lctl+; (multi (release-key $!lctl) $toggle_tabs_layer))
   $lang/!gui (t! th _ (multi (release-key $!lctl) $toggle_!tabs_layer))
 
   ;; == LALT =========================
   $!lalt  (t! th _ $toggle_!lctl+lalt_layer)
-  $s/lalt (t! th _ $toggle_!lctl+lalt_layer)
-  $l/lalt (t! th _ $toggle_!lctl+lalt_layer)
+  $s/lalt (t! th $action_!lctl+s $toggle_!lctl+lalt_layer)
+  $l/lalt (t! th $action_!lctl+l $toggle_!lctl+lalt_layer)
                                                                  
   ;; == LMET =========================                           
   $!lmet  (t! th _ $toggle_!lctl+lmet_layer)
-  $g/lmet (t! th _ $toggle_!lctl+lmet_layer)
-  $h/lmet (t! th _ $toggle_!lctl+lmet_layer)
+  $g/lmet (t! th $action_!lctl+g  $toggle_!lctl+lmet_layer)
+  $h/lmet (t! th $action_!lctl+h  $toggle_!lctl+lmet_layer)
 
   ;; == LSFT/RSFT ====================
-  $d/lsft (t! th _ $toggle_!lsft+lctl_layer)
+  $d/lsft (t! th $action_!lctl+d $toggle_!lsft+lctl_layer)
   lsft    (t! th _ $toggle_!lsft+lctl_layer)
-  $k/rsft (t! th _ $toggle_!rsft+lctl_layer)
+  $k/rsft (t! th $action_!lctl+k $toggle_!rsft+lctl_layer)
   rsft    (t! th _ $toggle_!rsft+lctl_layer)
 
 ;; "" !LCTL_LAYER """""""""""""""""""
@@ -199,6 +130,8 @@
   ;; == KEY COMBOS ===================
   spc $action_select_opened_files 
 
+  (t! default_map_keys_except ())
+
 ;; "" !LSFT+LCTL_LAYER """""""""""""""
 )
 
@@ -208,6 +141,8 @@
 (deflayermap (!rsft+lctl_layer)
   ;; == KEY COMBOS ===================
   spc $action_select_folders
+
+  (t! default_map_keys_except ())
 
 ;; "" !RSFT+LCTL_LAYER """""""""""""""
 )

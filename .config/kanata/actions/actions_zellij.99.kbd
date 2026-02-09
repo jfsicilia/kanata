@@ -80,6 +80,7 @@
 ;; zellij_action_!lctl+z                
 ;; zellij_action_!lctl+,                
 ;; zellij_action_!lctl+.                
+;; zellij_action_!lctl+/                
 ;; zellij_action_!lctl+;                
 ;; zellij_action_!lctl+'                
 ;; zellij_action_!lctl+[                

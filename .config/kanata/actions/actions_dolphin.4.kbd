@@ -80,6 +80,7 @@
 ;; dolphin_action_!lctl+z                
 ;; dolphin_action_!lctl+,                
 ;; dolphin_action_!lctl+.                
+;; dolphin_action_!lctl+/                
 ;; dolphin_action_!lctl+;                
 ;; dolphin_action_!lctl+'                
 ;; dolphin_action_!lctl+[                

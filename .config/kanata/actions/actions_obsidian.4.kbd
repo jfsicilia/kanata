@@ -80,6 +80,7 @@ obsidian_action_!lctl+r                        C-A-S-e
 ;; obsidian_action_!lctl+z                
 obsidian_action_!lctl+,                        $obsidian_action_settings
 ;; obsidian_action_!lctl+.                
+;; obsidian_action_!lctl+/                
 ;; obsidian_action_!lctl+;                
 ;; obsidian_action_!lctl+'                
 ;; obsidian_action_!lctl+[                

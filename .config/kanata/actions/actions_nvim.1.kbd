@@ -1,7 +1,7 @@
 (defvar
 
 ;; LCTL actions ==========================================================
-nvim_action_lctl+a                         $action_select_all
+;; nvim_action_lctl+a                 
 nvim_action_lctl+b                         C-b
 ;; nvim_action_lctl+c                 
 ;; nvim_action_lctl+d                 
@@ -50,7 +50,7 @@ nvim_action_lctl+]                         C-i
 ;; nvim_action_lctl+0                 
 
 ;; !LCTL actions ==========================================================
-;; nvim_action_!lctl+a                
+nvim_action_!lctl+a                         (macro g g S-v S-g)
 ;; nvim_action_!lctl+b                
 ;; nvim_action_!lctl+c                
 ;; nvim_action_!lctl+d                
@@ -80,6 +80,7 @@ nvim_action_lctl+]                         C-i
 ;; nvim_action_!lctl+z                
 ;; nvim_action_!lctl+,                
 ;; nvim_action_!lctl+.                
+;; nvim_action_!lctl+/                
 ;; nvim_action_!lctl+;                
 ;; nvim_action_!lctl+'                
 ;; nvim_action_!lctl+[                

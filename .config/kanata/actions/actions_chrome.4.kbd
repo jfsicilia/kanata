@@ -80,6 +80,7 @@
 ;; chrome_action_!lctl+z                
 ;; chrome_action_!lctl+,                
 ;; chrome_action_!lctl+.                
+;; chrome_action_!lctl+/                
 ;; chrome_action_!lctl+;                
 ;; chrome_action_!lctl+'                
 ;; chrome_action_!lctl+[                
