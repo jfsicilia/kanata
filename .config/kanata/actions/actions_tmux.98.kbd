@@ -1,5 +1,10 @@
 (defvar
 
+;; == App variables =============================================
+tmux_prefix A-b
+
+;; == App actions in interfaces (actions.kbd) ===============
+
 ;; LCTL actions ==========================================================
 ;; tmux_action_lctl+a                 
 ;; tmux_action_lctl+b                 
@@ -21,7 +26,7 @@
 ;; tmux_action_lctl+r                 
 ;; tmux_action_lctl+s                 
 ;; tmux_action_lctl+t                 
-;; tmux_action_lctl+!t                
+;; tmux_action_lctl+<t                
 ;; tmux_action_lctl+u                 
 ;; tmux_action_lctl+v                 
 ;; tmux_action_lctl+w                 
@@ -66,12 +71,12 @@
 ;; tmux_action_!lctl+n                
 ;; tmux_action_!lctl+o                
 ;; tmux_action_!lctl+p                
-;; tmux_action_!lctl+!p               
+;; tmux_action_!lctl+<p               
 ;; tmux_action_!lctl+q                
 ;; tmux_action_!lctl+r                
 ;; tmux_action_!lctl+s                
 ;; tmux_action_!lctl+t                
-;; tmux_action_!lctl+!t               
+;; tmux_action_!lctl+<t               
 ;; tmux_action_!lctl+u                
 ;; tmux_action_!lctl+v                
 ;; tmux_action_!lctl+w                
@@ -101,13 +106,13 @@
 
 ;; == Seek & Select combos ===============================================
 ;; !lctl+spc
-;; tmux_action_select_files           
+tmux_action_select_files            (macro $tmux_prefix w) ;; prefix + w (choose window)
 ;; !lctl+lsft+spc
-;; tmux_action_select_opened_files    
+tmux_action_select_opened_files            (macro $tmux_prefix w) ;; prefix + w (choose window)
 ;; !lctl+rsft+spc
 ;; tmux_action_select_folders         
 ;; !lalt+spc
-;; tmux_action_select_command         
+tmux_action_select_command                 (macro $tmux_prefix S-;) ;; prefix + : (command prompt)
 ;; !lmet+spc
 ;; tmux_action_select_symbol          
 ;; !lctl+!lalt+spc
@@ -126,79 +131,79 @@
 ;; == Tabs combos ========================================================
 ;; gui + tabs + l | gui + tabs + right | lsft + rsft | 2x rsft | !met + tab
 ;; !gui + tabs + l | !gui + tabs + right
-tmux_action_tab_next                       (macro C-b n)
+tmux_action_tab_next                       (macro $tmux_prefix n)
 ;; gui + tabs + h | gui + tabs + left | rsft + lsft | 2x lsft | !met + sft + tab
 ;; !gui + tabs + h | !gui + tabs + left
-tmux_action_tab_prev                       (macro C-b p)
+tmux_action_tab_prev                       (macro $tmux_prefix p)
 ;; gui + tabs (tap) | 2x !lctl/tabs
 ;; !gui + tabs (tap)
-tmux_action_tab_toggle                     (macro C-b l)
+tmux_action_tab_toggle                     (macro $tmux_prefix l)
 ;; gui + tabs + t | omni + t
 ;; !gui + tabs + t
-;; tmux_action_tab_new                
+tmux_action_tab_new                        (macro $tmux_prefix c)
 ;; gui + tabs + w | omni + w
 ;; !gui + tabs + w
-;; tmux_action_tab_close              
+tmux_action_tab_close                      (macro $tmux_prefix S-7) ;; prefix + & (kill window)
 ;; gui + tabs + lsft + t | omni + lsft + t
 ;; !gui + tabs + lsft + t
 ;; tmux_action_tab_undo_close         
 
 ;; gui + tabs + 1
 ;; !gui + tabs + 1
-tmux_action_tab_goto_1                     (macro C-b 1)
+tmux_action_tab_goto_1                     (macro $tmux_prefix Digit1)
 ;; gui + tabs + 2
 ;; !gui + tabs + 2
-tmux_action_tab_goto_2                     (macro C-b 2)
+tmux_action_tab_goto_2                     (macro $tmux_prefix Digit2)
 ;; gui + tabs + 3
 ;; !gui + tabs + 3
-tmux_action_tab_goto_3                     (macro C-b 3)
+tmux_action_tab_goto_3                     (macro $tmux_prefix Digit3)
 ;; gui + tabs + 4
 ;; !gui + tabs + 4
-tmux_action_tab_goto_4                     (macro C-b 4)
+tmux_action_tab_goto_4                     (macro $tmux_prefix Digit4)
 ;; gui + tabs + 5
 ;; !gui + tabs + 5
-tmux_action_tab_goto_5                     (macro C-b 5)
+tmux_action_tab_goto_5                     (macro $tmux_prefix Digit5)
 ;; gui + tabs + 6
 ;; !gui + tabs + 6
-tmux_action_tab_goto_6                     (macro C-b 6)
+tmux_action_tab_goto_6                     (macro $tmux_prefix Digit6)
 ;; gui + tabs + 7
 ;; !gui + tabs + 7
-tmux_action_tab_goto_7                     (macro C-b 7)
+tmux_action_tab_goto_7                     (macro $tmux_prefix Digit7)
 ;; gui + tabs + 8
 ;; !gui + tabs + 8
-tmux_action_tab_goto_8                     (macro C-b 8)
+tmux_action_tab_goto_8                     (macro $tmux_prefix Digit8)
 ;; gui + tabs + 9
 ;; !gui + tabs + 9
-tmux_action_tab_goto_last                  (macro C-b 9)
+tmux_action_tab_goto_last                  (macro $tmux_prefix Digit9)
 
 ;; == Panes combos =======================================================
 ;; gui + pane + h | gui + pane + left
 ;; !gui + tabs + h | !gui + tabs + left
-tmux_action_pane_left                      (macro C-b left)
+tmux_action_pane_left                      (macro $tmux_prefix left)
 ;; gui + pane + l | gui + pane + right
 ;; !gui + tabs + l | !gui + tabs + right
-tmux_action_pane_right                     (macro C-b right)
+tmux_action_pane_right                     (macro $tmux_prefix right)
 ;; gui + pane + k | gui + pane + up
 ;; !gui + tabs + k | !gui + tabs + up
-tmux_action_pane_above                     (macro C-b up)
+tmux_action_pane_above                     (macro $tmux_prefix up)
 ;; gui + pane + j | gui + pane + down
 ;; !gui + tabs + j | !gui + tabs + down
-tmux_action_pane_below                     (macro C-b down) 
+tmux_action_pane_below                     (macro $tmux_prefix down) 
 ;; gui + pane (tap) | 2x !lalt/pane
 ;; !gui + pane (tap)
-;; tmux_action_pane_toggle            
+tmux_action_pane_toggle                    (macro $tmux_prefix ;) ;; prefix + ; (last pane)
 ;; gui + pane + spc
 ;; !gui + pane + spc
-;; tmux_action_pane_max               
+tmux_action_pane_max                       (macro $tmux_prefix z) ;; prefix + z (zoom pane)
 ;; gui + pane + -
 ;; !gui + pane + -
-tmux_action_pane_h_split                   (macro C-b S-') 
+tmux_action_pane_h_split                   (macro $tmux_prefix S-') 
 ;; gui + pane + \
 ;; !gui + pane + \
-tmux_action_pane_v_split                   (macro C-b S-5) 
+tmux_action_pane_v_split                   (macro $tmux_prefix S-5) 
 ;; gui + pane + w
 ;; !gui + pane + w
-;; tmux_action_pane_close             
+tmux_action_pane_close                     (macro $tmux_prefix x) ;; prefix + x (kill pane)
 ;; gui + pane + b
 ;; tmux_action_pane_bookmarks         
 ;; gui + pane + c
@@ -206,11 +211,11 @@ tmux_action_pane_v_split                   (macro C-b S-5)
 ;; gui + pane + d
 ;; tmux_action_pane_day               
 ;; gui + pane + lsft + d
-;; tmux_action_pane_!day              
+;; tmux_action_pane_<day              
 ;; gui + pane + e
 ;; tmux_action_pane_explorer          
 ;; gui + pane + lsft + e
-;; tmux_action_pane_!explorer         
+;; tmux_action_pane_<explorer         
 ;; gui + pane + f
 ;; tmux_action_pane_find              
 ;; gui + pane + g
@@ -222,7 +227,7 @@ tmux_action_pane_v_split                   (macro C-b S-5)
 ;; gui + pane + p
 ;; tmux_action_pane_properties        
 ;; gui + pane + lsft + p
-;; tmux_action_pane_!properties       
+;; tmux_action_pane_<properties       
 ;; gui + pane + r
 ;; tmux_action_pane_recent            
 ;; gui + pane + s
@@ -240,7 +245,7 @@ tmux_action_pane_v_split                   (macro C-b S-5)
 ;; gui + pane + .
 ;; tmux_action_pane_outlinks          
 ;; gui + pane + lsft + .
-;; tmux_action_pane_!outlinks         
+;; tmux_action_pane_<outlinks         
 
 ;; == History combos =====================================================
 ;; omni + ]
@@ -250,10 +255,10 @@ tmux_action_pane_v_split                   (macro C-b S-5)
 
 ;; == Edit combos ======================================================
 ;; omni + b
-;; tmux_action_page_up                
+tmux_action_page_up                        (macro $tmux_prefix pgup) ;; prefix + PgUp (enter copy mode + page up)
 
 ;; omni + f
-;; tmux_action_page_down              
+tmux_action_page_down                      C-f ;; prefix + PgDn (page down, requires copy mode)
 
 ;; omni + k
 ;; tmux_action_up                     
@@ -265,12 +270,12 @@ tmux_action_pane_v_split                   (macro C-b S-5)
 ;; tmux_action_right                  
 
 ;; omni + c
-;; tmux_action_copy                   
+tmux_action_copy                           (macro $tmux_prefix [) ;; prefix + [ (enter copy mode) ;;""
 
 ;; omni + x
 ;; tmux_action_cut                    
 ;; omni + v
-;; tmux_action_paste                  
+tmux_action_paste                          (macro $tmux_prefix ]) ;; prefix + ] (paste buffer)  ;;""
 ;; omni + z
 ;; tmux_action_undo                   
 ;; omni + lsft + z
@@ -278,7 +283,7 @@ tmux_action_pane_v_split                   (macro C-b S-5)
 
 ;; == File Manager combos ===============================================
 ;; omni + e
-;; tmux_action_rename                 
+tmux_action_rename                         (macro $tmux_prefix ,) ;; prefix + , (rename window)
 ;; omni + d
 ;; tmux_action_duplicate              
 ;; omni + spc
@@ -290,11 +295,11 @@ tmux_action_pane_v_split                   (macro C-b S-5)
 ;; omni + rsft + a
 ;; tmux_action_invert_select          
 ;; omni + n
-;; tmux_action_new                    
+tmux_action_new                            (macro $tmux_prefix c) ;; prefix + c (new window)
 ;; omni + lsft + n
-;; tmux_action_!new                   
+;; tmux_action_<new                   
 ;; omni + rsft + n
-;; tmux_action_!!new                  
+;; tmux_action_>new                  
 
 ;; omni + o
 ;; tmux_action_open                   
@@ -304,33 +309,33 @@ tmux_action_pane_v_split                   (macro C-b S-5)
 ;; omni + '
 ;; tmux_action_view                   
 ;; omni + lsft + '
-;; tmux_action_!view                  
+;; tmux_action_<view                  
 ;; omni + rsft + '
-;; tmux_action_!!view                 
+;; tmux_action_>view                 
 ;; omni + ent
 ;; tmux_action_edit                   
 ;; omni + lsft + ent
-;; tmux_action_!edit                  
+;; tmux_action_<edit                  
 ;; omni + rsft + ent
-;; tmux_action_!!edit                 
+;; tmux_action_>edit                 
 ;; omni + \
 ;; tmux_action_explore                
 ;; omni + lsft + \
-;; tmux_action_!explore               
+;; tmux_action_<explore               
 ;; omni + rsft + \
-;; tmux_action_!!explore              
+;; tmux_action_>explore              
 ;; omni + s
 ;; tmux_action_search                 
 ;; omni + lsft + s
-;; tmux_action_!search                
+;; tmux_action_<search                
 ;; omni + rsft + s
-;; tmux_action_!!search               
+;; tmux_action_>search               
 ;; omni + r
 ;; tmux_action_replace                
 ;; omni + lsft + r
-;; tmux_action_!replace               
+;; tmux_action_<replace               
 ;; omni + rsft + r
-;; tmux_action_!!replace              
+;; tmux_action_>replace              
 ;; omni + g
 ;; tmux_action_go                     
 )

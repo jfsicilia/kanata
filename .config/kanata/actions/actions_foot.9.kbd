@@ -1,5 +1,7 @@
 (defvar
 
+;; == App actions in interfaces (actions.kbd) ===============
+
 ;; LCTL actions ==========================================================
 ;; foot_action_lctl+a                 
 ;; foot_action_lctl+b                 
@@ -21,7 +23,7 @@
 ;; foot_action_lctl+r                 
 ;; foot_action_lctl+s                 
 ;; foot_action_lctl+t                 
-;; foot_action_lctl+!t                
+;; foot_action_lctl+<t                
 ;; foot_action_lctl+u                 
 ;; foot_action_lctl+v                 
 ;; foot_action_lctl+w                 
@@ -66,12 +68,12 @@
 ;; foot_action_!lctl+n                
 ;; foot_action_!lctl+o                
 ;; foot_action_!lctl+p                
-;; foot_action_!lctl+!p               
+;; foot_action_!lctl+<p               
 ;; foot_action_!lctl+q                
 ;; foot_action_!lctl+r                
 ;; foot_action_!lctl+s                
 ;; foot_action_!lctl+t                
-;; foot_action_!lctl+!t               
+;; foot_action_!lctl+<t               
 ;; foot_action_!lctl+u                
 ;; foot_action_!lctl+v                
 ;; foot_action_!lctl+w                
@@ -206,11 +208,11 @@
 ;; gui + pane + d
 ;; foot_action_pane_day               
 ;; gui + pane + lsft + d
-;; foot_action_pane_!day              
+;; foot_action_pane_<day              
 ;; gui + pane + e
 ;; foot_action_pane_explorer          
 ;; gui + pane + lsft + e
-;; foot_action_pane_!explorer         
+;; foot_action_pane_<explorer         
 ;; gui + pane + f
 ;; foot_action_pane_find              
 ;; gui + pane + g
@@ -222,7 +224,7 @@
 ;; gui + pane + p
 ;; foot_action_pane_properties        
 ;; gui + pane + lsft + p
-;; foot_action_pane_!properties       
+;; foot_action_pane_<properties       
 ;; gui + pane + r
 ;; foot_action_pane_recent            
 ;; gui + pane + s
@@ -240,7 +242,7 @@
 ;; gui + pane + .
 ;; foot_action_pane_outlinks          
 ;; gui + pane + lsft + .
-;; foot_action_pane_!outlinks         
+;; foot_action_pane_<outlinks         
 
 ;; == History combos =====================================================
 ;; omni + ]
@@ -292,9 +294,9 @@ foot_action_page_down                      S-pgdn
 ;; omni + n
 ;; foot_action_new                    
 ;; omni + lsft + n
-;; foot_action_!new                   
+;; foot_action_<new                   
 ;; omni + rsft + n
-;; foot_action_!!new                  
+;; foot_action_>new                  
 
 ;; omni + o
 ;; foot_action_open                   
@@ -304,33 +306,33 @@ foot_action_page_down                      S-pgdn
 ;; omni + '
 ;; foot_action_view                   
 ;; omni + lsft + '
-;; foot_action_!view                  
+;; foot_action_<view                  
 ;; omni + rsft + '
-;; foot_action_!!view                 
+;; foot_action_>view                 
 ;; omni + ent
 ;; foot_action_edit                   
 ;; omni + lsft + ent
-;; foot_action_!edit                  
+;; foot_action_<edit                  
 ;; omni + rsft + ent
-;; foot_action_!!edit                 
+;; foot_action_>edit                 
 ;; omni + \
 ;; foot_action_explore                
 ;; omni + lsft + \
-;; foot_action_!explore               
+;; foot_action_<explore               
 ;; omni + rsft + \
-;; foot_action_!!explore              
+;; foot_action_>explore              
 ;; omni + s
 ;; foot_action_search                 
 ;; omni + lsft + s
-;; foot_action_!search                
+;; foot_action_<search                
 ;; omni + rsft + s
-;; foot_action_!!search               
+;; foot_action_>search               
 ;; omni + r
 ;; foot_action_replace                
 ;; omni + lsft + r
-;; foot_action_!replace               
+;; foot_action_<replace               
 ;; omni + rsft + r
-;; foot_action_!!replace              
+;; foot_action_>replace              
 ;; omni + g
 ;; foot_action_go                     
 )

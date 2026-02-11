@@ -1,5 +1,7 @@
 (defvar
 
+;; == App actions in interfaces (actions.kbd) ===============
+
 ;; LCTL actions ==========================================================
 ;; zellij_action_lctl+a                 
 ;; zellij_action_lctl+b                 
@@ -21,7 +23,7 @@
 ;; zellij_action_lctl+r                 
 ;; zellij_action_lctl+s                 
 ;; zellij_action_lctl+t                 
-;; zellij_action_lctl+!t                
+;; zellij_action_lctl+<t                
 ;; zellij_action_lctl+u                 
 ;; zellij_action_lctl+v                 
 ;; zellij_action_lctl+w                 
@@ -66,12 +68,12 @@
 ;; zellij_action_!lctl+n                
 ;; zellij_action_!lctl+o                
 ;; zellij_action_!lctl+p                
-;; zellij_action_!lctl+!p               
+;; zellij_action_!lctl+<p               
 ;; zellij_action_!lctl+q                
 ;; zellij_action_!lctl+r                
 ;; zellij_action_!lctl+s                
 ;; zellij_action_!lctl+t                
-;; zellij_action_!lctl+!t               
+;; zellij_action_!lctl+<t               
 ;; zellij_action_!lctl+u                
 ;; zellij_action_!lctl+v                
 ;; zellij_action_!lctl+w                
@@ -206,11 +208,11 @@ zellij_action_pane_max                       (macro C-g p f ret)
 ;; gui + pane + d
 ;; zellij_action_pane_day               
 ;; gui + pane + lsft + d
-;; zellij_action_pane_!day              
+;; zellij_action_pane_<day              
 ;; gui + pane + e
 ;; zellij_action_pane_explorer          
 ;; gui + pane + lsft + e
-;; zellij_action_pane_!explorer         
+;; zellij_action_pane_<explorer         
 ;; gui + pane + f
 ;; zellij_action_pane_find              
 ;; gui + pane + g
@@ -222,7 +224,7 @@ zellij_action_pane_max                       (macro C-g p f ret)
 ;; gui + pane + p
 ;; zellij_action_pane_properties        
 ;; gui + pane + lsft + p
-;; zellij_action_pane_!properties       
+;; zellij_action_pane_<properties       
 ;; gui + pane + r
 ;; zellij_action_pane_recent            
 ;; gui + pane + s
@@ -240,7 +242,7 @@ zellij_action_pane_max                       (macro C-g p f ret)
 ;; gui + pane + .
 ;; zellij_action_pane_outlinks          
 ;; gui + pane + lsft + .
-;; zellij_action_pane_!outlinks         
+;; zellij_action_pane_<outlinks         
 
 ;; == History combos =====================================================
 ;; omni + ]
@@ -292,9 +294,9 @@ zellij_action_pane_max                       (macro C-g p f ret)
 ;; omni + n
 ;; zellij_action_new                    
 ;; omni + lsft + n
-;; zellij_action_!new                   
+;; zellij_action_<new                   
 ;; omni + rsft + n
-;; zellij_action_!!new                  
+;; zellij_action_>new                  
 
 ;; omni + o
 ;; zellij_action_open                   
@@ -304,33 +306,33 @@ zellij_action_pane_max                       (macro C-g p f ret)
 ;; omni + '
 ;; zellij_action_view                   
 ;; omni + lsft + '
-;; zellij_action_!view                  
+;; zellij_action_<view                  
 ;; omni + rsft + '
-;; zellij_action_!!view                 
+;; zellij_action_>view                 
 ;; omni + ent
 ;; zellij_action_edit                   
 ;; omni + lsft + ent
-;; zellij_action_!edit                  
+;; zellij_action_<edit                  
 ;; omni + rsft + ent
-;; zellij_action_!!edit                 
+;; zellij_action_>edit                 
 ;; omni + \
 ;; zellij_action_explore                
 ;; omni + lsft + \
-;; zellij_action_!explore               
+;; zellij_action_<explore               
 ;; omni + rsft + \
-;; zellij_action_!!explore              
+;; zellij_action_>explore              
 ;; omni + s
 ;; zellij_action_search                 
 ;; omni + lsft + s
-;; zellij_action_!search                
+;; zellij_action_<search                
 ;; omni + rsft + s
-;; zellij_action_!!search               
+;; zellij_action_>search               
 ;; omni + r
 ;; zellij_action_replace                
 ;; omni + lsft + r
-;; zellij_action_!replace               
+;; zellij_action_<replace               
 ;; omni + rsft + r
-;; zellij_action_!!replace              
+;; zellij_action_>replace              
 ;; omni + g
 ;; zellij_action_go                     
 )

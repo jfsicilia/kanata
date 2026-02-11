@@ -1,5 +1,7 @@
 (defvar
 
+;; == App actions in interfaces (actions.kbd) ===============
+
 ;; LCTL actions ==========================================================
 ;; dolphin_action_lctl+a                 
 ;; dolphin_action_lctl+b                 
@@ -21,7 +23,7 @@
 ;; dolphin_action_lctl+r                 
 ;; dolphin_action_lctl+s                 
 ;; dolphin_action_lctl+t                 
-;; dolphin_action_lctl+!t                
+;; dolphin_action_lctl+<t                
 ;; dolphin_action_lctl+u                 
 ;; dolphin_action_lctl+v                 
 ;; dolphin_action_lctl+w                 
@@ -66,12 +68,12 @@
 ;; dolphin_action_!lctl+n                
 ;; dolphin_action_!lctl+o                
 ;; dolphin_action_!lctl+p                
-;; dolphin_action_!lctl+!p               
+;; dolphin_action_!lctl+<p               
 ;; dolphin_action_!lctl+q                
 ;; dolphin_action_!lctl+r                
 ;; dolphin_action_!lctl+s                
 ;; dolphin_action_!lctl+t                
-;; dolphin_action_!lctl+!t               
+;; dolphin_action_!lctl+<t               
 ;; dolphin_action_!lctl+u                
 ;; dolphin_action_!lctl+v                
 ;; dolphin_action_!lctl+w                
@@ -206,11 +208,11 @@
 ;; gui + pane + d
 ;; dolphin_action_pane_day               
 ;; gui + pane + lsft + d
-;; dolphin_action_pane_!day              
+;; dolphin_action_pane_<day              
 ;; gui + pane + e
 ;; dolphin_action_pane_explorer          
 ;; gui + pane + lsft + e
-;; dolphin_action_pane_!explorer         
+;; dolphin_action_pane_<explorer         
 ;; gui + pane + f
 ;; dolphin_action_pane_find              
 ;; gui + pane + g
@@ -222,7 +224,7 @@
 ;; gui + pane + p
 ;; dolphin_action_pane_properties        
 ;; gui + pane + lsft + p
-;; dolphin_action_pane_!properties       
+;; dolphin_action_pane_<properties       
 ;; gui + pane + r
 ;; dolphin_action_pane_recent            
 ;; gui + pane + s
@@ -240,7 +242,7 @@
 ;; gui + pane + .
 ;; dolphin_action_pane_outlinks          
 ;; gui + pane + lsft + .
-;; dolphin_action_pane_!outlinks         
+;; dolphin_action_pane_<outlinks         
 
 ;; == History combos =====================================================
 ;; omni + ]
@@ -292,9 +294,9 @@
 ;; omni + n
 ;; dolphin_action_new                    
 ;; omni + lsft + n
-;; dolphin_action_!new                   
+;; dolphin_action_<new                   
 ;; omni + rsft + n
-;; dolphin_action_!!new                  
+;; dolphin_action_>new                  
 
 ;; omni + o
 dolphin_action_open                           ent
@@ -304,33 +306,33 @@ dolphin_action_parent                         bspc
 ;; omni + '
 ;; dolphin_action_view                   
 ;; omni + lsft + '
-;; dolphin_action_!view                  
+;; dolphin_action_<view                  
 ;; omni + rsft + '
-;; dolphin_action_!!view                 
+;; dolphin_action_>view                 
 ;; omni + ent
 ;; dolphin_action_edit                   
 ;; omni + lsft + ent
-;; dolphin_action_!edit                  
+;; dolphin_action_<edit                  
 ;; omni + rsft + ent
-;; dolphin_action_!!edit                 
+;; dolphin_action_>edit                 
 ;; omni + \
 ;; dolphin_action_explore                
 ;; omni + lsft + \
-;; dolphin_action_!explore               
+;; dolphin_action_<explore               
 ;; omni + rsft + \
-;; dolphin_action_!!explore              
+;; dolphin_action_>explore              
 ;; omni + s
 ;; dolphin_action_search                 
 ;; omni + lsft + s
-;; dolphin_action_!search                
+;; dolphin_action_<search                
 ;; omni + rsft + s
-;; dolphin_action_!!search               
+;; dolphin_action_>search               
 ;; omni + r
 ;; dolphin_action_replace                
 ;; omni + lsft + r
-;; dolphin_action_!replace               
+;; dolphin_action_<replace               
 ;; omni + rsft + r
-;; dolphin_action_!!replace              
+;; dolphin_action_>replace              
 ;; omni + g
 ;; dolphin_action_go                     
 )

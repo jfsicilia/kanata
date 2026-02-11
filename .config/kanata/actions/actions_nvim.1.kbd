@@ -1,5 +1,7 @@
 (defvar
 
+;; == App actions in interfaces (actions.kbd) ===============
+
 ;; LCTL actions ==========================================================
 ;; nvim_action_lctl+a                 
 ;; nvim_action_lctl+b                 
@@ -21,7 +23,7 @@
 ;; nvim_action_lctl+r                 
 ;; nvim_action_lctl+s                 
 ;; nvim_action_lctl+t                 
-;; nvim_action_lctl+!t                
+;; nvim_action_lctl+<t                
 ;; nvim_action_lctl+u                 
 ;; nvim_action_lctl+v                 
 ;; nvim_action_lctl+w                 
@@ -66,12 +68,12 @@ nvim_action_!lctl+a                         (macro g g S-v S-g)
 ;; nvim_action_!lctl+n                
 ;; nvim_action_!lctl+o                
 ;; nvim_action_!lctl+p                
-;; nvim_action_!lctl+!p               
+;; nvim_action_!lctl+<p               
 ;; nvim_action_!lctl+q                
 ;; nvim_action_!lctl+r                
 ;; nvim_action_!lctl+s                
 ;; nvim_action_!lctl+t                
-;; nvim_action_!lctl+!t               
+;; nvim_action_!lctl+<t               
 ;; nvim_action_!lctl+u                
 ;; nvim_action_!lctl+v                
 ;; nvim_action_!lctl+w                
@@ -174,16 +176,16 @@ nvim_action_tab_goto_last                  (macro , Digit9)
 ;; == Panes combos =======================================================
 ;; gui + pane + h | gui + pane + left
 ;; !gui + tabs + h | !gui + tabs + left
-nvim_action_pane_left                      (macro esc S-; w i n c m d spc h ret)
+nvim_action_pane_left                      A-h ;; (macro esc S-; w i n c m d spc h ret)
 ;; gui + pane + l | gui + pane + right
 ;; !gui + tabs + l | !gui + tabs + right
-nvim_action_pane_right                     (macro esc S-; w i n c m d spc l ret)
+nvim_action_pane_right                     A-l ;; (macro esc S-; w i n c m d spc l ret)
 ;; gui + pane + k | gui + pane + up
 ;; !gui + tabs + k | !gui + tabs + up
-nvim_action_pane_above                     (macro esc S-; w i n c m d spc k ret)
+nvim_action_pane_above                     A-k ;; (macro esc S-; w i n c m d spc k ret)
 ;; gui + pane + j | gui + pane + down
 ;; !gui + tabs + j | !gui + tabs + down
-nvim_action_pane_below                     (macro esc S-; w i n c m d spc j ret)
+nvim_action_pane_below                     A-j ;; (macro esc S-; w i n c m d spc j ret)
 ;; gui + pane (tap) | 2x !lalt/pane
 ;; !gui + pane (tap)
 ;; nvim_action_pane_toggle            
@@ -206,11 +208,11 @@ nvim_action_pane_v_split                   (macro S-; v s ret)
 ;; gui + pane + d
 ;; nvim_action_pane_day               
 ;; gui + pane + lsft + d
-;; nvim_action_pane_!day              
+;; nvim_action_pane_<day              
 ;; gui + pane + e
 nvim_action_pane_explorer                  (macro esc S-; S-n e o t r e e spc t o g g l e ent)
 ;; gui + pane + lsft + e
-;; nvim_action_pane_!explorer         
+;; nvim_action_pane_<explorer         
 ;; gui + pane + f
 ;; nvim_action_pane_find              
 ;; gui + pane + g
@@ -222,7 +224,7 @@ nvim_action_pane_explorer                  (macro esc S-; S-n e o t r e e spc t 
 ;; gui + pane + p
 ;; nvim_action_pane_properties        
 ;; gui + pane + lsft + p
-;; nvim_action_pane_!properties       
+;; nvim_action_pane_<properties       
 ;; gui + pane + r
 ;; nvim_action_pane_recent            
 ;; gui + pane + s
@@ -240,7 +242,7 @@ nvim_action_pane_explorer                  (macro esc S-; S-n e o t r e e spc t 
 ;; gui + pane + .
 ;; nvim_action_pane_outlinks          
 ;; gui + pane + lsft + .
-;; nvim_action_pane_!outlinks         
+;; nvim_action_pane_<outlinks         
 
 ;; == History combos =====================================================
 ;; omni + ]
@@ -292,9 +294,9 @@ nvim_action_select_all                     (macro g g S-v S-g)
 ;; omni + n
 ;; nvim_action_new                    
 ;; omni + lsft + n
-;; nvim_action_!new                   
+;; nvim_action_<new                   
 ;; omni + rsft + n
-;; nvim_action_!!new                  
+;; nvim_action_>new                  
 
 ;; omni + o
 nvim_action_open                          C-] ;; Follow tag in help ""
@@ -304,33 +306,33 @@ nvim_action_parent                        C-t ;; Go back to preceding tag
 ;; omni + '
 ;; nvim_action_view                   
 ;; omni + lsft + '
-;; nvim_action_!view                  
+;; nvim_action_<view                  
 ;; omni + rsft + '
-;; nvim_action_!!view                 
+;; nvim_action_>view                 
 ;; omni + ent
 ;; nvim_action_edit                   
 ;; omni + lsft + ent
-;; nvim_action_!edit                  
+;; nvim_action_<edit                  
 ;; omni + rsft + ent
-;; nvim_action_!!edit                 
+;; nvim_action_>edit                 
 ;; omni + \
 ;; nvim_action_explore                
 ;; omni + lsft + \
-;; nvim_action_!explore               
+;; nvim_action_<explore               
 ;; omni + rsft + \
-;; nvim_action_!!explore              
+;; nvim_action_>explore              
 ;; omni + s
 ;; nvim_action_search                 
 ;; omni + lsft + s
-;; nvim_action_!search                
+;; nvim_action_<search                
 ;; omni + rsft + s
-;; nvim_action_!!search               
+;; nvim_action_>search               
 ;; omni + r
 ;; nvim_action_replace                
 ;; omni + lsft + r
-;; nvim_action_!replace               
+;; nvim_action_<replace               
 ;; omni + rsft + r
-;; nvim_action_!!replace              
+;; nvim_action_>replace              
 ;; omni + g
 ;; nvim_action_go                     
 )

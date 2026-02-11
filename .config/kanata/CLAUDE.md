@@ -102,6 +102,6 @@ Key templates used throughout:
 - Actions use the naming pattern: `action_<name>` in `actions.kbd`, `<app>_action_<name>` in app files.
 - `!` has different meanings depending on position:
   - **Before `action_`** (`!action_tab_next`): reversed app priority in switch conditions — apps are checked in reverse order.
-  - **Within the action name** (`action_!new`, `action_!!new`): alternative variants of the same action. Up to 3 variants accessed via different combos: base (`omni+n`), `!` variant (`omni+lsft+n`), `!!` variant (`omni+rsft+n`). Same pattern applies to key combos: `action_lctl+!t` = the `lsft` alternative of `action_lctl+t`.
+  - **Within the action name** (`action_<new`, `action_>new`): alternative variants of the same action. Up to 3 variants accessed via different combos: base (`omni+n`), `<` variant (`omni+lsft+n`), `>` variant (`omni+rsft+n`). Same pattern applies to key combos: `action_lctl+<t` = the `lsft` alternative of `action_lctl+t`. The `<` symbol represents the lsft variant and `>` the rsft variant.
 - Comments with `;;@autogen@` mark lines managed by the sync scripts — don't manually edit the switch conditions.
 - Lines with `;; ""` are vim fold markers.

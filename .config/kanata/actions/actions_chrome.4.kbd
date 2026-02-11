@@ -1,5 +1,7 @@
 (defvar
 
+;; == App actions in interfaces (actions.kbd) ===============
+
 ;; LCTL actions ==========================================================
 ;; chrome_action_lctl+a                 
 ;; chrome_action_lctl+b                 
@@ -21,7 +23,7 @@
 ;; chrome_action_lctl+r                 
 ;; chrome_action_lctl+s                 
 ;; chrome_action_lctl+t                 
-;; chrome_action_lctl+!t                
+;; chrome_action_lctl+<t                
 ;; chrome_action_lctl+u                 
 ;; chrome_action_lctl+v                 
 ;; chrome_action_lctl+w                 
@@ -66,12 +68,12 @@
 ;; chrome_action_!lctl+n                
 ;; chrome_action_!lctl+o                
 ;; chrome_action_!lctl+p                
-;; chrome_action_!lctl+!p               
+;; chrome_action_!lctl+<p               
 ;; chrome_action_!lctl+q                
 ;; chrome_action_!lctl+r                
 ;; chrome_action_!lctl+s                
 ;; chrome_action_!lctl+t                
-;; chrome_action_!lctl+!t               
+;; chrome_action_!lctl+<t               
 ;; chrome_action_!lctl+u                
 ;; chrome_action_!lctl+v                
 ;; chrome_action_!lctl+w                
@@ -206,11 +208,11 @@ chrome_action_tab_goto_last                  C-9
 ;; gui + pane + d
 ;; chrome_action_pane_day               
 ;; gui + pane + lsft + d
-;; chrome_action_pane_!day              
+;; chrome_action_pane_<day              
 ;; gui + pane + e
 ;; chrome_action_pane_explorer          
 ;; gui + pane + lsft + e
-;; chrome_action_pane_!explorer         
+;; chrome_action_pane_<explorer         
 ;; gui + pane + f
 ;; chrome_action_pane_find              
 ;; gui + pane + g
@@ -222,7 +224,7 @@ chrome_action_tab_goto_last                  C-9
 ;; gui + pane + p
 ;; chrome_action_pane_properties        
 ;; gui + pane + lsft + p
-;; chrome_action_pane_!properties       
+;; chrome_action_pane_<properties       
 ;; gui + pane + r
 ;; chrome_action_pane_recent            
 ;; gui + pane + s
@@ -240,7 +242,7 @@ chrome_action_tab_goto_last                  C-9
 ;; gui + pane + .
 ;; chrome_action_pane_outlinks          
 ;; gui + pane + lsft + .
-;; chrome_action_pane_!outlinks         
+;; chrome_action_pane_<outlinks         
 
 ;; == History combos =====================================================
 ;; omni + ]
@@ -292,9 +294,9 @@ chrome_action_hist_prev                      A-left
 ;; omni + n
 ;; chrome_action_new                    
 ;; omni + lsft + n
-;; chrome_action_!new                   
+;; chrome_action_<new                   
 ;; omni + rsft + n
-;; chrome_action_!!new                  
+;; chrome_action_>new                  
 
 ;; omni + o
 ;; chrome_action_open                   
@@ -304,33 +306,33 @@ chrome_action_hist_prev                      A-left
 ;; omni + '
 ;; chrome_action_view                   
 ;; omni + lsft + '
-;; chrome_action_!view                  
+;; chrome_action_<view                  
 ;; omni + rsft + '
-;; chrome_action_!!view                 
+;; chrome_action_>view                 
 ;; omni + ent
 ;; chrome_action_edit                   
 ;; omni + lsft + ent
-;; chrome_action_!edit                  
+;; chrome_action_<edit                  
 ;; omni + rsft + ent
-;; chrome_action_!!edit                 
+;; chrome_action_>edit                 
 ;; omni + \
 ;; chrome_action_explore                
 ;; omni + lsft + \
-;; chrome_action_!explore               
+;; chrome_action_<explore               
 ;; omni + rsft + \
-;; chrome_action_!!explore              
+;; chrome_action_>explore              
 ;; omni + s
 ;; chrome_action_search                 
 ;; omni + lsft + s
-;; chrome_action_!search                
+;; chrome_action_<search                
 ;; omni + rsft + s
-;; chrome_action_!!search               
+;; chrome_action_>search               
 ;; omni + r
 ;; chrome_action_replace                
 ;; omni + lsft + r
-;; chrome_action_!replace               
+;; chrome_action_<replace               
 ;; omni + rsft + r
-;; chrome_action_!!replace              
+;; chrome_action_>replace              
 ;; omni + g
 chrome_action_go                             C-l
 )
