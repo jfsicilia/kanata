@@ -111,6 +111,15 @@
 (deftemplate toggle_mod_layer (mod layer)
   (multi $mod (layer-toggle $layer)) 
 )
+(deftemplate toggle_2mod_layer (mod1 mod2 layer)
+  (multi $mod1 $mod2 (layer-toggle $layer)) 
+)
+(deftemplate toggle_3mod_layer (mod1 mod2 mod3 layer)
+  (multi $mod1 $mod2 $mod3 (layer-toggle $layer)) 
+)
+(deftemplate toggle_4mod_layer (mod1 mod2 mod3 mod4 layer)
+  (multi $mod1 $mod2 $mod3 $mod4 (layer-toggle $layer)) 
+)
 
 ;; Hold modifier and toggle base layer and then top layer. This 
 ;; simulates a hierachy of layers (top layer will inherit the functinality
@@ -118,12 +127,33 @@
 (deftemplate toggle_mod_2layer (mod base_layer top_layer)
   (multi $mod (layer-toggle $base_layer) (layer-toggle $top_layer))
 )
+(deftemplate toggle_2mod_2layer (mod1 mod2 base_layer top_layer)
+  (multi $mod1 $mod2 (layer-toggle $base_layer) (layer-toggle $top_layer))
+)
+
+(deftemplate toggle_3mod_2layer (mod1 mod2 mod3 base_layer top_layer)
+  (multi $mod1 $mod2 $mod3 (layer-toggle $base_layer) (layer-toggle $top_layer))
+)
+
+(deftemplate toggle_4mod_2layer (mod1 mod2 mod3 mod4 base_layer top_layer)
+  (multi $mod1 $mod2 $mod3 $mod4 (layer-toggle $base_layer) (layer-toggle $top_layer))
+)
+
 
 ;; Hold modifier and toggle base layer and then top layer. This 
 ;; simulates a hierachy of layers (top layer will inherit the functinality
 ;; of base layer and can overwrite any binding at will).
 (deftemplate toggle_mod_3layer (mod base_layer medium_layer top_layer)
   (multi $mod (layer-toggle $base_layer) (layer-toggle $medium_layer) (layer-toggle $top_layer))
+)
+(deftemplate toggle_2mod_3layer (mod1 mod2 base_layer medium_layer top_layer)
+  (multi $mod1 $mod2 (layer-toggle $base_layer) (layer-toggle $medium_layer) (layer-toggle $top_layer))
+)
+(deftemplate toggle_3mod_3layer (mod1 mod2  mod3 base_layer medium_layer top_layer)
+  (multi $mod1 $mod2 $mod3 (layer-toggle $base_layer) (layer-toggle $medium_layer) (layer-toggle $top_layer))
+)
+(deftemplate toggle_4mod_3layer (mod1 mod2 mod3 mod4 base_layer medium_layer top_layer)
+  (multi $mod1 $mod2 $mod3 $mod4 (layer-toggle $base_layer) (layer-toggle $medium_layer) (layer-toggle $top_layer))
 )
 
 ;; See toggle_app_layer template.
