@@ -4,7 +4,7 @@ import argparse
 import re
 import sys
 from pathlib import Path
-from typing import Optional
+from typing import cast
 
 KANATA_EXT = "kbd"
 KANATA_FOLDER = Path.home() / ".config" / "kanata"
@@ -31,14 +31,14 @@ FILENAME_RE = re.compile(
 
 def find_apps() -> list[tuple[str, str]]:
     """ """
-    files_with_order: list[tuple[Optional[int], str, str]] = []
+    files_with_order: list[tuple[int | None, str, str]] = []
 
     for p in ACTIONS_FOLDER.glob(f"{ACTIONS_PREFIX}*.{KANATA_EXT}"):
         m = FILENAME_RE.match(p.name)
         if m:
             app_name: str = m.group(1)
             order_str: str = m.group(2)
-            order: Optional[int] = int(order_str) if order_str else None
+            order: int | None = int(order_str) if order_str else None
             files_with_order.append((order, app_name, p.name))
 
     files_with_order.sort(key=lambda x: x[0] if x[0] is not None else 0)
@@ -47,11 +47,11 @@ def find_apps() -> list[tuple[str, str]]:
     return [(app_name, app_file) for _, app_name, app_file in files_with_order]
 
 
-def autogen_kanata_file(lines: list[str], apps) -> list[str]:
+def autogen_kanata_file(lines: list[str], apps: list[tuple[str, str]]) -> list[str]:
     f"""
     Generates the dynamic part of the {KANATA_FILE}
     """
-    out = []
+    out: list[str] = []
 
     for line in lines:
         out.append(line)
@@ -86,7 +86,7 @@ def load_app_actions(app_name: str, app_file: str) -> set[str]:
     f"""
     Returns a set of action names (without '{ACTIONS_PREFIX}' prefix)
     """
-    actions = set()
+    actions: set[str] = set()
     path = ACTIONS_FOLDER / f"{app_file}"
     if not path.exists():
         return actions
@@ -107,7 +107,7 @@ def sync_actions() -> list[str]:
     }
 
     lines = ACTIONS_FILE.read_text().splitlines(keepends=True)
-    out = []
+    out: list[str] = []
 
     i = 0
     while i < len(lines):
@@ -167,8 +167,8 @@ def ask_confirmation() -> bool:
     return answer in ("y", "yes")
 
 
-def main(force: bool):
-    apps = find_apps()
+def main(force: bool) -> None:
+    apps: list[tuple[str, str]] = find_apps()
 
     if not apps:
         raise RuntimeError(
@@ -183,11 +183,11 @@ def main(force: bool):
     # ---- write kanata file ----
     text = KANATA_FILE.read_text().splitlines(keepends=True)
     result = autogen_kanata_file(text, apps)
-    KANATA_FILE.write_text("".join(result), encoding="utf-8")
+    _ = KANATA_FILE.write_text("".join(result), encoding="utf-8")
 
     # ---- write actions file ----
     result = sync_actions()
-    ACTIONS_FILE.write_text("".join(result), encoding="utf-8")
+    _ = ACTIONS_FILE.write_text("".join(result), encoding="utf-8")
 
     print("Files updated successfully.")
 
@@ -204,7 +204,7 @@ if __name__ == "__main__":
         formatter_class=argparse.RawTextHelpFormatter,
     )
 
-    parser.add_argument(
+    _ = parser.add_argument(
         "-f",
         "--force",
         action="store_true",
@@ -212,4 +212,4 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args()
-    main(force=args.force)
+    main(force=cast(bool, args.force))
