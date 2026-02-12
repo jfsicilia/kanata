@@ -173,6 +173,20 @@ nvim_action_tab_goto_8                     (macro , Digit8)
 ;; !gui + tabs + 9
 nvim_action_tab_goto_last                  (macro , Digit9)
 
+;; == Tab move combos =====================================================
+;; gui + tabs + lsft + h | gui + tabs + lsft + left
+;; !gui + tabs + lsft + h | !gui + tabs + lsft + left
+;; nvim_action_tab_move_left          
+;; gui + tabs + lsft + l | gui + tabs + lsft + right
+;; !gui + tabs + lsft + l | !gui + tabs + lsft + right
+;; nvim_action_tab_move_right         
+;; gui + tabs + lsft + k | gui + tabs + lsft + up
+;; !gui + tabs + lsft + k | !gui + tabs + lsft + up
+;; nvim_action_tab_move_first         
+;; gui + tabs + lsft + j | gui + tabs + lsft + down
+;; !gui + tabs + lsft + j | !gui + tabs + lsft + down
+;; nvim_action_tab_move_last          
+
 ;; == Panes combos =======================================================
 ;; gui + pane + h | gui + pane + left
 ;; !gui + tabs + h | !gui + tabs + left
@@ -201,6 +215,78 @@ nvim_action_pane_v_split                   (macro S-; v s ret)
 ;; gui + pane + w
 ;; !gui + pane + w
 ;; nvim_action_pane_close             
+;; == Pane move combos ====================================================
+;; gui + pane + lsft + h | gui + pane + lsft + left
+;; !gui + pane + lsft + h | !gui + pane + lsft + left
+;; nvim_action_pane_move_left         
+;; gui + pane + lsft + l | gui + pane + lsft + right
+;; !gui + pane + lsft + l | !gui + pane + lsft + right
+;; nvim_action_pane_move_right        
+;; gui + pane + lsft + k | gui + pane + lsft + up
+;; !gui + pane + lsft + k | !gui + pane + lsft + up
+;; nvim_action_pane_move_above        
+;; gui + pane + lsft + j | gui + pane + lsft + down
+;; !gui + pane + lsft + j | !gui + pane + lsft + down
+;; nvim_action_pane_move_below        
+
+;; == Pane resize combos ==================================================
+;; gui + pane + ralt + h | gui + pane + ralt + left
+;; !gui + pane + ralt + h | !gui + pane + ralt + left
+;; nvim_action_pane_resize_left       
+;; gui + pane + ralt + l | gui + pane + ralt + right
+;; !gui + pane + ralt + l | !gui + pane + ralt + right
+;; nvim_action_pane_resize_right      
+;; gui + pane + ralt + k | gui + pane + ralt + up
+;; !gui + pane + ralt + k | !gui + pane + ralt + up
+;; nvim_action_pane_resize_above      
+;; gui + pane + ralt + j | gui + pane + ralt + down
+;; !gui + pane + ralt + j | !gui + pane + ralt + down
+;; nvim_action_pane_resize_below      
+
+;; == Pane swap combos ====================================================
+;; gui + pane + rctl + h | gui + pane + rctl + left
+;; !gui + pane + rctl + h | !gui + pane + rctl + left
+;; nvim_action_pane_swap_left         
+;; gui + pane + rctl + l | gui + pane + rctl + right
+;; !gui + pane + rctl + l | !gui + pane + rctl + right
+;; nvim_action_pane_swap_right        
+;; gui + pane + rctl + k | gui + pane + rctl + up
+;; !gui + pane + rctl + k | !gui + pane + rctl + up
+;; nvim_action_pane_swap_above        
+;; gui + pane + rctl + j | gui + pane + rctl + down
+;; !gui + pane + rctl + j | !gui + pane + rctl + down
+;; nvim_action_pane_swap_below        
+
+;; == Pane go by number combos ============================================
+;; gui + pane + 1
+;; !gui + pane + 1
+;; nvim_action_pane_go_1              
+;; gui + pane + 2
+;; !gui + pane + 2
+;; nvim_action_pane_go_2              
+;; gui + pane + 3
+;; !gui + pane + 3
+;; nvim_action_pane_go_3              
+;; gui + pane + 4
+;; !gui + pane + 4
+;; nvim_action_pane_go_4              
+;; gui + pane + 5
+;; !gui + pane + 5
+;; nvim_action_pane_go_5              
+;; gui + pane + 6
+;; !gui + pane + 6
+;; nvim_action_pane_go_6              
+;; gui + pane + 7
+;; !gui + pane + 7
+;; nvim_action_pane_go_7              
+;; gui + pane + 8
+;; !gui + pane + 8
+;; nvim_action_pane_go_8              
+;; gui + pane + 9
+;; !gui + pane + 9
+;; nvim_action_pane_go_last           
+
+;; == Pane toggle combos (app-specific) ===================================
 ;; gui + pane + b
 ;; nvim_action_pane_bookmarks         
 ;; gui + pane + c
@@ -296,7 +382,7 @@ nvim_action_select_all                     (macro g g S-v S-g)
 ;; omni + lsft + n
 ;; nvim_action_<new                   
 ;; omni + rsft + n
-;; nvim_action_>new                  
+;; nvim_action_>new                   
 
 ;; omni + o
 nvim_action_open                          C-] ;; Follow tag in help ""
@@ -308,31 +394,31 @@ nvim_action_parent                        C-t ;; Go back to preceding tag
 ;; omni + lsft + '
 ;; nvim_action_<view                  
 ;; omni + rsft + '
-;; nvim_action_>view                 
+;; nvim_action_>view                  
 ;; omni + ent
 ;; nvim_action_edit                   
 ;; omni + lsft + ent
 ;; nvim_action_<edit                  
 ;; omni + rsft + ent
-;; nvim_action_>edit                 
+;; nvim_action_>edit                  
 ;; omni + \
 ;; nvim_action_explore                
 ;; omni + lsft + \
 ;; nvim_action_<explore               
 ;; omni + rsft + \
-;; nvim_action_>explore              
+;; nvim_action_>explore               
 ;; omni + s
 ;; nvim_action_search                 
 ;; omni + lsft + s
 ;; nvim_action_<search                
 ;; omni + rsft + s
-;; nvim_action_>search               
+;; nvim_action_>search                
 ;; omni + r
 ;; nvim_action_replace                
 ;; omni + lsft + r
 ;; nvim_action_<replace               
 ;; omni + rsft + r
-;; nvim_action_>replace              
+;; nvim_action_>replace               
 ;; omni + g
 ;; nvim_action_go                     
 )

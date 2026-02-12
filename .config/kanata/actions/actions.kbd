@@ -695,6 +695,40 @@
     () XX break
   ))
 
+  ;; == Tab move combos =====================================================
+  ;; gui + tabs + lsft + h | gui + tabs + lsft + left
+  action_tab_move_left (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + tabs + lsft + h | !gui + tabs + lsft + left
+  !action_tab_move_left (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; gui + tabs + lsft + l | gui + tabs + lsft + right
+  action_tab_move_right (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + tabs + lsft + l | !gui + tabs + lsft + right
+  !action_tab_move_right (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; gui + tabs + lsft + k | gui + tabs + lsft + up
+  action_tab_move_first (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + tabs + lsft + k | !gui + tabs + lsft + up
+  !action_tab_move_first (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; gui + tabs + lsft + j | gui + tabs + lsft + down
+  action_tab_move_last (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + tabs + lsft + j | !gui + tabs + lsft + down
+  !action_tab_move_last (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
   ;; == Panes combos =======================================================
   ;; gui + pane + h | gui + pane + left 
   action_pane_left (t! unmod_all (switch ;;@autogen@
@@ -826,6 +860,183 @@
     ((input virtual vk_obsidian)) $obsidian_action_pane_close break
     () XX break
   ))
+  ;; == Pane move combos ====================================================
+  ;; gui + pane + lsft + h | gui + pane + lsft + left
+  action_pane_move_left (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + pane + lsft + h | !gui + pane + lsft + left
+  !action_pane_move_left (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; gui + pane + lsft + l | gui + pane + lsft + right
+  action_pane_move_right (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + pane + lsft + l | !gui + pane + lsft + right
+  !action_pane_move_right (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; gui + pane + lsft + k | gui + pane + lsft + up
+  action_pane_move_above (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + pane + lsft + k | !gui + pane + lsft + up
+  !action_pane_move_above (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; gui + pane + lsft + j | gui + pane + lsft + down
+  action_pane_move_below (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + pane + lsft + j | !gui + pane + lsft + down
+  !action_pane_move_below (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == Pane resize combos ==================================================
+  ;; gui + pane + ralt + h | gui + pane + ralt + left
+  action_pane_resize_left (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + pane + ralt + h | !gui + pane + ralt + left
+  !action_pane_resize_left (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; gui + pane + ralt + l | gui + pane + ralt + right
+  action_pane_resize_right (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + pane + ralt + l | !gui + pane + ralt + right
+  !action_pane_resize_right (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; gui + pane + ralt + k | gui + pane + ralt + up
+  action_pane_resize_above (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + pane + ralt + k | !gui + pane + ralt + up
+  !action_pane_resize_above (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; gui + pane + ralt + j | gui + pane + ralt + down
+  action_pane_resize_below (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + pane + ralt + j | !gui + pane + ralt + down
+  !action_pane_resize_below (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == Pane swap combos ====================================================
+  ;; gui + pane + rctl + h | gui + pane + rctl + left
+  action_pane_swap_left (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + pane + rctl + h | !gui + pane + rctl + left
+  !action_pane_swap_left (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; gui + pane + rctl + l | gui + pane + rctl + right
+  action_pane_swap_right (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + pane + rctl + l | !gui + pane + rctl + right
+  !action_pane_swap_right (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; gui + pane + rctl + k | gui + pane + rctl + up
+  action_pane_swap_above (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + pane + rctl + k | !gui + pane + rctl + up
+  !action_pane_swap_above (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; gui + pane + rctl + j | gui + pane + rctl + down
+  action_pane_swap_below (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + pane + rctl + j | !gui + pane + rctl + down
+  !action_pane_swap_below (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == Pane go by number combos ============================================
+  ;; gui + pane + 1
+  action_pane_go_1 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + pane + 1
+  !action_pane_go_1 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; gui + pane + 2
+  action_pane_go_2 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + pane + 2
+  !action_pane_go_2 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; gui + pane + 3
+  action_pane_go_3 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + pane + 3
+  !action_pane_go_3 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; gui + pane + 4
+  action_pane_go_4 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + pane + 4
+  !action_pane_go_4 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; gui + pane + 5
+  action_pane_go_5 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + pane + 5
+  !action_pane_go_5 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; gui + pane + 6
+  action_pane_go_6 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + pane + 6
+  !action_pane_go_6 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; gui + pane + 7
+  action_pane_go_7 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + pane + 7
+  !action_pane_go_7 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; gui + pane + 8
+  action_pane_go_8 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + pane + 8
+  !action_pane_go_8 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; gui + pane + 9
+  action_pane_go_last (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; !gui + pane + 9
+  !action_pane_go_last (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == Pane toggle combos (app-specific) ===================================
   ;; gui + pane + b
   action_pane_bookmarks (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_pane_bookmarks break

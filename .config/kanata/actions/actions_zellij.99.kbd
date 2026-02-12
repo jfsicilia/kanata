@@ -173,6 +173,20 @@ zellij_action_tab_toggle                     (macro C-g t tab ret)
 ;; !gui + tabs + 9
 ;; zellij_action_tab_goto_last          
 
+;; == Tab move combos =====================================================
+;; gui + tabs + lsft + h | gui + tabs + lsft + left
+;; !gui + tabs + lsft + h | !gui + tabs + lsft + left
+;; zellij_action_tab_move_left          
+;; gui + tabs + lsft + l | gui + tabs + lsft + right
+;; !gui + tabs + lsft + l | !gui + tabs + lsft + right
+;; zellij_action_tab_move_right         
+;; gui + tabs + lsft + k | gui + tabs + lsft + up
+;; !gui + tabs + lsft + k | !gui + tabs + lsft + up
+;; zellij_action_tab_move_first         
+;; gui + tabs + lsft + j | gui + tabs + lsft + down
+;; !gui + tabs + lsft + j | !gui + tabs + lsft + down
+;; zellij_action_tab_move_last          
+
 ;; == Panes combos =======================================================
 ;; gui + pane + h | gui + pane + left
 ;; !gui + tabs + h | !gui + tabs + left
@@ -201,6 +215,78 @@ zellij_action_pane_max                       (macro C-g p f ret)
 ;; gui + pane + w
 ;; !gui + pane + w
 ;; zellij_action_pane_close             
+;; == Pane move combos ====================================================
+;; gui + pane + lsft + h | gui + pane + lsft + left
+;; !gui + pane + lsft + h | !gui + pane + lsft + left
+;; zellij_action_pane_move_left         
+;; gui + pane + lsft + l | gui + pane + lsft + right
+;; !gui + pane + lsft + l | !gui + pane + lsft + right
+;; zellij_action_pane_move_right        
+;; gui + pane + lsft + k | gui + pane + lsft + up
+;; !gui + pane + lsft + k | !gui + pane + lsft + up
+;; zellij_action_pane_move_above        
+;; gui + pane + lsft + j | gui + pane + lsft + down
+;; !gui + pane + lsft + j | !gui + pane + lsft + down
+;; zellij_action_pane_move_below        
+
+;; == Pane resize combos ==================================================
+;; gui + pane + ralt + h | gui + pane + ralt + left
+;; !gui + pane + ralt + h | !gui + pane + ralt + left
+;; zellij_action_pane_resize_left       
+;; gui + pane + ralt + l | gui + pane + ralt + right
+;; !gui + pane + ralt + l | !gui + pane + ralt + right
+;; zellij_action_pane_resize_right      
+;; gui + pane + ralt + k | gui + pane + ralt + up
+;; !gui + pane + ralt + k | !gui + pane + ralt + up
+;; zellij_action_pane_resize_above      
+;; gui + pane + ralt + j | gui + pane + ralt + down
+;; !gui + pane + ralt + j | !gui + pane + ralt + down
+;; zellij_action_pane_resize_below      
+
+;; == Pane swap combos ====================================================
+;; gui + pane + rctl + h | gui + pane + rctl + left
+;; !gui + pane + rctl + h | !gui + pane + rctl + left
+;; zellij_action_pane_swap_left         
+;; gui + pane + rctl + l | gui + pane + rctl + right
+;; !gui + pane + rctl + l | !gui + pane + rctl + right
+;; zellij_action_pane_swap_right        
+;; gui + pane + rctl + k | gui + pane + rctl + up
+;; !gui + pane + rctl + k | !gui + pane + rctl + up
+;; zellij_action_pane_swap_above        
+;; gui + pane + rctl + j | gui + pane + rctl + down
+;; !gui + pane + rctl + j | !gui + pane + rctl + down
+;; zellij_action_pane_swap_below        
+
+;; == Pane go by number combos ============================================
+;; gui + pane + 1
+;; !gui + pane + 1
+;; zellij_action_pane_go_1              
+;; gui + pane + 2
+;; !gui + pane + 2
+;; zellij_action_pane_go_2              
+;; gui + pane + 3
+;; !gui + pane + 3
+;; zellij_action_pane_go_3              
+;; gui + pane + 4
+;; !gui + pane + 4
+;; zellij_action_pane_go_4              
+;; gui + pane + 5
+;; !gui + pane + 5
+;; zellij_action_pane_go_5              
+;; gui + pane + 6
+;; !gui + pane + 6
+;; zellij_action_pane_go_6              
+;; gui + pane + 7
+;; !gui + pane + 7
+;; zellij_action_pane_go_7              
+;; gui + pane + 8
+;; !gui + pane + 8
+;; zellij_action_pane_go_8              
+;; gui + pane + 9
+;; !gui + pane + 9
+;; zellij_action_pane_go_last           
+
+;; == Pane toggle combos (app-specific) ===================================
 ;; gui + pane + b
 ;; zellij_action_pane_bookmarks         
 ;; gui + pane + c
@@ -296,7 +382,7 @@ zellij_action_pane_max                       (macro C-g p f ret)
 ;; omni + lsft + n
 ;; zellij_action_<new                   
 ;; omni + rsft + n
-;; zellij_action_>new                  
+;; zellij_action_>new                   
 
 ;; omni + o
 ;; zellij_action_open                   
@@ -308,31 +394,31 @@ zellij_action_pane_max                       (macro C-g p f ret)
 ;; omni + lsft + '
 ;; zellij_action_<view                  
 ;; omni + rsft + '
-;; zellij_action_>view                 
+;; zellij_action_>view                  
 ;; omni + ent
 ;; zellij_action_edit                   
 ;; omni + lsft + ent
 ;; zellij_action_<edit                  
 ;; omni + rsft + ent
-;; zellij_action_>edit                 
+;; zellij_action_>edit                  
 ;; omni + \
 ;; zellij_action_explore                
 ;; omni + lsft + \
 ;; zellij_action_<explore               
 ;; omni + rsft + \
-;; zellij_action_>explore              
+;; zellij_action_>explore               
 ;; omni + s
 ;; zellij_action_search                 
 ;; omni + lsft + s
 ;; zellij_action_<search                
 ;; omni + rsft + s
-;; zellij_action_>search               
+;; zellij_action_>search                
 ;; omni + r
 ;; zellij_action_replace                
 ;; omni + lsft + r
 ;; zellij_action_<replace               
 ;; omni + rsft + r
-;; zellij_action_>replace              
+;; zellij_action_>replace               
 ;; omni + g
 ;; zellij_action_go                     
 )

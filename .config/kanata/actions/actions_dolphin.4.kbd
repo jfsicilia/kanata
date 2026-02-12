@@ -173,6 +173,20 @@
 ;; !gui + tabs + 9
 ;; dolphin_action_tab_goto_last          
 
+;; == Tab move combos =====================================================
+;; gui + tabs + lsft + h | gui + tabs + lsft + left
+;; !gui + tabs + lsft + h | !gui + tabs + lsft + left
+;; dolphin_action_tab_move_left          
+;; gui + tabs + lsft + l | gui + tabs + lsft + right
+;; !gui + tabs + lsft + l | !gui + tabs + lsft + right
+;; dolphin_action_tab_move_right         
+;; gui + tabs + lsft + k | gui + tabs + lsft + up
+;; !gui + tabs + lsft + k | !gui + tabs + lsft + up
+;; dolphin_action_tab_move_first         
+;; gui + tabs + lsft + j | gui + tabs + lsft + down
+;; !gui + tabs + lsft + j | !gui + tabs + lsft + down
+;; dolphin_action_tab_move_last          
+
 ;; == Panes combos =======================================================
 ;; gui + pane + h | gui + pane + left
 ;; !gui + tabs + h | !gui + tabs + left
@@ -201,6 +215,78 @@
 ;; gui + pane + w
 ;; !gui + pane + w
 ;; dolphin_action_pane_close             
+;; == Pane move combos ====================================================
+;; gui + pane + lsft + h | gui + pane + lsft + left
+;; !gui + pane + lsft + h | !gui + pane + lsft + left
+;; dolphin_action_pane_move_left         
+;; gui + pane + lsft + l | gui + pane + lsft + right
+;; !gui + pane + lsft + l | !gui + pane + lsft + right
+;; dolphin_action_pane_move_right        
+;; gui + pane + lsft + k | gui + pane + lsft + up
+;; !gui + pane + lsft + k | !gui + pane + lsft + up
+;; dolphin_action_pane_move_above        
+;; gui + pane + lsft + j | gui + pane + lsft + down
+;; !gui + pane + lsft + j | !gui + pane + lsft + down
+;; dolphin_action_pane_move_below        
+
+;; == Pane resize combos ==================================================
+;; gui + pane + ralt + h | gui + pane + ralt + left
+;; !gui + pane + ralt + h | !gui + pane + ralt + left
+;; dolphin_action_pane_resize_left       
+;; gui + pane + ralt + l | gui + pane + ralt + right
+;; !gui + pane + ralt + l | !gui + pane + ralt + right
+;; dolphin_action_pane_resize_right      
+;; gui + pane + ralt + k | gui + pane + ralt + up
+;; !gui + pane + ralt + k | !gui + pane + ralt + up
+;; dolphin_action_pane_resize_above      
+;; gui + pane + ralt + j | gui + pane + ralt + down
+;; !gui + pane + ralt + j | !gui + pane + ralt + down
+;; dolphin_action_pane_resize_below      
+
+;; == Pane swap combos ====================================================
+;; gui + pane + rctl + h | gui + pane + rctl + left
+;; !gui + pane + rctl + h | !gui + pane + rctl + left
+;; dolphin_action_pane_swap_left         
+;; gui + pane + rctl + l | gui + pane + rctl + right
+;; !gui + pane + rctl + l | !gui + pane + rctl + right
+;; dolphin_action_pane_swap_right        
+;; gui + pane + rctl + k | gui + pane + rctl + up
+;; !gui + pane + rctl + k | !gui + pane + rctl + up
+;; dolphin_action_pane_swap_above        
+;; gui + pane + rctl + j | gui + pane + rctl + down
+;; !gui + pane + rctl + j | !gui + pane + rctl + down
+;; dolphin_action_pane_swap_below        
+
+;; == Pane go by number combos ============================================
+;; gui + pane + 1
+;; !gui + pane + 1
+;; dolphin_action_pane_go_1              
+;; gui + pane + 2
+;; !gui + pane + 2
+;; dolphin_action_pane_go_2              
+;; gui + pane + 3
+;; !gui + pane + 3
+;; dolphin_action_pane_go_3              
+;; gui + pane + 4
+;; !gui + pane + 4
+;; dolphin_action_pane_go_4              
+;; gui + pane + 5
+;; !gui + pane + 5
+;; dolphin_action_pane_go_5              
+;; gui + pane + 6
+;; !gui + pane + 6
+;; dolphin_action_pane_go_6              
+;; gui + pane + 7
+;; !gui + pane + 7
+;; dolphin_action_pane_go_7              
+;; gui + pane + 8
+;; !gui + pane + 8
+;; dolphin_action_pane_go_8              
+;; gui + pane + 9
+;; !gui + pane + 9
+;; dolphin_action_pane_go_last           
+
+;; == Pane toggle combos (app-specific) ===================================
 ;; gui + pane + b
 ;; dolphin_action_pane_bookmarks         
 ;; gui + pane + c
@@ -296,7 +382,7 @@
 ;; omni + lsft + n
 ;; dolphin_action_<new                   
 ;; omni + rsft + n
-;; dolphin_action_>new                  
+;; dolphin_action_>new                   
 
 ;; omni + o
 dolphin_action_open                           ent
@@ -308,31 +394,31 @@ dolphin_action_parent                         bspc
 ;; omni + lsft + '
 ;; dolphin_action_<view                  
 ;; omni + rsft + '
-;; dolphin_action_>view                 
+;; dolphin_action_>view                  
 ;; omni + ent
 ;; dolphin_action_edit                   
 ;; omni + lsft + ent
 ;; dolphin_action_<edit                  
 ;; omni + rsft + ent
-;; dolphin_action_>edit                 
+;; dolphin_action_>edit                  
 ;; omni + \
 ;; dolphin_action_explore                
 ;; omni + lsft + \
 ;; dolphin_action_<explore               
 ;; omni + rsft + \
-;; dolphin_action_>explore              
+;; dolphin_action_>explore               
 ;; omni + s
 ;; dolphin_action_search                 
 ;; omni + lsft + s
 ;; dolphin_action_<search                
 ;; omni + rsft + s
-;; dolphin_action_>search               
+;; dolphin_action_>search                
 ;; omni + r
 ;; dolphin_action_replace                
 ;; omni + lsft + r
 ;; dolphin_action_<replace               
 ;; omni + rsft + r
-;; dolphin_action_>replace              
+;; dolphin_action_>replace               
 ;; omni + g
 ;; dolphin_action_go                     
 )
