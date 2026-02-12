@@ -5,6 +5,8 @@ tmux_prefix A-b
 
 ;; == App actions in interfaces (actions.kbd) ===============
 
+;; SFT actions ==========================================================
+;; tmux_action_sft+ent                
 ;; LCTL actions ==========================================================
 ;; tmux_action_lctl+a                 
 ;; tmux_action_lctl+b                 

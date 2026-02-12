@@ -9,6 +9,8 @@ obsidian_toggle_source_mode                    C-A-S-e
 
 ;; == App actions in interfaces (actions.kbd) ===============
 
+;; SFT actions ==========================================================
+;; obsidian_action_sft+ent                
 ;; LCTL actions ==========================================================
 ;; obsidian_action_lctl+a                 
 obsidian_action_lctl+b                         $obsidian_action_page_up

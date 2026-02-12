@@ -2,6 +2,8 @@
 
 ;; == App actions in interfaces (actions.kbd) ===============
 
+;; SFT actions ==========================================================
+;; chrome_action_sft+ent                
 ;; LCTL actions ==========================================================
 ;; chrome_action_lctl+a                 
 ;; chrome_action_lctl+b                 

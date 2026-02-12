@@ -87,6 +87,11 @@
     () RA-spc break
   ))
 
+  ;; SFT actions ==========================================================
+  action_sft+ent (t! unmod_all (switch ;;@autogen@ 
+    ((input virtual vk_foot)) $foot_action_sft+ent break
+    () S-ent break
+  ))
   ;; LCTL actions ==========================================================
   action_lctl+a (t! unmod_all (switch ;;@autogen@ 
     () C-a break
@@ -1199,8 +1204,8 @@
   action_page_up (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_page_up break
     ((input virtual vk_obsidian)) $obsidian_action_page_up break
-    ((input virtual vk_foot)) $foot_action_page_up break
     ((input virtual vk_tmux)) $tmux_action_page_up break
+    ((input virtual vk_foot)) $foot_action_page_up break
     () pgup break
   ))
 
@@ -1208,8 +1213,8 @@
   action_page_down (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_page_down break
     ((input virtual vk_obsidian)) $obsidian_action_page_down break
-    ((input virtual vk_foot)) $foot_action_page_down break
     ((input virtual vk_tmux)) $tmux_action_page_down break
+    ((input virtual vk_foot)) $foot_action_page_down break
     () pgdn break
   ))
 

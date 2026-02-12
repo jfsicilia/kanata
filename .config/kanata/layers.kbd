@@ -781,6 +781,8 @@
   ;; Pressing lsft+rsft (in that order) issues tab_next action.
   rsft (multi (release-key lsft) $action_tab_next)
 
+  ent $action_sft+ent
+
   
   ;; == PANES ========================
   $a/gui     (t! th _ (multi (release-key lsft) $toggle_panes_layer))

@@ -2,6 +2,8 @@
 
 ;; == App actions in interfaces (actions.kbd) ===============
 
+;; SFT actions ==========================================================
+;; dolphin_action_sft+ent                
 ;; LCTL actions ==========================================================
 ;; dolphin_action_lctl+a                 
 ;; dolphin_action_lctl+b                 

@@ -2,6 +2,8 @@
 
 ;; == App actions in interfaces (actions.kbd) ===============
 
+;; SFT actions ==========================================================
+;; nvim_action_sft+ent                
 ;; LCTL actions ==========================================================
 ;; nvim_action_lctl+a                 
 ;; nvim_action_lctl+b                 

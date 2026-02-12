@@ -51,9 +51,9 @@
   vk_chrome       XX
   vk_dolphin      XX
   vk_obsidian     XX
-  vk_foot         XX
   vk_tmux         XX
   vk_zellij       XX
+  vk_foot         XX
 )
 
 ;; Actions & Apps' Actions ===============================================
@@ -61,6 +61,6 @@
 (include actions/actions_chrome.4.kbd)
 (include actions/actions_dolphin.4.kbd)
 (include actions/actions_obsidian.4.kbd)
-(include actions/actions_foot.9.kbd)
-(include actions/actions_tmux.98.kbd)
-(include actions/actions_zellij.99.kbd)
+(include actions/actions_tmux.19.kbd)
+(include actions/actions_zellij.29.kbd)
+(include actions/actions_foot.99.kbd)
