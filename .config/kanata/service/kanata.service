@@ -1,3 +1,14 @@
+# To install: 
+#
+# systemctl --user enable ./kanata.service
+#
+# This will create links to this file in ~/.config/systemd/user/ 
+#
+# If you change this file run this to reload it.
+#
+# systemctl --user daemon-reload
+# systemctl --user restart kanata
+#
 [Unit]
 Description=Kanata Service
 After=graphical-session.target
