@@ -1,0 +1,14 @@
+[Unit]
+Description=Kanata Service
+After=graphical-session.target
+Wants=graphical-session.target
+After=systemd-udev-settle.service
+Wants=systemd-udev-settle.service
+
+[Service]
+Type=simple
+ExecStart=%h/.cargo/bin/kanata -p 10101 -c %h/.config/kanata/kanata.kbd
+Restart=No
+
+[Install]
+WantedBy=default.target
