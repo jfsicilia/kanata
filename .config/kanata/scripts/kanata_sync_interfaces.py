@@ -29,8 +29,8 @@ DEFAULT_ACTIONS_FILE = Path.home() / ".config" / "kanata" / "actions" / "actions
 
 # Matches an autogen-tagged action in actions.kbd, e.g.:
 #   action_lctl+a (t! unmod_all (switch ;;@autogen@
-#   !action_tab_next (t! unmod_all (switch ;;@autogen@
-ACTION_RE = re.compile(r"^\s*(!?action_[^\s]+).*@autogen@")
+#   ~action_tab_next (t! unmod_all (switch ;;@autogen@
+ACTION_RE = re.compile(r"^\s*(~?action_[^\s]+).*@autogen@")
 
 # Matches an app-prefixed action in an app file, e.g.:
 #   nvim_action_tab_next  (macro esc ...)
@@ -49,6 +49,8 @@ CLOSE_PAREN_RE = re.compile(r"^\s*\)")
 # Matches any variable definition line (identifier followed by whitespace).
 # Excludes comments (;), open-parens, and blank lines.
 VAR_DEF_RE = re.compile(r"^\s*([^\s;(][^\s]*)\s")
+
+REVERSE_ACTION_FLAG = "~"
 
 
 def get_app_from_filename(path: Path) -> str:
@@ -208,8 +210,8 @@ def process_actions(
             i = i + 1
             continue
 
-        # action_ or !action_ are treated the same way.
-        action = m.group(1).lstrip("!")
+        # action_ or ~action_ are treated the same way.
+        action = m.group(1).lstrip(REVERSE_ACTION_FLAG)
         actions.append(action)
         if action in actions_comments:
             actions_comments[action].extend(comments)
@@ -218,7 +220,7 @@ def process_actions(
 
         comments = []
         i = i + 1
-    # Get rid of possible duplicates (actions & !action) but keep the order.
+    # Get rid of possible duplicates (actions & ~action) but keep the order.
     actions = list(dict.fromkeys(actions))
     return gen_app_actions(app, actions, actions_comments, app_actions, extra_vars)
 

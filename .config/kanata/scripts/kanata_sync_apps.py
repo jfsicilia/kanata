@@ -12,7 +12,7 @@ This script scans the actions folder for app-specific action files
   2. Regenerates the per-app switch conditions inside actions.kbd:
      - For each @autogen@-tagged action, inserts ((input virtual vk_<app>))
        conditions for apps that implement that action.
-     - Actions prefixed with ! get the app order reversed, enabling
+     - Actions prefixed with ~ get the app order reversed, enabling
        alternate priority when apps overlap (e.g. nvim inside tmux).
 
 App priority is controlled by the optional numeric index in the filename
@@ -47,10 +47,10 @@ ACTIONS_PREFIX = "actions_"
 
 # Matches an @autogen@-tagged action definition in actions.kbd, e.g.:
 #   action_lctl+a (t! unmod_all (switch ;;@autogen@
-#   !action_tab_next (t! unmod_all (switch ;;@autogen@
-AUTOGEN_ACTION_RE = re.compile(r"^\s*(!action_[^\s]+|action_[^\s]+)\s.*@autogen@.*")
+#   ~action_tab_next (t! unmod_all (switch ;;@autogen@
+AUTOGEN_ACTION_RE = re.compile(r"^\s*(~action_[^\s]+|action_[^\s]+)\s.*@autogen@.*")
 
-REVERSE_ACTION_FLAG = "!"
+REVERSE_ACTION_FLAG = "~"
 ACTION_END = ")"
 
 # Matches an app-prefixed action in an app file, e.g.:
@@ -187,7 +187,7 @@ def sync_actions(actions_file: Path, actions_folder: Path) -> list[str]:
     per-app virtual key conditions with freshly generated ones based
     on which apps actually implement each action.
 
-    Actions prefixed with ! use reversed app order.
+    Actions prefixed with ~ use reversed app order.
 
     Args:
         actions_file: Path to the shared actions.kbd file.
@@ -217,7 +217,7 @@ def sync_actions(actions_file: Path, actions_folder: Path) -> list[str]:
             continue
 
         # ---- Process autogen of an action block ----
-        action_name = m.group(1)  # action_lctl+b or !action_lctl+b
+        action_name = m.group(1)  # action_lctl+b or ~action_lctl+b
         if action_name.startswith(REVERSE_ACTION_FLAG):
             short_name = action_name[
                 len(REVERSE_ACTION_FLAG) + len(ACTION_PREFIX) :

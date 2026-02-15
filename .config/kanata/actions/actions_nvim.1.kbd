@@ -25,7 +25,7 @@
 ;; nvim_action_lctl+r                 
 ;; nvim_action_lctl+s                 
 ;; nvim_action_lctl+t                 
-;; nvim_action_lctl+<t                
+;; nvim_action_lctl+lsft+t            
 ;; nvim_action_lctl+u                 
 ;; nvim_action_lctl+v                 
 ;; nvim_action_lctl+w                 
@@ -70,12 +70,12 @@ nvim_action_!lctl+a                         (macro g g S-v S-g)
 ;; nvim_action_!lctl+n                
 ;; nvim_action_!lctl+o                
 ;; nvim_action_!lctl+p                
-;; nvim_action_!lctl+<p               
+;; nvim_action_!lctl+lsft+p           
 ;; nvim_action_!lctl+q                
 ;; nvim_action_!lctl+r                
 ;; nvim_action_!lctl+s                
 ;; nvim_action_!lctl+t                
-;; nvim_action_!lctl+<t               
+;; nvim_action_!lctl+lsft+t           
 ;; nvim_action_!lctl+u                
 ;; nvim_action_!lctl+v                
 ;; nvim_action_!lctl+w                
@@ -382,9 +382,9 @@ nvim_action_select_all                     (macro g g S-v S-g)
 ;; omni + n
 ;; nvim_action_new                    
 ;; omni + lsft + n
-;; nvim_action_<new                   
+;; nvim_action_lsft+new               
 ;; omni + rsft + n
-;; nvim_action_>new                   
+;; nvim_action_rsft+new               
 
 ;; omni + o
 nvim_action_open                          C-] ;; Follow tag in help ""
@@ -394,33 +394,33 @@ nvim_action_parent                        C-t ;; Go back to preceding tag
 ;; omni + '
 ;; nvim_action_view                   
 ;; omni + lsft + '
-;; nvim_action_<view                  
+;; nvim_action_lsft+view              
 ;; omni + rsft + '
-;; nvim_action_>view                  
+;; nvim_action_rsft+view              
 ;; omni + ent
 ;; nvim_action_edit                   
 ;; omni + lsft + ent
-;; nvim_action_<edit                  
+;; nvim_action_lsft+edit              
 ;; omni + rsft + ent
-;; nvim_action_>edit                  
+;; nvim_action_rsft+edit              
 ;; omni + \
 ;; nvim_action_explore                
 ;; omni + lsft + \
-;; nvim_action_<explore               
+;; nvim_action_lsft+explore           
 ;; omni + rsft + \
-;; nvim_action_>explore               
+;; nvim_action_rsft+explore           
 ;; omni + s
 ;; nvim_action_search                 
 ;; omni + lsft + s
-;; nvim_action_<search                
+;; nvim_action_lsft+search            
 ;; omni + rsft + s
-;; nvim_action_>search                
+;; nvim_action_rsft+search            
 ;; omni + r
 ;; nvim_action_replace                
 ;; omni + lsft + r
-;; nvim_action_<replace               
+;; nvim_action_lsft+replace           
 ;; omni + rsft + r
-;; nvim_action_>replace               
+;; nvim_action_rsft+replace           
 ;; omni + g
 ;; nvim_action_go                     
 )

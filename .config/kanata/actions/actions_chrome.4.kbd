@@ -25,7 +25,7 @@
 ;; chrome_action_lctl+r                 
 ;; chrome_action_lctl+s                 
 ;; chrome_action_lctl+t                 
-;; chrome_action_lctl+<t                
+;; chrome_action_lctl+lsft+t            
 ;; chrome_action_lctl+u                 
 ;; chrome_action_lctl+v                 
 ;; chrome_action_lctl+w                 
@@ -70,12 +70,12 @@
 ;; chrome_action_!lctl+n                
 ;; chrome_action_!lctl+o                
 ;; chrome_action_!lctl+p                
-;; chrome_action_!lctl+<p               
+;; chrome_action_!lctl+lsft+p           
 ;; chrome_action_!lctl+q                
 ;; chrome_action_!lctl+r                
 ;; chrome_action_!lctl+s                
 ;; chrome_action_!lctl+t                
-;; chrome_action_!lctl+<t               
+;; chrome_action_!lctl+lsft+t           
 ;; chrome_action_!lctl+u                
 ;; chrome_action_!lctl+v                
 ;; chrome_action_!lctl+w                
@@ -382,9 +382,9 @@ chrome_action_hist_prev                      A-left
 ;; omni + n
 ;; chrome_action_new                    
 ;; omni + lsft + n
-;; chrome_action_<new                   
+;; chrome_action_lsft+new               
 ;; omni + rsft + n
-;; chrome_action_>new                   
+;; chrome_action_rsft+new               
 
 ;; omni + o
 ;; chrome_action_open                   
@@ -394,33 +394,33 @@ chrome_action_hist_prev                      A-left
 ;; omni + '
 ;; chrome_action_view                   
 ;; omni + lsft + '
-;; chrome_action_<view                  
+;; chrome_action_lsft+view              
 ;; omni + rsft + '
-;; chrome_action_>view                  
+;; chrome_action_rsft+view              
 ;; omni + ent
 ;; chrome_action_edit                   
 ;; omni + lsft + ent
-;; chrome_action_<edit                  
+;; chrome_action_lsft+edit              
 ;; omni + rsft + ent
-;; chrome_action_>edit                  
+;; chrome_action_rsft+edit              
 ;; omni + \
 ;; chrome_action_explore                
 ;; omni + lsft + \
-;; chrome_action_<explore               
+;; chrome_action_lsft+explore           
 ;; omni + rsft + \
-;; chrome_action_>explore               
+;; chrome_action_rsft+explore           
 ;; omni + s
 ;; chrome_action_search                 
 ;; omni + lsft + s
-;; chrome_action_<search                
+;; chrome_action_lsft+search            
 ;; omni + rsft + s
-;; chrome_action_>search                
+;; chrome_action_rsft+search            
 ;; omni + r
 ;; chrome_action_replace                
 ;; omni + lsft + r
-;; chrome_action_<replace               
+;; chrome_action_lsft+replace           
 ;; omni + rsft + r
-;; chrome_action_>replace               
+;; chrome_action_rsft+replace           
 ;; omni + g
 chrome_action_go                             C-l
 )

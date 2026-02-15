@@ -25,7 +25,7 @@
 ;; dolphin_action_lctl+r                 
 ;; dolphin_action_lctl+s                 
 ;; dolphin_action_lctl+t                 
-;; dolphin_action_lctl+<t                
+;; dolphin_action_lctl+lsft+t            
 ;; dolphin_action_lctl+u                 
 ;; dolphin_action_lctl+v                 
 ;; dolphin_action_lctl+w                 
@@ -70,12 +70,12 @@
 ;; dolphin_action_!lctl+n                
 ;; dolphin_action_!lctl+o                
 ;; dolphin_action_!lctl+p                
-;; dolphin_action_!lctl+<p               
+;; dolphin_action_!lctl+lsft+p           
 ;; dolphin_action_!lctl+q                
 ;; dolphin_action_!lctl+r                
 ;; dolphin_action_!lctl+s                
 ;; dolphin_action_!lctl+t                
-;; dolphin_action_!lctl+<t               
+;; dolphin_action_!lctl+lsft+t           
 ;; dolphin_action_!lctl+u                
 ;; dolphin_action_!lctl+v                
 ;; dolphin_action_!lctl+w                
@@ -382,9 +382,9 @@
 ;; omni + n
 ;; dolphin_action_new                    
 ;; omni + lsft + n
-;; dolphin_action_<new                   
+;; dolphin_action_lsft+new               
 ;; omni + rsft + n
-;; dolphin_action_>new                   
+;; dolphin_action_rsft+new               
 
 ;; omni + o
 dolphin_action_open                           ent
@@ -394,33 +394,33 @@ dolphin_action_parent                         bspc
 ;; omni + '
 ;; dolphin_action_view                   
 ;; omni + lsft + '
-;; dolphin_action_<view                  
+;; dolphin_action_lsft+view              
 ;; omni + rsft + '
-;; dolphin_action_>view                  
+;; dolphin_action_rsft+view              
 ;; omni + ent
 ;; dolphin_action_edit                   
 ;; omni + lsft + ent
-;; dolphin_action_<edit                  
+;; dolphin_action_lsft+edit              
 ;; omni + rsft + ent
-;; dolphin_action_>edit                  
+;; dolphin_action_rsft+edit              
 ;; omni + \
 ;; dolphin_action_explore                
 ;; omni + lsft + \
-;; dolphin_action_<explore               
+;; dolphin_action_lsft+explore           
 ;; omni + rsft + \
-;; dolphin_action_>explore               
+;; dolphin_action_rsft+explore           
 ;; omni + s
 ;; dolphin_action_search                 
 ;; omni + lsft + s
-;; dolphin_action_<search                
+;; dolphin_action_lsft+search            
 ;; omni + rsft + s
-;; dolphin_action_>search                
+;; dolphin_action_rsft+search            
 ;; omni + r
 ;; dolphin_action_replace                
 ;; omni + lsft + r
-;; dolphin_action_<replace               
+;; dolphin_action_lsft+replace           
 ;; omni + rsft + r
-;; dolphin_action_>replace               
+;; dolphin_action_rsft+replace           
 ;; omni + g
 ;; dolphin_action_go                     
 )

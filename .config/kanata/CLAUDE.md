@@ -68,7 +68,7 @@ action_tab_next (t! unmod_all (switch ;;@autogen@
 ```
 
 - **Priority**: Lower filename index = checked first. `actions_nvim.1.kbd` beats `actions_tmux.98.kbd`.
-- **Reversed actions**: `!action_<name>` checks apps in reverse order, enabling alternate behavior when apps overlap (e.g. nvim inside tmux).
+- **Reversed actions**: `~action_lsft+name>` checks apps in reverse order, enabling alternate behavior when apps overlap (e.g. nvim inside tmux).
 - App files can define **app variables** (e.g. `tmux_prefix A-b`) and **app-specific actions** not in the shared interface — both are preserved by the sync scripts.
 
 ### Sync Workflow
@@ -100,8 +100,6 @@ Key templates used throughout:
 ### Conventions
 
 - Actions use the naming pattern: `action_<name>` in `actions.kbd`, `<app>_action_<name>` in app files.
-- `!` has different meanings depending on position:
-  - **Before `action_`** (`!action_tab_next`): reversed app priority in switch conditions — apps are checked in reverse order.
-  - **Within the action name** (`action_<new`, `action_>new`): alternative variants of the same action. Up to 3 variants accessed via different combos: base (`omni+n`), `<` variant (`omni+lsft+n`), `>` variant (`omni+rsft+n`). Same pattern applies to key combos: `action_lctl+<t` = the `lsft` alternative of `action_lctl+t`. The `<` symbol represents the lsft variant and `>` the rsft variant.
+- `~` **before `action_`** (`~action_tab_next`): reversed app priority in switch conditions — apps are checked in reverse order.
 - Comments with `;;@autogen@` mark lines managed by the sync scripts — don't manually edit the switch conditions.
-- Lines with `;; ""` are vim fold markers.
+- `;; ""` is used because in nvim after a `[` the kanata comments `;;` won't dim. Using this hack, comments look good.
