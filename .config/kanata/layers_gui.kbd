@@ -25,19 +25,10 @@
   toggle_panes_layer                 (t! toggle_layer             panes_layer)
   toggle_panes+lsft_layer            (t! toggle_mod_layer   lsft  panes+lsft_layer)
   toggle_panes+rsft_layer            (t! toggle_mod_layer   rsft  panes+rsft_layer)
-  toggle_panes+ralt_layer            (t! toggle_mod_layer   ralt  panes+ralt_layer)
-  toggle_panes+rctl_layer            (t! toggle_mod_layer   rctl  panes+rctl_layer)
-
-  ;; Bookmarks layer
-  toggle_bookmarks_layer             (t! toggle_layer             bookmarks_layer)
-  toggle_bookmarks+lsft_layer        (t! toggle_mod_layer   lsft  bookmarks+lsft_layer)
-  toggle_bookmarks+rsft_layer        (t! toggle_mod_layer   rsft  bookmarks+rsft_layer)
-
-  ;; Omni layer
-  toggle_omni_layer                  (t! toggle_layer             omni_layer)
-  toggle_omni+lsft_layer             (t! toggle_mod_layer   lsft  omni+lsft_layer)
-  toggle_omni+rsft_layer             (t! toggle_mod_layer   rsft  omni+rsft_layer)
-
+  toggle_panes+move_layer            (t! toggle_layer             panes+move_layer)
+  toggle_panes+resize_layer          (t! toggle_layer             panes+resize_layer)
+  toggle_panes+snap_layer            (t! toggle_layer             panes+snap_layer)
+  toggle_panes+swap_layer            (t! toggle_layer             panes+swap_layer)
 )
 
 
@@ -82,12 +73,12 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (workspaces_layer)
   ;; == KEY COMBOS ===================
-  j $action_next_screen   
-  k $action_prev_screen   
-  l $action_next_desktop  
-  h $action_prev_desktop  
+  j $action_next_screen
+  k $action_prev_screen
+  l $action_next_desktop
+  h $action_prev_desktop
 
-  ;; == SFT ======================
+;;  ;; == SFT ======================
   lsft (t! th _ $toggle_workspaces+lsft_layer)
   rsft (t! th _ $toggle_workspaces+rsft_layer)
   
@@ -129,8 +120,12 @@
   left  $action_tab_prev
   l     $action_tab_next
   right $action_tab_next
+  j     $action_tab_first
+  down  $action_tab_first
+  k     $action_tab_last
+  up    $action_tab_last
 
-  t     $action_tab_new 
+  t     $action_tab_new
   w     $action_tab_close
 
   1     $action_tab_goto_1
@@ -143,7 +138,7 @@
   8     $action_tab_goto_8
   9     $action_tab_goto_last
 
-  ;; == SFT ======================
+;;  ;; == SFT ======================
   lsft (t! th _ $toggle_tabs+lsft_layer)
   rsft (t! th _ $toggle_tabs+rsft_layer)
 
@@ -159,13 +154,13 @@
   t $action_tab_undo_close
 
   h     $action_tab_move_left
-  l     $action_tab_move_right
-  k     $action_tab_move_first
-  j     $action_tab_move_last
   left  $action_tab_move_left
+  l     $action_tab_move_right
   right $action_tab_move_right
-  up    $action_tab_move_first
-  down  $action_tab_move_last
+  j     $action_tab_move_first
+  down  $action_tab_move_first
+  k     $action_tab_move_last
+  up    $action_tab_move_last
 
   ;; "" TABS+LSFT_LAYER """""""""""""""
 )
@@ -196,6 +191,8 @@
   ;; == KEY COMBOS ===================
 
   ;; == SFT ======================
+  lsft (t! th _ $toggle_groups+lsft_layer)
+  rsft (t! th _ $toggle_groups+rsft_layer)
 
   ;; "" GROUPS LAYER """"""""""""""""""""
 )
@@ -269,31 +266,35 @@
   ;; == SFT ======================
   lsft (t! th _               $toggle_panes+lsft_layer)
   rsft (t! th _               $toggle_panes+rsft_layer)
-  ralt (t! th _               $toggle_panes+ralt_layer)
-  rctl (t! th _               $toggle_panes+rctl_layer)
+  ;; == Gui Actions ========================
+  $toggle        $action_pane_toggle
+  $move          (t! th _                   $toggle_panes+move_layer)
+  $resize        (t! th _                   $toggle_panes+resize_layer)
+  $float|snap    (t! th $action_pane_float  $toggle_panes+snap_layer)
+  $swap          (t! th _                   $toggle_panes+swap_layer)
 
   ;; "" PANES_LAYER """"""""""""""""""""""""
 )
 
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" PANES+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" PANES+FT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (panes+lsft_layer)
   ;; == KEY COMBOS ===================
-  d $action_pane_<day
-  e $action_pane_<explorer
-  p $action_pane_<properties
+  d $action_pane_lsft+day
+  e $action_pane_lsft+explorer
+  p $action_pane_lsft+properties
   s $action_pane_right_sidebar
-  . $action_pane_<outlinks
+  . $action_pane_lsft+outlinks
 
   h     $action_pane_move_left
-  l     $action_pane_move_right
-  k     $action_pane_move_above
-  j     $action_pane_move_below
   left  $action_pane_move_left
-  right $action_pane_move_right
-  up    $action_pane_move_above
+  j     $action_pane_move_below
   down  $action_pane_move_below
+  k     $action_pane_move_above
+  up    $action_pane_move_above
+  l     $action_pane_move_right
+  right $action_pane_move_right
 
   ;; "" PANES+LSFT_LAYER """"""""""""""""""
 )
@@ -303,11 +304,11 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (panes+rsft_layer)
   ;; == KEY COMBOS ===================
-  d $action_pane_<day
-  e $action_pane_<explorer
-  p $action_pane_<properties
+  d $action_pane_lsft+day
+  e $action_pane_lsft+explorer
+  p $action_pane_lsft+properties
   s $action_pane_right_sidebar
-  . $action_pane_<outlinks
+  . $action_pane_lsft+outlinks
 
   h     $action_pane_move_left
   l     $action_pane_move_right
@@ -322,11 +323,26 @@
 )
 
 
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" PANES+MOVE_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (panes+move_layer)
+
+;; "" PANES+MOVE_LAYER """""""""""""""""""""
+)
 
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" PANES+RALT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" PANES+SNAP_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (panes+ralt_layer)
+(deflayermap (panes+snap_layer)
+
+;; "" PANES+SNAP_LAYER """""""""""""""""""""
+)
+
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" PANES+RESIZE_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (panes+resize_layer)
   ;; == KEY COMBOS ===================
   h     $action_pane_resize_left
   l     $action_pane_resize_right
@@ -337,13 +353,13 @@
   up    $action_pane_resize_above
   down  $action_pane_resize_below
 
-  ;; "" PANES+RALT_LAYER """"""""""""""""""
+  ;; "" PANES+RESIZE_LAYER """"""""""""""""""
 )
 
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" PANES+RCTL_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" PANES+SWAP_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (panes+rctl_layer)
+(deflayermap (panes+swap_layer)
   ;; == KEY COMBOS ===================
   h     $action_pane_swap_left
   l     $action_pane_swap_right
@@ -354,6 +370,6 @@
   up    $action_pane_swap_above
   down  $action_pane_swap_below
 
-  ;; "" PANES+RCTL_LAYER """"""""""""""""""
+  ;; "" PANES+SWAP_LAYER """"""""""""""""""
 )
 

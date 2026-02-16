@@ -123,7 +123,7 @@
   (t! map_keys_with_pattern_except (a d k l s ;) "$action_lctl+")
   
   ;; == LALT =========================
-  $!lalt          (t! th _ $toggle_lctl+lalt_layer)
+  $!lalt          (t! th _              $toggle_lctl+lalt_layer)
   $s|lalt|symbol  (t! th $action_lctl+s $toggle_lctl+lalt_layer)
   $l|lalt|localiz (t! th $action_lctl+l $toggle_lctl+lalt_layer)
 
@@ -193,7 +193,6 @@
 
   (t! map_keys_with_pattern_except (a d k l s ;) "$action_!lctl+")
 
-
   ;; == LALT =========================
   $!lalt  (t! th _ $toggle_!lctl+lalt_layer)
   $s|lalt|symbol (t! th $action_!lctl+s $toggle_!lctl+lalt_layer)
@@ -218,10 +217,9 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lctl+lsft_layer)
   ;; == KEY COMBOS ===================
-  spc $action_select_opened_files 
+  spc $action_select_folders 
 
   (t! default_map_keys_except ())
-
 ;; "" !LCTL+LSFT_LAYER """""""""""""""
 )
 
@@ -230,19 +228,18 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lctl+rsft_layer)
   ;; == KEY COMBOS ===================
-  spc $action_select_folders
+  spc $action_select_folders 
 
   (t! default_map_keys_except ())
-
 ;; "" !LCTL+RSFT_LAYER """""""""""""""
 )
-
 
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; "" LALT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lalt_layer)
   ;; == KEY COMBOS ===================
+  spc $action_text_search
 
   ;; lalt is configured in the physical lmet key (like the opt key in mac).
   ;; alt+tab works as alt+`
@@ -271,7 +268,7 @@
 ;; "" LALT+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lalt+lsft_layer)
-
+  spc $action_text_search&replace
 ;; "" LALT+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""
 )
 
@@ -279,6 +276,7 @@
 ;; "" LALT+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lalt+rsft_layer)
+  spc $action_text_search&replace
 
 ;; "" LALT+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""
 )
@@ -704,12 +702,14 @@
   $esc|omni         (t! th _ $toggle_omni+lsft_layer)
   $f|lctl|autofill  (t! th _ $toggle_lctl+lsft_layer)
   $j|lctl|jump      (t! th _ $toggle_lctl+lsft_layer)
-  $a|lmet|action    (t! th _ $toggle_lmet+lsft_layer)
-  $;|lmet|command   (t! th _ $toggle_lmet+lsft_layer)
+  $!lctl            (t! th _ $toggle_!lctl+lsft_layer)
+
   $s|lalt|symbol    (t! th _ $toggle_lalt+lsft_layer)
   $l|lalt|localiz   (t! th _ $toggle_lalt+lsft_layer)
-  $!lctl            (t! th _ $toggle_!lctl+lsft_layer)
   $!lalt            (t! th _ $toggle_!lalt+lsft_layer)
+
+  $a|lmet|action    (t! th _ $toggle_lmet+lsft_layer)
+  $;|lmet|command   (t! th _ $toggle_lmet+lsft_layer)
   $!lmet            (t! th _ $toggle_!lmet+lsft_layer)
 
 ;; "" LSFT_LAYER """"""""""""""""""""""""""""""
@@ -726,14 +726,17 @@
   $tab|open         (t! th _ $toggle_opts+rsft_layer)
   $prnt|bookm       (t! th _ $toggle_bookmarks+rsft_layer)
   $esc|omni         (t! th _ $toggle_omni+rsft_layer)
+
   $f|lctl|autofill  (t! th _ $toggle_lctl+rsft_layer)
   $j|lctl|jump      (t! th _ $toggle_lctl+rsft_layer)
-  $a|lmet|action    (t! th _ $toggle_lmet+rsft_layer)
-  $;|lmet|command   (t! th _ $toggle_lmet+rsft_layer)
+  $!lctl            (t! th _ $toggle_!lctl+rsft_layer)
+
   $s|lalt|symbol    (t! th _ $toggle_lalt+rsft_layer)
   $l|lalt|localiz   (t! th _ $toggle_lalt+rsft_layer)
-  $!lctl            (t! th _ $toggle_!lctl+rsft_layer)
   $!lalt            (t! th _ $toggle_!lalt+lsft_layer)
+
+  $a|lmet|action    (t! th _ $toggle_lmet+rsft_layer)
+  $;|lmet|command   (t! th _ $toggle_lmet+rsft_layer)
   $!lmet            (t! th _ $toggle_!lmet+lsft_layer)
 
 ;; "" RSFT_LAYER """"""""""""""""""""""""""""""

@@ -33,6 +33,14 @@
   )
 )
 
+(deftemplate sft_switch (action lsft_action rsft_action)
+  (switch
+    (lsft) $lsft_action break
+    (rsft) $rsft_action break
+    ()     $action      break
+  )
+)
+
 ;; == Spanish letters templates ============================================
 
 ;; Composes letters with tildes. For example: á, é, ...

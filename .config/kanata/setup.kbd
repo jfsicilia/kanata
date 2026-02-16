@@ -71,7 +71,7 @@
   b|groups              b  ;; Also j key works as tabs key after win key is hold.
   n|sessions             n  ;; Also k key works as panes key after win key is hold.
   m|tabs|mem         m  ;; Also k key works as panes key after win key is hold.
-  ,|panes|sets       ,
+  ,|panes|settings   ,
   .|tags             .
   /|wnd              /
   
@@ -83,6 +83,13 @@
   ralt|apps          ralt        ;; Physical ralt key will be used for apps launching/focusing.
   prnt|bookm         prnt       ;; Physical prnt key will be used for bookmarks.
   rctl|opts          rctl           
+
+  ;; Gui actions.
+  move              $!lctl
+  resize            $!lalt
+  toggle            ralt
+  float|snap        prnt
+  swap              rctl
 )
 
 (defsrc
@@ -132,7 +139,7 @@
   $b|groups         (t! fast_th b                          $toggle_groups_layer)
   $n|sessions       @n|sessions
   $m|tabs|mem       (t! fast_th m                          $toggle_tabs|mem_layer)
-  $,|panes|sets     (t! fast_th ,                          $toggle_panes|sets_layer)
+  $,|panes|settings (t! fast_th ,                          $toggle_panes|settings_layer)
   $.|tags           (t! fast_th .                          $toggle_tags_layer)
   $/|wnd            (t! fast_th /                          $toggle_windows_layer)
   rsft              (t! th (t! 2x $action_tab_next)        $toggle_rsft_layer)

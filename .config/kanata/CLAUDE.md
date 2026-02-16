@@ -41,18 +41,20 @@ kanata app aware.
 
 ```
 kanata.kbd  (entry point, includes everything)
-  ├── templates.kbd       (reusable macros: homerowmod, tap-dance, layer toggles, etc.)
-  ├── setup.kbd           (defsrc, default layers, homerow mod aliases)
-  ├── layers.kbd          (layer toggle variables + 30+ deflayermaps)
+  ├── templates.kbd           (reusable macros: homerowmod, tap-dance, layer toggles, etc.)
+  ├── setup.kbd               (defsrc, default layer, homerow mod aliases, variable definitions)
+  ├── layers_modifiers.kbd    (modifier layers: lctl, lalt, lmet, lsft, rsft + ! variants)
+  ├── layers_gui.kbd          (window/workspace/tab/pane/group management layers)
+  ├── layers_domain.kbd       (feature layers: omni, apps, bookmarks, opts, num, etc.)
   └── actions/
-      ├── actions.kbd     (shared action interface — all @autogen@ tagged switch statements)
+      ├── actions.kbd             (shared action interface — all @autogen@ tagged switch statements)
       ├── actions_nvim.1.kbd      (priority 1, highest)
       ├── actions_chrome.4.kbd
       ├── actions_dolphin.4.kbd
       ├── actions_obsidian.4.kbd
-      ├── actions_foot.9.kbd
-      ├── actions_tmux.98.kbd
-      └── actions_zellij.99.kbd   (priority 99, lowest)
+      ├── actions_tmux.19.kbd
+      ├── actions_zellij.29.kbd
+      └── actions_foot.99.kbd     (priority 99, lowest)
 ```
 
 ### App-Polymorphism Pattern
@@ -67,8 +69,8 @@ action_tab_next (t! unmod_all (switch ;;@autogen@
 ))
 ```
 
-- **Priority**: Lower filename index = checked first. `actions_nvim.1.kbd` beats `actions_tmux.98.kbd`.
-- **Reversed actions**: `~action_lsft+name>` checks apps in reverse order, enabling alternate behavior when apps overlap (e.g. nvim inside tmux).
+- **Priority**: Lower filename index = checked first. `actions_nvim.1.kbd` beats `actions_tmux.19.kbd` beats `actions_foot.99.kbd`.
+- **Reversed actions**: `~action_<name>` checks apps in reverse order, enabling alternate behavior when apps overlap (e.g. nvim inside tmux). The `~` prefix before `action_` reverses the app priority in switch conditions.
 - App files can define **app variables** (e.g. `tmux_prefix A-b`) and **app-specific actions** not in the shared interface — both are preserved by the sync scripts.
 
 ### Sync Workflow
@@ -79,11 +81,14 @@ action_tab_next (t! unmod_all (switch ;;@autogen@
 
 ### Layer System
 
-- **Homerow mods**: `a/s/d/f/g/h/j/k/l/;` act as `gui/lalt/lsft/lctl/lmet/lmet/lctl/rsft/lalt/gui` when held, with fast-typing detection to prevent misfires.
+- **Homerow mods**: `a/s/d/f/j/k/l/;` act as `lmet/lalt/lsft/lctl/lctl/rsft/lalt/lmet` when held, with fast-typing detection to prevent misfires.
 - **Physical key remapping**: `lctl→lmet`, `lmet→lalt`, `lalt→lctl` (Mac-like `ctrl|alt|cmd` layout).
 - **Modifier layers compose**: holding `lctl` activates `lctl_layer`; then holding `lalt` on top activates `lctl+lalt_layer`, etc. up to 3-modifier combos.
 - **`!` prefix layers**: There are 2 sets of modifiers: homerow keys (lctl/lalt/lmet) and physical keyboard keys (!lctl/!lalt/!lmet). In normal apps they have the same functionality. In apps with a vim mode, you get 2 sets of functionality: one for vim-mode commands, the other for the app's own commands (e.g. obsidian, VS Code).
-- **Special layers**: `gui_layer` (capslock hold) for window/desktop/tab/pane management, `omni_layer` for editing/file operations, `opts_layer` (tab hold), `apps_layer` (ralt), `bookmarks_layer` (prnt).
+- **Special layers** (defined in layers_domain.kbd and layers_gui.kbd):
+  - GUI layers: `windows_layer`, `workspaces_layer`, `tabs_layer`, `panes_layer`, `groups_layer`
+  - Domain layers: `omni_layer` (caps hold), `opts_layer` (tab hold), `apps_layer` (ralt), `bookmarks_layer` (prnt), `num_layer`, etc.
+  - Pane sublayers: `panes+move_layer`, `panes+resize_layer`, `panes+snap_layer`, `panes+swap_layer`
 
 ### Templates (templates.kbd)
 
@@ -96,10 +101,20 @@ Key templates used throughout:
 - `t! toggle_layer`, `t! toggle_mod_layer`, `t! toggle_mod_2layer` — layer activation patterns
 - `t! alt_char <letter>` — Spanish character composition (double-tap for accents)
 - `t! 2x <action>` / `t! 3x <action>` — tap-dance for double/triple press
+- `t! sft_switch <base> <lsft> <rsft>` — **DEPRECATED** (no longer used; replaced by layer variants)
 
 ### Conventions
 
-- Actions use the naming pattern: `action_<name>` in `actions.kbd`, `<app>_action_<name>` in app files.
-- `~` **before `action_`** (`~action_tab_next`): reversed app priority in switch conditions — apps are checked in reverse order.
-- Comments with `;;@autogen@` mark lines managed by the sync scripts — don't manually edit the switch conditions.
-- `;; ""` is used because in nvim after a `[` the kanata comments `;;` won't dim. Using this hack, comments look good.
+- **Actions naming**: `action_<name>` in `actions.kbd`, `<app>_action_<name>` in app files.
+- **`~` prefix** (tilde before `action_`): `~action_tab_next` reverses app priority in switch conditions — apps are checked in reverse order. Allows alternate behavior when apps overlap (e.g. nvim inside tmux).
+- **`!` prefix** has different meanings depending on context:
+  - **Within action name** (`action_!lctl+a`): action triggered by physical lctl key (vs homerow mod)
+  - **As layer prefix** (`!lctl_layer`, `!lalt_layer`, `!lmet_layer`): layer for physical modifier key (vs homerow mod)
+- **Action variants**: Actions can have lsft/rsft variants using explicit naming:
+  - Base: `action_new`
+  - lsft variant: `action_lsft+new`
+  - rsft variant: `action_rsft+new`
+  - Example in combos: `action_lctl+t`, `action_lctl+lsft+t`, `action_lctl+rsft+t`
+  - Variants are now distributed across layer variants (base_layer, base+lsft_layer, base+rsft_layer) instead of using sft_switch
+- **`;;@autogen@` tag**: Marks lines managed by sync scripts — don't manually edit the switch conditions.
+- **`;; ""`**: Vim fold markers (used because `;;` gets dimmed in nvim after `[`).
