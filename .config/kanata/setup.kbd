@@ -64,14 +64,14 @@
 
   ;; Lower row keys.
   lang               lsgt ;; <> Key (Spanish keyboard) behaves like lang toggle when tap and alternative win layer while hold.
-  z|wnd              z  ;; Also s key works as workspaces key after win key is hold.
-  x|work             x  ;; Also s key works as workspaces key after win key is hold.
-  c|pane             c  ;; Also d key works as panes key after win key is hold.
+  z|windows          z  ;; Also s key works as workspaces key after win key is hold.
+  x|workspaces       x  ;; Also s key works as workspaces key after win key is hold.
+  c|panes            c  ;; Also d key works as panes key after win key is hold.
   v|tabs             v  ;; Also f key works as tabs key after win key is hold.
-  b|grp              b  ;; Also j key works as tabs key after win key is hold.
-  n|sess             n  ;; Also k key works as panes key after win key is hold.
+  b|groups              b  ;; Also j key works as tabs key after win key is hold.
+  n|sessions             n  ;; Also k key works as panes key after win key is hold.
   m|tabs|mem         m  ;; Also k key works as panes key after win key is hold.
-  ,|pane|sets        ,
+  ,|panes|sets       ,
   .|tags             .
   /|wnd              /
   
@@ -79,6 +79,7 @@
   !lmet              lctl       ;; Physical lctl is used as lmet
   !lalt              lmet       ;; Physical lmet is used as lalt
   !lctl              lalt       ;; Physical lalt is used as lctl
+  spc|num            spc
   ralt|apps          ralt        ;; Physical ralt key will be used for apps launching/focusing.
   prnt|bookm         prnt       ;; Physical prnt key will be used for bookmarks.
   rctl|opts          rctl           
@@ -92,61 +93,6 @@
   lsft       lsgt       z          x          c          v          b          n          m          ,          .          /          rsft   
   lctl       lmet       lalt                             spc                              ralt       prnt       rctl
 ) ;;""
-
-;;(deftemplate default_layer ()
-;;  ;; Upper row keys
-;;  $tab|open         (t! fast_th tab                        $toggle_open_layer)   
-;;  $q|quick          (t! fast_th q                          $toggle_quick_layer)
-;;  $w                (t! fast_th w                          XX)
-;;  ;;$e              Defined in default|!default layer.
-;;  $r|ref            (t! fast_th r                          $toggle_ref_layer)
-;;  $t|tags           (t! fast_th t                          $toggle_tags_layer)
-;;  $y|hist           (t! fast_th y                          $toggle_hist_layer)
-;;  ;;$u|debug        Defined in default|!default layer.
-;;  ;;$i|info         Defined in default|!default layer.
-;;  ;;$o|source       Defined in default|!default layer.
-;;  $p                (t! fast_th p                          XX)   
-;;
-;;  ;; Medium row keys
-;;  $esc|omni         (t! fast_th esc                        $toggle_omni_layer)  
-;;  ;;$a|lmet|action  Defined in default|!default layer.
-;;  $s|lalt|symbol    (t! fast_th s                          $toggle_lalt|symbol_layer)
-;;  $d|lsft|def       (t! fast_th d                          $toggle_lsft|def_layer)
-;;  $f|lctl|autofill  (t! fast_th f                          $toggle_lctl|autofill_layer)
-;;  $g|git            (t! fast_th g                          $toggle_git_layer)
-;;  $h|hyperlink      (t! fast_th h                          $toggle_hyperlink_layer)
-;;  $j|lctl|jump      (t! fast_th j                          (multi $toggle_lctl|jump_layer (on-release release-vkey vk_lalt)))
-;;  $k|rsft|keymap    (t! fast_th k                          $toggle_rsft|keymap_layer)
-;;  $l|lalt|localiz   (t! fast_th l                          $toggle_lalt|localiz_layer)
-;;  $;|lmet|command   (t! fast_th ;                          $toggle_lmet|command_layer)
-;;  $'|register       (t! fast_th '                          $toggle_register_layer)
-;;                     
-;;  ;; Lower row keys.
-;;  lsft              (t! th (t! 2x $action_tab_prev)        $toggle_lsft_layer)
-;;  $lang             (t! fast_th @toggle_lang               $toggle_lang_layer)
-;;  $z|wnd            (t! fast_th z                          $toggle_window_layer)
-;;  $x|work           (t! fast_th x                          $toggle_workspaces_layer)
-;;  $c|pane           (t! fast_th c                          $toggle_panes_layer)
-;;  $v|tabs           (t! fast_th v                          $toggle_tabs_layer)
-;;  $b|grp            (t! fast_th b                          $toggle_groups_layer)
-;;  ;;$n|sess         Defined in default|!default layer.
-;;  $m|tabs|mem       (t! fast_th m                          $toggle_tabs|mem_layer)
-;;  $,|pane|sets      (t! fast_th ,                          $toggle_pane|sets_layer)
-;;  $.|tags           (t! fast_th .                          $toggle_tags_layer)
-;;  $/|wnd            (t! fast_th /                          $toggle_window_layer)
-;;  rsft              (t! th (t! 2x $action_tab_next)        $toggle_rsft_layer)
-;;
-;;  ;; Modifiers row.
-;;  $!lmet            (t! th (t! 2x $action_desktop_toggle)  $toggle_!lmet_layer)   
-;;  $!lalt            (t! th (t! 2x $action_pane_toggle)     $toggle_!lalt_layer)   
-;;  $!lctl            (multi 
-;;                      (t! th (t! 2x $action_tab_toggle)    $toggle_!lctl_layer)
-;;                      (on-release release-vkey vk_lalt)     ;; (lctl+tab mimics lalt+tab)
-;;                    )
-;;  $ralt|apps        (t! th (t! 2x $action_app_toggle)      $toggle_apps_layer)   
-;;  $prnt|bookm       (t! th (t! 2x $action_session_toggle)  $toggle_bookmarks_layer)   
-;;  $rctl|opts        (t! th (t! 2x $action_group_toggle)    $toggle_opts_layer)   
-;;)
 
 (deflayermap (default)
   ;; Upper row keys
@@ -162,7 +108,7 @@
   $o|source         @o|source 
   $p                (t! fast_th p                          XX)   
 
-  ;; Medium row keys
+  ;; Medium row keys (a, s, d, f, j, k, l, ; work as lmet, lalt, lsft/rsft and lctl)
   $esc|omni         (t! fast_th esc                        $toggle_omni_layer)  
   $a|lmet|action    @a|lmet|action
   $s|lalt|symbol    (t! fast_th s                          $toggle_lalt|symbol_layer)
@@ -170,50 +116,46 @@
   $f|lctl|autofill  (t! fast_th f                          $toggle_lctl|autofill_layer)
   $g|git            (t! fast_th g                          $toggle_git_layer)
   $h|hyperlink      (t! fast_th h                          $toggle_hyperlink_layer)
-  $j|lctl|jump      (t! fast_th j                          (multi $toggle_lctl|jump_layer (on-release release-vkey vk_lalt)))
+  $j|lctl|jump      @lctl
   $k|rsft|keymap    (t! fast_th k                          $toggle_rsft|keymap_layer)
   $l|lalt|localiz   (t! fast_th l                          $toggle_lalt|localiz_layer)
   $;|lmet|command   (t! fast_th ;                          $toggle_lmet|command_layer)
   $'|register       (t! fast_th '                          $toggle_register_layer)
                      
-  ;; Lower row keys.
+  ;; Lower row keys (z, x, c, v, b, n, m, , work as window, workspace, pane, tabs, group and session.
   lsft              (t! th (t! 2x $action_tab_prev)        $toggle_lsft_layer)
   $lang             (t! fast_th @lang                      $toggle_lang_layer)
-  $z|wnd            (t! fast_th z                          $toggle_window_layer)
-  $x|work           (t! fast_th x                          $toggle_workspaces_layer)
-  $c|pane           (t! fast_th c                          $toggle_panes_layer)
+  $z|windows        (t! fast_th z                          $toggle_windows_layer)
+  $x|workspaces     (t! fast_th x                          $toggle_workspaces_layer)
+  $c|panes          (t! fast_th c                          $toggle_panes_layer)
   $v|tabs           (t! fast_th v                          $toggle_tabs_layer)
-  $b|grp            (t! fast_th b                          $toggle_groups_layer)
-  $n|sess           @n|sess
+  $b|groups         (t! fast_th b                          $toggle_groups_layer)
+  $n|sessions       @n|sessions
   $m|tabs|mem       (t! fast_th m                          $toggle_tabs|mem_layer)
-  $,|pane|sets      (t! fast_th ,                          $toggle_pane|sets_layer)
+  $,|panes|sets     (t! fast_th ,                          $toggle_panes|sets_layer)
   $.|tags           (t! fast_th .                          $toggle_tags_layer)
-  $/|wnd            (t! fast_th /                          $toggle_window_layer)
+  $/|wnd            (t! fast_th /                          $toggle_windows_layer)
   rsft              (t! th (t! 2x $action_tab_next)        $toggle_rsft_layer)
 
   ;; Modifiers row.
   $!lmet            (t! th (t! 2x $action_desktop_toggle)  $toggle_!lmet_layer)   
   $!lalt            (t! th (t! 2x $action_pane_toggle)     $toggle_!lalt_layer)   
-  $!lctl            (multi 
-                      (t! th (t! 2x $action_tab_toggle)    $toggle_!lctl_layer)
-                      (on-release release-vkey vk_lalt)     ;; (lctl+tab mimics lalt+tab)
-                    )
+  $!lctl            @!lctl  
+  $spc|num          (t! th _                               $toggle_num_layer)
   $ralt|apps        (t! th (t! 2x $action_app_toggle)      $toggle_apps_layer)   
   $prnt|bookm       (t! th (t! 2x $action_session_toggle)  $toggle_bookmarks_layer)   
   $rctl|opts        (t! th (t! 2x $action_group_toggle)    $toggle_opts_layer)   
 )
 
-;;(deflayermap (!default)
-;;  (t! default_layer)
-;;  $a|lmet|action    (t! fast_th (t! alt_char a)            $toggle_lmet|action_layer)
-;;  $e                (t! fast_th (t! alt_char e)            XX)
-;;  $i|info           (t! fast_th (t! alt_char i)            $toggle_info_layer)
-;;  $o|source         (t! fast_th (t! alt_char o)            $toggle_source_layer)
-;;  $u|debug          (t! fast_th (t! alt_char u)            $toggle_debug_layer)
-;;  $n|sess           (t! fast_th (t! alt_char n)            $toggle_sess_layer)
-;;)
-
 (defalias
+  lctl (t! fast_th 
+    j 
+    (multi $toggle_lctl|jump_layer (on-release release-vkey vk_lalt))
+  )
+  !lctl (multi 
+    (t! th (t! 2x $action_tab_toggle)    $toggle_!lctl_layer)
+    (on-release release-vkey vk_lalt)     ;; (lctl+tab mimics lalt+tab)
+  )
   a|lmet|action (switch
     ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char a) $toggle_lmet|action_layer) break
     ()                              (t! fast_th a               $toggle_lmet|action_layer) break
@@ -234,21 +176,10 @@
     ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char u) $toggle_debug_layer) break
     ()                              (t! fast_th u               $toggle_debug_layer) break
   )
-  n|sess (switch          
+  n|sessions (switch          
     ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char n) $toggle_session_layer) break
     ()                              (t! fast_th n               $toggle_session_layer) break
   )
 
   lang (on-press toggle-virtualkey vk_alt_chars)
-
-  ;; Alternative Chars toggle key. Changes the default layout between normal 
-  ;; chars and alternative chars (á, ñ, ...)
-;;  toggle_lang (multi 
-;;    (on-press toggle-virtualkey vk_alt_chars)
-;;    (switch
-;;      ((input virtual vk_alt_chars)) (layer-switch default) break
-;;      ()  (layer-switch !default) break
-;;    )
-;;  )
-  ;; "" ALIAS """"""""""""""""""""""""
 )

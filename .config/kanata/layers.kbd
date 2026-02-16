@@ -3,6 +3,8 @@
 ;; which layers to stack). Used by aliases in setup.kbd and by layer maps
 ;; below.
 (defvar
+  ;; == DOMAIN LAYERS ======================================================
+
   toggle_open_layer                  (t! toggle_layer             open_layer)
   toggle_quick_layer                 (t! toggle_layer             quick_layer)
   toggle_ref_layer                   (t! toggle_layer             ref_layer)
@@ -17,42 +19,29 @@
   toggle_source_layer                (t! toggle_layer             source_layer)
   toggle_debug_layer                 (t! toggle_layer             debug_layer)
   toggle_session_layer               (t! toggle_layer             session_layer)
-
-  toggle_lalt|symbol_layer           (t! toggle_mod_2layer  lalt  lalt_layer  symbol_layer)
-  toggle_lsft|def_layer              (t! toggle_mod_2layer  lsft  lsft_layer  def_layer)
-  toggle_lctl|autofill_layer         (t! toggle_mod_2layer  lctl  lctl_layer  autofill_layer)
-  toggle_lctl|jump_layer             (t! toggle_mod_2layer  lctl  lctl_layer  jump_layer)
-  toggle_rsft|keymap_layer           (t! toggle_mod_2layer  rsft  rsft_layer  keymap_layer)
-  toggle_lalt|localiz_layer          (t! toggle_mod_2layer  lalt  lalt_layer  localiz_layer)
-  toggle_lmet|command_layer          (t! toggle_mod_2layer  lmet  lmet_layer  command_layer)
   toggle_tabs|mem_layer              (t! toggle_2layer            tabs_layer  mem_layer)
-  toggle_pane|sets_layer             (t! toggle_2layer            panes_layer sets_layer)
+  toggle_panes|sets_layer            (t! toggle_2layer            panes_layer sets_layer)
   toggle_lmet|action_layer           (t! toggle_mod_2layer  lmet  lmet_layer  action_layer)
-
-  ;; Apps layer
   toggle_apps_layer                  (t! toggle_layer             apps_layer)
   toggle_apps+lsft_layer             (t! toggle_mod_layer   lsft  apps+lsft_layer)
   toggle_apps+rsft_layer             (t! toggle_mod_layer   rsft  apps+rsft_layer)
-
-  ;; Num layer
   toggle_num_layer                   (t! toggle_layer             num_layer)
   toggle_num+lsft_layer              (t! toggle_mod_layer   lsft  num+lsft_layer)
   toggle_num+rsft_layer              (t! toggle_mod_layer   rsft  num+rsft_layer)
-
-  ;; Opts layer
   toggle_opts_layer                  (t! toggle_layer             opts_layer)
   toggle_opts+lsft_layer             (t! toggle_mod_layer   lsft  opts+lsft_layer)
   toggle_opts+rsft_layer             (t! toggle_mod_layer   rsft  opts+rsft_layer)
-
-  ;; Lang layer
   toggle_lang_layer                  (t! toggle_layer             lang_layer)
   toggle_lang+lsft_layer             (t! toggle_mod_layer   lsft  lang+lsft_layer)
   toggle_lang+rsft_layer             (t! toggle_mod_layer   rsft  lang+rsft_layer)
+  
 
-  ;; Window layer
-  toggle_window_layer                (t! toggle_layer             window_layer)
-  toggle_window+lsft_layer           (t! toggle_mod_layer   lsft  window+lsft_layer)
-  toggle_window+rsft_layer           (t! toggle_mod_layer   rsft  window+rsft_layer)
+  ;; == GUI LAYERS =========================================================
+
+  ;; Windows layer
+  toggle_windows_layer               (t! toggle_layer             windows_layer)
+  toggle_windows+lsft_layer          (t! toggle_mod_layer   lsft  windows+lsft_layer)
+  toggle_windows+rsft_layer          (t! toggle_mod_layer   rsft  windows+rsft_layer)
 
   ;; Workspaces layer
   toggle_workspaces_layer            (t! toggle_layer             workspaces_layer)
@@ -86,9 +75,20 @@
   toggle_omni+lsft_layer             (t! toggle_mod_layer   lsft  omni+lsft_layer)
   toggle_omni+rsft_layer             (t! toggle_mod_layer   rsft  omni+rsft_layer)
 
+  ;; == MODIFIERS LAYERS ===========================================
+
   ;; Shift layers.
   toggle_lsft_layer                  (t! toggle_mod_layer   lsft  lsft_layer)
   toggle_rsft_layer                  (t! toggle_mod_layer   rsft  rsft_layer)
+
+  ;; Homerow modifiers
+  toggle_lalt|symbol_layer           (t! toggle_mod_2layer  lalt  lalt_layer  symbol_layer)
+  toggle_lsft|def_layer              (t! toggle_mod_2layer  lsft  lsft_layer  def_layer)
+  toggle_lctl|autofill_layer         (t! toggle_mod_2layer  lctl  lctl_layer  autofill_layer)
+  toggle_lctl|jump_layer             (t! toggle_mod_2layer  lctl  lctl_layer  jump_layer)
+  toggle_rsft|keymap_layer           (t! toggle_mod_2layer  rsft  rsft_layer  keymap_layer)
+  toggle_lalt|localiz_layer          (t! toggle_mod_2layer  lalt  lalt_layer  localiz_layer)
+  toggle_lmet|command_layer          (t! toggle_mod_2layer  lmet  lmet_layer  command_layer)
 
   ;; LCtl layers.
   toggle_lctl_layer                  (t! toggle_mod_layer   lctl           lctl_layer)
@@ -1046,9 +1046,9 @@
 )
 
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" WINDOW_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" WINDOWS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (window_layer)
+(deflayermap (windows_layer)
   ;; win button enables windows, desktops, panes and tabs access.
   
   ;; == WINDOWS ======================
@@ -1060,25 +1060,25 @@
   ent          $action_wnd_max
 
   ;; == SFT ======================
-  lsft         (t! th _               $toggle_window+lsft_layer)
-  rsft         (t! th _               $toggle_window+rsft_layer)
-;; "" WINDOW_LAYER """"""""""""""""""""""""""""""
+  lsft         (t! th _               $toggle_windows+lsft_layer)
+  rsft         (t! th _               $toggle_windows+rsft_layer)
+;; "" WINDOWS_LAYER """"""""""""""""""""""""""""""
 )
 
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" WINDOW+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" WINDOWS+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (window+lsft_layer)
+(deflayermap (windows+lsft_layer)
 
-;; "" WINDOW+LSFT_LAYER """"""""""""""""""""""""""
+;; "" WINDOWS+LSFT_LAYER """"""""""""""""""""""""""
 )
 
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" WINDOW+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" WINDOWS+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (window+rsft_layer)
+(deflayermap (windows+rsft_layer)
 
-;; "" WINDOW+RSFT_LAYER """"""""""""""""""""""""""
+;; "" WINDOWS+RSFT_LAYER """"""""""""""""""""""""""
 )
 
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
