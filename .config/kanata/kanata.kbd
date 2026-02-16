@@ -37,7 +37,10 @@
 
 ;; Setup =================================================================
 (include setup.kbd)
-(include layers.kbd)
+;;(include layers.kbd)
+(include layers_gui.kbd)
+(include layers_domain.kbd)
+(include layers_modifiers.kbd)
 
 ;; Actions ===============================================================
 (include actions/actions.kbd)
