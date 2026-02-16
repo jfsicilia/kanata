@@ -303,11 +303,11 @@ obsidian_action_pane_calendar                  A-c
 ;; gui + pane + d
 obsidian_action_pane_day                       A-d
 ;; gui + pane + lsft + d
-obsidian_action_pane_<day                      A-S-d
+obsidian_action_pane_lsft+day                      A-S-d
 ;; gui + pane + e
 obsidian_action_pane_explorer                  A-e
 ;; gui + pane + lsft + e
-obsidian_action_pane_<explorer                 A-S-e
+obsidian_action_pane_lsft+explorer                 A-S-e
 ;; gui + pane + f
 obsidian_action_pane_find                      C-A-S-f
 ;; gui + pane + g
@@ -319,7 +319,7 @@ obsidian_action_pane_outline                   A-o
 ;; gui + pane + p
 obsidian_action_pane_properties                A-p
 ;; gui + pane + lsft + p
-obsidian_action_pane_<properties               A-S-p
+obsidian_action_pane_lsft+properties               A-S-p
 ;; gui + pane + r
 obsidian_action_pane_recent                    A-r
 ;; gui + pane + s
@@ -337,7 +337,7 @@ obsidian_action_pane_backlinks                 A-,
 ;; gui + pane + .
 obsidian_action_pane_outlinks                  A-.
 ;; gui + pane + lsft + .
-obsidian_action_pane_<outlinks                 A-S-.
+obsidian_action_pane_lsft+outlinks                 A-S-.
 
 ;; == History combos =====================================================
 ;; omni + ]
