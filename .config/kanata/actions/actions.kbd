@@ -1177,6 +1177,8 @@
   ;; omni + q
   action_close_app (t! unmod_all A-f4)
 
+  action_app_toggle XX
+
   ;; == Desktop combos =====================================================
   ;; gui + work + j | !gui + work + j 
   action_next_screen  (t! unmod_all M-S-down)
@@ -1186,6 +1188,14 @@
   action_next_desktop (t! unmod_all M-C-right)
   ;; gui + work + j | !gui + work + j 
   action_prev_desktop (t! unmod_all M-C-left)
+
+  action_desktop_toggle XX
+
+  ;; == Session combos =====================================================
+  action_session_toggle XX
+
+  ;; == Session combos =====================================================
+  action_group_toggle XX
 
   ;; == History combos =====================================================
   ;; omni + ] 

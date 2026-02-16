@@ -26,6 +26,13 @@
   )
 )
 
+(deftemplate fast_th (tap hold)
+  (switch
+    ((input virtual vk_fast_typing)) (t! type $tap) break
+    () (tap-hold $tap_time $hold_time (t! type $tap) $hold) break
+  )
+)
+
 ;; == Spanish letters templates ============================================
 
 ;; Composes letters with tildes. For example: á, é, ...
