@@ -45,22 +45,22 @@
 
 ;; Composes letters with tildes. For example: á, é, ...
 (deftemplate tilde (letter)
- (multi (macro bspc rctl (unmod (lsft rsft) ') $letter))
+ (multi (macro rctl (unmod (lsft rsft) ') $letter))
 );;"" 
 
 ;; Composes letters with birgulilla. For example: ñ, ...
 (deftemplate birgulilla (letter)
-  (macro bspc rctl S-grave $letter)
+  (macro rctl S-grave $letter)
 )
 
 ;; Composes letters with dieresis. For example: ü, ...
 (deftemplate dieresis (letter)
-  (macro bspc rctl S-' $letter)
+  (macro rctl S-' $letter)
 )
 
 ;; Composes euro letter: €
 (deftemplate euro ()
-  (macro bspc rctl = c)
+  (macro rctl = c)
 )
 
 ;; Allows to write alternative characters if letters are typed twice/triple
@@ -72,11 +72,11 @@
       ;; 1 tap
       (t! type $letter) 
       ;; 2 taps
-      (if-not-equal $letter n (t! type (t! tilde $letter)))
-      (if-equal $letter n (t! type (t! birgulilla $letter)))
+      (if-not-equal $letter n (multi bspc (t! type (t! tilde $letter))))
+      (if-equal $letter n (multi bspc (t! type (t! birgulilla $letter))))
       ;; 3 taps
-      (if-equal $letter e (t! type (t! euro)))
-      (if-equal $letter u (t! type(t! dieresis u)))
+      (if-equal $letter e (multi bspc (t! type (t! euro))))
+      (if-equal $letter u (multi bspc (t! type(t! dieresis u))))
     ))
     (t! type $letter) ;; If modifier is pressed then use the letter instead.
     (lctl rctl lmet rmet lalt ralt)
