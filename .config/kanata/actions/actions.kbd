@@ -498,7 +498,13 @@
   action_tab_first  (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
+  ~action_tab_first  (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
   action_tab_last  (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ~action_tab_last  (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   
