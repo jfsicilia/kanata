@@ -112,7 +112,7 @@
 (defvar
   ;; Time config
   tap_time  220
-  hold_time 160
+  hold_time 200
 
   ;; Upper row keys.
   tab|open           tab   ;; Tab behaves like tab when tap and open_layer while hold.
