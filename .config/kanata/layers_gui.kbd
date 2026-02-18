@@ -265,11 +265,11 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (panes+lsft_layer)
   ;; == KEY COMBOS ===================
-  d $action_pane_lsft+day
-  e $action_pane_lsft+explorer
-  p $action_pane_lsft+properties
-  s $action_pane_right_sidebar
-  . $action_pane_lsft+outlinks
+  d $action_pane+lsft_day
+  e $action_pane+lsft_explorer
+  p $action_pane+lsft_properties
+  s $action_pane+lsft_sidebar
+  . $action_pane+lsft_outlinks
 
   h     $action_pane_move_left
   left  $action_pane_move_left
@@ -288,11 +288,11 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (panes+rsft_layer)
   ;; == KEY COMBOS ===================
-  d $action_pane_lsft+day
-  e $action_pane_lsft+explorer
-  p $action_pane_lsft+properties
-  s $action_pane_right_sidebar
-  . $action_pane_lsft+outlinks
+  d $action_pane+lsft_day
+  e $action_pane+lsft_explorer
+  p $action_pane+lsft_properties
+  s $action_pane+lsft_sidebar
+  . $action_pane+lsft_outlinks
 
   h     $action_pane_move_left
   l     $action_pane_move_right
