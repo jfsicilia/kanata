@@ -1,19 +1,100 @@
-;; The fasttyping config was get from... 
+;; SETUP.KBD - Keyboard Layout & Default Layer Configuration
+;; ===========================================================
+;;
+;; This file defines:
+;;   - Virtual keys for fast-typing detection and app-awareness
+;;   - Variable mappings for all physical keys
+;;   - The default layer with tap-hold behaviors
+;;   - Defalias for complex key behaviors
+;;
+;; Fast-typing config from:
 ;; https://github.com/jtroo/kanata/discussions/1656#discussioncomment-14382030
-
-;; This configuration enables homerowmod where the modifier keys can be
-;; used by holding keys in the keyword home row. This is the layout I use:
 ;;
-;;   a    s    d    f    g    h    j    k    l    ;
-;;  win  lalt lsft lctl lmet lmet lctl rsft lalt win
+;; PHYSICAL KEY REMAPPING (Mac-like layout)
+;; ----------------------------------------
+;; Physical keyboard keys are remapped to create a Mac-like modifier layout:
+;;   Physical lctl → lmet (like Cmd key)
+;;   Physical lmet → lalt (like Opt key)
+;;   Physical lalt → lctl (like Ctrl key)
 ;;
-;; win is a custom modifier key that eases the access to windows (win), 
-;; desktops (win+lalt), panes (win+lsft) and tabs (win+lctl) combos.
+;; HOMEROW MODS (fast-typing aware)
+;; --------------------------------
+;; Home row keys act as modifiers when held, letters when tapped:
 ;;
-;; I use the spanish key for < > (under capslock and a key), to toggle
-;; between US keyboard and custom ES keyboard (same as US keyboard, but
-;; if you press some keys 2 or 3 times in a row you get for example: á, é, ü,
-;; ñ, €.
+;;   a    s    d    f              j    k    l    ;
+;;  lmet lalt lsft lctl           lctl rsft lalt lmet
+;;
+;; Fast-typing detection prevents accidental modifier activation when typing quickly.
+;;
+;; DUAL MODIFIER SYSTEM
+;; --------------------
+;; Two sets of modifiers provide different functionality in vim-mode apps:
+;;   - Homerow mods (lctl, lalt, lmet) - for vim-mode commands
+;;   - Physical mods (!lctl, !lalt, !lmet) - for app-native commands
+;; In non-vim apps, both sets have the same functionality.
+;;
+;; UPPER ROW LAYERS (tap-hold)
+;; ---------------------------
+;; Tab   → tap: tab        hold: open_layer
+;; Q     → tap: q          hold: quick_layer
+;; R     → tap: r          hold: ref_layer
+;; T     → tap: t          hold: tags_layer
+;; Y     → tap: y          hold: hist_layer
+;; U     → tap: u          hold: debug_layer
+;; I     → tap: i          hold: info_layer
+;; O     → tap: o          hold: source_layer
+;;
+;; MIDDLE ROW LAYERS (homerow + domain)
+;; -------------------------------------
+;; Caps  → tap: esc        hold: omni_layer (main editing/file operations)
+;; A     → tap: a          hold: lmet+action_layer
+;; S     → tap: s          hold: lalt+symbol_layer
+;; D     → tap: d          hold: lsft+def_layer
+;; F     → tap: f          hold: lctl+autofill_layer
+;; G     → tap: g          hold: git_layer
+;; H     → tap: h          hold: hyperlink_layer
+;; J     → tap: j          hold: lctl+jump_layer (special: mimics lalt for lctl+tab)
+;; K     → tap: k          hold: rsft+keymap_layer
+;; L     → tap: l          hold: lalt+localiz_layer
+;; ;     → tap: ;          hold: lmet+command_layer
+;; '     → tap: '          hold: register_layer
+;;
+;; LOWER ROW GUI LAYERS (dedicated keys)
+;; --------------------------------------
+;; Each GUI element has its own dedicated key:
+;;   Z     → windows_layer     (window management)
+;;   X     → workspaces_layer  (desktop/screen switching)
+;;   C     → panes_layer       (pane navigation/management)
+;;   V     → tabs_layer        (tab management)
+;;   B     → groups_layer      (group management)
+;;   N     → sessions_layer    (session management)
+;;   M     → tabs+mem_layer    (tabs + memory)
+;;   ,     → panes+sets_layer  (panes + settings)
+;;   .     → tags_layer        (tag management)
+;;   /     → windows_layer     (alternate window access)
+;;
+;; MODIFIER ROW (physical keys + special functions)
+;; -------------------------------------------------
+;; Lsft  → tap: 2x tap_prev   hold: lsft_layer
+;; Lang  → tap: toggle ES/US  hold: lang_layer (< > key on Spanish keyboard)
+;; !lmet → tap: 2x desktop↔   hold: !lmet_layer (physical lctl)
+;; !lalt → tap: 2x pane↔      hold: !lalt_layer (physical lmet)
+;; !lctl → tap: 2x tab↔       hold: !lctl_layer (physical lalt, mimics lalt+tab)
+;; Spc   → tap: space         hold: num_layer
+;; Ralt  → tap: 2x app↔       hold: apps_layer
+;; Prnt  → tap: 2x session↔   hold: bookmarks_layer
+;; Rctl  → tap: 2x group↔     hold: opts_layer
+;; Rsft  → tap: 2x tap_next   hold: rsft_layer
+;;
+;; SPANISH CHARACTERS (vk_alt_chars)
+;; ----------------------------------
+;; Toggle Lang key to enable Spanish character composition:
+;;   Double-tap vowels (a,e,i,o,u) → accented (á,é,í,ó,ú)
+;;   Double-tap n → ñ
+;;   Triple-tap e → €
+;;   Triple-tap u → ü
+;;
+;; =============================================================================
 ;;
 
 ;; Virtual Keys ============================================================
@@ -34,7 +115,7 @@
   hold_time 160
 
   ;; Upper row keys.
-  tab|open           tab   ;; Tab behaves like tab when tap and opts layer while hold.
+  tab|open           tab   ;; Tab behaves like tab when tap and open_layer while hold.
   q|quick            q
   w                  w 
   e                  e 
@@ -47,9 +128,9 @@
   p                  p 
 
   ;; Medium row keys.
-  ;; Homerowmod, keys in middle line of keyboard behaves as normal when
-  ;; tap and modifiers when hold (win, alt, sft, ctl and met).
-  esc|omni           caps ;; Caps behaves like esc when tap and omni layer while hold.
+  ;; Homerowmod: keys in middle row behave as letters when tapped and
+  ;; modifiers when held (lmet, lalt, lsft, lctl). Fast-typing aware.
+  esc|omni           caps ;; Caps: tap=esc, hold=omni_layer
   a|lmet|action      a 
   s|lalt|symbol      s 
   d|lsft|def         d
@@ -63,17 +144,17 @@
   '|register         '
 
   ;; Lower row keys.
-  lang               lsgt ;; <> Key (Spanish keyboard) behaves like lang toggle when tap and alternative win layer while hold.
-  z|windows          z  ;; Also s key works as workspaces key after win key is hold.
-  x|workspaces       x  ;; Also s key works as workspaces key after win key is hold.
-  c|panes            c  ;; Also d key works as panes key after win key is hold.
-  v|tabs             v  ;; Also f key works as tabs key after win key is hold.
-  b|groups              b  ;; Also j key works as tabs key after win key is hold.
-  n|sessions             n  ;; Also k key works as panes key after win key is hold.
-  m|tabs|mem         m  ;; Also k key works as panes key after win key is hold.
-  ,|panes|settings   ,
-  .|tags             .
-  /|wnd              /
+  lang               lsgt ;; <> Key (Spanish keyboard) - tap: toggle ES/US, hold: lang_layer
+  z|windows          z    ;; Tap: z, Hold: windows_layer
+  x|workspaces       x    ;; Tap: x, Hold: workspaces_layer
+  c|panes            c    ;; Tap: c, Hold: panes_layer
+  v|tabs             v    ;; Tap: v, Hold: tabs_layer
+  b|groups           b    ;; Tap: b, Hold: groups_layer
+  n|sessions         n    ;; Tap: n, Hold: session_layer
+  m|tabs|mem         m    ;; Tap: m, Hold: tabs+mem_layer
+  ,|panes|settings   ,    ;; Tap: ,, Hold: panes+sets_layer
+  .|tags             .    ;; Tap: ., Hold: tags_layer
+  /|wnd              /    ;; Tap: /, Hold: windows_layer
   
   ;; Modifiers row.
   !lmet              lctl       ;; Physical lctl is used as lmet
@@ -84,12 +165,12 @@
   prnt|bookm         prnt       ;; Physical prnt key will be used for bookmarks.
   rctl|opts          rctl           
 
-  ;; Gui actions.
-  move              $!lctl
-  resize            $!lalt
-  toggle            ralt
-  float|snap        prnt
-  swap              rctl
+  ;; GUI action modifiers (used in panes_layer for move/resize/snap/swap sublayers).
+  move              $!lctl       ;; Trigger panes+move_layer
+  resize            $!lalt       ;; Trigger panes+resize_layer
+  toggle            ralt         ;; Trigger pane_toggle action
+  float|snap        prnt         ;; Trigger panes+snap_layer
+  swap              rctl         ;; Trigger panes+swap_layer
 )
 
 (defsrc
@@ -131,7 +212,7 @@
                      
   ;; Lower row keys (z, x, c, v, b, n, m, , work as window, workspace, pane, tabs, group and session.
   lsft              (t! th (t! 2x $action_tab_prev)        $toggle_lsft_layer)
-  $lang             (t! fast_th @lang                      $toggle_lang_layer)
+  $lang             (t! th      @lang                      $toggle_lang_layer)
   $z|windows        (t! fast_th z                          $toggle_windows_layer)
   $x|workspaces     (t! fast_th x                          $toggle_workspaces_layer)
   $c|panes          (t! fast_th c                          $toggle_panes_layer)
@@ -168,6 +249,8 @@
     ()                              (t! fast_th a               $toggle_lmet|action_layer) break
   ) 
   e (switch
+    ;; ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char a) XX) break
+    ;; ()                              (t! fast_th i               XX) break
     ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char e) XX) break
     ()                              (t! fast_th e               XX) break
   ) 
