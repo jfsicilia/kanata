@@ -50,6 +50,8 @@ DEFAULT_ACTIONS_FILE = Path.home() / ".config" / "kanata" / "actions" / "actions
 #   ~action_tab_next (t! unmod_all (switch ;;@autogen@
 ACTION_RE = re.compile(r"^\s*(~?action_[^\s]+).*@autogen@")
 
+ACTIONS_START_RE = re.compile(r"^\s*;;\s*@start@")
+
 # Matches an app-prefixed action in an app file, e.g.:
 #   nvim_action_tab_next  (macro esc ...)
 # group(1) = app name, group(2) = action name (action_...)
@@ -60,8 +62,10 @@ APP_ACTION_RE = re.compile(r"^\s*([^\s]+)_(action_[^\s]+).*")
 # group(1) = whitespace, group(2) = app, group(3) = action name, group(4) = backtick content
 BACKTICK_ACTION_RE = re.compile(r"^(\s*)([^\s]+)_(action_[^\s]+)\s+`([^`]+)`\s*$")
 
-# Matches comment-only or blank lines.
-COMMENT_OR_EMPTY_LINE_RE = re.compile(r"^\s*(;;|$)")
+# Matches blank-lines lines.
+EMPTY_LINE_RE = re.compile(r"^\s*$")
+# Matches comment-only lines.
+COMMENT_LINE_RE = re.compile(r"^\s*;;")
 
 # Matches the opening (defvar line.
 DEFVAR_RE = re.compile(r"^\s*\(defvar\b")
@@ -183,13 +187,15 @@ def get_app_from_filename(path: Path) -> str:
     return m.group(1)
 
 
-def read_existing_app_file(path: Path) -> tuple[dict[str, tuple[list[str], str]], list[str]]:
+def read_existing_app_file(
+    path: Path,
+) -> tuple[dict[str, tuple[list[str], str]], list[str]]:
     """Read an existing app actions file and extract its contents.
 
     Separates the file into action definitions (with their preceding comments)
     and other variable definitions.
 
-    When an action line contains a backtick string (e.g., `action  \`string\``),
+    When an action line contains a backtick string (e.g., action  `string`),
     it converts the backtick string to kanata macro syntax.
 
     Args:
@@ -212,8 +218,11 @@ def read_existing_app_file(path: Path) -> tuple[dict[str, tuple[list[str], str]]
 
     for line in lines:
         # Collect comments and blank lines
-        if COMMENT_OR_EMPTY_LINE_RE.match(line):
-            pending_comments.append(line)
+        if EMPTY_LINE_RE.match(line):
+            pending_comments = []
+            continue
+        if COMMENT_LINE_RE.match(line):
+            pending_comments.append(line.strip())
             continue
 
         # Check for backtick action (must come before APP_ACTION_RE since it's more specific)
@@ -228,7 +237,9 @@ def read_existing_app_file(path: Path) -> tuple[dict[str, tuple[list[str], str]]
             macro_content = convert_backtick_to_macro(backtick_content)
 
             # Store backtick comment + implementation
-            backtick_comment = f"{whitespace};; {app}_{action_name}  `{backtick_content}`"
+            backtick_comment = (
+                f"{whitespace};; {app}_{action_name}  `{backtick_content}`"
+            )
             implementation = f"{whitespace}{app}_{action_name}  (macro {macro_content})"
 
             # Add backtick comment to pending comments
@@ -312,27 +323,27 @@ def gen_app_actions(
 
     # Preserve non-action variables (e.g. tmux_prefix)
     if extra_vars:
-        result.append("")
-        result.append(
-            ";; == App variables ============================================="
-        )
+        # result.append("")
+        # result.append(
+        #     ";; == App variables ============================================="
+        # )
         result.extend(extra_vars)
 
     # Preserve app-specific actions that don't exist in actions.kbd
     actions_set: set[str] = set(actions)
     extra_actions: list[str] = [a for a in app_actions if a not in actions_set]
     if extra_actions:
-        result.append("")
-        result.append(
-            ";; == App-specific actions (not in actions.kbd) ================="
-        )
+        # result.append("")
+        # result.append(
+        #     ";; == App-specific actions (not in actions.kbd) ================="
+        # )
         for action in extra_actions:
             app_comments, app_implementation = app_actions[action]
             result.extend(app_comments)
             result.append(app_implementation)
 
-    result.append("")
-    result.append(";; == App actions in interfaces (actions.kbd) ===============")
+    # result.append("")
+    # result.append(";; == App actions in interfaces (actions.kbd) ===============")
     for action in actions:
         official_comments = actions_comments[action]
 
@@ -355,7 +366,7 @@ def gen_app_actions(
 def process_actions(
     actions_file: Path,
     app: str,
-    app_actions: dict[str, str],
+    app_actions: dict[str, tuple[list[str], str]],
     extra_vars: list[str],
 ) -> list[str]:
     """Parse the shared actions.kbd and generate app-specific output.
@@ -378,8 +389,15 @@ def process_actions(
     comments: list[str] = []
     actions_comments: dict[str, list[str]] = {}
     actions: list[str] = []
+    # Remove top actions.kbd comments that are not replicated in actions_<app>.kbd
     while i < len(lines):
-        while COMMENT_OR_EMPTY_LINE_RE.match(lines[i]):
+        if ACTIONS_START_RE.match(lines[i]):
+            i = i + 1
+            break
+        i = i + 1
+
+    while i < len(lines):
+        while COMMENT_LINE_RE.match(lines[i]) or EMPTY_LINE_RE.match(lines[i]):
             comments.append(lines[i].strip())
             i = i + 1
 
