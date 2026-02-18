@@ -8,8 +8,7 @@
 
   ;; Workspaces layer
   toggle_workspaces_layer            (t! toggle_layer             workspaces_layer)
-  toggle_workspaces+lsft_layer       (t! toggle_mod_layer   lsft  workspaces+lsft_layer)
-  toggle_workspaces+rsft_layer       (t! toggle_mod_layer   rsft  workspaces+rsft_layer)
+  toggle_workspaces+move_layer       (t! toggle_layer             workspaces+move_layer)
 
   ;; Groups layer
   toggle_groups_layer                (t! toggle_layer             groups_layer)
@@ -20,6 +19,7 @@
   toggle_tabs_layer                  (t! toggle_layer             tabs_layer)
   toggle_tabs+lsft_layer             (t! toggle_mod_layer   lsft  tabs+lsft_layer)
   toggle_tabs+rsft_layer             (t! toggle_mod_layer   rsft  tabs+rsft_layer)
+  toggle_tabs+move_layer             (t! toggle_layer             tabs+move_layer)
 
   ;; Panes layer
   toggle_panes_layer                 (t! toggle_layer             panes_layer)
@@ -36,9 +36,7 @@
 ;; "" WINDOWS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (windows_layer)
-  ;; win button enables windows, desktops, panes and tabs access.
-  
-  ;; == WINDOWS ======================
+  ;; == KEY COMBOS ===================
   h            $action_wnd_left
   l            $action_wnd_right
   k            $action_wnd_up  
@@ -78,37 +76,23 @@
   l $action_next_desktop
   h $action_prev_desktop
 
-;;  ;; == SFT ======================
-  lsft (t! th _ $toggle_workspaces+lsft_layer)
-  rsft (t! th _ $toggle_workspaces+rsft_layer)
+  ;; == SFT ======================
+  $move (t! th _ $toggle_workspaces+move_layer)
   
   ;; "" WORKSPACES LAYER """"""""""""""""""""
 )
 
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" WORKSPACES+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
+;; "" WORKSPACES+MOVE_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (workspaces+lsft_layer)
+(deflayermap (workspaces+move_layer)
   ;; == KEY COMBOS ===================
   j $action_move_wnd_next_screen 
   k $action_move_wnd_prev_screen 
   l $action_move_wnd_next_desktop 
   h $action_move_wnd_prev_desktop 
 
-  ;; "" WORKSPACES+LSFT_LAYER """"""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" WORKSPACES+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (workspaces+rsft_layer)
-  ;; == KEY COMBOS ===================
-  j $action_move_wnd_next_screen 
-  k $action_move_wnd_prev_screen 
-  l $action_move_wnd_next_desktop 
-  h $action_move_wnd_prev_desktop 
-
-  ;; "" WORKSPACES+RSFT_LAYER """"""""""""""""""""
+  ;; "" WORKSPACES+MOVE_LAYER """"""""""""""""""""
 )
 
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -139,20 +123,17 @@
   9     $action_tab_goto_last
 
 ;;  ;; == SFT ======================
-  lsft (t! th _ $toggle_tabs+lsft_layer)
-  rsft (t! th _ $toggle_tabs+rsft_layer)
+  lsft  (t! th _ $toggle_tabs+lsft_layer)
+  rsft  (t! th _ $toggle_tabs+rsft_layer)
+  $move (t! th _ $toggle_tabs+move_layer)
 
   ;; "" TABS LAYER """"""""""""""""""""
 )
 
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" TABS+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" TABS+MOVE_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (tabs+lsft_layer)
-
-  ;; == KEY COMBOS ===================
-  t $action_tab_undo_close
-
+(deflayermap (tabs+move_layer)
   h     $action_tab_move_left
   left  $action_tab_move_left
   l     $action_tab_move_right
@@ -161,26 +142,23 @@
   down  $action_tab_move_first
   k     $action_tab_move_last
   up    $action_tab_move_last
+;; "" TABS+MOVE_LAYER """"""""""""""""
+)
 
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" TABS+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (tabs+lsft_layer)
+  ;; == KEY COMBOS ===================
+  t $action_tab_undo_close
   ;; "" TABS+LSFT_LAYER """""""""""""""
 )
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; "" TABS+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (tabs+rsft_layer)
-
   ;; == KEY COMBOS ===================
   t $action_tab_undo_close
-
-  h     $action_tab_move_left
-  l     $action_tab_move_right
-  k     $action_tab_move_first
-  j     $action_tab_move_last
-  left  $action_tab_move_left
-  right $action_tab_move_right
-  up    $action_tab_move_first
-  down  $action_tab_move_last
-
   ;; "" TABS+RSFT_LAYER """""""""""""""
 )
 
@@ -189,6 +167,14 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (groups_layer)
   ;; == KEY COMBOS ===================
+  h     $~action_tab_prev
+  left  $~action_tab_prev
+  l     $~action_tab_next
+  right $~action_tab_next
+  j     $~action_tab_first
+  down  $~action_tab_first
+  k     $~action_tab_last
+  up    $~action_tab_last
 
   ;; == SFT ======================
   lsft (t! th _ $toggle_groups+lsft_layer)
@@ -201,7 +187,6 @@
 ;; "" GROUPS+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (groups+lsft_layer)
-
   ;; == KEY COMBOS ===================
 
   ;; "" GROUPS+LSFT_LAYER """""""""""""""
@@ -210,7 +195,6 @@
 ;; "" GROUPS+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (groups+rsft_layer)
-
   ;; == KEY COMBOS ===================
 
   ;; "" GROUPS+RSFT_LAYER """""""""""""""
@@ -335,7 +319,6 @@
 ;; "" PANES+SNAP_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (panes+snap_layer)
-
 ;; "" PANES+SNAP_LAYER """""""""""""""""""""
 )
 
