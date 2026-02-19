@@ -240,7 +240,7 @@
   m     $action_pane_main
   o     $action_pane_outline
   p     $action_pane_properties
-  s     $action_pane_left_sidebar
+  s     $action_pane_sidebar
   t     $action_pane_tags
   v     $action_pane_vertical_tabs
   ;     $action_pane_graph
