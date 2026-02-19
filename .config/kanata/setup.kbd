@@ -229,7 +229,7 @@
   $!lmet            (t! th (t! 2x $action_desktop_toggle)  $toggle_!lmet_layer)   
   $!lalt            (t! th (t! 2x $action_pane_toggle)     $toggle_!lalt_layer)   
   $!lctl            @!lctl  
-  $spc|num          (t! th _                               $toggle_num_layer)
+  $spc|num          (t! fast_th spc                        $toggle_num_layer)
   $ralt|apps        (t! th (t! 2x $action_app_toggle)      $toggle_apps_layer)   
   $prnt|bookm       (t! th (t! 2x $action_session_toggle)  $toggle_bookmarks_layer)   
   $rctl|opts        (t! th (t! 2x $action_group_toggle)    $toggle_opts_layer)   
