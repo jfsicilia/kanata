@@ -5,7 +5,8 @@ actions file (e.g. actions_chrome.4.kbd).
 
 When the target file already exists, the script preserves:
   - Existing action implementations (uncommented action lines).
-  - Non-action variable definitions (e.g. tmux_prefix).
+  - Non-action variable definitions and their preceding comments
+    (e.g. tmux_prefix).
   - App-specific actions not present in actions.kbd.
 Actions that exist in actions.kbd but are missing from the app file are
 added as commented-out placeholders.
@@ -22,9 +23,11 @@ BACKTICK STRING CONVERSION:
     tmux_action_new_window  (macro S-; w spc S-f S-i S-l S-e ent)
 
   Conversion rules (US keyboard):
+    - Kanata variables ($name) → included as-is (e.g., "$tmux_prefix")
     - Uppercase letters → S-<lowercase> (e.g., "A" → "S-a")
     - Shifted symbols → S-<base> (e.g., ":" → "S-;", "!" → "S-1")
-    - Spaces → spc
+    - Digits → Digit# (e.g., "5" → "Digit5")
+    - Spaces → spc (except around variables, where they are separators)
     - Special keywords in {} → keyword (e.g., "{ent}" → "ent")
     - Lowercase letters and non-shifted symbols → as-is
 
@@ -59,10 +62,10 @@ APP_ACTION_RE = re.compile(r"^\s*([^\s]+)_(action_[^\s]+).*")
 
 # Matches action with backtick string, e.g.:
 #   nvim_action_foo  `:w FILE{ent}`
-# group(1) = whitespace, group(2) = app, group(3) = action name, group(4) = backtick content
-BACKTICK_ACTION_RE = re.compile(r"^(\s*)([^\s]+)_(action_[^\s]+)\s+`([^`]+)`\s*$")
+# group(1) = whitespace, group(2) = text, group(3) = backtick expression
+BACKTICK_EXPRESSION_RE = re.compile(r"^(\s*)([^\s]+)(\s+)`([^`]+)`\s*$")
 
-# Matches blank-lines lines.
+# Matches blank lines.
 EMPTY_LINE_RE = re.compile(r"^\s*$")
 # Matches comment-only lines.
 COMMENT_LINE_RE = re.compile(r"^\s*;;")
@@ -78,6 +81,9 @@ CLOSE_PAREN_RE = re.compile(r"^\s*\)")
 VAR_DEF_RE = re.compile(r"^\s*([^\s;(][^\s]*)\s")
 
 REVERSE_ACTION_FLAG = "~"
+
+TO_SET_PREFIX = "___TO_SET___"
+TO_SET_PREFIX_RE = re.compile(r".*___TO_SET___.*")
 
 # US Keyboard shift mappings for symbols
 SHIFT_MAP = {
@@ -105,6 +111,21 @@ SHIFT_MAP = {
 }
 
 
+def _char_to_keycode(char: str) -> str:
+    """Convert a single character to its kanata key code."""
+    if char == " ":
+        return "spc"
+    if char.isdigit():
+        return f"Digit{char}"
+    if char.isupper():
+        return f"S-{char.lower()}"
+    if char in SHIFT_MAP:
+        return SHIFT_MAP[char]
+    if char == "`":
+        return "grv"
+    return char
+
+
 def convert_backtick_to_macro(backtick_content: str) -> str:
     """Convert backtick string to kanata macro syntax.
 
@@ -112,8 +133,11 @@ def convert_backtick_to_macro(backtick_content: str) -> str:
     macro format with proper key codes.
 
     Rules:
+      - Kanata variables ($name) → included as-is (e.g., "$my_var")
+      - Spaces adjacent to variables → separators (not keystrokes)
       - Uppercase letters → S-<lowercase> (e.g., "A" → "S-a")
       - Shifted symbols → S-<base_key> (e.g., ":" → "S-;")
+      - Digits → Digit# (e.g., "5" → "Digit5")
       - Spaces → spc
       - Special keywords in curly braces → keyword (e.g., "{ent}" → "ent")
       - Lowercase letters and non-shifted symbols → as-is
@@ -127,6 +151,10 @@ def convert_backtick_to_macro(backtick_content: str) -> str:
     Examples:
         >>> convert_backtick_to_macro(":w FILE{ent}")
         'S-; w spc S-f S-i S-l S-e ent'
+        >>> convert_backtick_to_macro("$my_var ssVG")
+        '$my_var s s S-v S-g'
+        >>> convert_backtick_to_macro("$tmux_prefix c")
+        '$tmux_prefix c'
         >>> convert_backtick_to_macro("hello world")
         'h e l l o spc w o r l d'
     """
@@ -134,6 +162,31 @@ def convert_backtick_to_macro(backtick_content: str) -> str:
     i = 0
     while i < len(backtick_content):
         char = backtick_content[i]
+
+        # Handle kanata variables ($name) — included as-is in macro.
+        # Spaces around variables are separators, not keystrokes.
+        if char == "$":
+            j = i + 1
+            while j < len(backtick_content) and backtick_content[j] not in " {":
+                j += 1
+            result.append(backtick_content[i:j])
+            # Skip trailing spaces (separators)
+            while j < len(backtick_content) and backtick_content[j] == " ":
+                j += 1
+            i = j
+            continue
+
+        # Handle spaces: spc unless they precede a variable (separator)
+        if char == " ":
+            j = i
+            while j < len(backtick_content) and backtick_content[j] == " ":
+                j += 1
+            if j < len(backtick_content) and backtick_content[j] == "$":
+                i = j
+                continue
+            result.append("spc")
+            i += 1
+            continue
 
         # Handle special keywords in curly braces like {ent}, {tab}, {bspc}
         if char == "{":
@@ -144,26 +197,7 @@ def convert_backtick_to_macro(backtick_content: str) -> str:
                 i = j + 1
                 continue
 
-        # Handle space
-        if char == " ":
-            result.append("spc")
-        # Handle uppercase letters
-        elif char.isupper():
-            result.append(f"S-{char.lower()}")
-        # Handle shifted symbols
-        elif char in SHIFT_MAP:
-            result.append(SHIFT_MAP[char])
-        # Handle lowercase letters and non-shifted symbols
-        elif char.islower() or char in "-=[];',.`/\\":
-            # Map backtick to grv
-            if char == "`":
-                result.append("grv")
-            else:
-                result.append(char)
-        else:
-            # For any other character, keep as-is (fallback)
-            result.append(char)
-
+        result.append(_char_to_keycode(char))
         i += 1
 
     return " ".join(result)
@@ -189,7 +223,7 @@ def get_app_from_filename(path: Path) -> str:
 
 def read_existing_app_file(
     path: Path,
-) -> tuple[dict[str, tuple[list[str], str]], list[str]]:
+) -> tuple[dict[str, tuple[list[str], str]], list[tuple[list[str], str]]]:
     """Read an existing app actions file and extract its contents.
 
     Separates the file into action definitions (with their preceding comments)
@@ -205,11 +239,12 @@ def read_existing_app_file(
         A tuple of:
           - app_actions: dict mapping action name (e.g. "action_tab_next")
             to a tuple of (comments_list, implementation_line).
-          - extra_vars: list of non-action variable definition lines
-            (e.g. "  tmux_prefix  A-b").
+          - extra_vars: list of tuples (comments_list, var_line) for
+            non-action variable definitions (e.g. tmux_prefix  A-b).
+            Empty lines reset pending comments (they are not accumulated).
     """
     actions: dict[str, tuple[list[str], str]] = {}
-    extra_vars: list[str] = []
+    extra_vars: list[tuple[list[str], str]] = []
     if not path.exists():
         return actions, extra_vars
 
@@ -217,36 +252,36 @@ def read_existing_app_file(
     pending_comments: list[str] = []
 
     for line in lines:
-        # Collect comments and blank lines
+        # Discard empty lines.
         if EMPTY_LINE_RE.match(line):
             pending_comments = []
             continue
+        # Save comments for next action/variable. If comment is a TO_SET comment
+        # discard it.
         if COMMENT_LINE_RE.match(line):
-            pending_comments.append(line.strip())
+            if TO_SET_PREFIX_RE.match(line):
+                pending_comments = []
+            else:
+                pending_comments.append(line.strip())
             continue
 
-        # Check for backtick action (must come before APP_ACTION_RE since it's more specific)
-        backtick_match = BACKTICK_ACTION_RE.match(line)
+        # Check for backtick expression.
+        backtick_match = BACKTICK_EXPRESSION_RE.match(line)
         if backtick_match:
-            whitespace = backtick_match.group(1)
-            app = backtick_match.group(2)
-            action_name = backtick_match.group(3)
+            whitespace1 = backtick_match.group(1)
+            text = backtick_match.group(2)
+            whitespace2 = backtick_match.group(3)
             backtick_content = backtick_match.group(4)
-
-            # Convert backtick string to macro
-            macro_content = convert_backtick_to_macro(backtick_content)
 
             # Store backtick comment + implementation
             backtick_comment = (
-                f"{whitespace};; {app}_{action_name}  `{backtick_content}`"
+                f"{whitespace1};; {text}{whitespace2}`{backtick_content}`"
             )
-            implementation = f"{whitespace}{app}_{action_name}  (macro {macro_content})"
+            pending_comments.append(backtick_comment)
 
-            # Add backtick comment to pending comments
-            comments_with_backtick = pending_comments + [backtick_comment]
-            actions[action_name] = (comments_with_backtick, implementation)
-            pending_comments = []
-            continue
+            # Convert backtick string to macro
+            macro_content = convert_backtick_to_macro(backtick_content)
+            line = f"{whitespace1}{text}{whitespace2}(macro {macro_content})"
 
         # Check for regular app action
         m = APP_ACTION_RE.match(line)
@@ -261,7 +296,7 @@ def read_existing_app_file(
             and not DEFVAR_RE.match(line)
             and not CLOSE_PAREN_RE.match(line)
         ):
-            extra_vars.append(line)
+            extra_vars.append((pending_comments, line))
             pending_comments = []
 
     return actions, extra_vars
@@ -280,6 +315,10 @@ def merge_comments(official_comments: list[str], app_comments: list[str]) -> lis
     # Find comments that are in app file but NOT in official comments
     official_set = set(official_comments)
     user_comments = [c for c in app_comments if c not in official_set]
+    # print("=============== MERGE ===============")
+    # print(official_set)
+    # print(user_comments)
+    # print("=====================================")
 
     # Return: official comments + user-added comments
     return official_comments + user_comments
@@ -290,16 +329,18 @@ def gen_app_actions(
     actions: list[str],
     actions_comments: dict[str, list[str]],
     app_actions: dict[str, tuple[list[str], str]],
-    extra_vars: list[str],
+    extra_vars: list[tuple[list[str], str]],
 ) -> list[str]:
     """Generate the full content of an app actions file.
 
     Produces a (defvar ...) block with three sections:
-      1. App variables — non-action variables preserved from the existing file.
+      1. App variables — non-action variables (with their comments)
+         preserved from the existing file.
       2. App-specific actions — actions defined in the app file but absent
-         from actions.kbd.
+         from actions.kbd (with their comments).
       3. Interface actions — all actions from actions.kbd, with existing
-         implementations kept and missing ones commented out.
+         implementations kept and missing ones as commented-out placeholders
+         (prefixed with ___TO_SET___).
 
     Comments are intelligently merged:
       - Official comments from actions.kbd are always included
@@ -313,7 +354,8 @@ def gen_app_actions(
             lines from actions.kbd.
         app_actions: Existing action implementations from the app file,
             mapping action name to tuple of (comments_list, implementation_line).
-        extra_vars: Non-action variable lines to preserve.
+        extra_vars: List of tuples (comments_list, var_line) for non-action
+            variables to preserve.
 
     Returns:
         List of output lines forming the complete file content.
@@ -327,7 +369,9 @@ def gen_app_actions(
         # result.append(
         #     ";; == App variables ============================================="
         # )
-        result.extend(extra_vars)
+        for var_comments, var in extra_vars:
+            result.extend(var_comments)
+            result.append(var)
 
     # Preserve app-specific actions that don't exist in actions.kbd
     actions_set: set[str] = set(actions)
@@ -357,7 +401,7 @@ def gen_app_actions(
         else:
             # Not implemented - show official comments and placeholder
             result.extend(official_comments)
-            result.append(f";; {app}_{action:<30}")
+            result.append(f";; {TO_SET_PREFIX} {app}_{action:<30}")
 
     result.append(")")
     return result
@@ -367,19 +411,20 @@ def process_actions(
     actions_file: Path,
     app: str,
     app_actions: dict[str, tuple[list[str], str]],
-    extra_vars: list[str],
+    extra_vars: list[tuple[list[str], str]],
 ) -> list[str]:
     """Parse the shared actions.kbd and generate app-specific output.
 
-    Reads actions.kbd to collect all @autogen@-tagged action names and
-    their preceding comments, then delegates to gen_app_actions to
-    produce the output.
+    Reads actions.kbd, skips everything before the @start@ marker, then
+    collects all @autogen@-tagged action names and their preceding
+    comments. Delegates to gen_app_actions to produce the output.
 
     Args:
         actions_file: Path to the shared actions.kbd file.
         app: App name (e.g. "tmux").
         app_actions: Existing action implementations from the app file.
-        extra_vars: Non-action variable lines to preserve.
+        extra_vars: List of tuples (comments_list, var_line) for non-action
+            variables to preserve.
 
     Returns:
         List of output lines forming the complete app file content.
