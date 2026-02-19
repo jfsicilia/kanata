@@ -1,107 +1,106 @@
 (defvar
 
-;; == App actions in interfaces (actions.kbd) ===============
-
 ;; SFT actions ==========================================================
-;; chrome_action_sft+ent                
+;; ___TO_SET___ chrome_action_sft+ent                
+
 ;; LCTL actions ==========================================================
-;; chrome_action_lctl+a                 
-;; chrome_action_lctl+b                 
-;; chrome_action_lctl+c                 
-;; chrome_action_lctl+d                 
-;; chrome_action_lctl+e                 
-;; chrome_action_lctl+f                 
-;; chrome_action_lctl+g                 
-;; chrome_action_lctl+h                 
-;; chrome_action_lctl+i                 
-;; chrome_action_lctl+j                 
-;; chrome_action_lctl+k                 
-;; chrome_action_lctl+l                 
-;; chrome_action_lctl+m                 
-;; chrome_action_lctl+n                 
-;; chrome_action_lctl+o                 
-;; chrome_action_lctl+p                 
-;; chrome_action_lctl+q                 
-;; chrome_action_lctl+r                 
-;; chrome_action_lctl+s                 
-;; chrome_action_lctl+t                 
-;; chrome_action_lctl+lsft+t            
-;; chrome_action_lctl+u                 
-;; chrome_action_lctl+v                 
-;; chrome_action_lctl+w                 
-;; chrome_action_lctl+x                 
-;; chrome_action_lctl+y                 
-;; chrome_action_lctl+z                 
-;; chrome_action_lctl+,                 
-;; chrome_action_lctl+.                 
-;; chrome_action_lctl+/                 
-;; chrome_action_lctl+;                 
-;; chrome_action_lctl+'                 
-;; chrome_action_lctl+[                 
-;; chrome_action_lctl+]                 
-;; chrome_action_lctl+\                 
-;; chrome_action_lctl+-                 
-;; chrome_action_lctl+=                 
-;; chrome_action_lctl+1                 
-;; chrome_action_lctl+2                 
-;; chrome_action_lctl+3                 
-;; chrome_action_lctl+4                 
-;; chrome_action_lctl+5                 
-;; chrome_action_lctl+6                 
-;; chrome_action_lctl+7                 
-;; chrome_action_lctl+8                 
-;; chrome_action_lctl+9                 
-;; chrome_action_lctl+0                 
+;; ___TO_SET___ chrome_action_lctl+a                 
+;; ___TO_SET___ chrome_action_lctl+b                 
+;; ___TO_SET___ chrome_action_lctl+c                 
+;; ___TO_SET___ chrome_action_lctl+d                 
+;; ___TO_SET___ chrome_action_lctl+e                 
+;; ___TO_SET___ chrome_action_lctl+f                 
+;; ___TO_SET___ chrome_action_lctl+g                 
+;; ___TO_SET___ chrome_action_lctl+h                 
+;; ___TO_SET___ chrome_action_lctl+i                 
+;; ___TO_SET___ chrome_action_lctl+j                 
+;; ___TO_SET___ chrome_action_lctl+k                 
+;; ___TO_SET___ chrome_action_lctl+l                 
+;; ___TO_SET___ chrome_action_lctl+m                 
+;; ___TO_SET___ chrome_action_lctl+n                 
+;; ___TO_SET___ chrome_action_lctl+o                 
+;; ___TO_SET___ chrome_action_lctl+p                 
+;; ___TO_SET___ chrome_action_lctl+q                 
+;; ___TO_SET___ chrome_action_lctl+r                 
+;; ___TO_SET___ chrome_action_lctl+s                 
+;; ___TO_SET___ chrome_action_lctl+t                 
+;; ___TO_SET___ chrome_action_lctl+lsft+t            
+;; ___TO_SET___ chrome_action_lctl+u                 
+;; ___TO_SET___ chrome_action_lctl+v                 
+;; ___TO_SET___ chrome_action_lctl+w                 
+;; ___TO_SET___ chrome_action_lctl+x                 
+;; ___TO_SET___ chrome_action_lctl+y                 
+;; ___TO_SET___ chrome_action_lctl+z                 
+;; ___TO_SET___ chrome_action_lctl+,                 
+;; ___TO_SET___ chrome_action_lctl+.                 
+;; ___TO_SET___ chrome_action_lctl+/                 
+;; ___TO_SET___ chrome_action_lctl+;                 
+;; ___TO_SET___ chrome_action_lctl+'                 
+;; ___TO_SET___ chrome_action_lctl+[                 
+;; ___TO_SET___ chrome_action_lctl+]                 
+;; ___TO_SET___ chrome_action_lctl+\                 
+;; ___TO_SET___ chrome_action_lctl+-                 
+;; ___TO_SET___ chrome_action_lctl+=                 
+;; ___TO_SET___ chrome_action_lctl+1                 
+;; ___TO_SET___ chrome_action_lctl+2                 
+;; ___TO_SET___ chrome_action_lctl+3                 
+;; ___TO_SET___ chrome_action_lctl+4                 
+;; ___TO_SET___ chrome_action_lctl+5                 
+;; ___TO_SET___ chrome_action_lctl+6                 
+;; ___TO_SET___ chrome_action_lctl+7                 
+;; ___TO_SET___ chrome_action_lctl+8                 
+;; ___TO_SET___ chrome_action_lctl+9                 
+;; ___TO_SET___ chrome_action_lctl+0                 
 
 ;; !LCTL actions ==========================================================
-;; chrome_action_!lctl+a                
-;; chrome_action_!lctl+b                
-;; chrome_action_!lctl+c                
-;; chrome_action_!lctl+d                
-;; chrome_action_!lctl+e                
-;; chrome_action_!lctl+f                
-;; chrome_action_!lctl+g                
-;; chrome_action_!lctl+h                
-;; chrome_action_!lctl+i                
-;; chrome_action_!lctl+j                
-;; chrome_action_!lctl+k                
-;; chrome_action_!lctl+l                
-;; chrome_action_!lctl+m                
-;; chrome_action_!lctl+n                
-;; chrome_action_!lctl+o                
-;; chrome_action_!lctl+p                
-;; chrome_action_!lctl+lsft+p           
-;; chrome_action_!lctl+q                
-;; chrome_action_!lctl+r                
-;; chrome_action_!lctl+s                
-;; chrome_action_!lctl+t                
-;; chrome_action_!lctl+lsft+t           
-;; chrome_action_!lctl+u                
-;; chrome_action_!lctl+v                
-;; chrome_action_!lctl+w                
-;; chrome_action_!lctl+x                
-;; chrome_action_!lctl+y                
-;; chrome_action_!lctl+z                
-;; chrome_action_!lctl+,                
-;; chrome_action_!lctl+.                
-;; chrome_action_!lctl+/                
-;; chrome_action_!lctl+;                
-;; chrome_action_!lctl+'                
-;; chrome_action_!lctl+[                
-;; chrome_action_!lctl+]                
-;; chrome_action_!lctl+\                
-;; chrome_action_!lctl+-                
-;; chrome_action_!lctl+=                
-;; chrome_action_!lctl+1                
-;; chrome_action_!lctl+2                
-;; chrome_action_!lctl+3                
-;; chrome_action_!lctl+4                
-;; chrome_action_!lctl+5                
-;; chrome_action_!lctl+6                
-;; chrome_action_!lctl+7                
-;; chrome_action_!lctl+8                
-;; chrome_action_!lctl+9                
-;; chrome_action_!lctl+0                
+;; ___TO_SET___ chrome_action_!lctl+a                
+;; ___TO_SET___ chrome_action_!lctl+b                
+;; ___TO_SET___ chrome_action_!lctl+c                
+;; ___TO_SET___ chrome_action_!lctl+d                
+;; ___TO_SET___ chrome_action_!lctl+e                
+;; ___TO_SET___ chrome_action_!lctl+f                
+;; ___TO_SET___ chrome_action_!lctl+g                
+;; ___TO_SET___ chrome_action_!lctl+h                
+;; ___TO_SET___ chrome_action_!lctl+i                
+;; ___TO_SET___ chrome_action_!lctl+j                
+;; ___TO_SET___ chrome_action_!lctl+k                
+;; ___TO_SET___ chrome_action_!lctl+l                
+;; ___TO_SET___ chrome_action_!lctl+m                
+;; ___TO_SET___ chrome_action_!lctl+n                
+;; ___TO_SET___ chrome_action_!lctl+o                
+;; ___TO_SET___ chrome_action_!lctl+p                
+;; ___TO_SET___ chrome_action_!lctl+lsft+p           
+;; ___TO_SET___ chrome_action_!lctl+q                
+;; ___TO_SET___ chrome_action_!lctl+r                
+;; ___TO_SET___ chrome_action_!lctl+s                
+;; ___TO_SET___ chrome_action_!lctl+t                
+;; ___TO_SET___ chrome_action_!lctl+lsft+t           
+;; ___TO_SET___ chrome_action_!lctl+u                
+;; ___TO_SET___ chrome_action_!lctl+v                
+;; ___TO_SET___ chrome_action_!lctl+w                
+;; ___TO_SET___ chrome_action_!lctl+x                
+;; ___TO_SET___ chrome_action_!lctl+y                
+;; ___TO_SET___ chrome_action_!lctl+z                
+;; ___TO_SET___ chrome_action_!lctl+,                
+;; ___TO_SET___ chrome_action_!lctl+.                
+;; ___TO_SET___ chrome_action_!lctl+/                
+;; ___TO_SET___ chrome_action_!lctl+;                
+;; ___TO_SET___ chrome_action_!lctl+'                
+;; ___TO_SET___ chrome_action_!lctl+[                
+;; ___TO_SET___ chrome_action_!lctl+]                
+;; ___TO_SET___ chrome_action_!lctl+\                
+;; ___TO_SET___ chrome_action_!lctl+-                
+;; ___TO_SET___ chrome_action_!lctl+=                
+;; ___TO_SET___ chrome_action_!lctl+1                
+;; ___TO_SET___ chrome_action_!lctl+2                
+;; ___TO_SET___ chrome_action_!lctl+3                
+;; ___TO_SET___ chrome_action_!lctl+4                
+;; ___TO_SET___ chrome_action_!lctl+5                
+;; ___TO_SET___ chrome_action_!lctl+6                
+;; ___TO_SET___ chrome_action_!lctl+7                
+;; ___TO_SET___ chrome_action_!lctl+8                
+;; ___TO_SET___ chrome_action_!lctl+9                
+;; ___TO_SET___ chrome_action_!lctl+0                
 
 ;; == Seek & Select combos ===============================================
 ;; !lctl+spc
@@ -111,226 +110,246 @@ chrome_action_select_opened_files            XX
 ;; !lctl+rsft+spc
 chrome_action_select_folders                 XX
 ;; !lalt+spc
-;; chrome_action_select_command         
+;; ___TO_SET___ chrome_action_select_command         
 ;; !lmet+spc
-;; chrome_action_select_symbol          
+;; ___TO_SET___ chrome_action_select_symbol          
 ;; !lctl+!lalt+spc
-;; chrome_action_omnisearch_files       
+;; ___TO_SET___ chrome_action_omnisearch_files       
 ;; !lctl+!lalt+lsft+spc
-;; chrome_action_omnisearch_file        
+;; ___TO_SET___ chrome_action_omnisearch_file        
 
 ;; == Favs combos ========================================================
 ;; bookm + spc
-;; chrome_action_select_fav             
+;; ___TO_SET___ chrome_action_select_fav             
 
 ;; == Settings combos ====================================================
 ;; omni + ,
-;; chrome_action_settings               
+;; ___TO_SET___ chrome_action_settings               
 
 ;; == Tabs combos ========================================================
-;; gui + tabs + l | gui + tabs + right | lsft + rsft | 2x rsft | !met + tab
-;; !gui + tabs + l | !gui + tabs + right
+;; tabs + l | tabs + right | lsft + rsft | 2x rsft | !met + tab
+;; !tabs + l | !tabs + right
 chrome_action_tab_next                       C-tab
-;; gui + tabs + h | gui + tabs + left | rsft + lsft | 2x lsft | !met + sft + tab
-;; !gui + tabs + h | !gui + tabs + left
+;; tabs + h | tabs + left | rsft + lsft | 2x lsft | !met + sft + tab
+;; !tabs + h | !tabs + left
 chrome_action_tab_prev                       C-S-tab
-;; gui + tabs (tap) | 2x !lctl/tabs
-;; !gui + tabs (tap)
+;; tabs + j | tabs + down
+;; !tabs + j | !tabs + down
+;; ___TO_SET___ chrome_action_tab_first              
+;; tabs + k | tabs + up
+;; !tabs + k | !tabs + up
+;; ___TO_SET___ chrome_action_tab_last               
+
+;; tabs (tap) | 2x !lctl/tabs
+;; !tabs (tap)
+;; tabs + j | tabs + down
+;; !tabs + j | !tabs + down
 chrome_action_tab_toggle                     A-w
-;; gui + tabs + t | omni + t
-;; !gui + tabs + t
+;; tabs + t | omni + t
+;; !tabs + t
+;; tabs + k | tabs + up
+;; !tabs + k | !tabs + up
 chrome_action_tab_new                        C-t
-;; gui + tabs + w | omni + w
-;; !gui + tabs + w
+;; tabs + w | omni + w
+;; !tabs + w
+;; tabs (tap) | 2x !lctl/tabs
+;; !tabs (tap)
+;; ___TO_SET___ chrome_action_tab_toggle
+;; tabs + t | omni + t
+;; !tabs + t
+;; ___TO_SET___ chrome_action_tab_new
 chrome_action_tab_close                      C-w
-;; gui + tabs + lsft + t | omni + lsft + t
-;; !gui + tabs + lsft + t
+;; tabs + lsft + t | omni + lsft + t
+;; !tabs + lsft + t
 chrome_action_tab_undo_close                 C-S-t
 
-;; gui + tabs + 1
-;; !gui + tabs + 1
+;; tabs + 1
+;; !tabs + 1
 chrome_action_tab_goto_1                     C-1
-;; gui + tabs + 2
-;; !gui + tabs + 2
+;; tabs + 2
+;; !tabs + 2
 chrome_action_tab_goto_2                     C-2
-;; gui + tabs + 3
-;; !gui + tabs + 3
+;; tabs + 3
+;; !tabs + 3
 chrome_action_tab_goto_3                     C-3
-;; gui + tabs + 4
-;; !gui + tabs + 4
+;; tabs + 4
+;; !tabs + 4
 chrome_action_tab_goto_4                     C-4
-;; gui + tabs + 5
-;; !gui + tabs + 5
+;; tabs + 5
+;; !tabs + 5
 chrome_action_tab_goto_5                     C-5
-;; gui + tabs + 6
-;; !gui + tabs + 6
+;; tabs + 6
+;; !tabs + 6
 chrome_action_tab_goto_6                     C-6
-;; gui + tabs + 7
-;; !gui + tabs + 7
+;; tabs + 7
+;; !tabs + 7
 chrome_action_tab_goto_7                     C-7
-;; gui + tabs + 8
-;; !gui + tabs + 8
+;; tabs + 8
+;; !tabs + 8
 chrome_action_tab_goto_8                     C-8
-;; gui + tabs + 9
-;; !gui + tabs + 9
+;; tabs + 9
+;; !tabs + 9
 chrome_action_tab_goto_last                  C-9
 
 ;; == Tab move combos =====================================================
-;; gui + tabs + lsft + h | gui + tabs + lsft + left
-;; !gui + tabs + lsft + h | !gui + tabs + lsft + left
-;; chrome_action_tab_move_left          
-;; gui + tabs + lsft + l | gui + tabs + lsft + right
-;; !gui + tabs + lsft + l | !gui + tabs + lsft + right
-;; chrome_action_tab_move_right         
-;; gui + tabs + lsft + k | gui + tabs + lsft + up
-;; !gui + tabs + lsft + k | !gui + tabs + lsft + up
-;; chrome_action_tab_move_first         
-;; gui + tabs + lsft + j | gui + tabs + lsft + down
-;; !gui + tabs + lsft + j | !gui + tabs + lsft + down
-;; chrome_action_tab_move_last          
+;; tabs + move + h | tabs + move + left
+;; !tabs + move + h | !tabs + move + left
+;; ___TO_SET___ chrome_action_tab_move_left          
+;; tabs + move + l | tabs + move + right
+;; !tabs + move + l | !tabs + move + right
+;; ___TO_SET___ chrome_action_tab_move_right         
+;; tabs + move + k | tabs + move + up
+;; !tabs + move + k | !tabs + move + up
+;; ___TO_SET___ chrome_action_tab_move_first         
+;; tabs + move + j | tabs + move + down
+;; !tabs + move + j | !tabs + move + down
+;; ___TO_SET___ chrome_action_tab_move_last          
 
 ;; == Panes combos =======================================================
-;; gui + pane + h | gui + pane + left
-;; !gui + tabs + h | !gui + tabs + left
-;; chrome_action_pane_left              
-;; gui + pane + l | gui + pane + right
-;; !gui + tabs + l | !gui + tabs + right
-;; chrome_action_pane_right             
-;; gui + pane + k | gui + pane + up
-;; !gui + tabs + k | !gui + tabs + up
-;; chrome_action_pane_above             
-;; gui + pane + j | gui + pane + down
-;; !gui + tabs + j | !gui + tabs + down
-;; chrome_action_pane_below             
-;; gui + pane (tap) | 2x !lalt/pane
-;; !gui + pane (tap)
-;; chrome_action_pane_toggle            
-;; gui + pane + spc
-;; !gui + pane + spc
-;; chrome_action_pane_max               
-;; gui + pane + -
-;; !gui + pane + -
-;; chrome_action_pane_h_split           
-;; gui + pane + \
-;; !gui + pane + \
-;; chrome_action_pane_v_split           
-;; gui + pane + w
-;; !gui + pane + w
-;; chrome_action_pane_close             
+;; panes + h | panes + left
+;; !panes + h | !panes + left
+;; ___TO_SET___ chrome_action_pane_left              
+;; panes + l | panes + right
+;; !panes + l | !panes + right
+;; ___TO_SET___ chrome_action_pane_right             
+;; panes + k | panes + up
+;; !panes + k | !panes + up
+;; ___TO_SET___ chrome_action_pane_above             
+;; panes + j | panes + down
+;; !panes + j | !panes + down
+;; ___TO_SET___ chrome_action_pane_below             
+;; panes (tap) | 2x !lalt/pane
+;; !panes (tap)
+;; ___TO_SET___ chrome_action_pane_toggle            
+;; panes + ent
+;; !panes + ent
+;; ___TO_SET___ chrome_action_pane_max               
+;; !panes + float
+;; ___TO_SET___ chrome_action_pane_float             
+;; panes + -
+;; !panes + -
+;; ___TO_SET___ chrome_action_pane_h_split           
+;; panes + \
+;; !panes + \
+;; ___TO_SET___ chrome_action_pane_v_split           
+;; panes + w
+;; !panes + w
+;; ___TO_SET___ chrome_action_pane_close             
+
 ;; == Pane move combos ====================================================
-;; gui + pane + lsft + h | gui + pane + lsft + left
-;; !gui + pane + lsft + h | !gui + pane + lsft + left
-;; chrome_action_pane_move_left         
-;; gui + pane + lsft + l | gui + pane + lsft + right
-;; !gui + pane + lsft + l | !gui + pane + lsft + right
-;; chrome_action_pane_move_right        
-;; gui + pane + lsft + k | gui + pane + lsft + up
-;; !gui + pane + lsft + k | !gui + pane + lsft + up
-;; chrome_action_pane_move_above        
-;; gui + pane + lsft + j | gui + pane + lsft + down
-;; !gui + pane + lsft + j | !gui + pane + lsft + down
-;; chrome_action_pane_move_below        
+;; panes + move + h | panes + move + left
+;; !panes + move + h | !panes + move + left
+;; ___TO_SET___ chrome_action_pane_move_left         
+;; panes + move + l | panes + move + right
+;; !panes + move + l | !panes + move + right
+;; ___TO_SET___ chrome_action_pane_move_right        
+;; panes + move + k | panes + move + up
+;; !panes + move + k | !panes + move + up
+;; ___TO_SET___ chrome_action_pane_move_above        
+;; panes + move + j | panes + move + down
+;; !panes + move + j | !panes + move + down
+;; ___TO_SET___ chrome_action_pane_move_below        
 
 ;; == Pane resize combos ==================================================
-;; gui + pane + ralt + h | gui + pane + ralt + left
-;; !gui + pane + ralt + h | !gui + pane + ralt + left
-;; chrome_action_pane_resize_left       
-;; gui + pane + ralt + l | gui + pane + ralt + right
-;; !gui + pane + ralt + l | !gui + pane + ralt + right
-;; chrome_action_pane_resize_right      
-;; gui + pane + ralt + k | gui + pane + ralt + up
-;; !gui + pane + ralt + k | !gui + pane + ralt + up
-;; chrome_action_pane_resize_above      
-;; gui + pane + ralt + j | gui + pane + ralt + down
-;; !gui + pane + ralt + j | !gui + pane + ralt + down
-;; chrome_action_pane_resize_below      
+;; panes + resize + h | panes + resize + left
+;; !panes + resize + h | !panes + resize + left
+;; ___TO_SET___ chrome_action_pane_resize_left       
+;; panes + resize + l | panes + resize + right
+;; !panes + resize + l | !panes + resize + right
+;; ___TO_SET___ chrome_action_pane_resize_right      
+;; panes + resize + k | panes + resize + up
+;; !panes + resize + k | !panes + resize + up
+;; ___TO_SET___ chrome_action_pane_resize_above      
+;; panes + resize + j | panes + resize + down
+;; !panes + resize + j | !panes + resize + down
+;; ___TO_SET___ chrome_action_pane_resize_below      
 
 ;; == Pane swap combos ====================================================
-;; gui + pane + rctl + h | gui + pane + rctl + left
-;; !gui + pane + rctl + h | !gui + pane + rctl + left
-;; chrome_action_pane_swap_left         
-;; gui + pane + rctl + l | gui + pane + rctl + right
-;; !gui + pane + rctl + l | !gui + pane + rctl + right
-;; chrome_action_pane_swap_right        
-;; gui + pane + rctl + k | gui + pane + rctl + up
-;; !gui + pane + rctl + k | !gui + pane + rctl + up
-;; chrome_action_pane_swap_above        
-;; gui + pane + rctl + j | gui + pane + rctl + down
-;; !gui + pane + rctl + j | !gui + pane + rctl + down
-;; chrome_action_pane_swap_below        
+;; panes + swap + h | panes + swap + left
+;; !panes + swap + h | !panes + swap + left
+;; ___TO_SET___ chrome_action_pane_swap_left         
+;; panes + swap + l | panes + swap + right
+;; !panes + swap + l | !panes + swap + right
+;; ___TO_SET___ chrome_action_pane_swap_right        
+;; panes + swap + k | panes + swap + up
+;; !panes + swap + k | !panes + swap + up
+;; ___TO_SET___ chrome_action_pane_swap_above        
+;; panes + swap + j | panes + swap + down
+;; !panes + swap + j | !panes + swap + down
+;; ___TO_SET___ chrome_action_pane_swap_below        
 
 ;; == Pane go by number combos ============================================
-;; gui + pane + 1
-;; !gui + pane + 1
-;; chrome_action_pane_go_1              
-;; gui + pane + 2
-;; !gui + pane + 2
-;; chrome_action_pane_go_2              
-;; gui + pane + 3
-;; !gui + pane + 3
-;; chrome_action_pane_go_3              
-;; gui + pane + 4
-;; !gui + pane + 4
-;; chrome_action_pane_go_4              
-;; gui + pane + 5
-;; !gui + pane + 5
-;; chrome_action_pane_go_5              
-;; gui + pane + 6
-;; !gui + pane + 6
-;; chrome_action_pane_go_6              
-;; gui + pane + 7
-;; !gui + pane + 7
-;; chrome_action_pane_go_7              
-;; gui + pane + 8
-;; !gui + pane + 8
-;; chrome_action_pane_go_8              
-;; gui + pane + 9
-;; !gui + pane + 9
-;; chrome_action_pane_go_last           
+;; panes + 1
+;; !panes + 1
+;; ___TO_SET___ chrome_action_pane_go_1              
+;; panes + 2
+;; !panes + 2
+;; ___TO_SET___ chrome_action_pane_go_2              
+;; panes + 3
+;; !panes + 3
+;; ___TO_SET___ chrome_action_pane_go_3              
+;; panes + 4
+;; !panes + 4
+;; ___TO_SET___ chrome_action_pane_go_4              
+;; panes + 5
+;; !panes + 5
+;; ___TO_SET___ chrome_action_pane_go_5              
+;; panes + 6
+;; !panes + 6
+;; ___TO_SET___ chrome_action_pane_go_6              
+;; panes + 7
+;; !panes + 7
+;; ___TO_SET___ chrome_action_pane_go_7              
+;; panes + 8
+;; !panes + 8
+;; ___TO_SET___ chrome_action_pane_go_8              
+;; panes + 9
+;; !panes + 9
+;; ___TO_SET___ chrome_action_pane_go_last           
 
 ;; == Pane toggle combos (app-specific) ===================================
-;; gui + pane + b
-;; chrome_action_pane_bookmarks         
-;; gui + pane + c
-;; chrome_action_pane_calendar          
-;; gui + pane + d
-;; chrome_action_pane_day               
-;; gui + pane + lsft + d
-;; chrome_action_pane_<day              
-;; gui + pane + e
-;; chrome_action_pane_explorer          
-;; gui + pane + lsft + e
-;; chrome_action_pane_<explorer         
-;; gui + pane + f
-;; chrome_action_pane_find              
-;; gui + pane + g
-;; chrome_action_pane_go                
-;; gui + pane + m
-;; chrome_action_pane_main              
-;; gui + pane + o
-;; chrome_action_pane_outline           
-;; gui + pane + p
-;; chrome_action_pane_properties        
-;; gui + pane + lsft + p
-;; chrome_action_pane_<properties       
-;; gui + pane + r
-;; chrome_action_pane_recent            
-;; gui + pane + s
-;; chrome_action_pane_left_sidebar      
-;; gui + pane + lsft + d
-;; chrome_action_pane_right_sidebar     
-;; gui + pane + t
-;; chrome_action_pane_tags              
-;; gui + pane + v
-;; chrome_action_pane_vertical_tabs     
-;; gui + pane + ;
-;; chrome_action_pane_graph             
-;; gui + pane + ,
-;; chrome_action_pane_backlinks         
-;; gui + pane + .
-;; chrome_action_pane_outlinks          
-;; gui + pane + lsft + .
-;; chrome_action_pane_<outlinks         
+;; panes + b
+;; ___TO_SET___ chrome_action_pane_bookmarks         
+;; panes + c
+;; ___TO_SET___ chrome_action_pane_calendar          
+;; panes + d
+;; ___TO_SET___ chrome_action_pane_day               
+;; panes + lsft + d
+;; ___TO_SET___ chrome_action_pane+lsft_day          
+;; panes + e
+;; ___TO_SET___ chrome_action_pane_explorer          
+;; panes + lsft + e
+;; ___TO_SET___ chrome_action_pane+lsft_explorer     
+;; panes + f
+;; ___TO_SET___ chrome_action_pane_find              
+;; panes + g
+;; ___TO_SET___ chrome_action_pane_go                
+;; panes + m
+;; ___TO_SET___ chrome_action_pane_main              
+;; panes + o
+;; ___TO_SET___ chrome_action_pane_outline           
+;; panes + p
+;; ___TO_SET___ chrome_action_pane_properties        
+;; panes + lsft + p
+;; ___TO_SET___ chrome_action_pane+lsft_properties   
+;; panes + r
+;; ___TO_SET___ chrome_action_pane_recent            
+;; panes + s
+;; ___TO_SET___ chrome_action_pane_left_sidebar      
+;; panes + lsft + s
+;; ___TO_SET___ chrome_action_pane+lsft_sidebar      
+;; panes + t
+;; ___TO_SET___ chrome_action_pane_tags              
+;; panes + v
+;; ___TO_SET___ chrome_action_pane_vertical_tabs     
+;; panes + ;
+;; ___TO_SET___ chrome_action_pane_graph             
+;; panes + ,
+;; ___TO_SET___ chrome_action_pane_backlinks         
+;; panes + .
+;; ___TO_SET___ chrome_action_pane_outlinks          
+;; panes + lsft + .
+;; ___TO_SET___ chrome_action_pane+lsft_outlinks     
 
 ;; == History combos =====================================================
 ;; omni + ]
@@ -338,89 +357,89 @@ chrome_action_hist_next                      A-right
 ;; omni + [
 chrome_action_hist_prev                      A-left
 
+;; == Search combos ======================================================
+;; text + spc
+;; ___TO_SET___ chrome_action_text_search            
+;; text + lsft + spc
+;; ___TO_SET___ chrome_action_text_search&replace    
+;; file_text + spc
+;; ___TO_SET___ chrome_action_file_text_search       
+;; file_text + lsft + spc
+;; ___TO_SET___ chrome_action_file_text_search&replace
+
 ;; == Edit combos ======================================================
 ;; omni + b
-;; chrome_action_page_up                
+;; ___TO_SET___ chrome_action_page_up                
 
 ;; omni + f
-;; chrome_action_page_down              
+;; ___TO_SET___ chrome_action_page_down              
 
 ;; omni + k
-;; chrome_action_up                     
+;; ___TO_SET___ chrome_action_up                     
 ;; omni + j
-;; chrome_action_down                   
+;; ___TO_SET___ chrome_action_down                   
 ;; omni + h
-;; chrome_action_left                   
+;; ___TO_SET___ chrome_action_left                   
 ;; omni + l
-;; chrome_action_right                  
+;; ___TO_SET___ chrome_action_right                  
 
 ;; omni + c
-;; chrome_action_copy                   
+;; ___TO_SET___ chrome_action_copy                   
 
 ;; omni + x
-;; chrome_action_cut                    
+;; ___TO_SET___ chrome_action_cut                    
 ;; omni + v
-;; chrome_action_paste                  
+;; ___TO_SET___ chrome_action_paste                  
 ;; omni + z
-;; chrome_action_undo                   
+;; ___TO_SET___ chrome_action_undo                   
 ;; omni + lsft + z
-;; chrome_action_redo                   
+;; ___TO_SET___ chrome_action_redo                   
 
 ;; == File Manager combos ===============================================
-;; omni + e
-;; chrome_action_rename                 
+;; omni + r
+;; ___TO_SET___ chrome_action_rename                 
 ;; omni + d
-;; chrome_action_duplicate              
+;; ___TO_SET___ chrome_action_duplicate              
 ;; omni + spc
-;; chrome_action_toggle_select          
+;; ___TO_SET___ chrome_action_toggle_select          
 ;; omni + a
-;; chrome_action_select_all             
+;; ___TO_SET___ chrome_action_select_all             
 ;; omni + lsft + a
-;; chrome_action_clear_select           
+;; ___TO_SET___ chrome_action_clear_select           
 ;; omni + rsft + a
-;; chrome_action_invert_select          
+;; ___TO_SET___ chrome_action_invert_select          
 ;; omni + n
-;; chrome_action_new                    
+;; ___TO_SET___ chrome_action_new                    
 ;; omni + lsft + n
-;; chrome_action_lsft+new               
+;; ___TO_SET___ chrome_action_lsft+new               
 ;; omni + rsft + n
-;; chrome_action_rsft+new               
+;; ___TO_SET___ chrome_action_rsft+new               
 
 ;; omni + o
-;; chrome_action_open                   
+;; ___TO_SET___ chrome_action_open                   
 ;; omni + p
-;; chrome_action_parent                 
+;; ___TO_SET___ chrome_action_parent                 
 
-;; omni + '
-;; chrome_action_view                   
-;; omni + lsft + '
-;; chrome_action_lsft+view              
-;; omni + rsft + '
-;; chrome_action_rsft+view              
-;; omni + ent
-;; chrome_action_edit                   
-;; omni + lsft + ent
-;; chrome_action_lsft+edit              
-;; omni + rsft + ent
-;; chrome_action_rsft+edit              
-;; omni + \
-;; chrome_action_explore                
-;; omni + lsft + \
-;; chrome_action_lsft+explore           
-;; omni + rsft + \
-;; chrome_action_rsft+explore           
 ;; omni + s
-;; chrome_action_search                 
+;; ___TO_SET___ chrome_action_sort                   
 ;; omni + lsft + s
-;; chrome_action_lsft+search            
-;; omni + rsft + s
-;; chrome_action_rsft+search            
-;; omni + r
-;; chrome_action_replace                
-;; omni + lsft + r
-;; chrome_action_lsft+replace           
-;; omni + rsft + r
-;; chrome_action_rsft+replace           
+;; ___TO_SET___ chrome_action_reverse_sort           
+;; omni + y
+;; ___TO_SET___ chrome_action_filter                 
+;; omni + i
+;; ___TO_SET___ chrome_action_info                   
+;; omni + ;
+;; ___TO_SET___ chrome_action_comment                
+;; omni + m
+;; ___TO_SET___ chrome_action_view_mode              
+;; omni + .
+;; ___TO_SET___ chrome_action_tags                   
+;; omni + /
+;; ___TO_SET___ chrome_action_help                   
+;; omni + e
+;; ___TO_SET___ chrome_action_extract                
+;; omni + lsft + e
+;; ___TO_SET___ chrome_action_compress               
 ;; omni + g
 chrome_action_go                             C-l
 )
