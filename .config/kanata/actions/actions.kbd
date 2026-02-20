@@ -477,21 +477,7 @@
     () XX break
   ))
   
-  ;; == #omni history ====================================================
-  ;; omni + ] 
-  action_omni_hist_next (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_hist_next break
-    ((input virtual vk_chrome)) $chrome_action_hist_next break
-    ((input virtual vk_obsidian)) $obsidian_action_hist_next break
-    () XX break
-  )) ;;""
-  ;; omni + [ 
-  action_omni_hist_prev (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_hist_prev break
-    ((input virtual vk_chrome)) $chrome_action_hist_prev break
-    ((input virtual vk_obsidian)) $obsidian_action_hist_prev break
-    () XX break
-  ))
+  ;; == #omni ============================================================
 
   ;; == #omni nav ======================================================
   ;; omni + g
@@ -539,6 +525,22 @@
     ((input virtual vk_nvim)) $nvim_action_right break
     () right break
   )
+
+  ;; omni + ] 
+  action_omni_hist_next (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_hist_next break
+    ((input virtual vk_chrome)) $chrome_action_hist_next break
+    ((input virtual vk_obsidian)) $obsidian_action_hist_next break
+    () XX break
+  )) ;;""
+  ;; omni + [ 
+  action_omni_hist_prev (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_hist_prev break
+    ((input virtual vk_chrome)) $chrome_action_hist_prev break
+    ((input virtual vk_obsidian)) $obsidian_action_hist_prev break
+    () XX break
+  ))
+
   ;; == #omni edit ======================================================
   ;; omni + c
   action_omni_copy (t! unmod_all (switch ;;@autogen@
@@ -998,39 +1000,39 @@
 
   ;; == #panes go by number ============================================
   ;; #panes + 1
-  action_panes_go_1 (t! unmod_all (switch ;;@autogen@
+  action_panes_goto_1 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; #panes + 2
-  action_panes_go_2 (t! unmod_all (switch ;;@autogen@
+  action_panes_goto_2 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; #panes + 3
-  action_panes_go_3 (t! unmod_all (switch ;;@autogen@
+  action_panes_goto_3 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; #panes + 4
-  action_panes_go_4 (t! unmod_all (switch ;;@autogen@
+  action_panes_goto_4 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; #panes + 5
-  action_panes_go_5 (t! unmod_all (switch ;;@autogen@
+  action_panes_goto_5 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; #panes + 6
-  action_panes_go_6 (t! unmod_all (switch ;;@autogen@
+  action_panes_goto_6 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; #panes + 7
-  action_panes_go_7 (t! unmod_all (switch ;;@autogen@
+  action_panes_goto_7 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; #panes + 8
-  action_panes_go_8 (t! unmod_all (switch ;;@autogen@
+  action_panes_goto_8 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; #panes + 9
-  action_panes_go_last (t! unmod_all (switch ;;@autogen@
+  action_panes_goto_last (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
@@ -1048,8 +1050,8 @@
     () XX break
   ))
   ;; #panes + lsft + e
-  action_pane+lsft_explorer (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_pane+lsft_explorer break
+  action_panes+lsft_explorer (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_panes+lsft_explorer break
     () XX break
   ))
   ;; #panes + r
@@ -1105,8 +1107,8 @@
     () XX break
   ))
   ;; #panes + lsft + s
-  action_pane+lsft_sidebar (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_pane+lsft_sidebar break
+  action_panes+lsft_sidebar (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_panes+lsft_sidebar break
     () XX break
   ))
   ;; #panes + d
@@ -1148,7 +1150,7 @@
     () XX break
   ))
   ;; #panes + rsft + c
-  action_pane+!day (t! unmod_all (switch ;;@autogen@
+  action_panes+!day (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; #panes + v
@@ -1255,6 +1257,7 @@
     () XX break
   ))
 
+  ;; == #tabs go by number ==================================================
   ;; #tabs + 1 
   action_tabs_goto_1 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_tabs_goto_1 break
