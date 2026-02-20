@@ -442,9 +442,10 @@ def process_actions(
         i = i + 1
 
     while i < len(lines):
-        while COMMENT_LINE_RE.match(lines[i]) or EMPTY_LINE_RE.match(lines[i]):
+        if COMMENT_LINE_RE.match(lines[i]) or EMPTY_LINE_RE.match(lines[i]):
             comments.append(lines[i].strip())
             i = i + 1
+            continue
 
         m = ACTION_RE.match(lines[i])
         # Action comments must be immediately above the action, or they will be discarded.
