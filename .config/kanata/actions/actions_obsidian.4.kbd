@@ -554,45 +554,49 @@ obsidian_action_tabs_toggle                     A-q
 ;; ___TO_SET___ obsidian_action_tabs_move_last         
 
 ;; == #!tabs/groups =====================================================
-;; #!tabs + spc
-;; ___TO_SET___ obsidian_action_!tabs                  
-;; #!tabs + toggle
 
-;; == #!tabs + #toggle =====================================================
-;; #!tabs + #toggle
-;; ___TO_SET___ obsidian_action_!tabs_toggle           
+;; #!tabs + spc
+obsidian_action_!tabs                  $obsidian_action_tabs                  
+
 ;; #!tabs + l | #!tabs + right
-;; ___TO_SET___ obsidian_action_!tabs_next             
+obsidian_action_!tabs_next             $obsidian_action_tabs_next             
 ;; #!tabs + h | #!tabs + left
-;; ___TO_SET___ obsidian_action_!tabs_prev             
+obsidian_action_!tabs_prev             $obsidian_action_tabs_prev             
 ;; #!tabs + j | #!tabs + down
 ;; ___TO_SET___ obsidian_action_!tabs_first            
 ;; #!tabs + k | #!tabs + up
 ;; ___TO_SET___ obsidian_action_!tabs_last             
+
 ;; #!tabs + t
-;; ___TO_SET___ obsidian_action_!tabs_new              
+obsidian_action_!tabs_new              $obsidian_action_tabs_new              
 ;; #!tabs + w
-;; ___TO_SET___ obsidian_action_!tabs_close            
+obsidian_action_!tabs_close            $obsidian_action_tabs_close            
 ;; #!tabs + lsft + t
-;; ___TO_SET___ obsidian_action_!tabs_undo_close       
+obsidian_action_!tabs_undo_close       $obsidian_action_tabs_undo_close       
+
+;; == #!tabs go by number ==================================================
 ;; #!tabs + 1
-;; ___TO_SET___ obsidian_action_!tabs_goto_1           
+obsidian_action_!tabs_goto_1           $obsidian_action_tabs_goto_1           
 ;; #!tabs + 2
-;; ___TO_SET___ obsidian_action_!tabs_goto_2           
+obsidian_action_!tabs_goto_2           $obsidian_action_tabs_goto_2           
 ;; #!tabs + 3
-;; ___TO_SET___ obsidian_action_!tabs_goto_3           
+obsidian_action_!tabs_goto_3           $obsidian_action_tabs_goto_3           
 ;; #!tabs + 4
-;; ___TO_SET___ obsidian_action_!tabs_goto_4           
+obsidian_action_!tabs_goto_4           $obsidian_action_tabs_goto_4           
 ;; #!tabs + 5
-;; ___TO_SET___ obsidian_action_!tabs_goto_5           
+obsidian_action_!tabs_goto_5           $obsidian_action_tabs_goto_5           
 ;; #!tabs + 6
-;; ___TO_SET___ obsidian_action_!tabs_goto_6           
+obsidian_action_!tabs_goto_6           $obsidian_action_tabs_goto_6           
 ;; #!tabs + 7
-;; ___TO_SET___ obsidian_action_!tabs_goto_7           
+obsidian_action_!tabs_goto_7           $obsidian_action_tabs_goto_7           
 ;; #!tabs + 8
-;; ___TO_SET___ obsidian_action_!tabs_goto_8           
+obsidian_action_!tabs_goto_8           $obsidian_action_tabs_goto_8           
 ;; #!tabs + 9
-;; ___TO_SET___ obsidian_action_!tabs_goto_last        
+obsidian_action_!tabs_goto_last        $obsidian_action_tabs_goto_last        
+
+;; == #!tabs + #toggle =====================================================
+;; #!tabs + #toggle
+obsidian_action_!tabs_toggle           $obsidian_action_tabs_toggle           
 
 ;; == #!tabs + #move =====================================================
 ;; #!tabs + #move + h | #!tabs + #move + left

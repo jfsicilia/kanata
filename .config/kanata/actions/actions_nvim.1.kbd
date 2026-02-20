@@ -546,45 +546,49 @@ nvim_action_tabs_toggle                     (macro S-; b S-3 ret)
 ;; ___TO_SET___ nvim_action_tabs_move_last         
 
 ;; == #!tabs/groups =====================================================
-;; #!tabs + spc
-;; ___TO_SET___ nvim_action_!tabs                  
-;; #!tabs + toggle
 
-;; == #!tabs + #toggle =====================================================
-;; #!tabs + #toggle
-;; ___TO_SET___ nvim_action_!tabs_toggle           
+;; #!tabs + spc
+nvim_action_!tabs                  $nvim_action_tabs                  
+
 ;; #!tabs + l | #!tabs + right
-;; ___TO_SET___ nvim_action_!tabs_next             
+nvim_action_!tabs_next             $nvim_action_tabs_next             
 ;; #!tabs + h | #!tabs + left
-;; ___TO_SET___ nvim_action_!tabs_prev             
+nvim_action_!tabs_prev             $nvim_action_tabs_prev             
 ;; #!tabs + j | #!tabs + down
 ;; ___TO_SET___ nvim_action_!tabs_first            
 ;; #!tabs + k | #!tabs + up
 ;; ___TO_SET___ nvim_action_!tabs_last             
+
 ;; #!tabs + t
 ;; ___TO_SET___ nvim_action_!tabs_new              
 ;; #!tabs + w
-;; ___TO_SET___ nvim_action_!tabs_close            
+nvim_action_!tabs_close            $nvim_action_tabs_close            
 ;; #!tabs + lsft + t
 ;; ___TO_SET___ nvim_action_!tabs_undo_close       
+
+;; == #!tabs go by number ==================================================
 ;; #!tabs + 1
-;; ___TO_SET___ nvim_action_!tabs_goto_1           
+nvim_action_!tabs_goto_1           $nvim_action_tabs_goto_1           
 ;; #!tabs + 2
-;; ___TO_SET___ nvim_action_!tabs_goto_2           
+nvim_action_!tabs_goto_2           $nvim_action_tabs_goto_2           
 ;; #!tabs + 3
-;; ___TO_SET___ nvim_action_!tabs_goto_3           
+nvim_action_!tabs_goto_3           $nvim_action_tabs_goto_3           
 ;; #!tabs + 4
-;; ___TO_SET___ nvim_action_!tabs_goto_4           
+nvim_action_!tabs_goto_4           $nvim_action_tabs_goto_4           
 ;; #!tabs + 5
-;; ___TO_SET___ nvim_action_!tabs_goto_5           
+nvim_action_!tabs_goto_5           $nvim_action_tabs_goto_5           
 ;; #!tabs + 6
-;; ___TO_SET___ nvim_action_!tabs_goto_6           
+nvim_action_!tabs_goto_6           $nvim_action_tabs_goto_6           
 ;; #!tabs + 7
-;; ___TO_SET___ nvim_action_!tabs_goto_7           
+nvim_action_!tabs_goto_7           $nvim_action_tabs_goto_7           
 ;; #!tabs + 8
-;; ___TO_SET___ nvim_action_!tabs_goto_8           
+nvim_action_!tabs_goto_8           $nvim_action_tabs_goto_8           
 ;; #!tabs + 9
-;; ___TO_SET___ nvim_action_!tabs_goto_last        
+nvim_action_!tabs_goto_last        $nvim_action_tabs_goto_last        
+
+;; == #!tabs + #toggle =====================================================
+;; #!tabs + #toggle
+nvim_action_!tabs_toggle           $nvim_action_tabs_toggle           
 
 ;; == #!tabs + #move =====================================================
 ;; #!tabs + #move + h | #!tabs + #move + left

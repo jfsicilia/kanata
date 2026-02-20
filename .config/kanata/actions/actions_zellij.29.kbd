@@ -546,27 +546,27 @@ zellij_action_tabs_toggle                     (macro C-g t tab ret)
 ;; ___TO_SET___ zellij_action_tabs_move_last         
 
 ;; == #!tabs/groups =====================================================
-;; #!tabs + spc
-;; ___TO_SET___ zellij_action_!tabs                  
-;; #!tabs + toggle
 
-;; == #!tabs + #toggle =====================================================
-;; #!tabs + #toggle
-;; ___TO_SET___ zellij_action_!tabs_toggle           
+;; #!tabs + spc
+zellij_action_!tabs                  $zellij_action_tabs                  
+
 ;; #!tabs + l | #!tabs + right
-;; ___TO_SET___ zellij_action_!tabs_next             
+zellij_action_!tabs_next             $zellij_action_tabs_next             
 ;; #!tabs + h | #!tabs + left
-;; ___TO_SET___ zellij_action_!tabs_prev             
+zellij_action_!tabs_prev             $zellij_action_tabs_prev             
 ;; #!tabs + j | #!tabs + down
 ;; ___TO_SET___ zellij_action_!tabs_first            
 ;; #!tabs + k | #!tabs + up
 ;; ___TO_SET___ zellij_action_!tabs_last             
+
 ;; #!tabs + t
 ;; ___TO_SET___ zellij_action_!tabs_new              
 ;; #!tabs + w
 ;; ___TO_SET___ zellij_action_!tabs_close            
 ;; #!tabs + lsft + t
 ;; ___TO_SET___ zellij_action_!tabs_undo_close       
+
+;; == #!tabs go by number ==================================================
 ;; #!tabs + 1
 ;; ___TO_SET___ zellij_action_!tabs_goto_1           
 ;; #!tabs + 2
@@ -585,6 +585,10 @@ zellij_action_tabs_toggle                     (macro C-g t tab ret)
 ;; ___TO_SET___ zellij_action_!tabs_goto_8           
 ;; #!tabs + 9
 ;; ___TO_SET___ zellij_action_!tabs_goto_last        
+
+;; == #!tabs + #toggle =====================================================
+;; #!tabs + #toggle
+zellij_action_!tabs_toggle           $zellij_action_tabs_toggle           
 
 ;; == #!tabs + #move =====================================================
 ;; #!tabs + #move + h | #!tabs + #move + left

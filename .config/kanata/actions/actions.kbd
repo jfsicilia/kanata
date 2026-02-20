@@ -1391,20 +1391,33 @@
   ))
 
   ;; == #!tabs/groups =====================================================
+
   ;; #!tabs + spc
   action_!tabs (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_!tabs break
+    ((input virtual vk_chrome)) $chrome_action_!tabs break
+    ((input virtual vk_obsidian)) $obsidian_action_!tabs break
+    ((input virtual vk_tmux)) $tmux_action_!tabs break
+    ((input virtual vk_zellij)) $zellij_action_!tabs break
     () XX break
   ))
-  ;; #!tabs + toggle
-  action_!tabs_toggle  (t! unmod_all (switch ;;@autogen@
-    () XX break
-  ))
+
   ;; #!tabs + l | #!tabs + right  
   ~action_!tabs_next (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_zellij)) $zellij_action_!tabs_next break
+    ((input virtual vk_tmux)) $tmux_action_!tabs_next break
+    ((input virtual vk_obsidian)) $obsidian_action_!tabs_next break
+    ((input virtual vk_chrome)) $chrome_action_!tabs_next break
+    ((input virtual vk_nvim)) $nvim_action_!tabs_next break
     () C-tab break
   )) 
   ;; #!tabs + h | #!tabs + left  
   ~action_!tabs_prev (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_zellij)) $zellij_action_!tabs_prev break
+    ((input virtual vk_tmux)) $tmux_action_!tabs_prev break
+    ((input virtual vk_obsidian)) $obsidian_action_!tabs_prev break
+    ((input virtual vk_chrome)) $chrome_action_!tabs_prev break
+    ((input virtual vk_nvim)) $nvim_action_!tabs_prev break
     () C-S-tab break
   ))
   ;; #!tabs + j | #!tabs + down
@@ -1415,68 +1428,123 @@
   ~action_!tabs_last  (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
+
   ;; #!tabs + t 
   ~action_!tabs_new (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_tmux)) $tmux_action_!tabs_new break
+    ((input virtual vk_obsidian)) $obsidian_action_!tabs_new break
+    ((input virtual vk_chrome)) $chrome_action_!tabs_new break
     () XX break
   ))
   ;; #!tabs + w
   ~action_!tabs_close (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_tmux)) $tmux_action_!tabs_close break
+    ((input virtual vk_obsidian)) $obsidian_action_!tabs_close break
+    ((input virtual vk_chrome)) $chrome_action_!tabs_close break
+    ((input virtual vk_nvim)) $nvim_action_!tabs_close break
     () XX break
   ))
   ;; #!tabs + lsft + t 
   ~action_!tabs_undo_close (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_!tabs_undo_close break
+    ((input virtual vk_chrome)) $chrome_action_!tabs_undo_close break
     () XX break
   ))
+
+  ;; == #!tabs go by number ==================================================
   ;; #!tabs + 1
   ~action_!tabs_goto_1 (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_tmux)) $tmux_action_!tabs_goto_1 break
+    ((input virtual vk_obsidian)) $obsidian_action_!tabs_goto_1 break
+    ((input virtual vk_chrome)) $chrome_action_!tabs_goto_1 break
+    ((input virtual vk_nvim)) $nvim_action_!tabs_goto_1 break
     () XX break
   ))
   ;; #!tabs + 2
   ~action_!tabs_goto_2 (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_tmux)) $tmux_action_!tabs_goto_2 break
+    ((input virtual vk_obsidian)) $obsidian_action_!tabs_goto_2 break
+    ((input virtual vk_chrome)) $chrome_action_!tabs_goto_2 break
+    ((input virtual vk_nvim)) $nvim_action_!tabs_goto_2 break
     () XX break
   ))
   ;; #!tabs + 3
   ~action_!tabs_goto_3 (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_tmux)) $tmux_action_!tabs_goto_3 break
+    ((input virtual vk_obsidian)) $obsidian_action_!tabs_goto_3 break
+    ((input virtual vk_chrome)) $chrome_action_!tabs_goto_3 break
+    ((input virtual vk_nvim)) $nvim_action_!tabs_goto_3 break
     () XX break
   ))
   ;; #!tabs + 4
   ~action_!tabs_goto_4 (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_tmux)) $tmux_action_!tabs_goto_4 break
+    ((input virtual vk_obsidian)) $obsidian_action_!tabs_goto_4 break
+    ((input virtual vk_chrome)) $chrome_action_!tabs_goto_4 break
+    ((input virtual vk_nvim)) $nvim_action_!tabs_goto_4 break
     () XX break
   ))
   ;; #!tabs + 5
   ~action_!tabs_goto_5 (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_tmux)) $tmux_action_!tabs_goto_5 break
+    ((input virtual vk_obsidian)) $obsidian_action_!tabs_goto_5 break
+    ((input virtual vk_chrome)) $chrome_action_!tabs_goto_5 break
+    ((input virtual vk_nvim)) $nvim_action_!tabs_goto_5 break
     () XX break
   ))
   ;; #!tabs + 6
   ~action_!tabs_goto_6 (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_tmux)) $tmux_action_!tabs_goto_6 break
+    ((input virtual vk_obsidian)) $obsidian_action_!tabs_goto_6 break
+    ((input virtual vk_chrome)) $chrome_action_!tabs_goto_6 break
+    ((input virtual vk_nvim)) $nvim_action_!tabs_goto_6 break
     () XX break
   ))
   ;; #!tabs + 7
   ~action_!tabs_goto_7 (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_tmux)) $tmux_action_!tabs_goto_7 break
+    ((input virtual vk_obsidian)) $obsidian_action_!tabs_goto_7 break
+    ((input virtual vk_chrome)) $chrome_action_!tabs_goto_7 break
+    ((input virtual vk_nvim)) $nvim_action_!tabs_goto_7 break
     () XX break
   ))
   ;; #!tabs + 8
   ~action_!tabs_goto_8 (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_tmux)) $tmux_action_!tabs_goto_8 break
+    ((input virtual vk_obsidian)) $obsidian_action_!tabs_goto_8 break
+    ((input virtual vk_chrome)) $chrome_action_!tabs_goto_8 break
+    ((input virtual vk_nvim)) $nvim_action_!tabs_goto_8 break
     () XX break
   ))
   ;; #!tabs + 9
   ~action_!tabs_goto_last (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_tmux)) $tmux_action_!tabs_goto_last break
+    ((input virtual vk_obsidian)) $obsidian_action_!tabs_goto_last break
+    ((input virtual vk_chrome)) $chrome_action_!tabs_goto_last break
+    ((input virtual vk_nvim)) $nvim_action_!tabs_goto_last break
     () XX break
   ))
 
   ;; == #!tabs + #toggle =====================================================
   ;; #!tabs + #toggle
   ~action_!tabs_toggle (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_zellij)) $zellij_action_!tabs_toggle break
+    ((input virtual vk_tmux)) $tmux_action_!tabs_toggle break
+    ((input virtual vk_obsidian)) $obsidian_action_!tabs_toggle break
+    ((input virtual vk_chrome)) $chrome_action_!tabs_toggle break
+    ((input virtual vk_nvim)) $nvim_action_!tabs_toggle break
     () XX break
   ))
 
   ;; == #!tabs + #move =====================================================
   ;; #!tabs + #move + h | #!tabs + #move + left
   ~action_!tabs_move_left (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_tmux)) $tmux_action_!tabs_move_left break
     () XX break
   ))
   ;; #!tabs + #move + l | #!tabs + #move + right
   ~action_!tabs_move_right (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_tmux)) $tmux_action_!tabs_move_right break
     () XX break
   ))
   ;; #!tabs + #move + k | #!tabs + #move + up
