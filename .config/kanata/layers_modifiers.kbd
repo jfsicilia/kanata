@@ -5,13 +5,13 @@
   toggle_rsft_layer                  (t! toggle_mod_layer   rsft  rsft_layer)
 
   ;; Homerow modifiers
-  toggle_lalt|symbol_layer           (t! toggle_mod_2layer  lalt  lalt_layer  symbol_layer)
-  toggle_lsft|def_layer              (t! toggle_mod_2layer  lsft  lsft_layer  def_layer)
-  toggle_lctl|autofill_layer         (t! toggle_mod_2layer  lctl  lctl_layer  autofill_layer)
-  toggle_lctl|jump_layer             (t! toggle_mod_2layer  lctl  lctl_layer  jump_layer)
-  toggle_rsft|keymap_layer           (t! toggle_mod_2layer  rsft  rsft_layer  keymap_layer)
-  toggle_lalt|localiz_layer          (t! toggle_mod_2layer  lalt  lalt_layer  localiz_layer)
-  toggle_lmet|command_layer          (t! toggle_mod_2layer  lmet  lmet_layer  command_layer)
+  toggle_lalt&symbol_layer           (t! toggle_mod_2layer  lalt  lalt_layer  symbol_layer)
+  toggle_lsft&def_layer              (t! toggle_mod_2layer  lsft  lsft_layer  def_layer)
+  toggle_lctl&autofill_layer         (t! toggle_mod_2layer  lctl  lctl_layer  autofill_layer)
+  toggle_lctl&jump_layer             (t! toggle_mod_2layer  lctl  lctl_layer  jump_layer)
+  toggle_rsft&keymap_layer           (t! toggle_mod_2layer  rsft  rsft_layer  keymap_layer)
+  toggle_lalt&localiz_layer          (t! toggle_mod_2layer  lalt  lalt_layer  localiz_layer)
+  toggle_lmet&command_layer          (t! toggle_mod_2layer  lmet  lmet_layer  command_layer)
 
   ;; LCtl layers.
   toggle_lctl_layer                  (t! toggle_mod_layer   lctl           lctl_layer)
@@ -124,19 +124,19 @@
   
   ;; == LALT =========================
   $!lalt          (t! th _              $toggle_lctl+lalt_layer)
-  $s|lalt|symbol  (t! th $action_lctl+s $toggle_lctl+lalt_layer)
-  $l|lalt|localiz (t! th $action_lctl+l $toggle_lctl+lalt_layer)
+  $s|lalt&symbol  (t! th $action_lctl+s $toggle_lctl+lalt_layer)
+  $l|lalt&localiz (t! th $action_lctl+l $toggle_lctl+lalt_layer)
 
   ;; == LMET =========================
-  $!lmet          (t! th _ $toggle_lctl+lmet_layer)
-  $a|lmet|action  (t! th $action_lctl+g $toggle_lctl+lmet_layer)
-  $;|lmet|command (t! th $action_lctl+g $toggle_lctl+lmet_layer)
+  $!lmet          (t! th _              $toggle_lctl+lmet_layer)
+  $a|lmet&action  (t! th $action_lctl+a $toggle_lctl+lmet_layer)
+  $;|lmet&command (t! th $action_lctl+; $toggle_lctl+lmet_layer)
 
   ;; == LSFT/RSFT ================
-  $d|lsft|def     (t! th $action_lctl+d $toggle_lctl+lsft_layer)
-  lsft            (t! th _ $toggle_lctl+lsft_layer)
-  $k|rsft|keymap  (t! th $action_lctl+k $toggle_lctl+rsft_layer)
-  rsft            (t! th _ $toggle_lctl+rsft_layer)
+  $d|lsft&def     (t! th $action_lctl+d $toggle_lctl+lsft_layer)
+  lsft            (t! th _              $toggle_lctl+lsft_layer)
+  $k|rsft&keymap  (t! th $action_lctl+k $toggle_lctl+rsft_layer)
+  rsft            (t! th _              $toggle_lctl+rsft_layer)
   
 ;; "" LCTL_LAYER """""""""""""""""""
 ) 
@@ -151,13 +151,13 @@
 
   ;; == LALT =========================
   $!lalt          (t! th _ $toggle_lctl+lalt+lsft_layer)
-  $s|lalt|symbol  (t! th _ $toggle_lctl+lalt+lsft_layer)
-  $l|lalt|localiz (t! th _ $toggle_lctl+lalt+lsft_layer)
+  $s|lalt&symbol  (t! th _ $toggle_lctl+lalt+lsft_layer)
+  $l|lalt&localiz (t! th _ $toggle_lctl+lalt+lsft_layer)
 
   ;; == LMET =========================
   $!lmet          (t! th _ $toggle_lctl+lmet+lsft_layer)
-  $a|lmet|action  (t! th _ $toggle_lctl+lmet+lsft_layer)
-  $;|lmet|command (t! th _ $toggle_lctl+lmet+lsft_layer)
+  $a|lmet&action  (t! th _ $toggle_lctl+lmet+lsft_layer)
+  $;|lmet&command (t! th _ $toggle_lctl+lmet+lsft_layer)
 
 ;; "" LCTL+LSFT_LAYER """""""""""""""
 )
@@ -172,13 +172,13 @@
 
   ;; == LALT =========================
   $!lalt          (t! th _ $toggle_lctl+lalt+rsft_layer)
-  $s|lalt|symbol  (t! th _ $toggle_lctl+lalt+rsft_layer)
-  $l|lalt|localiz (t! th _ $toggle_lctl+lalt+rsft_layer)
+  $s|lalt&symbol  (t! th _ $toggle_lctl+lalt+rsft_layer)
+  $l|lalt&localiz (t! th _ $toggle_lctl+lalt+rsft_layer)
 
   ;; == LMET =========================
   $!lmet          (t! th _ $toggle_lctl+lmet+rsft_layer)
-  $a|lmet|action  (t! th _ $toggle_lctl+lmet+rsft_layer)
-  $;|lmet|command (t! th _ $toggle_lctl+lmet+rsft_layer)
+  $a|lmet&action  (t! th _ $toggle_lctl+lmet+rsft_layer)
+  $;|lmet&command (t! th _ $toggle_lctl+lmet+rsft_layer)
 ;; "" LCTL+RSFT_LAYER """""""""""""""
 )
 
@@ -189,25 +189,25 @@
 (deflayermap (!lctl_layer)
 
   ;; == KEY COMBOS ===================
-  spc $action_select_files 
+  spc $action_files 
 
   (t! map_keys_with_pattern_except (a d k l s ;) "$action_!lctl+")
 
   ;; == LALT =========================
-  $!lalt  (t! th _ $toggle_!lctl+lalt_layer)
-  $s|lalt|symbol (t! th $action_!lctl+s $toggle_!lctl+lalt_layer)
-  $l|lalt|localiz (t! th $action_!lctl+l $toggle_!lctl+lalt_layer)
-                                                                 
+  $!lalt          (t! th _                $toggle_!lalt+lctl_layer)
+  $s|lalt&symbol  (t! th $action_!lctl+s  $toggle_!lctl+lalt_layer)
+  $l|lalt&localiz (t! th $action_!lctl+l  $toggle_!lctl+lalt_layer)
+                                                                  
   ;; == LMET =========================                           
-  $!lmet  (t! th _ $toggle_!lctl+lmet_layer)
-  $a|lmet|action (t! th $action_!lctl+g  $toggle_!lctl+lmet_layer)
-  $;|lmet|command (t! th $action_!lctl+h  $toggle_!lctl+lmet_layer)
+  $!lmet          (t! th _                $toggle_!lctl+lmet_layer)
+  $a|lmet&action  (t! th $action_!lctl+a  $toggle_!lctl+lmet_layer)
+  $;|lmet&command (t! th $action_!lctl+;  $toggle_!lctl+lmet_layer)
 
   ;; == LSFT/RSFT ====================
-  $d|lsft|def (t! th $action_!lctl+d $toggle_!lctl+lsft_layer)
-  lsft    (t! th _ $toggle_!lctl+lsft_layer)
-  $k|rsft|keymap (t! th $action_!lctl+k $toggle_!lctl+rsft_layer)
-  rsft    (t! th _ $toggle_!lctl+rsft_layer)
+  $d|lsft&def     (t! th $action_!lctl+d  $toggle_!lctl+lsft_layer)
+  lsft            (t! th _                $toggle_!lctl+lsft_layer)
+  $k|rsft&keymap  (t! th $action_!lctl+k  $toggle_!lctl+rsft_layer)
+  rsft            (t! th _                $toggle_!lctl+rsft_layer)
 
 ;; "" !LCTL_LAYER """""""""""""""""""
 )
@@ -217,7 +217,7 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lctl+lsft_layer)
   ;; == KEY COMBOS ===================
-  spc $action_select_folders 
+  spc $action_folders 
 
   (t! default_map_keys_except ())
 ;; "" !LCTL+LSFT_LAYER """""""""""""""
@@ -228,7 +228,7 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lctl+rsft_layer)
   ;; == KEY COMBOS ===================
-  spc $action_select_folders 
+  spc $action_folders 
 
   (t! default_map_keys_except ())
 ;; "" !LCTL+RSFT_LAYER """""""""""""""
@@ -239,26 +239,27 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lalt_layer)
   ;; == KEY COMBOS ===================
-  spc $action_text_search
 
   ;; lalt is configured in the physical lmet key (like the opt key in mac).
   ;; alt+tab works as alt+`
   tab grv
 
+  (t! default_map_keys_except (f j a ; d k))
+
   ;; == LCTL =========================
   $!lctl           (t! th _ $toggle_lalt+lctl_layer)
-  $f|lctl|autofill (t! th _ $toggle_lalt+lctl_layer)
-  $j|lctl|jump     (t! th _ $toggle_lalt+lctl_layer)
+  $f|lctl&autofill (t! th _ $toggle_lalt+lctl_layer)
+  $j|lctl&jump     (t! th _ $toggle_lalt+lctl_layer)
 
   ;; == LMET =========================
   $!lmet           (t! th _ $toggle_lalt+lmet_layer)
-  $a|lmet|action   (t! th _ $toggle_lalt+lmet_layer)
-  $;|lmet|command  (t! th _ $toggle_lalt+lmet_layer)
+  $a|lmet&action   (t! th _ $toggle_lalt+lmet_layer)
+  $;|lmet&command  (t! th _ $toggle_lalt+lmet_layer)
  
   ;; == SFT ================
-  $d|lsft|def      (t! th _ $toggle_lalt+lsft_layer)
+  $d|lsft&def      (t! th _ $toggle_lalt+lsft_layer)
   lsft             (t! th _ $toggle_lalt+lsft_layer)
-  $k|rsft|keymap   (t! th _ $toggle_lalt+rsft_layer)
+  $k|rsft&keymap   (t! th _ $toggle_lalt+rsft_layer)
   rsft             (t! th _ $toggle_lalt+rsft_layer)
 
 ;; "" LALT_LAYER """""""""""""""""""
@@ -268,7 +269,8 @@
 ;; "" LALT+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lalt+lsft_layer)
-  spc $action_text_search&replace
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except ())
 ;; "" LALT+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""
 )
 
@@ -276,8 +278,8 @@
 ;; "" LALT+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lalt+rsft_layer)
-  spc $action_text_search&replace
-
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except ())
 ;; "" LALT+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""
 )
 
@@ -288,23 +290,25 @@
 (deflayermap (!lalt_layer)
 
   ;; == KEY COMBOS ===================
-  spc $action_select_command
+  spc $action_search_text_in_file
 
+  (t! default_map_keys_except (f j a ; d k))
+  
   ;; == LCTL =========================
-  $!lctl  (t! th _ $toggle_!lalt+lctl_layer)
-  $f|lctl|autofill (t! th _ $toggle_!lalt+lctl_layer)
-  $j|lctl|jump (t! th _ $toggle_!lalt+lctl_layer)
+  $!lctl            (t! th _ $toggle_!lalt+lctl_layer)
+  $f|lctl&autofill  (t! th _ $toggle_!lalt+lctl_layer)
+  $j|lctl&jump      (t! th _ $toggle_!lalt+lctl_layer)
                                                                  
   ;; == LMET =========================                           
-  $!lmet  (t! th _ $toggle_!lalt+lmet_layer)
-  $a|lmet|action (t! th _ $toggle_!lalt+lmet_layer)
-  $;|lmet|command (t! th _ $toggle_!lalt+lmet_layer)
+  $!lmet            (t! th _ $toggle_!lalt+lmet_layer)
+  $a|lmet&action    (t! th _ $toggle_!lalt+lmet_layer)
+  $;|lmet&command   (t! th _ $toggle_!lalt+lmet_layer)
 
   ;; == LSFT/RSFT ====================
-  $d|lsft|def (t! th _ $toggle_!lalt+lsft_layer)
-  lsft    (t! th _ $toggle_!lalt+lsft_layer)
-  $k|rsft|keymap (t! th _ $toggle_!lalt+rsft_layer)
-  rsft    (t! th _ $toggle_!lalt+rsft_layer)
+  $d|lsft&def       (t! th _ $toggle_!lalt+lsft_layer)
+  lsft              (t! th _ $toggle_!lalt+lsft_layer)
+  $k|rsft&keymap    (t! th _ $toggle_!lalt+rsft_layer)
+  rsft              (t! th _ $toggle_!lalt+rsft_layer)
 
 ;; "" !LALT_LAYER """""""""""""""""""
 )
@@ -313,6 +317,10 @@
 ;; "" !LALT+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lalt+lsft_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except ())
+
+  spc $action_search_text_in_filesystem
 
 ;; "" !LALT+LSFT_LAYER """""""""""""""
 )
@@ -321,6 +329,10 @@
 ;; "" !LALT+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lalt+rsft_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except ())
+
+  spc $action_search_text_in_filesystem
 
 ;; "" !LALT+RSFT_LAYER """""""""""""""
 )
@@ -331,25 +343,26 @@
 (deflayermap (lmet_layer)
 
   ;; == KEY COMBOS ===================
+  (t! default_map_keys_except (s l f j d k))
 
   ;; lmet+tab mimics original lctl+tab functionality (typically next tab in 
   ;; browsers and editors).
-  tab $action_tab_next
+  tab $action_tabs_next
 
   ;; == LALT =========================
   $!lalt           (t! th _ $toggle_lmet+lalt_layer)
-  $s|lalt|symbol   (t! th _ $toggle_lmet+lalt_layer)
-  $l|lalt|localiz  (t! th _ $toggle_lmet+lalt_layer)
+  $s|lalt&symbol   (t! th _ $toggle_lmet+lalt_layer)
+  $l|lalt&localiz  (t! th _ $toggle_lmet+lalt_layer)
 
   ;; == LCTL =========================
   $!lctl           (t! th _ $toggle_lmet+lctl_layer)
-  $f|lctl|autofill (t! th _ $toggle_lmet+lctl_layer)
-  $j|lctl|jump     (t! th _ $toggle_lmet+lctl_layer)
+  $f|lctl&autofill (t! th _ $toggle_lmet+lctl_layer)
+  $j|lctl&jump     (t! th _ $toggle_lmet+lctl_layer)
   
   ;; == SFT ================
-  $d|lsft|def      (t! th _ $toggle_lmet+lsft_layer)
+  $d|lsft&def      (t! th _ $toggle_lmet+lsft_layer)
   lsft             (t! th _ $toggle_lmet+lsft_layer)
-  $k|rsft|keymap   (t! th _ $toggle_lmet+rsft_layer)
+  $k|rsft&keymap   (t! th _ $toggle_lmet+rsft_layer)
   rsft             (t! th _ $toggle_lmet+rsft_layer)
 
 ;; "" LMET_LAYER """""""""""""""""""
@@ -359,8 +372,10 @@
 ;; "" LMET+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lmet+lsft_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except ())
 
-  tab $action_tab_prev
+  tab $action_tabs_prev
 ;; "" LMET+LSFT_LAYER """""""""""""""
 )
 
@@ -368,8 +383,10 @@
 ;; "" LMET+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lmet+rsft_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except ())
 
-  tab $action_tab_prev
+  tab $action_tabs_prev
 ;; "" LMET+RSFT_LAYER """""""""""""""
 )
 
@@ -379,22 +396,24 @@
 (deflayermap (!lmet_layer)
 
   ;; == KEY COMBOS ===================
-  spc $action_select_symbol
+  spc $action_replace_text_in_file
+
+  (t! default_map_keys_except (s l f j d k))
 
   ;; == LALT =========================
   $!lalt              (t! th _ $toggle_!lmet+lalt_layer)
-  $s|lalt|symbol      (t! th _ $toggle_!lmet+lalt_layer)
-  $l|lalt|localiz     (t! th _ $toggle_!lmet+lalt_layer)
+  $s|lalt&symbol      (t! th _ $toggle_!lmet+lalt_layer)
+  $l|lalt&localiz     (t! th _ $toggle_!lmet+lalt_layer)
                                                                  
   ;; == LCTL =========================                           
   $!lctl              (t! th _ $toggle_!lmet+lctl_layer)
-  $f|lctl|autofill    (t! th _ $toggle_!lmet+lctl_layer)
-  $j|lctl|jump        (t! th _ $toggle_!lmet+lctl_layer)
+  $f|lctl&autofill    (t! th _ $toggle_!lmet+lctl_layer)
+  $j|lctl&jump        (t! th _ $toggle_!lmet+lctl_layer)
   
   ;; == SFT ================
-  $d|lsft|def         (t! th _ $toggle_!lmet+lsft_layer)
+  $d|lsft&def         (t! th _ $toggle_!lmet+lsft_layer)
   lsft                (t! th _ $toggle_!lmet+lsft_layer)
-  $k|rsft|keymap      (t! th _ $toggle_!lmet+rsft_layer)
+  $k|rsft&keymap      (t! th _ $toggle_!lmet+rsft_layer)
   rsft                (t! th _ $toggle_!lmet+rsft_layer)
 
 ;; "" !LMET_LAYER """""""""""""""""""
@@ -404,6 +423,10 @@
 ;; "" !LMET+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lmet+lsft_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except ())
+
+  spc $action_replace_text_in_filesystem
 
 ;; "" !LMET+LSFT_LAYER """"""""""""""""
 )
@@ -412,6 +435,10 @@
 ;; "" !LMET+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lmet+rsft_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except ())
+
+  spc $action_replace_text_in_filesystem
 
 ;; "" !LMET+RSFT_LAYER """"""""""""""""
 )
@@ -421,15 +448,18 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lctl+lalt_layer)
 
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except (d k a ;))
+
   ;; == LMET =========================
   $!lmet           (t! th _ $toggle_lctl+lalt+lmet_layer)
-  $a|lmet|action   (t! th _ $toggle_lctl+lalt+lmet_layer)
-  $;|lmet|command  (t! th _ $toggle_lctl+lalt+lmet_layer)
+  $a|lmet&action   (t! th _ $toggle_lctl+lalt+lmet_layer)
+  $;|lmet&command  (t! th _ $toggle_lctl+lalt+lmet_layer)
 
   ;; == LSFT/RSFT ====================
-  $d|lsft|def      (t! th _ $toggle_lctl+lalt+lsft_layer)
+  $d|lsft&def      (t! th _ $toggle_lctl+lalt+lsft_layer)
   lsft             (t! th _ $toggle_lctl+lalt+lsft_layer)
-  $k|rsft|keymap   (t! th _ $toggle_lctl+lalt+rsft_layer)
+  $k|rsft&keymap   (t! th _ $toggle_lctl+lalt+rsft_layer)
   rsft             (t! th _ $toggle_lctl+lalt+rsft_layer)
 ;; "" LCTL+LALT_LAYER """""""""""""""""""
 ) 
@@ -438,6 +468,8 @@
 ;; "" LCTL+LALT+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lctl+lalt+lsft_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except ())
 
 ;; "" LCTL+LALT+LSFT_LAYER """""""""""""""
 )
@@ -446,6 +478,8 @@
 ;; "" LCTL+LALT+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lctl+lalt+rsft_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except ())
 
 ;; "" LCTL+LALT+RSFT_LAYER """""""""""""""
 )
@@ -456,17 +490,17 @@
 (deflayermap (!lctl+lalt_layer)
 
   ;; == KEY COMBOS ===================
-  spc $action_omnisearch_files
+  (t! default_map_keys_except (d k a ;))
   
   ;; == LMET =========================
   $!lmet           (t! th _ $toggle_!lctl+lalt+lmet_layer)
-  $a|lmet|action   (t! th _ $toggle_!lctl+lalt+lmet_layer)
-  $;|lmet|command  (t! th _ $toggle_!lctl+lalt+lmet_layer)
+  $a|lmet&action   (t! th _ $toggle_!lctl+lalt+lmet_layer)
+  $;|lmet&command  (t! th _ $toggle_!lctl+lalt+lmet_layer)
 
   ;; == LSFT/RSFT ====================
-  $d|lsft|def      (t! th _ $toggle_!lctl+lalt+lsft_layer)
+  $d|lsft&def      (t! th _ $toggle_!lctl+lalt+lsft_layer)
   lsft             (t! th _ $toggle_!lctl+lalt+lsft_layer)
-  $k|rsft|keymap   (t! th _ $toggle_!lctl+lalt+rsft_layer)
+  $k|rsft&keymap   (t! th _ $toggle_!lctl+lalt+rsft_layer)
   rsft             (t! th _ $toggle_!lctl+lalt+rsft_layer)
 
 ;; "" !LCTL+LALT_LAYER """""""""""""""""""
@@ -478,7 +512,7 @@
 (deflayermap (!lctl+lalt+lsft_layer)
 
   ;; == KEY COMBOS ===================
-  spc $action_omnisearch_file
+  (t! default_map_keys_except ())
 
 ;; "" !LCTL+LALT+LSFT_LAYER """""""""""""""
 )
@@ -487,9 +521,8 @@
 ;; "" !LCTL+LALT+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lctl+lalt+rsft_layer)
-
   ;; == KEY COMBOS ===================
-  spc $action_omnisearch_file
+  (t! default_map_keys_except ())
 
 ;; "" !LCTL+LALT+RSFT_LAYER """""""""""""""
 )
@@ -498,15 +531,18 @@
 ;; "" LCTL+LMET_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lctl+lmet_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except (s l d k))
+
   ;; == LALT =========================
   $!lalt           (t! th _ $toggle_lctl+lmet+lalt_layer)
-  $s|lalt|symbol   (t! th _ $toggle_lctl+lmet+lalt_layer)
-  $l|lalt|localiz  (t! th _ $toggle_lctl+lmet+lalt_layer)
+  $s|lalt&symbol   (t! th _ $toggle_lctl+lmet+lalt_layer)
+  $l|lalt&localiz  (t! th _ $toggle_lctl+lmet+lalt_layer)
 
   ;; == LSFT/RSFT ====================
-  $d|lsft|def      (t! th _ $toggle_lctl+lmet+lsft_layer)
+  $d|lsft&def      (t! th _ $toggle_lctl+lmet+lsft_layer)
   lsft             (t! th _ $toggle_lctl+lmet+lsft_layer)
-  $k|rsft|keymap   (t! th _ $toggle_lctl+lmet+rsft_layer)
+  $k|rsft&keymap   (t! th _ $toggle_lctl+lmet+rsft_layer)
   rsft             (t! th _ $toggle_lctl+lmet+rsft_layer)
 
 ;; "" LCTL+LMET_LAYER """""""""""""""""""
@@ -516,6 +552,8 @@
 ;; "" LCTL+LMET+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lctl+lmet+lsft_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except ())
 
 ;; "" LCTL+LMET+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
 )
@@ -524,6 +562,8 @@
 ;; "" LCTL+LMET+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lctl+lmet+rsft_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except ())
 
 ;; "" LCTL+LMET+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
 )
@@ -533,15 +573,18 @@
 ;; "" !LCTL+LMET_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lctl+lmet_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except (s l d k))
+
   ;; == LALT =========================
   $!lalt          (t! th _ $toggle_!lctl+lmet+lalt_layer)
-  $s|lalt|symbol  (t! th _ $toggle_!lctl+lmet+lalt_layer)
-  $l|lalt|localiz (t! th _ $toggle_!lctl+lmet+lalt_layer)
+  $s|lalt&symbol  (t! th _ $toggle_!lctl+lmet+lalt_layer)
+  $l|lalt&localiz (t! th _ $toggle_!lctl+lmet+lalt_layer)
 
   ;; == LSFT/RSFT ====================
-  $d|lsft|def     (t! th _ $toggle_!lctl+lmet+lsft_layer)
+  $d|lsft&def     (t! th _ $toggle_!lctl+lmet+lsft_layer)
   lsft            (t! th _ $toggle_!lctl+lmet+lsft_layer)
-  $k|rsft|keymap  (t! th _ $toggle_!lctl+lmet+rsft_layer)
+  $k|rsft&keymap  (t! th _ $toggle_!lctl+lmet+rsft_layer)
   rsft            (t! th _ $toggle_!lctl+lmet+rsft_layer)
   
 ;; "" !LCTL+LMET_LAYER """""""""""""""""""
@@ -551,6 +594,8 @@
 ;; "" !LCTL+LMET+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lctl+lmet+lsft_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except ())
 
 ;; "" !LCTL+LMET+LSFT_LAYER """""""""""""""
 )
@@ -559,6 +604,8 @@
 ;; "" !LCTL+LMET+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lctl+lmet+rsft_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except ())
 
 ;; "" !LCTL+LMET+RSFT_LAYER """""""""""""""
 )
@@ -567,15 +614,18 @@
 ;; "" LALT+LMET_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lalt+lmet_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except (f j d k))
+
   ;; == LCTL =========================
   $!lctl           (t! th _ $toggle_lalt+lmet+lctl_layer)
-  $f|lctl|autofill (t! th _ $toggle_lalt+lmet+lctl_layer)
-  $j|lctl|jump     (t! th _ $toggle_lalt+lmet+lctl_layer)  
+  $f|lctl&autofill (t! th _ $toggle_lalt+lmet+lctl_layer)
+  $j|lctl&jump     (t! th _ $toggle_lalt+lmet+lctl_layer)  
 
   ;; == LSFT/RSFT ====================
-  $d|lsft|def      (t! th _ $toggle_lalt+lmet+lsft_layer)
+  $d|lsft&def      (t! th _ $toggle_lalt+lmet+lsft_layer)
   lsft             (t! th _ $toggle_lalt+lmet+lsft_layer)
-  $k|rsft|keymap   (t! th _ $toggle_lalt+lmet+rsft_layer)
+  $k|rsft&keymap   (t! th _ $toggle_lalt+lmet+rsft_layer)
   rsft             (t! th _ $toggle_lalt+lmet+rsft_layer)
 
 ;; "" LALT+LMET_LAYER """""""""""""""""""
@@ -585,6 +635,8 @@
 ;; "" LALT+LMET+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lalt+lmet+lsft_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except ())
 
 ;; "" LALT+LMET+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
 )
@@ -593,6 +645,8 @@
 ;; "" LALT+LMET+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lalt+lmet+rsft_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except ())
 
 ;; "" LALT+LMET+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
 )
@@ -601,15 +655,18 @@
 ;; "" !LALT+LMET_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lalt+lmet_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except (f j d k))
+
   ;; == LCTL =========================
   $!lctl           (t! th _ $toggle_!lalt+lmet+lctl_layer)
-  $f|lctl|autofill (t! th _ $toggle_!lalt+lmet+lctl_layer)
-  $j|lctl|jump     (t! th _ $toggle_!lalt+lmet+lctl_layer)
+  $f|lctl&autofill (t! th _ $toggle_!lalt+lmet+lctl_layer)
+  $j|lctl&jump     (t! th _ $toggle_!lalt+lmet+lctl_layer)
 
   ;; == LSFT/RSFT ====================
-  $d|lsft|def      (t! th _ $toggle_!lalt+lmet+lsft_layer)
+  $d|lsft&def      (t! th _ $toggle_!lalt+lmet+lsft_layer)
   lsft             (t! th _ $toggle_!lalt+lmet+lsft_layer)
-  $k|rsft|keymap   (t! th _ $toggle_!lalt+lmet+rsft_layer)
+  $k|rsft&keymap   (t! th _ $toggle_!lalt+lmet+rsft_layer)
   rsft             (t! th _ $toggle_!lalt+lmet+rsft_layer)
 ;; "" !LALT+LMET_LAYER """""""""""""""""""
 )
@@ -618,6 +675,8 @@
 ;; "" !LALT+LMET+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lalt+lmet+lsft_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except ())
 
 ;; "" !LALT+LMET+LSFT_LAYER """""""""""""""
 )
@@ -626,6 +685,8 @@
 ;; "" !LALT+LMET+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lalt+lmet+rsft_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except ())
 
 ;; "" !LALT+LMET+RSFT_LAYER """""""""""""""
 )
@@ -634,10 +695,13 @@
 ;; "" LCTL+LALT+LMET_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lctl+lalt+lmet_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except (d k))
+
   ;; == LSFT/RSFT ====================
-  $d|lsft|def     (t! th _ $toggle_lctl+lalt+lmet+lsft_layer)
+  $d|lsft&def     (t! th _ $toggle_lctl+lalt+lmet+lsft_layer)
   lsft            (t! th _ $toggle_lctl+lalt+lmet+lsft_layer)
-  $k|rsft|keymap  (t! th _ $toggle_lctl+lalt+lmet+rsft_layer)
+  $k|rsft&keymap  (t! th _ $toggle_lctl+lalt+lmet+rsft_layer)
   rsft            (t! th _ $toggle_lctl+lalt+lmet+rsft_layer)
 
 ;; "" LCTL+LALT+LMET_LAYER """""""""""""""""""
@@ -647,6 +711,8 @@
 ;; "" LCTL+LALT+LMET+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lctl+lalt+lmet+lsft_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except ())
 ;; "" LCTL+LALT+LMET+LSFT_LAYER """""""""""""""
 )
 
@@ -654,6 +720,8 @@
 ;; "" LCTL+LALT+LMET+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lctl+lalt+lmet+rsft_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except ())
 ;; "" LCTL+LALT+LMET+RSFT_LAYER """""""""""""""
 )
 
@@ -661,11 +729,13 @@
 ;; "" !LCTL+LALT+LMET_LAYER """""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lctl+lalt+lmet_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except (d k))
 
   ;; == LSFT/RSFT ====================
-  $d|lsft|def     (t! th _ $toggle_!lctl+lalt+lmet+lsft_layer)
+  $d|lsft&def     (t! th _ $toggle_!lctl+lalt+lmet+lsft_layer)
   lsft            (t! th _ $toggle_!lctl+lalt+lmet+lsft_layer)
-  $k|rsft|keymap  (t! th _ $toggle_!lctl+lalt+lmet+rsft_layer)
+  $k|rsft&keymap  (t! th _ $toggle_!lctl+lalt+lmet+rsft_layer)
   rsft            (t! th _ $toggle_!lctl+lalt+lmet+rsft_layer)
 
 ;; "" !LCTL+LALT+LMET_LAYER """""""""""""""""""
@@ -675,6 +745,8 @@
 ;; "" !LCTL+LALT+LMET+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lctl+lalt+lmet+lsft_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except ())
 
 ;; "" !LCTL+LALT+LMET+LSFT_LAYER """""""""""""""
 )
@@ -683,6 +755,8 @@
 ;; "" !LCTL+LALT+LMET+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lctl+lalt+lmet+rsft_layer)
+  ;; == KEY COMBOS ===================
+  (t! default_map_keys_except ())
 
 ;; "" !LCTL+LALT+LMET+RSFT_LAYER """""""""""""""
 )
@@ -692,24 +766,24 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lsft_layer)
   ;; Pressing lsft+rsft (in that order) issues tab_next action.
-  rsft (multi (release-key lsft) $action_tab_next)
+  rsft (multi (release-key lsft) $action_tabs_next)
 
   ent $action_sft+ent
 
-  $ralt|apps        (t! th _ $toggle_apps+lsft_layer)
+  $apps             (t! th _ $toggle_apps+lsft_layer)
   $tab|open         (t! th _ $toggle_opts+lsft_layer)
-  $prnt|bookm       (t! th _ $toggle_bookmarks+lsft_layer)
+  $bookm            (t! th _ $toggle_bookmarks+lsft_layer)
   $esc|omni         (t! th _ $toggle_omni+lsft_layer)
-  $f|lctl|autofill  (t! th _ $toggle_lctl+lsft_layer)
-  $j|lctl|jump      (t! th _ $toggle_lctl+lsft_layer)
+  $f|lctl&autofill  (t! th _ $toggle_lctl+lsft_layer)
+  $j|lctl&jump      (t! th _ $toggle_lctl+lsft_layer)
   $!lctl            (t! th _ $toggle_!lctl+lsft_layer)
 
-  $s|lalt|symbol    (t! th _ $toggle_lalt+lsft_layer)
-  $l|lalt|localiz   (t! th _ $toggle_lalt+lsft_layer)
+  $s|lalt&symbol    (t! th _ $toggle_lalt+lsft_layer)
+  $l|lalt&localiz   (t! th _ $toggle_lalt+lsft_layer)
   $!lalt            (t! th _ $toggle_!lalt+lsft_layer)
 
-  $a|lmet|action    (t! th _ $toggle_lmet+lsft_layer)
-  $;|lmet|command   (t! th _ $toggle_lmet+lsft_layer)
+  $a|lmet&action    (t! th _ $toggle_lmet+lsft_layer)
+  $;|lmet&command   (t! th _ $toggle_lmet+lsft_layer)
   $!lmet            (t! th _ $toggle_!lmet+lsft_layer)
 
 ;; "" LSFT_LAYER """"""""""""""""""""""""""""""
@@ -720,23 +794,23 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (rsft_layer)
   ;; Pressing rsft+lsft (in that order) issues tab_prev combo.
-  lsft (multi (release-key rsft) $action_tab_prev)
+  lsft (multi (release-key rsft) $action_tabs_prev)
 
-  $ralt|apps        (t! th _ $toggle_apps+rsft_layer)
+  $apps             (t! th _ $toggle_apps+rsft_layer)
   $tab|open         (t! th _ $toggle_opts+rsft_layer)
-  $prnt|bookm       (t! th _ $toggle_bookmarks+rsft_layer)
+  $bookm            (t! th _ $toggle_bookmarks+rsft_layer)
   $esc|omni         (t! th _ $toggle_omni+rsft_layer)
 
-  $f|lctl|autofill  (t! th _ $toggle_lctl+rsft_layer)
-  $j|lctl|jump      (t! th _ $toggle_lctl+rsft_layer)
+  $f|lctl&autofill  (t! th _ $toggle_lctl+rsft_layer)
+  $j|lctl&jump      (t! th _ $toggle_lctl+rsft_layer)
   $!lctl            (t! th _ $toggle_!lctl+rsft_layer)
 
-  $s|lalt|symbol    (t! th _ $toggle_lalt+rsft_layer)
-  $l|lalt|localiz   (t! th _ $toggle_lalt+rsft_layer)
+  $s|lalt&symbol    (t! th _ $toggle_lalt+rsft_layer)
+  $l|lalt&localiz   (t! th _ $toggle_lalt+rsft_layer)
   $!lalt            (t! th _ $toggle_!lalt+lsft_layer)
 
-  $a|lmet|action    (t! th _ $toggle_lmet+rsft_layer)
-  $;|lmet|command   (t! th _ $toggle_lmet+rsft_layer)
+  $a|lmet&action    (t! th _ $toggle_lmet+rsft_layer)
+  $;|lmet&command   (t! th _ $toggle_lmet+rsft_layer)
   $!lmet            (t! th _ $toggle_!lmet+lsft_layer)
 
 ;; "" RSFT_LAYER """"""""""""""""""""""""""""""

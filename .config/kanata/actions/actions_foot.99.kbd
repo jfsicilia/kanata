@@ -1,426 +1,644 @@
 (defvar
 
-;; == App actions in interfaces (actions.kbd) ===============
+;; == SFT actions ==========================================================
+foot_action_sft+ent                 (macro \ ent)  ;;""
 
-;; SFT actions ==========================================================
-foot_action_sft+ent                 (macro \ ent)
-;; LCTL actions ==========================================================
-;; foot_action_lctl+a                 
-;; foot_action_lctl+b                 
-;; foot_action_lctl+c                 
-;; foot_action_lctl+d                 
-;; foot_action_lctl+e                 
-;; foot_action_lctl+f                 
-;; foot_action_lctl+g                 
-;; foot_action_lctl+h                 
-;; foot_action_lctl+i                 
-;; foot_action_lctl+j                 
-;; foot_action_lctl+k                 
-;; foot_action_lctl+l                 
-;; foot_action_lctl+m                 
-;; foot_action_lctl+n                 
-;; foot_action_lctl+o                 
-;; foot_action_lctl+p                 
-;; foot_action_lctl+q                 
-;; foot_action_lctl+r                 
-;; foot_action_lctl+s                 
-;; foot_action_lctl+t                 
-;; foot_action_lctl+lsft+t            
-;; foot_action_lctl+u                 
-;; foot_action_lctl+v                 
-;; foot_action_lctl+w                 
-;; foot_action_lctl+x                 
-;; foot_action_lctl+y                 
-;; foot_action_lctl+z                 
-;; foot_action_lctl+,                 
-;; foot_action_lctl+.                 
-;; foot_action_lctl+/                 
-;; foot_action_lctl+;                 
-;; foot_action_lctl+'                 
-;; foot_action_lctl+[                 
-;; foot_action_lctl+]                 
-;; foot_action_lctl+\                 
-;; foot_action_lctl+-                 
-;; foot_action_lctl+=                 
-;; foot_action_lctl+1                 
-;; foot_action_lctl+2                 
-;; foot_action_lctl+3                 
-;; foot_action_lctl+4                 
-;; foot_action_lctl+5                 
-;; foot_action_lctl+6                 
-;; foot_action_lctl+7                 
-;; foot_action_lctl+8                 
-;; foot_action_lctl+9                 
-;; foot_action_lctl+0                 
+;; == LCTL actions ==========================================================
+;; ___TO_SET___ foot_action_lctl+a                 
+;; ___TO_SET___ foot_action_lctl+b                 
+;; ___TO_SET___ foot_action_lctl+c                 
+;; ___TO_SET___ foot_action_lctl+d                 
+;; ___TO_SET___ foot_action_lctl+e                 
+;; ___TO_SET___ foot_action_lctl+f                 
+;; ___TO_SET___ foot_action_lctl+g                 
+;; ___TO_SET___ foot_action_lctl+h                 
+;; ___TO_SET___ foot_action_lctl+i                 
+;; ___TO_SET___ foot_action_lctl+j                 
+;; ___TO_SET___ foot_action_lctl+k                 
+;; ___TO_SET___ foot_action_lctl+l                 
+;; ___TO_SET___ foot_action_lctl+m                 
+;; ___TO_SET___ foot_action_lctl+n                 
+;; ___TO_SET___ foot_action_lctl+o                 
+;; ___TO_SET___ foot_action_lctl+p                 
+;; ___TO_SET___ foot_action_lctl+q                 
+;; ___TO_SET___ foot_action_lctl+r                 
+;; ___TO_SET___ foot_action_lctl+s                 
+;; ___TO_SET___ foot_action_lctl+t                 
+;; ___TO_SET___ foot_action_lctl+lsft+t            
+;; ___TO_SET___ foot_action_lctl+u                 
+;; ___TO_SET___ foot_action_lctl+v                 
+;; ___TO_SET___ foot_action_lctl+w                 
+;; ___TO_SET___ foot_action_lctl+x                 
+;; ___TO_SET___ foot_action_lctl+y                 
+;; ___TO_SET___ foot_action_lctl+z                 
+;; ___TO_SET___ foot_action_lctl+,                 
+;; ___TO_SET___ foot_action_lctl+.                 
+;; ___TO_SET___ foot_action_lctl+/                 
+;; ___TO_SET___ foot_action_lctl+;                 
+;; ___TO_SET___ foot_action_lctl+'                 
+;; ___TO_SET___ foot_action_lctl+[                 
+;; ___TO_SET___ foot_action_lctl+]                 
+;; ___TO_SET___ foot_action_lctl+\                 
+;; ___TO_SET___ foot_action_lctl+-                 
+;; ___TO_SET___ foot_action_lctl+=                 
+;; ___TO_SET___ foot_action_lctl+1                 
+;; ___TO_SET___ foot_action_lctl+2                 
+;; ___TO_SET___ foot_action_lctl+3                 
+;; ___TO_SET___ foot_action_lctl+4                 
+;; ___TO_SET___ foot_action_lctl+5                 
+;; ___TO_SET___ foot_action_lctl+6                 
+;; ___TO_SET___ foot_action_lctl+7                 
+;; ___TO_SET___ foot_action_lctl+8                 
+;; ___TO_SET___ foot_action_lctl+9                 
+;; ___TO_SET___ foot_action_lctl+0                 
 
-;; !LCTL actions ==========================================================
-;; foot_action_!lctl+a                
-;; foot_action_!lctl+b                
-;; foot_action_!lctl+c                
-;; foot_action_!lctl+d                
-;; foot_action_!lctl+e                
-;; foot_action_!lctl+f                
-;; foot_action_!lctl+g                
-;; foot_action_!lctl+h                
-;; foot_action_!lctl+i                
-;; foot_action_!lctl+j                
-;; foot_action_!lctl+k                
-;; foot_action_!lctl+l                
-;; foot_action_!lctl+m                
-;; foot_action_!lctl+n                
-;; foot_action_!lctl+o                
-;; foot_action_!lctl+p                
-;; foot_action_!lctl+lsft+p           
-;; foot_action_!lctl+q                
-;; foot_action_!lctl+r                
-;; foot_action_!lctl+s                
-;; foot_action_!lctl+t                
-;; foot_action_!lctl+lsft+t           
-;; foot_action_!lctl+u                
-;; foot_action_!lctl+v                
-;; foot_action_!lctl+w                
-;; foot_action_!lctl+x                
-;; foot_action_!lctl+y                
-;; foot_action_!lctl+z                
-;; foot_action_!lctl+,                
-;; foot_action_!lctl+.                
-;; foot_action_!lctl+/                
-;; foot_action_!lctl+;                
-;; foot_action_!lctl+'                
-;; foot_action_!lctl+[                
-;; foot_action_!lctl+]                
-;; foot_action_!lctl+\                
-;; foot_action_!lctl+-                
-;; foot_action_!lctl+=                
-;; foot_action_!lctl+1                
-;; foot_action_!lctl+2                
-;; foot_action_!lctl+3                
-;; foot_action_!lctl+4                
-;; foot_action_!lctl+5                
-;; foot_action_!lctl+6                
-;; foot_action_!lctl+7                
-;; foot_action_!lctl+8                
-;; foot_action_!lctl+9                
-;; foot_action_!lctl+0                
+;; == !LCTL actions ==========================================================
+;; ___TO_SET___ foot_action_!lctl+a                
+;; ___TO_SET___ foot_action_!lctl+b                
+;; ___TO_SET___ foot_action_!lctl+c                
+;; ___TO_SET___ foot_action_!lctl+d                
+;; ___TO_SET___ foot_action_!lctl+e                
+;; ___TO_SET___ foot_action_!lctl+f                
+;; ___TO_SET___ foot_action_!lctl+g                
+;; ___TO_SET___ foot_action_!lctl+h                
+;; ___TO_SET___ foot_action_!lctl+i                
+;; ___TO_SET___ foot_action_!lctl+j                
+;; ___TO_SET___ foot_action_!lctl+k                
+;; ___TO_SET___ foot_action_!lctl+l                
+;; ___TO_SET___ foot_action_!lctl+m                
+;; ___TO_SET___ foot_action_!lctl+n                
+;; ___TO_SET___ foot_action_!lctl+o                
+;; ___TO_SET___ foot_action_!lctl+p                
+;; ___TO_SET___ foot_action_!lctl+lsft+p           
+;; ___TO_SET___ foot_action_!lctl+q                
+;; ___TO_SET___ foot_action_!lctl+r                
+;; ___TO_SET___ foot_action_!lctl+s                
+;; ___TO_SET___ foot_action_!lctl+t                
+;; ___TO_SET___ foot_action_!lctl+lsft+t           
+;; ___TO_SET___ foot_action_!lctl+u                
+;; ___TO_SET___ foot_action_!lctl+v                
+;; ___TO_SET___ foot_action_!lctl+w                
+;; ___TO_SET___ foot_action_!lctl+x                
+;; ___TO_SET___ foot_action_!lctl+y                
+;; ___TO_SET___ foot_action_!lctl+z                
+;; ___TO_SET___ foot_action_!lctl+,                
+;; ___TO_SET___ foot_action_!lctl+.                
+;; ___TO_SET___ foot_action_!lctl+/                
+;; ___TO_SET___ foot_action_!lctl+;                
+;; ___TO_SET___ foot_action_!lctl+'                
+;; ___TO_SET___ foot_action_!lctl+[                
+;; ___TO_SET___ foot_action_!lctl+]                
+;; ___TO_SET___ foot_action_!lctl+\                
+;; ___TO_SET___ foot_action_!lctl+-                
+;; ___TO_SET___ foot_action_!lctl+=                
+;; ___TO_SET___ foot_action_!lctl+1                
+;; ___TO_SET___ foot_action_!lctl+2                
+;; ___TO_SET___ foot_action_!lctl+3                
+;; ___TO_SET___ foot_action_!lctl+4                
+;; ___TO_SET___ foot_action_!lctl+5                
+;; ___TO_SET___ foot_action_!lctl+6                
+;; ___TO_SET___ foot_action_!lctl+7                
+;; ___TO_SET___ foot_action_!lctl+8                
+;; ___TO_SET___ foot_action_!lctl+9                
+;; ___TO_SET___ foot_action_!lctl+0                
 
-;; == Seek & Select combos ===============================================
-;; !lctl+spc
-;; foot_action_select_files           
-;; !lctl+lsft+spc
-;; foot_action_select_opened_files    
-;; !lctl+rsft+spc
-;; foot_action_select_folders         
-;; !lalt+spc
-;; foot_action_select_command         
-;; !lmet+spc
-;; foot_action_select_symbol          
-;; !lctl+!lalt+spc
-;; foot_action_omnisearch_files       
-;; !lctl+!lalt+lsft+spc
-;; foot_action_omnisearch_file        
+;; == DOMAINS =============================================================
 
-;; == Favs combos ========================================================
-;; bookm + spc
-;; foot_action_select_fav             
 
-;; == Settings combos ====================================================
-;; omni + ,
-;; foot_action_settings               
+;; == #open =============================================================
+;; #open + spc
+;; ___TO_SET___ foot_action_open_with              
+;; #open + m
+;; ___TO_SET___ foot_action_open_with_chrome       
+;; #open + t
+;; ___TO_SET___ foot_action_open_with_terminal     
+;; #open + v
+;; ___TO_SET___ foot_action_open_with_nvim         
 
-;; == Tabs combos ========================================================
-;; gui + tabs + l | gui + tabs + right | lsft + rsft | 2x rsft | !met + tab
-;; !gui + tabs + l | !gui + tabs + right
-;; foot_action_tab_next               
-;; gui + tabs + h | gui + tabs + left | rsft + lsft | 2x lsft | !met + sft + tab
-;; !gui + tabs + h | !gui + tabs + left
-;; foot_action_tab_prev               
-;; gui + tabs (tap) | 2x !lctl/tabs
-;; !gui + tabs (tap)
-;; foot_action_tab_toggle             
-;; gui + tabs + t | omni + t
-;; !gui + tabs + t
-;; foot_action_tab_new                
-;; gui + tabs + w | omni + w
-;; !gui + tabs + w
-;; foot_action_tab_close              
-;; gui + tabs + lsft + t | omni + lsft + t
-;; !gui + tabs + lsft + t
-;; foot_action_tab_undo_close         
+;; == #quickfix =========================================================
+;; #quickfix + spc
+;; ___TO_SET___ foot_action_quickfix               
 
-;; gui + tabs + 1
-;; !gui + tabs + 1
-;; foot_action_tab_goto_1             
-;; gui + tabs + 2
-;; !gui + tabs + 2
-;; foot_action_tab_goto_2             
-;; gui + tabs + 3
-;; !gui + tabs + 3
-;; foot_action_tab_goto_3             
-;; gui + tabs + 4
-;; !gui + tabs + 4
-;; foot_action_tab_goto_4             
-;; gui + tabs + 5
-;; !gui + tabs + 5
-;; foot_action_tab_goto_5             
-;; gui + tabs + 6
-;; !gui + tabs + 6
-;; foot_action_tab_goto_6             
-;; gui + tabs + 7
-;; !gui + tabs + 7
-;; foot_action_tab_goto_7             
-;; gui + tabs + 8
-;; !gui + tabs + 8
-;; foot_action_tab_goto_8             
-;; gui + tabs + 9
-;; !gui + tabs + 9
-;; foot_action_tab_goto_last          
+;; == #refs =========================================================
+;; #refs + spc
+;; ___TO_SET___ foot_action_refs                   
+;; #refs + lsft + spc
+;; ___TO_SET___ foot_action_refs_in                
+;; #refs + rsft + spc
+;; ___TO_SET___ foot_action_refs_out               
 
-;; == Tab move combos =====================================================
-;; gui + tabs + lsft + h | gui + tabs + lsft + left
-;; !gui + tabs + lsft + h | !gui + tabs + lsft + left
-;; foot_action_tab_move_left          
-;; gui + tabs + lsft + l | gui + tabs + lsft + right
-;; !gui + tabs + lsft + l | !gui + tabs + lsft + right
-;; foot_action_tab_move_right         
-;; gui + tabs + lsft + k | gui + tabs + lsft + up
-;; !gui + tabs + lsft + k | !gui + tabs + lsft + up
-;; foot_action_tab_move_first         
-;; gui + tabs + lsft + j | gui + tabs + lsft + down
-;; !gui + tabs + lsft + j | !gui + tabs + lsft + down
-;; foot_action_tab_move_last          
+;; == #terminals =========================================================
+;; #terminals + spc
+;; ___TO_SET___ foot_action_terminals              
+;; #terminals + n
+;; ___TO_SET___ foot_action_terminals_new          
 
-;; == Panes combos =======================================================
-;; gui + pane + h | gui + pane + left
-;; !gui + tabs + h | !gui + tabs + left
-;; foot_action_pane_left              
-;; gui + pane + l | gui + pane + right
-;; !gui + tabs + l | !gui + tabs + right
-;; foot_action_pane_right             
-;; gui + pane + k | gui + pane + up
-;; !gui + tabs + k | !gui + tabs + up
-;; foot_action_pane_above             
-;; gui + pane + j | gui + pane + down
-;; !gui + tabs + j | !gui + tabs + down
-;; foot_action_pane_below             
-;; gui + pane (tap) | 2x !lalt/pane
-;; !gui + pane (tap)
-;; foot_action_pane_toggle            
-;; gui + pane + spc
-;; !gui + pane + spc
-;; foot_action_pane_max               
-;; gui + pane + -
-;; !gui + pane + -
-;; foot_action_pane_h_split           
-;; gui + pane + \
-;; !gui + pane + \
-;; foot_action_pane_v_split           
-;; gui + pane + w
-;; !gui + pane + w
-;; foot_action_pane_close             
-;; == Pane move combos ====================================================
-;; gui + pane + lsft + h | gui + pane + lsft + left
-;; !gui + pane + lsft + h | !gui + pane + lsft + left
-;; foot_action_pane_move_left         
-;; gui + pane + lsft + l | gui + pane + lsft + right
-;; !gui + pane + lsft + l | !gui + pane + lsft + right
-;; foot_action_pane_move_right        
-;; gui + pane + lsft + k | gui + pane + lsft + up
-;; !gui + pane + lsft + k | !gui + pane + lsft + up
-;; foot_action_pane_move_above        
-;; gui + pane + lsft + j | gui + pane + lsft + down
-;; !gui + pane + lsft + j | !gui + pane + lsft + down
-;; foot_action_pane_move_below        
+;; == #history =========================================================
+;; #history + spc
+;; ___TO_SET___ foot_action_history                
 
-;; == Pane resize combos ==================================================
-;; gui + pane + ralt + h | gui + pane + ralt + left
-;; !gui + pane + ralt + h | !gui + pane + ralt + left
-;; foot_action_pane_resize_left       
-;; gui + pane + ralt + l | gui + pane + ralt + right
-;; !gui + pane + ralt + l | !gui + pane + ralt + right
-;; foot_action_pane_resize_right      
-;; gui + pane + ralt + k | gui + pane + ralt + up
-;; !gui + pane + ralt + k | !gui + pane + ralt + up
-;; foot_action_pane_resize_above      
-;; gui + pane + ralt + j | gui + pane + ralt + down
-;; !gui + pane + ralt + j | !gui + pane + ralt + down
-;; foot_action_pane_resize_below      
+;; == #debug =========================================================
+;; #debug + spc
+;; ___TO_SET___ foot_action_debug_breakpoint       
+;; #debug + r
+;; ___TO_SET___ foot_action_debug_run              
+;; #debug + g
+;; ___TO_SET___ foot_action_debug_go               
+;; #debug + s
+;; ___TO_SET___ foot_action_debug_stop             
+;; #debug + i
+;; ___TO_SET___ foot_action_debug_inside           
+;; #debug + o
+;; ___TO_SET___ foot_action_debug_over             
 
-;; == Pane swap combos ====================================================
-;; gui + pane + rctl + h | gui + pane + rctl + left
-;; !gui + pane + rctl + h | !gui + pane + rctl + left
-;; foot_action_pane_swap_left         
-;; gui + pane + rctl + l | gui + pane + rctl + right
-;; !gui + pane + rctl + l | !gui + pane + rctl + right
-;; foot_action_pane_swap_right        
-;; gui + pane + rctl + k | gui + pane + rctl + up
-;; !gui + pane + rctl + k | !gui + pane + rctl + up
-;; foot_action_pane_swap_above        
-;; gui + pane + rctl + j | gui + pane + rctl + down
-;; !gui + pane + rctl + j | !gui + pane + rctl + down
-;; foot_action_pane_swap_below        
+;; == #info =========================================================
+;; #info + spc
+;; ___TO_SET___ foot_action_info                   
 
-;; == Pane go by number combos ============================================
-;; gui + pane + 1
-;; !gui + pane + 1
-;; foot_action_pane_go_1              
-;; gui + pane + 2
-;; !gui + pane + 2
-;; foot_action_pane_go_2              
-;; gui + pane + 3
-;; !gui + pane + 3
-;; foot_action_pane_go_3              
-;; gui + pane + 4
-;; !gui + pane + 4
-;; foot_action_pane_go_4              
-;; gui + pane + 5
-;; !gui + pane + 5
-;; foot_action_pane_go_5              
-;; gui + pane + 6
-;; !gui + pane + 6
-;; foot_action_pane_go_6              
-;; gui + pane + 7
-;; !gui + pane + 7
-;; foot_action_pane_go_7              
-;; gui + pane + 8
-;; !gui + pane + 8
-;; foot_action_pane_go_8              
-;; gui + pane + 9
-;; !gui + pane + 9
-;; foot_action_pane_go_last           
+;; == #source =========================================================
+;; #source + spc
+;; ___TO_SET___ foot_action_source                 
 
-;; == Pane toggle combos (app-specific) ===================================
-;; gui + pane + b
-;; foot_action_pane_bookmarks         
-;; gui + pane + c
-;; foot_action_pane_calendar          
-;; gui + pane + d
-;; foot_action_pane_day               
-;; gui + pane + lsft + d
-;; foot_action_pane_<day              
-;; gui + pane + e
-;; foot_action_pane_explorer          
-;; gui + pane + lsft + e
-;; foot_action_pane_<explorer         
-;; gui + pane + f
-;; foot_action_pane_find              
-;; gui + pane + g
-;; foot_action_pane_go                
-;; gui + pane + m
-;; foot_action_pane_main              
-;; gui + pane + o
-;; foot_action_pane_outline           
-;; gui + pane + p
-;; foot_action_pane_properties        
-;; gui + pane + lsft + p
-;; foot_action_pane_<properties       
-;; gui + pane + r
-;; foot_action_pane_recent            
-;; gui + pane + s
-;; foot_action_pane_left_sidebar      
-;; gui + pane + lsft + d
-;; foot_action_pane_right_sidebar     
-;; gui + pane + t
-;; foot_action_pane_tags              
-;; gui + pane + v
-;; foot_action_pane_vertical_tabs     
-;; gui + pane + ;
-;; foot_action_pane_graph             
-;; gui + pane + ,
-;; foot_action_pane_backlinks         
-;; gui + pane + .
-;; foot_action_pane_outlinks          
-;; gui + pane + lsft + .
-;; foot_action_pane_<outlinks         
+;; == #omni ============================================================
 
-;; == History combos =====================================================
-;; omni + ]
-;; foot_action_hist_next              
-;; omni + [
-;; foot_action_hist_prev              
+;; == #omni nav ======================================================
+;; omni + g
+;; ___TO_SET___ foot_action_omni_go                
 
-;; == Edit combos ======================================================
 ;; omni + b
-foot_action_page_up                        S-pgup
+foot_action_omni_page_up                        S-pgup
 
 ;; omni + f
-foot_action_page_down                      S-pgdn
+foot_action_omni_page_down                      S-pgdn
 
 ;; omni + k
-;; foot_action_up                     
+;; ___TO_SET___ foot_action_omni_up                
 ;; omni + j
-;; foot_action_down                   
+;; ___TO_SET___ foot_action_omni_down              
 ;; omni + h
-;; foot_action_left                   
+;; ___TO_SET___ foot_action_omni_left              
 ;; omni + l
-;; foot_action_right                  
+;; ___TO_SET___ foot_action_omni_right             
 
+;; omni + ]
+;; ___TO_SET___ foot_action_omni_hist_next         
+;; omni + [
+;; ___TO_SET___ foot_action_omni_hist_prev         
+
+;; == #omni edit ======================================================
 ;; omni + c
-;; foot_action_copy                   
+;; ___TO_SET___ foot_action_omni_copy              
 
 ;; omni + x
-;; foot_action_cut                    
+;; ___TO_SET___ foot_action_omni_cut               
 ;; omni + v
-;; foot_action_paste                  
+;; ___TO_SET___ foot_action_omni_paste             
 ;; omni + z
-;; foot_action_undo                   
+;; ___TO_SET___ foot_action_omni_undo              
 ;; omni + lsft + z
-;; foot_action_redo                   
+;; ___TO_SET___ foot_action_omni_redo              
+;; omni + ;
+;; ___TO_SET___ foot_action_omni_comment           
 
-;; == File Manager combos ===============================================
-;; omni + e
-;; foot_action_rename                 
-;; omni + d
-;; foot_action_duplicate              
+;; == #omni file manager ===============================================
 ;; omni + spc
-;; foot_action_toggle_select          
+;; ___TO_SET___ foot_action_omni_select            
+;; omni + r
+;; ___TO_SET___ foot_action_omni_rename            
+;; omni + d
+;; ___TO_SET___ foot_action_omni_duplicate         
 ;; omni + a
-;; foot_action_select_all             
+;; ___TO_SET___ foot_action_omni_select_all        
 ;; omni + lsft + a
-;; foot_action_clear_select           
+;; ___TO_SET___ foot_action_omni_clear_select      
 ;; omni + rsft + a
-;; foot_action_invert_select          
+;; ___TO_SET___ foot_action_omni_invert_select     
 ;; omni + n
-;; foot_action_new                    
+;; ___TO_SET___ foot_action_omni_new               
 ;; omni + lsft + n
-;; foot_action_lsft+new               
+;; ___TO_SET___ foot_action_omni_lsft+new          
 ;; omni + rsft + n
-;; foot_action_rsft+new               
-
+;; ___TO_SET___ foot_action_omni_rsft+new          
 ;; omni + o
-;; foot_action_open                   
+;; ___TO_SET___ foot_action_omni_open              
 ;; omni + p
-;; foot_action_parent                 
+;; ___TO_SET___ foot_action_omni_parent            
+;; omni + s
+;; ___TO_SET___ foot_action_omni_sort              
+;; omni + lsft + s
+;; ___TO_SET___ foot_action_omni_reverse_sort      
+;; omni + y
+;; ___TO_SET___ foot_action_omni_filter            
+;; omni + e
+;; ___TO_SET___ foot_action_omni_extract           
+;; omni + lsft + e
+;; ___TO_SET___ foot_action_omni_compress          
+;; omni + i
+;; ___TO_SET___ foot_action_omni_info              
+
+;; == #omni user interface ===============================================
+;; ___TO_SET___ foot_action_omni_view_1            
+;; ___TO_SET___ foot_action_omni_view_2            
+;; ___TO_SET___ foot_action_omni_view_3            
+;; ___TO_SET___ foot_action_omni_view_4            
+;; ___TO_SET___ foot_action_omni_view_5            
+;; ___TO_SET___ foot_action_omni_view_6            
+;; ___TO_SET___ foot_action_omni_view_7            
+;; ___TO_SET___ foot_action_omni_view_8            
+;; ___TO_SET___ foot_action_omni_view_9            
+;; ___TO_SET___ foot_action_omni_view_0            
+
+;; == #omni misc ===============================================
+;; omni + t
+;; see #tabs
+;; ___TO_SET___ foot_action_omni_tab_new           
+;; omni + lsft + t
+;; see #tabs
+;; ___TO_SET___ foot_action_omni_tab_undo_close    
+;; omni + w
+;; see #tabs
+;; ___TO_SET___ foot_action_omni_tab_close         
+;; omni + q
+;; see #windows
+;; ___TO_SET___ foot_action_omni_window_close      
+
+;; omni + m
+;; see #mem
+;; ___TO_SET___ foot_action_omni_clipboard         
+;; omni + ,
+;; see #settings
+;; ___TO_SET___ foot_action_omni_settings          
+;; omni + .
+;; see #tags
+;; ___TO_SET___ foot_action_omni_tags              
+;; omni + /
+;; see #help
+;; ___TO_SET___ foot_action_omni_help              
 
 ;; omni + '
-;; foot_action_view                   
-;; omni + lsft + '
-;; foot_action_lsft+view              
-;; omni + rsft + '
-;; foot_action_rsft+view              
-;; omni + ent
-;; foot_action_edit                   
-;; omni + lsft + ent
-;; foot_action_lsft+edit              
-;; omni + rsft + ent
-;; foot_action_rsft+edit              
-;; omni + \
-;; foot_action_explore                
-;; omni + lsft + \
-;; foot_action_lsft+explore           
-;; omni + rsft + \
-;; foot_action_rsft+explore           
-;; omni + s
-;; foot_action_search                 
-;; omni + lsft + s
-;; foot_action_lsft+search            
-;; omni + rsft + s
-;; foot_action_rsft+search            
-;; omni + r
-;; foot_action_replace                
-;; omni + lsft + r
-;; foot_action_lsft+replace           
-;; omni + rsft + r
-;; foot_action_rsft+replace           
-;; omni + g
-;; foot_action_go                     
+;; not used yet
+;; omni + u
+;; not yet used.
+
+;; == #actions =========================================================
+;; #actions + spc
+;; ___TO_SET___ foot_action_actions                
+
+;; == #symbols =============================================================
+;; #symbols + spc
+;; ___TO_SET___ foot_action_symbols                
+
+;; == #defs =============================================================
+;; #defs + spc
+;; ___TO_SET___ foot_action_defs                   
+
+;; == #autofill =============================================================
+;; #autofill + spc
+;; ___TO_SET___ foot_action_autofill               
+
+;; == #git =============================================================
+;; #git + spc
+;; ___TO_SET___ foot_action_git                    
+
+;; == #hyperlinks =============================================================
+;; #hyperlinks + spc
+;; ___TO_SET___ foot_action_hyperlinks             
+
+;; == #jumps =============================================================
+;; #jumps + spc
+;; ___TO_SET___ foot_action_jumps                  
+
+;; == #keymaps =============================================================
+;; #keymaps + spc
+;; ___TO_SET___ foot_action_keymaps                
+
+;; == #locations =============================================================
+;; #locations + spc
+;; ___TO_SET___ foot_action_locations              
+
+;; == #commands ===========================================================
+;; #commands + spc
+;; ___TO_SET___ foot_action_commands               
+
+;; == #registers =============================================================
+;; #registers + spc
+;; ___TO_SET___ foot_action_registers              
+
+;; == #panes =============================================================
+;; #panes + spc
+;; ___TO_SET___ foot_action_panes                  
+
+;; #panes + ent
+;; ___TO_SET___ foot_action_panes_max              
+
+;; #panes + h | #panes + left
+;; ___TO_SET___ foot_action_panes_left             
+;; #panes + l | #panes + right
+;; ___TO_SET___ foot_action_panes_right            
+;; #panes + k | #panes + up
+;; ___TO_SET___ foot_action_panes_above            
+;; #panes + j | #panes + down
+;; ___TO_SET___ foot_action_panes_below            
+
+;; #panes + -
+;; ___TO_SET___ foot_action_panes_split_h          
+;; #panes + \
+;; ___TO_SET___ foot_action_panes_split_v          
+
+;; #panes + w
+;; ___TO_SET___ foot_action_panes_close            
+
+;; == #panes + #toggle ====================================================
+;; #panes + #toggle | 2x !lalt
+;; ___TO_SET___ foot_action_panes_toggle           
+
+;; == #panes + #float ====================================================
+;; #panes + float
+;; ___TO_SET___ foot_action_panes_float            
+
+;; == #panes + #move ======================================================
+;; #panes + #move + h | #panes + #move + left
+;; ___TO_SET___ foot_action_panes_move_left        
+;; #panes + #move + l | #panes + #move + right
+;; ___TO_SET___ foot_action_panes_move_right       
+;; #panes + #move + k | #panes + #move + up
+;; ___TO_SET___ foot_action_panes_move_above       
+;; #panes + #move + j | #panes + #move + down
+;; ___TO_SET___ foot_action_panes_move_below       
+
+;; == #panes + #resize ====================================================
+;; #panes + #resize + h | #panes + #resize + left
+;; ___TO_SET___ foot_action_panes_resize_left      
+;; #panes + #resize + l | #panes + #resize + right
+;; ___TO_SET___ foot_action_panes_resize_right     
+;; #panes + #resize + k | #panes + #resize + up
+;; ___TO_SET___ foot_action_panes_resize_above     
+;; #panes + #resize + j | #panes + #resize + down
+;; ___TO_SET___ foot_action_panes_resize_below     
+
+;; == #panes + #swap ======================================================
+;; #panes + #swap + h | #panes + #swap + left
+;; ___TO_SET___ foot_action_panes_swap_left        
+;; #panes + #swap + l | #panes + #swap + right
+;; ___TO_SET___ foot_action_panes_swap_right       
+;; #panes + #swap + k | #panes + #swap + up
+;; ___TO_SET___ foot_action_panes_swap_above       
+;; #panes + #swap + j | #panes + #swap + down
+;; ___TO_SET___ foot_action_panes_swap_below       
+
+;; == #panes go by number ============================================
+;; #panes + 1
+;; ___TO_SET___ foot_action_panes_goto_1           
+;; #panes + 2
+;; ___TO_SET___ foot_action_panes_goto_2           
+;; #panes + 3
+;; ___TO_SET___ foot_action_panes_goto_3           
+;; #panes + 4
+;; ___TO_SET___ foot_action_panes_goto_4           
+;; #panes + 5
+;; ___TO_SET___ foot_action_panes_goto_5           
+;; #panes + 6
+;; ___TO_SET___ foot_action_panes_goto_6           
+;; #panes + 7
+;; ___TO_SET___ foot_action_panes_goto_7           
+;; #panes + 8
+;; ___TO_SET___ foot_action_panes_goto_8           
+;; #panes + 9
+;; ___TO_SET___ foot_action_panes_goto_last        
+
+;; == #panes show pane / focus (app-specific) =============================
+;; #panes + q
+;; ___TO_SET___ foot_action_panes_quickfix         
+;; #panes + w
+;; see #panes
+;; #panes + e
+;; ___TO_SET___ foot_action_panes_explorer         
+;; #panes + lsft + e
+;; ___TO_SET___ foot_action_panes+lsft_explorer    
+;; #panes + r
+;; ___TO_SET___ foot_action_panes_recent           
+;; #panes + t
+;; ___TO_SET___ foot_action_panes_terminal         
+;; #panes + u
+;; ___TO_SET___ foot_action_panes_debug            
+;; #panes + y
+;; ___TO_SET___ foot_action_panes_history          
+;; #panes + i
+;; ___TO_SET___ foot_action_panes_info             
+;; #panes + o
+;; ___TO_SET___ foot_action_panes_outline          
+;; #panes + lsft + o
+;; ___TO_SET___ foot_action_panes_output           
+;; #panes + p
+;; ___TO_SET___ foot_action_panes_properties       
+;; #panes + lsft + p
+;; ___TO_SET___ foot_action_panes+lsft_properties  
+;; #panes + [
+;; ___TO_SET___ foot_action_panes_backlinks        
+;; #panes + ]
+;; ___TO_SET___ foot_action_panes_outlinks         
+;; #panes + lsft + ]
+;; ___TO_SET___ foot_action_panes+lsft_outlinks    
+
+;; #panes + a
+;; ___TO_SET___ foot_action_panes_AI               
+;; #panes + s
+;; ___TO_SET___ foot_action_panes_sidebar          
+;; #panes + lsft + s
+;; ___TO_SET___ foot_action_panes+lsft_sidebar     
+;; #panes + d
+;; ___TO_SET___ foot_action_panes_docker           
+;; #panes + f
+;; ___TO_SET___ foot_action_panes_filename         
+;; #panes + g
+;; ___TO_SET___ foot_action_panes_go               
+;; #panes + ;
+;; ___TO_SET___ foot_action_panes_graph            
+;; #panes + '
+;; not yet used.
+
+;; #panes + z
+;; ___TO_SET___ foot_action_panes_tests            
+;; #panes + x
+;; ___TO_SET___ foot_action_panes_extensions       
+;; #panes + c
+;; ___TO_SET___ foot_action_panes_calendar         
+;; #panes + lsft + c
+;; ___TO_SET___ foot_action_panes_day              
+;; #panes + rsft + c
+;; ___TO_SET___ foot_action_panes+!day             
+;; #panes + v
+;; ___TO_SET___ foot_action_panes_vertical_tabs    
+;; #panes + b
+;; ___TO_SET___ foot_action_panes_bookmarks        
+;; #panes + n
+;; ___TO_SET___ foot_action_panes_notebooks        
+;; #panes + m
+;; ___TO_SET___ foot_action_panes_main             
+;; #panes + ,
+;; ___TO_SET___ foot_action_panes_settings         
+;; #panes + .
+;; ___TO_SET___ foot_action_panes_tags             
+;; #panes + /
+;; ___TO_SET___ foot_action_panes_help             
+
+;; == #panes + #search (tap) ==============================================
+;; #panes + #search
+;; ___TO_SET___ foot_action_panes_search           
+
+;; == #panes + #replace (tap) ==============================================
+;; #panes + #replace
+;; ___TO_SET___ foot_action_panes_replace          
+
+;; == #tabs ===============================================================
+
+;; #tabs + spc
+;; ___TO_SET___ foot_action_tabs                   
+
+;; #tabs + l | #tabs + right | lsft + rsft | 2x rsft | !lmet + tab
+;; ___TO_SET___ foot_action_tabs_next              
+;; #tabs + h | #tabs + left | rsft + lsft | 2x lsft | !lmet + sft + tab
+;; ___TO_SET___ foot_action_tabs_prev              
+;; #tabs + j | #tabs + down
+;; ___TO_SET___ foot_action_tabs_first             
+;; #tabs + k | #tabs + up
+;; ___TO_SET___ foot_action_tabs_last              
+
+;; #tabs + t
+;; ___TO_SET___ foot_action_tabs_new               
+;; #tabs + w
+;; ___TO_SET___ foot_action_tabs_close             
+;; #tabs + lsft + t
+;; ___TO_SET___ foot_action_tabs_undo_close        
+
+;; == #tabs go by number ==================================================
+;; #tabs + 1
+;; ___TO_SET___ foot_action_tabs_goto_1            
+;; #tabs + 2
+;; ___TO_SET___ foot_action_tabs_goto_2            
+;; #tabs + 3
+;; ___TO_SET___ foot_action_tabs_goto_3            
+;; #tabs + 4
+;; ___TO_SET___ foot_action_tabs_goto_4            
+;; #tabs + 5
+;; ___TO_SET___ foot_action_tabs_goto_5            
+;; #tabs + 6
+;; ___TO_SET___ foot_action_tabs_goto_6            
+;; #tabs + 7
+;; ___TO_SET___ foot_action_tabs_goto_7            
+;; #tabs + 8
+;; ___TO_SET___ foot_action_tabs_goto_8            
+;; #tabs + 9
+;; ___TO_SET___ foot_action_tabs_goto_last         
+
+;; == #tabs + #toggle =====================================================
+;; #tabs + #toggle | 2x !lctl
+;; ___TO_SET___ foot_action_tabs_toggle            
+
+;; == #tabs + #move =====================================================
+;; #tabs + #move + h | #tabs + #move + left
+;; ___TO_SET___ foot_action_tabs_move_left         
+;; #tabs + #move + l | #tabs + #move + right
+;; ___TO_SET___ foot_action_tabs_move_right        
+;; #tabs + #move + k | #tabs + #move + up
+;; ___TO_SET___ foot_action_tabs_move_first        
+;; #tabs + #move + j | #tabs + #move + down
+;; ___TO_SET___ foot_action_tabs_move_last         
+
+;; == #!tabs/groups =====================================================
+;; #!tabs + spc
+;; ___TO_SET___ foot_action_!tabs                  
+;; #!tabs + toggle
+
+;; == #!tabs + #toggle =====================================================
+;; #!tabs + #toggle
+;; ___TO_SET___ foot_action_!tabs_toggle           
+;; #!tabs + l | #!tabs + right
+;; ___TO_SET___ foot_action_!tabs_next             
+;; #!tabs + h | #!tabs + left
+;; ___TO_SET___ foot_action_!tabs_prev             
+;; #!tabs + j | #!tabs + down
+;; ___TO_SET___ foot_action_!tabs_first            
+;; #!tabs + k | #!tabs + up
+;; ___TO_SET___ foot_action_!tabs_last             
+;; #!tabs + t
+;; ___TO_SET___ foot_action_!tabs_new              
+;; #!tabs + w
+;; ___TO_SET___ foot_action_!tabs_close            
+;; #!tabs + lsft + t
+;; ___TO_SET___ foot_action_!tabs_undo_close       
+;; #!tabs + 1
+;; ___TO_SET___ foot_action_!tabs_goto_1           
+;; #!tabs + 2
+;; ___TO_SET___ foot_action_!tabs_goto_2           
+;; #!tabs + 3
+;; ___TO_SET___ foot_action_!tabs_goto_3           
+;; #!tabs + 4
+;; ___TO_SET___ foot_action_!tabs_goto_4           
+;; #!tabs + 5
+;; ___TO_SET___ foot_action_!tabs_goto_5           
+;; #!tabs + 6
+;; ___TO_SET___ foot_action_!tabs_goto_6           
+;; #!tabs + 7
+;; ___TO_SET___ foot_action_!tabs_goto_7           
+;; #!tabs + 8
+;; ___TO_SET___ foot_action_!tabs_goto_8           
+;; #!tabs + 9
+;; ___TO_SET___ foot_action_!tabs_goto_last        
+
+;; == #!tabs + #move =====================================================
+;; #!tabs + #move + h | #!tabs + #move + left
+;; ___TO_SET___ foot_action_!tabs_move_left        
+;; #!tabs + #move + l | #!tabs + #move + right
+;; ___TO_SET___ foot_action_!tabs_move_right       
+;; #!tabs + #move + k | #!tabs + #move + up
+;; ___TO_SET___ foot_action_!tabs_move_first       
+;; #!tabs + #move + j | #!tabs + #move + down
+;; ___TO_SET___ foot_action_!tabs_move_last        
+
+;; == #sessions =====================================================
+;; #sessions + spc
+;; ___TO_SET___ foot_action_sessions               
+;; #sessions + #toggle
+;; ___TO_SET___ foot_action_sessions_toggle        
+
+;; == #mem (clipboard) ==================================================
+;; #mem + spc
+;; ___TO_SET___ foot_action_clipboard              
+
+;; == #settings ==========================================================
+;; #settings + spc
+;; ___TO_SET___ foot_action_settings               
+
+;; == #tags =========================================================
+;; #tags + spc
+;; ___TO_SET___ foot_action_tags                   
+
+;; == #help ==========================================================
+;; #help + spc
+;; ___TO_SET___ foot_action_help                   
+
+;; == #replace ==========================================================
+;; #replace + spc
+;; ___TO_SET___ foot_action_replace_text_in_file   
+;; #replace + lsft + spc
+;; ___TO_SET___ foot_action_replace_text_in_filesystem
+
+;; == #search ============================================================
+;; #search + spc
+;; ___TO_SET___ foot_action_search_text_in_file    
+;; #search + lsft + spc
+;; ___TO_SET___ foot_action_search_text_in_filesystem
+;; #search + rsft + spc
+;; ___TO_SET___ foot_action_!search_text_in_file   
+
+;; == #files/folders ========================================================
+;; #files/folders + spc
+;; ___TO_SET___ foot_action_files                  
+;; #file/folder + lsft + spc
+;; ___TO_SET___ foot_action_folders                
+
+;; == #bookmarks =========================================================
+;; #bookmarks + spc
+;; ___TO_SET___ foot_action_bookmarks              
 )

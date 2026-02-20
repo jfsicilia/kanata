@@ -10,17 +10,6 @@
   toggle_workspaces_layer            (t! toggle_layer             workspaces_layer)
   toggle_workspaces+move_layer       (t! toggle_layer             workspaces+move_layer)
 
-  ;; Groups layer
-  toggle_groups_layer                (t! toggle_layer             groups_layer)
-  toggle_groups+lsft_layer           (t! toggle_mod_layer   lsft  groups+lsft_layer)
-  toggle_groups+rsft_layer           (t! toggle_mod_layer   rsft  groups+rsft_layer)
-
-  ;; Tabs layer
-  toggle_tabs_layer                  (t! toggle_layer             tabs_layer)
-  toggle_tabs+lsft_layer             (t! toggle_mod_layer   lsft  tabs+lsft_layer)
-  toggle_tabs+rsft_layer             (t! toggle_mod_layer   rsft  tabs+rsft_layer)
-  toggle_tabs+move_layer             (t! toggle_layer             tabs+move_layer)
-
   ;; Panes layer
   toggle_panes_layer                 (t! toggle_layer             panes_layer)
   toggle_panes+lsft_layer            (t! toggle_mod_layer   lsft  panes+lsft_layer)
@@ -29,6 +18,23 @@
   toggle_panes+resize_layer          (t! toggle_layer             panes+resize_layer)
   toggle_panes+snap_layer            (t! toggle_layer             panes+snap_layer)
   toggle_panes+swap_layer            (t! toggle_layer             panes+swap_layer)
+
+  ;; Tabs layer
+  toggle_tabs_layer                  (t! toggle_layer             tabs_layer)
+  toggle_tabs+lsft_layer             (t! toggle_mod_layer   lsft  tabs+lsft_layer)
+  toggle_tabs+rsft_layer             (t! toggle_mod_layer   rsft  tabs+rsft_layer)
+  toggle_tabs+move_layer             (t! toggle_layer             tabs+move_layer)
+
+  ;; Groups layer
+  toggle_groups_layer                (t! toggle_layer             groups_layer)
+  toggle_groups+lsft_layer           (t! toggle_mod_layer   lsft  groups+lsft_layer)
+  toggle_groups+rsft_layer           (t! toggle_mod_layer   rsft  groups+rsft_layer)
+
+  ;; Session layer
+  toggle_sessions_layer               (t! toggle_layer             session_layer)
+  toggle_sessions+lsft_layer          (t! toggle_mod_layer   lsft  session+lsft_layer)
+  toggle_sessions+rsft_layer          (t! toggle_mod_layer   rsft  session+rsft_layer)
+
 )
 
 
@@ -37,12 +43,12 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (windows_layer)
   ;; == KEY COMBOS ===================
-  h            $action_wnd_left
-  l            $action_wnd_right
-  k            $action_wnd_up  
-  j            $action_wnd_down
+  h            $action_windows_left
+  l            $action_windows_right
+  k            $action_windows_up  
+  j            $action_windows_down
 
-  ent          $action_wnd_max
+  ent          $action_windows_max
 
   ;; == SFT ======================
   lsft         (t! th _               $toggle_windows+lsft_layer)
@@ -71,10 +77,10 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (workspaces_layer)
   ;; == KEY COMBOS ===================
-  j $action_next_screen
-  k $action_prev_screen
-  l $action_next_desktop
-  h $action_prev_desktop
+  j $action_screens_next
+  k $action_screens_prev
+  l $action_desktops_next
+  h $action_desktops_prev
 
   ;; == SFT ======================
   $move (t! th _ $toggle_workspaces+move_layer)
@@ -87,12 +93,167 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (workspaces+move_layer)
   ;; == KEY COMBOS ===================
-  j $action_move_wnd_next_screen 
-  k $action_move_wnd_prev_screen 
-  l $action_move_wnd_next_desktop 
-  h $action_move_wnd_prev_desktop 
+  j $action_screens_next_move_window
+  k $action_screens_prev_move_window
+  l $action_desktops_next_move_window
+  h $action_desktops_prev_move_window
 
   ;; "" WORKSPACES+MOVE_LAYER """"""""""""""""""""
+)
+
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" PANES LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (panes_layer)
+  ;; == KEY COMBOS ===================
+  ent   $action_panes_max
+
+  h     $action_panes_left
+  left  $action_panes_left
+  j     $action_panes_below
+  down  $action_panes_below
+  k     $action_panes_above
+  up    $action_panes_above
+  l     $action_panes_right
+  right $action_panes_right
+
+  -     $action_panes_split_h
+  \     $action_panes_split_v ;;""
+
+  w     $action_panes_close
+
+  1     $action_panes_goto_1
+  2     $action_panes_goto_2
+  3     $action_panes_goto_3
+  4     $action_panes_goto_4
+  5     $action_panes_goto_5
+  6     $action_panes_goto_6
+  7     $action_panes_goto_7
+  8     $action_panes_goto_8
+  9     $action_panes_goto_last
+
+  ;; toggle/open panes
+  b     $action_panes_bookmarks
+  c     $action_panes_calendar
+  d     $action_panes_day
+  e     $action_panes_explorer
+  g     $action_panes_go
+  m     $action_panes_main
+  o     $action_panes_outline
+  p     $action_panes_properties
+  s     $action_panes_sidebar
+  t     $action_panes_tags
+  v     $action_panes_vertical_tabs
+  ;     $action_panes_graph
+  ,     $action_panes_backlinks
+  .     $action_panes_outlinks
+
+  ;; == SFT ======================
+  lsft (t! th _               $toggle_panes+lsft_layer)
+  rsft (t! th _               $toggle_panes+rsft_layer)
+  ;; == Gui Actions ========================
+  $toggle        $action_panes_toggle
+  $move          (t! th _                   $toggle_panes+move_layer)
+  $resize        (t! th _                   $toggle_panes+resize_layer)
+  $float&snap    (t! th $action_panes_float $toggle_panes+snap_layer)
+  $swap          (t! th _                   $toggle_panes+swap_layer)
+
+  ;; "" PANES_LAYER """"""""""""""""""""""""
+)
+
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" PANES+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (panes+lsft_layer)
+  ;; == KEY COMBOS ===================
+  c $action_panes_day
+  e $action_panes+lsft_explorer
+  p $action_panes+lsft_properties
+  s $action_panes+lsft_sidebar
+  . $action_panes+lsft_outlinks
+
+
+  ;; "" PANES+LSFT_LAYER """"""""""""""""""
+)
+
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" PANES+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (panes+rsft_layer)
+  ;; == KEY COMBOS ===================
+  c $action_panes_day
+  e $action_panes+lsft_explorer
+  p $action_panes+lsft_properties
+  s $action_panes+lsft_sidebar
+  . $action_panes+lsft_outlinks
+
+  ;; "" PANES+RSFT_LAYER """"""""""""""""""
+)
+
+
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" PANES+MOVE_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (panes+move_layer)
+  h     $action_panes_move_left
+  left  $action_panes_move_left
+  j     $action_panes_move_below
+  down  $action_panes_move_below
+  k     $action_panes_move_above
+  up    $action_panes_move_above
+  l     $action_panes_move_right
+  right $action_panes_move_right
+
+;; "" PANES+MOVE_LAYER """""""""""""""""""""
+)
+
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" PANES+SNAP_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (panes+snap_layer)
+;;  h     $action_panes_snap_left
+;;  left  $action_panes_snap_left
+;;  j     $action_panes_snap_below
+;;  down  $action_panes_snap_below
+;;  k     $action_panes_snap_above
+;;  up    $action_panes_snap_above
+;;  l     $action_panes_snap_right
+;;  right $action_panes_snap_right
+;; "" PANES+SNAP_LAYER """""""""""""""""""""
+)
+
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" PANES+RESIZE_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (panes+resize_layer)
+  ;; == KEY COMBOS ===================
+  h     $action_panes_resize_left
+  l     $action_panes_resize_right
+  k     $action_panes_resize_above
+  j     $action_panes_resize_below
+  left  $action_panes_resize_left
+  right $action_panes_resize_right
+  up    $action_panes_resize_above
+  down  $action_panes_resize_below
+
+  ;; "" PANES+RESIZE_LAYER """"""""""""""""""
+)
+
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" PANES+SWAP_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
+;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (panes+swap_layer)
+  ;; == KEY COMBOS ===================
+  h     $action_panes_swap_left
+  l     $action_panes_swap_right
+  k     $action_panes_swap_above
+  j     $action_panes_swap_below
+  left  $action_panes_swap_left
+  right $action_panes_swap_right
+  up    $action_panes_swap_above
+  down  $action_panes_swap_below
+
+  ;; "" PANES+SWAP_LAYER """"""""""""""""""
 )
 
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -100,27 +261,29 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (tabs_layer)
   ;; == KEY COMBOS ===================
-  h     $action_tab_prev
-  left  $action_tab_prev
-  l     $action_tab_next
-  right $action_tab_next
-  j     $action_tab_first
-  down  $action_tab_first
-  k     $action_tab_last
-  up    $action_tab_last
+  spc   $action_tabs
 
-  t     $action_tab_new
-  w     $action_tab_close
+  h     $action_tabs_prev
+  left  $action_tabs_prev
+  l     $action_tabs_next
+  right $action_tabs_next
+  j     $action_tabs_first
+  down  $action_tabs_first
+  k     $action_tabs_last
+  up    $action_tabs_last
 
-  1     $action_tab_goto_1
-  2     $action_tab_goto_2
-  3     $action_tab_goto_3
-  4     $action_tab_goto_4
-  5     $action_tab_goto_5
-  6     $action_tab_goto_6
-  7     $action_tab_goto_7
-  8     $action_tab_goto_8
-  9     $action_tab_goto_last
+  t     $action_tabs_new
+  w     $action_tabs_close
+
+  1     $action_tabs_goto_1
+  2     $action_tabs_goto_2
+  3     $action_tabs_goto_3
+  4     $action_tabs_goto_4
+  5     $action_tabs_goto_5
+  6     $action_tabs_goto_6
+  7     $action_tabs_goto_7
+  8     $action_tabs_goto_8
+  9     $action_tabs_goto_last
 
 ;;  ;; == SFT ======================
   lsft  (t! th _ $toggle_tabs+lsft_layer)
@@ -134,14 +297,14 @@
 ;; "" TABS+MOVE_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (tabs+move_layer)
-  h     $action_tab_move_left
-  left  $action_tab_move_left
-  l     $action_tab_move_right
-  right $action_tab_move_right
-  j     $action_tab_move_first
-  down  $action_tab_move_first
-  k     $action_tab_move_last
-  up    $action_tab_move_last
+  h     $action_tabs_move_left
+  left  $action_tabs_move_left
+  l     $action_tabs_move_right
+  right $action_tabs_move_right
+  j     $action_tabs_move_first
+  down  $action_tabs_move_first
+  k     $action_tabs_move_last
+  up    $action_tabs_move_last
 ;; "" TABS+MOVE_LAYER """"""""""""""""
 )
 
@@ -150,7 +313,7 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (tabs+lsft_layer)
   ;; == KEY COMBOS ===================
-  t $action_tab_undo_close
+  t $action_tabs_undo_close
   ;; "" TABS+LSFT_LAYER """""""""""""""
 )
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -158,7 +321,7 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (tabs+rsft_layer)
   ;; == KEY COMBOS ===================
-  t $action_tab_undo_close
+  t $action_tabs_undo_close
   ;; "" TABS+RSFT_LAYER """""""""""""""
 )
 
@@ -167,14 +330,14 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (groups_layer)
   ;; == KEY COMBOS ===================
-  h     $~action_tab_prev
-  left  $~action_tab_prev
-  l     $~action_tab_next
-  right $~action_tab_next
-  j     $~action_tab_first
-  down  $~action_tab_first
-  k     $~action_tab_last
-  up    $~action_tab_last
+  h     $~action_!tabs_prev
+  left  $~action_!tabs_prev
+  l     $~action_!tabs_next
+  right $~action_!tabs_next
+  j     $~action_!tabs_first
+  down  $~action_!tabs_first
+  k     $~action_!tabs_last
+  up    $~action_!tabs_last
 
   ;; == SFT ======================
   lsft (t! th _ $toggle_groups+lsft_layer)
@@ -200,159 +363,28 @@
   ;; "" GROUPS+RSFT_LAYER """""""""""""""
 )
 
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" PANES LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (panes_layer)
-  ;; == KEY COMBOS ===================
-  ent   $action_pane_max
 
-  h     $action_pane_left
-  left  $action_pane_left
-  j     $action_pane_below
-  down  $action_pane_below
-  k     $action_pane_above
-  up    $action_pane_above
-  l     $action_pane_right
-  right $action_pane_right
+;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" SESSION_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (session_layer)
 
-  -     $action_pane_h_split
-  \     $action_pane_v_split ;;""
-
-  w     $action_pane_close
-
-  1     $action_pane_go_1
-  2     $action_pane_go_2
-  3     $action_pane_go_3
-  4     $action_pane_go_4
-  5     $action_pane_go_5
-  6     $action_pane_go_6
-  7     $action_pane_go_7
-  8     $action_pane_go_8
-  9     $action_pane_go_last
-
-  ;; toggle/open panes
-  b     $action_pane_bookmarks
-  c     $action_pane_calendar
-  d     $action_pane_day
-  e     $action_pane_explorer
-  g     $action_pane_go
-  m     $action_pane_main
-  o     $action_pane_outline
-  p     $action_pane_properties
-  s     $action_pane_sidebar
-  t     $action_pane_tags
-  v     $action_pane_vertical_tabs
-  ;     $action_pane_graph
-  ,     $action_pane_backlinks
-  .     $action_pane_outlinks
-
-  ;; == SFT ======================
-  lsft (t! th _               $toggle_panes+lsft_layer)
-  rsft (t! th _               $toggle_panes+rsft_layer)
-  ;; == Gui Actions ========================
-  $toggle        $action_pane_toggle
-  $move          (t! th _                   $toggle_panes+move_layer)
-  $resize        (t! th _                   $toggle_panes+resize_layer)
-  $float|snap    (t! th $action_pane_float  $toggle_panes+snap_layer)
-  $swap          (t! th _                   $toggle_panes+swap_layer)
-
-  ;; "" PANES_LAYER """"""""""""""""""""""""
+;; "" SESSION_LAYER """"""""""""""""""""""""""
 )
 
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" PANES+FT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (panes+lsft_layer)
-  ;; == KEY COMBOS ===================
-  d $action_pane+lsft_day
-  e $action_pane+lsft_explorer
-  p $action_pane+lsft_properties
-  s $action_pane+lsft_sidebar
-  . $action_pane+lsft_outlinks
+;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" SESSION+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
+;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (session+lsft_layer)
 
-  h     $action_pane_move_left
-  left  $action_pane_move_left
-  j     $action_pane_move_below
-  down  $action_pane_move_below
-  k     $action_pane_move_above
-  up    $action_pane_move_above
-  l     $action_pane_move_right
-  right $action_pane_move_right
-
-  ;; "" PANES+LSFT_LAYER """"""""""""""""""
+;; "" SESSION+LSFT_LAYER """"""""""""""""""""""
 )
 
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" PANES+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (panes+rsft_layer)
-  ;; == KEY COMBOS ===================
-  d $action_pane+lsft_day
-  e $action_pane+lsft_explorer
-  p $action_pane+lsft_properties
-  s $action_pane+lsft_sidebar
-  . $action_pane+lsft_outlinks
+;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" SESSION+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
+;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (session+rsft_layer)
 
-  h     $action_pane_move_left
-  l     $action_pane_move_right
-  k     $action_pane_move_above
-  j     $action_pane_move_below
-  left  $action_pane_move_left
-  right $action_pane_move_right
-  up    $action_pane_move_above
-  down  $action_pane_move_below
-
-  ;; "" PANES+RSFT_LAYER """"""""""""""""""
-)
-
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" PANES+MOVE_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (panes+move_layer)
-
-;; "" PANES+MOVE_LAYER """""""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" PANES+SNAP_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (panes+snap_layer)
-;; "" PANES+SNAP_LAYER """""""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" PANES+RESIZE_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (panes+resize_layer)
-  ;; == KEY COMBOS ===================
-  h     $action_pane_resize_left
-  l     $action_pane_resize_right
-  k     $action_pane_resize_above
-  j     $action_pane_resize_below
-  left  $action_pane_resize_left
-  right $action_pane_resize_right
-  up    $action_pane_resize_above
-  down  $action_pane_resize_below
-
-  ;; "" PANES+RESIZE_LAYER """"""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" PANES+SWAP_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (panes+swap_layer)
-  ;; == KEY COMBOS ===================
-  h     $action_pane_swap_left
-  l     $action_pane_swap_right
-  k     $action_pane_swap_above
-  j     $action_pane_swap_below
-  left  $action_pane_swap_left
-  right $action_pane_swap_right
-  up    $action_pane_swap_above
-  down  $action_pane_swap_below
-
-  ;; "" PANES+SWAP_LAYER """"""""""""""""""
+;; "" SESSION+RSFT_LAYER """"""""""""""""""""""
 )
 

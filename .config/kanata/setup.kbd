@@ -131,16 +131,16 @@
   ;; Homerowmod: keys in middle row behave as letters when tapped and
   ;; modifiers when held (lmet, lalt, lsft, lctl). Fast-typing aware.
   esc|omni           caps ;; Caps: tap=esc, hold=omni_layer
-  a|lmet|action      a 
-  s|lalt|symbol      s 
-  d|lsft|def         d
-  f|lctl|autofill    f
+  a|lmet&action      a 
+  s|lalt&symbol      s 
+  d|lsft&def         d
+  f|lctl&autofill    f
   g|git              g
   h|hyperlink        h
-  j|lctl|jump        j
-  k|rsft|keymap      k
-  l|lalt|localiz     l
-  ;|lmet|command     ;
+  j|lctl&jump        j
+  k|rsft&keymap      k
+  l|lalt&localiz     l
+  ;|lmet&command     ;
   '|register         '
 
   ;; Lower row keys.
@@ -151,8 +151,8 @@
   v|tabs             v    ;; Tap: v, Hold: tabs_layer
   b|groups           b    ;; Tap: b, Hold: groups_layer
   n|sessions         n    ;; Tap: n, Hold: session_layer
-  m|tabs|mem         m    ;; Tap: m, Hold: tabs+mem_layer
-  ,|panes|settings   ,    ;; Tap: ,, Hold: panes+sets_layer
+  m|tabs&mem         m    ;; Tap: m, Hold: tabs+mem_layer
+  ,|panes&settings   ,    ;; Tap: ,, Hold: panes+sets_layer
   .|tags             .    ;; Tap: ., Hold: tags_layer
   /|wnd              /    ;; Tap: /, Hold: windows_layer
   
@@ -161,16 +161,16 @@
   !lalt              lmet       ;; Physical lmet is used as lalt
   !lctl              lalt       ;; Physical lalt is used as lctl
   spc|num            spc
-  ralt|apps          ralt        ;; Physical ralt key will be used for apps launching/focusing.
-  prnt|bookm         prnt       ;; Physical prnt key will be used for bookmarks.
-  rctl|opts          rctl           
+  apps               ralt       ;; Physical ralt key will be used for apps launching/focusing.
+  bookm              prnt       ;; Physical prnt key will be used for bookmarks.
+  opts               rctl           
 
   ;; GUI action modifiers (used in panes_layer for move/resize/snap/swap sublayers).
-  move              $!lctl       ;; Trigger panes+move_layer
-  resize            $!lalt       ;; Trigger panes+resize_layer
-  toggle            ralt         ;; Trigger pane_toggle action
-  float|snap        prnt         ;; Trigger panes+snap_layer
-  swap              rctl         ;; Trigger panes+swap_layer
+  move              $!lctl       
+  resize            $!lalt      
+  toggle            ralt       
+  float&snap        prnt      
+  swap              rctl     
 )
 
 (defsrc
@@ -184,92 +184,86 @@
 
 (deflayermap (default)
   ;; Upper row keys
-  $tab|open         (t! fast_th tab                        $toggle_open_layer)   
-  $q|quick          (t! fast_th q                          $toggle_quick_layer)
-  $w                (t! fast_th w                          XX)
-  $e                @e 
-  $r|ref            (t! fast_th r                          $toggle_ref_layer)
-  $t|tags           (t! fast_th t                          $toggle_tags_layer)
-  $y|hist           (t! fast_th y                          $toggle_hist_layer)
-  $u|debug          @u|debug
-  $i|info           @i|info 
-  $o|source         @o|source 
-  $p                (t! fast_th p                          XX)   
+  $tab|open         (t! fast_th tab                             $toggle_open_layer)   
+  $q|quick          (t! fast_th q                               $toggle_quick_layer)
+  $w                (t! fast_th w                               XX)
+  $e                (t! fast_th (t! char|alt_char e)            XX)
+  $r|ref            (t! fast_th r                               $toggle_ref_layer)
+  $t|tags           (t! fast_th t                               $toggle_tags_layer)
+  $y|hist           (t! fast_th y                               $toggle_hist_layer)
+  $u|debug          (t! fast_th (t! char|alt_char u)            $toggle_debug_layer)
+  $i|info           (t! fast_th (t! char|alt_char i)            $toggle_info_layer)
+  $o|source         (t! fast_th (t! char|alt_char o)            $toggle_source_layer)
+  $p                (t! fast_th p                               XX)   
 
   ;; Medium row keys (a, s, d, f, j, k, l, ; work as lmet, lalt, lsft/rsft and lctl)
-  $esc|omni         (t! fast_th esc                        $toggle_omni_layer)  
-  $a|lmet|action    @a|lmet|action
-  $s|lalt|symbol    (t! fast_th s                          $toggle_lalt|symbol_layer)
-  $d|lsft|def       (t! fast_th d                          $toggle_lsft|def_layer)
-  $f|lctl|autofill  (t! fast_th f                          $toggle_lctl|autofill_layer)
-  $g|git            (t! fast_th g                          $toggle_git_layer)
-  $h|hyperlink      (t! fast_th h                          $toggle_hyperlink_layer)
-  $j|lctl|jump      @lctl
-  $k|rsft|keymap    (t! fast_th k                          $toggle_rsft|keymap_layer)
-  $l|lalt|localiz   (t! fast_th l                          $toggle_lalt|localiz_layer)
-  $;|lmet|command   (t! fast_th ;                          $toggle_lmet|command_layer)
-  $'|register       (t! fast_th '                          $toggle_register_layer)
+  $esc|omni         (t! fast_th esc                             $toggle_omni_layer)  
+  $a|lmet&action    (t! fast_th (t! char|alt_char a)            $toggle_lmet&action_layer)
+  $s|lalt&symbol    (t! fast_th s                               $toggle_lalt&symbol_layer)
+  $d|lsft&def       (t! fast_th d                               $toggle_lsft&def_layer)
+  $f|lctl&autofill  (t! fast_th f                               $toggle_lctl&autofill_layer)
+  $g|git            (t! fast_th g                               $toggle_git_layer)
+  $h|hyperlink      (t! fast_th h                               $toggle_hyperlink_layer)
+  $j|lctl&jump      (t! fast_th j                        (multi $toggle_lctl&jump_layer (on-release release-vkey vk_lalt)))
+  $k|rsft&keymap    (t! fast_th k                               $toggle_rsft&keymap_layer)
+  $l|lalt&localiz   (t! fast_th l                               $toggle_lalt&localiz_layer)
+  $;|lmet&command   (t! fast_th ;                               $toggle_lmet&command_layer)
+  $'|register       (t! fast_th '                               $toggle_register_layer)
                      
   ;; Lower row keys (z, x, c, v, b, n, m, , work as window, workspace, pane, tabs, group and session.
-  lsft              (t! th (t! 2x $action_tab_prev)        $toggle_lsft_layer)
-  $lang             (t! th      @lang                      $toggle_lang_layer)
-  $z|windows        (t! fast_th z                          $toggle_windows_layer)
-  $x|workspaces     (t! fast_th x                          $toggle_workspaces_layer)
-  $c|panes          (t! fast_th c                          $toggle_panes_layer)
-  $v|tabs           (t! fast_th v                          $toggle_tabs_layer)
-  $b|groups         (t! fast_th b                          $toggle_groups_layer)
-  $n|sessions       @n|sessions
-  $m|tabs|mem       (t! fast_th m                          $toggle_tabs|mem_layer)
-  $,|panes|settings (t! fast_th ,                          $toggle_panes|settings_layer)
-  $.|tags           (t! fast_th .                          $toggle_tags_layer)
-  $/|wnd            (t! fast_th /                          $toggle_windows_layer)
-  rsft              (t! th (t! 2x $action_tab_next)        $toggle_rsft_layer)
+  lsft              (t!      th (t! 2x $action_tabs_prev)       $toggle_lsft_layer)
+  $lang             (t!      th @lang                           $toggle_lang_layer)
+  $z|windows        (t! fast_th z                               $toggle_windows_layer)
+  $x|workspaces     (t! fast_th x                               $toggle_workspaces_layer)
+  $c|panes          (t! fast_th c                               $toggle_panes_layer)
+  $v|tabs           (t! fast_th v                               $toggle_tabs_layer)
+  $b|groups         (t! fast_th b                               $toggle_groups_layer)
+  $n|sessions       (t! fast_th (t! char|alt_char n)            $toggle_sessions_layer)
+  $m|tabs&mem       (t! fast_th m                               $toggle_tabs&mem_layer)
+  $,|panes&settings (t! fast_th ,                               $toggle_panes&settings_layer)
+  $.|tags           (t! fast_th .                               $toggle_tags_layer)
+  $/|wnd            (t! fast_th /                               $toggle_windows_layer)
+  rsft              (t!      th (t! 2x $action_tabs_next)       $toggle_rsft_layer)
 
   ;; Modifiers row.
-  $!lmet            (t! th (t! 2x $action_desktop_toggle)  $toggle_!lmet_layer)   
-  $!lalt            (t! th (t! 2x $action_pane_toggle)     $toggle_!lalt_layer)   
-  $!lctl            @!lctl  
-  $spc|num          (t! fast_th spc                        $toggle_num_layer)
-  $ralt|apps        (t! th (t! 2x $action_app_toggle)      $toggle_apps_layer)   
-  $prnt|bookm       (t! th (t! 2x $action_session_toggle)  $toggle_bookmarks_layer)   
-  $rctl|opts        (t! th (t! 2x $action_group_toggle)    $toggle_opts_layer)   
+  $!lmet            (t!      th (t! 2x $action_desktops_toggle) $toggle_!lmet_layer)   
+  $!lalt            (t!      th (t! 2x $action_panes_toggle)    $toggle_!lalt_layer)   
+  $!lctl     (multi (t!      th (t! 2x $action_tabs_toggle)     $toggle_!lctl_layer) (on-release release-vkey vk_lalt))
+  $spc|num          (t! fast_th spc                             $toggle_num_layer)
+  $apps             (t!      th (t! 2x $action_apps_toggle)     $toggle_apps_layer)   
+  $bookm            (t!      th (t! 2x $action_sessions_toggle) $toggle_bookmarks_layer)   
+  $opts             (t!      th (t! 2x $~action_!tabs_toggle)   $toggle_opts_layer)   
 )
 
 (defalias
-  lctl (t! fast_th 
-    j 
-    (multi $toggle_lctl|jump_layer (on-release release-vkey vk_lalt))
-  )
-  !lctl (multi 
-    (t! th (t! 2x $action_tab_toggle)    $toggle_!lctl_layer)
-    (on-release release-vkey vk_lalt)     ;; (lctl+tab mimics lalt+tab)
-  )
-  a|lmet|action (switch
-    ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char a) $toggle_lmet|action_layer) break
-    ()                              (t! fast_th a               $toggle_lmet|action_layer) break
-  ) 
-  e (switch
-    ;; ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char a) XX) break
-    ;; ()                              (t! fast_th i               XX) break
-    ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char e) XX) break
-    ()                              (t! fast_th e               XX) break
-  ) 
-  i|info (switch          
-    ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char i) $toggle_info_layer) break
-    ()                              (t! fast_th i               $toggle_info_layer) break
-  )
-  o|source (switch       
-    ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char o) $toggle_source_layer) break
-    ()                              (t! fast_th o               $toggle_source_layer) break
-  )
-  u|debug (switch         
-    ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char u) $toggle_debug_layer) break
-    ()                              (t! fast_th u               $toggle_debug_layer) break
-  )
-  n|sessions (switch          
-    ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char n) $toggle_session_layer) break
-    ()                              (t! fast_th n               $toggle_session_layer) break
-  )
-
+;;  !lctl (multi 
+;;    (t! th (t! 2x $action_tab_toggle)    $toggle_!lctl_layer)
+;;    (on-release release-vkey vk_lalt)     ;; (lctl+tab mimics lalt+tab)
+;;  )
+;;  a|lmet|action (switch
+;;    ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char a) $toggle_lmet|action_layer) break
+;;    ()                              (t! fast_th a               $toggle_lmet|action_layer) break
+;;  ) 
+;;  e (switch
+;;    ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char e) XX) break
+;;    ()                              (t! fast_th e               XX) break
+;;  ) 
+;;  i|info (switch          
+;;    ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char i) $toggle_info_layer) break
+;;    ()                              (t! fast_th i               $toggle_info_layer) break
+;;  )
+;;  o|source (switch       
+;;    ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char o) $toggle_source_layer) break
+;;    ()                              (t! fast_th o               $toggle_source_layer) break
+;;  )
+;;  u|debug (switch         
+;;    ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char u) $toggle_debug_layer) break
+;;    ()                              (t! fast_th u               $toggle_debug_layer) break
+;;  )
+;;  n|sessions (switch          
+;;    ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char n) $toggle_session_layer) break
+;;    ()                              (t! fast_th n               $toggle_session_layer) break
+;;  )
+;;
   lang (on-press toggle-virtualkey vk_alt_chars)
 )

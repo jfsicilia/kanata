@@ -83,6 +83,13 @@
   )
 )
 
+(deftemplate char|alt_char (letter)
+  (switch 
+    ((input virtual vk_alt_chars)) (t! alt_char $letter) break
+    ()                             $letter               break
+  )
+)
+
 ;; == Util ================================================================
 
 ;; Shorter tap and hold template with default values.
@@ -221,6 +228,16 @@
   (if-not-in-list \ $ignore_keys \ \)
   (if-not-in-list - $ignore_keys - -)
   (if-not-in-list = $ignore_keys = =)
+  (if-not-in-list 0 $ignore_keys 0 0)
+  (if-not-in-list 1 $ignore_keys 1 1)
+  (if-not-in-list 2 $ignore_keys 2 2)
+  (if-not-in-list 3 $ignore_keys 3 3)
+  (if-not-in-list 4 $ignore_keys 4 4)
+  (if-not-in-list 5 $ignore_keys 5 5)
+  (if-not-in-list 6 $ignore_keys 6 6)
+  (if-not-in-list 7 $ignore_keys 7 7)
+  (if-not-in-list 8 $ignore_keys 8 8)
+  (if-not-in-list 9 $ignore_keys 9 9)
 )
 
 (deftemplate map_keys_with_pattern_except (ignore_keys pattern)
@@ -259,4 +276,14 @@
   (if-not-in-list \ $ignore_keys \ (concat $pattern \))
   (if-not-in-list - $ignore_keys - (concat $pattern -))
   (if-not-in-list = $ignore_keys = (concat $pattern =))
+  (if-not-in-list 0 $ignore_keys 0 (concat $pattern 0))
+  (if-not-in-list 1 $ignore_keys 1 (concat $pattern 1))
+  (if-not-in-list 2 $ignore_keys 2 (concat $pattern 2))
+  (if-not-in-list 3 $ignore_keys 3 (concat $pattern 3))
+  (if-not-in-list 4 $ignore_keys 4 (concat $pattern 4))
+  (if-not-in-list 5 $ignore_keys 5 (concat $pattern 5))
+  (if-not-in-list 6 $ignore_keys 6 (concat $pattern 6))
+  (if-not-in-list 7 $ignore_keys 7 (concat $pattern 7))
+  (if-not-in-list 8 $ignore_keys 8 (concat $pattern 8))
+  (if-not-in-list 9 $ignore_keys 9 (concat $pattern 9))
 )

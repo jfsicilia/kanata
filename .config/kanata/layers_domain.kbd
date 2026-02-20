@@ -3,7 +3,7 @@
 
   ;; Action layer
   toggle_action_layer                (t! toggle_layer             action_layer)
-  toggle_lmet|action_layer           (t! toggle_mod_2layer  lmet  lmet_layer  action_layer)
+  toggle_lmet&action_layer           (t! toggle_mod_2layer  lmet  lmet_layer  action_layer)
   toggle_action+lsft_layer           (t! toggle_mod_layer   lsft  action+lsft_layer)
   toggle_action+rsft_layer           (t! toggle_mod_layer   rsft  action+rsft_layer)
 
@@ -79,7 +79,7 @@
 
   ;; Mem layer
   toggle_mem_layer                   (t! toggle_layer             mem_layer)
-  toggle_tabs|mem_layer              (t! toggle_2layer            tabs_layer  mem_layer)
+  toggle_tabs&mem_layer              (t! toggle_2layer            tabs_layer  mem_layer)
   toggle_mem+lsft_layer              (t! toggle_mod_layer   lsft  mem+lsft_layer)
   toggle_mem+rsft_layer              (t! toggle_mod_layer   rsft  mem+rsft_layer)
 
@@ -118,14 +118,9 @@
   toggle_register+lsft_layer         (t! toggle_mod_layer   lsft  register+lsft_layer)
   toggle_register+rsft_layer         (t! toggle_mod_layer   rsft  register+rsft_layer)
 
-  ;; Session layer
-  toggle_session_layer               (t! toggle_layer             session_layer)
-  toggle_session+lsft_layer          (t! toggle_mod_layer   lsft  session+lsft_layer)
-  toggle_session+rsft_layer          (t! toggle_mod_layer   rsft  session+rsft_layer)
-
   ;; Settings layer
   toggle_settings_layer              (t! toggle_layer             settings_layer)
-  toggle_panes|settings_layer        (t! toggle_2layer            panes_layer settings_layer)
+  toggle_panes&settings_layer        (t! toggle_2layer            panes_layer settings_layer)
   toggle_settings+lsft_layer         (t! toggle_mod_layer   lsft  settings+lsft_layer)
   toggle_settings+rsft_layer         (t! toggle_mod_layer   rsft  settings+rsft_layer)
 
@@ -172,7 +167,7 @@
 ;; "" OPTS+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (opts+rsft_layer)
-  r $action_restart_kwanata
+  r $action_opts_restart_kwanata
 
 ;; "" OPTS+RSFT_LAYER """""""""""""""""""""""""
 )
@@ -206,53 +201,64 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (omni_layer)
   ;; == KEY COMBOS ===================
-  spc  $action_toggle_select
+  spc  $action_omni_select
 
   ;; Cursor
-  j $action_down
-  k $action_up    
-  h $action_left  
-  l $action_right 
-  b $action_page_up
-  f $action_page_down
+  j $action_omni_down
+  k $action_omni_up    
+  h $action_omni_left  
+  l $action_omni_right 
+  b $action_omni_page_up
+  f $action_omni_page_down
 
   ;; 
-  o $action_open
-  p $action_parent
+  o $action_omni_open
+  p $action_omni_parent
 
   ;; History
-  [ $action_hist_prev
-  ] $action_hist_next
+  [ $action_omni_hist_prev
+  ] $action_omni_hist_next
 
-  t $action_tab_new
-  w $action_tab_close
-  q $action_close_app
+  t $action_omni_tab_new
+  w $action_omni_tab_close
+  q $action_omni_window_close
 
   ;; Cut&Paste
-  x $action_cut
-  c $action_copy
-  v $action_paste
-  z $action_undo
+  x $action_omni_cut
+  c $action_omni_copy
+  v $action_omni_paste
+  z $action_omni_undo
 
-  e $action_extract
-  d $action_duplicate
-  a $action_select_all
-  n $action_new
-  s $action_sort
-  y $action_filter
-  r $action_rename
-  i $action_info
-  m $action_view_mode
-  . $action_tags
+  e $action_omni_extract
+  d $action_omni_duplicate
+  a $action_omni_select_all
+  n $action_omni_new
+  s $action_omni_sort
+  y $action_omni_filter
+  r $action_omni_rename
+  i $action_omni_info
+  m $action_omni_clipboard
+  . $action_omni_tags
 
-  g $action_go
+  g $action_omni_go
 
-  ; $action_comment
+  ; $action_omni_comment
 
-  , $action_settings
-  / $action_help
+  , $action_omni_settings
+  / $action_omni_help
 
   bspc del
+
+  1 $action_omni_view_1 
+  2 $action_omni_view_2 
+  3 $action_omni_view_3 
+  4 $action_omni_view_4 
+  5 $action_omni_view_5 
+  6 $action_omni_view_6 
+  7 $action_omni_view_7 
+  8 $action_omni_view_8 
+  9 $action_omni_view_9 
+  0 $action_omni_view_0 
 
   ;; == SFT ======================
   lsft (t! th _ $toggle_omni+lsft_layer)
@@ -266,12 +272,13 @@
 ;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (omni+lsft_layer)
   ;; == KEY COMBOS ===================
-  e $action_compress
-  a $action_clear_select
-  n $action_lsft+new
-  z $action_redo
-  s $action_reverse_sort
-  t $action_tab_undo_close
+  e $action_omni_compress
+  a $action_omni_clear_select
+  n $action_omni_lsft+new
+  z $action_omni_redo
+  s $action_omni_reverse_sort
+
+  t $action_omni_tab_undo_close
 
 ;; "" OMNI+LSFT_LAYER """""""""""""""""""""""""
 )
@@ -281,12 +288,13 @@
 ;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (omni+rsft_layer)
   ;; == KEY COMBOS ===================
-  e $action_compress
-  a $action_invert_select
-  n $action_rsft+new
-  z $action_redo
-  s $action_reverse_sort
-  t $action_tab_undo_close
+  e $action_omni_compress
+  a $action_omni_invert_select
+  n $action_omni_rsft+new
+  z $action_omni_redo
+  s $action_omni_reverse_sort
+
+  t $action_omni_tab_undo_close
 
 ;; "" OMNI+RSFT_LAYER """""""""""""""""""""""""
 )
@@ -324,7 +332,7 @@
 ;; "" APPS_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (apps_layer)
-  spc  $action_apps_launcher
+  spc  $action_apps
 
   ;; "" APPS_LAYER """"""""""""""""""""""""""""""""
 )
@@ -639,34 +647,10 @@
 )
 
 ;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SESSION_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (session_layer)
-
-;; "" SESSION_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SESSION+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (session+lsft_layer)
-
-;; "" SESSION+LSFT_LAYER """"""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SESSION+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (session+rsft_layer)
-
-;; "" SESSION+RSFT_LAYER """"""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; "" SYMBOL_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (symbol_layer)
-
+  spc $action_symbols
 ;; "" SYMBOL_LAYER """"""""""""""""""""""""""
 )
 
@@ -810,7 +794,7 @@
 ;; "" COMMAND_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (command_layer)
-
+  spc $action_commands
 ;; "" COMMAND_LAYER """"""""""""""""""""""""""
 )
 

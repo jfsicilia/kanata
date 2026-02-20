@@ -1,426 +1,644 @@
 (defvar
 
-;; == App actions in interfaces (actions.kbd) ===============
+;; == SFT actions ==========================================================
+;; ___TO_SET___ nvim_action_sft+ent                
 
-;; SFT actions ==========================================================
-;; nvim_action_sft+ent                
-;; LCTL actions ==========================================================
-;; nvim_action_lctl+a                 
-;; nvim_action_lctl+b                 
-;; nvim_action_lctl+c                 
-;; nvim_action_lctl+d                 
-;; nvim_action_lctl+e                 
-;; nvim_action_lctl+f                 
-;; nvim_action_lctl+g                 
-;; nvim_action_lctl+h                 
-;; nvim_action_lctl+i                 
-;; nvim_action_lctl+j                 
-;; nvim_action_lctl+k                 
-;; nvim_action_lctl+l                 
-;; nvim_action_lctl+m                 
-;; nvim_action_lctl+n                 
-;; nvim_action_lctl+o                 
-;; nvim_action_lctl+p                 
-;; nvim_action_lctl+q                 
-;; nvim_action_lctl+r                 
-;; nvim_action_lctl+s                 
-;; nvim_action_lctl+t                 
-;; nvim_action_lctl+lsft+t            
-;; nvim_action_lctl+u                 
-;; nvim_action_lctl+v                 
-;; nvim_action_lctl+w                 
-;; nvim_action_lctl+x                 
-;; nvim_action_lctl+y                 
-;; nvim_action_lctl+z                 
-;; nvim_action_lctl+,                 
-;; nvim_action_lctl+.                 
-;; nvim_action_lctl+/                 
-;; nvim_action_lctl+;                 
-;; nvim_action_lctl+'                 
-;; nvim_action_lctl+[                 
-;; nvim_action_lctl+]                 
-;; nvim_action_lctl+\                 
-;; nvim_action_lctl+-                 
-;; nvim_action_lctl+=                 
-;; nvim_action_lctl+1                 
-;; nvim_action_lctl+2                 
-;; nvim_action_lctl+3                 
-;; nvim_action_lctl+4                 
-;; nvim_action_lctl+5                 
-;; nvim_action_lctl+6                 
-;; nvim_action_lctl+7                 
-;; nvim_action_lctl+8                 
-;; nvim_action_lctl+9                 
-;; nvim_action_lctl+0                 
+;; == LCTL actions ==========================================================
+;; ___TO_SET___ nvim_action_lctl+a                 
+;; ___TO_SET___ nvim_action_lctl+b                 
+;; ___TO_SET___ nvim_action_lctl+c                 
+;; ___TO_SET___ nvim_action_lctl+d                 
+;; ___TO_SET___ nvim_action_lctl+e                 
+;; ___TO_SET___ nvim_action_lctl+f                 
+;; ___TO_SET___ nvim_action_lctl+g                 
+;; ___TO_SET___ nvim_action_lctl+h                 
+;; ___TO_SET___ nvim_action_lctl+i                 
+;; ___TO_SET___ nvim_action_lctl+j                 
+;; ___TO_SET___ nvim_action_lctl+k                 
+;; ___TO_SET___ nvim_action_lctl+l                 
+;; ___TO_SET___ nvim_action_lctl+m                 
+;; ___TO_SET___ nvim_action_lctl+n                 
+;; ___TO_SET___ nvim_action_lctl+o                 
+;; ___TO_SET___ nvim_action_lctl+p                 
+;; ___TO_SET___ nvim_action_lctl+q                 
+;; ___TO_SET___ nvim_action_lctl+r                 
+;; ___TO_SET___ nvim_action_lctl+s                 
+;; ___TO_SET___ nvim_action_lctl+t                 
+;; ___TO_SET___ nvim_action_lctl+lsft+t            
+;; ___TO_SET___ nvim_action_lctl+u                 
+;; ___TO_SET___ nvim_action_lctl+v                 
+;; ___TO_SET___ nvim_action_lctl+w                 
+;; ___TO_SET___ nvim_action_lctl+x                 
+;; ___TO_SET___ nvim_action_lctl+y                 
+;; ___TO_SET___ nvim_action_lctl+z                 
+;; ___TO_SET___ nvim_action_lctl+,                 
+;; ___TO_SET___ nvim_action_lctl+.                 
+;; ___TO_SET___ nvim_action_lctl+/                 
+;; ___TO_SET___ nvim_action_lctl+;                 
+;; ___TO_SET___ nvim_action_lctl+'                 
+;; ___TO_SET___ nvim_action_lctl+[                 
+;; ___TO_SET___ nvim_action_lctl+]                 
+;; ___TO_SET___ nvim_action_lctl+\                 
+;; ___TO_SET___ nvim_action_lctl+-                 
+;; ___TO_SET___ nvim_action_lctl+=                 
+;; ___TO_SET___ nvim_action_lctl+1                 
+;; ___TO_SET___ nvim_action_lctl+2                 
+;; ___TO_SET___ nvim_action_lctl+3                 
+;; ___TO_SET___ nvim_action_lctl+4                 
+;; ___TO_SET___ nvim_action_lctl+5                 
+;; ___TO_SET___ nvim_action_lctl+6                 
+;; ___TO_SET___ nvim_action_lctl+7                 
+;; ___TO_SET___ nvim_action_lctl+8                 
+;; ___TO_SET___ nvim_action_lctl+9                 
+;; ___TO_SET___ nvim_action_lctl+0                 
 
-;; !LCTL actions ==========================================================
-nvim_action_!lctl+a                         (macro g g S-v S-g)
-;; nvim_action_!lctl+b                
-;; nvim_action_!lctl+c                
-;; nvim_action_!lctl+d                
-;; nvim_action_!lctl+e                
-;; nvim_action_!lctl+f                
-;; nvim_action_!lctl+g                
-;; nvim_action_!lctl+h                
-;; nvim_action_!lctl+i                
-;; nvim_action_!lctl+j                
-;; nvim_action_!lctl+k                
-;; nvim_action_!lctl+l                
-;; nvim_action_!lctl+m                
-;; nvim_action_!lctl+n                
-;; nvim_action_!lctl+o                
-;; nvim_action_!lctl+p                
-;; nvim_action_!lctl+lsft+p           
-;; nvim_action_!lctl+q                
-;; nvim_action_!lctl+r                
-;; nvim_action_!lctl+s                
-;; nvim_action_!lctl+t                
-;; nvim_action_!lctl+lsft+t           
-;; nvim_action_!lctl+u                
-;; nvim_action_!lctl+v                
-;; nvim_action_!lctl+w                
-;; nvim_action_!lctl+x                
-;; nvim_action_!lctl+y                
-;; nvim_action_!lctl+z                
-;; nvim_action_!lctl+,                
-;; nvim_action_!lctl+.                
-;; nvim_action_!lctl+/                
-;; nvim_action_!lctl+;                
-;; nvim_action_!lctl+'                
-;; nvim_action_!lctl+[                
-;; nvim_action_!lctl+]                
-;; nvim_action_!lctl+\                
-;; nvim_action_!lctl+-                
-;; nvim_action_!lctl+=                
-;; nvim_action_!lctl+1                
-;; nvim_action_!lctl+2                
-;; nvim_action_!lctl+3                
-;; nvim_action_!lctl+4                
-;; nvim_action_!lctl+5                
-;; nvim_action_!lctl+6                
-;; nvim_action_!lctl+7                
-;; nvim_action_!lctl+8                
-;; nvim_action_!lctl+9                
-;; nvim_action_!lctl+0                
+;; == !LCTL actions ==========================================================
+nvim_action_!lctl+a  (macro g g S-v S-g)
+;; ___TO_SET___ nvim_action_!lctl+b                
+;; ___TO_SET___ nvim_action_!lctl+c                
+;; ___TO_SET___ nvim_action_!lctl+d                
+;; ___TO_SET___ nvim_action_!lctl+e                
+;; ___TO_SET___ nvim_action_!lctl+f                
+;; ___TO_SET___ nvim_action_!lctl+g                
+;; ___TO_SET___ nvim_action_!lctl+h                
+;; ___TO_SET___ nvim_action_!lctl+i                
+;; ___TO_SET___ nvim_action_!lctl+j                
+;; ___TO_SET___ nvim_action_!lctl+k                
+;; ___TO_SET___ nvim_action_!lctl+l                
+;; ___TO_SET___ nvim_action_!lctl+m                
+;; ___TO_SET___ nvim_action_!lctl+n                
+;; ___TO_SET___ nvim_action_!lctl+o                
+;; ___TO_SET___ nvim_action_!lctl+p                
+;; ___TO_SET___ nvim_action_!lctl+lsft+p           
+;; ___TO_SET___ nvim_action_!lctl+q                
+;; ___TO_SET___ nvim_action_!lctl+r                
+;; ___TO_SET___ nvim_action_!lctl+s                
+;; ___TO_SET___ nvim_action_!lctl+t                
+;; ___TO_SET___ nvim_action_!lctl+lsft+t           
+;; ___TO_SET___ nvim_action_!lctl+u                
+;; ___TO_SET___ nvim_action_!lctl+v                
+;; ___TO_SET___ nvim_action_!lctl+w                
+;; ___TO_SET___ nvim_action_!lctl+x                
+;; ___TO_SET___ nvim_action_!lctl+y                
+;; ___TO_SET___ nvim_action_!lctl+z                
+;; ___TO_SET___ nvim_action_!lctl+,                
+;; ___TO_SET___ nvim_action_!lctl+.                
+;; ___TO_SET___ nvim_action_!lctl+/                
+;; ___TO_SET___ nvim_action_!lctl+;                
+;; ___TO_SET___ nvim_action_!lctl+'                
+;; ___TO_SET___ nvim_action_!lctl+[                
+;; ___TO_SET___ nvim_action_!lctl+]                
+;; ___TO_SET___ nvim_action_!lctl+\                
+;; ___TO_SET___ nvim_action_!lctl+-                
+;; ___TO_SET___ nvim_action_!lctl+=                
+;; ___TO_SET___ nvim_action_!lctl+1                
+;; ___TO_SET___ nvim_action_!lctl+2                
+;; ___TO_SET___ nvim_action_!lctl+3                
+;; ___TO_SET___ nvim_action_!lctl+4                
+;; ___TO_SET___ nvim_action_!lctl+5                
+;; ___TO_SET___ nvim_action_!lctl+6                
+;; ___TO_SET___ nvim_action_!lctl+7                
+;; ___TO_SET___ nvim_action_!lctl+8                
+;; ___TO_SET___ nvim_action_!lctl+9                
+;; ___TO_SET___ nvim_action_!lctl+0                
 
-;; == Seek & Select combos ===============================================
-;; !lctl+spc
-nvim_action_select_files                 (macro esc S-; S-t e l e s c o p e spc f i n d S-- f i l e s ret)
-;; !lctl+lsft+spc
-nvim_action_select_opened_files          (macro esc S-; S-t e l e s c o p e spc b u f f e r s ret)
-;; !lctl+rsft+spc
-nvim_action_select_folders               XX
-;; !lalt+spc
-;; nvim_action_select_command         
-;; !lmet+spc
-;; nvim_action_select_symbol          
-;; !lctl+!lalt+spc
-;; nvim_action_omnisearch_files       
-;; !lctl+!lalt+lsft+spc
-;; nvim_action_omnisearch_file        
+;; == DOMAINS =============================================================
 
-;; == Favs combos ========================================================
-;; bookm + spc
-;; nvim_action_select_fav             
 
-;; == Settings combos ====================================================
-;; omni + ,
-;; nvim_action_settings               
+;; == #open =============================================================
+;; #open + spc
+;; ___TO_SET___ nvim_action_open_with              
+;; #open + m
+;; ___TO_SET___ nvim_action_open_with_chrome       
+;; #open + t
+;; ___TO_SET___ nvim_action_open_with_terminal     
+;; #open + v
+;; ___TO_SET___ nvim_action_open_with_nvim         
 
-;; == Tabs combos ========================================================
-;; gui + tabs + l | gui + tabs + right | lsft + rsft | 2x rsft | !met + tab
-;; !gui + tabs + l | !gui + tabs + right
-nvim_action_tab_next                       (macro esc S-; b n e x t ret)
-;; gui + tabs + h | gui + tabs + left | rsft + lsft | 2x lsft | !met + sft + tab
-;; !gui + tabs + h | !gui + tabs + left
-nvim_action_tab_prev                       (macro esc S-; b p r e v i o u s ret)
-;; gui + tabs (tap) | 2x !lctl/tabs
-;; !gui + tabs (tap)
-nvim_action_tab_toggle                     (macro S-; b S-3 ret)
-;; gui + tabs + t | omni + t
-;; !gui + tabs + t
-;; nvim_action_tab_new                
-;; gui + tabs + w | omni + w
-;; !gui + tabs + w
-nvim_action_tab_close                      C-w
-;; gui + tabs + lsft + t | omni + lsft + t
-;; !gui + tabs + lsft + t
-;; nvim_action_tab_undo_close         
+;; == #quickfix =========================================================
+;; #quickfix + spc
+;; ___TO_SET___ nvim_action_quickfix               
 
-;; gui + tabs + 1
-;; !gui + tabs + 1
-nvim_action_tab_goto_1                     (macro , Digit1)
-;; gui + tabs + 2
-;; !gui + tabs + 2
-nvim_action_tab_goto_2                     (macro , Digit2)
-;; gui + tabs + 3
-;; !gui + tabs + 3
-nvim_action_tab_goto_3                     (macro , Digit3)
-;; gui + tabs + 4
-;; !gui + tabs + 4
-nvim_action_tab_goto_4                     (macro , Digit4)
-;; gui + tabs + 5
-;; !gui + tabs + 5
-nvim_action_tab_goto_5                     (macro , Digit5)
-;; gui + tabs + 6
-;; !gui + tabs + 6
-nvim_action_tab_goto_6                     (macro , Digit6)
-;; gui + tabs + 7
-;; !gui + tabs + 7
-nvim_action_tab_goto_7                     (macro , Digit7)
-;; gui + tabs + 8
-;; !gui + tabs + 8
-nvim_action_tab_goto_8                     (macro , Digit8)
-;; gui + tabs + 9
-;; !gui + tabs + 9
-nvim_action_tab_goto_last                  (macro , Digit9)
+;; == #refs =========================================================
+;; #refs + spc
+;; ___TO_SET___ nvim_action_refs                   
+;; #refs + lsft + spc
+;; ___TO_SET___ nvim_action_refs_in                
+;; #refs + rsft + spc
+;; ___TO_SET___ nvim_action_refs_out               
 
-;; == Tab move combos =====================================================
-;; gui + tabs + lsft + h | gui + tabs + lsft + left
-;; !gui + tabs + lsft + h | !gui + tabs + lsft + left
-;; nvim_action_tab_move_left          
-;; gui + tabs + lsft + l | gui + tabs + lsft + right
-;; !gui + tabs + lsft + l | !gui + tabs + lsft + right
-;; nvim_action_tab_move_right         
-;; gui + tabs + lsft + k | gui + tabs + lsft + up
-;; !gui + tabs + lsft + k | !gui + tabs + lsft + up
-;; nvim_action_tab_move_first         
-;; gui + tabs + lsft + j | gui + tabs + lsft + down
-;; !gui + tabs + lsft + j | !gui + tabs + lsft + down
-;; nvim_action_tab_move_last          
+;; == #terminals =========================================================
+;; #terminals + spc
+;; ___TO_SET___ nvim_action_terminals              
+;; #terminals + n
+;; ___TO_SET___ nvim_action_terminals_new          
 
-;; == Panes combos =======================================================
-;; gui + pane + h | gui + pane + left
-;; !gui + tabs + h | !gui + tabs + left
-nvim_action_pane_left                      A-h ;; (macro esc S-; w i n c m d spc h ret)
-;; gui + pane + l | gui + pane + right
-;; !gui + tabs + l | !gui + tabs + right
-nvim_action_pane_right                     A-l ;; (macro esc S-; w i n c m d spc l ret)
-;; gui + pane + k | gui + pane + up
-;; !gui + tabs + k | !gui + tabs + up
-nvim_action_pane_above                     A-k ;; (macro esc S-; w i n c m d spc k ret)
-;; gui + pane + j | gui + pane + down
-;; !gui + tabs + j | !gui + tabs + down
-nvim_action_pane_below                     A-j ;; (macro esc S-; w i n c m d spc j ret)
-;; gui + pane (tap) | 2x !lalt/pane
-;; !gui + pane (tap)
-;; nvim_action_pane_toggle            
-;; gui + pane + spc
-;; !gui + pane + spc
-;; nvim_action_pane_max               
-;; gui + pane + -
-;; !gui + pane + -
-nvim_action_pane_h_split                   (macro S-; s p ret)
-;; gui + pane + \
-;; !gui + pane + \
-nvim_action_pane_v_split                   (macro S-; v s ret)
-;; gui + pane + w
-;; !gui + pane + w
-;; nvim_action_pane_close             
-;; == Pane move combos ====================================================
-;; gui + pane + lsft + h | gui + pane + lsft + left
-;; !gui + pane + lsft + h | !gui + pane + lsft + left
-;; nvim_action_pane_move_left         
-;; gui + pane + lsft + l | gui + pane + lsft + right
-;; !gui + pane + lsft + l | !gui + pane + lsft + right
-;; nvim_action_pane_move_right        
-;; gui + pane + lsft + k | gui + pane + lsft + up
-;; !gui + pane + lsft + k | !gui + pane + lsft + up
-;; nvim_action_pane_move_above        
-;; gui + pane + lsft + j | gui + pane + lsft + down
-;; !gui + pane + lsft + j | !gui + pane + lsft + down
-;; nvim_action_pane_move_below        
+;; == #history =========================================================
+;; #history + spc
+;; ___TO_SET___ nvim_action_history                
 
-;; == Pane resize combos ==================================================
-;; gui + pane + ralt + h | gui + pane + ralt + left
-;; !gui + pane + ralt + h | !gui + pane + ralt + left
-;; nvim_action_pane_resize_left       
-;; gui + pane + ralt + l | gui + pane + ralt + right
-;; !gui + pane + ralt + l | !gui + pane + ralt + right
-;; nvim_action_pane_resize_right      
-;; gui + pane + ralt + k | gui + pane + ralt + up
-;; !gui + pane + ralt + k | !gui + pane + ralt + up
-;; nvim_action_pane_resize_above      
-;; gui + pane + ralt + j | gui + pane + ralt + down
-;; !gui + pane + ralt + j | !gui + pane + ralt + down
-;; nvim_action_pane_resize_below      
+;; == #debug =========================================================
+;; #debug + spc
+;; ___TO_SET___ nvim_action_debug_breakpoint       
+;; #debug + r
+;; ___TO_SET___ nvim_action_debug_run              
+;; #debug + g
+;; ___TO_SET___ nvim_action_debug_go               
+;; #debug + s
+;; ___TO_SET___ nvim_action_debug_stop             
+;; #debug + i
+;; ___TO_SET___ nvim_action_debug_inside           
+;; #debug + o
+;; ___TO_SET___ nvim_action_debug_over             
 
-;; == Pane swap combos ====================================================
-;; gui + pane + rctl + h | gui + pane + rctl + left
-;; !gui + pane + rctl + h | !gui + pane + rctl + left
-;; nvim_action_pane_swap_left         
-;; gui + pane + rctl + l | gui + pane + rctl + right
-;; !gui + pane + rctl + l | !gui + pane + rctl + right
-;; nvim_action_pane_swap_right        
-;; gui + pane + rctl + k | gui + pane + rctl + up
-;; !gui + pane + rctl + k | !gui + pane + rctl + up
-;; nvim_action_pane_swap_above        
-;; gui + pane + rctl + j | gui + pane + rctl + down
-;; !gui + pane + rctl + j | !gui + pane + rctl + down
-;; nvim_action_pane_swap_below        
+;; == #info =========================================================
+;; #info + spc
+;; ___TO_SET___ nvim_action_info                   
 
-;; == Pane go by number combos ============================================
-;; gui + pane + 1
-;; !gui + pane + 1
-;; nvim_action_pane_go_1              
-;; gui + pane + 2
-;; !gui + pane + 2
-;; nvim_action_pane_go_2              
-;; gui + pane + 3
-;; !gui + pane + 3
-;; nvim_action_pane_go_3              
-;; gui + pane + 4
-;; !gui + pane + 4
-;; nvim_action_pane_go_4              
-;; gui + pane + 5
-;; !gui + pane + 5
-;; nvim_action_pane_go_5              
-;; gui + pane + 6
-;; !gui + pane + 6
-;; nvim_action_pane_go_6              
-;; gui + pane + 7
-;; !gui + pane + 7
-;; nvim_action_pane_go_7              
-;; gui + pane + 8
-;; !gui + pane + 8
-;; nvim_action_pane_go_8              
-;; gui + pane + 9
-;; !gui + pane + 9
-;; nvim_action_pane_go_last           
+;; == #source =========================================================
+;; #source + spc
+;; ___TO_SET___ nvim_action_source                 
 
-;; == Pane toggle combos (app-specific) ===================================
-;; gui + pane + b
-;; nvim_action_pane_bookmarks         
-;; gui + pane + c
-;; nvim_action_pane_calendar          
-;; gui + pane + d
-;; nvim_action_pane_day               
-;; gui + pane + lsft + d
-;; nvim_action_pane_<day              
-;; gui + pane + e
-nvim_action_pane_explorer                  (macro esc S-; S-n e o t r e e spc t o g g l e ent)
-;; gui + pane + lsft + e
-;; nvim_action_pane_<explorer         
-;; gui + pane + f
-;; nvim_action_pane_find              
-;; gui + pane + g
-;; nvim_action_pane_go                
-;; gui + pane + m
-;; nvim_action_pane_main              
-;; gui + pane + o
-;; nvim_action_pane_outline           
-;; gui + pane + p
-;; nvim_action_pane_properties        
-;; gui + pane + lsft + p
-;; nvim_action_pane_<properties       
-;; gui + pane + r
-;; nvim_action_pane_recent            
-;; gui + pane + s
-;; nvim_action_pane_left_sidebar      
-;; gui + pane + lsft + d
-;; nvim_action_pane_right_sidebar     
-;; gui + pane + t
-;; nvim_action_pane_tags              
-;; gui + pane + v
-;; nvim_action_pane_vertical_tabs     
-;; gui + pane + ;
-;; nvim_action_pane_graph             
-;; gui + pane + ,
-;; nvim_action_pane_backlinks         
-;; gui + pane + .
-;; nvim_action_pane_outlinks          
-;; gui + pane + lsft + .
-;; nvim_action_pane_<outlinks         
+;; == #omni ============================================================
 
-;; == History combos =====================================================
-;; omni + ]
-nvim_action_hist_next                      C-i
-;; omni + [
-nvim_action_hist_prev                      C-o
+;; == #omni nav ======================================================
+;; omni + g
+;; ___TO_SET___ nvim_action_omni_go                
 
-;; == Edit combos ======================================================
 ;; omni + b
-nvim_action_page_up                        C-b
+nvim_action_omni_page_up                        C-b
 
 ;; omni + f
-nvim_action_page_down                      C-f
+nvim_action_omni_page_down                      C-f
 
 ;; omni + k
-nvim_action_up                             up
+nvim_action_omni_up                             up
 ;; omni + j
-nvim_action_down                           down
+nvim_action_omni_down                           down
 ;; omni + h
-nvim_action_left                           left
+nvim_action_omni_left                           left
 ;; omni + l
-nvim_action_right                          right
+nvim_action_omni_right                          right
 
+;; omni + ]
+nvim_action_omni_hist_next                      C-i
+;; omni + [
+nvim_action_omni_hist_prev                      C-o
+
+;; == #omni edit ======================================================
 ;; omni + c
-;; nvim_action_copy                   
+;; ___TO_SET___ nvim_action_omni_copy              
 
 ;; omni + x
-;; nvim_action_cut                    
+;; ___TO_SET___ nvim_action_omni_cut               
 ;; omni + v
-;; nvim_action_paste                  
+;; ___TO_SET___ nvim_action_omni_paste             
 ;; omni + z
-;; nvim_action_undo                   
+;; ___TO_SET___ nvim_action_omni_undo              
 ;; omni + lsft + z
-;; nvim_action_redo                   
+;; ___TO_SET___ nvim_action_omni_redo              
+;; omni + ;
+;; ___TO_SET___ nvim_action_omni_comment           
 
-;; == File Manager combos ===============================================
-;; omni + e
-;; nvim_action_rename                 
-;; omni + d
-;; nvim_action_duplicate              
+;; == #omni file manager ===============================================
 ;; omni + spc
-;; nvim_action_toggle_select          
+;; ___TO_SET___ nvim_action_omni_select            
+;; omni + r
+;; ___TO_SET___ nvim_action_omni_rename            
+;; omni + d
+;; ___TO_SET___ nvim_action_omni_duplicate         
 ;; omni + a
-nvim_action_select_all                     (macro g g S-v S-g)
+nvim_action_omni_select_all                     (macro g g S-v S-g)
 ;; omni + lsft + a
-;; nvim_action_clear_select           
+;; ___TO_SET___ nvim_action_omni_clear_select      
 ;; omni + rsft + a
-;; nvim_action_invert_select          
+;; ___TO_SET___ nvim_action_omni_invert_select     
 ;; omni + n
-;; nvim_action_new                    
+;; ___TO_SET___ nvim_action_omni_new               
 ;; omni + lsft + n
-;; nvim_action_lsft+new               
+;; ___TO_SET___ nvim_action_omni_lsft+new          
 ;; omni + rsft + n
-;; nvim_action_rsft+new               
-
+;; ___TO_SET___ nvim_action_omni_rsft+new          
 ;; omni + o
-nvim_action_open                          C-] ;; Follow tag in help ""
+nvim_action_omni_open                          C-] ;; Follow tag in help ""
 ;; omni + p
-nvim_action_parent                        C-t ;; Go back to preceding tag
+nvim_action_omni_parent                        C-t ;; Go back to preceding tag
+;; omni + s
+;; ___TO_SET___ nvim_action_omni_sort              
+;; omni + lsft + s
+;; ___TO_SET___ nvim_action_omni_reverse_sort      
+;; omni + y
+;; ___TO_SET___ nvim_action_omni_filter            
+;; omni + e
+;; ___TO_SET___ nvim_action_omni_extract           
+;; omni + lsft + e
+;; ___TO_SET___ nvim_action_omni_compress          
+;; omni + i
+;; ___TO_SET___ nvim_action_omni_info              
+
+;; == #omni user interface ===============================================
+;; ___TO_SET___ nvim_action_omni_view_1            
+;; ___TO_SET___ nvim_action_omni_view_2            
+;; ___TO_SET___ nvim_action_omni_view_3            
+;; ___TO_SET___ nvim_action_omni_view_4            
+;; ___TO_SET___ nvim_action_omni_view_5            
+;; ___TO_SET___ nvim_action_omni_view_6            
+;; ___TO_SET___ nvim_action_omni_view_7            
+;; ___TO_SET___ nvim_action_omni_view_8            
+;; ___TO_SET___ nvim_action_omni_view_9            
+;; ___TO_SET___ nvim_action_omni_view_0            
+
+;; == #omni misc ===============================================
+;; omni + t
+;; see #tabs
+;; ___TO_SET___ nvim_action_omni_tab_new           
+;; omni + lsft + t
+;; see #tabs
+;; ___TO_SET___ nvim_action_omni_tab_undo_close    
+;; omni + w
+;; see #tabs
+;; ___TO_SET___ nvim_action_omni_tab_close         
+;; omni + q
+;; see #windows
+;; ___TO_SET___ nvim_action_omni_window_close      
+
+;; omni + m
+;; see #mem
+;; ___TO_SET___ nvim_action_omni_clipboard         
+;; omni + ,
+;; see #settings
+;; ___TO_SET___ nvim_action_omni_settings          
+;; omni + .
+;; see #tags
+;; ___TO_SET___ nvim_action_omni_tags              
+;; omni + /
+;; see #help
+;; ___TO_SET___ nvim_action_omni_help              
 
 ;; omni + '
-;; nvim_action_view                   
-;; omni + lsft + '
-;; nvim_action_lsft+view              
-;; omni + rsft + '
-;; nvim_action_rsft+view              
-;; omni + ent
-;; nvim_action_edit                   
-;; omni + lsft + ent
-;; nvim_action_lsft+edit              
-;; omni + rsft + ent
-;; nvim_action_rsft+edit              
-;; omni + \
-;; nvim_action_explore                
-;; omni + lsft + \
-;; nvim_action_lsft+explore           
-;; omni + rsft + \
-;; nvim_action_rsft+explore           
-;; omni + s
-;; nvim_action_search                 
-;; omni + lsft + s
-;; nvim_action_lsft+search            
-;; omni + rsft + s
-;; nvim_action_rsft+search            
-;; omni + r
-;; nvim_action_replace                
-;; omni + lsft + r
-;; nvim_action_lsft+replace           
-;; omni + rsft + r
-;; nvim_action_rsft+replace           
-;; omni + g
-;; nvim_action_go                     
+;; not used yet
+;; omni + u
+;; not yet used.
+
+;; == #actions =========================================================
+;; #actions + spc
+;; ___TO_SET___ nvim_action_actions                
+
+;; == #symbols =============================================================
+;; #symbols + spc
+;; ___TO_SET___ nvim_action_symbols                
+
+;; == #defs =============================================================
+;; #defs + spc
+;; ___TO_SET___ nvim_action_defs                   
+
+;; == #autofill =============================================================
+;; #autofill + spc
+;; ___TO_SET___ nvim_action_autofill               
+
+;; == #git =============================================================
+;; #git + spc
+;; ___TO_SET___ nvim_action_git                    
+
+;; == #hyperlinks =============================================================
+;; #hyperlinks + spc
+;; ___TO_SET___ nvim_action_hyperlinks             
+
+;; == #jumps =============================================================
+;; #jumps + spc
+;; ___TO_SET___ nvim_action_jumps                  
+
+;; == #keymaps =============================================================
+;; #keymaps + spc
+;; ___TO_SET___ nvim_action_keymaps                
+
+;; == #locations =============================================================
+;; #locations + spc
+;; ___TO_SET___ nvim_action_locations              
+
+;; == #commands ===========================================================
+;; #commands + spc
+;; ___TO_SET___ nvim_action_commands               
+
+;; == #registers =============================================================
+;; #registers + spc
+;; ___TO_SET___ nvim_action_registers              
+
+;; == #panes =============================================================
+;; #panes + spc
+;; ___TO_SET___ nvim_action_panes                  
+
+;; #panes + ent
+;; ___TO_SET___ nvim_action_panes_max              
+
+;; #panes + h | #panes + left
+nvim_action_panes_left                      A-h ;; (macro esc S-; w i n c m d spc h ret)
+;; #panes + l | #panes + right
+nvim_action_panes_right                     A-l ;; (macro esc S-; w i n c m d spc l ret)
+;; #panes + k | #panes + up
+nvim_action_panes_above                     A-k ;; (macro esc S-; w i n c m d spc k ret)
+;; #panes + j | #panes + down
+nvim_action_panes_below                     A-j ;; (macro esc S-; w i n c m d spc j ret)
+
+;; #panes + -
+nvim_action_panes_split_h                   (macro S-; s p ret)
+;; #panes + \
+nvim_action_panes_split_v                   (macro S-; v s ret)
+
+;; #panes + w
+;; ___TO_SET___ nvim_action_panes_close            
+
+;; == #panes + #toggle ====================================================
+;; #panes + #toggle | 2x !lalt
+;; ___TO_SET___ nvim_action_panes_toggle           
+
+;; == #panes + #float ====================================================
+;; #panes + float
+;; ___TO_SET___ nvim_action_panes_float            
+
+;; == #panes + #move ======================================================
+;; #panes + #move + h | #panes + #move + left
+;; ___TO_SET___ nvim_action_panes_move_left        
+;; #panes + #move + l | #panes + #move + right
+;; ___TO_SET___ nvim_action_panes_move_right       
+;; #panes + #move + k | #panes + #move + up
+;; ___TO_SET___ nvim_action_panes_move_above       
+;; #panes + #move + j | #panes + #move + down
+;; ___TO_SET___ nvim_action_panes_move_below       
+
+;; == #panes + #resize ====================================================
+;; #panes + #resize + h | #panes + #resize + left
+;; ___TO_SET___ nvim_action_panes_resize_left      
+;; #panes + #resize + l | #panes + #resize + right
+;; ___TO_SET___ nvim_action_panes_resize_right     
+;; #panes + #resize + k | #panes + #resize + up
+;; ___TO_SET___ nvim_action_panes_resize_above     
+;; #panes + #resize + j | #panes + #resize + down
+;; ___TO_SET___ nvim_action_panes_resize_below     
+
+;; == #panes + #swap ======================================================
+;; #panes + #swap + h | #panes + #swap + left
+;; ___TO_SET___ nvim_action_panes_swap_left        
+;; #panes + #swap + l | #panes + #swap + right
+;; ___TO_SET___ nvim_action_panes_swap_right       
+;; #panes + #swap + k | #panes + #swap + up
+;; ___TO_SET___ nvim_action_panes_swap_above       
+;; #panes + #swap + j | #panes + #swap + down
+;; ___TO_SET___ nvim_action_panes_swap_below       
+
+;; == #panes go by number ============================================
+;; #panes + 1
+;; ___TO_SET___ nvim_action_panes_goto_1           
+;; #panes + 2
+;; ___TO_SET___ nvim_action_panes_goto_2           
+;; #panes + 3
+;; ___TO_SET___ nvim_action_panes_goto_3           
+;; #panes + 4
+;; ___TO_SET___ nvim_action_panes_goto_4           
+;; #panes + 5
+;; ___TO_SET___ nvim_action_panes_goto_5           
+;; #panes + 6
+;; ___TO_SET___ nvim_action_panes_goto_6           
+;; #panes + 7
+;; ___TO_SET___ nvim_action_panes_goto_7           
+;; #panes + 8
+;; ___TO_SET___ nvim_action_panes_goto_8           
+;; #panes + 9
+;; ___TO_SET___ nvim_action_panes_goto_last        
+
+;; == #panes show pane / focus (app-specific) =============================
+;; #panes + q
+;; ___TO_SET___ nvim_action_panes_quickfix         
+;; #panes + w
+;; see #panes
+;; #panes + e
+nvim_action_panes_explorer                  (macro esc S-; S-n e o t r e e spc t o g g l e ent)
+;; #panes + lsft + e
+;; ___TO_SET___ nvim_action_panes+lsft_explorer    
+;; #panes + r
+;; ___TO_SET___ nvim_action_panes_recent           
+;; #panes + t
+;; ___TO_SET___ nvim_action_panes_terminal         
+;; #panes + u
+;; ___TO_SET___ nvim_action_panes_debug            
+;; #panes + y
+;; ___TO_SET___ nvim_action_panes_history          
+;; #panes + i
+;; ___TO_SET___ nvim_action_panes_info             
+;; #panes + o
+;; ___TO_SET___ nvim_action_panes_outline          
+;; #panes + lsft + o
+;; ___TO_SET___ nvim_action_panes_output           
+;; #panes + p
+;; ___TO_SET___ nvim_action_panes_properties       
+;; #panes + lsft + p
+;; ___TO_SET___ nvim_action_panes+lsft_properties  
+;; #panes + [
+;; ___TO_SET___ nvim_action_panes_backlinks        
+;; #panes + ]
+;; ___TO_SET___ nvim_action_panes_outlinks         
+;; #panes + lsft + ]
+;; ___TO_SET___ nvim_action_panes+lsft_outlinks    
+
+;; #panes + a
+;; ___TO_SET___ nvim_action_panes_AI               
+;; #panes + s
+;; ___TO_SET___ nvim_action_panes_sidebar          
+;; #panes + lsft + s
+;; ___TO_SET___ nvim_action_panes+lsft_sidebar     
+;; #panes + d
+;; ___TO_SET___ nvim_action_panes_docker           
+;; #panes + f
+;; ___TO_SET___ nvim_action_panes_filename         
+;; #panes + g
+;; ___TO_SET___ nvim_action_panes_go               
+;; #panes + ;
+;; ___TO_SET___ nvim_action_panes_graph            
+;; #panes + '
+;; not yet used.
+
+;; #panes + z
+;; ___TO_SET___ nvim_action_panes_tests            
+;; #panes + x
+;; ___TO_SET___ nvim_action_panes_extensions       
+;; #panes + c
+;; ___TO_SET___ nvim_action_panes_calendar         
+;; #panes + lsft + c
+;; ___TO_SET___ nvim_action_panes_day              
+;; #panes + rsft + c
+;; ___TO_SET___ nvim_action_panes+!day             
+;; #panes + v
+;; ___TO_SET___ nvim_action_panes_vertical_tabs    
+;; #panes + b
+;; ___TO_SET___ nvim_action_panes_bookmarks        
+;; #panes + n
+;; ___TO_SET___ nvim_action_panes_notebooks        
+;; #panes + m
+;; ___TO_SET___ nvim_action_panes_main             
+;; #panes + ,
+;; ___TO_SET___ nvim_action_panes_settings         
+;; #panes + .
+;; ___TO_SET___ nvim_action_panes_tags             
+;; #panes + /
+;; ___TO_SET___ nvim_action_panes_help             
+
+;; == #panes + #search (tap) ==============================================
+;; #panes + #search
+;; ___TO_SET___ nvim_action_panes_search           
+
+;; == #panes + #replace (tap) ==============================================
+;; #panes + #replace
+;; ___TO_SET___ nvim_action_panes_replace          
+
+;; == #tabs ===============================================================
+
+;; #tabs + spc
+nvim_action_tabs          (macro esc S-; S-t e l e s c o p e spc b u f f e r s ret)
+
+;; #tabs + l | #tabs + right | lsft + rsft | 2x rsft | !lmet + tab
+nvim_action_tabs_next                       (macro esc S-; b n e x t ret)
+;; #tabs + h | #tabs + left | rsft + lsft | 2x lsft | !lmet + sft + tab
+nvim_action_tabs_prev                       (macro esc S-; b p r e v i o u s ret)
+;; #tabs + j | #tabs + down
+;; ___TO_SET___ nvim_action_tabs_first             
+;; #tabs + k | #tabs + up
+;; ___TO_SET___ nvim_action_tabs_last              
+
+;; #tabs + t
+;; ___TO_SET___ nvim_action_tabs_new               
+;; #tabs + w
+nvim_action_tabs_close                      C-w
+;; #tabs + lsft + t
+;; ___TO_SET___ nvim_action_tabs_undo_close        
+
+;; == #tabs go by number ==================================================
+;; #tabs + 1
+nvim_action_tabs_goto_1                     (macro , Digit1)
+;; #tabs + 2
+nvim_action_tabs_goto_2                     (macro , Digit2)
+;; #tabs + 3
+nvim_action_tabs_goto_3                     (macro , Digit3)
+;; #tabs + 4
+nvim_action_tabs_goto_4                     (macro , Digit4)
+;; #tabs + 5
+nvim_action_tabs_goto_5                     (macro , Digit5)
+;; #tabs + 6
+nvim_action_tabs_goto_6                     (macro , Digit6)
+;; #tabs + 7
+nvim_action_tabs_goto_7                     (macro , Digit7)
+;; #tabs + 8
+nvim_action_tabs_goto_8                     (macro , Digit8)
+;; #tabs + 9
+nvim_action_tabs_goto_last                  (macro , Digit9)
+
+;; == #tabs + #toggle =====================================================
+;; #tabs + #toggle | 2x !lctl
+nvim_action_tabs_toggle                     (macro S-; b S-3 ret)
+
+;; == #tabs + #move =====================================================
+;; #tabs + #move + h | #tabs + #move + left
+;; ___TO_SET___ nvim_action_tabs_move_left         
+;; #tabs + #move + l | #tabs + #move + right
+;; ___TO_SET___ nvim_action_tabs_move_right        
+;; #tabs + #move + k | #tabs + #move + up
+;; ___TO_SET___ nvim_action_tabs_move_first        
+;; #tabs + #move + j | #tabs + #move + down
+;; ___TO_SET___ nvim_action_tabs_move_last         
+
+;; == #!tabs/groups =====================================================
+;; #!tabs + spc
+;; ___TO_SET___ nvim_action_!tabs                  
+;; #!tabs + toggle
+
+;; == #!tabs + #toggle =====================================================
+;; #!tabs + #toggle
+;; ___TO_SET___ nvim_action_!tabs_toggle           
+;; #!tabs + l | #!tabs + right
+;; ___TO_SET___ nvim_action_!tabs_next             
+;; #!tabs + h | #!tabs + left
+;; ___TO_SET___ nvim_action_!tabs_prev             
+;; #!tabs + j | #!tabs + down
+;; ___TO_SET___ nvim_action_!tabs_first            
+;; #!tabs + k | #!tabs + up
+;; ___TO_SET___ nvim_action_!tabs_last             
+;; #!tabs + t
+;; ___TO_SET___ nvim_action_!tabs_new              
+;; #!tabs + w
+;; ___TO_SET___ nvim_action_!tabs_close            
+;; #!tabs + lsft + t
+;; ___TO_SET___ nvim_action_!tabs_undo_close       
+;; #!tabs + 1
+;; ___TO_SET___ nvim_action_!tabs_goto_1           
+;; #!tabs + 2
+;; ___TO_SET___ nvim_action_!tabs_goto_2           
+;; #!tabs + 3
+;; ___TO_SET___ nvim_action_!tabs_goto_3           
+;; #!tabs + 4
+;; ___TO_SET___ nvim_action_!tabs_goto_4           
+;; #!tabs + 5
+;; ___TO_SET___ nvim_action_!tabs_goto_5           
+;; #!tabs + 6
+;; ___TO_SET___ nvim_action_!tabs_goto_6           
+;; #!tabs + 7
+;; ___TO_SET___ nvim_action_!tabs_goto_7           
+;; #!tabs + 8
+;; ___TO_SET___ nvim_action_!tabs_goto_8           
+;; #!tabs + 9
+;; ___TO_SET___ nvim_action_!tabs_goto_last        
+
+;; == #!tabs + #move =====================================================
+;; #!tabs + #move + h | #!tabs + #move + left
+;; ___TO_SET___ nvim_action_!tabs_move_left        
+;; #!tabs + #move + l | #!tabs + #move + right
+;; ___TO_SET___ nvim_action_!tabs_move_right       
+;; #!tabs + #move + k | #!tabs + #move + up
+;; ___TO_SET___ nvim_action_!tabs_move_first       
+;; #!tabs + #move + j | #!tabs + #move + down
+;; ___TO_SET___ nvim_action_!tabs_move_last        
+
+;; == #sessions =====================================================
+;; #sessions + spc
+;; ___TO_SET___ nvim_action_sessions               
+;; #sessions + #toggle
+;; ___TO_SET___ nvim_action_sessions_toggle        
+
+;; == #mem (clipboard) ==================================================
+;; #mem + spc
+;; ___TO_SET___ nvim_action_clipboard              
+
+;; == #settings ==========================================================
+;; #settings + spc
+;; ___TO_SET___ nvim_action_settings               
+
+;; == #tags =========================================================
+;; #tags + spc
+;; ___TO_SET___ nvim_action_tags                   
+
+;; == #help ==========================================================
+;; #help + spc
+;; ___TO_SET___ nvim_action_help                   
+
+;; == #replace ==========================================================
+;; #replace + spc
+;; ___TO_SET___ nvim_action_replace_text_in_file   
+;; #replace + lsft + spc
+;; ___TO_SET___ nvim_action_replace_text_in_filesystem
+
+;; == #search ============================================================
+;; #search + spc
+;; ___TO_SET___ nvim_action_search_text_in_file    
+;; #search + lsft + spc
+;; ___TO_SET___ nvim_action_search_text_in_filesystem
+;; #search + rsft + spc
+;; ___TO_SET___ nvim_action_!search_text_in_file   
+
+;; == #files/folders ========================================================
+;; #files/folders + spc
+nvim_action_files                 (macro esc S-; S-t e l e s c o p e spc f i n d S-- f i l e s ret)
+;; #file/folder + lsft + spc
+nvim_action_folders               XX
+
+;; == #bookmarks =========================================================
+;; #bookmarks + spc
+;; ___TO_SET___ nvim_action_bookmarks              
 )
