@@ -222,9 +222,9 @@ dolphin_action_parent                         bspc
 ;; omni + rsft + n
 ;; ___TO_SET___ dolphin_action_omni_rsft+new          
 ;; omni + o
-;; ___TO_SET___ dolphin_action_omni_open              
+dolphin_action_omni_open              $dolphin_action_open
 ;; omni + p
-;; ___TO_SET___ dolphin_action_omni_parent            
+dolphin_action_omni_parent            $dolphin_action_parent
 ;; omni + s
 ;; ___TO_SET___ dolphin_action_omni_sort              
 ;; omni + lsft + s

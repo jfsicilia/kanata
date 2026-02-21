@@ -640,12 +640,14 @@
   ;; omni + o
   action_omni_open (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_omni_open break
+    ((input virtual vk_dolphin)) $dolphin_action_omni_open break
     ((input virtual vk_obsidian)) $obsidian_action_omni_open break
     () right break
   ))
   ;; omni + p
   action_omni_parent (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_omni_parent break
+    ((input virtual vk_dolphin)) $dolphin_action_omni_parent break
     ((input virtual vk_obsidian)) $obsidian_action_omni_parent break
     () left break
   ))
@@ -710,43 +712,43 @@
   ;; omni + t
   ;; see #tabs
   action_omni_tab_new (t! unmod_all (switch ;;@autogen@
-    () XX break
+    () $action_tabs_new break
   ))
   ;; omni + lsft + t
   ;; see #tabs
   action_omni_tab_undo_close (t! unmod_all (switch ;;@autogen@
-    () XX break
+    () $action_tabs_undo_close break
   ))
   ;; omni + w
   ;; see #tabs
   action_omni_tab_close (t! unmod_all (switch ;;@autogen@
-    () XX break
+    () $action_tabs_close break
   ))
   ;; omni + q
   ;; see #windows
   action_omni_window_close (t! unmod_all (switch ;;@autogen@
-    () XX break
+    () $action_windows_close break
   ))
 
   ;; omni + m
   ;; see #mem
   action_omni_clipboard (t! unmod_all (switch ;;@autogen@
-    () XX break
+    () $action_clipboard break
   ))
   ;; omni + ,
   ;; see #settings
   action_omni_settings (t! unmod_all (switch ;;@autogen@
-    () XX break
+    () $action_settings break
   ))
   ;; omni + .
   ;; see #tags
   action_omni_tags (t! unmod_all (switch ;;@autogen@
-    () XX break
+    () $action_tags break
   ))
   ;; omni + /
   ;; see #help
   action_omni_help (t! unmod_all (switch ;;@autogen@
-    () XX break
+    () $action_help break
   ))
 
   ;; omni + '
