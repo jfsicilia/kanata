@@ -2,12 +2,12 @@
 ;; ===========================================================
 ;;
 ;; This file defines:
-;;   - Virtual keys for fast-typing detection, language alternative and alt+tab
-;;     emulation.
+;;   - Virtual keys for fast-typing detection, language alternatives, and alt+tab
+;;     emulation
 ;;   - Variable mappings for all physical keys
 ;;   - The default layer with tap-hold behaviors
 ;;
-;; Fast-typing config from:
+;; Fast-typing configuration from:
 ;; https://github.com/jtroo/kanata/discussions/1656#discussioncomment-14382030
 ;;
 ;; PHYSICAL KEY REMAPPING (Mac-like layout)
@@ -19,7 +19,7 @@
 ;;
 ;; HOMEROW MODS (fast-typing aware)
 ;; --------------------------------
-;; Home row keys act as modifiers when held, letters when tapped:
+;; Home row keys act as modifiers when held and as letters when tapped:
 ;;
 ;;   a    s    d    f              j    k    l    ;
 ;;  lmet lalt lsft lctl           lctl rsft lalt lmet
@@ -29,25 +29,25 @@
 ;;
 ;; DUAL MODIFIER SYSTEM
 ;; --------------------
-;; Two sets of modifiers provide different functionality in vim-mode apps:
-;;   - Homerow mods (lctl, lalt, lmet) - for vim-mode commands
-;;   - Physical mods (!lctl, !lalt, !lmet) - for app-native commands
-;; In non-vim apps, both sets have the same functionality.
+;; Two sets of modifiers provide different functionality in vim-mode applications:
+;;   - Homerow mods (lctl, lalt, lmet) - used for vim-mode commands
+;;   - Physical mods (!lctl, !lalt, !lmet) - used for app-native commands
+;; In non-vim applications, both sets have the same functionality.
 ;;
 ;; FIRST CLASS CITIZENS: GUI ELEMENTS
-;; ----------------------------------
-;; Gui elements such as windows, workspaces (desktops/monitors), panes,
-;; tabs, groups and sessions are treated as first class citizens, therefore
-;; each of them has a dedicated key modifier (z - windows, x - workspaces,
-;; c - panes, v - tabs, b - groups/!tabs, n - sessions, m - tabs, , - panes,
-;; / - windows). Windows, tabs and panes have 2 keys to allow easy reaching
-;; of certain combos of these gui elements.
+;; -----------------------------------
+;; GUI elements such as windows, workspaces (desktops/monitors), panes,
+;; tabs, groups, and sessions are treated as first-class citizens. Therefore,
+;; each of them has a dedicated key modifier: z (windows), x (workspaces),
+;; c (panes), v (tabs), b (groups/!tabs), n (sessions), m (tabs), , (panes),
+;; and / (windows). Windows, tabs, and panes each have 2 keys to allow easy
+;; access to certain combinations of these GUI elements.
 
 ;; DOMAIN LAYERS
 ;; -------------
 ;;
-;; All keys could get a domain functionality when hold, converting it as 
-;; new modifier.
+;; All keys can provide domain functionality when held, converting them into
+;; new modifiers.
 ;;
 ;; UPPER ROW
 ;; ---------
@@ -62,9 +62,9 @@
 ;;
 ;; MIDDLE ROW
 ;; ----------
-;; a, s, d, f, j, k, l and ; have double functionality as modifiers and as simple domains.
-;; A simple domain only has one combo: <key> + space, therefore it can be used
-;; also as modifier (lmet/lalt/sft/lctl).
+;; a, s, d, f, j, k, l, and ; have dual functionality as modifiers and as simple domains.
+;; A simple domain has only one combo: <key> + space. Therefore, it can also be used
+;; as a modifier (lmet/lalt/sft/lctl).
 ;;
 ;; Caps  → tap: esc        hold: omni_layer (main editing/file operations)
 ;; a     → tap: a          hold: lmet&action_layer
@@ -81,9 +81,9 @@
 ;;
 ;; LOWER ROW
 ;; ---------
-;; z, x, c, v, b, n, m, , and / have double functionality as gui elements and simple domains.
-;; A simple domain only has one combo: <key> + space, therefore it can be used
-;; also as modifier (lmet/lalt/sft/lctl).
+;; z, x, c, v, b, n, m, ,, and / have dual functionality as GUI elements and simple domains.
+;; A simple domain has only one combo: <key> + space. Therefore, it can also be used
+;; as a modifier (lmet/lalt/sft/lctl).
 ;;
 ;; lsft  → tap: 2x tab_prev   hold: lsft_layer
 ;; lang  → tap: toggle ES/US  hold: lang_layer (< > key on Spanish keyboard)
@@ -111,7 +111,7 @@
 ;;
 ;; SPANISH CHARACTERS (vk_alt_chars)
 ;; ----------------------------------
-;; Toggle Lang key to enable Spanish character composition:
+;; Toggle the Lang key to enable Spanish character composition:
 ;;   Double-tap vowels (a,e,i,o,u) → accented (á,é,í,ó,ú)
 ;;   Double-tap n → ñ
 ;;   Triple-tap e → €
@@ -124,11 +124,11 @@
 (defvirtualkeys
   vk_lalt lalt  ;; Used to mimic lalt+tab with lctl+tab.
 
-  vk_alt_chars    XX ;; Used to toggle alternative characters layout for other 
+  vk_alt_chars    XX ;; Used to toggle alternative character layout for other
                      ;; languages.
 
-  vk_fast_typing  XX ;; Used to allow fasttyping without triggering modifiers 
-                     ;; combos with homrowmod.
+  vk_fast_typing  XX ;; Used to allow fast typing without triggering modifier
+                     ;; combos with homerowmod.
 )
 
 ;; Variables ===============================================================
