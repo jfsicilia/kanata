@@ -134,6 +134,11 @@
   toggle_symbol+lsft_layer           (t! toggle_mod_layer   lsft  symbol+lsft_layer)
   toggle_symbol+rsft_layer           (t! toggle_mod_layer   rsft  symbol+rsft_layer)
 
+  ;; Terminals layer
+  toggle_terminals_layer             (t! toggle_layer             terminals_layer)
+  toggle_terminals+lsft_layer        (t! toggle_mod_layer   lsft  terminals+lsft_layer)
+  toggle_terminals+rsft_layer        (t! toggle_mod_layer   rsft  terminals+rsft_layer)
+
   ;; Tags layer
   toggle_tags_layer                  (t! toggle_layer             tags_layer)
   toggle_tags+lsft_layer             (t! toggle_mod_layer   lsft  tags+lsft_layer)
@@ -549,6 +554,31 @@
 
 ;; "" REGISTER+RSFT_LAYER """""""""""""""""""""
 )
+
+;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" TERMINALS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (terminals_layer)
+
+;; "" TERMINALS_LAYER """"""""""""""""""""""""""
+)
+
+;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" TERMINALS+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (terminals+lsft_layer)
+
+;; "" TERMINALS+LSFT_LAYER """""""""""""""""""""""""
+)
+
+;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" TERMINALS+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
+;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (terminals+rsft_layer)
+
+;; "" TERMINALS+RSFT_LAYER """""""""""""""""""""""""
+)
+
 
 ;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; "" TAGS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""

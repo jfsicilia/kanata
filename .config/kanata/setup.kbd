@@ -2,10 +2,10 @@
 ;; ===========================================================
 ;;
 ;; This file defines:
-;;   - Virtual keys for fast-typing detection and app-awareness
+;;   - Virtual keys for fast-typing detection, language alternative and alt+tab
+;;     emulation.
 ;;   - Variable mappings for all physical keys
 ;;   - The default layer with tap-hold behaviors
-;;   - Defalias for complex key behaviors
 ;;
 ;; Fast-typing config from:
 ;; https://github.com/jtroo/kanata/discussions/1656#discussioncomment-14382030
@@ -24,7 +24,8 @@
 ;;   a    s    d    f              j    k    l    ;
 ;;  lmet lalt lsft lctl           lctl rsft lalt lmet
 ;;
-;; Fast-typing detection prevents accidental modifier activation when typing quickly.
+;; Fast-typing detection prevents accidental modifier activation when typing 
+;; quickly.
 ;;
 ;; DUAL MODIFIER SYSTEM
 ;; --------------------
@@ -33,58 +34,80 @@
 ;;   - Physical mods (!lctl, !lalt, !lmet) - for app-native commands
 ;; In non-vim apps, both sets have the same functionality.
 ;;
-;; UPPER ROW LAYERS (tap-hold)
-;; ---------------------------
-;; Tab   → tap: tab        hold: open_layer
-;; Q     → tap: q          hold: quick_layer
-;; R     → tap: r          hold: ref_layer
-;; T     → tap: t          hold: tags_layer
-;; Y     → tap: y          hold: hist_layer
-;; U     → tap: u          hold: debug_layer
-;; I     → tap: i          hold: info_layer
-;; O     → tap: o          hold: source_layer
+;; FIRST CLASS CITIZENS: GUI ELEMENTS
+;; ----------------------------------
+;; Gui elements such as windows, workspaces (desktops/monitors), panes,
+;; tabs, groups and sessions are treated as first class citizens, therefore
+;; each of them has a dedicated key modifier (z - windows, x - workspaces,
+;; c - panes, v - tabs, b - groups/!tabs, n - sessions, m - tabs, , - panes,
+;; / - windows). Windows, tabs and panes have 2 keys to allow easy reaching
+;; of certain combos of these gui elements.
+
+;; DOMAIN LAYERS
+;; -------------
 ;;
-;; MIDDLE ROW LAYERS (homerow + domain)
-;; -------------------------------------
+;; All keys could get a domain functionality when hold, converting it as 
+;; new modifier.
+;;
+;; UPPER ROW
+;; ---------
+;; Tab   → tap: tab        hold: open_layer
+;; q     → tap: q          hold: quick_layer
+;; r     → tap: r          hold: ref_layer
+;; t     → tap: t          hold: terminals_layer
+;; y     → tap: y          hold: hist_layer
+;; u     → tap: u          hold: debug_layer
+;; i     → tap: i          hold: info_layer
+;; o     → tap: o          hold: source_layer
+;;
+;; MIDDLE ROW
+;; ----------
+;; a, s, d, f, j, k, l and ; have double functionality as modifiers and as simple domains.
+;; A simple domain only has one combo: <key> + space, therefore it can be used
+;; also as modifier (lmet/lalt/sft/lctl).
+;;
 ;; Caps  → tap: esc        hold: omni_layer (main editing/file operations)
-;; A     → tap: a          hold: lmet+action_layer
-;; S     → tap: s          hold: lalt+symbol_layer
-;; D     → tap: d          hold: lsft+def_layer
-;; F     → tap: f          hold: lctl+autofill_layer
-;; G     → tap: g          hold: git_layer
-;; H     → tap: h          hold: hyperlink_layer
-;; J     → tap: j          hold: lctl+jump_layer (special: mimics lalt for lctl+tab)
-;; K     → tap: k          hold: rsft+keymap_layer
-;; L     → tap: l          hold: lalt+localiz_layer
-;; ;     → tap: ;          hold: lmet+command_layer
+;; a     → tap: a          hold: lmet&action_layer
+;; s     → tap: s          hold: lalt&symbol_layer
+;; d     → tap: d          hold: lsft&def_layer
+;; f     → tap: f          hold: lctl&autofill_layer
+;; g     → tap: g          hold: git_layer
+;; h     → tap: h          hold: hyperlink_layer
+;; j     → tap: j          hold: lctl&jump_layer (special: mimics lalt for lctl+tab)
+;; k     → tap: k          hold: rsft&keymap_layer
+;; l     → tap: l          hold: lalt&localiz_layer
+;; ;     → tap: ;          hold: lmet&command_layer
 ;; '     → tap: '          hold: register_layer
 ;;
-;; LOWER ROW GUI LAYERS (dedicated keys)
-;; --------------------------------------
-;; Each GUI element has its own dedicated key:
-;;   Z     → windows_layer     (window management)
-;;   X     → workspaces_layer  (desktop/screen switching)
-;;   C     → panes_layer       (pane navigation/management)
-;;   V     → tabs_layer        (tab management)
-;;   B     → groups_layer      (group management)
-;;   N     → sessions_layer    (session management)
-;;   M     → tabs+mem_layer    (tabs + memory)
-;;   ,     → panes+sets_layer  (panes + settings)
-;;   .     → tags_layer        (tag management)
-;;   /     → windows_layer     (alternate window access)
+;; LOWER ROW
+;; ---------
+;; z, x, c, v, b, n, m, , and / have double functionality as gui elements and simple domains.
+;; A simple domain only has one combo: <key> + space, therefore it can be used
+;; also as modifier (lmet/lalt/sft/lctl).
 ;;
-;; MODIFIER ROW (physical keys + special functions)
-;; -------------------------------------------------
-;; Lsft  → tap: 2x tap_prev   hold: lsft_layer
-;; Lang  → tap: toggle ES/US  hold: lang_layer (< > key on Spanish keyboard)
-;; !lmet → tap: 2x desktop↔   hold: !lmet_layer (physical lctl)
-;; !lalt → tap: 2x pane↔      hold: !lalt_layer (physical lmet)
-;; !lctl → tap: 2x tab↔       hold: !lctl_layer (physical lalt, mimics lalt+tab)
-;; Spc   → tap: space         hold: num_layer
-;; Ralt  → tap: 2x app↔       hold: apps_layer
-;; Prnt  → tap: 2x session↔   hold: bookmarks_layer
-;; Rctl  → tap: 2x group↔     hold: opts_layer
-;; Rsft  → tap: 2x tap_next   hold: rsft_layer
+;; lsft  → tap: 2x tab_prev   hold: lsft_layer
+;; lang  → tap: toggle ES/US  hold: lang_layer (< > key on Spanish keyboard)
+;; z     → tap: z             hold: windows_layer     
+;; x     → tap: x             hold: workspaces_layer  
+;; c     → tap: c             hold: panes_layer       
+;; v     → tap: v             hold: tabs_layer        
+;; b     → tap: b             hold: groups_layer      
+;; n     → tap: n             hold: sessions_layer    
+;; m     → tap: m             hold: tabs&mem_layer    
+;; ,     → tap: ,             hold: panes&sets_layer  
+;; .     → tap: .             hold: tags_layer        
+;; /     → tap: /             hold: windows_layer     
+;; rsft  → tap: 2x tab_next   hold: rsft_layer
+;;
+;; MODIFIER ROW
+;; ------------
+;; !lmet → tap: 2x desktop toggle   hold: !lmet_layer (physical lctl)
+;; !lalt → tap: 2x pane toggle      hold: !lalt_layer (physical lmet)
+;; !lctl → tap: 2x tab toggle       hold: !lctl_layer (physical lalt, mimics lalt+tab)
+;; spc   → tap: space               hold: num_sym_layer
+;; ralt  → tap: 2x app toggle       hold: apps_layer
+;; prnt  → tap: 2x session toggle   hold: bookmarks_layer
+;; rctl  → tap: 2x group toggle     hold: opts_layer
 ;;
 ;; SPANISH CHARACTERS (vk_alt_chars)
 ;; ----------------------------------
@@ -111,61 +134,59 @@
 ;; Variables ===============================================================
 (defvar
   ;; Time config
-  tap_time  220
+  retap_time  200
   hold_time 200
 
   ;; Upper row keys.
-  tab|open           tab   ;; Tab behaves like tab when tap and open_layer while hold.
-  q|quick            q
-  w                  w 
-  e                  e 
-  r|ref              r 
-  t|tags             t
-  y|hist             y 
-  u|debug            u 
-  i|info             i 
-  o|source           o
-  p                  p 
-
-  ;; Medium row keys.
-  ;; Homerowmod: keys in middle row behave as letters when tapped and
-  ;; modifiers when held (lmet, lalt, lsft, lctl). Fast-typing aware.
-  esc|omni           caps ;; Caps: tap=esc, hold=omni_layer
-  a|lmet&action      a 
-  s|lalt&symbol      s 
-  d|lsft&def         d
-  f|lctl&autofill    f
-  g|git              g
-  h|hyperlink        h
-  j|lctl&jump        j
-  k|rsft&keymap      k
-  l|lalt&localiz     l
-  ;|lmet&command     ;
-  '|register         '
+  tab|open           tab         ;; Tap: Tab, Hold: open_with_layer
+  q|quick            q           ;; Tap: q,   Hold: quickfix_layer
+  w                  w           ;; Tap: w,   Hold: 
+  e                  e           ;; Tap: e,   Hold: 
+  r|ref              r           ;; Tap: r,   Hold: ref_layer
+  t|terminal         t           ;; Tap: t,   Hold: terminals_layer         
+  y|hist             y           ;; Tap: y,   Hold: history_layer
+  u|debug            u           ;; Tap: u,   Hold: debug_layer        
+  i|info             i           ;; Tap: i,   Hold: info_layer
+  o|source           o           ;; Tap: o,   Hold: source_layer
+  p                  p           ;; Tap: p,   Hold: 
+                                 
+  ;; Medium row keys.           
+  esc|omni           caps       ;; Tap:=esc, Hold: omni_layer
+  a|lmet&action      a          ;; Tap: a,   Hold: lmet_layer and actions_layer
+  s|lalt&symbol      s          ;; Tap: s,   Hold: lalt_layer and symbols_layer
+  d|lsft&def         d          ;; Tap: d,   Hold: lsft_layer and def_layer
+  f|lctl&autofill    f          ;; Tap: f,   Hold: lctl_layer and autofill_layer
+  g|git              g          ;; Tap: g,   Hold: git_layer
+  h|hyperlink        h          ;; Tap: h,   Hold: hyperlinks_layer
+  j|lctl&jump        j          ;; Tap: j,   Hold: lctl_layer and jumps_layer
+  k|rsft&keymap      k          ;; Tap: k,   Hold: rsft_layer and keymaps_layer
+  l|lalt&localiz     l          ;; Tap: l,   Hold: lalt_layer and localiz_layer
+  ;|lmet&command     ;          ;; Tap: ;,   Hold: lmet_layer and commands_layer
+  '|register         '          ;; Tap: ',   Hold: registers_layer 
 
   ;; Lower row keys.
-  lang               lsgt ;; <> Key (Spanish keyboard) - tap: toggle ES/US, hold: lang_layer
-  z|windows          z    ;; Tap: z, Hold: windows_layer
-  x|workspaces       x    ;; Tap: x, Hold: workspaces_layer
-  c|panes            c    ;; Tap: c, Hold: panes_layer
-  v|tabs             v    ;; Tap: v, Hold: tabs_layer
-  b|groups           b    ;; Tap: b, Hold: groups_layer
-  n|sessions         n    ;; Tap: n, Hold: session_layer
-  m|tabs&mem         m    ;; Tap: m, Hold: tabs+mem_layer
-  ,|panes&settings   ,    ;; Tap: ,, Hold: panes+sets_layer
-  .|tags             .    ;; Tap: ., Hold: tags_layer
-  /|wnd              /    ;; Tap: /, Hold: windows_layer
+  lang               lsgt       ;; <> Key (Spanish keyboard) - Tap: toggle ES/US, Hold: lang_layer
+  z|windows          z          ;; Tap: z, Hold: windows_layer
+  x|workspaces       x          ;; Tap: x, Hold: workspaces_layer
+  c|panes            c          ;; Tap: c, Hold: panes_layer
+  v|tabs             v          ;; Tap: v, Hold: tabs_layer
+  b|groups           b          ;; Tap: b, Hold: groups_layer
+  n|sessions         n          ;; Tap: n, Hold: session_layer
+  m|tabs&mem         m          ;; Tap: m, Hold: tabs_layer and mem_layer
+  ,|panes&settings   ,          ;; Tap: ,, Hold: panes_layer and sets_layer
+  .|tags             .          ;; Tap: ., Hold: tags_layer
+  /|wnd              /          ;; Tap: /, Hold: windows_layer
   
   ;; Modifiers row.
   !lmet              lctl       ;; Physical lctl is used as lmet
   !lalt              lmet       ;; Physical lmet is used as lalt
   !lctl              lalt       ;; Physical lalt is used as lctl
-  spc|num            spc
+  spc|num/sym        spc        ;; Spcebar is use as space an as num/sym layer when hold.
   apps               ralt       ;; Physical ralt key will be used for apps launching/focusing.
-  bookm              prnt       ;; Physical prnt key will be used for bookmarks.
-  opts               rctl           
+  bookm              prnt       ;; Physical prnt key will be used for bookmarks layer when hold.
+  opts               rctl       ;; Physical rctl key will be used for options layer when hold.    
 
-  ;; GUI action modifiers (used in panes_layer for move/resize/snap/swap sublayers).
+  ;; GUI action modifiers (used for move/resize/snap/swap sublayers).
   move              $!lctl       
   resize            $!lalt      
   toggle            ralt       
@@ -184,86 +205,54 @@
 
 (deflayermap (default)
   ;; Upper row keys
-  $tab|open         (t! fast_th tab                             $toggle_open_layer)   
-  $q|quick          (t! fast_th q                               $toggle_quick_layer)
-  $w                (t! fast_th w                               XX)
-  $e                (t! fast_th (t! char|alt_char e)            XX)
-  $r|ref            (t! fast_th r                               $toggle_ref_layer)
-  $t|tags           (t! fast_th t                               $toggle_tags_layer)
-  $y|hist           (t! fast_th y                               $toggle_hist_layer)
-  $u|debug          (t! fast_th (t! char|alt_char u)            $toggle_debug_layer)
-  $i|info           (t! fast_th (t! char|alt_char i)            $toggle_info_layer)
-  $o|source         (t! fast_th (t! char|alt_char o)            $toggle_source_layer)
-  $p                (t! fast_th p                               XX)   
+  $tab|open         (t! fast_th tab                                       $toggle_open_layer)   
+  $q|quick          (t! fast_th q                                         $toggle_quick_layer)
+  $w                (t! fast_th w                                         XX)
+  $e                (t! fast_th (t! char|alt_char e)                      XX)
+  $r|ref            (t! fast_th r                                         $toggle_ref_layer)
+  $t|terminals      (t! fast_th t                                         $toggle_terminals_layer)
+  $y|hist           (t! fast_th y                                         $toggle_hist_layer)
+  $u|debug          (t! fast_th (t! char|alt_char u)                      $toggle_debug_layer)
+  $i|info           (t! fast_th (t! char|alt_char i)                      $toggle_info_layer)
+  $o|source         (t! fast_th (t! char|alt_char o)                      $toggle_source_layer)
+  $p                (t! fast_th p                                         XX)   
 
   ;; Medium row keys (a, s, d, f, j, k, l, ; work as lmet, lalt, lsft/rsft and lctl)
-  $esc|omni         (t! fast_th esc                             $toggle_omni_layer)  
-  $a|lmet&action    (t! fast_th (t! char|alt_char a)            $toggle_lmet&action_layer)
-  $s|lalt&symbol    (t! fast_th s                               $toggle_lalt&symbol_layer)
-  $d|lsft&def       (t! fast_th d                               $toggle_lsft&def_layer)
-  $f|lctl&autofill  (t! fast_th f                               $toggle_lctl&autofill_layer)
-  $g|git            (t! fast_th g                               $toggle_git_layer)
-  $h|hyperlink      (t! fast_th h                               $toggle_hyperlink_layer)
-  $j|lctl&jump      (t! fast_th j                        (multi $toggle_lctl&jump_layer (on-release release-vkey vk_lalt)))
-  $k|rsft&keymap    (t! fast_th k                               $toggle_rsft&keymap_layer)
-  $l|lalt&localiz   (t! fast_th l                               $toggle_lalt&localiz_layer)
-  $;|lmet&command   (t! fast_th ;                               $toggle_lmet&command_layer)
-  $'|register       (t! fast_th '                               $toggle_register_layer)
+  $esc|omni         (t! fast_th esc                                       $toggle_omni_layer)  
+  $a|lmet&action    (t! fast_th (t! char|alt_char a)                      $toggle_lmet&action_layer)
+  $s|lalt&symbol    (t! fast_th s                                         $toggle_lalt&symbol_layer)
+  $d|lsft&def       (t! fast_th d                                         $toggle_lsft&def_layer)
+  $f|lctl&autofill  (t! fast_th f                                         $toggle_lctl&autofill_layer)
+  $g|git            (t! fast_th g                                         $toggle_git_layer)
+  $h|hyperlink      (t! fast_th h                                         $toggle_hyperlink_layer)
+  $j|lctl&jump      (t! fast_th j                                  (multi $toggle_lctl&jump_layer (on-release release-vkey vk_lalt)))
+  $k|rsft&keymap    (t! fast_th k                                         $toggle_rsft&keymap_layer)
+  $l|lalt&localiz   (t! fast_th l                                         $toggle_lalt&localiz_layer)
+  $;|lmet&command   (t! fast_th ;                                         $toggle_lmet&command_layer)
+  $'|register       (t! fast_th '                                         $toggle_register_layer)
                      
-  ;; Lower row keys (z, x, c, v, b, n, m, , work as window, workspace, pane, tabs, group and session.
-  lsft              (t!      th (t! 2x $action_tabs_prev)       $toggle_lsft_layer)
-  $lang             (t!      th @lang                           $toggle_lang_layer)
-  $z|windows        (t! fast_th z                               $toggle_windows_layer)
-  $x|workspaces     (t! fast_th x                               $toggle_workspaces_layer)
-  $c|panes          (t! fast_th c                               $toggle_panes_layer)
-  $v|tabs           (t! fast_th v                               $toggle_tabs_layer)
-  $b|groups         (t! fast_th b                               $toggle_groups_layer)
-  $n|sessions       (t! fast_th (t! char|alt_char n)            $toggle_sessions_layer)
-  $m|tabs&mem       (t! fast_th m                               $toggle_tabs&mem_layer)
-  $,|panes&settings (t! fast_th ,                               $toggle_panes&settings_layer)
-  $.|tags           (t! fast_th .                               $toggle_tags_layer)
-  $/|wnd            (t! fast_th /                               $toggle_windows_layer)
-  rsft              (t!      th (t! 2x $action_tabs_next)       $toggle_rsft_layer)
+  ;; Lower row keys (z, x, c, v, b, n, m, work as window, workspace, pane, tabs, group and session.
+  lsft              (t!      th (t! 2x $action_tabs_prev)                 $toggle_lsft_layer)
+  $lang             (t!      th (on-press toggle-virtualkey vk_alt_chars) $toggle_lang_layer)
+  $z|windows        (t! fast_th z                                         $toggle_windows_layer)
+  $x|workspaces     (t! fast_th x                                         $toggle_workspaces_layer)
+  $c|panes          (t! fast_th c                                         $toggle_panes_layer)
+  $v|tabs           (t! fast_th v                                         $toggle_tabs_layer)
+  $b|groups         (t! fast_th b                                         $toggle_groups_layer)
+  $n|sessions       (t! fast_th (t! char|alt_char n)                      $toggle_sessions_layer)
+  $m|tabs&mem       (t! fast_th m                                         $toggle_tabs&mem_layer)
+  $,|panes&settings (t! fast_th ,                                         $toggle_panes&settings_layer)
+  $.|tags           (t! fast_th .                                         $toggle_tags_layer)
+  $/|wnd            (t! fast_th /                                         $toggle_windows_layer)
+  rsft              (t!      th (t! 2x $action_tabs_next)                 $toggle_rsft_layer)
 
   ;; Modifiers row.
-  $!lmet            (t!      th (t! 2x $action_desktops_toggle) $toggle_!lmet_layer)   
-  $!lalt            (t!      th (t! 2x $action_panes_toggle)    $toggle_!lalt_layer)   
-  $!lctl     (multi (t!      th (t! 2x $action_tabs_toggle)     $toggle_!lctl_layer) (on-release release-vkey vk_lalt))
-  $spc|num          (t! fast_th spc                             $toggle_num_layer)
-  $apps             (t!      th (t! 2x $action_apps_toggle)     $toggle_apps_layer)   
-  $bookm            (t!      th (t! 2x $action_sessions_toggle) $toggle_bookmarks_layer)   
-  $opts             (t!      th (t! 2x $~action_!tabs_toggle)   $toggle_opts_layer)   
+  $!lmet            (t!      th (t! 2x $action_desktops_toggle)           $toggle_!lmet_layer)   
+  $!lalt            (t!      th (t! 2x $action_panes_toggle)              $toggle_!lalt_layer)   
+  $!lctl     (multi (t!      th (t! 2x $action_tabs_toggle)               $toggle_!lctl_layer) (on-release release-vkey vk_lalt))
+  $spc|num/sym      (t! fast_th spc                                       $toggle_num/sym_layer)
+  $apps             (t!      th (t! 2x $action_apps_toggle)               $toggle_apps_layer)   
+  $bookm            (t!      th (t! 2x $action_sessions_toggle)           $toggle_bookmarks_layer)   
+  $opts             (t!      th (t! 2x $~action_!tabs_toggle)             $toggle_opts_layer)   
 )
 
-(defalias
-;;  !lctl (multi 
-;;    (t! th (t! 2x $action_tab_toggle)    $toggle_!lctl_layer)
-;;    (on-release release-vkey vk_lalt)     ;; (lctl+tab mimics lalt+tab)
-;;  )
-;;  a|lmet|action (switch
-;;    ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char a) $toggle_lmet|action_layer) break
-;;    ()                              (t! fast_th a               $toggle_lmet|action_layer) break
-;;  ) 
-;;  e (switch
-;;    ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char e) XX) break
-;;    ()                              (t! fast_th e               XX) break
-;;  ) 
-;;  i|info (switch          
-;;    ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char i) $toggle_info_layer) break
-;;    ()                              (t! fast_th i               $toggle_info_layer) break
-;;  )
-;;  o|source (switch       
-;;    ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char o) $toggle_source_layer) break
-;;    ()                              (t! fast_th o               $toggle_source_layer) break
-;;  )
-;;  u|debug (switch         
-;;    ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char u) $toggle_debug_layer) break
-;;    ()                              (t! fast_th u               $toggle_debug_layer) break
-;;  )
-;;  n|sessions (switch          
-;;    ((input virtual vk_alt_chars))  (t! fast_th (t! alt_char n) $toggle_session_layer) break
-;;    ()                              (t! fast_th n               $toggle_session_layer) break
-;;  )
-;;
-  lang (on-press toggle-virtualkey vk_alt_chars)
-)

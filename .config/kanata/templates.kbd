@@ -29,7 +29,7 @@
 (deftemplate fast_th (tap hold)
   (switch
     ((input virtual vk_fast_typing)) (t! type $tap) break
-    () (tap-hold $tap_time $hold_time (t! type $tap) $hold) break
+    () (tap-hold $retap_time $hold_time (t! type $tap) $hold) break
   )
 )
 
@@ -94,7 +94,7 @@
 
 ;; Shorter tap and hold template with default values.
 (deftemplate th (tap hold)
-  (tap-hold-press $tap_time $hold_time $tap $hold)
+  (tap-hold-press $retap_time $hold_time $tap $hold)
 )
 
 
