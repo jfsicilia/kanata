@@ -347,7 +347,7 @@
 
   ;; lmet+tab mimics original lctl+tab functionality (typically next tab in 
   ;; browsers and editors).
-  tab $action_tabs_next
+  tab $action_tab_next
 
   ;; == LALT =========================
   $!lalt           (t! th _ $toggle_lmet+lalt_layer)
@@ -375,7 +375,7 @@
   ;; == KEY COMBOS ===================
   (t! default_map_keys_except ())
 
-  tab $action_tabs_prev
+  tab $action_tab_prev
 ;; "" LMET+LSFT_LAYER """""""""""""""
 )
 
@@ -386,7 +386,7 @@
   ;; == KEY COMBOS ===================
   (t! default_map_keys_except ())
 
-  tab $action_tabs_prev
+  tab $action_tab_prev
 ;; "" LMET+RSFT_LAYER """""""""""""""
 )
 
@@ -766,12 +766,12 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lsft_layer)
   ;; Pressing lsft+rsft (in that order) issues tab_next action.
-  rsft (multi (release-key lsft) $action_tabs_next)
+  rsft (multi (release-key lsft) $action_tab_next)
 
   ent $action_sft+ent
 
-  $apps             (t! th _ $toggle_apps+lsft_layer)
-  $tab|open         (t! th _ $toggle_opts+lsft_layer)
+  $app             (t! th _ $toggle_app+lsft_layer)
+  $tab|open         (t! th _ $toggle_opt+lsft_layer)
   $bookm            (t! th _ $toggle_bookmarks+lsft_layer)
   $esc|omni         (t! th _ $toggle_omni+lsft_layer)
   $f|lctl&autofill  (t! th _ $toggle_lctl+lsft_layer)
@@ -794,10 +794,10 @@
 ;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (rsft_layer)
   ;; Pressing rsft+lsft (in that order) issues tab_prev combo.
-  lsft (multi (release-key rsft) $action_tabs_prev)
+  lsft (multi (release-key rsft) $action_tab_prev)
 
-  $apps             (t! th _ $toggle_apps+rsft_layer)
-  $tab|open         (t! th _ $toggle_opts+rsft_layer)
+  $app             (t! th _ $toggle_app+rsft_layer)
+  $tab|open         (t! th _ $toggle_opt+rsft_layer)
   $bookm            (t! th _ $toggle_bookmarks+rsft_layer)
   $esc|omni         (t! th _ $toggle_omni+rsft_layer)
 
