@@ -28,13 +28,10 @@
 
 ;; "" OPTS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (opt_layer)
+  (t! map_layers _ "opt" (lsft rsft))
+
   k lrld
-
   p prnt
-
-  ;; == SFT ======================
-  lsft (t! th _ $toggle_opt+lsft_layer)
-  rsft (t! th _ $toggle_opt+rsft_layer)
 )
 (deflayermap (opt+lsft_layer)
   k (multi (cmd kanata_sync_apps.py -f) (cmd kanata_sync_all_apps_interfaces.sh))
@@ -45,6 +42,8 @@
 
 ;; "" OMNI_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (omni_layer)
+  (t! map_layers _ "omni" (lsft rsft))
+
   spc  $action_omni_select
 
   ;; Cursor
@@ -102,10 +101,6 @@
   8 $action_omni_view_8 
   9 $action_omni_view_9 
   0 $action_omni_view_0 
-
-  ;; == SFT ======================
-  lsft (t! th _ $toggle_omni+lsft_layer)
-  rsft (t! th _ $toggle_omni+rsft_layer)
 )
 (deflayermap (omni+lsft_layer)
   e $action_omni_compress
@@ -128,6 +123,8 @@
 
 ;; "" num/sym_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (num/sym_layer)
+  (t! map_layers _ "num/sym" (lsft rsft))
+
   ` S-` 1 S-1 2 S-2 3 S-3 4 S-4 5 S-5 6 S-6 7 S-7 8 S-8 9 S-9 0 S-0 - S-- = S-=
         q S-` w S-6 e S-[ r S-] t '   y -   u 7   i 8   o 9   p S-8 [ S-[ ] S-] \ S-\
         a `   s S-\ d S-9 f S-0 g S-' h S-= j 4   k 5   l 6   ; S-; ' S-'              ;;"
@@ -162,10 +159,11 @@
 
 ;; "" HISTORY_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (history_layer)
+  (t! map_layers _ "history" (lsft rsft))
   spc $action_history
 
-  $;|lmet&command      $action_history_command
-  $!lalt&search        $action_history_search
+  $command      $action_history_command
+  $search       $action_history_search
 )
 (deflayermap (history+lsft_layer)
 )
