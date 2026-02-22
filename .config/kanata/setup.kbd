@@ -149,6 +149,16 @@
   i|info             i           ;; Tap: i,   Hold: info_layer
   o|source           o           ;; Tap: o,   Hold: source_layer
   p                  p           ;; Tap: p,   Hold: 
+  
+  ;; Upper row domains
+  open               tab
+  quick              q
+  ref                r
+  terminal           t
+  history            y
+  debug              u
+  info               i
+  source             o
                                  
   ;; Medium row keys.           
   esc|omni           caps       ;; Tap:=esc, Hold: omni_layer
@@ -161,8 +171,22 @@
   j|lctl&jump        j          ;; Tap: j,   Hold: lctl_layer and jump_layer
   k|rsft&keymap      k          ;; Tap: k,   Hold: rsft_layer and keymap_layer
   l|lalt&localiz     l          ;; Tap: l,   Hold: lalt_layer and localiz_layer
-  ;|lmet&command     ;          ;; Tap: ;,   Hold: lmet_layer and command_layer
-  '|register         '          ;; Tap: ',   Hold: register_layer 
+  ;|lmet&command     ;          ;; Tap: ;,   Hold: lmet_layer and command_layer 
+  '|register         '          ;; Tap: ',   Hold: register_layer  
+ 
+  ;; Medium row domains.
+  omni               caps
+  action             a
+  symbol             s
+  def                d 
+  autofill           f 
+  git                g 
+  hyperlink          h 
+  jump               j 
+  keymap             k 
+  localiz            l
+  command            ;
+  register           r 
 
   ;; Lower row keys.
   lang               lsgt       ;; <> Key (Spanish keyboard) - Tap: toggle ES/US, Hold: lang_layer
@@ -175,8 +199,20 @@
   m|tab&mem          m          ;; Tap: m, Hold: tab_layer and mem_layer
   ,|pane&setting     ,          ;; Tap: ,, Hold: pane_layer and setting_layer
   .|tag              .          ;; Tap: ., Hold: tag_layer
-  /|wnd              /          ;; Tap: /, Hold: window_layer
+  /|window           /          ;; Tap: /, Hold: window_layer
   
+  ;; Lower row domains
+  window             z
+  workspace          x
+  pane               c 
+  tabs               v 
+  !tabs              b
+  group              b 
+  session            n
+  mem                m
+  setting            , 
+  tag                . 
+
   ;; Modifiers row.
   !lmet              lctl       ;; Physical lctl is used as lmet
   !lalt              lmet       ;; Physical lmet is used as lalt
@@ -188,6 +224,11 @@
   app                ralt       ;; Physical ralt key will be used for app launching/focusing.
   bookm              prnt       ;; Physical prnt key will be used for bookmark layer when hold.
   opt                rctl       ;; Physical rctl key will be used for option layer when hold.    
+
+  replace            $!lmet
+  search             $!lalt
+  file               $!lctl
+  num/sym            spc
 
   ;; GUI action modifiers (used for move/resize/snap/swap sublayers).
   move              $!lctl
@@ -206,7 +247,7 @@
   lctl       lmet       lalt                             spc                              ralt       prnt       rctl
 ) ;;""
 
-(deflayermap (default)
+(deftemplate default_layer ()
   ;; Upper row keys
   $tab|open          (t! fast_th tab                                       $toggle_open_layer)   
   $q|quick           (t! fast_th q                                         $toggle_quick_layer)
@@ -246,7 +287,7 @@
   $m|tab&mem         (t! fast_th m                                         $toggle_tab&mem_layer)
   $,|pane&setting    (t! fast_th ,                                         $toggle_pane&setting_layer)
   $.|tag             (t! fast_th .                                         $toggle_tag_layer)
-  $/|wnd             (t! fast_th /                                         $toggle_window_layer)
+  $/|window          (t! fast_th /                                         $toggle_window_layer)
   rsft               (t!      th (t! 2x $action_tab_next)                  $toggle_rsft_layer)
 
   ;; Modifiers row.
@@ -259,3 +300,6 @@
   $opt               (t!      th (t! 2x $~action_!tab_toggle)              $toggle_opt_layer)   
 )
 
+(deflayermap (default)
+  (t! default_layer)
+)
