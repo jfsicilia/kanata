@@ -1,167 +1,32 @@
-(defvar
-  ;; == DOMAIN LAYERS ======================================================
+;; == SIMPLE DOMAIN LAYERS (alphabetically sorted) =============================
+(t! simple_domain_layer "action" $action_actions XX XX)
+(t! simple_domain_layer "app" $action_app XX XX)
+(t! simple_domain_layer "autofill" $action_autofill XX XX)
+(t! simple_domain_layer "bookmarks" $action_bookmarks XX XX)
+(t! simple_domain_layer "command" $action_command XX XX)
+(t! simple_domain_layer "debug" $action_debug XX XX)
+(t! simple_domain_layer "def" $action_defs XX XX)
+(t! simple_domain_layer "git" $action_git XX XX)
+(t! simple_domain_layer "hyperlink" $action_hyperlinks XX XX)
+(t! simple_domain_layer "info" $action_info XX XX)
+(t! simple_domain_layer "jump" $action_jumps XX XX)
+(t! simple_domain_layer "keymap" $action_keymaps XX XX)
+(t! simple_domain_layer "localiz" $action_locations XX XX)
+(t! simple_domain_layer "mem" $action_clipboard XX XX)
+(t! simple_domain_layer "open" $action_open_with XX XX)
+(t! simple_domain_layer "quick" $action_quickfix XX XX)
+(t! simple_domain_layer "ref" $action_refs $action_refs_in $action_refs_out)
+(t! simple_domain_layer "register" $action_registers XX XX)
+(t! simple_domain_layer "replace" $action_replace_text_in_file $action_replace_text_in_filesystem $action_replace_text_in_filesystem)
+(t! simple_domain_layer "search" $action_search_text_in_file $action_search_text_in_filesystem $action_search_text_in_filesystem)
+(t! simple_domain_layer "setting" $action_setting XX XX)
+(t! simple_domain_layer "source" $action_source XX XX)
+(t! simple_domain_layer "symbol" $action_symbol XX XX)
+(t! simple_domain_layer "tag" $action_tag XX XX)
+(t! simple_domain_layer "terminal" $action_terminal XX XX)
+(t! simple_domain_layer "file" $action_files $action_folders $action_folders) 
 
-  ;; Action layer
-  toggle_action_layer                (t! toggle_layer             action_layer)
-  toggle_lmet&action_layer           (t! toggle_mod_2layer  lmet  lmet_layer  action_layer)
-  toggle_action+lsft_layer           (t! toggle_mod_layer   lsft  action+lsft_layer)
-  toggle_action+rsft_layer           (t! toggle_mod_layer   rsft  action+rsft_layer)
-
-  ;; App layer
-  toggle_app_layer                   (t! toggle_layer             app_layer)
-  toggle_app+lsft_layer              (t! toggle_mod_layer   lsft  app+lsft_layer)
-  toggle_app+rsft_layer              (t! toggle_mod_layer   rsft  app+rsft_layer)
-
-  ;; Autofill layer
-  toggle_autofill_layer              (t! toggle_layer             autofill_layer)
-  toggle_autofill+lsft_layer         (t! toggle_mod_layer   lsft  autofill+lsft_layer)
-  toggle_autofill+rsft_layer         (t! toggle_mod_layer   rsft  autofill+rsft_layer)
-
-  ;; Bookmarks layer
-  toggle_bookmarks_layer             (t! toggle_layer             bookmarks_layer)
-  toggle_bookmarks+lsft_layer        (t! toggle_mod_layer   lsft  bookmarks+lsft_layer)
-  toggle_bookmarks+rsft_layer        (t! toggle_mod_layer   rsft  bookmarks+rsft_layer)
-
-  ;; Command layer
-  toggle_command_layer               (t! toggle_layer             command_layer)
-  toggle_command+lsft_layer          (t! toggle_mod_layer   lsft  command+lsft_layer)
-  toggle_command+rsft_layer          (t! toggle_mod_layer   rsft  command+rsft_layer)
-
-  ;; Debug layer
-  toggle_debug_layer                 (t! toggle_layer             debug_layer)
-  toggle_debug+lsft_layer            (t! toggle_mod_layer   lsft  debug+lsft_layer)
-  toggle_debug+rsft_layer            (t! toggle_mod_layer   rsft  debug+rsft_layer)
-
-  ;; Def layer
-  toggle_def_layer                   (t! toggle_layer             def_layer)
-  toggle_def+lsft_layer              (t! toggle_mod_layer   lsft  def+lsft_layer)
-  toggle_def+rsft_layer              (t! toggle_mod_layer   rsft  def+rsft_layer)
-
-  ;; Git layer
-  toggle_git_layer                   (t! toggle_layer             git_layer)
-  toggle_git+lsft_layer              (t! toggle_mod_layer   lsft  git+lsft_layer)
-  toggle_git+rsft_layer              (t! toggle_mod_layer   rsft  git+rsft_layer)
-
-  ;; History layer
-  toggle_history_layer               (t! toggle_layer             history_layer)
-  toggle_history+command_layer       (t! toggle_layer             history+command_layer)
-  toggle_history+search_layer        (t! toggle_layer             history+search_layer)
-  toggle_history+lsft_layer          (t! toggle_mod_layer   lsft  history+lsft_layer)
-  toggle_history+rsft_layer          (t! toggle_mod_layer   rsft  history+rsft_layer)
-
-  ;; Hyperlink layer
-  toggle_hyperlink_layer             (t! toggle_layer             hyperlink_layer)
-  toggle_hyperlink+lsft_layer        (t! toggle_mod_layer   lsft  hyperlink+lsft_layer)
-  toggle_hyperlink+rsft_layer        (t! toggle_mod_layer   rsft  hyperlink+rsft_layer)
-
-  ;; Info layer
-  toggle_info_layer                  (t! toggle_layer             info_layer)
-  toggle_info+lsft_layer             (t! toggle_mod_layer   lsft  info+lsft_layer)
-  toggle_info+rsft_layer             (t! toggle_mod_layer   rsft  info+rsft_layer)
-
-  ;; Jump layer
-  toggle_jump_layer                  (t! toggle_layer             jump_layer)
-  toggle_jump+lsft_layer             (t! toggle_mod_layer   lsft  jump+lsft_layer)
-  toggle_jump+rsft_layer             (t! toggle_mod_layer   rsft  jump+rsft_layer)
-
-  ;; Keymap layer
-  toggle_keymap_layer                (t! toggle_layer             keymap_layer)
-  toggle_keymap+lsft_layer           (t! toggle_mod_layer   lsft  keymap+lsft_layer)
-  toggle_keymap+rsft_layer           (t! toggle_mod_layer   rsft  keymap+rsft_layer)
-
-  ;; Lang layer
-  toggle_lang_layer                  (t! toggle_layer             lang_layer)
-  toggle_lang_alt_layer              (t! toggle_layer             lang_alt_layer)
-  ;; toggle_lang+lsft_layer             (t! toggle_mod_layer   lsft  lang+lsft_layer)
-  ;; toggle_lang+rsft_layer             (t! toggle_mod_layer   rsft  lang+rsft_layer)
-
-  ;; Localiz layer
-  toggle_localiz_layer               (t! toggle_layer             localiz_layer)
-  toggle_localiz+lsft_layer          (t! toggle_mod_layer   lsft  localiz+lsft_layer)
-  toggle_localiz+rsft_layer          (t! toggle_mod_layer   rsft  localiz+rsft_layer)
-
-  ;; Mem layer
-  toggle_mem_layer                   (t! toggle_layer             mem_layer)
-  toggle_tab&mem_layer               (t! toggle_2layer            tab_layer  mem_layer)
-  toggle_mem+lsft_layer              (t! toggle_mod_layer   lsft  mem+lsft_layer)
-  toggle_mem+rsft_layer              (t! toggle_mod_layer   rsft  mem+rsft_layer)
-
-  ;; NumSym layer
-  toggle_num/sym_layer               (t! toggle_layer             num/sym_layer)
-  toggle_num/sym+lsft_layer          (t! toggle_mod_layer   lsft  num/sym+lsft_layer)
-  toggle_num/sym+rsft_layer          (t! toggle_mod_layer   rsft  num/sym+rsft_layer)
-
-  ;; Omni layer
-  toggle_omni_layer                  (t! toggle_layer             omni_layer)
-  toggle_omni+lsft_layer             (t! toggle_mod_layer   lsft  omni+lsft_layer)
-  toggle_omni+rsft_layer             (t! toggle_mod_layer   rsft  omni+rsft_layer)
-
-  ;; Open layer
-  toggle_open_layer                  (t! toggle_layer             open_layer)
-  toggle_open+lsft_layer             (t! toggle_mod_layer   lsft  open+lsft_layer)
-  toggle_open+rsft_layer             (t! toggle_mod_layer   rsft  open+rsft_layer)
-
-  ;; Opt layer
-  toggle_opt_layer                   (t! toggle_layer             opt_layer)
-  toggle_opt+lsft_layer              (t! toggle_mod_layer   lsft  opt+lsft_layer)
-  toggle_opt+rsft_layer              (t! toggle_mod_layer   rsft  opt+rsft_layer)
-
-  ;; Quick layer
-  toggle_quick_layer                 (t! toggle_layer             quick_layer)
-  toggle_quick+lsft_layer            (t! toggle_mod_layer   lsft  quick+lsft_layer)
-  toggle_quick+rsft_layer            (t! toggle_mod_layer   rsft  quick+rsft_layer)
-
-  ;; Ref layer
-  toggle_ref_layer                   (t! toggle_layer             ref_layer)
-  toggle_ref+lsft_layer              (t! toggle_mod_layer   lsft  ref+lsft_layer)
-  toggle_ref+rsft_layer              (t! toggle_mod_layer   rsft  ref+rsft_layer)
-
-  ;; Register layer
-  toggle_register_layer              (t! toggle_layer             register_layer)
-  toggle_register+lsft_layer         (t! toggle_mod_layer   lsft  register+lsft_layer)
-  toggle_register+rsft_layer         (t! toggle_mod_layer   rsft  register+rsft_layer)
-
-  ;; Replace layer
-  toggle_replace_layer              (t! toggle_layer             replace_layer)
-  toggle_replace+lsft_layer         (t! toggle_mod_layer   lsft  replace+lsft_layer)
-  toggle_replace+rsft_layer         (t! toggle_mod_layer   rsft  replace+rsft_layer)
-
-  ;; Search layer
-  toggle_search_layer              (t! toggle_layer             search_layer)
-  toggle_search+lsft_layer         (t! toggle_mod_layer   lsft  search+lsft_layer)
-  toggle_search+rsft_layer         (t! toggle_mod_layer   rsft  search+rsft_layer)
-
-  ;; Setting layer
-  toggle_setting_layer               (t! toggle_layer             setting_layer)
-  toggle_pane&setting_layer          (t! toggle_2layer            pane_layer setting_layer)
-  toggle_setting+lsft_layer          (t! toggle_mod_layer   lsft  setting+lsft_layer)
-  toggle_setting+rsft_layer          (t! toggle_mod_layer   rsft  setting+rsft_layer)
-
-  ;; Source layer
-  toggle_source_layer                (t! toggle_layer             source_layer)
-  toggle_source+lsft_layer           (t! toggle_mod_layer   lsft  source+lsft_layer)
-  toggle_source+rsft_layer           (t! toggle_mod_layer   rsft  source+rsft_layer)
-
-  ;; Symbol layer
-  toggle_symbol_layer                (t! toggle_layer             symbol_layer)
-  toggle_symbol+lsft_layer           (t! toggle_mod_layer   lsft  symbol+lsft_layer)
-  toggle_symbol+rsft_layer           (t! toggle_mod_layer   rsft  symbol+rsft_layer)
-
-  ;; Terminal layer
-  toggle_terminal_layer              (t! toggle_layer             terminal_layer)
-  toggle_terminal+lsft_layer         (t! toggle_mod_layer   lsft  terminal+lsft_layer)
-  toggle_terminal+rsft_layer         (t! toggle_mod_layer   rsft  terminal+rsft_layer)
-
-  ;; Tag layer
-  toggle_tag_layer                   (t! toggle_layer             tag_layer)
-  toggle_tag+lsft_layer              (t! toggle_mod_layer   lsft  tag+lsft_layer)
-  toggle_tag+rsft_layer              (t! toggle_mod_layer   rsft  tag+rsft_layer)
-)
-
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; "" OPTS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (opt_layer)
   k lrld
 
@@ -170,57 +35,16 @@
   ;; == SFT ======================
   lsft (t! th _ $toggle_opt+lsft_layer)
   rsft (t! th _ $toggle_opt+rsft_layer)
-
-;; "" OPTS_LAYER """"""""""""""""""""""""""""""
 )
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" OPTS+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (opt+lsft_layer)
   k (multi (cmd kanata_sync_apps.py -f) (cmd kanata_sync_all_apps_interfaces.sh))
-
-;; "" OPTS+LSFT_LAYER """""""""""""""""""""""""
 )
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" OPTS+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (opt+rsft_layer)
   k $action_opt_restart_kwanata
-
-;; "" OPTS+RSFT_LAYER """""""""""""""""""""""""
 )
 
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" BOOKMARKS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (bookmarks_layer)
-  
-;; "" BOOKMARKS_LAYER """""""""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" BOOKMARKS+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (bookmarks+lsft_layer)
-
-;; "" BOOKMARKS+LSFT_LAYER """"""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" BOOKMARKS+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (bookmarks+rsft_layer)
-
-;; "" BOOKMARKS+RSFT_LAYER """"""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; "" OMNI_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (omni_layer)
-  ;; == KEY COMBOS ===================
   spc  $action_omni_select
 
   ;; Cursor
@@ -231,7 +55,6 @@
   b $action_omni_page_up
   f $action_omni_page_down
 
-  ;; 
   o $action_omni_open
   p $action_omni_parent
 
@@ -262,7 +85,7 @@
 
   g $action_omni_go
 
-  ; $action_omni_comment
+  ; $action_omni_comment   ;;""
 
   , $action_omni_setting
   / $action_omni_help
@@ -283,15 +106,8 @@
   ;; == SFT ======================
   lsft (t! th _ $toggle_omni+lsft_layer)
   rsft (t! th _ $toggle_omni+rsft_layer)
-
-;; "" OMNI_LAYER """"""""""""""""""""""""""""""
 )
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" OMNI+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (omni+lsft_layer)
-  ;; == KEY COMBOS ===================
   e $action_omni_compress
   a $action_omni_clear_select
   n $action_omni_lsft+new
@@ -299,15 +115,8 @@
   s $action_omni_reverse_sort
 
   t $action_omni_tab_undo_close
-
-;; "" OMNI+LSFT_LAYER """""""""""""""""""""""""
 )
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" OMNI+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (omni+rsft_layer)
-  ;; == KEY COMBOS ===================
   e $action_omni_compress
   a $action_omni_invert_select
   n $action_omni_rsft+new
@@ -315,67 +124,22 @@
   s $action_omni_reverse_sort
 
   t $action_omni_tab_undo_close
-
-;; "" OMNI+RSFT_LAYER """""""""""""""""""""""""
 )
 
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" num/sym_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+;; "" num/sym_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (num/sym_layer)
-
-  ;; == KEY COMBOS ===================
   ` S-` 1 S-1 2 S-2 3 S-3 4 S-4 5 S-5 6 S-6 7 S-7 8 S-8 9 S-9 0 S-0 - S-- = S-=
         q S-` w S-6 e S-[ r S-] t '   y -   u 7   i 8   o 9   p S-8 [ S-[ ] S-] \ S-\
         a `   s S-\ d S-9 f S-0 g S-' h S-= j 4   k 5   l 6   ; S-; ' S-'              ;;"
         z S-4 x S-7 c [   v ]   b =   n 0   m 1   , 2   . 3   / \                      ;;" 
-;; "" num/sym_LAYER """"""""""""""""""""""""""""""
 )
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" num/sym+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (num/sym+lsft_layer)
-
-;; "" num/sym+LSFT_LAYER """"""""""""""""""""""""""
 )
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" num/sym+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (num/sym+rsft_layer)
-
-;; "" num/sym+RSFT_LAYER """"""""""""""""""""""""""
 )
 
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" APPS_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (app_layer)
-  spc  $action_app
 
-  ;; "" APPS_LAYER """"""""""""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" APPS+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (app+lsft_layer)
-
-;; "" APPS+LSFT_LAYER """""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" APPS+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (app+rsft_layer)
-
-;; "" APPS+RSFT_LAYER """""""""""""""""""""""""
-)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; "" LANG_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lang_layer)
   a  (t! tilde a)
   e  (t! tilde e)
@@ -389,639 +153,21 @@
   l  right
 
   spc (t! th _ $toggle_lang_alt_layer)
-;; "" LANG_LAYER """""""""""""""""""""""""""
 )
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" LANG_ALT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lang_alt_layer)
   e (t! euro)
   u (t! dieresis u)
   o (t! dieresis o)
 )
 
-;;;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;;;; "" LANG+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;;;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;;(deflayermap (lang+lsft_layer)
-;;
-;;;; "" LANG+LSFT_LAYER """""""""""""""""""""""""
-;;)
-;;
-;;;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;;;; "" LANG+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;;;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;;(deflayermap (lang+rsft_layer)
-;;
-;;;; "" LANG+RSFT_LAYER """""""""""""""""""""""""
-;;)
-
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" OPEN_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (open_layer)
-
-;; "" OPEN_LAYER """""""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" OPEN+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (open+lsft_layer)
-
-;; "" OPEN+LSFT_LAYER """""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" OPEN+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (open+rsft_layer)
-
-;; "" OPEN+RSFT_LAYER """""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" QUICK_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (quick_layer)
-
-;; "" QUICK_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" QUICK+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (quick+lsft_layer)
-
-;; "" QUICK+LSFT_LAYER """"""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" QUICK+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (quick+rsft_layer)
-
-;; "" QUICK+RSFT_LAYER """"""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" REF_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (ref_layer)
-
-;; "" REF_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" REF+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (ref+lsft_layer)
-
-;; "" REF+LSFT_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" REF+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (ref+rsft_layer)
-
-;; "" REF+RSFT_LAYER """"""""""""""""""""""""""
-)
-
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; "" HISTORY_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (history_layer)
   spc $action_history
 
-  $;|lmet&command      (t! th _                    $toggle_history+command_layer)
-  $!lalt&search        (t! th _                    $toggle_history+search_layer)
-
-;; "" HISTORY_LAYER """"""""""""""""""""""""""
+  $;|lmet&command      $action_history_command
+  $!lalt&search        $action_history_search
 )
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" HISTORY+COMMAND_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (history+command_layer)
-  spc $action_history_command
-;; "" HISTORY+COMMAND_LAYER """""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" HISTORY+SEARCH_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (history+search_layer)
-  spc $action_history_search
-;; "" HISTORY+SEARCH_LAYER """""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" HISTORY+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (history+lsft_layer)
-
-;; "" HISTORY+LSFT_LAYER """""""""""""""""""""""""
 )
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" HISTORY+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (history+rsft_layer)
-
-;; "" HISTORY+RSFT_LAYER """""""""""""""""""""""""
 )
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" GIT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (git_layer)
-  spc $action_git
-
-;; "" GIT_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" GIT+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (git+lsft_layer)
-
-;; "" GIT+LSFT_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" GIT+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (git+rsft_layer)
-
-;; "" GIT+RSFT_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" HYPERLINK_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (hyperlink_layer)
-
-;; "" HYPERLINK_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" HYPERLINK+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (hyperlink+lsft_layer)
-
-;; "" HYPERLINK+LSFT_LAYER """"""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" HYPERLINK+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (hyperlink+rsft_layer)
-
-;; "" HYPERLINK+RSFT_LAYER """"""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" REGISTER_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (register_layer)
-
-;; "" REGISTER_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" REGISTER+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (register+lsft_layer)
-
-;; "" REGISTER+LSFT_LAYER """""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" REGISTER+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (register+rsft_layer)
-
-;; "" REGISTER+RSFT_LAYER """""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" REPLACE_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (replace_layer)
-
-;; "" REPLACE_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" REPLACE+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (replace+lsft_layer)
-
-;; "" REPLACE+LSFT_LAYER """""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" REPLACE+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (replace+rsft_layer)
-
-;; "" REPLACE+RSFT_LAYER """""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SEARCH_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (search_layer)
-  $y|history      (t! th _                    $toggle_history+search_layer)
-;; "" SEARCH_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SEARCH+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (search+lsft_layer)
-
-;; "" SEARCH+LSFT_LAYER """""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SEARCH+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (search+rsft_layer)
-
-;; "" SEARCH+RSFT_LAYER """""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" TERMINALS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (terminal_layer)
-
-;; "" TERMINALS_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" TERMINALS+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (terminal+lsft_layer)
-
-;; "" TERMINALS+LSFT_LAYER """""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" TERMINALS+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (terminal+rsft_layer)
-
-;; "" TERMINALS+RSFT_LAYER """""""""""""""""""""""""
-)
-
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" TAGS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (tag_layer)
-  spc $action_tag
-
-;; "" TAGS_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" TAGS+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (tag+lsft_layer)
-
-;; "" TAGS+LSFT_LAYER """""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" TAGS+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (tag+rsft_layer)
-
-;; "" TAGS+RSFT_LAYER """""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" INFO_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (info_layer)
-
-;; "" INFO_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" INFO+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (info+lsft_layer)
-
-;; "" INFO+LSFT_LAYER """""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" INFO+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (info+rsft_layer)
-
-;; "" INFO+RSFT_LAYER """""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SOURCE_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (source_layer)
-
-;; "" SOURCE_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SOURCE+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (source+lsft_layer)
-
-;; "" SOURCE+LSFT_LAYER """""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SOURCE+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (source+rsft_layer)
-
-;; "" SOURCE+RSFT_LAYER """""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" DEBUG_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (debug_layer)
-
-;; "" DEBUG_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" DEBUG+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (debug+lsft_layer)
-
-;; "" DEBUG+LSFT_LAYER """"""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" DEBUG+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (debug+rsft_layer)
-
-;; "" DEBUG+RSFT_LAYER """"""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SYMBOL_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (symbol_layer)
-  spc $action_symbol
-;; "" SYMBOL_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SYMBOL+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (symbol+lsft_layer)
-
-;; "" SYMBOL+LSFT_LAYER """""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" SYMBOL+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (symbol+rsft_layer)
-
-;; "" SYMBOL+RSFT_LAYER """""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" DEF_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (def_layer)
-
-;; "" DEF_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" DEF+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (def+lsft_layer)
-
-;; "" DEF+LSFT_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" DEF+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (def+rsft_layer)
-
-;; "" DEF+RSFT_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" AUTOFILL_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (autofill_layer)
-
-;; "" AUTOFILL_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" AUTOFILL+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (autofill+lsft_layer)
-
-;; "" AUTOFILL+LSFT_LAYER """""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" AUTOFILL+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (autofill+rsft_layer)
-
-;; "" AUTOFILL+RSFT_LAYER """""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" JUMP_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (jump_layer)
-
-;; "" JUMP_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" JUMP+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (jump+lsft_layer)
-
-;; "" JUMP+LSFT_LAYER """""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" JUMP+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (jump+rsft_layer)
-
-;; "" JUMP+RSFT_LAYER """""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" KEYMAP_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (keymap_layer)
-
-;; "" KEYMAP_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" KEYMAP+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (keymap+lsft_layer)
-
-;; "" KEYMAP+LSFT_LAYER """""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" KEYMAP+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (keymap+rsft_layer)
-
-;; "" KEYMAP+RSFT_LAYER """""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" LOCALIZ_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (localiz_layer)
-
-;; "" LOCALIZ_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" LOCALIZ+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (localiz+lsft_layer)
-
-;; "" LOCALIZ+LSFT_LAYER """"""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" LOCALIZ+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (localiz+rsft_layer)
-
-;; "" LOCALIZ+RSFT_LAYER """"""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" COMMAND_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (command_layer)
-  spc $action_command
-
-  $y|history      (t! th _                    $toggle_history+command_layer)
-
-  ;; == SFT ======================
-  $d|lsft&def     (t! th _                    $toggle_command+lsft_layer)
-  $k|rsft&keymap  (t! th _                    $toggle_command+rsft_layer)
-  lsft            (t! th _                    $toggle_command+lsft_layer)
-  rsft            (t! th _                    $toggle_command+rsft_layer)
-
-;; "" COMMAND_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" COMMAND+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (command+lsft_layer)
-
-;; "" COMMAND+LSFT_LAYER """"""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" COMMAND+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (command+rsft_layer)
-
-;; "" COMMAND+RSFT_LAYER """"""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" MEM_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (mem_layer)
-
-;; "" MEM_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" MEM+LSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (mem+lsft_layer)
-
-;; "" MEM+LSFT_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" MEM+RSFT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (mem+rsft_layer)
-
-;; "" MEM+RSFT_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" settings_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (setting_layer)
-
-;; "" settings_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" settings+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (setting+lsft_layer)
-
-;; "" settings+LSFT_LAYER """""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" settings+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (setting+rsft_layer)
-
-;; "" SETS+RSFT_LAYER """""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" ACTION_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (action_layer)
-
-;; "" ACTION_LAYER """"""""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" ACTION+LSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (action+lsft_layer)
-
-;; "" ACTION+LSFT_LAYER """""""""""""""""""""""
-)
-
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-;; "" ACTION+RSFT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""
-;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (action+rsft_layer)
-
-;; "" ACTION+RSFT_LAYER """""""""""""""""""""""
-)
-

@@ -1,0 +1,158 @@
+(defvar
+  ;; == DOMAIN LAYERS ======================================================
+
+  ;; Action layer
+  toggle_action_layer                (t! toggle_layer             action_layer)
+  toggle_action+lsft_layer           (t! toggle_mod_layer   lsft  action+lsft_layer)
+  toggle_action+rsft_layer           (t! toggle_mod_layer   rsft  action+rsft_layer)
+
+  ;; App layer
+  toggle_app_layer                   (t! toggle_layer             app_layer)
+  toggle_app+lsft_layer              (t! toggle_mod_layer   lsft  app+lsft_layer)
+  toggle_app+rsft_layer              (t! toggle_mod_layer   rsft  app+rsft_layer)
+
+  ;; Autofill layer
+  toggle_autofill_layer              (t! toggle_layer             autofill_layer)
+  toggle_autofill+lsft_layer         (t! toggle_mod_layer   lsft  autofill+lsft_layer)
+  toggle_autofill+rsft_layer         (t! toggle_mod_layer   rsft  autofill+rsft_layer)
+
+  ;; Bookmarks layer
+  toggle_bookmarks_layer             (t! toggle_layer             bookmarks_layer)
+  toggle_bookmarks+lsft_layer        (t! toggle_mod_layer   lsft  bookmarks+lsft_layer)
+  toggle_bookmarks+rsft_layer        (t! toggle_mod_layer   rsft  bookmarks+rsft_layer)
+
+  ;; Command layer
+  toggle_command_layer               (t! toggle_layer             command_layer)
+  toggle_command+lsft_layer          (t! toggle_mod_layer   lsft  command+lsft_layer)
+  toggle_command+rsft_layer          (t! toggle_mod_layer   rsft  command+rsft_layer)
+
+  ;; Debug layer
+  toggle_debug_layer                 (t! toggle_layer             debug_layer)
+  toggle_debug+lsft_layer            (t! toggle_mod_layer   lsft  debug+lsft_layer)
+  toggle_debug+rsft_layer            (t! toggle_mod_layer   rsft  debug+rsft_layer)
+
+  ;; Def layer
+  toggle_def_layer                   (t! toggle_layer             def_layer)
+  toggle_def+lsft_layer              (t! toggle_mod_layer   lsft  def+lsft_layer)
+  toggle_def+rsft_layer              (t! toggle_mod_layer   rsft  def+rsft_layer)
+
+  ;; Git layer
+  toggle_git_layer                   (t! toggle_layer             git_layer)
+  toggle_git+lsft_layer              (t! toggle_mod_layer   lsft  git+lsft_layer)
+  toggle_git+rsft_layer              (t! toggle_mod_layer   rsft  git+rsft_layer)
+
+  ;; History layer
+  toggle_history_layer               (t! toggle_layer             history_layer)
+;;  toggle_history+command_layer       (t! toggle_layer             history+command_layer)
+;;  toggle_history+search_layer        (t! toggle_layer             history+search_layer)
+  toggle_history+lsft_layer          (t! toggle_mod_layer   lsft  history+lsft_layer)
+  toggle_history+rsft_layer          (t! toggle_mod_layer   rsft  history+rsft_layer)
+
+  ;; Hyperlink layer
+  toggle_hyperlink_layer             (t! toggle_layer             hyperlink_layer)
+  toggle_hyperlink+lsft_layer        (t! toggle_mod_layer   lsft  hyperlink+lsft_layer)
+  toggle_hyperlink+rsft_layer        (t! toggle_mod_layer   rsft  hyperlink+rsft_layer)
+
+  ;; Info layer
+  toggle_info_layer                  (t! toggle_layer             info_layer)
+  toggle_info+lsft_layer             (t! toggle_mod_layer   lsft  info+lsft_layer)
+  toggle_info+rsft_layer             (t! toggle_mod_layer   rsft  info+rsft_layer)
+
+  ;; Jump layer
+  toggle_jump_layer                  (t! toggle_layer             jump_layer)
+  toggle_jump+lsft_layer             (t! toggle_mod_layer   lsft  jump+lsft_layer)
+  toggle_jump+rsft_layer             (t! toggle_mod_layer   rsft  jump+rsft_layer)
+
+  ;; Keymap layer
+  toggle_keymap_layer                (t! toggle_layer             keymap_layer)
+  toggle_keymap+lsft_layer           (t! toggle_mod_layer   lsft  keymap+lsft_layer)
+  toggle_keymap+rsft_layer           (t! toggle_mod_layer   rsft  keymap+rsft_layer)
+
+  ;; Lang layer
+  toggle_lang_layer                  (t! toggle_layer             lang_layer)
+  toggle_lang_alt_layer              (t! toggle_layer             lang_alt_layer)
+  ;; toggle_lang+lsft_layer             (t! toggle_mod_layer   lsft  lang+lsft_layer)
+  ;; toggle_lang+rsft_layer             (t! toggle_mod_layer   rsft  lang+rsft_layer)
+
+  ;; Localiz layer
+  toggle_localiz_layer               (t! toggle_layer             localiz_layer)
+  toggle_localiz+lsft_layer          (t! toggle_mod_layer   lsft  localiz+lsft_layer)
+  toggle_localiz+rsft_layer          (t! toggle_mod_layer   rsft  localiz+rsft_layer)
+
+  ;; Mem layer
+  toggle_mem_layer                   (t! toggle_layer             mem_layer)
+  toggle_tab&mem_layer               (t! toggle_2layer            tab_layer  mem_layer)
+  toggle_mem+lsft_layer              (t! toggle_mod_layer   lsft  mem+lsft_layer)
+  toggle_mem+rsft_layer              (t! toggle_mod_layer   rsft  mem+rsft_layer)
+
+  ;; NumSym layer
+  toggle_num/sym_layer               (t! toggle_layer             num/sym_layer)
+  toggle_num/sym+lsft_layer          (t! toggle_mod_layer   lsft  num/sym+lsft_layer)
+  toggle_num/sym+rsft_layer          (t! toggle_mod_layer   rsft  num/sym+rsft_layer)
+
+  ;; Omni layer
+  toggle_omni_layer                  (t! toggle_layer             omni_layer)
+  toggle_omni+lsft_layer             (t! toggle_mod_layer   lsft  omni+lsft_layer)
+  toggle_omni+rsft_layer             (t! toggle_mod_layer   rsft  omni+rsft_layer)
+
+  ;; Open layer
+  toggle_open_layer                  (t! toggle_layer             open_layer)
+  toggle_open+lsft_layer             (t! toggle_mod_layer   lsft  open+lsft_layer)
+  toggle_open+rsft_layer             (t! toggle_mod_layer   rsft  open+rsft_layer)
+
+  ;; Opt layer
+  toggle_opt_layer                   (t! toggle_layer             opt_layer)
+  toggle_opt+lsft_layer              (t! toggle_mod_layer   lsft  opt+lsft_layer)
+  toggle_opt+rsft_layer              (t! toggle_mod_layer   rsft  opt+rsft_layer)
+
+  ;; Quick layer
+  toggle_quick_layer                 (t! toggle_layer             quick_layer)
+  toggle_quick+lsft_layer            (t! toggle_mod_layer   lsft  quick+lsft_layer)
+  toggle_quick+rsft_layer            (t! toggle_mod_layer   rsft  quick+rsft_layer)
+
+  ;; Ref layer
+  toggle_ref_layer                   (t! toggle_layer             ref_layer)
+  toggle_ref+lsft_layer              (t! toggle_mod_layer   lsft  ref+lsft_layer)
+  toggle_ref+rsft_layer              (t! toggle_mod_layer   rsft  ref+rsft_layer)
+
+  ;; Register layer
+  toggle_register_layer              (t! toggle_layer             register_layer)
+  toggle_register+lsft_layer         (t! toggle_mod_layer   lsft  register+lsft_layer)
+  toggle_register+rsft_layer         (t! toggle_mod_layer   rsft  register+rsft_layer)
+
+  ;; Replace layer
+  ;; toggle_replace_layer              (t! toggle_layer             replace_layer)
+  ;; toggle_replace+lsft_layer         (t! toggle_mod_layer   lsft  replace+lsft_layer)
+  ;; toggle_replace+rsft_layer         (t! toggle_mod_layer   rsft  replace+rsft_layer)
+
+  ;; Search layer
+  ;; toggle_search_layer              (t! toggle_layer             search_layer)
+  ;; toggle_search+lsft_layer         (t! toggle_mod_layer   lsft  search+lsft_layer)
+  ;; toggle_search+rsft_layer         (t! toggle_mod_layer   rsft  search+rsft_layer)
+
+  ;; Setting layer
+  toggle_setting_layer               (t! toggle_layer             setting_layer)
+  toggle_pane&setting_layer          (t! toggle_2layer            pane_layer setting_layer)
+  toggle_setting+lsft_layer          (t! toggle_mod_layer   lsft  setting+lsft_layer)
+  toggle_setting+rsft_layer          (t! toggle_mod_layer   rsft  setting+rsft_layer)
+
+  ;; Source layer
+  toggle_source_layer                (t! toggle_layer             source_layer)
+  toggle_source+lsft_layer           (t! toggle_mod_layer   lsft  source+lsft_layer)
+  toggle_source+rsft_layer           (t! toggle_mod_layer   rsft  source+rsft_layer)
+
+  ;; Symbol layer
+  toggle_symbol_layer                (t! toggle_layer             symbol_layer)
+  toggle_symbol+lsft_layer           (t! toggle_mod_layer   lsft  symbol+lsft_layer)
+  toggle_symbol+rsft_layer           (t! toggle_mod_layer   rsft  symbol+rsft_layer)
+
+  ;; Terminal layer
+  toggle_terminal_layer              (t! toggle_layer             terminal_layer)
+  toggle_terminal+lsft_layer         (t! toggle_mod_layer   lsft  terminal+lsft_layer)
+  toggle_terminal+rsft_layer         (t! toggle_mod_layer   rsft  terminal+rsft_layer)
+
+  ;; Tag layer
+  toggle_tag_layer                   (t! toggle_layer             tag_layer)
+  toggle_tag+lsft_layer              (t! toggle_mod_layer   lsft  tag+lsft_layer)
+  toggle_tag+rsft_layer              (t! toggle_mod_layer   rsft  tag+rsft_layer)
+)
