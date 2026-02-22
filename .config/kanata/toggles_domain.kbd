@@ -36,6 +36,11 @@
   toggle_def+lsft_layer              (t! toggle_mod_layer   lsft  def+lsft_layer)
   toggle_def+rsft_layer              (t! toggle_mod_layer   rsft  def+rsft_layer)
 
+  ;; File layer
+  toggle_file_layer                  (t! toggle_layer             file_layer)
+  toggle_file+lsft_layer             (t! toggle_mod_layer   lsft  file+lsft_layer)
+  toggle_file+rsft_layer             (t! toggle_mod_layer   rsft  file+rsft_layer)
+
   ;; Git layer
   toggle_git_layer                   (t! toggle_layer             git_layer)
   toggle_git+lsft_layer              (t! toggle_mod_layer   lsft  git+lsft_layer)
@@ -121,14 +126,14 @@
   toggle_register+rsft_layer         (t! toggle_mod_layer   rsft  register+rsft_layer)
 
   ;; Replace layer
-  ;; toggle_replace_layer              (t! toggle_layer             replace_layer)
-  ;; toggle_replace+lsft_layer         (t! toggle_mod_layer   lsft  replace+lsft_layer)
-  ;; toggle_replace+rsft_layer         (t! toggle_mod_layer   rsft  replace+rsft_layer)
+  toggle_replace_layer              (t! toggle_layer             replace_layer)
+  toggle_replace+lsft_layer         (t! toggle_mod_layer   lsft  replace+lsft_layer)
+  toggle_replace+rsft_layer         (t! toggle_mod_layer   rsft  replace+rsft_layer)
 
   ;; Search layer
-  ;; toggle_search_layer              (t! toggle_layer             search_layer)
-  ;; toggle_search+lsft_layer         (t! toggle_mod_layer   lsft  search+lsft_layer)
-  ;; toggle_search+rsft_layer         (t! toggle_mod_layer   rsft  search+rsft_layer)
+  toggle_search_layer              (t! toggle_layer             search_layer)
+  toggle_search+lsft_layer         (t! toggle_mod_layer   lsft  search+lsft_layer)
+  toggle_search+rsft_layer         (t! toggle_mod_layer   rsft  search+rsft_layer)
 
   ;; Setting layer
   toggle_setting_layer               (t! toggle_layer             setting_layer)
