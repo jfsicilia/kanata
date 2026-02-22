@@ -250,9 +250,9 @@
   rsft               (t!      th (t! 2x $action_tab_next)                  $toggle_rsft_layer)
 
   ;; Modifiers row.
-  $!lmet&replace     (t!      th (t! 2x $action_desktop_toggle)            $toggle_!lmet_layer)
-  $!lalt&search      (t!      th (t! 2x $action_pane_toggle)               $toggle_!lalt_layer)
-  $!lctl&file (multi (t!      th (t! 2x $action_tab_toggle)                $toggle_!lctl_layer) (on-release release-vkey vk_lalt))
+  $!lmet&replace     (t!      th (t! 2x $action_desktop_toggle)            $toggle_!lmet&replace_layer)
+  $!lalt&search      (t!      th (t! 2x $action_pane_toggle)               $toggle_!lalt&search_layer)
+  $!lctl&file (multi (t!      th (t! 2x $action_tab_toggle)                $toggle_!lctl&file_layer) (on-release release-vkey vk_lalt))
   $spc|num/sym       (t! fast_th spc                                       $toggle_num/sym_layer)
   $app               (t!      th (t! 2x $action_app_toggle)                $toggle_app_layer)
   $bookm             (t!      th (t! 2x $action_session_toggle)            $toggle_bookmarks_layer)
