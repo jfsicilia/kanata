@@ -89,126 +89,106 @@
     () S-ent break
   ))
 
-  ;; == DOMAINS =============================================================
+  ;; == Special Modifiers ====================================================
+
+  ;; == emojis ============================================================
+  ;; emojis + spc
+  action_emojis  M-.
+
+  ;; == replace ==========================================================
+  ;; replace + spc 
+  action_replace_text_in_file (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_replace_text_in_file break
+    () XX break
+  ))
+  ;; replace + lsft + spc 
+  action_replace_text_in_filesystem (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_replace_text_in_filesystem break
+    () XX break
+  ))
+
+  ;; == search ============================================================
+  ;; search + spc 
+  action_search_text_in_file (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_search_text_in_file break
+    () XX break
+  ))
+  ;; search + lsft + spc 
+  action_search_text_in_filesystem (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_search_text_in_filesystem break
+    ((input virtual vk_obsidian)) $obsidian_action_search_text_in_filesystem break
+    () XX break
+  ))
+  ;; search + rsft + spc 
+  action_!search_text_in_file (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == files/folders ========================================================
+  ;; files/folders + spc 
+  action_files (t! unmod_all (switch ;;@autogen@ 
+    ((input virtual vk_nvim)) $nvim_action_files break
+    ((input virtual vk_chrome)) $chrome_action_files break
+    ((input virtual vk_obsidian)) $obsidian_action_files break
+    ((input virtual vk_tmux)) $tmux_action_files break
+    () XX break
+  ))
+  ;; file/folder + lsft + spc 
+  action_folders (t! unmod_all (switch ;;@autogen@ 
+    ((input virtual vk_nvim)) $nvim_action_folders break
+    ((input virtual vk_chrome)) $chrome_action_folders break
+    ((input virtual vk_obsidian)) $obsidian_action_folders break
+    () XX break
+  ))
+
+  ;; == apps =========================================================
+  ;; apps + spc
+  action_apps (t! unmod_all (switch
+    () RA-spc break
+  ))
+
+  action_apps_toggle (t! unmod_all (switch
+    () A-tab break
+  ))
+
+  ;; == bookmarks =========================================================
+  ;; bookmarks + spc
+  action_bookmarks (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_bookmarks break
+    ((input virtual vk_obsidian)) $obsidian_action_bookmarks break
+    () XX break
+  )) 
+
+  ;; == opts ==============================================================
+  ;; opts + lsft/rsft + r 
+  action_opts_restart_kwanata (t! unmod_all 
+    (macro RA-spc 300 s y s t e m c t l spc - - u s e r spc r e s t a r t spc k w a n a t a 300 ent))
 
 
-  ;; == #open =============================================================
-  ;; #open + spc
+  ;; == open =============================================================
+  ;; open + spc
   action_open_with (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #open + m
+  ;; open + m
   action_open_with_chrome (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_open_with_chrome break
     () XX break
   ))
-  ;; #open + t
+  ;; open + t
   action_open_with_terminal (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_open_with_terminal break
     () XX break
   ))
-  ;; #open + v
+  ;; open + v
   action_open_with_nvim (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_open_with_nvim break
     () XX break
   ))
 
-  ;; == modQ =========================================================
-  ;; modQ + spc
-  action_modQ (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_modQ break
-    () XX break
-  ))
+  ;; == omni ============================================================
 
-  ;; == modR =========================================================
-  ;; modR + spc
-  action_refs (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_refs break
-    () XX break
-  ))
-  ;; modR + lsft + spc
-  action_refs_in (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_refs_in break
-    () XX break
-  ))
-  ;; modR + rsft + spc
-  action_refs_out (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_refs_out break
-    () XX break
-  ))
-
-  ;; == modT =========================================================
-  ;; modT + spc
-  action_terminal (t! unmod_all (switch ;;@autogen@
-    () XX break
-  ))
-  ;; modT + n
-  action_terminal_new (t! unmod_all (switch ;;@autogen@
-    () XX break
-  ))
-
-  ;; == modY =========================================================
-  ;; modY + spc
-  action_modY (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_modY break
-    () XX break
-  ))
-
-  ;; modY + mod; + spc 
-  action_modY_mod; (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_modY_mod; break
-    () XX break
-  ))
-  
-  ;; modY + #search + spc 
-  action_modY_search (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_modY_search break
-    () XX break
-  ))
-  
-
-  ;; == modU =========================================================
-  ;; modU + spc
-  action_debug (t! unmod_all (switch ;;@autogen@
-    () XX break
-  ))
-  ;; modU + r
-  action_debug_run (t! unmod_all (switch ;;@autogen@
-    () XX break
-  ))
-  ;; modU + g
-  action_debug_go (t! unmod_all (switch ;;@autogen@
-    () XX break
-  ))
-  ;; modU + s
-  action_debug_stop (t! unmod_all (switch ;;@autogen@
-    () XX break
-  ))
-  ;; modU + i
-  action_debug_inside (t! unmod_all (switch ;;@autogen@
-    () XX break
-  ))
-  ;; modU + o
-  action_debug_over (t! unmod_all (switch ;;@autogen@
-    () XX break
-  ))
-
-  ;; == modI =========================================================
-  ;; modI + spc
-  action_info (t! unmod_all (switch ;;@autogen@
-    () XX break
-  ))
-
-  ;; == modO =========================================================
-  ;; modO + spc
-  action_source (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_source break
-    () XX break
-  ))
-  
-  ;; == #omni ============================================================
-
-  ;; == #omni nav ======================================================
+  ;; == omni nav ======================================================
   ;; omni + g
   action_omni_go (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_chrome)) $chrome_action_omni_go break
@@ -270,7 +250,7 @@
     () XX break
   ))
 
-  ;; == #omni edit ======================================================
+  ;; == omni edit ======================================================
   ;; omni + c
   action_omni_copy (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_omni_copy break
@@ -302,7 +282,7 @@
     () XX break
   ))
 
-  ;; == #omni file manager ===============================================
+  ;; == omni file manager ===============================================
   ;; omni + spc
   action_omni_select (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_omni_select break
@@ -390,7 +370,7 @@
     () XX break
   ))
 
-  ;; == #omni user interface ===============================================
+  ;; == omni user interface ===============================================
   action_omni_view_1 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
@@ -422,47 +402,47 @@
     () XX break
   ))
 
-  ;; == #omni misc ===============================================
+  ;; == omni misc ===============================================
   ;; omni + t
-  ;; see #tab
+  ;; see tab
   action_omni_tab_new (t! unmod_all (switch ;;@autogen@
     () $action_tab_new break
   ))
   ;; omni + lsft + t
-  ;; see #tab
+  ;; see tab
   action_omni_tab_undo_close (t! unmod_all (switch ;;@autogen@
     () $action_tab_undo_close break
   ))
   ;; omni + w
-  ;; see #tab
+  ;; see tab
   action_omni_tab_close (t! unmod_all (switch ;;@autogen@
     () $action_tab_close break
   ))
   ;; omni + q
-  ;; see #windows
+  ;; see windows
   action_omni_window_close (t! unmod_all (switch ;;@autogen@
     () $action_window_close break
   ))
 
   ;; omni + m
-  ;; see #mem
+  ;; see modM
   action_omni_clipboard (t! unmod_all (switch ;;@autogen@
-    () $action_clipboard break
+    () $action_modM break
   ))
   ;; omni + ,
-  ;; see #settings
+  ;; see mod,
   action_omni_setting (t! unmod_all (switch ;;@autogen@
-    () $action_setting break
+    () $action_mod, break
   ))
   ;; omni + .
-  ;; see #tags
+  ;; see mod.
   action_omni_tag (t! unmod_all (switch ;;@autogen@
-    () $action_tag break
+    () $action_mod. break
   ))
   ;; omni + /
-  ;; see #help
+  ;; see mod/
   action_omni_help (t! unmod_all (switch ;;@autogen@
-    () $action_help break
+    () $action_mod/ break
   ))
 
   ;; omni + '
@@ -477,63 +457,158 @@
     () XX break
   ))
 
-  ;; == modS =============================================================
-  ;; modS + spc 
-  action_symbol (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_symbol break
-    ((input virtual vk_obsidian)) $obsidian_action_symbol break
+  ;; == modB =========================================================
+  ;; modB + spc
+  action_modB (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; modS + lsft + spc 
-  action_symbol+lsft (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_symbol+lsft break
+
+  ;; == modC =========================================================
+  ;; modC + spc
+  action_modC (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
   ;; == modD =============================================================
   ;; modD + spc 
-  action_defs (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_defs break
+  action_modD (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modD break
+    () XX break
+  ))
+
+  ;; == modE ===========================================================
+  ;; modE + spc 
+  action_modE (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
   ;; == modF =============================================================
   ;; modF + spc 
-  action_autofill (t! unmod_all (switch ;;@autogen@
+  action_modF (t! unmod_all (switch ;;@autogen@
     () C-spc break
   ))
 
   ;; == modG =============================================================
   ;; modG + spc 
-  action_git (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_git break
+  action_modG (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modG break
     () XX break
   ))
 
   ;; == modH =============================================================
   ;; modH + spc 
-  action_hyperlinks (t! unmod_all (switch ;;@autogen@
+  action_modH (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == modI =========================================================
+  ;; modI + spc
+  action_modI (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
   ;; == modJ =============================================================
   ;; modJ + spc 
-  action_jumps (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_jumps break
+  action_modJ (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modJ break
     () XX break
   ))
 
   ;; == modK =============================================================
   ;; modK + spc 
-  action_keymaps (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_keymaps break
+  action_modK (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modK break
     () XX break
   ))
 
   ;; == modL =============================================================
   ;; modL + spc 
-  action_locations (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_locations break
+  action_modL (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modL break
+    () XX break
+  ))
+
+  ;; == modM  ==========================================================
+  ;; modM + spc 
+  action_modM (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == modN  ==========================================================
+  ;; modN + spc 
+  action_modN (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == modO =========================================================
+  ;; modO + spc
+  action_modO (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modO break
+    () XX break
+  ))
+
+  ;; == modP ===========================================================
+  ;; modP + spc 
+  action_modP (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  
+  ;; == modQ =========================================================
+  ;; modQ + spc
+  action_modQ (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modQ break
+    () XX break
+  ))
+
+  ;; == modR =========================================================
+  ;; modR + spc
+  action_modR (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modR break
+    () XX break
+  ))
+  ;; modR + lsft + spc
+  action_modR+lsft (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modR+lsft break
+    () XX break
+  ))
+  ;; modR + rsft + spc
+  action_modR+rsft (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modR+rsft break
+    () XX break
+  ))
+
+  ;; == modS =============================================================
+  ;; modS + spc 
+  action_modS (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modS break
+    ((input virtual vk_obsidian)) $obsidian_action_modS break
+    () XX break
+  ))
+  ;; modS + lsft + spc 
+  action_modS+lsft (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modS+lsft break
+    () XX break
+  ))
+
+  ;; == modT =========================================================
+  ;; modT + spc
+  action_modT (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; modT + n
+  action_modT+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == modU =========================================================
+  ;; modU + spc
+  action_modU (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == modV =========================================================
+  ;; modV + spc
+  action_modV (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
@@ -542,14 +617,33 @@
   action_modW (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; == modE ===========================================================
-  ;; modE + spc 
-  action_modE (t! unmod_all (switch ;;@autogen@
+
+  ;; == modX =========================================================
+  ;; modX + spc
+  action_modX (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; == modP ===========================================================
-  ;; modP + spc 
-  action_modP (t! unmod_all (switch ;;@autogen@
+
+  ;; == modY =========================================================
+  ;; modY + spc
+  action_modY (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modY break
+    () XX break
+  ))
+  ;; modY + mod; + spc  
+  action_modY_mod; (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modY_mod; break
+    () XX break
+  )) ;;""
+  ;; modY + search + spc 
+  action_modY_search (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modY_search break
+    () XX break
+  ))
+
+  ;; == modZ =========================================================
+  ;; modZ + spc
+  action_modZ (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
@@ -564,69 +658,86 @@
 
   ;; == mod' =============================================================
   ;; mod' + spc 
-  action_registers (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_registers break
+  action_mod' (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_mod' break
     () XX break
   ))
 
-  ;; == #emojis ============================================================
-  ;; #emojis + spc
-  action_emojis  XX
+  ;; == mod, ==========================================================
+  ;; mod, + spc 
+  action_mod, (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_mod, break
+    ((input virtual vk_obsidian)) $obsidian_action_mod, break
+    () XX break
+  ))
 
-  ;; == #windows ===========================================================
-  ;; #windows + spc
+  ;; == mod. =========================================================
+  ;; mod. + spc
+  action_mod. (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_mod. break
+    () XX break
+  ))
+
+  ;; == mod/ ==========================================================
+  ;; mod/ + spc 
+  action_mod/ (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == windows ===========================================================
+  ;; windows + spc
   action_window         (t! unmod_all M-m)
-  ;; #windows + ent
+  ;; windows + ent
   action_window_max    (t! unmod_all M-m)
 
-  ;; #windows + k
+  ;; windows + k
   action_window_up     (t! unmod_all  M-up)
-  ;; #windows + j
+  ;; windows + j
   action_window_down   (t! unmod_all M-down)
-  ;; #windows + h
+  ;; windows + h
   action_window_left   (t! unmod_all M-left)
-  ;; #windows + l
+  ;; windows + l
   action_window_right  (t! unmod_all M-right)
 
-  ;; #windows 
+  ;; windows 
   action_window_close  (t! unmod_all A-f4)
 
   ;; 2x apps
   action_window_toggle XX
 
-  ;; == #workspaces =====================================================
-  ;; #workspaces + spc
+  ;; == workspaces =====================================================
+  ;; workspaces + spc
   action_desktop       XX
 
-  ;; #workspaces + j 
+  ;; workspaces + j 
   action_screen_next  (t! unmod_all M-S-down)
-  ;; #workspaces + k
+  ;; workspaces + k
   action_screen_prev  (t! unmod_all M-S-up)
-  ;; #workspaces + l
+  ;; workspaces + l
   action_desktop_next (t! unmod_all M-C-right)
-  ;; #workspaces + j
+  ;; workspaces + j
   action_desktop_prev (t! unmod_all M-C-left)
 
-  ;; #workspaces + toggle
+  ;; workspaces + toggle
   action_desktop_toggle XX
 
-  ;; == #workspaces + #move ===============================================
-  ;; #workspaces + #move + j 
+  ;; == workspaces + move ===============================================
+  ;; workspaces + move + j 
   action_screen_next_move_window  (t! unmod_all M-S-right)
-  ;; #workspaces + #move + k 
+  ;; workspaces + move + k 
   action_screen_prev_move_window  (t! unmod_all M-S-left)
-  ;; #workspaces + #move + l 
+  ;; workspaces + move + l 
   action_desktop_next_move_window (t! unmod_all M-C-S-right)
-  ;; #workspaces + #move + h 
+  ;; workspaces + move + h 
   action_desktop_prev_move_window (t! unmod_all M-C-S-left)
 
-  ;; == #panes =============================================================
-  ;; #panes + spc
+  ;; == panes =============================================================
+  ;; panes + spc
   action_pane         (t! unmod_all (switch ;;@autogen@ 
     () XX break
   ))
 
-  ;; #panes + ent
+  ;; panes + ent
   action_pane_max (t! unmod_all (switch ;;@autogen@ 
     ((input virtual vk_obsidian)) $obsidian_action_pane_max break
     ((input virtual vk_tmux)) $tmux_action_pane_max break
@@ -634,7 +745,7 @@
     () XX break
   ))
 
-  ;; #panes + h | #panes + left 
+  ;; panes + h | panes + left 
   action_pane_left (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_pane_left break
     ((input virtual vk_obsidian)) $obsidian_action_pane_left break
@@ -642,7 +753,7 @@
     ((input virtual vk_zellij)) $zellij_action_pane_left break
     () XX break
   ))
-  ;; #panes + l | #panes + right 
+  ;; panes + l | panes + right 
   action_pane_right (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_pane_right break
     ((input virtual vk_obsidian)) $obsidian_action_pane_right break
@@ -650,7 +761,7 @@
     ((input virtual vk_zellij)) $zellij_action_pane_right break
     () XX break
   ))
-  ;; #panes + k | #panes + up 
+  ;; panes + k | panes + up 
   action_pane_above (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_pane_above break
     ((input virtual vk_obsidian)) $obsidian_action_pane_above break
@@ -658,7 +769,7 @@
     ((input virtual vk_zellij)) $zellij_action_pane_above break
     () XX break
   ))
-  ;; #panes + j | #panes + down 
+  ;; panes + j | panes + down 
   action_pane_below (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_pane_below break
     ((input virtual vk_obsidian)) $obsidian_action_pane_below break
@@ -667,312 +778,312 @@
     () XX break
   ))
 
-  ;; #panes + -
+  ;; panes + -
   action_pane_split_h (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_pane_split_h break
     ((input virtual vk_obsidian)) $obsidian_action_pane_split_h break
     ((input virtual vk_tmux)) $tmux_action_pane_split_h break
     () XX break
   ))
-  ;; #panes + \
+  ;; panes + \
   action_pane_split_v (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_pane_split_v break
     ((input virtual vk_tmux)) $tmux_action_pane_split_v break
     () XX break
   ))
 
-  ;; #panes + w
+  ;; panes + w
   action_pane_close (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_pane_close break
     ((input virtual vk_tmux)) $tmux_action_pane_close break
     () XX break
   ))
 
-  ;; == #panes + #toggle ====================================================
-  ;; #panes + #toggle | 2x !lalt
+  ;; == panes + toggle ====================================================
+  ;; panes + toggle | 2x !lalt
   action_pane_toggle (t! unmod_all (switch ;;@autogen@ 
     ((input virtual vk_obsidian)) $obsidian_action_pane_toggle break
     ((input virtual vk_tmux)) $tmux_action_pane_toggle break
     () XX break
   ))
   
-  ;; == #panes + #float ====================================================
-  ;; #panes + float
+  ;; == panes + float ====================================================
+  ;; panes + float
   action_pane_float (t! unmod_all (switch ;;@autogen@ 
     () XX break
   ))
 
-  ;; == #panes + #move ======================================================
-  ;; #panes + #move + h | #panes + #move + left
+  ;; == panes + move ======================================================
+  ;; panes + move + h | panes + move + left
   action_pane_move_left (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + #move + l | #panes + #move + right
+  ;; panes + move + l | panes + move + right
   action_pane_move_right (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + #move + k | #panes + #move + up
+  ;; panes + move + k | panes + move + up
   action_pane_move_above (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + #move + j | #panes + #move + down
+  ;; panes + move + j | panes + move + down
   action_pane_move_below (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
-  ;; == #panes + #resize ====================================================
-  ;; #panes + #resize + h | #panes + #resize + left
+  ;; == panes + resize ====================================================
+  ;; panes + resize + h | panes + resize + left
   action_pane_resize_left (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + #resize + l | #panes + #resize + right
+  ;; panes + resize + l | panes + resize + right
   action_pane_resize_right (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + #resize + k | #panes + #resize + up
+  ;; panes + resize + k | panes + resize + up
   action_pane_resize_above (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + #resize + j | #panes + #resize + down
+  ;; panes + resize + j | panes + resize + down
   action_pane_resize_below (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
-  ;; == #panes + #swap ======================================================
-  ;; #panes + #swap + h | #panes + #swap + left
+  ;; == panes + swap ======================================================
+  ;; panes + swap + h | panes + swap + left
   action_pane_swap_left (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + #swap + l | #panes + #swap + right
+  ;; panes + swap + l | panes + swap + right
   action_pane_swap_right (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + #swap + k | #panes + #swap + up
+  ;; panes + swap + k | panes + swap + up
   action_pane_swap_above (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + #swap + j | #panes + #swap + down
+  ;; panes + swap + j | panes + swap + down
   action_pane_swap_below (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
-  ;; == #panes go by number ============================================
-  ;; #panes + 1
+  ;; == panes go by number ============================================
+  ;; panes + 1
   action_pane_goto_1 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + 2
+  ;; panes + 2
   action_pane_goto_2 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + 3
+  ;; panes + 3
   action_pane_goto_3 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + 4
+  ;; panes + 4
   action_pane_goto_4 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + 5
+  ;; panes + 5
   action_pane_goto_5 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + 6
+  ;; panes + 6
   action_pane_goto_6 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + 7
+  ;; panes + 7
   action_pane_goto_7 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + 8
+  ;; panes + 8
   action_pane_goto_8 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + 9
+  ;; panes + 9
   action_pane_goto_last (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
-  ;; == #panes show pane / focus (app-specific) =============================
-  ;; #panes + q
+  ;; == panes show pane / focus (app-specific) =============================
+  ;; panes + q
   action_pane_quickfix (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + w 
-  ;; see #panes 
-  ;; #panes + e
+  ;; panes + w 
+  ;; see panes 
+  ;; panes + e
   action_pane_explorer (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_pane_explorer break
     ((input virtual vk_obsidian)) $obsidian_action_pane_explorer break
     () XX break
   ))
-  ;; #panes + lsft + e
+  ;; panes + lsft + e
   action_pane+lsft_explorer (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_pane+lsft_explorer break
     () XX break
   ))
-  ;; #panes + r
+  ;; panes + r
   action_pane_recent (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_pane_recent break
     () XX break
   ))
-  ;; #panes + t
+  ;; panes + t
   action_pane_terminal (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + u
+  ;; panes + u
   action_pane_debug (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + y
+  ;; panes + y
   action_pane_history (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + i
+  ;; panes + i
   action_pane_info (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + o
+  ;; panes + o
   action_pane_outline (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_pane_outline break
     () XX break
   ))
-  ;; #panes + lsft + o
+  ;; panes + lsft + o
   action_pane_output (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + p
+  ;; panes + p
   action_pane_properties (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_pane_properties break
     () XX break
   ))
-  ;; #panes + lsft + p
+  ;; panes + lsft + p
   action_pane+lsft_properties (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_pane+lsft_properties break
     () XX break
   ))
-  ;; #panes + [
+  ;; panes + [
   action_pane_backlinks (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_pane_backlinks break
     () XX break
   ))
-  ;; #panes + ]
+  ;; panes + ]
   action_pane_outlinks (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_pane_outlinks break
     () XX break
   ))
-  ;; #panes + lsft + ]
+  ;; panes + lsft + ]
   action_pane+lsft_outlinks (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_pane+lsft_outlinks break
     () XX break
   ))
 
-  ;; #panes + a
+  ;; panes + a
   action_pane_AI (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + s
+  ;; panes + s
   action_pane_sidebar (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_pane_sidebar break
     () XX break
   ))
-  ;; #panes + lsft + s
+  ;; panes + lsft + s
   action_pane+lsft_sidebar (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_pane+lsft_sidebar break
     () XX break
   ))
-  ;; #panes + d
+  ;; panes + d
   action_pane_docker (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + f
+  ;; panes + f
   action_pane_filename (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + g
+  ;; panes + g
   action_pane_go (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_pane_go break
     () XX break
   ))
-  ;; #panes + ;
+  ;; panes + ;
   action_pane_graph (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_pane_graph break
     () XX break
   ))
-  ;; #panes + '
+  ;; panes + '
   ;; not yet used.
 
-  ;; #panes + z
+  ;; panes + z
   action_pane_tests (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + x
+  ;; panes + x
   action_pane_extensions (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + c
+  ;; panes + c
   action_pane_calendar (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_pane_calendar break
     () XX break
   ))
-  ;; #panes + lsft + c
+  ;; panes + lsft + c
   action_pane_day (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_pane_day break
     () XX break
   ))
-  ;; #panes + rsft + c
+  ;; panes + rsft + c
   action_pane+!day (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_pane+!day break
     () XX break
   ))
-  ;; #panes + v
+  ;; panes + v
   action_pane_vertical_tab (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_pane_vertical_tab break
     () XX break
   ))
-  ;; #panes + b
+  ;; panes + b
   action_pane_bookmarks (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_pane_bookmarks break
     () XX break
   ))
-  ;; #panes + n
+  ;; panes + n
   action_pane_notebooks (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + m
+  ;; panes + m
   action_pane_main (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_pane_main break
     () XX break
   ))
-  ;; #panes + ,
+  ;; panes + ,
   action_pane_settings (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + .
+  ;; panes + .
   action_pane_tags (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #panes + /
+  ;; panes + /
   action_pane_help (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
-  ;; == #panes + #search (tap) ==============================================
-  ;; #panes + #search
+  ;; == panes + search (tap) ==============================================
+  ;; panes + search
   action_pane_search (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
-  ;; == #panes + #replace (tap) ==============================================
-  ;; #panes + #replace
+  ;; == panes + replace (tap) ==============================================
+  ;; panes + replace
   action_pane_replace (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
-  ;; == #tab ===============================================================
+  ;; == tab ===============================================================
 
-  ;; #tab + spc 
+  ;; tab + spc 
   action_tab         (t! unmod_all (switch ;;@autogen@ 
     ((input virtual vk_nvim)) $nvim_action_tab break
     ((input virtual vk_chrome)) $chrome_action_tab break
@@ -981,7 +1092,7 @@
     () XX break
   ))
 
-  ;; #tab + l | #tab + right | lsft + rsft | 2x rsft | !lmet + tab
+  ;; tab + l | tab + right | lsft + rsft | 2x rsft | !lmet + tab
   action_tab_next (t! unmod_all (switch ;;@autogen@ 
     ((input virtual vk_nvim)) $nvim_action_tab_next break
     ((input virtual vk_chrome)) $chrome_action_tab_next break
@@ -990,7 +1101,7 @@
     ((input virtual vk_zellij)) $zellij_action_tab_next break
     () C-tab break
   ))
-  ;; #tab + h | #tab + left | rsft + lsft | 2x lsft | !lmet + sft + tab
+  ;; tab + h | tab + left | rsft + lsft | 2x lsft | !lmet + sft + tab
   action_tab_prev (t! unmod_all (switch ;;@autogen@ 
     ((input virtual vk_nvim)) $nvim_action_tab_prev break
     ((input virtual vk_chrome)) $chrome_action_tab_prev break
@@ -999,23 +1110,23 @@
     ((input virtual vk_zellij)) $zellij_action_tab_prev break
     () C-S-tab break
   ))
-  ;; #tab + j | #tab + down
+  ;; tab + j | tab + down
   action_tab_first  (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #tab + k | #tab + up
+  ;; tab + k | tab + up
   action_tab_last  (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   
-  ;; #tab + t 
+  ;; tab + t 
   action_tab_new (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_chrome)) $chrome_action_tab_new break
     ((input virtual vk_obsidian)) $obsidian_action_tab_new break
     ((input virtual vk_tmux)) $tmux_action_tab_new break
     () XX break
   ))
-  ;; #tab + w 
+  ;; tab + w 
   action_tab_close (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_tab_close break
     ((input virtual vk_chrome)) $chrome_action_tab_close break
@@ -1023,15 +1134,15 @@
     ((input virtual vk_tmux)) $tmux_action_tab_close break
     () XX break
   ))
-  ;; #tab + lsft + t 
+  ;; tab + lsft + t 
   action_tab_undo_close (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_chrome)) $chrome_action_tab_undo_close break
     ((input virtual vk_obsidian)) $obsidian_action_tab_undo_close break
     () XX break
   ))
 
-  ;; == #tab go by number ==================================================
-  ;; #tab + 1 
+  ;; == tab go by number ==================================================
+  ;; tab + 1 
   action_tab_goto_1 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_tab_goto_1 break
     ((input virtual vk_chrome)) $chrome_action_tab_goto_1 break
@@ -1039,7 +1150,7 @@
     ((input virtual vk_tmux)) $tmux_action_tab_goto_1 break
     () XX break
   ))
-  ;; #tab + 2 
+  ;; tab + 2 
   action_tab_goto_2 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_tab_goto_2 break
     ((input virtual vk_chrome)) $chrome_action_tab_goto_2 break
@@ -1047,7 +1158,7 @@
     ((input virtual vk_tmux)) $tmux_action_tab_goto_2 break
     () XX break
   ))
-  ;; #tab + 3 
+  ;; tab + 3 
   action_tab_goto_3 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_tab_goto_3 break
     ((input virtual vk_chrome)) $chrome_action_tab_goto_3 break
@@ -1055,7 +1166,7 @@
     ((input virtual vk_tmux)) $tmux_action_tab_goto_3 break
     () XX break
   ))
-  ;; #tab + 4 
+  ;; tab + 4 
   action_tab_goto_4 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_tab_goto_4 break
     ((input virtual vk_chrome)) $chrome_action_tab_goto_4 break
@@ -1063,7 +1174,7 @@
     ((input virtual vk_tmux)) $tmux_action_tab_goto_4 break
     () XX break
   ))
-  ;; #tab + 5 
+  ;; tab + 5 
   action_tab_goto_5 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_tab_goto_5 break
     ((input virtual vk_chrome)) $chrome_action_tab_goto_5 break
@@ -1071,7 +1182,7 @@
     ((input virtual vk_tmux)) $tmux_action_tab_goto_5 break
     () XX break
   ))
-  ;; #tab + 6 
+  ;; tab + 6 
   action_tab_goto_6 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_tab_goto_6 break
     ((input virtual vk_chrome)) $chrome_action_tab_goto_6 break
@@ -1079,7 +1190,7 @@
     ((input virtual vk_tmux)) $tmux_action_tab_goto_6 break
     () XX break
   ))
-  ;; #tab + 7 
+  ;; tab + 7 
   action_tab_goto_7 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_tab_goto_7 break
     ((input virtual vk_chrome)) $chrome_action_tab_goto_7 break
@@ -1087,7 +1198,7 @@
     ((input virtual vk_tmux)) $tmux_action_tab_goto_7 break
     () XX break
   ))
-  ;; #tab + 8 
+  ;; tab + 8 
   action_tab_goto_8 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_tab_goto_8 break
     ((input virtual vk_chrome)) $chrome_action_tab_goto_8 break
@@ -1095,7 +1206,7 @@
     ((input virtual vk_tmux)) $tmux_action_tab_goto_8 break
     () XX break
   ))
-  ;; #tab + 9 
+  ;; tab + 9 
   action_tab_goto_last (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_tab_goto_last break
     ((input virtual vk_chrome)) $chrome_action_tab_goto_last break
@@ -1104,8 +1215,8 @@
     () XX break
   ))
 
-  ;; == #tab + #toggle =====================================================
-  ;; #tab + #toggle | 2x !lctl
+  ;; == tab + toggle =====================================================
+  ;; tab + toggle | 2x !lctl
   action_tab_toggle (t! unmod_all (switch ;;@autogen@ 
     ((input virtual vk_nvim)) $nvim_action_tab_toggle break
     ((input virtual vk_chrome)) $chrome_action_tab_toggle break
@@ -1115,29 +1226,29 @@
     () XX break
   ))
 
-  ;; == #tab + #move =====================================================
-  ;; #tab + #move + h | #tab + #move + left
+  ;; == tab + move =====================================================
+  ;; tab + move + h | tab + move + left
   action_tab_move_left (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_tmux)) $tmux_action_tab_move_left break
     () XX break
   ))
-  ;; #tab + #move + l | #tab + #move + right
+  ;; tab + move + l | tab + move + right
   action_tab_move_right (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_tmux)) $tmux_action_tab_move_right break
     () XX break
   ))
-  ;; #tab + #move + k | #tab + #move + up
+  ;; tab + move + k | tab + move + up
   action_tab_move_first (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #tab + #move + j | #tab + #move + down
+  ;; tab + move + j | tab + move + down
   action_tab_move_last (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
-  ;; == #!tab/groups =====================================================
+  ;; == !tab/groups =====================================================
 
-  ;; #!tab + spc
+  ;; !tab + spc
   action_!tab (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_!tab break
     ((input virtual vk_chrome)) $chrome_action_!tab break
@@ -1147,7 +1258,7 @@
     () XX break
   ))
 
-  ;; #!tab + l | #!tab + right  
+  ;; !tab + l | !tab + right  
   ~action_!tab_next (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_zellij)) $zellij_action_!tab_next break
     ((input virtual vk_tmux)) $tmux_action_!tab_next break
@@ -1156,7 +1267,7 @@
     ((input virtual vk_nvim)) $nvim_action_!tab_next break
     () C-tab break
   )) 
-  ;; #!tab + h | #!tab + left  
+  ;; !tab + h | !tab + left  
   ~action_!tab_prev (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_zellij)) $zellij_action_!tab_prev break
     ((input virtual vk_tmux)) $tmux_action_!tab_prev break
@@ -1165,23 +1276,23 @@
     ((input virtual vk_nvim)) $nvim_action_!tab_prev break
     () C-S-tab break
   ))
-  ;; #!tab + j | #!tab + down
+  ;; !tab + j | !tab + down
   ~action_!tab_first  (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #!tab + k | #!tab + up
+  ;; !tab + k | !tab + up
   ~action_!tab_last  (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
-  ;; #!tab + t 
+  ;; !tab + t 
   ~action_!tab_new (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_tmux)) $tmux_action_!tab_new break
     ((input virtual vk_obsidian)) $obsidian_action_!tab_new break
     ((input virtual vk_chrome)) $chrome_action_!tab_new break
     () XX break
   ))
-  ;; #!tab + w
+  ;; !tab + w
   ~action_!tab_close (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_tmux)) $tmux_action_!tab_close break
     ((input virtual vk_obsidian)) $obsidian_action_!tab_close break
@@ -1189,15 +1300,15 @@
     ((input virtual vk_nvim)) $nvim_action_!tab_close break
     () XX break
   ))
-  ;; #!tab + lsft + t 
+  ;; !tab + lsft + t 
   ~action_!tab_undo_close (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_obsidian)) $obsidian_action_!tab_undo_close break
     ((input virtual vk_chrome)) $chrome_action_!tab_undo_close break
     () XX break
   ))
 
-  ;; == #!tab go by number ==================================================
-  ;; #!tab + 1
+  ;; == !tab go by number ==================================================
+  ;; !tab + 1
   ~action_!tab_goto_1 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_tmux)) $tmux_action_!tab_goto_1 break
     ((input virtual vk_obsidian)) $obsidian_action_!tab_goto_1 break
@@ -1205,7 +1316,7 @@
     ((input virtual vk_nvim)) $nvim_action_!tab_goto_1 break
     () XX break
   ))
-  ;; #!tab + 2
+  ;; !tab + 2
   ~action_!tab_goto_2 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_tmux)) $tmux_action_!tab_goto_2 break
     ((input virtual vk_obsidian)) $obsidian_action_!tab_goto_2 break
@@ -1213,7 +1324,7 @@
     ((input virtual vk_nvim)) $nvim_action_!tab_goto_2 break
     () XX break
   ))
-  ;; #!tab + 3
+  ;; !tab + 3
   ~action_!tab_goto_3 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_tmux)) $tmux_action_!tab_goto_3 break
     ((input virtual vk_obsidian)) $obsidian_action_!tab_goto_3 break
@@ -1221,7 +1332,7 @@
     ((input virtual vk_nvim)) $nvim_action_!tab_goto_3 break
     () XX break
   ))
-  ;; #!tab + 4
+  ;; !tab + 4
   ~action_!tab_goto_4 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_tmux)) $tmux_action_!tab_goto_4 break
     ((input virtual vk_obsidian)) $obsidian_action_!tab_goto_4 break
@@ -1229,7 +1340,7 @@
     ((input virtual vk_nvim)) $nvim_action_!tab_goto_4 break
     () XX break
   ))
-  ;; #!tab + 5
+  ;; !tab + 5
   ~action_!tab_goto_5 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_tmux)) $tmux_action_!tab_goto_5 break
     ((input virtual vk_obsidian)) $obsidian_action_!tab_goto_5 break
@@ -1237,7 +1348,7 @@
     ((input virtual vk_nvim)) $nvim_action_!tab_goto_5 break
     () XX break
   ))
-  ;; #!tab + 6
+  ;; !tab + 6
   ~action_!tab_goto_6 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_tmux)) $tmux_action_!tab_goto_6 break
     ((input virtual vk_obsidian)) $obsidian_action_!tab_goto_6 break
@@ -1245,7 +1356,7 @@
     ((input virtual vk_nvim)) $nvim_action_!tab_goto_6 break
     () XX break
   ))
-  ;; #!tab + 7
+  ;; !tab + 7
   ~action_!tab_goto_7 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_tmux)) $tmux_action_!tab_goto_7 break
     ((input virtual vk_obsidian)) $obsidian_action_!tab_goto_7 break
@@ -1253,7 +1364,7 @@
     ((input virtual vk_nvim)) $nvim_action_!tab_goto_7 break
     () XX break
   ))
-  ;; #!tab + 8
+  ;; !tab + 8
   ~action_!tab_goto_8 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_tmux)) $tmux_action_!tab_goto_8 break
     ((input virtual vk_obsidian)) $obsidian_action_!tab_goto_8 break
@@ -1261,7 +1372,7 @@
     ((input virtual vk_nvim)) $nvim_action_!tab_goto_8 break
     () XX break
   ))
-  ;; #!tab + 9
+  ;; !tab + 9
   ~action_!tab_goto_last (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_tmux)) $tmux_action_!tab_goto_last break
     ((input virtual vk_obsidian)) $obsidian_action_!tab_goto_last break
@@ -1270,8 +1381,8 @@
     () XX break
   ))
 
-  ;; == #!tab + #toggle =====================================================
-  ;; #!tab + #toggle
+  ;; == !tab + toggle =====================================================
+  ;; !tab + toggle
   ~action_!tab_toggle (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_zellij)) $zellij_action_!tab_toggle break
     ((input virtual vk_tmux)) $tmux_action_!tab_toggle break
@@ -1281,2667 +1392,2570 @@
     () XX break
   ))
 
-  ;; == #!tab + #move =====================================================
-  ;; #!tab + #move + h | #!tab + #move + left
+  ;; == !tab + move =====================================================
+  ;; !tab + move + h | !tab + move + left
   ~action_!tab_move_left (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_tmux)) $tmux_action_!tab_move_left break
     () XX break
   ))
-  ;; #!tab + #move + l | #!tab + #move + right
+  ;; !tab + move + l | !tab + move + right
   ~action_!tab_move_right (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_tmux)) $tmux_action_!tab_move_right break
     () XX break
   ))
-  ;; #!tab + #move + k | #!tab + #move + up
+  ;; !tab + move + k | !tab + move + up
   ~action_!tab_move_first (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #!tab + #move + j | #!tab + #move + down
+  ;; !tab + move + j | !tab + move + down
   ~action_!tab_move_last (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
-  ;; == #sessions =====================================================
-  ;; #sessions + spc
+  ;; == sessions =====================================================
+  ;; sessions + spc
   action_session (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #sessions + #toggle
+  ;; sessions + toggle
   action_session_toggle  (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
-  ;; == #mem (clipboard) ==================================================
-  ;; #mem + spc 
-  action_clipboard (t! unmod_all (switch ;;@autogen@
-    () XX break
-  ))
-
-  ;; == #settings ==========================================================
-  ;; #settings + spc 
-  action_setting (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_setting break
-    ((input virtual vk_obsidian)) $obsidian_action_setting break
-    () XX break
-  ))
-
-  ;; == mod. =========================================================
-  ;; mod. + spc
-  action_tag (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_tag break
-    () XX break
-  ))
-
-  ;; == #help ==========================================================
-  ;; #help + spc 
-  action_help (t! unmod_all (switch ;;@autogen@
-    () XX break
-  ))
-
-  ;; == #replace ==========================================================
-  ;; #replace + spc 
-  action_replace_text_in_file (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_replace_text_in_file break
-    () XX break
-  ))
-  ;; #replace + lsft + spc 
-  action_replace_text_in_filesystem (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_replace_text_in_filesystem break
-    () XX break
-  ))
-
-  ;; == #search ============================================================
-  ;; #search + spc 
-  action_search_text_in_file (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_search_text_in_file break
-    () XX break
-  ))
-  ;; #search + lsft + spc 
-  action_search_text_in_filesystem (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_search_text_in_filesystem break
-    ((input virtual vk_obsidian)) $obsidian_action_search_text_in_filesystem break
-    () XX break
-  ))
-  ;; #search + rsft + spc 
-  action_!search_text_in_file (t! unmod_all (switch ;;@autogen@
-    () XX break
-  ))
-
-  ;; == #files/folders ========================================================
-  ;; #files/folders + spc 
-  action_files (t! unmod_all (switch ;;@autogen@ 
-    ((input virtual vk_nvim)) $nvim_action_files break
-    ((input virtual vk_chrome)) $chrome_action_files break
-    ((input virtual vk_obsidian)) $obsidian_action_files break
-    ((input virtual vk_tmux)) $tmux_action_files break
-    () XX break
-  ))
-  ;; #file/folder + lsft + spc 
-  action_folders (t! unmod_all (switch ;;@autogen@ 
-    ((input virtual vk_nvim)) $nvim_action_folders break
-    ((input virtual vk_chrome)) $chrome_action_folders break
-    ((input virtual vk_obsidian)) $obsidian_action_folders break
-    () XX break
-  ))
-
-  ;; == #apps =========================================================
-  ;; #apps + spc
-  action_apps (t! unmod_all (switch
-    () RA-spc break
-  ))
-
-  action_apps_toggle (t! unmod_all (switch
-    () A-tab break
-  ))
-
-  ;; == #bookmarks =========================================================
-  ;; #bookmarks + spc
-  action_bookmarks (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_bookmarks break
-    ((input virtual vk_obsidian)) $obsidian_action_bookmarks break
-    () XX break
-  )) 
-
-  ;; == #opts ==============================================================
-  ;; opts + lsft/rsft + r 
-  action_opts_restart_kwanata (t! unmod_all 
-    (macro RA-spc 300 s y s t e m c t l spc - - u s e r spc r e s t a r t spc k w a n a t a 300 ent))
-
   ;; == LCTL actions ==========================================================
-  action_lctl+a (t! unmod_all (switch ;;@autogen@ 
+  action_lctl+a (switch ;;@autogen@ 
     () C-a break
-  ))
-  action_lctl+b (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+b (switch ;;@autogen@ 
     ((input virtual vk_obsidian)) $obsidian_action_lctl+b break
     () C-b break
-  ))
-  action_lctl+c  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+c  (switch ;;@autogen@ 
     () C-c  break
-  ))
-  action_lctl+d (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+d (switch ;;@autogen@ 
     () C-d break
-  ))
-  action_lctl+e  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+e  (switch ;;@autogen@ 
     () C-e  break
-  ))
-  action_lctl+f  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+f  (switch ;;@autogen@ 
     ((input virtual vk_obsidian)) $obsidian_action_lctl+f break
     () C-f  break
-  ))
-  action_lctl+g  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+g  (switch ;;@autogen@ 
     () C-g  break
-  ))
-  action_lctl+h  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+h  (switch ;;@autogen@ 
     () C-h  break
-  ))
-  action_lctl+i  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+i  (switch ;;@autogen@ 
     () C-i  break
-  ))
-  action_lctl+j  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+j  (switch ;;@autogen@ 
     () C-j  break
-  ))
-  action_lctl+k  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+k  (switch ;;@autogen@ 
     () C-k  break
-  ))
-  action_lctl+l  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+l  (switch ;;@autogen@ 
     () C-l  break
-  ))
-  action_lctl+m  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+m  (switch ;;@autogen@ 
     () C-m  break
-  ))
-  action_lctl+n  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+n  (switch ;;@autogen@ 
     () C-n  break
-  ))
-  action_lctl+o  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+o  (switch ;;@autogen@ 
     () C-o  break
-  ))
-  action_lctl+p  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+p  (switch ;;@autogen@ 
     () C-p  break
-  ))
-  action_lctl+q  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+q  (switch ;;@autogen@ 
     () C-q  break
-  ))
-  action_lctl+r  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+r  (switch ;;@autogen@ 
     () C-r  break
-  ))
-  action_lctl+s  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+s  (switch ;;@autogen@ 
     () C-s  break
-  ))
-  action_lctl+t  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+t  (switch ;;@autogen@ 
     ((input virtual vk_obsidian)) $obsidian_action_lctl+t break
     () C-t  break
-  ))
-  action_lctl+u  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+u  (switch ;;@autogen@ 
     () C-u  break
-  ))
-  action_lctl+v  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+v  (switch ;;@autogen@ 
     () C-v  break
-  ))
-  action_lctl+w  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+w  (switch ;;@autogen@ 
     () C-w  break
-  ))
-  action_lctl+x  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+x  (switch ;;@autogen@ 
     () C-x  break
-  ))
-  action_lctl+y  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+y  (switch ;;@autogen@ 
     () C-y  break
-  ))
-  action_lctl+z  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+z  (switch ;;@autogen@ 
     () C-z break
-  ))
-  action_lctl+,  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+,  (switch ;;@autogen@ 
     ((input virtual vk_obsidian)) $obsidian_action_lctl+, break
     () C-, break
-  ))
-  action_lctl+.  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+.  (switch ;;@autogen@ 
     () C-.  break
-  ))
-  action_lctl+/  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+/  (switch ;;@autogen@ 
     () C-/  break
-  ))
-  action_lctl+;  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+;  (switch ;;@autogen@ 
     ((input virtual vk_obsidian)) $obsidian_action_lctl+; break
     () C-;  break
-  ))
-  action_lctl+'  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+'  (switch ;;@autogen@ 
     () C-'  break
-  ))
-  action_lctl+[  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+[  (switch ;;@autogen@ 
     ((input virtual vk_obsidian)) $obsidian_action_lctl+[ break
     () C-[  break
-  ))
-  action_lctl+]  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+]  (switch ;;@autogen@ 
     ((input virtual vk_obsidian)) $obsidian_action_lctl+] break
     () C-]  break
-  ))  ;; ""
-  action_lctl+\  (t! unmod_all (switch ;;@autogen@ 
+  )  ;; ""
+  action_lctl+\  (switch ;;@autogen@ 
     () C-\  break
-  ))  ;; ""
-  action_lctl+-  (t! unmod_all (switch ;;@autogen@ 
+  )  ;; ""
+  action_lctl+-  (switch ;;@autogen@ 
     () C--  break
-  ))
-  action_lctl+=  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+=  (switch ;;@autogen@ 
     () C-=  break
-  ))
-  action_lctl+1  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+1  (switch ;;@autogen@ 
     () C-1  break
-  ))
-  action_lctl+2  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+2  (switch ;;@autogen@ 
     () C-2  break
-  ))
-  action_lctl+3  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+3  (switch ;;@autogen@ 
     () C-3  break
-  ))
-  action_lctl+4  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+4  (switch ;;@autogen@ 
     () C-4  break
-  ))
-  action_lctl+5  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+5  (switch ;;@autogen@ 
     () C-5  break
-  ))
-  action_lctl+6  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+6  (switch ;;@autogen@ 
     () C-6  break
-  ))
-  action_lctl+7  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+7  (switch ;;@autogen@ 
     () C-7  break
-  ))
-  action_lctl+8  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+8  (switch ;;@autogen@ 
     () C-8  break
-  ))
-  action_lctl+9  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+9  (switch ;;@autogen@ 
     () C-9  break
-  ))
-  action_lctl+0  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+0  (switch ;;@autogen@ 
     () C-0  break
-  ))
+  )
 
   ;; == LCTL+LSFT actions ==========================================================
-  action_lctl+lsft+a (t! unmod_all (switch ;;@autogen@ 
+  action_lctl+lsft+a (switch ;;@autogen@ 
     () C-S-a break
-  ))
-  action_lctl+lsft+b (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+b (switch ;;@autogen@ 
     () C-S-b break
-  ))
-  action_lctl+lsft+c  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+c  (switch ;;@autogen@ 
     () C-S-c  break
-  ))
-  action_lctl+lsft+d (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+d (switch ;;@autogen@ 
     () C-S-d break
-  ))
-  action_lctl+lsft+e  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+e  (switch ;;@autogen@ 
     () C-S-e  break
-  ))
-  action_lctl+lsft+f  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+f  (switch ;;@autogen@ 
     () C-S-f  break
-  ))
-  action_lctl+lsft+g  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+g  (switch ;;@autogen@ 
     () C-S-g  break
-  ))
-  action_lctl+lsft+h  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+h  (switch ;;@autogen@ 
     () C-S-h  break
-  ))
-  action_lctl+lsft+i  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+i  (switch ;;@autogen@ 
     () C-S-i  break
-  ))
-  action_lctl+lsft+j  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+j  (switch ;;@autogen@ 
     () C-S-j  break
-  ))
-  action_lctl+lsft+k  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+k  (switch ;;@autogen@ 
     () C-S-k  break
-  ))
-  action_lctl+lsft+l  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+l  (switch ;;@autogen@ 
     () C-S-l  break
-  ))
-  action_lctl+lsft+m  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+m  (switch ;;@autogen@ 
     () C-S-m  break
-  ))
-  action_lctl+lsft+n  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+n  (switch ;;@autogen@ 
     () C-S-n  break
-  ))
-  action_lctl+lsft+o  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+o  (switch ;;@autogen@ 
     () C-S-o  break
-  ))
-  action_lctl+lsft+p  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+p  (switch ;;@autogen@ 
     () C-S-p  break
-  ))
-  action_lctl+lsft+q  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+q  (switch ;;@autogen@ 
     () C-S-q  break
-  ))
-  action_lctl+lsft+r  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+r  (switch ;;@autogen@ 
     () C-S-r  break
-  ))
-  action_lctl+lsft+s  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+s  (switch ;;@autogen@ 
     () C-S-s  break
-  ))
-  action_lctl+lsft+t  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+t  (switch ;;@autogen@ 
     ((input virtual vk_obsidian)) $obsidian_action_lctl+lsft+t break
     () C-S-t  break
-  ))
-  action_lctl+lsft+u  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+u  (switch ;;@autogen@ 
     () C-S-u  break
-  ))
-  action_lctl+lsft+v  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+v  (switch ;;@autogen@ 
     () C-S-v  break
-  ))
-  action_lctl+lsft+w  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+w  (switch ;;@autogen@ 
     () C-S-w  break
-  ))
-  action_lctl+lsft+x  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+x  (switch ;;@autogen@ 
     () C-S-x  break
-  ))
-  action_lctl+lsft+y  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+y  (switch ;;@autogen@ 
     () C-S-y  break
-  ))
-  action_lctl+lsft+z  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+z  (switch ;;@autogen@ 
     () C-S-z break
-  ))
-  action_lctl+lsft+,  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+,  (switch ;;@autogen@ 
     () C-S-, break
-  ))
-  action_lctl+lsft+.  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+.  (switch ;;@autogen@ 
     () C-S-.  break
-  ))
-  action_lctl+lsft+/  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+/  (switch ;;@autogen@ 
     () C-S-/  break
-  ))
-  action_lctl+lsft+;  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+;  (switch ;;@autogen@ 
     () C-S-;  break
-  ))
-  action_lctl+lsft+'  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+'  (switch ;;@autogen@ 
     () C-S-'  break
-  ))
-  action_lctl+lsft+[  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+[  (switch ;;@autogen@ 
     () C-S-[  break
-  ))
-  action_lctl+lsft+]  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+]  (switch ;;@autogen@ 
     () C-S-]  break
-  ))  ;; ""
-  action_lctl+lsft+\  (t! unmod_all (switch ;;@autogen@ 
+  )  ;; ""
+  action_lctl+lsft+\  (switch ;;@autogen@ 
     () C-S-\  break
-  ))  ;; ""
-  action_lctl+lsft+-  (t! unmod_all (switch ;;@autogen@ 
+  )  ;; ""
+  action_lctl+lsft+-  (switch ;;@autogen@ 
     () C-S--  break
-  ))
-  action_lctl+lsft+=  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+=  (switch ;;@autogen@ 
     () C-S-=  break
-  ))
-  action_lctl+lsft+1  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+1  (switch ;;@autogen@ 
     () C-S-1  break
-  ))
-  action_lctl+lsft+2  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+2  (switch ;;@autogen@ 
     () C-S-2  break
-  ))
-  action_lctl+lsft+3  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+3  (switch ;;@autogen@ 
     () C-S-3  break
-  ))
-  action_lctl+lsft+4  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+4  (switch ;;@autogen@ 
     () C-S-4  break
-  ))
-  action_lctl+lsft+5  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+5  (switch ;;@autogen@ 
     () C-S-5  break
-  ))
-  action_lctl+lsft+6  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+6  (switch ;;@autogen@ 
     () C-S-6  break
-  ))
-  action_lctl+lsft+7  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+7  (switch ;;@autogen@ 
     () C-S-7  break
-  ))
-  action_lctl+lsft+8  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+8  (switch ;;@autogen@ 
     () C-S-8  break
-  ))
-  action_lctl+lsft+9  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+9  (switch ;;@autogen@ 
     () C-S-9  break
-  ))
-  action_lctl+lsft+0  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+lsft+0  (switch ;;@autogen@ 
     () C-S-0  break
-  ))
+  )
 
   ;; == LCTL+RSFT actions ==========================================================
-  action_lctl+rsft+a (t! unmod_all (switch ;;@autogen@ 
+  action_lctl+rsft+a (switch ;;@autogen@ 
     () C-S-a break
-  ))
-  action_lctl+rsft+b (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+b (switch ;;@autogen@ 
     () C-S-b break
-  ))
-  action_lctl+rsft+c  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+c  (switch ;;@autogen@ 
     () C-S-c  break
-  ))
-  action_lctl+rsft+d (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+d (switch ;;@autogen@ 
     () C-S-d break
-  ))
-  action_lctl+rsft+e  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+e  (switch ;;@autogen@ 
     () C-S-e  break
-  ))
-  action_lctl+rsft+f  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+f  (switch ;;@autogen@ 
     () C-S-f  break
-  ))
-  action_lctl+rsft+g  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+g  (switch ;;@autogen@ 
     () C-S-g  break
-  ))
-  action_lctl+rsft+h  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+h  (switch ;;@autogen@ 
     () C-S-h  break
-  ))
-  action_lctl+rsft+i  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+i  (switch ;;@autogen@ 
     () C-S-i  break
-  ))
-  action_lctl+rsft+j  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+j  (switch ;;@autogen@ 
     () C-S-j  break
-  ))
-  action_lctl+rsft+k  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+k  (switch ;;@autogen@ 
     () C-S-k  break
-  ))
-  action_lctl+rsft+l  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+l  (switch ;;@autogen@ 
     () C-S-l  break
-  ))
-  action_lctl+rsft+m  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+m  (switch ;;@autogen@ 
     () C-S-m  break
-  ))
-  action_lctl+rsft+n  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+n  (switch ;;@autogen@ 
     () C-S-n  break
-  ))
-  action_lctl+rsft+o  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+o  (switch ;;@autogen@ 
     () C-S-o  break
-  ))
-  action_lctl+rsft+p  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+p  (switch ;;@autogen@ 
     () C-S-p  break
-  ))
-  action_lctl+rsft+q  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+q  (switch ;;@autogen@ 
     () C-S-q  break
-  ))
-  action_lctl+rsft+r  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+r  (switch ;;@autogen@ 
     () C-S-r  break
-  ))
-  action_lctl+rsft+s  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+s  (switch ;;@autogen@ 
     () C-S-s  break
-  ))
-  action_lctl+rsft+t  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+t  (switch ;;@autogen@ 
     () C-S-t  break
-  ))
-  action_lctl+rsft+u  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+u  (switch ;;@autogen@ 
     () C-S-u  break
-  ))
-  action_lctl+rsft+v  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+v  (switch ;;@autogen@ 
     () C-S-v  break
-  ))
-  action_lctl+rsft+w  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+w  (switch ;;@autogen@ 
     () C-S-w  break
-  ))
-  action_lctl+rsft+x  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+x  (switch ;;@autogen@ 
     () C-S-x  break
-  ))
-  action_lctl+rsft+y  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+y  (switch ;;@autogen@ 
     () C-S-y  break
-  ))
-  action_lctl+rsft+z  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+z  (switch ;;@autogen@ 
     () C-S-z break
-  ))
-  action_lctl+rsft+,  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+,  (switch ;;@autogen@ 
     () C-S-, break
-  ))
-  action_lctl+rsft+.  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+.  (switch ;;@autogen@ 
     () C-S-.  break
-  ))
-  action_lctl+rsft+/  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+/  (switch ;;@autogen@ 
     () C-S-/  break
-  ))
-  action_lctl+rsft+;  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+;  (switch ;;@autogen@ 
     () C-S-;  break
-  ))
-  action_lctl+rsft+'  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+'  (switch ;;@autogen@ 
     () C-S-'  break
-  ))
-  action_lctl+rsft+[  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+[  (switch ;;@autogen@ 
     () C-S-[  break
-  ))
-  action_lctl+rsft+]  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+]  (switch ;;@autogen@ 
     () C-S-]  break
-  ))  ;; ""
-  action_lctl+rsft+\  (t! unmod_all (switch ;;@autogen@ 
+  )  ;; ""
+  action_lctl+rsft+\  (switch ;;@autogen@ 
     () C-S-\  break
-  ))  ;; ""
-  action_lctl+rsft+-  (t! unmod_all (switch ;;@autogen@ 
+  )  ;; ""
+  action_lctl+rsft+-  (switch ;;@autogen@ 
     () C-S--  break
-  ))
-  action_lctl+rsft+=  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+=  (switch ;;@autogen@ 
     () C-S-=  break
-  ))
-  action_lctl+rsft+1  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+1  (switch ;;@autogen@ 
     () C-S-1  break
-  ))
-  action_lctl+rsft+2  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+2  (switch ;;@autogen@ 
     () C-S-2  break
-  ))
-  action_lctl+rsft+3  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+3  (switch ;;@autogen@ 
     () C-S-3  break
-  ))
-  action_lctl+rsft+4  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+4  (switch ;;@autogen@ 
     () C-S-4  break
-  ))
-  action_lctl+rsft+5  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+5  (switch ;;@autogen@ 
     () C-S-5  break
-  ))
-  action_lctl+rsft+6  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+6  (switch ;;@autogen@ 
     () C-S-6  break
-  ))
-  action_lctl+rsft+7  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+7  (switch ;;@autogen@ 
     () C-S-7  break
-  ))
-  action_lctl+rsft+8  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+8  (switch ;;@autogen@ 
     () C-S-8  break
-  ))
-  action_lctl+rsft+9  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+9  (switch ;;@autogen@ 
     () C-S-9  break
-  ))
-  action_lctl+rsft+0  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lctl+rsft+0  (switch ;;@autogen@ 
     () C-S-0  break
-  ))
+  )
 
   ;; == !LCTL actions ==========================================================
-  action_!lctl+a (t! unmod_all (switch ;;@autogen@ 
+  action_!lctl+a (switch ;;@autogen@ 
     ((input virtual vk_nvim)) $nvim_action_!lctl+a break
     ((input virtual vk_obsidian)) $obsidian_action_!lctl+a break
     () C-a break
-  ))
-  action_!lctl+b (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+b (switch ;;@autogen@ 
     ((input virtual vk_obsidian)) $obsidian_action_!lctl+b break
     () C-b break
-  ))
-  action_!lctl+c  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+c  (switch ;;@autogen@ 
     () C-c  break
-  ))
-  action_!lctl+d (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+d (switch ;;@autogen@ 
     () C-d break
-  ))
-  action_!lctl+e  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+e  (switch ;;@autogen@ 
     ((input virtual vk_obsidian)) $obsidian_action_!lctl+e break
     () C-e  break
-  ))
-  action_!lctl+f  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+f  (switch ;;@autogen@ 
     () C-f  break
-  ))
-  action_!lctl+g  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+g  (switch ;;@autogen@ 
     () C-g  break
-  ))
-  action_!lctl+h  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+h  (switch ;;@autogen@ 
     () C-h  break
-  ))
-  action_!lctl+i  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+i  (switch ;;@autogen@ 
     () C-i  break
-  ))
-  action_!lctl+j  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+j  (switch ;;@autogen@ 
     () C-j  break
-  ))
-  action_!lctl+k  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+k  (switch ;;@autogen@ 
     () C-k  break
-  ))
-  action_!lctl+l  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+l  (switch ;;@autogen@ 
     () C-l  break
-  ))
-  action_!lctl+m  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+m  (switch ;;@autogen@ 
     () C-m  break
-  ))
-  action_!lctl+n  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+n  (switch ;;@autogen@ 
     () C-n  break
-  ))
-  action_!lctl+o  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+o  (switch ;;@autogen@ 
     () C-o  break
-  ))
-  action_!lctl+p  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+p  (switch ;;@autogen@ 
     ((input virtual vk_obsidian)) $obsidian_action_!lctl+p break
     () C-p  break
-  ))
-  action_!lctl+q  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+q  (switch ;;@autogen@ 
     () C-q  break
-  ))
-  action_!lctl+r  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+r  (switch ;;@autogen@ 
     ((input virtual vk_obsidian)) $obsidian_action_!lctl+r break
     () C-r  break
-  ))
-  action_!lctl+s  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+s  (switch ;;@autogen@ 
     () C-s  break
-  ))
-  action_!lctl+t  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+t  (switch ;;@autogen@ 
     () C-t  break
-  ))
-  action_!lctl+u  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+u  (switch ;;@autogen@ 
     () C-u  break
-  ))
-  action_!lctl+v  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+v  (switch ;;@autogen@ 
     () C-v  break
-  ))
-  action_!lctl+w  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+w  (switch ;;@autogen@ 
     () C-w  break
-  ))
-  action_!lctl+x  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+x  (switch ;;@autogen@ 
     () C-x  break
-  ))
-  action_!lctl+y  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+y  (switch ;;@autogen@ 
     () C-y  break
-  ))
-  action_!lctl+z  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+z  (switch ;;@autogen@ 
     () C-z  break
-  ))
-  action_!lctl+,  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+,  (switch ;;@autogen@ 
     ((input virtual vk_obsidian)) $obsidian_action_!lctl+, break
     () C-,  break
-  ))
-  action_!lctl+.  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+.  (switch ;;@autogen@ 
     () C-.  break
-  ))
-  action_!lctl+/  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+/  (switch ;;@autogen@ 
     () C-/  break
-  ))
-  action_!lctl+;  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+;  (switch ;;@autogen@ 
     () C-;  break
-  ))
-  action_!lctl+'  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+'  (switch ;;@autogen@ 
     () C-'  break
-  ))
-  action_!lctl+[  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+[  (switch ;;@autogen@ 
     () C-[  break
-  ))
-  action_!lctl+]  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+]  (switch ;;@autogen@ 
     () C-]  break
-  ))  
-  action_!lctl+\  (t! unmod_all (switch ;;@autogen@ 
+  )  
+  action_!lctl+\  (switch ;;@autogen@ 
     () C-\  break
-  ))
-  action_!lctl+-  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+-  (switch ;;@autogen@ 
     () C--  break
-  ))
-  action_!lctl+=  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+=  (switch ;;@autogen@ 
     () C-=  break
-  ))
-  action_!lctl+1  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+1  (switch ;;@autogen@ 
     () C-1  break
-  ))
-  action_!lctl+2  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+2  (switch ;;@autogen@ 
     () C-2  break
-  ))
-  action_!lctl+3  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+3  (switch ;;@autogen@ 
     () C-3  break
-  ))
-  action_!lctl+4  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+4  (switch ;;@autogen@ 
     () C-4  break
-  ))
-  action_!lctl+5  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+5  (switch ;;@autogen@ 
     () C-5  break
-  ))
-  action_!lctl+6  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+6  (switch ;;@autogen@ 
     () C-6  break
-  ))
-  action_!lctl+7  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+7  (switch ;;@autogen@ 
     () C-7  break
-  ))
-  action_!lctl+8  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+8  (switch ;;@autogen@ 
     () C-8  break
-  ))
-  action_!lctl+9  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+9  (switch ;;@autogen@ 
     () C-9  break
-  ))
-  action_!lctl+0  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+0  (switch ;;@autogen@ 
     () C-0  break
-  )) ;; ""
+  ) ;; ""
 
   ;; == !LCTL+LSFT actions ======================================================
-  action_!lctl+lsft+a (t! unmod_all (switch ;;@autogen@ 
+  action_!lctl+lsft+a (switch ;;@autogen@ 
     () C-S-a break
-  ))
-  action_!lctl+lsft+b (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+b (switch ;;@autogen@ 
     () C-S-b break
-  ))
-  action_!lctl+lsft+c  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+c  (switch ;;@autogen@ 
     () C-S-c  break
-  ))
-  action_!lctl+lsft+d (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+d (switch ;;@autogen@ 
     () C-S-d break
-  ))
-  action_!lctl+lsft+e  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+e  (switch ;;@autogen@ 
     () C-S-e  break
-  ))
-  action_!lctl+lsft+f  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+f  (switch ;;@autogen@ 
     () C-S-f  break
-  ))
-  action_!lctl+lsft+g  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+g  (switch ;;@autogen@ 
     () C-S-g  break
-  ))
-  action_!lctl+lsft+h  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+h  (switch ;;@autogen@ 
     () C-S-h  break
-  ))
-  action_!lctl+lsft+i  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+i  (switch ;;@autogen@ 
     () C-S-i  break
-  ))
-  action_!lctl+lsft+j  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+j  (switch ;;@autogen@ 
     () C-S-j  break
-  ))
-  action_!lctl+lsft+k  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+k  (switch ;;@autogen@ 
     () C-S-k  break
-  ))
-  action_!lctl+lsft+l  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+l  (switch ;;@autogen@ 
     () C-S-l  break
-  ))
-  action_!lctl+lsft+m  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+m  (switch ;;@autogen@ 
     () C-S-m  break
-  ))
-  action_!lctl+lsft+n  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+n  (switch ;;@autogen@ 
     () C-S-n  break
-  ))
-  action_!lctl+lsft+o  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+o  (switch ;;@autogen@ 
     () C-S-o  break
-  ))
-  action_!lctl+lsft+p  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+p  (switch ;;@autogen@ 
     ((input virtual vk_obsidian)) $obsidian_action_!lctl+lsft+p break
     () C-S-p  break
-  ))
-  action_!lctl+lsft+q  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+q  (switch ;;@autogen@ 
     () C-S-q  break
-  ))
-  action_!lctl+lsft+r  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+r  (switch ;;@autogen@ 
     () C-S-r  break
-  ))
-  action_!lctl+lsft+s  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+s  (switch ;;@autogen@ 
     () C-S-s  break
-  ))
-  action_!lctl+lsft+t  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+t  (switch ;;@autogen@ 
     () C-S-t  break
-  ))
-  action_!lctl+lsft+u  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+u  (switch ;;@autogen@ 
     () C-S-u  break
-  ))
-  action_!lctl+lsft+v  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+v  (switch ;;@autogen@ 
     () C-S-v  break
-  ))
-  action_!lctl+lsft+w  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+w  (switch ;;@autogen@ 
     () C-S-w  break
-  ))
-  action_!lctl+lsft+x  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+x  (switch ;;@autogen@ 
     () C-S-x  break
-  ))
-  action_!lctl+lsft+y  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+y  (switch ;;@autogen@ 
     () C-S-y  break
-  ))
-  action_!lctl+lsft+z  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+z  (switch ;;@autogen@ 
     () C-S-z  break
-  ))
-  action_!lctl+lsft+,  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+,  (switch ;;@autogen@ 
     () C-S-,  break
-  ))
-  action_!lctl+lsft+.  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+.  (switch ;;@autogen@ 
     () C-S-.  break
-  ))
-  action_!lctl+lsft+/  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+/  (switch ;;@autogen@ 
     () C-S-/  break
-  ))
-  action_!lctl+lsft+;  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+;  (switch ;;@autogen@ 
     () C-S-;  break
-  ))
-  action_!lctl+lsft+'  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+'  (switch ;;@autogen@ 
     () C-S-'  break
-  ))
-  action_!lctl+lsft+[  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+[  (switch ;;@autogen@ 
     () C-S-[  break
-  ))
-  action_!lctl+lsft+]  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+]  (switch ;;@autogen@ 
     () C-S-]  break
-  ))  
-  action_!lctl+lsft+\  (t! unmod_all (switch ;;@autogen@ 
+  )  
+  action_!lctl+lsft+\  (switch ;;@autogen@ 
     () C-S-\  break
-  ))
-  action_!lctl+lsft+-  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+-  (switch ;;@autogen@ 
     () C-S--  break
-  ))
-  action_!lctl+lsft+=  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+=  (switch ;;@autogen@ 
     () C-S-=  break
-  ))
-  action_!lctl+lsft+1  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+1  (switch ;;@autogen@ 
     () C-S-1  break
-  ))
-  action_!lctl+lsft+2  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+2  (switch ;;@autogen@ 
     () C-S-2  break
-  ))
-  action_!lctl+lsft+3  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+3  (switch ;;@autogen@ 
     () C-S-3  break
-  ))
-  action_!lctl+lsft+4  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+4  (switch ;;@autogen@ 
     () C-S-4  break
-  ))
-  action_!lctl+lsft+5  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+5  (switch ;;@autogen@ 
     () C-S-5  break
-  ))
-  action_!lctl+lsft+6  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+6  (switch ;;@autogen@ 
     () C-S-6  break
-  ))
-  action_!lctl+lsft+7  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+7  (switch ;;@autogen@ 
     () C-S-7  break
-  ))
-  action_!lctl+lsft+8  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+8  (switch ;;@autogen@ 
     () C-S-8  break
-  ))
-  action_!lctl+lsft+9  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+9  (switch ;;@autogen@ 
     () C-S-9  break
-  ))
-  action_!lctl+lsft+0  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+lsft+0  (switch ;;@autogen@ 
     () C-S-0  break
-  )) ;; ""
+  ) ;; ""
 
 
   ;; == !LCTL+RSFT actions ==========================================================
-  action_!lctl+rsft+a (t! unmod_all (switch ;;@autogen@ 
+  action_!lctl+rsft+a (switch ;;@autogen@ 
     () C-S-a break
-  ))
-  action_!lctl+rsft+b (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+b (switch ;;@autogen@ 
     () C-S-b break
-  ))
-  action_!lctl+rsft+c  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+c  (switch ;;@autogen@ 
     () C-S-c  break
-  ))
-  action_!lctl+rsft+d (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+d (switch ;;@autogen@ 
     () C-S-d break
-  ))
-  action_!lctl+rsft+e  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+e  (switch ;;@autogen@ 
     () C-S-e  break
-  ))
-  action_!lctl+rsft+f  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+f  (switch ;;@autogen@ 
     () C-S-f  break
-  ))
-  action_!lctl+rsft+g  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+g  (switch ;;@autogen@ 
     () C-S-g  break
-  ))
-  action_!lctl+rsft+h  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+h  (switch ;;@autogen@ 
     () C-S-h  break
-  ))
-  action_!lctl+rsft+i  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+i  (switch ;;@autogen@ 
     () C-S-i  break
-  ))
-  action_!lctl+rsft+j  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+j  (switch ;;@autogen@ 
     () C-S-j  break
-  ))
-  action_!lctl+rsft+k  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+k  (switch ;;@autogen@ 
     () C-S-k  break
-  ))
-  action_!lctl+rsft+l  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+l  (switch ;;@autogen@ 
     () C-S-l  break
-  ))
-  action_!lctl+rsft+m  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+m  (switch ;;@autogen@ 
     () C-S-m  break
-  ))
-  action_!lctl+rsft+n  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+n  (switch ;;@autogen@ 
     () C-S-n  break
-  ))
-  action_!lctl+rsft+o  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+o  (switch ;;@autogen@ 
     () C-S-o  break
-  ))
-  action_!lctl+rsft+p  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+p  (switch ;;@autogen@ 
     () C-S-p  break
-  ))
-  action_!lctl+rsft+q  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+q  (switch ;;@autogen@ 
     () C-S-q  break
-  ))
-  action_!lctl+rsft+r  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+r  (switch ;;@autogen@ 
     () C-S-r  break
-  ))
-  action_!lctl+rsft+s  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+s  (switch ;;@autogen@ 
     () C-S-s  break
-  ))
-  action_!lctl+rsft+t  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+t  (switch ;;@autogen@ 
     () C-S-t  break
-  ))
-  action_!lctl+rsft+u  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+u  (switch ;;@autogen@ 
     () C-S-u  break
-  ))
-  action_!lctl+rsft+v  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+v  (switch ;;@autogen@ 
     () C-S-v  break
-  ))
-  action_!lctl+rsft+w  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+w  (switch ;;@autogen@ 
     () C-S-w  break
-  ))
-  action_!lctl+rsft+x  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+x  (switch ;;@autogen@ 
     () C-S-x  break
-  ))
-  action_!lctl+rsft+y  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+y  (switch ;;@autogen@ 
     () C-S-y  break
-  ))
-  action_!lctl+rsft+z  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+z  (switch ;;@autogen@ 
     () C-S-z  break
-  ))
-  action_!lctl+rsft+,  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+,  (switch ;;@autogen@ 
     () C-S-,  break
-  ))
-  action_!lctl+rsft+.  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+.  (switch ;;@autogen@ 
     () C-S-.  break
-  ))
-  action_!lctl+rsft+/  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+/  (switch ;;@autogen@ 
     () C-S-/  break
-  ))
-  action_!lctl+rsft+;  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+;  (switch ;;@autogen@ 
     () C-S-;  break
-  ))
-  action_!lctl+rsft+'  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+'  (switch ;;@autogen@ 
     () C-S-'  break
-  ))
-  action_!lctl+rsft+[  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+[  (switch ;;@autogen@ 
     () C-S-[  break
-  ))
-  action_!lctl+rsft+]  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+]  (switch ;;@autogen@ 
     () C-S-]  break
-  ))  
-  action_!lctl+rsft+\  (t! unmod_all (switch ;;@autogen@ 
+  )  
+  action_!lctl+rsft+\  (switch ;;@autogen@ 
     () C-S-\  break
-  ))
-  action_!lctl+rsft+-  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+-  (switch ;;@autogen@ 
     () C-S--  break
-  ))
-  action_!lctl+rsft+=  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+=  (switch ;;@autogen@ 
     () C-S-=  break
-  ))
-  action_!lctl+rsft+1  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+1  (switch ;;@autogen@ 
     () C-S-1  break
-  ))
-  action_!lctl+rsft+2  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+2  (switch ;;@autogen@ 
     () C-S-2  break
-  ))
-  action_!lctl+rsft+3  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+3  (switch ;;@autogen@ 
     () C-S-3  break
-  ))
-  action_!lctl+rsft+4  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+4  (switch ;;@autogen@ 
     () C-S-4  break
-  ))
-  action_!lctl+rsft+5  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+5  (switch ;;@autogen@ 
     () C-S-5  break
-  ))
-  action_!lctl+rsft+6  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+6  (switch ;;@autogen@ 
     () C-S-6  break
-  ))
-  action_!lctl+rsft+7  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+7  (switch ;;@autogen@ 
     () C-S-7  break
-  ))
-  action_!lctl+rsft+8  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+8  (switch ;;@autogen@ 
     () C-S-8  break
-  ))
-  action_!lctl+rsft+9  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+9  (switch ;;@autogen@ 
     () C-S-9  break
-  ))
-  action_!lctl+rsft+0  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lctl+rsft+0  (switch ;;@autogen@ 
     () C-S-0  break
-  )) ;; ""
+  ) ;; ""
 
   ;; == LALT actions ==========================================================
-  action_lalt+a (t! unmod_all (switch ;;@autogen@ 
+  action_lalt+a (switch ;;@autogen@ 
     () A-a break
-  ))
-  action_lalt+b (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+b (switch ;;@autogen@ 
     () A-b break
-  ))
-  action_lalt+c  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+c  (switch ;;@autogen@ 
     () A-c  break
-  ))
-  action_lalt+d (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+d (switch ;;@autogen@ 
     () A-d break
-  ))
-  action_lalt+e  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+e  (switch ;;@autogen@ 
     () A-e  break
-  ))
-  action_lalt+f  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+f  (switch ;;@autogen@ 
     () A-f  break
-  ))
-  action_lalt+g  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+g  (switch ;;@autogen@ 
     () A-g  break
-  ))
-  action_lalt+h  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+h  (switch ;;@autogen@ 
     () A-h  break
-  ))
-  action_lalt+i  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+i  (switch ;;@autogen@ 
     () A-i  break
-  ))
-  action_lalt+j  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+j  (switch ;;@autogen@ 
     () A-j  break
-  ))
-  action_lalt+k  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+k  (switch ;;@autogen@ 
     () A-k  break
-  ))
-  action_lalt+l  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+l  (switch ;;@autogen@ 
     () A-l  break
-  ))
-  action_lalt+m  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+m  (switch ;;@autogen@ 
     () A-m  break
-  ))
-  action_lalt+n  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+n  (switch ;;@autogen@ 
     () A-n  break
-  ))
-  action_lalt+o  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+o  (switch ;;@autogen@ 
     () A-o  break
-  ))
-  action_lalt+p  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+p  (switch ;;@autogen@ 
     () A-p  break
-  ))
-  action_lalt+q  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+q  (switch ;;@autogen@ 
     () A-q  break
-  ))
-  action_lalt+r  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+r  (switch ;;@autogen@ 
     () A-r  break
-  ))
-  action_lalt+s  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+s  (switch ;;@autogen@ 
     () A-s  break
-  ))
-  action_lalt+t  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+t  (switch ;;@autogen@ 
     () A-t  break
-  ))
-  action_lalt+u  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+u  (switch ;;@autogen@ 
     () A-u  break
-  ))
-  action_lalt+v  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+v  (switch ;;@autogen@ 
     () A-v  break
-  ))
-  action_lalt+w  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+w  (switch ;;@autogen@ 
     () A-w  break
-  ))
-  action_lalt+x  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+x  (switch ;;@autogen@ 
     () A-x  break
-  ))
-  action_lalt+y  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+y  (switch ;;@autogen@ 
     () A-y  break
-  ))
-  action_lalt+z  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+z  (switch ;;@autogen@ 
     () A-z break
-  ))
-  action_lalt+,  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+,  (switch ;;@autogen@ 
     () A-, break
-  ))
-  action_lalt+.  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+.  (switch ;;@autogen@ 
     () A-.  break
-  ))
-  action_lalt+/  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+/  (switch ;;@autogen@ 
     () A-/  break
-  ))
-  action_lalt+;  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+;  (switch ;;@autogen@ 
     () A-;  break
-  ))
-  action_lalt+'  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+'  (switch ;;@autogen@ 
     () A-'  break
-  ))
-  action_lalt+[  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+[  (switch ;;@autogen@ 
     () A-[  break
-  ))
-  action_lalt+]  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+]  (switch ;;@autogen@ 
     () A-]  break
-  ))  ;; ""
-  action_lalt+\  (t! unmod_all (switch ;;@autogen@ 
+  )  ;; ""
+  action_lalt+\  (switch ;;@autogen@ 
     () A-\  break
-  ))  ;; ""
-  action_lalt+-  (t! unmod_all (switch ;;@autogen@ 
+  )  ;; ""
+  action_lalt+-  (switch ;;@autogen@ 
     () A--  break
-  ))
-  action_lalt+=  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+=  (switch ;;@autogen@ 
     () A-=  break
-  ))
-  action_lalt+1  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+1  (switch ;;@autogen@ 
     () A-1  break
-  ))
-  action_lalt+2  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+2  (switch ;;@autogen@ 
     () A-2  break
-  ))
-  action_lalt+3  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+3  (switch ;;@autogen@ 
     () A-3  break
-  ))
-  action_lalt+4  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+4  (switch ;;@autogen@ 
     () A-4  break
-  ))
-  action_lalt+5  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+5  (switch ;;@autogen@ 
     () A-5  break
-  ))
-  action_lalt+6  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+6  (switch ;;@autogen@ 
     () A-6  break
-  ))
-  action_lalt+7  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+7  (switch ;;@autogen@ 
     () A-7  break
-  ))
-  action_lalt+8  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+8  (switch ;;@autogen@ 
     () A-8  break
-  ))
-  action_lalt+9  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+9  (switch ;;@autogen@ 
     () A-9  break
-  ))
-  action_lalt+0  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+0  (switch ;;@autogen@ 
     () A-0  break
-  ))
+  )
 
   ;; == LALT+LSFT actions ==========================================================
-  action_lalt+lsft+a (t! unmod_all (switch ;;@autogen@ 
+  action_lalt+lsft+a (switch ;;@autogen@ 
     () A-S-a break
-  ))
-  action_lalt+lsft+b (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+b (switch ;;@autogen@ 
     () A-S-b break
-  ))
-  action_lalt+lsft+c  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+c  (switch ;;@autogen@ 
     () A-S-c  break
-  ))
-  action_lalt+lsft+d (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+d (switch ;;@autogen@ 
     () A-S-d break
-  ))
-  action_lalt+lsft+e  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+e  (switch ;;@autogen@ 
     () A-S-e  break
-  ))
-  action_lalt+lsft+f  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+f  (switch ;;@autogen@ 
     () A-S-f  break
-  ))
-  action_lalt+lsft+g  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+g  (switch ;;@autogen@ 
     () A-S-g  break
-  ))
-  action_lalt+lsft+h  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+h  (switch ;;@autogen@ 
     () A-S-h  break
-  ))
-  action_lalt+lsft+i  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+i  (switch ;;@autogen@ 
     () A-S-i  break
-  ))
-  action_lalt+lsft+j  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+j  (switch ;;@autogen@ 
     () A-S-j  break
-  ))
-  action_lalt+lsft+k  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+k  (switch ;;@autogen@ 
     () A-S-k  break
-  ))
-  action_lalt+lsft+l  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+l  (switch ;;@autogen@ 
     () A-S-l  break
-  ))
-  action_lalt+lsft+m  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+m  (switch ;;@autogen@ 
     () A-S-m  break
-  ))
-  action_lalt+lsft+n  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+n  (switch ;;@autogen@ 
     () A-S-n  break
-  ))
-  action_lalt+lsft+o  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+o  (switch ;;@autogen@ 
     () A-S-o  break
-  ))
-  action_lalt+lsft+p  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+p  (switch ;;@autogen@ 
     () A-S-p  break
-  ))
-  action_lalt+lsft+q  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+q  (switch ;;@autogen@ 
     () A-S-q  break
-  ))
-  action_lalt+lsft+r  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+r  (switch ;;@autogen@ 
     () A-S-r  break
-  ))
-  action_lalt+lsft+s  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+s  (switch ;;@autogen@ 
     () A-S-s  break
-  ))
-  action_lalt+lsft+t  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+t  (switch ;;@autogen@ 
     () A-S-t  break
-  ))
-  action_lalt+lsft+u  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+u  (switch ;;@autogen@ 
     () A-S-u  break
-  ))
-  action_lalt+lsft+v  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+v  (switch ;;@autogen@ 
     () A-S-v  break
-  ))
-  action_lalt+lsft+w  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+w  (switch ;;@autogen@ 
     () A-S-w  break
-  ))
-  action_lalt+lsft+x  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+x  (switch ;;@autogen@ 
     () A-S-x  break
-  ))
-  action_lalt+lsft+y  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+y  (switch ;;@autogen@ 
     () A-S-y  break
-  ))
-  action_lalt+lsft+z  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+z  (switch ;;@autogen@ 
     () A-S-z break
-  ))
-  action_lalt+lsft+,  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+,  (switch ;;@autogen@ 
     () A-S-, break
-  ))
-  action_lalt+lsft+.  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+.  (switch ;;@autogen@ 
     () A-S-.  break
-  ))
-  action_lalt+lsft+/  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+/  (switch ;;@autogen@ 
     () A-S-/  break
-  ))
-  action_lalt+lsft+;  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+;  (switch ;;@autogen@ 
     () A-S-;  break
-  ))
-  action_lalt+lsft+'  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+'  (switch ;;@autogen@ 
     () A-S-'  break
-  ))
-  action_lalt+lsft+[  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+[  (switch ;;@autogen@ 
     () A-S-[  break
-  ))
-  action_lalt+lsft+]  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+]  (switch ;;@autogen@ 
     () A-S-]  break
-  ))  ;; ""
-  action_lalt+lsft+\  (t! unmod_all (switch ;;@autogen@ 
+  )  ;; ""
+  action_lalt+lsft+\  (switch ;;@autogen@ 
     () A-S-\  break
-  ))  ;; ""
-  action_lalt+lsft+-  (t! unmod_all (switch ;;@autogen@ 
+  )  ;; ""
+  action_lalt+lsft+-  (switch ;;@autogen@ 
     () A-S--  break
-  ))
-  action_lalt+lsft+=  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+=  (switch ;;@autogen@ 
     () A-S-=  break
-  ))
-  action_lalt+lsft+1  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+1  (switch ;;@autogen@ 
     () A-S-1  break
-  ))
-  action_lalt+lsft+2  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+2  (switch ;;@autogen@ 
     () A-S-2  break
-  ))
-  action_lalt+lsft+3  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+3  (switch ;;@autogen@ 
     () A-S-3  break
-  ))
-  action_lalt+lsft+4  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+4  (switch ;;@autogen@ 
     () A-S-4  break
-  ))
-  action_lalt+lsft+5  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+5  (switch ;;@autogen@ 
     () A-S-5  break
-  ))
-  action_lalt+lsft+6  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+6  (switch ;;@autogen@ 
     () A-S-6  break
-  ))
-  action_lalt+lsft+7  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+7  (switch ;;@autogen@ 
     () A-S-7  break
-  ))
-  action_lalt+lsft+8  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+8  (switch ;;@autogen@ 
     () A-S-8  break
-  ))
-  action_lalt+lsft+9  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+9  (switch ;;@autogen@ 
     () A-S-9  break
-  ))
-  action_lalt+lsft+0  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+lsft+0  (switch ;;@autogen@ 
     () A-S-0  break
-  ))
+  )
 
   ;; == LALT+RSFT actions ==========================================================
-  action_lalt+rsft+a (t! unmod_all (switch ;;@autogen@ 
+  action_lalt+rsft+a (switch ;;@autogen@ 
     () A-S-a break
-  ))
-  action_lalt+rsft+b (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+b (switch ;;@autogen@ 
     () A-S-b break
-  ))
-  action_lalt+rsft+c  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+c  (switch ;;@autogen@ 
     () A-S-c  break
-  ))
-  action_lalt+rsft+d (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+d (switch ;;@autogen@ 
     () A-S-d break
-  ))
-  action_lalt+rsft+e  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+e  (switch ;;@autogen@ 
     () A-S-e  break
-  ))
-  action_lalt+rsft+f  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+f  (switch ;;@autogen@ 
     () A-S-f  break
-  ))
-  action_lalt+rsft+g  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+g  (switch ;;@autogen@ 
     () A-S-g  break
-  ))
-  action_lalt+rsft+h  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+h  (switch ;;@autogen@ 
     () A-S-h  break
-  ))
-  action_lalt+rsft+i  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+i  (switch ;;@autogen@ 
     () A-S-i  break
-  ))
-  action_lalt+rsft+j  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+j  (switch ;;@autogen@ 
     () A-S-j  break
-  ))
-  action_lalt+rsft+k  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+k  (switch ;;@autogen@ 
     () A-S-k  break
-  ))
-  action_lalt+rsft+l  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+l  (switch ;;@autogen@ 
     () A-S-l  break
-  ))
-  action_lalt+rsft+m  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+m  (switch ;;@autogen@ 
     () A-S-m  break
-  ))
-  action_lalt+rsft+n  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+n  (switch ;;@autogen@ 
     () A-S-n  break
-  ))
-  action_lalt+rsft+o  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+o  (switch ;;@autogen@ 
     () A-S-o  break
-  ))
-  action_lalt+rsft+p  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+p  (switch ;;@autogen@ 
     () A-S-p  break
-  ))
-  action_lalt+rsft+q  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+q  (switch ;;@autogen@ 
     () A-S-q  break
-  ))
-  action_lalt+rsft+r  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+r  (switch ;;@autogen@ 
     () A-S-r  break
-  ))
-  action_lalt+rsft+s  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+s  (switch ;;@autogen@ 
     () A-S-s  break
-  ))
-  action_lalt+rsft+t  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+t  (switch ;;@autogen@ 
     () A-S-t  break
-  ))
-  action_lalt+rsft+u  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+u  (switch ;;@autogen@ 
     () A-S-u  break
-  ))
-  action_lalt+rsft+v  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+v  (switch ;;@autogen@ 
     () A-S-v  break
-  ))
-  action_lalt+rsft+w  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+w  (switch ;;@autogen@ 
     () A-S-w  break
-  ))
-  action_lalt+rsft+x  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+x  (switch ;;@autogen@ 
     () A-S-x  break
-  ))
-  action_lalt+rsft+y  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+y  (switch ;;@autogen@ 
     () A-S-y  break
-  ))
-  action_lalt+rsft+z  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+z  (switch ;;@autogen@ 
     () A-S-z break
-  ))
-  action_lalt+rsft+,  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+,  (switch ;;@autogen@ 
     () A-S-, break
-  ))
-  action_lalt+rsft+.  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+.  (switch ;;@autogen@ 
     () A-S-.  break
-  ))
-  action_lalt+rsft+/  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+/  (switch ;;@autogen@ 
     () A-S-/  break
-  ))
-  action_lalt+rsft+;  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+;  (switch ;;@autogen@ 
     () A-S-;  break
-  ))
-  action_lalt+rsft+'  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+'  (switch ;;@autogen@ 
     () A-S-'  break
-  ))
-  action_lalt+rsft+[  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+[  (switch ;;@autogen@ 
     () A-S-[  break
-  ))
-  action_lalt+rsft+]  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+]  (switch ;;@autogen@ 
     () A-S-]  break
-  ))  ;; ""
-  action_lalt+rsft+\  (t! unmod_all (switch ;;@autogen@ 
+  )  ;; ""
+  action_lalt+rsft+\  (switch ;;@autogen@ 
     () A-S-\  break
-  ))  ;; ""
-  action_lalt+rsft+-  (t! unmod_all (switch ;;@autogen@ 
+  )  ;; ""
+  action_lalt+rsft+-  (switch ;;@autogen@ 
     () A-S--  break
-  ))
-  action_lalt+rsft+=  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+=  (switch ;;@autogen@ 
     () A-S-=  break
-  ))
-  action_lalt+rsft+1  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+1  (switch ;;@autogen@ 
     () A-S-1  break
-  ))
-  action_lalt+rsft+2  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+2  (switch ;;@autogen@ 
     () A-S-2  break
-  ))
-  action_lalt+rsft+3  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+3  (switch ;;@autogen@ 
     () A-S-3  break
-  ))
-  action_lalt+rsft+4  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+4  (switch ;;@autogen@ 
     () A-S-4  break
-  ))
-  action_lalt+rsft+5  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+5  (switch ;;@autogen@ 
     () A-S-5  break
-  ))
-  action_lalt+rsft+6  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+6  (switch ;;@autogen@ 
     () A-S-6  break
-  ))
-  action_lalt+rsft+7  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+7  (switch ;;@autogen@ 
     () A-S-7  break
-  ))
-  action_lalt+rsft+8  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+8  (switch ;;@autogen@ 
     () A-S-8  break
-  ))
-  action_lalt+rsft+9  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+9  (switch ;;@autogen@ 
     () A-S-9  break
-  ))
-  action_lalt+rsft+0  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_lalt+rsft+0  (switch ;;@autogen@ 
     () A-S-0  break
-  ))
+  )
 
   ;; == !LALT actions ==========================================================
-  action_!lalt+a (t! unmod_all (switch ;;@autogen@ 
+  action_!lalt+a (switch ;;@autogen@ 
     () A-a break
-  ))
-  action_!lalt+b (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+b (switch ;;@autogen@ 
     () A-b break
-  ))
-  action_!lalt+c  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+c  (switch ;;@autogen@ 
     () A-c  break
-  ))
-  action_!lalt+d (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+d (switch ;;@autogen@ 
     () A-d break
-  ))
-  action_!lalt+e  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+e  (switch ;;@autogen@ 
     () A-e  break
-  ))
-  action_!lalt+f  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+f  (switch ;;@autogen@ 
     () A-f  break
-  ))
-  action_!lalt+g  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+g  (switch ;;@autogen@ 
     () A-g  break
-  ))
-  action_!lalt+h  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+h  (switch ;;@autogen@ 
     () A-h  break
-  ))
-  action_!lalt+i  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+i  (switch ;;@autogen@ 
     () A-i  break
-  ))
-  action_!lalt+j  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+j  (switch ;;@autogen@ 
     () A-j  break
-  ))
-  action_!lalt+k  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+k  (switch ;;@autogen@ 
     () A-k  break
-  ))
-  action_!lalt+l  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+l  (switch ;;@autogen@ 
     () A-l  break
-  ))
-  action_!lalt+m  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+m  (switch ;;@autogen@ 
     () A-m  break
-  ))
-  action_!lalt+n  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+n  (switch ;;@autogen@ 
     () A-n  break
-  ))
-  action_!lalt+o  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+o  (switch ;;@autogen@ 
     () A-o  break
-  ))
-  action_!lalt+p  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+p  (switch ;;@autogen@ 
     () A-p  break
-  ))
-  action_!lalt+q  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+q  (switch ;;@autogen@ 
     () A-q  break
-  ))
-  action_!lalt+r  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+r  (switch ;;@autogen@ 
     () A-r  break
-  ))
-  action_!lalt+s  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+s  (switch ;;@autogen@ 
     () A-s  break
-  ))
-  action_!lalt+t  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+t  (switch ;;@autogen@ 
     () A-t  break
-  ))
-  action_!lalt+u  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+u  (switch ;;@autogen@ 
     () A-u  break
-  ))
-  action_!lalt+v  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+v  (switch ;;@autogen@ 
     () A-v  break
-  ))
-  action_!lalt+w  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+w  (switch ;;@autogen@ 
     () A-w  break
-  ))
-  action_!lalt+x  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+x  (switch ;;@autogen@ 
     () A-x  break
-  ))
-  action_!lalt+y  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+y  (switch ;;@autogen@ 
     () A-y  break
-  ))
-  action_!lalt+z  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+z  (switch ;;@autogen@ 
     () A-z  break
-  ))
-  action_!lalt+,  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+,  (switch ;;@autogen@ 
     () A-,  break
-  ))
-  action_!lalt+.  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+.  (switch ;;@autogen@ 
     () A-.  break
-  ))
-  action_!lalt+/  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+/  (switch ;;@autogen@ 
     () A-/  break
-  ))
-  action_!lalt+;  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+;  (switch ;;@autogen@ 
     () A-;  break
-  ))
-  action_!lalt+'  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+'  (switch ;;@autogen@ 
     () A-'  break
-  ))
-  action_!lalt+[  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+[  (switch ;;@autogen@ 
     () A-[  break
-  ))
-  action_!lalt+]  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+]  (switch ;;@autogen@ 
     () A-]  break
-  ))  
-  action_!lalt+\  (t! unmod_all (switch ;;@autogen@ 
+  )  
+  action_!lalt+\  (switch ;;@autogen@ 
     () A-\  break
-  ))
-  action_!lalt+-  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+-  (switch ;;@autogen@ 
     () A--  break
-  ))
-  action_!lalt+=  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+=  (switch ;;@autogen@ 
     () A-=  break
-  ))
-  action_!lalt+1  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+1  (switch ;;@autogen@ 
     () A-1  break
-  ))
-  action_!lalt+2  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+2  (switch ;;@autogen@ 
     () A-2  break
-  ))
-  action_!lalt+3  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+3  (switch ;;@autogen@ 
     () A-3  break
-  ))
-  action_!lalt+4  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+4  (switch ;;@autogen@ 
     () A-4  break
-  ))
-  action_!lalt+5  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+5  (switch ;;@autogen@ 
     () A-5  break
-  ))
-  action_!lalt+6  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+6  (switch ;;@autogen@ 
     () A-6  break
-  ))
-  action_!lalt+7  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+7  (switch ;;@autogen@ 
     () A-7  break
-  ))
-  action_!lalt+8  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+8  (switch ;;@autogen@ 
     () A-8  break
-  ))
-  action_!lalt+9  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+9  (switch ;;@autogen@ 
     () A-9  break
-  ))
-  action_!lalt+0  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+0  (switch ;;@autogen@ 
     () A-0  break
-  )) ;; ""
+  ) ;; ""
 
   ;; == !LALT+LSFT actions ==========================================================
-  action_!lalt+lsft+a (t! unmod_all (switch ;;@autogen@ 
+  action_!lalt+lsft+a (switch ;;@autogen@ 
     () A-S-a break
-  ))
-  action_!lalt+lsft+b (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+b (switch ;;@autogen@ 
     () A-S-b break
-  ))
-  action_!lalt+lsft+c  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+c  (switch ;;@autogen@ 
     () A-S-c  break
-  ))
-  action_!lalt+lsft+d (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+d (switch ;;@autogen@ 
     () A-S-d break
-  ))
-  action_!lalt+lsft+e  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+e  (switch ;;@autogen@ 
     () A-S-e  break
-  ))
-  action_!lalt+lsft+f  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+f  (switch ;;@autogen@ 
     () A-S-f  break
-  ))
-  action_!lalt+lsft+g  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+g  (switch ;;@autogen@ 
     () A-S-g  break
-  ))
-  action_!lalt+lsft+h  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+h  (switch ;;@autogen@ 
     () A-S-h  break
-  ))
-  action_!lalt+lsft+i  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+i  (switch ;;@autogen@ 
     () A-S-i  break
-  ))
-  action_!lalt+lsft+j  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+j  (switch ;;@autogen@ 
     () A-S-j  break
-  ))
-  action_!lalt+lsft+k  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+k  (switch ;;@autogen@ 
     () A-S-k  break
-  ))
-  action_!lalt+lsft+l  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+l  (switch ;;@autogen@ 
     () A-S-l  break
-  ))
-  action_!lalt+lsft+m  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+m  (switch ;;@autogen@ 
     () A-S-m  break
-  ))
-  action_!lalt+lsft+n  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+n  (switch ;;@autogen@ 
     () A-S-n  break
-  ))
-  action_!lalt+lsft+o  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+o  (switch ;;@autogen@ 
     () A-S-o  break
-  ))
-  action_!lalt+lsft+p  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+p  (switch ;;@autogen@ 
     () A-S-p  break
-  ))
-  action_!lalt+lsft+q  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+q  (switch ;;@autogen@ 
     () A-S-q  break
-  ))
-  action_!lalt+lsft+r  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+r  (switch ;;@autogen@ 
     () A-S-r  break
-  ))
-  action_!lalt+lsft+s  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+s  (switch ;;@autogen@ 
     () A-S-s  break
-  ))
-  action_!lalt+lsft+t  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+t  (switch ;;@autogen@ 
     () A-S-t  break
-  ))
-  action_!lalt+lsft+u  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+u  (switch ;;@autogen@ 
     () A-S-u  break
-  ))
-  action_!lalt+lsft+v  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+v  (switch ;;@autogen@ 
     () A-S-v  break
-  ))
-  action_!lalt+lsft+w  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+w  (switch ;;@autogen@ 
     () A-S-w  break
-  ))
-  action_!lalt+lsft+x  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+x  (switch ;;@autogen@ 
     () A-S-x  break
-  ))
-  action_!lalt+lsft+y  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+y  (switch ;;@autogen@ 
     () A-S-y  break
-  ))
-  action_!lalt+lsft+z  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+z  (switch ;;@autogen@ 
     () A-S-z break
-  ))
-  action_!lalt+lsft+,  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+,  (switch ;;@autogen@ 
     () A-S-, break
-  ))
-  action_!lalt+lsft+.  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+.  (switch ;;@autogen@ 
     () A-S-.  break
-  ))
-  action_!lalt+lsft+/  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+/  (switch ;;@autogen@ 
     () A-S-/  break
-  ))
-  action_!lalt+lsft+;  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+;  (switch ;;@autogen@ 
     () A-S-;  break
-  ))
-  action_!lalt+lsft+'  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+'  (switch ;;@autogen@ 
     () A-S-'  break
-  ))
-  action_!lalt+lsft+[  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+[  (switch ;;@autogen@ 
     () A-S-[  break
-  ))
-  action_!lalt+lsft+]  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+]  (switch ;;@autogen@ 
     () A-S-]  break
-  ))  ;; ""
-  action_!lalt+lsft+\  (t! unmod_all (switch ;;@autogen@ 
+  )  ;; ""
+  action_!lalt+lsft+\  (switch ;;@autogen@ 
     () A-S-\  break
-  ))  ;; ""
-  action_!lalt+lsft+-  (t! unmod_all (switch ;;@autogen@ 
+  )  ;; ""
+  action_!lalt+lsft+-  (switch ;;@autogen@ 
     () A-S--  break
-  ))
-  action_!lalt+lsft+=  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+=  (switch ;;@autogen@ 
     () A-S-=  break
-  ))
-  action_!lalt+lsft+1  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+1  (switch ;;@autogen@ 
     () A-S-1  break
-  ))
-  action_!lalt+lsft+2  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+2  (switch ;;@autogen@ 
     () A-S-2  break
-  ))
-  action_!lalt+lsft+3  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+3  (switch ;;@autogen@ 
     () A-S-3  break
-  ))
-  action_!lalt+lsft+4  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+4  (switch ;;@autogen@ 
     () A-S-4  break
-  ))
-  action_!lalt+lsft+5  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+5  (switch ;;@autogen@ 
     () A-S-5  break
-  ))
-  action_!lalt+lsft+6  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+6  (switch ;;@autogen@ 
     () A-S-6  break
-  ))
-  action_!lalt+lsft+7  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+7  (switch ;;@autogen@ 
     () A-S-7  break
-  ))
-  action_!lalt+lsft+8  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+8  (switch ;;@autogen@ 
     () A-S-8  break
-  ))
-  action_!lalt+lsft+9  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+9  (switch ;;@autogen@ 
     () A-S-9  break
-  ))
-  action_!lalt+lsft+0  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+lsft+0  (switch ;;@autogen@ 
     () A-S-0  break
-  ))
+  )
 
   ;; == !LALT+RSFT actions ==========================================================
-  action_!lalt+rsft+a (t! unmod_all (switch ;;@autogen@ 
+  action_!lalt+rsft+a (switch ;;@autogen@ 
     () A-S-a break
-  ))
-  action_!lalt+rsft+b (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+b (switch ;;@autogen@ 
     () A-S-b break
-  ))
-  action_!lalt+rsft+c  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+c  (switch ;;@autogen@ 
     () A-S-c  break
-  ))
-  action_!lalt+rsft+d (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+d (switch ;;@autogen@ 
     () A-S-d break
-  ))
-  action_!lalt+rsft+e  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+e  (switch ;;@autogen@ 
     () A-S-e  break
-  ))
-  action_!lalt+rsft+f  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+f  (switch ;;@autogen@ 
     () A-S-f  break
-  ))
-  action_!lalt+rsft+g  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+g  (switch ;;@autogen@ 
     () A-S-g  break
-  ))
-  action_!lalt+rsft+h  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+h  (switch ;;@autogen@ 
     () A-S-h  break
-  ))
-  action_!lalt+rsft+i  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+i  (switch ;;@autogen@ 
     () A-S-i  break
-  ))
-  action_!lalt+rsft+j  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+j  (switch ;;@autogen@ 
     () A-S-j  break
-  ))
-  action_!lalt+rsft+k  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+k  (switch ;;@autogen@ 
     () A-S-k  break
-  ))
-  action_!lalt+rsft+l  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+l  (switch ;;@autogen@ 
     () A-S-l  break
-  ))
-  action_!lalt+rsft+m  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+m  (switch ;;@autogen@ 
     () A-S-m  break
-  ))
-  action_!lalt+rsft+n  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+n  (switch ;;@autogen@ 
     () A-S-n  break
-  ))
-  action_!lalt+rsft+o  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+o  (switch ;;@autogen@ 
     () A-S-o  break
-  ))
-  action_!lalt+rsft+p  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+p  (switch ;;@autogen@ 
     () A-S-p  break
-  ))
-  action_!lalt+rsft+q  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+q  (switch ;;@autogen@ 
     () A-S-q  break
-  ))
-  action_!lalt+rsft+r  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+r  (switch ;;@autogen@ 
     () A-S-r  break
-  ))
-  action_!lalt+rsft+s  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+s  (switch ;;@autogen@ 
     () A-S-s  break
-  ))
-  action_!lalt+rsft+t  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+t  (switch ;;@autogen@ 
     () A-S-t  break
-  ))
-  action_!lalt+rsft+u  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+u  (switch ;;@autogen@ 
     () A-S-u  break
-  ))
-  action_!lalt+rsft+v  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+v  (switch ;;@autogen@ 
     () A-S-v  break
-  ))
-  action_!lalt+rsft+w  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+w  (switch ;;@autogen@ 
     () A-S-w  break
-  ))
-  action_!lalt+rsft+x  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+x  (switch ;;@autogen@ 
     () A-S-x  break
-  ))
-  action_!lalt+rsft+y  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+y  (switch ;;@autogen@ 
     () A-S-y  break
-  ))
-  action_!lalt+rsft+z  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+z  (switch ;;@autogen@ 
     () A-S-z break
-  ))
-  action_!lalt+rsft+,  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+,  (switch ;;@autogen@ 
     () A-S-, break
-  ))
-  action_!lalt+rsft+.  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+.  (switch ;;@autogen@ 
     () A-S-.  break
-  ))
-  action_!lalt+rsft+/  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+/  (switch ;;@autogen@ 
     () A-S-/  break
-  ))
-  action_!lalt+rsft+;  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+;  (switch ;;@autogen@ 
     () A-S-;  break
-  ))
-  action_!lalt+rsft+'  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+'  (switch ;;@autogen@ 
     () A-S-'  break
-  ))
-  action_!lalt+rsft+[  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+[  (switch ;;@autogen@ 
     () A-S-[  break
-  ))
-  action_!lalt+rsft+]  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+]  (switch ;;@autogen@ 
     () A-S-]  break
-  ))  ;; ""
-  action_!lalt+rsft+\  (t! unmod_all (switch ;;@autogen@ 
+  )  ;; ""
+  action_!lalt+rsft+\  (switch ;;@autogen@ 
     () A-S-\  break
-  ))  ;; ""
-  action_!lalt+rsft+-  (t! unmod_all (switch ;;@autogen@ 
+  )  ;; ""
+  action_!lalt+rsft+-  (switch ;;@autogen@ 
     () A-S--  break
-  ))
-  action_!lalt+rsft+=  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+=  (switch ;;@autogen@ 
     () A-S-=  break
-  ))
-  action_!lalt+rsft+1  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+1  (switch ;;@autogen@ 
     () A-S-1  break
-  ))
-  action_!lalt+rsft+2  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+2  (switch ;;@autogen@ 
     () A-S-2  break
-  ))
-  action_!lalt+rsft+3  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+3  (switch ;;@autogen@ 
     () A-S-3  break
-  ))
-  action_!lalt+rsft+4  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+4  (switch ;;@autogen@ 
     () A-S-4  break
-  ))
-  action_!lalt+rsft+5  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+5  (switch ;;@autogen@ 
     () A-S-5  break
-  ))
-  action_!lalt+rsft+6  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+6  (switch ;;@autogen@ 
     () A-S-6  break
-  ))
-  action_!lalt+rsft+7  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+7  (switch ;;@autogen@ 
     () A-S-7  break
-  ))
-  action_!lalt+rsft+8  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+8  (switch ;;@autogen@ 
     () A-S-8  break
-  ))
-  action_!lalt+rsft+9  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+9  (switch ;;@autogen@ 
     () A-S-9  break
-  ))
-  action_!lalt+rsft+0  (t! unmod_all (switch ;;@autogen@ 
+  )
+  action_!lalt+rsft+0  (switch ;;@autogen@ 
     () A-S-0  break
-  ))
+  )
 
   ;; == LMET actions ==========================================================
-  action_lmet+a (t! unmod_all (switch ;;@autogen@ 
-    () A-a break
-  ))
-  action_lmet+b (t! unmod_all (switch ;;@autogen@ 
-    () A-b break
-  ))
-  action_lmet+c  (t! unmod_all (switch ;;@autogen@ 
-    () A-c  break
-  ))
-  action_lmet+d (t! unmod_all (switch ;;@autogen@ 
-    () A-d break
-  ))
-  action_lmet+e  (t! unmod_all (switch ;;@autogen@ 
-    () A-e  break
-  ))
-  action_lmet+f  (t! unmod_all (switch ;;@autogen@ 
-    () A-f  break
-  ))
-  action_lmet+g  (t! unmod_all (switch ;;@autogen@ 
-    () A-g  break
-  ))
-  action_lmet+h  (t! unmod_all (switch ;;@autogen@ 
-    () A-h  break
-  ))
-  action_lmet+i  (t! unmod_all (switch ;;@autogen@ 
-    () A-i  break
-  ))
-  action_lmet+j  (t! unmod_all (switch ;;@autogen@ 
-    () A-j  break
-  ))
-  action_lmet+k  (t! unmod_all (switch ;;@autogen@ 
-    () A-k  break
-  ))
-  action_lmet+l  (t! unmod_all (switch ;;@autogen@ 
-    () A-l  break
-  ))
-  action_lmet+m  (t! unmod_all (switch ;;@autogen@ 
-    () A-m  break
-  ))
-  action_lmet+n  (t! unmod_all (switch ;;@autogen@ 
-    () A-n  break
-  ))
-  action_lmet+o  (t! unmod_all (switch ;;@autogen@ 
-    () A-o  break
-  ))
-  action_lmet+p  (t! unmod_all (switch ;;@autogen@ 
-    () A-p  break
-  ))
-  action_lmet+q  (t! unmod_all (switch ;;@autogen@ 
-    () A-q  break
-  ))
-  action_lmet+r  (t! unmod_all (switch ;;@autogen@ 
-    () A-r  break
-  ))
-  action_lmet+s  (t! unmod_all (switch ;;@autogen@ 
-    () A-s  break
-  ))
-  action_lmet+t  (t! unmod_all (switch ;;@autogen@ 
-    () A-t  break
-  ))
-  action_lmet+u  (t! unmod_all (switch ;;@autogen@ 
-    () A-u  break
-  ))
-  action_lmet+v  (t! unmod_all (switch ;;@autogen@ 
-    () A-v  break
-  ))
-  action_lmet+w  (t! unmod_all (switch ;;@autogen@ 
-    () A-w  break
-  ))
-  action_lmet+x  (t! unmod_all (switch ;;@autogen@ 
-    () A-x  break
-  ))
-  action_lmet+y  (t! unmod_all (switch ;;@autogen@ 
-    () A-y  break
-  ))
-  action_lmet+z  (t! unmod_all (switch ;;@autogen@ 
-    () A-z break
-  ))
-  action_lmet+,  (t! unmod_all (switch ;;@autogen@ 
-    () A-, break
-  ))
-  action_lmet+.  (t! unmod_all (switch ;;@autogen@ 
-    () A-.  break
-  ))
-  action_lmet+/  (t! unmod_all (switch ;;@autogen@ 
-    () A-/  break
-  ))
-  action_lmet+;  (t! unmod_all (switch ;;@autogen@ 
-    () A-;  break
-  ))
-  action_lmet+'  (t! unmod_all (switch ;;@autogen@ 
-    () A-'  break
-  ))
-  action_lmet+[  (t! unmod_all (switch ;;@autogen@ 
-    () A-[  break
-  ))
-  action_lmet+]  (t! unmod_all (switch ;;@autogen@ 
-    () A-]  break
-  ))  ;; ""
-  action_lmet+\  (t! unmod_all (switch ;;@autogen@ 
-    () A-\  break
-  ))  ;; ""
-  action_lmet+-  (t! unmod_all (switch ;;@autogen@ 
-    () A--  break
-  ))
-  action_lmet+=  (t! unmod_all (switch ;;@autogen@ 
-    () A-=  break
-  ))
-  action_lmet+1  (t! unmod_all (switch ;;@autogen@ 
-    () A-1  break
-  ))
-  action_lmet+2  (t! unmod_all (switch ;;@autogen@ 
-    () A-2  break
-  ))
-  action_lmet+3  (t! unmod_all (switch ;;@autogen@ 
-    () A-3  break
-  ))
-  action_lmet+4  (t! unmod_all (switch ;;@autogen@ 
-    () A-4  break
-  ))
-  action_lmet+5  (t! unmod_all (switch ;;@autogen@ 
-    () A-5  break
-  ))
-  action_lmet+6  (t! unmod_all (switch ;;@autogen@ 
-    () A-6  break
-  ))
-  action_lmet+7  (t! unmod_all (switch ;;@autogen@ 
-    () A-7  break
-  ))
-  action_lmet+8  (t! unmod_all (switch ;;@autogen@ 
-    () A-8  break
-  ))
-  action_lmet+9  (t! unmod_all (switch ;;@autogen@ 
-    () A-9  break
-  ))
-  action_lmet+0  (t! unmod_all (switch ;;@autogen@ 
-    () A-0  break
-  ))
+  action_lmet+a (switch ;;@autogen@ 
+    () M-a break
+  )
+  action_lmet+b (switch ;;@autogen@ 
+    () M-b break
+  )
+  action_lmet+c  (switch ;;@autogen@ 
+    () M-c  break
+  )
+  action_lmet+d (switch ;;@autogen@ 
+    () M-d break
+  )
+  action_lmet+e  (switch ;;@autogen@ 
+    () M-e  break
+  )
+  action_lmet+f  (switch ;;@autogen@ 
+    () M-f  break
+  )
+  action_lmet+g  (switch ;;@autogen@ 
+    () M-g  break
+  )
+  action_lmet+h  (switch ;;@autogen@ 
+    () M-h  break
+  )
+  action_lmet+i  (switch ;;@autogen@ 
+    () M-i  break
+  )
+  action_lmet+j  (switch ;;@autogen@ 
+    () M-j  break
+  )
+  action_lmet+k  (switch ;;@autogen@ 
+    () M-k  break
+  )
+  action_lmet+l  (switch ;;@autogen@ 
+    () M-l  break
+  )
+  action_lmet+m  (switch ;;@autogen@ 
+    () M-m  break
+  )
+  action_lmet+n  (switch ;;@autogen@ 
+    () M-n  break
+  )
+  action_lmet+o  (switch ;;@autogen@ 
+    () M-o  break
+  )
+  action_lmet+p  (switch ;;@autogen@ 
+    () M-p  break
+  )
+  action_lmet+q  (switch ;;@autogen@ 
+    () M-q  break
+  )
+  action_lmet+r  (switch ;;@autogen@ 
+    () M-r  break
+  )
+  action_lmet+s  (switch ;;@autogen@ 
+    () M-s  break
+  )
+  action_lmet+t  (switch ;;@autogen@ 
+    () M-t  break
+  )
+  action_lmet+u  (switch ;;@autogen@ 
+    () M-u  break
+  )
+  action_lmet+v  (switch ;;@autogen@ 
+    () M-v  break
+  )
+  action_lmet+w  (switch ;;@autogen@ 
+    () M-w  break
+  )
+  action_lmet+x  (switch ;;@autogen@ 
+    () M-x  break
+  )
+  action_lmet+y  (switch ;;@autogen@ 
+    () M-y  break
+  )
+  action_lmet+z  (switch ;;@autogen@ 
+    () M-z break
+  )
+  action_lmet+,  (switch ;;@autogen@ 
+    () M-, break
+  )
+  action_lmet+.  (switch ;;@autogen@ 
+    () M-.  break
+  )
+  action_lmet+/  (switch ;;@autogen@ 
+    () M-/  break
+  )
+  action_lmet+;  (switch ;;@autogen@ 
+    () M-;  break
+  )
+  action_lmet+'  (switch ;;@autogen@ 
+    () M-'  break
+  )
+  action_lmet+[  (switch ;;@autogen@ 
+    () M-[  break
+  )
+  action_lmet+]  (switch ;;@autogen@ 
+    () M-]  break
+  )  ;; ""
+  action_lmet+\  (switch ;;@autogen@ 
+    () M-\  break
+  )  ;; ""
+  action_lmet+-  (switch ;;@autogen@ 
+    () M--  break
+  )
+  action_lmet+=  (switch ;;@autogen@ 
+    () M-=  break
+  )
+  action_lmet+1  (switch ;;@autogen@ 
+    () M-1  break
+  )
+  action_lmet+2  (switch ;;@autogen@ 
+    () M-2  break
+  )
+  action_lmet+3  (switch ;;@autogen@ 
+    () M-3  break
+  )
+  action_lmet+4  (switch ;;@autogen@ 
+    () M-4  break
+  )
+  action_lmet+5  (switch ;;@autogen@ 
+    () M-5  break
+  )
+  action_lmet+6  (switch ;;@autogen@ 
+    () M-6  break
+  )
+  action_lmet+7  (switch ;;@autogen@ 
+    () M-7  break
+  )
+  action_lmet+8  (switch ;;@autogen@ 
+    () M-8  break
+  )
+  action_lmet+9  (switch ;;@autogen@ 
+    () M-9  break
+  )
+  action_lmet+0  (switch ;;@autogen@ 
+    () M-0  break
+  )
 
   ;; == LMET+LSFT actions ==========================================================
-  action_lmet+lsft+a (t! unmod_all (switch ;;@autogen@ 
-    () A-S-a break
-  ))
-  action_lmet+lsft+b (t! unmod_all (switch ;;@autogen@ 
-    () A-S-b break
-  ))
-  action_lmet+lsft+c  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-c  break
-  ))
-  action_lmet+lsft+d (t! unmod_all (switch ;;@autogen@ 
-    () A-S-d break
-  ))
-  action_lmet+lsft+e  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-e  break
-  ))
-  action_lmet+lsft+f  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-f  break
-  ))
-  action_lmet+lsft+g  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-g  break
-  ))
-  action_lmet+lsft+h  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-h  break
-  ))
-  action_lmet+lsft+i  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-i  break
-  ))
-  action_lmet+lsft+j  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-j  break
-  ))
-  action_lmet+lsft+k  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-k  break
-  ))
-  action_lmet+lsft+l  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-l  break
-  ))
-  action_lmet+lsft+m  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-m  break
-  ))
-  action_lmet+lsft+n  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-n  break
-  ))
-  action_lmet+lsft+o  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-o  break
-  ))
-  action_lmet+lsft+p  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-p  break
-  ))
-  action_lmet+lsft+q  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-q  break
-  ))
-  action_lmet+lsft+r  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-r  break
-  ))
-  action_lmet+lsft+s  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-s  break
-  ))
-  action_lmet+lsft+t  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-t  break
-  ))
-  action_lmet+lsft+u  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-u  break
-  ))
-  action_lmet+lsft+v  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-v  break
-  ))
-  action_lmet+lsft+w  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-w  break
-  ))
-  action_lmet+lsft+x  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-x  break
-  ))
-  action_lmet+lsft+y  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-y  break
-  ))
-  action_lmet+lsft+z  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-z break
-  ))
-  action_lmet+lsft+,  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-, break
-  ))
-  action_lmet+lsft+.  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-.  break
-  ))
-  action_lmet+lsft+/  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-/  break
-  ))
-  action_lmet+lsft+;  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-;  break
-  ))
-  action_lmet+lsft+'  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-'  break
-  ))
-  action_lmet+lsft+[  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-[  break
-  ))
-  action_lmet+lsft+]  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-]  break
-  ))  ;; ""
-  action_lmet+lsft+\  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-\  break
-  ))  ;; ""
-  action_lmet+lsft+-  (t! unmod_all (switch ;;@autogen@ 
-    () A-S--  break
-  ))
-  action_lmet+lsft+=  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-=  break
-  ))
-  action_lmet+lsft+1  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-1  break
-  ))
-  action_lmet+lsft+2  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-2  break
-  ))
-  action_lmet+lsft+3  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-3  break
-  ))
-  action_lmet+lsft+4  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-4  break
-  ))
-  action_lmet+lsft+5  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-5  break
-  ))
-  action_lmet+lsft+6  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-6  break
-  ))
-  action_lmet+lsft+7  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-7  break
-  ))
-  action_lmet+lsft+8  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-8  break
-  ))
-  action_lmet+lsft+9  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-9  break
-  ))
-  action_lmet+lsft+0  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-0  break
-  ))
+  action_lmet+lsft+a (switch ;;@autogen@ 
+    () M-S-a break
+  )
+  action_lmet+lsft+b (switch ;;@autogen@ 
+    () M-S-b break
+  )
+  action_lmet+lsft+c  (switch ;;@autogen@ 
+    () M-S-c  break
+  )
+  action_lmet+lsft+d (switch ;;@autogen@ 
+    () M-S-d break
+  )
+  action_lmet+lsft+e  (switch ;;@autogen@ 
+    () M-S-e  break
+  )
+  action_lmet+lsft+f  (switch ;;@autogen@ 
+    () M-S-f  break
+  )
+  action_lmet+lsft+g  (switch ;;@autogen@ 
+    () M-S-g  break
+  )
+  action_lmet+lsft+h  (switch ;;@autogen@ 
+    () M-S-h  break
+  )
+  action_lmet+lsft+i  (switch ;;@autogen@ 
+    () M-S-i  break
+  )
+  action_lmet+lsft+j  (switch ;;@autogen@ 
+    () M-S-j  break
+  )
+  action_lmet+lsft+k  (switch ;;@autogen@ 
+    () M-S-k  break
+  )
+  action_lmet+lsft+l  (switch ;;@autogen@ 
+    () M-S-l  break
+  )
+  action_lmet+lsft+m  (switch ;;@autogen@ 
+    () M-S-m  break
+  )
+  action_lmet+lsft+n  (switch ;;@autogen@ 
+    () M-S-n  break
+  )
+  action_lmet+lsft+o  (switch ;;@autogen@ 
+    () M-S-o  break
+  )
+  action_lmet+lsft+p  (switch ;;@autogen@ 
+    () M-S-p  break
+  )
+  action_lmet+lsft+q  (switch ;;@autogen@ 
+    () M-S-q  break
+  )
+  action_lmet+lsft+r  (switch ;;@autogen@ 
+    () M-S-r  break
+  )
+  action_lmet+lsft+s  (switch ;;@autogen@ 
+    () M-S-s  break
+  )
+  action_lmet+lsft+t  (switch ;;@autogen@ 
+    () M-S-t  break
+  )
+  action_lmet+lsft+u  (switch ;;@autogen@ 
+    () M-S-u  break
+  )
+  action_lmet+lsft+v  (switch ;;@autogen@ 
+    () M-S-v  break
+  )
+  action_lmet+lsft+w  (switch ;;@autogen@ 
+    () M-S-w  break
+  )
+  action_lmet+lsft+x  (switch ;;@autogen@ 
+    () M-S-x  break
+  )
+  action_lmet+lsft+y  (switch ;;@autogen@ 
+    () M-S-y  break
+  )
+  action_lmet+lsft+z  (switch ;;@autogen@ 
+    () M-S-z break
+  )
+  action_lmet+lsft+,  (switch ;;@autogen@ 
+    () M-S-, break
+  )
+  action_lmet+lsft+.  (switch ;;@autogen@ 
+    () M-S-.  break
+  )
+  action_lmet+lsft+/  (switch ;;@autogen@ 
+    () M-S-/  break
+  )
+  action_lmet+lsft+;  (switch ;;@autogen@ 
+    () M-S-;  break
+  )
+  action_lmet+lsft+'  (switch ;;@autogen@ 
+    () M-S-'  break
+  )
+  action_lmet+lsft+[  (switch ;;@autogen@ 
+    () M-S-[  break
+  )
+  action_lmet+lsft+]  (switch ;;@autogen@ 
+    () M-S-]  break
+  )  ;; ""
+  action_lmet+lsft+\  (switch ;;@autogen@ 
+    () M-S-\  break
+  )  ;; ""
+  action_lmet+lsft+-  (switch ;;@autogen@ 
+    () M-S--  break
+  )
+  action_lmet+lsft+=  (switch ;;@autogen@ 
+    () M-S-=  break
+  )
+  action_lmet+lsft+1  (switch ;;@autogen@ 
+    () M-S-1  break
+  )
+  action_lmet+lsft+2  (switch ;;@autogen@ 
+    () M-S-2  break
+  )
+  action_lmet+lsft+3  (switch ;;@autogen@ 
+    () M-S-3  break
+  )
+  action_lmet+lsft+4  (switch ;;@autogen@ 
+    () M-S-4  break
+  )
+  action_lmet+lsft+5  (switch ;;@autogen@ 
+    () M-S-5  break
+  )
+  action_lmet+lsft+6  (switch ;;@autogen@ 
+    () M-S-6  break
+  )
+  action_lmet+lsft+7  (switch ;;@autogen@ 
+    () M-S-7  break
+  )
+  action_lmet+lsft+8  (switch ;;@autogen@ 
+    () M-S-8  break
+  )
+  action_lmet+lsft+9  (switch ;;@autogen@ 
+    () M-S-9  break
+  )
+  action_lmet+lsft+0  (switch ;;@autogen@ 
+    () M-S-0  break
+  )
 
   ;; == LMET+RSFT actions ==========================================================
-  action_lmet+rsft+a (t! unmod_all (switch ;;@autogen@ 
-    () A-S-a break
-  ))
-  action_lmet+rsft+b (t! unmod_all (switch ;;@autogen@ 
-    () A-S-b break
-  ))
-  action_lmet+rsft+c  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-c  break
-  ))
-  action_lmet+rsft+d (t! unmod_all (switch ;;@autogen@ 
-    () A-S-d break
-  ))
-  action_lmet+rsft+e  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-e  break
-  ))
-  action_lmet+rsft+f  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-f  break
-  ))
-  action_lmet+rsft+g  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-g  break
-  ))
-  action_lmet+rsft+h  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-h  break
-  ))
-  action_lmet+rsft+i  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-i  break
-  ))
-  action_lmet+rsft+j  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-j  break
-  ))
-  action_lmet+rsft+k  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-k  break
-  ))
-  action_lmet+rsft+l  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-l  break
-  ))
-  action_lmet+rsft+m  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-m  break
-  ))
-  action_lmet+rsft+n  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-n  break
-  ))
-  action_lmet+rsft+o  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-o  break
-  ))
-  action_lmet+rsft+p  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-p  break
-  ))
-  action_lmet+rsft+q  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-q  break
-  ))
-  action_lmet+rsft+r  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-r  break
-  ))
-  action_lmet+rsft+s  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-s  break
-  ))
-  action_lmet+rsft+t  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-t  break
-  ))
-  action_lmet+rsft+u  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-u  break
-  ))
-  action_lmet+rsft+v  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-v  break
-  ))
-  action_lmet+rsft+w  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-w  break
-  ))
-  action_lmet+rsft+x  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-x  break
-  ))
-  action_lmet+rsft+y  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-y  break
-  ))
-  action_lmet+rsft+z  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-z break
-  ))
-  action_lmet+rsft+,  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-, break
-  ))
-  action_lmet+rsft+.  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-.  break
-  ))
-  action_lmet+rsft+/  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-/  break
-  ))
-  action_lmet+rsft+;  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-;  break
-  ))
-  action_lmet+rsft+'  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-'  break
-  ))
-  action_lmet+rsft+[  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-[  break
-  ))
-  action_lmet+rsft+]  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-]  break
-  ))  ;; ""
-  action_lmet+rsft+\  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-\  break
-  ))  ;; ""
-  action_lmet+rsft+-  (t! unmod_all (switch ;;@autogen@ 
-    () A-S--  break
-  ))
-  action_lmet+rsft+=  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-=  break
-  ))
-  action_lmet+rsft+1  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-1  break
-  ))
-  action_lmet+rsft+2  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-2  break
-  ))
-  action_lmet+rsft+3  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-3  break
-  ))
-  action_lmet+rsft+4  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-4  break
-  ))
-  action_lmet+rsft+5  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-5  break
-  ))
-  action_lmet+rsft+6  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-6  break
-  ))
-  action_lmet+rsft+7  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-7  break
-  ))
-  action_lmet+rsft+8  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-8  break
-  ))
-  action_lmet+rsft+9  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-9  break
-  ))
-  action_lmet+rsft+0  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-0  break
-  ))
+  action_lmet+rsft+a (switch ;;@autogen@ 
+    () M-S-a break
+  )
+  action_lmet+rsft+b (switch ;;@autogen@ 
+    () M-S-b break
+  )
+  action_lmet+rsft+c  (switch ;;@autogen@ 
+    () M-S-c  break
+  )
+  action_lmet+rsft+d (switch ;;@autogen@ 
+    () M-S-d break
+  )
+  action_lmet+rsft+e  (switch ;;@autogen@ 
+    () M-S-e  break
+  )
+  action_lmet+rsft+f  (switch ;;@autogen@ 
+    () M-S-f  break
+  )
+  action_lmet+rsft+g  (switch ;;@autogen@ 
+    () M-S-g  break
+  )
+  action_lmet+rsft+h  (switch ;;@autogen@ 
+    () M-S-h  break
+  )
+  action_lmet+rsft+i  (switch ;;@autogen@ 
+    () M-S-i  break
+  )
+  action_lmet+rsft+j  (switch ;;@autogen@ 
+    () M-S-j  break
+  )
+  action_lmet+rsft+k  (switch ;;@autogen@ 
+    () M-S-k  break
+  )
+  action_lmet+rsft+l  (switch ;;@autogen@ 
+    () M-S-l  break
+  )
+  action_lmet+rsft+m  (switch ;;@autogen@ 
+    () M-S-m  break
+  )
+  action_lmet+rsft+n  (switch ;;@autogen@ 
+    () M-S-n  break
+  )
+  action_lmet+rsft+o  (switch ;;@autogen@ 
+    () M-S-o  break
+  )
+  action_lmet+rsft+p  (switch ;;@autogen@ 
+    () M-S-p  break
+  )
+  action_lmet+rsft+q  (switch ;;@autogen@ 
+    () M-S-q  break
+  )
+  action_lmet+rsft+r  (switch ;;@autogen@ 
+    () M-S-r  break
+  )
+  action_lmet+rsft+s  (switch ;;@autogen@ 
+    () M-S-s  break
+  )
+  action_lmet+rsft+t  (switch ;;@autogen@ 
+    () M-S-t  break
+  )
+  action_lmet+rsft+u  (switch ;;@autogen@ 
+    () M-S-u  break
+  )
+  action_lmet+rsft+v  (switch ;;@autogen@ 
+    () M-S-v  break
+  )
+  action_lmet+rsft+w  (switch ;;@autogen@ 
+    () M-S-w  break
+  )
+  action_lmet+rsft+x  (switch ;;@autogen@ 
+    () M-S-x  break
+  )
+  action_lmet+rsft+y  (switch ;;@autogen@ 
+    () M-S-y  break
+  )
+  action_lmet+rsft+z  (switch ;;@autogen@ 
+    () M-S-z break
+  )
+  action_lmet+rsft+,  (switch ;;@autogen@ 
+    () M-S-, break
+  )
+  action_lmet+rsft+.  (switch ;;@autogen@ 
+    () M-S-.  break
+  )
+  action_lmet+rsft+/  (switch ;;@autogen@ 
+    () M-S-/  break
+  )
+  action_lmet+rsft+;  (switch ;;@autogen@ 
+    () M-S-;  break
+  )
+  action_lmet+rsft+'  (switch ;;@autogen@ 
+    () M-S-'  break
+  )
+  action_lmet+rsft+[  (switch ;;@autogen@ 
+    () M-S-[  break
+  )
+  action_lmet+rsft+]  (switch ;;@autogen@ 
+    () M-S-]  break
+  )  ;; ""
+  action_lmet+rsft+\  (switch ;;@autogen@ 
+    () M-S-\  break
+  )  ;; ""
+  action_lmet+rsft+-  (switch ;;@autogen@ 
+    () M-S--  break
+  )
+  action_lmet+rsft+=  (switch ;;@autogen@ 
+    () M-S-=  break
+  )
+  action_lmet+rsft+1  (switch ;;@autogen@ 
+    () M-S-1  break
+  )
+  action_lmet+rsft+2  (switch ;;@autogen@ 
+    () M-S-2  break
+  )
+  action_lmet+rsft+3  (switch ;;@autogen@ 
+    () M-S-3  break
+  )
+  action_lmet+rsft+4  (switch ;;@autogen@ 
+    () M-S-4  break
+  )
+  action_lmet+rsft+5  (switch ;;@autogen@ 
+    () M-S-5  break
+  )
+  action_lmet+rsft+6  (switch ;;@autogen@ 
+    () M-S-6  break
+  )
+  action_lmet+rsft+7  (switch ;;@autogen@ 
+    () M-S-7  break
+  )
+  action_lmet+rsft+8  (switch ;;@autogen@ 
+    () M-S-8  break
+  )
+  action_lmet+rsft+9  (switch ;;@autogen@ 
+    () M-S-9  break
+  )
+  action_lmet+rsft+0  (switch ;;@autogen@ 
+    () M-S-0  break
+  )
 
   ;; == !LMET actions ==========================================================
-  action_!lmet+a (t! unmod_all (switch ;;@autogen@ 
-    () A-a break
-  ))
-  action_!lmet+b (t! unmod_all (switch ;;@autogen@ 
-    () A-b break
-  ))
-  action_!lmet+c  (t! unmod_all (switch ;;@autogen@ 
-    () A-c  break
-  ))
-  action_!lmet+d (t! unmod_all (switch ;;@autogen@ 
-    () A-d break
-  ))
-  action_!lmet+e  (t! unmod_all (switch ;;@autogen@ 
-    () A-e  break
-  ))
-  action_!lmet+f  (t! unmod_all (switch ;;@autogen@ 
-    () A-f  break
-  ))
-  action_!lmet+g  (t! unmod_all (switch ;;@autogen@ 
-    () A-g  break
-  ))
-  action_!lmet+h  (t! unmod_all (switch ;;@autogen@ 
-    () A-h  break
-  ))
-  action_!lmet+i  (t! unmod_all (switch ;;@autogen@ 
-    () A-i  break
-  ))
-  action_!lmet+j  (t! unmod_all (switch ;;@autogen@ 
-    () A-j  break
-  ))
-  action_!lmet+k  (t! unmod_all (switch ;;@autogen@ 
-    () A-k  break
-  ))
-  action_!lmet+l  (t! unmod_all (switch ;;@autogen@ 
-    () A-l  break
-  ))
-  action_!lmet+m  (t! unmod_all (switch ;;@autogen@ 
-    () A-m  break
-  ))
-  action_!lmet+n  (t! unmod_all (switch ;;@autogen@ 
-    () A-n  break
-  ))
-  action_!lmet+o  (t! unmod_all (switch ;;@autogen@ 
-    () A-o  break
-  ))
-  action_!lmet+p  (t! unmod_all (switch ;;@autogen@ 
-    () A-p  break
-  ))
-  action_!lmet+q  (t! unmod_all (switch ;;@autogen@ 
-    () A-q  break
-  ))
-  action_!lmet+r  (t! unmod_all (switch ;;@autogen@ 
-    () A-r  break
-  ))
-  action_!lmet+s  (t! unmod_all (switch ;;@autogen@ 
-    () A-s  break
-  ))
-  action_!lmet+t  (t! unmod_all (switch ;;@autogen@ 
-    () A-t  break
-  ))
-  action_!lmet+u  (t! unmod_all (switch ;;@autogen@ 
-    () A-u  break
-  ))
-  action_!lmet+v  (t! unmod_all (switch ;;@autogen@ 
-    () A-v  break
-  ))
-  action_!lmet+w  (t! unmod_all (switch ;;@autogen@ 
-    () A-w  break
-  ))
-  action_!lmet+x  (t! unmod_all (switch ;;@autogen@ 
-    () A-x  break
-  ))
-  action_!lmet+y  (t! unmod_all (switch ;;@autogen@ 
-    () A-y  break
-  ))
-  action_!lmet+z  (t! unmod_all (switch ;;@autogen@ 
-    () A-z  break
-  ))
-  action_!lmet+,  (t! unmod_all (switch ;;@autogen@ 
-    () A-,  break
-  ))
-  action_!lmet+.  (t! unmod_all (switch ;;@autogen@ 
-    () A-.  break
-  ))
-  action_!lmet+/  (t! unmod_all (switch ;;@autogen@ 
-    () A-/  break
-  ))
-  action_!lmet+;  (t! unmod_all (switch ;;@autogen@ 
-    () A-;  break
-  ))
-  action_!lmet+'  (t! unmod_all (switch ;;@autogen@ 
-    () A-'  break
-  ))
-  action_!lmet+[  (t! unmod_all (switch ;;@autogen@ 
-    () A-[  break
-  ))
-  action_!lmet+]  (t! unmod_all (switch ;;@autogen@ 
-    () A-]  break
-  ))  
-  action_!lmet+\  (t! unmod_all (switch ;;@autogen@ 
-    () A-\  break
-  ))
-  action_!lmet+-  (t! unmod_all (switch ;;@autogen@ 
-    () A--  break
-  ))
-  action_!lmet+=  (t! unmod_all (switch ;;@autogen@ 
-    () A-=  break
-  ))
-  action_!lmet+1  (t! unmod_all (switch ;;@autogen@ 
-    () A-1  break
-  ))
-  action_!lmet+2  (t! unmod_all (switch ;;@autogen@ 
-    () A-2  break
-  ))
-  action_!lmet+3  (t! unmod_all (switch ;;@autogen@ 
-    () A-3  break
-  ))
-  action_!lmet+4  (t! unmod_all (switch ;;@autogen@ 
-    () A-4  break
-  ))
-  action_!lmet+5  (t! unmod_all (switch ;;@autogen@ 
-    () A-5  break
-  ))
-  action_!lmet+6  (t! unmod_all (switch ;;@autogen@ 
-    () A-6  break
-  ))
-  action_!lmet+7  (t! unmod_all (switch ;;@autogen@ 
-    () A-7  break
-  ))
-  action_!lmet+8  (t! unmod_all (switch ;;@autogen@ 
-    () A-8  break
-  ))
-  action_!lmet+9  (t! unmod_all (switch ;;@autogen@ 
-    () A-9  break
-  ))
-  action_!lmet+0  (t! unmod_all (switch ;;@autogen@ 
-    () A-0  break
-  )) ;; ""
+  action_!lmet+a (switch ;;@autogen@ 
+    () M-a break
+  )
+  action_!lmet+b (switch ;;@autogen@ 
+    () M-b break
+  )
+  action_!lmet+c  (switch ;;@autogen@ 
+    () M-c  break
+  )
+  action_!lmet+d (switch ;;@autogen@ 
+    () M-d break
+  )
+  action_!lmet+e  (switch ;;@autogen@ 
+    () M-e  break
+  )
+  action_!lmet+f  (switch ;;@autogen@ 
+    () M-f  break
+  )
+  action_!lmet+g  (switch ;;@autogen@ 
+    () M-g  break
+  )
+  action_!lmet+h  (switch ;;@autogen@ 
+    () M-h  break
+  )
+  action_!lmet+i  (switch ;;@autogen@ 
+    () M-i  break
+  )
+  action_!lmet+j  (switch ;;@autogen@ 
+    () M-j  break
+  )
+  action_!lmet+k  (switch ;;@autogen@ 
+    () M-k  break
+  )
+  action_!lmet+l  (switch ;;@autogen@ 
+    () M-l  break
+  )
+  action_!lmet+m  (switch ;;@autogen@ 
+    () M-m  break
+  )
+  action_!lmet+n  (switch ;;@autogen@ 
+    () M-n  break
+  )
+  action_!lmet+o  (switch ;;@autogen@ 
+    () M-o  break
+  )
+  action_!lmet+p  (switch ;;@autogen@ 
+    () M-p  break
+  )
+  action_!lmet+q  (switch ;;@autogen@ 
+    () M-q  break
+  )
+  action_!lmet+r  (switch ;;@autogen@ 
+    () M-r  break
+  )
+  action_!lmet+s  (switch ;;@autogen@ 
+    () M-s  break
+  )
+  action_!lmet+t  (switch ;;@autogen@ 
+    () M-t  break
+  )
+  action_!lmet+u  (switch ;;@autogen@ 
+    () M-u  break
+  )
+  action_!lmet+v  (switch ;;@autogen@ 
+    () M-v  break
+  )
+  action_!lmet+w  (switch ;;@autogen@ 
+    () M-w  break
+  )
+  action_!lmet+x  (switch ;;@autogen@ 
+    () M-x  break
+  )
+  action_!lmet+y  (switch ;;@autogen@ 
+    () M-y  break
+  )
+  action_!lmet+z  (switch ;;@autogen@ 
+    () M-z  break
+  )
+  action_!lmet+,  (switch ;;@autogen@ 
+    () M-,  break
+  )
+  action_!lmet+.  (switch ;;@autogen@ 
+    () M-.  break
+  )
+  action_!lmet+/  (switch ;;@autogen@ 
+    () M-/  break
+  )
+  action_!lmet+;  (switch ;;@autogen@ 
+    () M-;  break
+  )
+  action_!lmet+'  (switch ;;@autogen@ 
+    () M-'  break
+  )
+  action_!lmet+[  (switch ;;@autogen@ 
+    () M-[  break
+  )
+  action_!lmet+]  (switch ;;@autogen@ 
+    () M-]  break
+  )  
+  action_!lmet+\  (switch ;;@autogen@ 
+    () M-\  break
+  )
+  action_!lmet+-  (switch ;;@autogen@ 
+    () M--  break
+  )
+  action_!lmet+=  (switch ;;@autogen@ 
+    () M-=  break
+  )
+  action_!lmet+1  (switch ;;@autogen@ 
+    () M-1  break
+  )
+  action_!lmet+2  (switch ;;@autogen@ 
+    () M-2  break
+  )
+  action_!lmet+3  (switch ;;@autogen@ 
+    () M-3  break
+  )
+  action_!lmet+4  (switch ;;@autogen@ 
+    () M-4  break
+  )
+  action_!lmet+5  (switch ;;@autogen@ 
+    () M-5  break
+  )
+  action_!lmet+6  (switch ;;@autogen@ 
+    () M-6  break
+  )
+  action_!lmet+7  (switch ;;@autogen@ 
+    () M-7  break
+  )
+  action_!lmet+8  (switch ;;@autogen@ 
+    () M-8  break
+  )
+  action_!lmet+9  (switch ;;@autogen@ 
+    () M-9  break
+  )
+  action_!lmet+0  (switch ;;@autogen@ 
+    () M-0  break
+  ) ;; ""
 
   ;; == !LMET+LSFT actions ==========================================================
-  action_!lmet+lsft+a (t! unmod_all (switch ;;@autogen@ 
-    () A-S-a break
-  ))
-  action_!lmet+lsft+b (t! unmod_all (switch ;;@autogen@ 
-    () A-S-b break
-  ))
-  action_!lmet+lsft+c  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-c  break
-  ))
-  action_!lmet+lsft+d (t! unmod_all (switch ;;@autogen@ 
-    () A-S-d break
-  ))
-  action_!lmet+lsft+e  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-e  break
-  ))
-  action_!lmet+lsft+f  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-f  break
-  ))
-  action_!lmet+lsft+g  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-g  break
-  ))
-  action_!lmet+lsft+h  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-h  break
-  ))
-  action_!lmet+lsft+i  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-i  break
-  ))
-  action_!lmet+lsft+j  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-j  break
-  ))
-  action_!lmet+lsft+k  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-k  break
-  ))
-  action_!lmet+lsft+l  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-l  break
-  ))
-  action_!lmet+lsft+m  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-m  break
-  ))
-  action_!lmet+lsft+n  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-n  break
-  ))
-  action_!lmet+lsft+o  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-o  break
-  ))
-  action_!lmet+lsft+p  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-p  break
-  ))
-  action_!lmet+lsft+q  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-q  break
-  ))
-  action_!lmet+lsft+r  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-r  break
-  ))
-  action_!lmet+lsft+s  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-s  break
-  ))
-  action_!lmet+lsft+t  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-t  break
-  ))
-  action_!lmet+lsft+u  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-u  break
-  ))
-  action_!lmet+lsft+v  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-v  break
-  ))
-  action_!lmet+lsft+w  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-w  break
-  ))
-  action_!lmet+lsft+x  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-x  break
-  ))
-  action_!lmet+lsft+y  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-y  break
-  ))
-  action_!lmet+lsft+z  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-z break
-  ))
-  action_!lmet+lsft+,  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-, break
-  ))
-  action_!lmet+lsft+.  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-.  break
-  ))
-  action_!lmet+lsft+/  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-/  break
-  ))
-  action_!lmet+lsft+;  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-;  break
-  ))
-  action_!lmet+lsft+'  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-'  break
-  ))
-  action_!lmet+lsft+[  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-[  break
-  ))
-  action_!lmet+lsft+]  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-]  break
-  ))  ;; ""
-  action_!lmet+lsft+\  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-\  break
-  ))  ;; ""
-  action_!lmet+lsft+-  (t! unmod_all (switch ;;@autogen@ 
-    () A-S--  break
-  ))
-  action_!lmet+lsft+=  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-=  break
-  ))
-  action_!lmet+lsft+1  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-1  break
-  ))
-  action_!lmet+lsft+2  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-2  break
-  ))
-  action_!lmet+lsft+3  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-3  break
-  ))
-  action_!lmet+lsft+4  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-4  break
-  ))
-  action_!lmet+lsft+5  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-5  break
-  ))
-  action_!lmet+lsft+6  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-6  break
-  ))
-  action_!lmet+lsft+7  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-7  break
-  ))
-  action_!lmet+lsft+8  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-8  break
-  ))
-  action_!lmet+lsft+9  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-9  break
-  ))
-  action_!lmet+lsft+0  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-0  break
-  ))
+  action_!lmet+lsft+a (switch ;;@autogen@ 
+    () M-S-a break
+  )
+  action_!lmet+lsft+b (switch ;;@autogen@ 
+    () M-S-b break
+  )
+  action_!lmet+lsft+c  (switch ;;@autogen@ 
+    () M-S-c  break
+  )
+  action_!lmet+lsft+d (switch ;;@autogen@ 
+    () M-S-d break
+  )
+  action_!lmet+lsft+e  (switch ;;@autogen@ 
+    () M-S-e  break
+  )
+  action_!lmet+lsft+f  (switch ;;@autogen@ 
+    () M-S-f  break
+  )
+  action_!lmet+lsft+g  (switch ;;@autogen@ 
+    () M-S-g  break
+  )
+  action_!lmet+lsft+h  (switch ;;@autogen@ 
+    () M-S-h  break
+  )
+  action_!lmet+lsft+i  (switch ;;@autogen@ 
+    () M-S-i  break
+  )
+  action_!lmet+lsft+j  (switch ;;@autogen@ 
+    () M-S-j  break
+  )
+  action_!lmet+lsft+k  (switch ;;@autogen@ 
+    () M-S-k  break
+  )
+  action_!lmet+lsft+l  (switch ;;@autogen@ 
+    () M-S-l  break
+  )
+  action_!lmet+lsft+m  (switch ;;@autogen@ 
+    () M-S-m  break
+  )
+  action_!lmet+lsft+n  (switch ;;@autogen@ 
+    () M-S-n  break
+  )
+  action_!lmet+lsft+o  (switch ;;@autogen@ 
+    () M-S-o  break
+  )
+  action_!lmet+lsft+p  (switch ;;@autogen@ 
+    () M-S-p  break
+  )
+  action_!lmet+lsft+q  (switch ;;@autogen@ 
+    () M-S-q  break
+  )
+  action_!lmet+lsft+r  (switch ;;@autogen@ 
+    () M-S-r  break
+  )
+  action_!lmet+lsft+s  (switch ;;@autogen@ 
+    () M-S-s  break
+  )
+  action_!lmet+lsft+t  (switch ;;@autogen@ 
+    () M-S-t  break
+  )
+  action_!lmet+lsft+u  (switch ;;@autogen@ 
+    () M-S-u  break
+  )
+  action_!lmet+lsft+v  (switch ;;@autogen@ 
+    () M-S-v  break
+  )
+  action_!lmet+lsft+w  (switch ;;@autogen@ 
+    () M-S-w  break
+  )
+  action_!lmet+lsft+x  (switch ;;@autogen@ 
+    () M-S-x  break
+  )
+  action_!lmet+lsft+y  (switch ;;@autogen@ 
+    () M-S-y  break
+  )
+  action_!lmet+lsft+z  (switch ;;@autogen@ 
+    () M-S-z break
+  )
+  action_!lmet+lsft+,  (switch ;;@autogen@ 
+    () M-S-, break
+  )
+  action_!lmet+lsft+.  (switch ;;@autogen@ 
+    () M-S-.  break
+  )
+  action_!lmet+lsft+/  (switch ;;@autogen@ 
+    () M-S-/  break
+  )
+  action_!lmet+lsft+;  (switch ;;@autogen@ 
+    () M-S-;  break
+  )
+  action_!lmet+lsft+'  (switch ;;@autogen@ 
+    () M-S-'  break
+  )
+  action_!lmet+lsft+[  (switch ;;@autogen@ 
+    () M-S-[  break
+  )
+  action_!lmet+lsft+]  (switch ;;@autogen@ 
+    () M-S-]  break
+  )  ;; ""
+  action_!lmet+lsft+\  (switch ;;@autogen@ 
+    () M-S-\  break
+  )  ;; ""
+  action_!lmet+lsft+-  (switch ;;@autogen@ 
+    () M-S--  break
+  )
+  action_!lmet+lsft+=  (switch ;;@autogen@ 
+    () M-S-=  break
+  )
+  action_!lmet+lsft+1  (switch ;;@autogen@ 
+    () M-S-1  break
+  )
+  action_!lmet+lsft+2  (switch ;;@autogen@ 
+    () M-S-2  break
+  )
+  action_!lmet+lsft+3  (switch ;;@autogen@ 
+    () M-S-3  break
+  )
+  action_!lmet+lsft+4  (switch ;;@autogen@ 
+    () M-S-4  break
+  )
+  action_!lmet+lsft+5  (switch ;;@autogen@ 
+    () M-S-5  break
+  )
+  action_!lmet+lsft+6  (switch ;;@autogen@ 
+    () M-S-6  break
+  )
+  action_!lmet+lsft+7  (switch ;;@autogen@ 
+    () M-S-7  break
+  )
+  action_!lmet+lsft+8  (switch ;;@autogen@ 
+    () M-S-8  break
+  )
+  action_!lmet+lsft+9  (switch ;;@autogen@ 
+    () M-S-9  break
+  )
+  action_!lmet+lsft+0  (switch ;;@autogen@ 
+    () M-S-0  break
+  )
 
   ;; == !LMET+RSFT actions ==========================================================
-  action_!lmet+rsft+a (t! unmod_all (switch ;;@autogen@ 
-    () A-S-a break
-  ))
-  action_!lmet+rsft+b (t! unmod_all (switch ;;@autogen@ 
-    () A-S-b break
-  ))
-  action_!lmet+rsft+c  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-c  break
-  ))
-  action_!lmet+rsft+d (t! unmod_all (switch ;;@autogen@ 
-    () A-S-d break
-  ))
-  action_!lmet+rsft+e  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-e  break
-  ))
-  action_!lmet+rsft+f  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-f  break
-  ))
-  action_!lmet+rsft+g  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-g  break
-  ))
-  action_!lmet+rsft+h  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-h  break
-  ))
-  action_!lmet+rsft+i  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-i  break
-  ))
-  action_!lmet+rsft+j  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-j  break
-  ))
-  action_!lmet+rsft+k  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-k  break
-  ))
-  action_!lmet+rsft+l  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-l  break
-  ))
-  action_!lmet+rsft+m  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-m  break
-  ))
-  action_!lmet+rsft+n  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-n  break
-  ))
-  action_!lmet+rsft+o  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-o  break
-  ))
-  action_!lmet+rsft+p  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-p  break
-  ))
-  action_!lmet+rsft+q  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-q  break
-  ))
-  action_!lmet+rsft+r  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-r  break
-  ))
-  action_!lmet+rsft+s  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-s  break
-  ))
-  action_!lmet+rsft+t  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-t  break
-  ))
-  action_!lmet+rsft+u  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-u  break
-  ))
-  action_!lmet+rsft+v  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-v  break
-  ))
-  action_!lmet+rsft+w  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-w  break
-  ))
-  action_!lmet+rsft+x  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-x  break
-  ))
-  action_!lmet+rsft+y  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-y  break
-  ))
-  action_!lmet+rsft+z  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-z break
-  ))
-  action_!lmet+rsft+,  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-, break
-  ))
-  action_!lmet+rsft+.  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-.  break
-  ))
-  action_!lmet+rsft+/  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-/  break
-  ))
-  action_!lmet+rsft+;  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-;  break
-  ))
-  action_!lmet+rsft+'  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-'  break
-  ))
-  action_!lmet+rsft+[  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-[  break
-  ))
-  action_!lmet+rsft+]  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-]  break
-  ))  ;; ""
-  action_!lmet+rsft+\  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-\  break
-  ))  ;; ""
-  action_!lmet+rsft+-  (t! unmod_all (switch ;;@autogen@ 
-    () A-S--  break
-  ))
-  action_!lmet+rsft+=  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-=  break
-  ))
-  action_!lmet+rsft+1  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-1  break
-  ))
-  action_!lmet+rsft+2  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-2  break
-  ))
-  action_!lmet+rsft+3  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-3  break
-  ))
-  action_!lmet+rsft+4  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-4  break
-  ))
-  action_!lmet+rsft+5  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-5  break
-  ))
-  action_!lmet+rsft+6  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-6  break
-  ))
-  action_!lmet+rsft+7  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-7  break
-  ))
-  action_!lmet+rsft+8  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-8  break
-  ))
-  action_!lmet+rsft+9  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-9  break
-  ))
-  action_!lmet+rsft+0  (t! unmod_all (switch ;;@autogen@ 
-    () A-S-0  break
-  ))
-
+  action_!lmet+rsft+a (switch ;;@autogen@ 
+    () M-S-a break
+  )
+  action_!lmet+rsft+b (switch ;;@autogen@ 
+    () M-S-b break
+  )
+  action_!lmet+rsft+c  (switch ;;@autogen@ 
+    () M-S-c  break
+  )
+  action_!lmet+rsft+d (switch ;;@autogen@ 
+    () M-S-d break
+  )
+  action_!lmet+rsft+e  (switch ;;@autogen@ 
+    () M-S-e  break
+  )
+  action_!lmet+rsft+f  (switch ;;@autogen@ 
+    () M-S-f  break
+  )
+  action_!lmet+rsft+g  (switch ;;@autogen@ 
+    () M-S-g  break
+  )
+  action_!lmet+rsft+h  (switch ;;@autogen@ 
+    () M-S-h  break
+  )
+  action_!lmet+rsft+i  (switch ;;@autogen@ 
+    () M-S-i  break
+  )
+  action_!lmet+rsft+j  (switch ;;@autogen@ 
+    () M-S-j  break
+  )
+  action_!lmet+rsft+k  (switch ;;@autogen@ 
+    () M-S-k  break
+  )
+  action_!lmet+rsft+l  (switch ;;@autogen@ 
+    () M-S-l  break
+  )
+  action_!lmet+rsft+m  (switch ;;@autogen@ 
+    () M-S-m  break
+  )
+  action_!lmet+rsft+n  (switch ;;@autogen@ 
+    () M-S-n  break
+  )
+  action_!lmet+rsft+o  (switch ;;@autogen@ 
+    () M-S-o  break
+  )
+  action_!lmet+rsft+p  (switch ;;@autogen@ 
+    () M-S-p  break
+  )
+  action_!lmet+rsft+q  (switch ;;@autogen@ 
+    () M-S-q  break
+  )
+  action_!lmet+rsft+r  (switch ;;@autogen@ 
+    () M-S-r  break
+  )
+  action_!lmet+rsft+s  (switch ;;@autogen@ 
+    () M-S-s  break
+  )
+  action_!lmet+rsft+t  (switch ;;@autogen@ 
+    () M-S-t  break
+  )
+  action_!lmet+rsft+u  (switch ;;@autogen@ 
+    () M-S-u  break
+  )
+  action_!lmet+rsft+v  (switch ;;@autogen@ 
+    () M-S-v  break
+  )
+  action_!lmet+rsft+w  (switch ;;@autogen@ 
+    () M-S-w  break
+  )
+  action_!lmet+rsft+x  (switch ;;@autogen@ 
+    () M-S-x  break
+  )
+  action_!lmet+rsft+y  (switch ;;@autogen@ 
+    () M-S-y  break
+  )
+  action_!lmet+rsft+z  (switch ;;@autogen@ 
+    () M-S-z break
+  )
+  action_!lmet+rsft+,  (switch ;;@autogen@ 
+    () M-S-, break
+  )
+  action_!lmet+rsft+.  (switch ;;@autogen@ 
+    () M-S-.  break
+  )
+  action_!lmet+rsft+/  (switch ;;@autogen@ 
+    () M-S-/  break
+  )
+  action_!lmet+rsft+;  (switch ;;@autogen@ 
+    () M-S-;  break
+  )
+  action_!lmet+rsft+'  (switch ;;@autogen@ 
+    () M-S-'  break
+  )
+  action_!lmet+rsft+[  (switch ;;@autogen@ 
+    () M-S-[  break
+  )
+  action_!lmet+rsft+]  (switch ;;@autogen@ 
+    () M-S-]  break
+  )  ;; ""
+  action_!lmet+rsft+\  (switch ;;@autogen@ 
+    () M-S-\  break
+  )  ;; ""
+  action_!lmet+rsft+-  (switch ;;@autogen@ 
+    () M-S--  break
+  )
+  action_!lmet+rsft+=  (switch ;;@autogen@ 
+    () M-S-=  break
+  )
+  action_!lmet+rsft+1  (switch ;;@autogen@ 
+    () M-S-1  break
+  )
+  action_!lmet+rsft+2  (switch ;;@autogen@ 
+    () M-S-2  break
+  )
+  action_!lmet+rsft+3  (switch ;;@autogen@ 
+    () M-S-3  break
+  )
+  action_!lmet+rsft+4  (switch ;;@autogen@ 
+    () M-S-4  break
+  )
+  action_!lmet+rsft+5  (switch ;;@autogen@ 
+    () M-S-5  break
+  )
+  action_!lmet+rsft+6  (switch ;;@autogen@ 
+    () M-S-6  break
+  )
+  action_!lmet+rsft+7  (switch ;;@autogen@ 
+    () M-S-7  break
+  )
+  action_!lmet+rsft+8  (switch ;;@autogen@ 
+    () M-S-8  break
+  )
+  action_!lmet+rsft+9  (switch ;;@autogen@ 
+    () M-S-9  break
+  )
+  action_!lmet+rsft+0  (switch ;;@autogen@ 
+    () M-S-0  break
+  )
 )

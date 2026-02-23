@@ -3,73 +3,44 @@
 ;; == SFT actions ==========================================================
 ;; ___TO_SET___ zellij_action_sft+ent                
 
-;; == DOMAINS =============================================================
+;; == replace ==========================================================
+;; replace + spc
+;; ___TO_SET___ zellij_action_replace_text_in_file   
+;; replace + lsft + spc
+;; ___TO_SET___ zellij_action_replace_text_in_filesystem
+
+;; == search ============================================================
+;; search + spc
+;; ___TO_SET___ zellij_action_search_text_in_file    
+;; search + lsft + spc
+;; ___TO_SET___ zellij_action_search_text_in_filesystem
+;; search + rsft + spc
+;; ___TO_SET___ zellij_action_!search_text_in_file   
+
+;; == files/folders ========================================================
+;; files/folders + spc
+;; ___TO_SET___ zellij_action_files                  
+;; file/folder + lsft + spc
+;; ___TO_SET___ zellij_action_folders                
+
+;; == bookmarks =========================================================
+;; bookmarks + spc
+;; ___TO_SET___ zellij_action_bookmarks              
 
 
-;; == #open =============================================================
-;; #open + spc
+;; == open =============================================================
+;; open + spc
 ;; ___TO_SET___ zellij_action_open_with              
-;; #open + m
+;; open + m
 ;; ___TO_SET___ zellij_action_open_with_chrome       
-;; #open + t
+;; open + t
 ;; ___TO_SET___ zellij_action_open_with_terminal     
-;; #open + v
+;; open + v
 ;; ___TO_SET___ zellij_action_open_with_nvim         
 
-;; == #quickfix =========================================================
-;; #quickfix + spc
-;; ___TO_SET___ zellij_action_quickfix               
+;; == omni ============================================================
 
-;; == modR =========================================================
-;; modR + spc
-;; ___TO_SET___ zellij_action_refs                   
-;; modR + lsft + spc
-;; ___TO_SET___ zellij_action_refs_in                
-;; modR + rsft + spc
-;; ___TO_SET___ zellij_action_refs_out               
-
-;; == modT =========================================================
-;; modT + spc
-;; ___TO_SET___ zellij_action_terminal               
-;; modT + n
-;; ___TO_SET___ zellij_action_terminal_new           
-
-;; == #history =========================================================
-;; #history + spc
-;; ___TO_SET___ zellij_action_history                
-
-;; #history + #command + spc
-;; ___TO_SET___ zellij_action_history_command        
-
-;; #history + #search + spc
-;; ___TO_SET___ zellij_action_history_search         
-
-
-;; == modU =========================================================
-;; modU + spc
-;; ___TO_SET___ zellij_action_debug                  
-;; modU + r
-;; ___TO_SET___ zellij_action_debug_run              
-;; modU + g
-;; ___TO_SET___ zellij_action_debug_go               
-;; modU + s
-;; ___TO_SET___ zellij_action_debug_stop             
-;; modU + i
-;; ___TO_SET___ zellij_action_debug_inside           
-;; modU + o
-;; ___TO_SET___ zellij_action_debug_over             
-
-;; == modI =========================================================
-;; modI + spc
-;; ___TO_SET___ zellij_action_info                   
-
-;; == modO =========================================================
-;; modO + spc
-;; ___TO_SET___ zellij_action_source                 
-
-;; == #omni ============================================================
-
-;; == #omni nav ======================================================
+;; == omni nav ======================================================
 ;; omni + g
 ;; ___TO_SET___ zellij_action_omni_go                
 
@@ -93,7 +64,7 @@
 ;; omni + [
 ;; ___TO_SET___ zellij_action_omni_hist_prev         
 
-;; == #omni edit ======================================================
+;; == omni edit ======================================================
 ;; omni + c
 ;; ___TO_SET___ zellij_action_omni_copy              
 
@@ -108,7 +79,7 @@
 ;; omni + ;
 ;; ___TO_SET___ zellij_action_omni_comment           
 
-;; == #omni file manager ===============================================
+;; == omni file manager ===============================================
 ;; omni + spc
 ;; ___TO_SET___ zellij_action_omni_select            
 ;; omni + r
@@ -144,7 +115,7 @@
 ;; omni + i
 ;; ___TO_SET___ zellij_action_omni_info              
 
-;; == #omni user interface ===============================================
+;; == omni user interface ===============================================
 ;; ___TO_SET___ zellij_action_omni_view_1            
 ;; ___TO_SET___ zellij_action_omni_view_2            
 ;; ___TO_SET___ zellij_action_omni_view_3            
@@ -156,31 +127,31 @@
 ;; ___TO_SET___ zellij_action_omni_view_9            
 ;; ___TO_SET___ zellij_action_omni_view_0            
 
-;; == #omni misc ===============================================
+;; == omni misc ===============================================
 ;; omni + t
-;; see #tab
+;; see tab
 ;; ___TO_SET___ zellij_action_omni_tab_new           
 ;; omni + lsft + t
-;; see #tab
+;; see tab
 ;; ___TO_SET___ zellij_action_omni_tab_undo_close    
 ;; omni + w
-;; see #tab
+;; see tab
 ;; ___TO_SET___ zellij_action_omni_tab_close         
 ;; omni + q
-;; see #windows
+;; see windows
 ;; ___TO_SET___ zellij_action_omni_window_close      
 
 ;; omni + m
-;; see #mem
+;; see modM
 ;; ___TO_SET___ zellij_action_omni_clipboard         
 ;; omni + ,
-;; see #settings
+;; see mod,
 ;; ___TO_SET___ zellij_action_omni_setting           
 ;; omni + .
-;; see #tags
+;; see mod.
 ;; ___TO_SET___ zellij_action_omni_tag               
 ;; omni + /
-;; see #help
+;; see mod/
 ;; ___TO_SET___ zellij_action_omni_help              
 
 ;; omni + '
@@ -188,373 +159,437 @@
 ;; omni + u
 ;; not yet used.
 
-;; == #actions =========================================================
-;; #actions + spc
-;; ___TO_SET___ zellij_action_actions                
+;; == modA =========================================================
+;; modA + spc
+;; ___TO_SET___ zellij_action_modA                   
 
-;; == modS =============================================================
-;; modS + spc
-;; ___TO_SET___ zellij_action_symbol                 
-;; modS + lsft + spc
-;; ___TO_SET___ zellij_action_symbol+lsft            
+;; == modB =========================================================
+;; modB + spc
+;; ___TO_SET___ zellij_action_modB                   
+
+;; == modC =========================================================
+;; modC + spc
+;; ___TO_SET___ zellij_action_modC                   
 
 ;; == modD =============================================================
 ;; modD + spc
-;; ___TO_SET___ zellij_action_defs                   
+;; ___TO_SET___ zellij_action_modD                   
+
+;; == modE ===========================================================
+;; modE + spc
+;; ___TO_SET___ zellij_action_modE                   
 
 ;; == modF =============================================================
 ;; modF + spc
-;; ___TO_SET___ zellij_action_autofill               
+;; ___TO_SET___ zellij_action_modF                   
 
 ;; == modG =============================================================
 ;; modG + spc
-;; ___TO_SET___ zellij_action_git                    
+;; ___TO_SET___ zellij_action_modG                   
 
 ;; == modH =============================================================
 ;; modH + spc
-;; ___TO_SET___ zellij_action_hyperlinks             
+;; ___TO_SET___ zellij_action_modH                   
+
+;; == modI =========================================================
+;; modI + spc
+;; ___TO_SET___ zellij_action_modI                   
 
 ;; == modJ =============================================================
 ;; modJ + spc
-;; ___TO_SET___ zellij_action_jumps                  
+;; ___TO_SET___ zellij_action_modJ                   
 
 ;; == modK =============================================================
 ;; modK + spc
-;; ___TO_SET___ zellij_action_keymaps                
+;; ___TO_SET___ zellij_action_modK                   
 
 ;; == modL =============================================================
 ;; modL + spc
-;; ___TO_SET___ zellij_action_locations              
+;; ___TO_SET___ zellij_action_modL                   
 
-;; == #commands ===========================================================
-;; #commands + spc
-;; ___TO_SET___ zellij_action_command                
+;; == modM  ==========================================================
+;; modM + spc
+;; ___TO_SET___ zellij_action_modM                   
+
+;; == modN  ==========================================================
+;; modN + spc
+;; ___TO_SET___ zellij_action_modN                   
+
+;; == modO =========================================================
+;; modO + spc
+;; ___TO_SET___ zellij_action_modO                   
+
+;; == modP ===========================================================
+;; modP + spc
+;; ___TO_SET___ zellij_action_modP                   
+
+;; == modQ =========================================================
+;; modQ + spc
+;; ___TO_SET___ zellij_action_modQ                   
+
+;; == modR =========================================================
+;; modR + spc
+;; ___TO_SET___ zellij_action_modR                   
+;; modR + lsft + spc
+;; ___TO_SET___ zellij_action_modR+lsft              
+;; modR + rsft + spc
+;; ___TO_SET___ zellij_action_modR+rsft              
+
+;; == modS =============================================================
+;; modS + spc
+;; ___TO_SET___ zellij_action_modS                   
+;; modS + lsft + spc
+;; ___TO_SET___ zellij_action_modS+lsft              
+
+;; == modT =========================================================
+;; modT + spc
+;; ___TO_SET___ zellij_action_modT                   
+;; modT + n
+;; ___TO_SET___ zellij_action_modT+lsft              
+
+;; == modU =========================================================
+;; modU + spc
+;; ___TO_SET___ zellij_action_modU                   
+
+;; == modV =========================================================
+;; modV + spc
+;; ___TO_SET___ zellij_action_modV                   
+
+;; == modW ===========================================================
+;; modW + spc
+;; ___TO_SET___ zellij_action_modW                   
+
+;; == modX =========================================================
+;; modX + spc
+;; ___TO_SET___ zellij_action_modX                   
+
+;; == modY =========================================================
+;; modY + spc
+;; ___TO_SET___ zellij_action_modY                   
+;; modY + mod; + spc
+;; ___TO_SET___ zellij_action_modY_mod;              
+;; modY + search + spc
+;; ___TO_SET___ zellij_action_modY_search            
+
+;; == modZ =========================================================
+;; modZ + spc
+;; ___TO_SET___ zellij_action_modZ                   
+
+;; == mod; ===========================================================
+;; mod; + spc
+;; ___TO_SET___ zellij_action_mod;                   
 
 ;; == mod' =============================================================
 ;; mod' + spc
-;; ___TO_SET___ zellij_action_registers              
+;; ___TO_SET___ zellij_action_mod'                   
 
-;; == #panes =============================================================
-;; #panes + spc
+;; == mod, ==========================================================
+;; mod, + spc
+;; ___TO_SET___ zellij_action_mod,                   
+
+;; == mod. =========================================================
+;; mod. + spc
+;; ___TO_SET___ zellij_action_mod.                   
+
+;; == mod/ ==========================================================
+;; mod/ + spc
+;; ___TO_SET___ zellij_action_mod/                   
+
+;; == panes =============================================================
+;; panes + spc
 ;; ___TO_SET___ zellij_action_pane                   
 
+;; panes + ent
 ;; #panes + ent
 zellij_action_pane_max                       (macro C-g p f ret)
 
+;; panes + h | panes + left
 ;; #panes + h | #panes + left
 zellij_action_pane_left                      (macro C-g p h ret)
+;; panes + l | panes + right
 ;; #panes + l | #panes + right
 zellij_action_pane_right                     (macro C-g p l ret)
+;; panes + k | panes + up
 ;; #panes + k | #panes + up
 zellij_action_pane_above                     (macro C-g p k ret)
+;; panes + j | panes + down
 ;; #panes + j | #panes + down
 zellij_action_pane_below                     (macro C-g p j ret)
 
-;; #panes + -
+;; panes + -
 ;; ___TO_SET___ zellij_action_pane_split_h           
-;; #panes + \
+;; panes + \
 ;; ___TO_SET___ zellij_action_pane_split_v           
 
-;; #panes + w
+;; panes + w
 ;; ___TO_SET___ zellij_action_pane_close             
 
-;; == #panes + #toggle ====================================================
-;; #panes + #toggle | 2x !lalt
+;; == panes + toggle ====================================================
+;; panes + toggle | 2x !lalt
 ;; ___TO_SET___ zellij_action_pane_toggle            
 
-;; == #panes + #float ====================================================
-;; #panes + float
+;; == panes + float ====================================================
+;; panes + float
 ;; ___TO_SET___ zellij_action_pane_float             
 
-;; == #panes + #move ======================================================
-;; #panes + #move + h | #panes + #move + left
+;; == panes + move ======================================================
+;; panes + move + h | panes + move + left
 ;; ___TO_SET___ zellij_action_pane_move_left         
-;; #panes + #move + l | #panes + #move + right
+;; panes + move + l | panes + move + right
 ;; ___TO_SET___ zellij_action_pane_move_right        
-;; #panes + #move + k | #panes + #move + up
+;; panes + move + k | panes + move + up
 ;; ___TO_SET___ zellij_action_pane_move_above        
-;; #panes + #move + j | #panes + #move + down
+;; panes + move + j | panes + move + down
 ;; ___TO_SET___ zellij_action_pane_move_below        
 
-;; == #panes + #resize ====================================================
-;; #panes + #resize + h | #panes + #resize + left
+;; == panes + resize ====================================================
+;; panes + resize + h | panes + resize + left
 ;; ___TO_SET___ zellij_action_pane_resize_left       
-;; #panes + #resize + l | #panes + #resize + right
+;; panes + resize + l | panes + resize + right
 ;; ___TO_SET___ zellij_action_pane_resize_right      
-;; #panes + #resize + k | #panes + #resize + up
+;; panes + resize + k | panes + resize + up
 ;; ___TO_SET___ zellij_action_pane_resize_above      
-;; #panes + #resize + j | #panes + #resize + down
+;; panes + resize + j | panes + resize + down
 ;; ___TO_SET___ zellij_action_pane_resize_below      
 
-;; == #panes + #swap ======================================================
-;; #panes + #swap + h | #panes + #swap + left
+;; == panes + swap ======================================================
+;; panes + swap + h | panes + swap + left
 ;; ___TO_SET___ zellij_action_pane_swap_left         
-;; #panes + #swap + l | #panes + #swap + right
+;; panes + swap + l | panes + swap + right
 ;; ___TO_SET___ zellij_action_pane_swap_right        
-;; #panes + #swap + k | #panes + #swap + up
+;; panes + swap + k | panes + swap + up
 ;; ___TO_SET___ zellij_action_pane_swap_above        
-;; #panes + #swap + j | #panes + #swap + down
+;; panes + swap + j | panes + swap + down
 ;; ___TO_SET___ zellij_action_pane_swap_below        
 
-;; == #panes go by number ============================================
-;; #panes + 1
+;; == panes go by number ============================================
+;; panes + 1
 ;; ___TO_SET___ zellij_action_pane_goto_1            
-;; #panes + 2
+;; panes + 2
 ;; ___TO_SET___ zellij_action_pane_goto_2            
-;; #panes + 3
+;; panes + 3
 ;; ___TO_SET___ zellij_action_pane_goto_3            
-;; #panes + 4
+;; panes + 4
 ;; ___TO_SET___ zellij_action_pane_goto_4            
-;; #panes + 5
+;; panes + 5
 ;; ___TO_SET___ zellij_action_pane_goto_5            
-;; #panes + 6
+;; panes + 6
 ;; ___TO_SET___ zellij_action_pane_goto_6            
-;; #panes + 7
+;; panes + 7
 ;; ___TO_SET___ zellij_action_pane_goto_7            
-;; #panes + 8
+;; panes + 8
 ;; ___TO_SET___ zellij_action_pane_goto_8            
-;; #panes + 9
+;; panes + 9
 ;; ___TO_SET___ zellij_action_pane_goto_last         
 
-;; == #panes show pane / focus (app-specific) =============================
-;; #panes + q
+;; == panes show pane / focus (app-specific) =============================
+;; panes + q
 ;; ___TO_SET___ zellij_action_pane_quickfix          
-;; #panes + w
-;; see #panes
-;; #panes + e
+;; panes + w
+;; see panes
+;; panes + e
 ;; ___TO_SET___ zellij_action_pane_explorer          
-;; #panes + lsft + e
+;; panes + lsft + e
 ;; ___TO_SET___ zellij_action_pane+lsft_explorer     
-;; #panes + r
+;; panes + r
 ;; ___TO_SET___ zellij_action_pane_recent            
-;; #panes + t
+;; panes + t
 ;; ___TO_SET___ zellij_action_pane_terminal          
-;; #panes + u
+;; panes + u
 ;; ___TO_SET___ zellij_action_pane_debug             
-;; #panes + y
+;; panes + y
 ;; ___TO_SET___ zellij_action_pane_history           
-;; #panes + i
+;; panes + i
 ;; ___TO_SET___ zellij_action_pane_info              
-;; #panes + o
+;; panes + o
 ;; ___TO_SET___ zellij_action_pane_outline           
-;; #panes + lsft + o
+;; panes + lsft + o
 ;; ___TO_SET___ zellij_action_pane_output            
-;; #panes + p
+;; panes + p
 ;; ___TO_SET___ zellij_action_pane_properties        
-;; #panes + lsft + p
+;; panes + lsft + p
 ;; ___TO_SET___ zellij_action_pane+lsft_properties   
-;; #panes + [
+;; panes + [
 ;; ___TO_SET___ zellij_action_pane_backlinks         
-;; #panes + ]
+;; panes + ]
 ;; ___TO_SET___ zellij_action_pane_outlinks          
-;; #panes + lsft + ]
+;; panes + lsft + ]
 ;; ___TO_SET___ zellij_action_pane+lsft_outlinks     
 
-;; #panes + a
+;; panes + a
 ;; ___TO_SET___ zellij_action_pane_AI                
-;; #panes + s
+;; panes + s
 ;; ___TO_SET___ zellij_action_pane_sidebar           
-;; #panes + lsft + s
+;; panes + lsft + s
 ;; ___TO_SET___ zellij_action_pane+lsft_sidebar      
-;; #panes + d
+;; panes + d
 ;; ___TO_SET___ zellij_action_pane_docker            
-;; #panes + f
+;; panes + f
 ;; ___TO_SET___ zellij_action_pane_filename          
-;; #panes + g
+;; panes + g
 ;; ___TO_SET___ zellij_action_pane_go                
-;; #panes + ;
+;; panes + ;
 ;; ___TO_SET___ zellij_action_pane_graph             
-;; #panes + '
+;; panes + '
 ;; not yet used.
 
-;; #panes + z
+;; panes + z
 ;; ___TO_SET___ zellij_action_pane_tests             
-;; #panes + x
+;; panes + x
 ;; ___TO_SET___ zellij_action_pane_extensions        
-;; #panes + c
+;; panes + c
 ;; ___TO_SET___ zellij_action_pane_calendar          
-;; #panes + lsft + c
+;; panes + lsft + c
 ;; ___TO_SET___ zellij_action_pane_day               
-;; #panes + rsft + c
+;; panes + rsft + c
 ;; ___TO_SET___ zellij_action_pane+!day              
-;; #panes + v
+;; panes + v
 ;; ___TO_SET___ zellij_action_pane_vertical_tab      
-;; #panes + b
+;; panes + b
 ;; ___TO_SET___ zellij_action_pane_bookmarks         
-;; #panes + n
+;; panes + n
 ;; ___TO_SET___ zellij_action_pane_notebooks         
-;; #panes + m
+;; panes + m
 ;; ___TO_SET___ zellij_action_pane_main              
-;; #panes + ,
+;; panes + ,
 ;; ___TO_SET___ zellij_action_pane_settings          
-;; #panes + .
+;; panes + .
 ;; ___TO_SET___ zellij_action_pane_tags              
-;; #panes + /
+;; panes + /
 ;; ___TO_SET___ zellij_action_pane_help              
 
-;; == #panes + #search (tap) ==============================================
-;; #panes + #search
+;; == panes + search (tap) ==============================================
+;; panes + search
 ;; ___TO_SET___ zellij_action_pane_search            
 
-;; == #panes + #replace (tap) ==============================================
-;; #panes + #replace
+;; == panes + replace (tap) ==============================================
+;; panes + replace
 ;; ___TO_SET___ zellij_action_pane_replace           
 
-;; == #tab ===============================================================
+;; == tab ===============================================================
 
-;; #tab + spc
+;; tab + spc
 ;; ___TO_SET___ zellij_action_tab                    
 
+;; tab + l | tab + right | lsft + rsft | 2x rsft | !lmet + tab
 ;; #tab + l | #tab + right | lsft + rsft | 2x rsft | !lmet + tab
 zellij_action_tab_next                       (macro C-g t l ret)
+;; tab + h | tab + left | rsft + lsft | 2x lsft | !lmet + sft + tab
 ;; #tab + h | #tab + left | rsft + lsft | 2x lsft | !lmet + sft + tab
 zellij_action_tab_prev                       (macro C-g t h ret)
-;; #tab + j | #tab + down
+;; tab + j | tab + down
 ;; ___TO_SET___ zellij_action_tab_first              
-;; #tab + k | #tab + up
+;; tab + k | tab + up
 ;; ___TO_SET___ zellij_action_tab_last               
 
-;; #tab + t
+;; tab + t
 ;; ___TO_SET___ zellij_action_tab_new                
-;; #tab + w
+;; tab + w
 ;; ___TO_SET___ zellij_action_tab_close              
-;; #tab + lsft + t
+;; tab + lsft + t
 ;; ___TO_SET___ zellij_action_tab_undo_close         
 
-;; == #tab go by number ==================================================
-;; #tab + 1
+;; == tab go by number ==================================================
+;; tab + 1
 ;; ___TO_SET___ zellij_action_tab_goto_1             
-;; #tab + 2
+;; tab + 2
 ;; ___TO_SET___ zellij_action_tab_goto_2             
-;; #tab + 3
+;; tab + 3
 ;; ___TO_SET___ zellij_action_tab_goto_3             
-;; #tab + 4
+;; tab + 4
 ;; ___TO_SET___ zellij_action_tab_goto_4             
-;; #tab + 5
+;; tab + 5
 ;; ___TO_SET___ zellij_action_tab_goto_5             
-;; #tab + 6
+;; tab + 6
 ;; ___TO_SET___ zellij_action_tab_goto_6             
-;; #tab + 7
+;; tab + 7
 ;; ___TO_SET___ zellij_action_tab_goto_7             
-;; #tab + 8
+;; tab + 8
 ;; ___TO_SET___ zellij_action_tab_goto_8             
-;; #tab + 9
+;; tab + 9
 ;; ___TO_SET___ zellij_action_tab_goto_last          
 
+;; == tab + toggle =====================================================
+;; tab + toggle | 2x !lctl
 ;; == #tab + #toggle =====================================================
 ;; #tab + #toggle | 2x !lctl
 zellij_action_tab_toggle                     (macro C-g t tab ret)
 
-;; == #tab + #move =====================================================
-;; #tab + #move + h | #tab + #move + left
+;; == tab + move =====================================================
+;; tab + move + h | tab + move + left
 ;; ___TO_SET___ zellij_action_tab_move_left          
-;; #tab + #move + l | #tab + #move + right
+;; tab + move + l | tab + move + right
 ;; ___TO_SET___ zellij_action_tab_move_right         
-;; #tab + #move + k | #tab + #move + up
+;; tab + move + k | tab + move + up
 ;; ___TO_SET___ zellij_action_tab_move_first         
-;; #tab + #move + j | #tab + #move + down
+;; tab + move + j | tab + move + down
 ;; ___TO_SET___ zellij_action_tab_move_last          
 
-;; == #!tab/groups =====================================================
+;; == !tab/groups =====================================================
 
+;; !tab + spc
 ;; #!tab + spc
 zellij_action_!tab                  $zellij_action_tab                  
 
+;; !tab + l | !tab + right
 ;; #!tab + l | #!tab + right
 zellij_action_!tab_next             $zellij_action_tab_next             
+;; !tab + h | !tab + left
 ;; #!tab + h | #!tab + left
 zellij_action_!tab_prev             $zellij_action_tab_prev             
-;; #!tab + j | #!tab + down
+;; !tab + j | !tab + down
 ;; ___TO_SET___ zellij_action_!tab_first             
-;; #!tab + k | #!tab + up
+;; !tab + k | !tab + up
 ;; ___TO_SET___ zellij_action_!tab_last              
 
-;; #!tab + t
+;; !tab + t
 ;; ___TO_SET___ zellij_action_!tab_new               
-;; #!tab + w
+;; !tab + w
 ;; ___TO_SET___ zellij_action_!tab_close             
-;; #!tab + lsft + t
+;; !tab + lsft + t
 ;; ___TO_SET___ zellij_action_!tab_undo_close        
 
-;; == #!tab go by number ==================================================
-;; #!tab + 1
+;; == !tab go by number ==================================================
+;; !tab + 1
 ;; ___TO_SET___ zellij_action_!tab_goto_1            
-;; #!tab + 2
+;; !tab + 2
 ;; ___TO_SET___ zellij_action_!tab_goto_2            
-;; #!tab + 3
+;; !tab + 3
 ;; ___TO_SET___ zellij_action_!tab_goto_3            
-;; #!tab + 4
+;; !tab + 4
 ;; ___TO_SET___ zellij_action_!tab_goto_4            
-;; #!tab + 5
+;; !tab + 5
 ;; ___TO_SET___ zellij_action_!tab_goto_5            
-;; #!tab + 6
+;; !tab + 6
 ;; ___TO_SET___ zellij_action_!tab_goto_6            
-;; #!tab + 7
+;; !tab + 7
 ;; ___TO_SET___ zellij_action_!tab_goto_7            
-;; #!tab + 8
+;; !tab + 8
 ;; ___TO_SET___ zellij_action_!tab_goto_8            
-;; #!tab + 9
+;; !tab + 9
 ;; ___TO_SET___ zellij_action_!tab_goto_last         
 
+;; == !tab + toggle =====================================================
+;; !tab + toggle
 ;; == #!tab + #toggle =====================================================
 ;; #!tab + #toggle
 zellij_action_!tab_toggle           $zellij_action_tab_toggle           
 
-;; == #!tab + #move =====================================================
-;; #!tab + #move + h | #!tab + #move + left
+;; == !tab + move =====================================================
+;; !tab + move + h | !tab + move + left
 ;; ___TO_SET___ zellij_action_!tab_move_left         
-;; #!tab + #move + l | #!tab + #move + right
+;; !tab + move + l | !tab + move + right
 ;; ___TO_SET___ zellij_action_!tab_move_right        
-;; #!tab + #move + k | #!tab + #move + up
+;; !tab + move + k | !tab + move + up
 ;; ___TO_SET___ zellij_action_!tab_move_first        
-;; #!tab + #move + j | #!tab + #move + down
+;; !tab + move + j | !tab + move + down
 ;; ___TO_SET___ zellij_action_!tab_move_last         
 
-;; == #sessions =====================================================
-;; #sessions + spc
+;; == sessions =====================================================
+;; sessions + spc
 ;; ___TO_SET___ zellij_action_session                
-;; #sessions + #toggle
+;; sessions + toggle
 ;; ___TO_SET___ zellij_action_session_toggle         
-
-;; == #mem (clipboard) ==================================================
-;; #mem + spc
-;; ___TO_SET___ zellij_action_clipboard              
-
-;; == #settings ==========================================================
-;; #settings + spc
-;; ___TO_SET___ zellij_action_setting                
-
-;; == mod. =========================================================
-;; mod. + spc
-;; ___TO_SET___ zellij_action_tag                    
-
-;; == #help ==========================================================
-;; #help + spc
-;; ___TO_SET___ zellij_action_help                   
-
-;; == #replace ==========================================================
-;; #replace + spc
-;; ___TO_SET___ zellij_action_replace_text_in_file   
-;; #replace + lsft + spc
-;; ___TO_SET___ zellij_action_replace_text_in_filesystem
-
-;; == #search ============================================================
-;; #search + spc
-;; ___TO_SET___ zellij_action_search_text_in_file    
-;; #search + lsft + spc
-;; ___TO_SET___ zellij_action_search_text_in_filesystem
-;; #search + rsft + spc
-;; ___TO_SET___ zellij_action_!search_text_in_file   
-
-;; == #files/folders ========================================================
-;; #files/folders + spc
-;; ___TO_SET___ zellij_action_files                  
-;; #file/folder + lsft + spc
-;; ___TO_SET___ zellij_action_folders                
-
-;; == #bookmarks =========================================================
-;; #bookmarks + spc
-;; ___TO_SET___ zellij_action_bookmarks              
 
 ;; == LCTL actions ==========================================================
 ;; ___TO_SET___ zellij_action_lctl+a                 
