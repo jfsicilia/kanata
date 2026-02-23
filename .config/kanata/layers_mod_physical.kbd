@@ -101,6 +101,7 @@
   (t! map_layers "$action_!lmet" "!lmet" ($<lctl $>lctl $<lalt $>lalt $lsft $rsft $!lctl $!lalt lsft rsft))
   (t! map_keys   "$action_!lmet"         ($<lctl $>lctl $<lalt $>lalt $lsft $rsft tab))
 )
+
 (deflayermap (!lmet+lsft_layer)
   (t! map_layers "$action_!lmet+lsft" "!lmet+lsft" ($<lctl $>lctl $<lalt $>lalt $!lctl $!lalt))
   (t! map_keys   "$action_!lmet+lsft"              ($<lctl $>lctl $<lalt $>lalt tab))

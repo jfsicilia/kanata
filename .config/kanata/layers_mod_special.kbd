@@ -128,7 +128,7 @@
   k  up
   l  right
 
-  spc (t! th _ $toggle_lang_alt_layer)
+  spc $action_emojis
 )
 (deflayermap (lang_alt_layer)
   e (t! euro)
