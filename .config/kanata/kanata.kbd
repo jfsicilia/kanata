@@ -37,13 +37,15 @@
 
 ;; Setup =================================================================
 (include setup.kbd)
-;;(include layers.kbd)
-(include toggles_gui.kbd)
-(include layers_gui.kbd)
-(include toggles_domain.kbd)
-(include layers_domain.kbd)
-(include toggles_modifiers.kbd)
-(include layers_modifiers.kbd)
+(include toggles_combined.kbd)
+(include toggles_mod_gui.kbd)
+(include toggles_mod_key.kbd)
+(include toggles_mod_special.kbd)
+(include toggles_mod_physical.kbd)
+(include layers_mod_gui.kbd)
+(include layers_mod_key.kbd)
+(include layers_mod_special.kbd)
+(include layers_mod_physical.kbd)
 
 ;; Actions ===============================================================
 (include actions/actions.kbd)

@@ -1,0 +1,238 @@
+;; "" WINDOWS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (window_layer)
+  ent          $action_window_max
+
+  h            $action_window_left
+  l            $action_window_right
+  j            $action_window_down
+
+  ;; == SFT ======================
+  $d|modD_&_lsft  (t! th _                   $toggle_window+lsft_layer)
+  $k|modK_&_rsft  (t! th $action_window_up   $toggle_window+rsft_layer)
+  lsft            (t! th _                   $toggle_window+lsft_layer)
+  rsft            (t! th _                   $toggle_window+rsft_layer)
+)
+(deflayermap (window+lsft_layer)
+)
+(deflayermap (window+rsft_layer)
+)
+
+;; "" WORKSPACES LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (workspace_layer)
+  j $action_screen_next
+  l $action_desktop_next
+  h $action_desktop_prev
+
+  $move (t! th _ $toggle_workspace+move_layer)
+
+  ;; == SFT ======================
+  $d|modD_&_lsft     (t! th _                    $toggle_workspace+lsft_layer)
+  $k|modK_&_rsft  (t! th $action_screen_prev $toggle_workspace+rsft_layer)
+  lsft            (t! th _                    $toggle_workspace+lsft_layer)
+  rsft            (t! th _                    $toggle_workspace+rsft_layer)
+)
+(deflayermap (workspace+move_layer)
+  j $action_screen_next_move_window
+  k $action_screen_prev_move_window
+  l $action_desktop_next_move_window
+  h $action_desktop_prev_move_window
+)
+(deflayermap (workspace+lsft_layer)
+)
+(deflayermap (workspace+rsft_layer)
+)
+
+(deflayermap (pane_layer)
+  ent   $action_pane_max
+
+  h     $action_pane_left
+  left  $action_pane_left
+  j     $action_pane_below
+  down  $action_pane_below
+  up    $action_pane_above
+  l     $action_pane_right
+  right $action_pane_right
+
+  -     $action_pane_split_h
+  \     $action_pane_split_v ;;""
+
+  w     $action_pane_close
+
+  1     $action_pane_goto_1
+  2     $action_pane_goto_2
+  3     $action_pane_goto_3
+  4     $action_pane_goto_4
+  5     $action_pane_goto_5
+  6     $action_pane_goto_6
+  7     $action_pane_goto_7
+  8     $action_pane_goto_8
+  9     $action_pane_goto_last
+
+  ;; toggle/open panes
+  b     $action_pane_bookmarks
+  c     $action_pane_calendar
+  e     $action_pane_explorer
+  g     $action_pane_go
+  m     $action_pane_main
+  o     $action_pane_outline
+  p     $action_pane_properties
+  s     $action_pane_sidebar
+  t     $action_pane_tags
+  v     $action_pane_vertical_tab
+  ;     $action_pane_graph
+  ,     $action_pane_backlinks
+  .     $action_pane_outlinks
+
+  ;; == SFT ======================
+  $d|modD_&_lsft  (t! th $action_pane_docker  $toggle_pane+lsft_layer)
+  $k|modK_&_rsft  (t! th $action_pane_above   $toggle_pane+rsft_layer)
+  lsft            (t! th _                    $toggle_pane+lsft_layer)
+  rsft            (t! th _                    $toggle_pane+rsft_layer)
+
+  ;; == Gui Actions ========================
+  $toggle        $action_pane_toggle
+  $move          (t! th _                   $toggle_pane+move_layer)
+  $resize        (t! th _                   $toggle_pane+resize_layer)
+  $float_&_snap  (t! th $action_pane_float  $toggle_pane+snap_layer)
+  $swap          (t! th _                   $toggle_pane+swap_layer)
+)
+(deflayermap (pane+lsft_layer)
+  c $action_pane_day
+  e $action_pane+lsft_explorer
+  p $action_pane+lsft_properties
+  s $action_pane+lsft_sidebar
+  . $action_pane+lsft_outlinks
+)
+(deflayermap (pane+rsft_layer)
+  c $action_pane_day
+  e $action_pane+lsft_explorer
+  p $action_pane+lsft_properties
+  s $action_pane+lsft_sidebar
+  . $action_pane+lsft_outlinks
+)
+(deflayermap (pane+move_layer)
+  h     $action_pane_move_left
+  left  $action_pane_move_left
+  j     $action_pane_move_below
+  down  $action_pane_move_below
+  k     $action_pane_move_above
+  up    $action_pane_move_above
+  l     $action_pane_move_right
+  right $action_pane_move_right
+)
+(deflayermap (pane+snap_layer)
+;;  h     $action_pane_snap_left
+;;  left  $action_pane_snap_left
+;;  j     $action_pane_snap_below
+;;  down  $action_pane_snap_below
+;;  k     $action_pane_snap_above
+;;  up    $action_pane_snap_above
+;;  l     $action_pane_snap_right
+;;  right $action_pane_snap_right
+)
+(deflayermap (pane+resize_layer)
+  h     $action_pane_resize_left
+  l     $action_pane_resize_right
+  k     $action_pane_resize_above
+  j     $action_pane_resize_below
+  left  $action_pane_resize_left
+  right $action_pane_resize_right
+  up    $action_pane_resize_above
+  down  $action_pane_resize_below
+)
+(deflayermap (pane+swap_layer)
+  h     $action_pane_swap_left
+  l     $action_pane_swap_right
+  k     $action_pane_swap_above
+  j     $action_pane_swap_below
+  left  $action_pane_swap_left
+  right $action_pane_swap_right
+  up    $action_pane_swap_above
+  down  $action_pane_swap_below
+)
+
+;; "" TAB LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (tab_layer)
+  spc   $action_tab
+
+  h     $action_tab_prev
+  left  $action_tab_prev
+  l     $action_tab_next
+  right $action_tab_next
+  j     $action_tab_first
+  down  $action_tab_first
+  up    $action_tab_last
+
+  t     $action_tab_new
+  w     $action_tab_close
+
+  1     $action_tab_goto_1
+  2     $action_tab_goto_2
+  3     $action_tab_goto_3
+  4     $action_tab_goto_4
+  5     $action_tab_goto_5
+  6     $action_tab_goto_6
+  7     $action_tab_goto_7
+  8     $action_tab_goto_8
+  9     $action_tab_goto_last
+
+  ;; == SFT ======================
+  $d|modD_&_lsft     (t! th _                    $toggle_tab+lsft_layer)
+  $k|modK_&_rsft  (t! th $action_tab_last    $toggle_tab+rsft_layer)
+  lsft            (t! th _                    $toggle_tab+lsft_layer)
+  rsft            (t! th _                    $toggle_tab+rsft_layer)
+
+  ;; == Gui Actions ========================
+  $move (t! th _ $toggle_tab+move_layer)
+)
+(deflayermap (tab+move_layer)
+  h     $action_tab_move_left
+  left  $action_tab_move_left
+  l     $action_tab_move_right
+  right $action_tab_move_right
+  j     $action_tab_move_first
+  down  $action_tab_move_first
+  k     $action_tab_move_last
+  up    $action_tab_move_last
+)
+(deflayermap (tab+lsft_layer)
+  t $action_tab_undo_close
+)
+(deflayermap (tab+rsft_layer)
+  t $action_tab_undo_close
+)
+
+;; "" GROUPS LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (groups_layer)
+  h     $~action_!tab_prev
+  left  $~action_!tab_prev
+  l     $~action_!tab_next
+  right $~action_!tab_next
+  j     $~action_!tab_first
+  down  $~action_!tab_first
+  up    $~action_!tab_last
+
+  ;; == SFT ======================
+  $d|modD_&_lsft  (t! th _                    $toggle_groups+lsft_layer)
+  $k|modK_&_rsft  (t! th $~action_!tab_last   $toggle_groups+rsft_layer)
+  lsft            (t! th _                    $toggle_groups+lsft_layer)
+  rsft            (t! th _                    $toggle_groups+rsft_layer)
+)
+(deflayermap (groups+lsft_layer)
+)
+(deflayermap (groups+rsft_layer)
+)
+
+;; "" SESSION_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (session_layer)
+  ;; == SFT ======================
+  $d|modD_&_lsft     (t! th _                    $toggle_session+lsft_layer)
+  $k|modK_&_rsft  (t! th _                    $toggle_session+rsft_layer)
+  lsft            (t! th _                    $toggle_session+lsft_layer)
+  rsft            (t! th _                    $toggle_session+rsft_layer)
+)
+(deflayermap (session+lsft_layer)
+)
+(deflayermap (session+rsft_layer)
+)
+

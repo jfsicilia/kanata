@@ -1386,11 +1386,11 @@
 
   ;; == #apps =========================================================
   ;; #apps + spc
-  action_app (t! unmod_all (switch
+  action_apps (t! unmod_all (switch
     () RA-spc break
   ))
 
-  action_app_toggle (t! unmod_all (switch
+  action_apps_toggle (t! unmod_all (switch
     () A-tab break
   ))
 
@@ -1404,7 +1404,7 @@
 
   ;; == #opts ==============================================================
   ;; opts + lsft/rsft + r 
-  action_opt_restart_kwanata (t! unmod_all 
+  action_opts_restart_kwanata (t! unmod_all 
     (macro RA-spc 300 s y s t e m c t l spc - - u s e r spc r e s t a r t spc k w a n a t a 300 ent))
 
   ;; == LCTL actions ==========================================================

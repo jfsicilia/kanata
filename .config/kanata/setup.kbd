@@ -67,16 +67,16 @@
 ;; as a modifier (lmet/lalt/sft/lctl).
 ;;
 ;; Caps  → tap: esc        hold: omni_layer (main editing/file operations)
-;; a     → tap: a          hold: modA&lmet_layer
-;; s     → tap: s          hold: modS&lalt_layer
-;; d     → tap: d          hold: modD&lsft_layer
-;; f     → tap: f          hold: modF&lctl_layer
+;; a     → tap: a          hold: modA_&_lmet_layer
+;; s     → tap: s          hold: modS_&_lalt_layer
+;; d     → tap: d          hold: modD_&_lsft_layer
+;; f     → tap: f          hold: modF_&_lctl_layer
 ;; g     → tap: g          hold: modG_layer
 ;; h     → tap: h          hold: modH_layer
-;; j     → tap: j          hold: modJ&lctl_layer (special: mimics lalt for lctl+tab)
-;; k     → tap: k          hold: modK&rsft_layer
-;; l     → tap: l          hold: modL&lalt_layer
-;; ;     → tap: ;          hold: mod;&lmet_layer
+;; j     → tap: j          hold: modJ_&_lctl_layer (special: mimics lalt for lctl+tab)
+;; k     → tap: k          hold: modK_&_rsft_layer
+;; l     → tap: l          hold: modL_&_lalt_layer
+;; ;     → tap: ;          hold: mod;_&_lmet_layer
 ;; '     → tap: '          hold: mod'_layer
 ;;
 ;; LOWER ROW
@@ -93,8 +93,8 @@
 ;; v     → tap: v             hold: tabs_layer        
 ;; b     → tap: b             hold: groups_layer      
 ;; n     → tap: n             hold: sessions_layer    
-;; m     → tap: m             hold: tab&modM_layer    
-;; ,     → tap: ,             hold: panes&mod,_layer  
+;; m     → tap: m             hold: tab_&_modM_layer    
+;; ,     → tap: ,             hold: panes_&_mod,_layer  
 ;; .     → tap: .             hold: mod._layer        
 ;; /     → tap: /             hold: windows_layer     
 ;; rsft  → tap: 2x tab_next   hold: rsft_layer
@@ -107,7 +107,7 @@
 ;; spc   → tap: space               hold: num/sym_layer
 ;; ralt  → tap: 2x app toggle       hold: apps_layer
 ;; prnt  → tap: 2x session toggle   hold: bookmarks_layer
-;; rctl  → tap: 2x group toggle     hold: opts_layer
+;; rctl  → tap: 2x groups toggle     hold: opts_layer
 ;;
 ;; SPANISH CHARACTERS (vk_alt_chars)
 ;; ----------------------------------
@@ -138,20 +138,69 @@
   hold_time 200
 
   ;; Upper row keys.
-  tab|open           tab         ;; Tap: Tab, Hold: open_with_layer
-  q|modQ             q           ;; Tap: q,   Hold: modQ_layer
-  w|modW             w           ;; Tap: w,   Hold: modW_layer 
-  e|modE             e           ;; Tap: e,   Hold: modE_layer
-  r|modR             r           ;; Tap: r,   Hold: modR_layer
-  t|modT             t           ;; Tap: t,   Hold: modT_layer
-  y|modY             y           ;; Tap: y,   Hold: modY_layer
-  u|modU             u           ;; Tap: u,   Hold: modU_layer
-  i|modI             i           ;; Tap: i,   Hold: modI_layer
-  o|modO             o           ;; Tap: o,   Hold: modO_layer
-  p|modP             p           ;; Tap: p,   Hold: modP_layer
+  tab|open                tab         ;; Tap: Tab, Hold: open_with_layer
+    q|modQ                q           ;; Tap: q,   Hold: modQ_layer
+    w|modW                w           ;; Tap: w,   Hold: modW_layer 
+    e|modE                e           ;; Tap: e,   Hold: modE_layer
+    r|modR                r           ;; Tap: r,   Hold: modR_layer
+    t|modT                t           ;; Tap: t,   Hold: modT_layer
+    y|modY                y           ;; Tap: y,   Hold: modY_layer
+    u|modU                u           ;; Tap: u,   Hold: modU_layer
+    i|modI                i           ;; Tap: i,   Hold: modI_layer
+    o|modO                o           ;; Tap: o,   Hold: modO_layer
+    p|modP                p           ;; Tap: p,   Hold: modP_layer
   
-  ;; Upper row domains
-  open               tab
+                                 
+  ;; Medium row keys.
+  esc|omni                caps       ;; Tap:=esc, Hold: omni_layer
+    a|modA_&_lmet         a          ;; Tap: a,   Hold: lmet_layer and modA_layer
+    s|modS_&_lalt         s          ;; Tap: s,   Hold: lalt_layer and modS_layer
+    d|modD_&_lsft         d          ;; Tap: d,   Hold: lsft_layer and modD_layer
+    f|modF_&_lctl         f          ;; Tap: f,   Hold: lctl_layer and modF_layer
+    g|modG                g          ;; Tap: g,   Hold: modG_layer
+    h|modH                h          ;; Tap: h,   Hold: modH_layer
+    j|modJ_&_lctl         j          ;; Tap: j,   Hold: lctl_layer and modJ_layer
+    k|modK_&_rsft         k          ;; Tap: k,   Hold: rsft_layer and modK_layer
+    l|modL_&_lalt         l          ;; Tap: l,   Hold: lalt_layer and modL_layer
+    ;|mod;_&_lmet         ;          ;; Tap: ;,   Hold: lmet_layer and mod;_layer 
+    '|mod'                '          ;; Tap: ',   Hold: mod'_layer  |
+
+  ;; Low row keys.
+  lang                    lsgt       ;; <> Key (Spanish keyboard) - Tap: toggle ES/US, Hold: lang_layer
+     z|modZ_&_window      z          ;; Tap: z, Hold: window_layer and modZ_layer
+     x|modX_&_workspace   x          ;; Tap: x, Hold: workspace_layer and modX_layer
+     c|modC_&_pane        c          ;; Tap: c, Hold: pane_layer and modC_layer
+     v|modV_&_tab         v          ;; Tap: v, Hold: tab_layer and modV_layer
+     b|modB_&_groups       b          ;; Tap: b, Hold: groups_layer and modB_layer
+     n|modN_&_session     n          ;; Tap: n, Hold: session_layer and modN_layer
+     m|modM_&_tab         m          ;; Tap: m, Hold: tab_layer and modM_layer
+     ,|mod,_&_pane        ,          ;; Tap: ,, Hold: pane_layer and mod,_layer
+     .|mod._&_workspace   .          ;; Tap: ., Hold: workspace and mod._layer
+     /|mod/_&_window      /          ;; Tap: /, Hold: window_layer and mod/_layer
+  
+  ;; Modifiers row
+  !lmet|replace      $!lmet     ;; Physical lctl is used as lmet, in combo with space works as replace domain. 
+  !lalt|search       $!lalt     ;; Physical lmet is used as lalt, in combo with space works as search domain.
+  !lctl|file         $!lctl     ;; Physical lalt is used as lctl, in combo with space works as file/folder domain.
+    spc|num/sym      spc        ;; Spacebar is used as space and as num/sym layer when hold.
+   ralt|apps         ralt       ;; Physical ralt key will be used for app launching/focusing.
+   prnt|bookm        prnt       ;; Physical prnt key will be used for bookmark layer when hold.
+   rctl|opts         rctl       ;; Physical rctl key will be used for option layer when hold.    
+
+  ;; Standard modifiers
+  <lctl              f          
+  >lctl              j         
+  <lalt              s          
+  >lalt              l          
+  <lmet              a          
+  >lmet              ;          
+  lsft               d 
+  rsft               k 
+  !lmet              lctl       ;; Physical lctl is used as lmet
+  !lalt              lmet       ;; Physical lmet is used as lalt
+  !lctl              lalt       ;; Physical lalt is used as lctl
+
+  ;; Key custom modifiers
   modQ               q
   modW               w
   modE               e
@@ -162,23 +211,6 @@
   modI               i
   modO               o
   modP               p
-                                 
-  ;; Medium row keys.
-  esc|omni           caps       ;; Tap:=esc, Hold: omni_layer
-  a|modA&lmet        a          ;; Tap: a,   Hold: lmet_layer and modA_layer
-  s|modS&lalt        s          ;; Tap: s,   Hold: lalt_layer and modS_layer
-  d|modD&lsft        d          ;; Tap: d,   Hold: lsft_layer and modD_layer
-  f|modF&lctl        f          ;; Tap: f,   Hold: lctl_layer and modF_layer
-  g|modG             g          ;; Tap: g,   Hold: modG_layer
-  h|modH             h          ;; Tap: h,   Hold: modH_layer
-  j|modJ&lctl        j          ;; Tap: j,   Hold: lctl_layer and modJ_layer
-  k|modK&rsft        k          ;; Tap: k,   Hold: rsft_layer and modK_layer
-  l|modL&lalt        l          ;; Tap: l,   Hold: lalt_layer and modL_layer
-  ;|mod;&lmet        ;          ;; Tap: ;,   Hold: lmet_layer and mod;_layer
-  '|mod'             '          ;; Tap: ',   Hold: mod'_layer  
- 
-  ;; Medium row domains.
-  omni               caps
   modA               a
   modS               s
   modD               d
@@ -190,54 +222,35 @@
   modL               l
   mod;               ;
   mod'               ' 
+  modM               m
+  mod,               ,
+  mod.               . 
 
-  ;; Lower row keys.
-  lang               lsgt       ;; <> Key (Spanish keyboard) - Tap: toggle ES/US, Hold: lang_layer
-  z|window           z          ;; Tap: z, Hold: window_layer
-  x|workspace        x          ;; Tap: x, Hold: workspace_layer
-  c|pane             c          ;; Tap: c, Hold: pane_layer
-  v|tab              v          ;; Tap: v, Hold: tab_layer
-  b|group            b          ;; Tap: b, Hold: group_layer
-  n|session          n          ;; Tap: n, Hold: session_layer
-  m|tab&modM         m          ;; Tap: m, Hold: tab_layer and modM_layer
-  ,|pane&mod,        ,          ;; Tap: ,, Hold: pane_layer and mod,_layer
-  .|mod.             .          ;; Tap: ., Hold: mod._layer
-  /|window           /          ;; Tap: /, Hold: window_layer
-  
-  ;; Lower row domains
+  ;; Fixed modifiers.
+  omni               caps
+  open               tab
+  num/sym            spc
+  apps               ralt       ;; 
+  bookm              prnt       ;; Physical prnt key will be used for bookmark layer when hold.
+  opts               rctl       ;; Physical rctl key will be used for option layer when hold.    
+  replace            $!lmet
+  search             $!lalt
+  file               $!lctl
+
+  ;; GUI objects
   window             z
   workspace          x
   pane               c
   tabs               v
   !tabs              b
-  group              b
+  groups              b
   session            n
-  modM               m
-  mod,               ,
-  mod.               . 
 
-  ;; Modifiers row.
-  !lmet              lctl       ;; Physical lctl is used as lmet
-  !lalt              lmet       ;; Physical lmet is used as lalt
-  !lctl              lalt       ;; Physical lalt is used as lctl
-  !lmet&replace      $!lmet     ;; Physical lctl is used as lmet, in combo with space works as replace domain. 
-  !lalt&search       $!lalt     ;; Physical lmet is used as lalt, in combo with space works as search domain.
-  !lctl&file         $!lctl     ;; Physical lalt is used as lctl, in combo with space works as file/folder domain.
-  spc|num/sym        spc        ;; Spacebar is used as space and as num/sym layer when hold.
-  app                ralt       ;; Physical ralt key will be used for app launching/focusing.
-  bookm              prnt       ;; Physical prnt key will be used for bookmark layer when hold.
-  opt                rctl       ;; Physical rctl key will be used for option layer when hold.    
-
-  replace            $!lmet
-  search             $!lalt
-  file               $!lctl
-  num/sym            spc
-
-  ;; GUI action modifiers (used for move/resize/snap/swap sublayers).
+  ;; GUI objects modifiers (used for move/resize/snap/swap sublayers).
   move              $!lctl
   resize            $!lalt
   toggle            ralt       
-  float&snap        prnt      
+  float_&_snap      prnt      
   swap              rctl     
 )
 
@@ -252,55 +265,55 @@
 
 (deftemplate default_layer ()
   ;; Upper row keys
-  $tab|open          (t! fast_th tab                                       $toggle_open_layer)   
-  $q|modQ            (t! fast_th q                                         $toggle_modQ_layer)
-  $w|modW            (t! fast_th w                                         $toggle_modW_layer)
-  $e|modE            (t! fast_th (t! char|alt_char e)                      $toggle_modE_layer)
-  $r|modR            (t! fast_th r                                         $toggle_modR_layer)
-  $t|modT            (t! fast_th t                                         $toggle_modT_layer)
-  $y|modY            (t! fast_th y                                         $toggle_modY_layer)
-  $u|modU            (t! fast_th (t! char|alt_char u)                      $toggle_modU_layer)
-  $i|modI            (t! fast_th (t! char|alt_char i)                      $toggle_modI_layer)
-  $o|modO            (t! fast_th (t! char|alt_char o)                      $toggle_modO_layer)
-  $p|modP            (t! fast_th p                                         $toggle_modP_layer)   
+    $tab|open              (t! fast_th tab                                       $toggle_open_layer)   
+      $q|modQ              (t! fast_th q                                         $toggle_modQ_layer)
+      $w|modW              (t! fast_th w                                         $toggle_modW_layer)
+      $e|modE              (t! fast_th (t! char|alt_char e)                      $toggle_modE_layer)
+      $r|modR              (t! fast_th r                                         $toggle_modR_layer)
+      $t|modT              (t! fast_th t                                         $toggle_modT_layer)
+      $y|modY              (t! fast_th y                                         $toggle_modY_layer)
+      $u|modU              (t! fast_th (t! char|alt_char u)                      $toggle_modU_layer)
+      $i|modI              (t! fast_th (t! char|alt_char i)                      $toggle_modI_layer)
+      $o|modO              (t! fast_th (t! char|alt_char o)                      $toggle_modO_layer)
+      $p|modP              (t! fast_th p                                         $toggle_modP_layer)   
 
   ;; Medium row keys (a, s, d, f, j, k, l, ; work as lmet, lalt, lsft/rsft and lctl)
-  $esc|omni          (t! fast_th esc                                       $toggle_omni_layer)  
-  $a|modA&lmet       (t! fast_th (t! char|alt_char a)                      $toggle_modA&lmet_layer)
-  $s|modS&lalt       (t! fast_th s                                         $toggle_modS&lalt_layer)
-  $d|modD&lsft       (t! fast_th d                                         $toggle_modD&lsft_layer)
-  $f|modF&lctl       (t! fast_th f                                         $toggle_modF&lctl_layer)
-  $g|modG            (t! fast_th g                                         $toggle_modG_layer)
-  $h|modH            (t! fast_th h                                         $toggle_modH_layer)
-  $j|modJ&lctl       (t! fast_th j                                  (multi $toggle_modJ&lctl_layer (on-release release-vkey vk_lalt)))
-  $k|modK&rsft       (t! fast_th k                                         $toggle_modK&rsft_layer)
-  $l|modL&lalt       (t! fast_th l                                         $toggle_modL&lalt_layer)
-  $;|mod;&lmet       (t! fast_th ;                                         $toggle_mod;&lmet_layer)
-  $'|mod'            (t! fast_th '                                         $toggle_mod'_layer)
+    $esc|omni              (t! fast_th esc                                       $toggle_omni_layer)  
+      $a|modA_&_lmet       (t! fast_th (t! char|alt_char a)                      $toggle_modA_&_lmet_layer)
+      $s|modS_&_lalt       (t! fast_th s                                         $toggle_modS_&_lalt_layer)
+      $d|modD_&_lsft       (t! fast_th d                                         $toggle_modD_&_lsft_layer)
+      $f|modF_&_lctl       (t! fast_th f                                         $toggle_modF_&_lctl_layer)
+      $g|modG              (t! fast_th g                                         $toggle_modG_layer)
+      $h|modH              (t! fast_th h                                         $toggle_modH_layer)
+      $j|modJ_&_lctl       (t! fast_th j                                  (multi $toggle_modJ_&_lctl_layer (on-release release-vkey vk_lalt)))
+      $k|modK_&_rsft       (t! fast_th k                                         $toggle_modK_&_rsft_layer)
+      $l|modL_&_lalt       (t! fast_th l                                         $toggle_modL_&_lalt_layer)
+      $;|mod;_&_lmet       (t! fast_th ;                                         $toggle_mod;_&_lmet_layer)
+      $'|mod'              (t! fast_th '                                         $toggle_mod'_layer)
                      
-  ;; Lower row keys (z, x, c, v, b, n, m, work as window, workspace, pane, tab, group and session.
-  lsft               (t!      th (t! 2x $action_tab_prev)                  $toggle_lsft_layer)
-  $lang              (t!      th (on-press toggle-virtualkey vk_alt_chars) $toggle_lang_layer)
-  $z|window          (t! fast_th z                                         $toggle_window_layer)
-  $x|workspace       (t! fast_th x                                         $toggle_workspace_layer)
-  $c|pane            (t! fast_th c                                         $toggle_pane_layer)
-  $v|tab             (t! fast_th v                                         $toggle_tab_layer)
-  $b|group           (t! fast_th b                                         $toggle_group_layer)
-  $n|session         (t! fast_th (t! char|alt_char n)                      $toggle_session_layer)
-  $m|tab&modM        (t! fast_th m                                         $toggle_tab&modM_layer)
-  $,|pane&mod,       (t! fast_th ,                                         $toggle_pane&mod,_layer)
-  $.|mod.            (t! fast_th .                                         $toggle_mod._layer)
-  $/|window          (t! fast_th /                                         $toggle_window_layer)
-  rsft               (t!      th (t! 2x $action_tab_next)                  $toggle_rsft_layer)
+  ;; Lower row keys (z, x, c, v, b, n, m, work as window, workspace, pane, tab, groups and session.
+  lsft                     (t!      th (t! 2x $action_tab_prev)                  $toggle_lsft_layer)
+  $lang                    (t!      th (on-press toggle-virtualkey vk_alt_chars) $toggle_lang_layer)
+      $z|modZ_&_window     (t! fast_th z                                         $toggle_modZ_&_window_layer)
+      $x|modX_&_workspace  (t! fast_th x                                         $toggle_modX_&_workspace_layer)
+      $c|modC_&_pane       (t! fast_th c                                         $toggle_modC_&_pane_layer)
+      $v|modV_&_tab        (t! fast_th v                                         $toggle_modV_&_tab_layer)
+      $b|modB_&_groups     (t! fast_th b                                         $toggle_modB_&_groups_layer)
+      $n|modN_&_session    (t! fast_th (t! char|alt_char n)                      $toggle_modN_&_session_layer)
+      $m|modM_&_tab        (t! fast_th m                                         $toggle_modM_&_tab_layer)
+      $,|mod,_&_pane       (t! fast_th ,                                         $toggle_mod,_&_pane_layer)
+      $.|mod._&_workspace  (t! fast_th .                                         $toggle_mod._layer)
+      $/|mod/_&_window     (t! fast_th /                                         $toggle_mod/_&_window_layer)
+  rsft                     (t!      th (t! 2x $action_tab_next)                  $toggle_rsft_layer)
 
   ;; Modifiers row.
-  $!lmet&replace     (t!      th (t! 2x $action_desktop_toggle)            $toggle_!lmet&replace_layer)
-  $!lalt&search      (t!      th (t! 2x $action_pane_toggle)               $toggle_!lalt&search_layer)
-  $!lctl&file (multi (t!      th (t! 2x $action_tab_toggle)                $toggle_!lctl&file_layer) (on-release release-vkey vk_lalt))
-  $spc|num/sym       (t! fast_th spc                                       $toggle_num/sym_layer)
-  $app               (t!      th (t! 2x $action_app_toggle)                $toggle_app_layer)
-  $bookm             (t!      th (t! 2x $action_session_toggle)            $toggle_bookmarks_layer)
-  $opt               (t!      th (t! 2x $~action_!tab_toggle)              $toggle_opt_layer)   
+  $!lmet|replace           (t!      th (t! 2x $action_desktop_toggle)            $toggle_replace_&_!lmet_layer)
+  $!lalt|search            (t!      th (t! 2x $action_pane_toggle)               $toggle_search_&_!lalt_layer)
+  $!lctl|file       (multi (t!      th (t! 2x $action_tab_toggle)                $toggle_file_&_!lctl_layer) (on-release release-vkey vk_lalt))
+    $spc|num/sym           (t! fast_th spc                                       $toggle_num/sym_layer)
+   $ralt|apps              (t!      th (t! 2x $action_apps_toggle)               $toggle_apps_layer)
+   $prnt|bookm             (t!      th (t! 2x $action_session_toggle)            $toggle_bookmarks_layer)
+   $rctl|opts              (t!      th (t! 2x $~action_!tab_toggle)              $toggle_opts_layer)   
 )
 
 (deflayermap (default)

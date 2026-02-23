@@ -32,9 +32,9 @@
   toggle_tab+move_layer              (t! toggle_layer             tab+move_layer)
 
   ;; Group layer
-  toggle_group_layer                 (t! toggle_layer             group_layer)
-  toggle_group+lsft_layer            (t! toggle_mod_layer   lsft  group+lsft_layer)
-  toggle_group+rsft_layer            (t! toggle_mod_layer   rsft  group+rsft_layer)
+  toggle_groups_layer                 (t! toggle_layer             groups_layer)
+  toggle_groups+lsft_layer            (t! toggle_mod_layer   lsft  groups+lsft_layer)
+  toggle_groups+rsft_layer            (t! toggle_mod_layer   rsft  groups+rsft_layer)
 
   ;; Session layer
   toggle_session_layer               (t! toggle_layer             session_layer)
