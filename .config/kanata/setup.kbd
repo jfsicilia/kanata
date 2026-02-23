@@ -52,13 +52,13 @@
 ;; UPPER ROW
 ;; ---------
 ;; Tab   → tap: tab        hold: open_layer
-;; q     → tap: q          hold: quick_layer
-;; r     → tap: r          hold: ref_layer
-;; t     → tap: t          hold: terminals_layer
-;; y     → tap: y          hold: hist_layer
-;; u     → tap: u          hold: debug_layer
-;; i     → tap: i          hold: info_layer
-;; o     → tap: o          hold: source_layer
+;; q     → tap: q          hold: modQ_layer
+;; r     → tap: r          hold: modR_layer
+;; t     → tap: t          hold: modT_layer
+;; y     → tap: y          hold: modY_layer
+;; u     → tap: u          hold: modU_layer
+;; i     → tap: i          hold: modI_layer
+;; o     → tap: o          hold: modO_layer
 ;;
 ;; MIDDLE ROW
 ;; ----------
@@ -67,17 +67,17 @@
 ;; as a modifier (lmet/lalt/sft/lctl).
 ;;
 ;; Caps  → tap: esc        hold: omni_layer (main editing/file operations)
-;; a     → tap: a          hold: lmet&action_layer
-;; s     → tap: s          hold: lalt&symbol_layer
-;; d     → tap: d          hold: lsft&def_layer
-;; f     → tap: f          hold: lctl&autofill_layer
-;; g     → tap: g          hold: git_layer
-;; h     → tap: h          hold: hyperlink_layer
-;; j     → tap: j          hold: lctl&jump_layer (special: mimics lalt for lctl+tab)
-;; k     → tap: k          hold: rsft&keymap_layer
-;; l     → tap: l          hold: lalt&localiz_layer
-;; ;     → tap: ;          hold: lmet&commands_layer
-;; '     → tap: '          hold: register_layer
+;; a     → tap: a          hold: modA&lmet_layer
+;; s     → tap: s          hold: modS&lalt_layer
+;; d     → tap: d          hold: modD&lsft_layer
+;; f     → tap: f          hold: modF&lctl_layer
+;; g     → tap: g          hold: modG_layer
+;; h     → tap: h          hold: modH_layer
+;; j     → tap: j          hold: modJ&lctl_layer (special: mimics lalt for lctl+tab)
+;; k     → tap: k          hold: modK&rsft_layer
+;; l     → tap: l          hold: modL&lalt_layer
+;; ;     → tap: ;          hold: mod;&lmet_layer
+;; '     → tap: '          hold: mod'_layer
 ;;
 ;; LOWER ROW
 ;; ---------
@@ -93,9 +93,9 @@
 ;; v     → tap: v             hold: tabs_layer        
 ;; b     → tap: b             hold: groups_layer      
 ;; n     → tap: n             hold: sessions_layer    
-;; m     → tap: m             hold: tabs&mem_layer    
-;; ,     → tap: ,             hold: panes&sets_layer  
-;; .     → tap: .             hold: tags_layer        
+;; m     → tap: m             hold: tab&modM_layer    
+;; ,     → tap: ,             hold: panes&mod,_layer  
+;; .     → tap: .             hold: mod._layer        
 ;; /     → tap: /             hold: windows_layer     
 ;; rsft  → tap: 2x tab_next   hold: rsft_layer
 ;;
@@ -139,54 +139,57 @@
 
   ;; Upper row keys.
   tab|open           tab         ;; Tap: Tab, Hold: open_with_layer
-  q|quick            q           ;; Tap: q,   Hold: quickfix_layer
-  w                  w           ;; Tap: w,   Hold: 
-  e                  e           ;; Tap: e,   Hold: 
-  r|ref              r           ;; Tap: r,   Hold: ref_layer
-  t|terminal         t           ;; Tap: t,   Hold: terminal_layer
-  y|history          y           ;; Tap: y,   Hold: history_layer
-  u|debug            u           ;; Tap: u,   Hold: debug_layer        
-  i|info             i           ;; Tap: i,   Hold: info_layer
-  o|source           o           ;; Tap: o,   Hold: source_layer
-  p                  p           ;; Tap: p,   Hold: 
+  q|modQ             q           ;; Tap: q,   Hold: modQ_layer
+  w|modW             w           ;; Tap: w,   Hold: modW_layer 
+  e|modE             e           ;; Tap: e,   Hold: modE_layer
+  r|modR             r           ;; Tap: r,   Hold: modR_layer
+  t|modT             t           ;; Tap: t,   Hold: modT_layer
+  y|modY             y           ;; Tap: y,   Hold: modY_layer
+  u|modU             u           ;; Tap: u,   Hold: modU_layer
+  i|modI             i           ;; Tap: i,   Hold: modI_layer
+  o|modO             o           ;; Tap: o,   Hold: modO_layer
+  p|modP             p           ;; Tap: p,   Hold: modP_layer
   
   ;; Upper row domains
   open               tab
-  quick              q
-  ref                r
-  terminal           t
-  history            y
-  debug              u
-  info               i
-  source             o
+  modQ               q
+  modW               w
+  modE               e
+  modR               r
+  modT               t
+  modY               y
+  modU               u
+  modI               i
+  modO               o
+  modP               p
                                  
-  ;; Medium row keys.           
+  ;; Medium row keys.
   esc|omni           caps       ;; Tap:=esc, Hold: omni_layer
-  a|lmet&action      a          ;; Tap: a,   Hold: lmet_layer and action_layer
-  s|lalt&symbol      s          ;; Tap: s,   Hold: lalt_layer and symbol_layer
-  d|lsft&def         d          ;; Tap: d,   Hold: lsft_layer and def_layer
-  f|lctl&autofill    f          ;; Tap: f,   Hold: lctl_layer and autofill_layer
-  g|git              g          ;; Tap: g,   Hold: git_layer
-  h|hyperlink        h          ;; Tap: h,   Hold: hyperlink_layer
-  j|lctl&jump        j          ;; Tap: j,   Hold: lctl_layer and jump_layer
-  k|rsft&keymap      k          ;; Tap: k,   Hold: rsft_layer and keymap_layer
-  l|lalt&localiz     l          ;; Tap: l,   Hold: lalt_layer and localiz_layer
-  ;|lmet&command     ;          ;; Tap: ;,   Hold: lmet_layer and command_layer 
-  '|register         '          ;; Tap: ',   Hold: register_layer  
+  a|modA&lmet        a          ;; Tap: a,   Hold: lmet_layer and modA_layer
+  s|modS&lalt        s          ;; Tap: s,   Hold: lalt_layer and modS_layer
+  d|modD&lsft        d          ;; Tap: d,   Hold: lsft_layer and modD_layer
+  f|modF&lctl        f          ;; Tap: f,   Hold: lctl_layer and modF_layer
+  g|modG             g          ;; Tap: g,   Hold: modG_layer
+  h|modH             h          ;; Tap: h,   Hold: modH_layer
+  j|modJ&lctl        j          ;; Tap: j,   Hold: lctl_layer and modJ_layer
+  k|modK&rsft        k          ;; Tap: k,   Hold: rsft_layer and modK_layer
+  l|modL&lalt        l          ;; Tap: l,   Hold: lalt_layer and modL_layer
+  ;|mod;&lmet        ;          ;; Tap: ;,   Hold: lmet_layer and mod;_layer
+  '|mod'             '          ;; Tap: ',   Hold: mod'_layer  
  
   ;; Medium row domains.
   omni               caps
-  action             a
-  symbol             s
-  def                d 
-  autofill           f 
-  git                g 
-  hyperlink          h 
-  jump               j 
-  keymap             k 
-  localiz            l
-  command            ;
-  register           r 
+  modA               a
+  modS               s
+  modD               d
+  modF               f
+  modG               g
+  modH               h
+  modJ               j
+  modK               k
+  modL               l
+  mod;               ;
+  mod'               ' 
 
   ;; Lower row keys.
   lang               lsgt       ;; <> Key (Spanish keyboard) - Tap: toggle ES/US, Hold: lang_layer
@@ -196,22 +199,22 @@
   v|tab              v          ;; Tap: v, Hold: tab_layer
   b|group            b          ;; Tap: b, Hold: group_layer
   n|session          n          ;; Tap: n, Hold: session_layer
-  m|tab&mem          m          ;; Tap: m, Hold: tab_layer and mem_layer
-  ,|pane&setting     ,          ;; Tap: ,, Hold: pane_layer and setting_layer
-  .|tag              .          ;; Tap: ., Hold: tag_layer
+  m|tab&modM         m          ;; Tap: m, Hold: tab_layer and modM_layer
+  ,|pane&mod,        ,          ;; Tap: ,, Hold: pane_layer and mod,_layer
+  .|mod.             .          ;; Tap: ., Hold: mod._layer
   /|window           /          ;; Tap: /, Hold: window_layer
   
   ;; Lower row domains
   window             z
   workspace          x
-  pane               c 
-  tabs               v 
+  pane               c
+  tabs               v
   !tabs              b
-  group              b 
+  group              b
   session            n
-  mem                m
-  setting            , 
-  tag                . 
+  modM               m
+  mod,               ,
+  mod.               . 
 
   ;; Modifiers row.
   !lmet              lctl       ;; Physical lctl is used as lmet
@@ -250,30 +253,30 @@
 (deftemplate default_layer ()
   ;; Upper row keys
   $tab|open          (t! fast_th tab                                       $toggle_open_layer)   
-  $q|quick           (t! fast_th q                                         $toggle_quick_layer)
-  $w                 (t! fast_th w                                         XX)
-  $e                 (t! fast_th (t! char|alt_char e)                      XX)
-  $r|ref             (t! fast_th r                                         $toggle_ref_layer)
-  $t|terminal        (t! fast_th t                                         $toggle_terminal_layer)
-  $y|history         (t! fast_th y                                         $toggle_history_layer)
-  $u|debug           (t! fast_th (t! char|alt_char u)                      $toggle_debug_layer)
-  $i|info            (t! fast_th (t! char|alt_char i)                      $toggle_info_layer)
-  $o|source          (t! fast_th (t! char|alt_char o)                      $toggle_source_layer)
-  $p                 (t! fast_th p                                         XX)   
+  $q|modQ            (t! fast_th q                                         $toggle_modQ_layer)
+  $w|modW            (t! fast_th w                                         $toggle_modW_layer)
+  $e|modE            (t! fast_th (t! char|alt_char e)                      $toggle_modE_layer)
+  $r|modR            (t! fast_th r                                         $toggle_modR_layer)
+  $t|modT            (t! fast_th t                                         $toggle_modT_layer)
+  $y|modY            (t! fast_th y                                         $toggle_modY_layer)
+  $u|modU            (t! fast_th (t! char|alt_char u)                      $toggle_modU_layer)
+  $i|modI            (t! fast_th (t! char|alt_char i)                      $toggle_modI_layer)
+  $o|modO            (t! fast_th (t! char|alt_char o)                      $toggle_modO_layer)
+  $p|modP            (t! fast_th p                                         $toggle_modP_layer)   
 
   ;; Medium row keys (a, s, d, f, j, k, l, ; work as lmet, lalt, lsft/rsft and lctl)
   $esc|omni          (t! fast_th esc                                       $toggle_omni_layer)  
-  $a|lmet&action     (t! fast_th (t! char|alt_char a)                      $toggle_lmet&action_layer)
-  $s|lalt&symbol     (t! fast_th s                                         $toggle_lalt&symbol_layer)
-  $d|lsft&def        (t! fast_th d                                         $toggle_lsft&def_layer)
-  $f|lctl&autofill   (t! fast_th f                                         $toggle_lctl&autofill_layer)
-  $g|git             (t! fast_th g                                         $toggle_git_layer)
-  $h|hyperlink       (t! fast_th h                                         $toggle_hyperlink_layer)
-  $j|lctl&jump       (t! fast_th j                                  (multi $toggle_lctl&jump_layer (on-release release-vkey vk_lalt)))
-  $k|rsft&keymap     (t! fast_th k                                         $toggle_rsft&keymap_layer)
-  $l|lalt&localiz    (t! fast_th l                                         $toggle_lalt&localiz_layer)
-  $;|lmet&command    (t! fast_th ;                                         $toggle_lmet&command_layer)
-  $'|register        (t! fast_th '                                         $toggle_register_layer)
+  $a|modA&lmet       (t! fast_th (t! char|alt_char a)                      $toggle_modA&lmet_layer)
+  $s|modS&lalt       (t! fast_th s                                         $toggle_modS&lalt_layer)
+  $d|modD&lsft       (t! fast_th d                                         $toggle_modD&lsft_layer)
+  $f|modF&lctl       (t! fast_th f                                         $toggle_modF&lctl_layer)
+  $g|modG            (t! fast_th g                                         $toggle_modG_layer)
+  $h|modH            (t! fast_th h                                         $toggle_modH_layer)
+  $j|modJ&lctl       (t! fast_th j                                  (multi $toggle_modJ&lctl_layer (on-release release-vkey vk_lalt)))
+  $k|modK&rsft       (t! fast_th k                                         $toggle_modK&rsft_layer)
+  $l|modL&lalt       (t! fast_th l                                         $toggle_modL&lalt_layer)
+  $;|mod;&lmet       (t! fast_th ;                                         $toggle_mod;&lmet_layer)
+  $'|mod'            (t! fast_th '                                         $toggle_mod'_layer)
                      
   ;; Lower row keys (z, x, c, v, b, n, m, work as window, workspace, pane, tab, group and session.
   lsft               (t!      th (t! 2x $action_tab_prev)                  $toggle_lsft_layer)
@@ -284,9 +287,9 @@
   $v|tab             (t! fast_th v                                         $toggle_tab_layer)
   $b|group           (t! fast_th b                                         $toggle_group_layer)
   $n|session         (t! fast_th (t! char|alt_char n)                      $toggle_session_layer)
-  $m|tab&mem         (t! fast_th m                                         $toggle_tab&mem_layer)
-  $,|pane&setting    (t! fast_th ,                                         $toggle_pane&setting_layer)
-  $.|tag             (t! fast_th .                                         $toggle_tag_layer)
+  $m|tab&modM        (t! fast_th m                                         $toggle_tab&modM_layer)
+  $,|pane&mod,       (t! fast_th ,                                         $toggle_pane&mod,_layer)
+  $.|mod.            (t! fast_th .                                         $toggle_mod._layer)
   $/|window          (t! fast_th /                                         $toggle_window_layer)
   rsft               (t!      th (t! 2x $action_tab_next)                  $toggle_rsft_layer)
 

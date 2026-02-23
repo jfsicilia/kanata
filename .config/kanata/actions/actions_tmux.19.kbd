@@ -21,18 +21,18 @@ tmux_prefix A-b
 ;; #quickfix + spc
 ;; ___TO_SET___ tmux_action_quickfix               
 
-;; == #refs =========================================================
-;; #refs + spc
+;; == modR =========================================================
+;; modR + spc
 ;; ___TO_SET___ tmux_action_refs                   
-;; #refs + lsft + spc
+;; modR + lsft + spc
 ;; ___TO_SET___ tmux_action_refs_in                
-;; #refs + rsft + spc
+;; modR + rsft + spc
 ;; ___TO_SET___ tmux_action_refs_out               
 
-;; == #terminals =========================================================
-;; #terminals + spc
+;; == modT =========================================================
+;; modT + spc
 ;; ___TO_SET___ tmux_action_terminal               
-;; #terminals + n
+;; modT + n
 ;; ___TO_SET___ tmux_action_terminal_new           
 
 ;; == #history =========================================================
@@ -46,26 +46,26 @@ tmux_prefix A-b
 ;; ___TO_SET___ tmux_action_history_search         
 
 
-;; == #debug =========================================================
-;; #debug + spc
+;; == modU =========================================================
+;; modU + spc
 ;; ___TO_SET___ tmux_action_debug                  
-;; #debug + r
+;; modU + r
 ;; ___TO_SET___ tmux_action_debug_run              
-;; #debug + g
+;; modU + g
 ;; ___TO_SET___ tmux_action_debug_go               
-;; #debug + s
+;; modU + s
 ;; ___TO_SET___ tmux_action_debug_stop             
-;; #debug + i
+;; modU + i
 ;; ___TO_SET___ tmux_action_debug_inside           
-;; #debug + o
+;; modU + o
 ;; ___TO_SET___ tmux_action_debug_over             
 
-;; == #info =========================================================
-;; #info + spc
+;; == modI =========================================================
+;; modI + spc
 ;; ___TO_SET___ tmux_action_info                   
 
-;; == #source =========================================================
-;; #source + spc
+;; == modO =========================================================
+;; modO + spc
 ;; ___TO_SET___ tmux_action_source                 
 
 ;; == #omni ============================================================
@@ -193,46 +193,46 @@ tmux_action_omni_new                            (macro $tmux_prefix c) ;; prefix
 ;; #actions + spc
 ;; ___TO_SET___ tmux_action_actions                
 
-;; == #symbols =============================================================
-;; #symbols + spc
+;; == modS =============================================================
+;; modS + spc
 ;; ___TO_SET___ tmux_action_symbol                 
-;; #symbols + lsft + spc
+;; modS + lsft + spc
 ;; ___TO_SET___ tmux_action_symbol+lsft            
 
-;; == #defs =============================================================
-;; #defs + spc
+;; == modD =============================================================
+;; modD + spc
 ;; ___TO_SET___ tmux_action_defs                   
 
-;; == #autofill =============================================================
-;; #autofill + spc
+;; == modF =============================================================
+;; modF + spc
 ;; ___TO_SET___ tmux_action_autofill               
 
-;; == #git =============================================================
-;; #git + spc
+;; == modG =============================================================
+;; modG + spc
 ;; ___TO_SET___ tmux_action_git                    
 
-;; == #hyperlinks =============================================================
-;; #hyperlinks + spc
+;; == modH =============================================================
+;; modH + spc
 ;; ___TO_SET___ tmux_action_hyperlinks             
 
-;; == #jumps =============================================================
-;; #jumps + spc
+;; == modJ =============================================================
+;; modJ + spc
 ;; ___TO_SET___ tmux_action_jumps                  
 
-;; == #keymaps =============================================================
-;; #keymaps + spc
+;; == modK =============================================================
+;; modK + spc
 ;; ___TO_SET___ tmux_action_keymaps                
 
-;; == #locations =============================================================
-;; #locations + spc
+;; == modL =============================================================
+;; modL + spc
 ;; ___TO_SET___ tmux_action_locations              
 
-;; == #commands ===========================================================
-;; #commands + spc
-tmux_action_command                 (macro $tmux_prefix S-;) ;; prefix + : (command prompt)
+;; == #mod; ===========================================================
+;; #mod; + spc
+tmux_action_mod;                 (macro $tmux_prefix S-;) ;; prefix + : (command prompt)
 
-;; == #registers =============================================================
-;; #registers + spc
+;; == mod' =============================================================
+;; mod' + spc
 ;; ___TO_SET___ tmux_action_registers              
 
 ;; == #panes =============================================================
@@ -525,8 +525,8 @@ tmux_action_!tab_move_right       $tmux_action_tab_move_right
 ;; #settings + spc
 ;; ___TO_SET___ tmux_action_setting                
 
-;; == #tags =========================================================
-;; #tags + spc
+;; == mod. =========================================================
+;; mod. + spc
 ;; ___TO_SET___ tmux_action_tag                    
 
 ;; == #help ==========================================================

@@ -113,94 +113,94 @@
     () XX break
   ))
 
-  ;; == #quickfix =========================================================
-  ;; #quickfix + spc
-  action_quickfix (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_quickfix break
+  ;; == modQ =========================================================
+  ;; modQ + spc
+  action_modQ (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modQ break
     () XX break
   ))
 
-  ;; == #refs =========================================================
-  ;; #refs + spc
+  ;; == modR =========================================================
+  ;; modR + spc
   action_refs (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_refs break
     () XX break
   ))
-  ;; #refs + lsft + spc
+  ;; modR + lsft + spc
   action_refs_in (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_refs_in break
     () XX break
   ))
-  ;; #refs + rsft + spc
+  ;; modR + rsft + spc
   action_refs_out (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_refs_out break
     () XX break
   ))
 
-  ;; == #terminals =========================================================
-  ;; #terminals + spc
+  ;; == modT =========================================================
+  ;; modT + spc
   action_terminal (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #terminals + n
+  ;; modT + n
   action_terminal_new (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
-  ;; == #history =========================================================
-  ;; #history + spc
-  action_history (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_history break
+  ;; == modY =========================================================
+  ;; modY + spc
+  action_modY (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modY break
     () XX break
   ))
 
-  ;; #history + #command + spc 
-  action_history_command (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_history_command break
+  ;; modY + mod; + spc 
+  action_modY_mod; (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modY_mod; break
     () XX break
   ))
   
-  ;; #history + #search + spc 
-  action_history_search (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_history_search break
+  ;; modY + #search + spc 
+  action_modY_search (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modY_search break
     () XX break
   ))
   
 
-  ;; == #debug =========================================================
-  ;; #debug + spc
+  ;; == modU =========================================================
+  ;; modU + spc
   action_debug (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #debug + r
+  ;; modU + r
   action_debug_run (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #debug + g
+  ;; modU + g
   action_debug_go (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #debug + s
+  ;; modU + s
   action_debug_stop (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #debug + i
+  ;; modU + i
   action_debug_inside (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; #debug + o
+  ;; modU + o
   action_debug_over (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
-  ;; == #info =========================================================
-  ;; #info + spc
+  ;; == modI =========================================================
+  ;; modI + spc
   action_info (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
-  ;; == #source =========================================================
-  ;; #source + spc
+  ;; == modO =========================================================
+  ;; modO + spc
   action_source (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_source break
     () XX break
@@ -470,84 +470,100 @@
   ;; omni + u
   ;; not yet used.
 
-  ;; == #actions =========================================================
-  ;; #actions + spc
-  action_actions (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_actions break
+  ;; == modA =========================================================
+  ;; modA + spc
+  action_modA (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modA break
     () XX break
   ))
 
-  ;; == #symbols =============================================================
-  ;; #symbols + spc 
+  ;; == modS =============================================================
+  ;; modS + spc 
   action_symbol (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_symbol break
     ((input virtual vk_obsidian)) $obsidian_action_symbol break
     () XX break
   ))
-  ;; #symbols + lsft + spc 
+  ;; modS + lsft + spc 
   action_symbol+lsft (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_symbol+lsft break
     () XX break
   ))
 
-  ;; == #defs =============================================================
-  ;; #defs + spc 
+  ;; == modD =============================================================
+  ;; modD + spc 
   action_defs (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_defs break
     () XX break
   ))
 
-  ;; == #autofill =============================================================
-  ;; #autofill + spc 
+  ;; == modF =============================================================
+  ;; modF + spc 
   action_autofill (t! unmod_all (switch ;;@autogen@
     () C-spc break
   ))
 
-  ;; == #git =============================================================
-  ;; #git + spc 
+  ;; == modG =============================================================
+  ;; modG + spc 
   action_git (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_git break
     () XX break
   ))
 
-  ;; == #hyperlinks =============================================================
-  ;; #hyperlinks + spc 
+  ;; == modH =============================================================
+  ;; modH + spc 
   action_hyperlinks (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
-  ;; == #jumps =============================================================
-  ;; #jumps + spc 
+  ;; == modJ =============================================================
+  ;; modJ + spc 
   action_jumps (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_jumps break
     () XX break
   ))
 
-  ;; == #keymaps =============================================================
-  ;; #keymaps + spc 
+  ;; == modK =============================================================
+  ;; modK + spc 
   action_keymaps (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_keymaps break
     () XX break
   ))
 
-  ;; == #locations =============================================================
-  ;; #locations + spc 
+  ;; == modL =============================================================
+  ;; modL + spc 
   action_locations (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_locations break
     () XX break
   ))
 
-  ;; == #commands ===========================================================
-  ;; #commands + spc 
-  action_command (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_command break
-    ((input virtual vk_obsidian)) $obsidian_action_command break
-    ((input virtual vk_tmux)) $tmux_action_command break
+  ;; == modW ===========================================================
+  ;; modW + spc 
+  action_modW (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; == modE ===========================================================
+  ;; modE + spc 
+  action_modE (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; == modP ===========================================================
+  ;; modP + spc 
+  action_modP (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
-  ;; == #registers =============================================================
-  ;; #registers + spc 
+  ;; == mod; ===========================================================
+  ;; mod; + spc 
+  action_mod; (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_mod; break
+    ((input virtual vk_obsidian)) $obsidian_action_mod; break
+    ((input virtual vk_tmux)) $tmux_action_mod; break
+    () XX break
+  ))
+
+  ;; == mod' =============================================================
+  ;; mod' + spc 
   action_registers (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_registers break
     () XX break
@@ -1309,8 +1325,8 @@
     () XX break
   ))
 
-  ;; == #tags =========================================================
-  ;; #tags + spc
+  ;; == mod. =========================================================
+  ;; mod. + spc
   action_tag (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_tag break
     () XX break

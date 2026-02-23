@@ -1,30 +1,33 @@
 ;; == SIMPLE DOMAIN LAYERS (alphabetically sorted) =============================
-(t! simple_domain_layer "action" $action_actions XX XX)
+(t! simple_domain_layer "modA" $action_modA XX XX)
 (t! simple_domain_layer "app" $action_app XX XX)
-(t! simple_domain_layer "autofill" $action_autofill XX XX)
+(t! simple_domain_layer "modF" $action_autofill XX XX)
 (t! simple_domain_layer "bookmarks" $action_bookmarks XX XX)
-(t! simple_domain_layer "command" $action_command XX XX)
-(t! simple_domain_layer "debug" $action_debug XX XX)
-(t! simple_domain_layer "def" $action_defs XX XX)
-(t! simple_domain_layer "git" $action_git XX XX)
-(t! simple_domain_layer "hyperlink" $action_hyperlinks XX XX)
-(t! simple_domain_layer "info" $action_info XX XX)
-(t! simple_domain_layer "jump" $action_jumps XX XX)
-(t! simple_domain_layer "keymap" $action_keymaps XX XX)
-(t! simple_domain_layer "localiz" $action_locations XX XX)
-(t! simple_domain_layer "mem" $action_clipboard XX XX)
+(t! simple_domain_layer "mod;" $action_mod; XX XX)
+(t! simple_domain_layer "modU" $action_debug XX XX)
+(t! simple_domain_layer "modD" $action_defs XX XX)
+(t! simple_domain_layer "modE" $action_modE XX XX)
+(t! simple_domain_layer "file" $action_files $action_folders $action_folders)
+(t! simple_domain_layer "modG" $action_git XX XX)
+(t! simple_domain_layer "modH" $action_hyperlinks XX XX)
+(t! simple_domain_layer "modI" $action_info XX XX)
+(t! simple_domain_layer "modJ" $action_jumps XX XX)
+(t! simple_domain_layer "modK" $action_keymaps XX XX)
+(t! simple_domain_layer "modL" $action_locations XX XX)
+(t! simple_domain_layer "modM" $action_clipboard XX XX)
 (t! simple_domain_layer "open" $action_open_with XX XX)
-(t! simple_domain_layer "quick" $action_quickfix XX XX)
-(t! simple_domain_layer "ref" $action_refs $action_refs_in $action_refs_out)
-(t! simple_domain_layer "register" $action_registers XX XX)
+(t! simple_domain_layer "modP" $action_modP XX XX)
+(t! simple_domain_layer "modQ" $action_modQ XX XX)
+(t! simple_domain_layer "modR" $action_refs $action_refs_in $action_refs_out)
+(t! simple_domain_layer "mod'" $action_registers XX XX)
 (t! simple_domain_layer "replace" $action_replace_text_in_file $action_replace_text_in_filesystem $action_replace_text_in_filesystem)
 (t! simple_domain_layer "search" $action_search_text_in_file $action_search_text_in_filesystem $action_search_text_in_filesystem)
-(t! simple_domain_layer "setting" $action_setting XX XX)
-(t! simple_domain_layer "source" $action_source XX XX)
-(t! simple_domain_layer "symbol" $action_symbol XX XX)
-(t! simple_domain_layer "tag" $action_tag XX XX)
-(t! simple_domain_layer "terminal" $action_terminal XX XX)
-(t! simple_domain_layer "file" $action_files $action_folders $action_folders) 
+(t! simple_domain_layer "mod," $action_setting XX XX)
+(t! simple_domain_layer "modO" $action_source XX XX)
+(t! simple_domain_layer "modS" $action_symbol XX XX)
+(t! simple_domain_layer "mod." $action_tag XX XX)
+(t! simple_domain_layer "modT" $action_terminal XX XX)
+(t! simple_domain_layer "modW" $action_modW XX XX)
 
 ;; "" OPTS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (opt_layer)
@@ -157,15 +160,15 @@
   o (t! dieresis o)
 )
 
-;; "" HISTORY_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (history_layer)
-  (t! map_layers _ "history" (lsft rsft))
-  spc $action_history
+;; "" MODY_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (modY_layer)
+  (t! map_layers _ "modY" (lsft rsft))
+  spc $action_modY
 
-  $command      $action_history_command
-  $search       $action_history_search
+  $mod;      $action_modY_mod;
+  $search    $action_modY_search
 )
-(deflayermap (history+lsft_layer)
+(deflayermap (modY+lsft_layer)
 )
-(deflayermap (history+rsft_layer)
+(deflayermap (modY+rsft_layer)
 )

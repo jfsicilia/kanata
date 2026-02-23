@@ -195,43 +195,43 @@
 (deftemplate _default_map_layers (layer connections)
   ;; == LCTL =========================
   (if-in-list $!lctl $connections $!lctl           (t! th _ (concat "$toggle_" $layer "+lctl_layer")))
-  (if-in-list f      $connections $f|lctl&autofill (t! th _ (concat "$toggle_" $layer "+lctl_layer")))
-  (if-in-list j      $connections $j|lctl&jump     (t! th _ (concat "$toggle_" $layer "+lctl_layer")))
+  (if-in-list f      $connections $f|modF&lctl     (t! th _ (concat "$toggle_" $layer "+lctl_layer")))
+  (if-in-list j      $connections $j|modJ&lctl     (t! th _ (concat "$toggle_" $layer "+lctl_layer")))
   ;; == LALT =========================
   (if-in-list $!lalt $connections $!lalt           (t! th _ (concat "$toggle_" $layer "+lalt_layer")))
-  (if-in-list s      $connections $s|lalt&symbol   (t! th _ (concat "$toggle_" $layer "+lalt_layer")))
-  (if-in-list l      $connections $l|lalt&localiz  (t! th _ (concat "$toggle_" $layer "+lalt_layer")))
+  (if-in-list s      $connections $s|modS&lalt     (t! th _ (concat "$toggle_" $layer "+lalt_layer")))
+  (if-in-list l      $connections $l|modL&lalt     (t! th _ (concat "$toggle_" $layer "+lalt_layer")))
   ;; == LMET =========================
   (if-in-list $!lmet $connections $!lmet           (t! th _ (concat "$toggle_" $layer "+lmet_layer")))
-  (if-in-list a      $connections $a|lmet&action   (t! th _ (concat "$toggle_" $layer "+lmet_layer")))
-  (if-in-list ;      $connections $;|lmet&command  (t! th _ (concat "$toggle_" $layer "+lmet_layer")))
+  (if-in-list a      $connections $a|modA&lmet     (t! th _ (concat "$toggle_" $layer "+lmet_layer")))
+  (if-in-list ;      $connections $;|mod;&lmet     (t! th _ (concat "$toggle_" $layer "+lmet_layer")))
   ;; == LSFT ====================
   (if-in-list lsft   $connections lsft             (t! th _ (concat "$toggle_" $layer "+lsft_layer")))
-  (if-in-list d      $connections $d|lsft&def      (t! th _ (concat "$toggle_" $layer "+lsft_layer")))
+  (if-in-list d      $connections $d|modD&lsft     (t! th _ (concat "$toggle_" $layer "+lsft_layer")))
   ;; == RSFT ====================
   (if-in-list rsft   $connections rsft             (t! th _ (concat "$toggle_" $layer "+rsft_layer")))
-  (if-in-list k      $connections $k|rsft&keymap   (t! th _ (concat "$toggle_" $layer "+rsft_layer")))
+  (if-in-list k      $connections $k|modK&rsft     (t! th _ (concat "$toggle_" $layer "+rsft_layer")))
 )
 
 (deftemplate _map_layers (action layer connections)
   ;; == LCTL =========================
   (if-in-list $!lctl $connections $!lctl           (t! th _                      (concat "$toggle_" $layer "+lctl_layer")))
-  (if-in-list f      $connections $f|lctl&autofill (t! th (concat $action "+" f) (concat "$toggle_" $layer "+lctl_layer")))
-  (if-in-list j      $connections $j|lctl&jump     (t! th (concat $action "+" j) (concat "$toggle_" $layer "+lctl_layer")))
+  (if-in-list f      $connections $f|modF&lctl     (t! th (concat $action "+" f) (concat "$toggle_" $layer "+lctl_layer")))
+  (if-in-list j      $connections $j|modJ&lctl     (t! th (concat $action "+" j) (concat "$toggle_" $layer "+lctl_layer")))
   ;; == LALT =========================
   (if-in-list $!lalt $connections $!lalt           (t! th _                      (concat "$toggle_" $layer "+lalt_layer")))
-  (if-in-list s      $connections $s|lalt&symbol   (t! th (concat $action "+" s) (concat "$toggle_" $layer "+lalt_layer")))
-  (if-in-list l      $connections $l|lalt&localiz  (t! th (concat $action "+" l) (concat "$toggle_" $layer "+lalt_layer")))
+  (if-in-list s      $connections $s|modS&lalt     (t! th (concat $action "+" s) (concat "$toggle_" $layer "+lalt_layer")))
+  (if-in-list l      $connections $l|modL&lalt     (t! th (concat $action "+" l) (concat "$toggle_" $layer "+lalt_layer")))
   ;; == LMET =========================
   (if-in-list $!lmet $connections $!lmet           (t! th _                      (concat "$toggle_" $layer "+lmet_layer")))
-  (if-in-list a      $connections $a|lmet&action   (t! th (concat $action "+" a) (concat "$toggle_" $layer "+lmet_layer")))
-  (if-in-list ;      $connections $;|lmet&command  (t! th (concat $action "+" ;) (concat "$toggle_" $layer "+lmet_layer")))
+  (if-in-list a      $connections $a|modA&lmet     (t! th (concat $action "+" a) (concat "$toggle_" $layer "+lmet_layer")))
+  (if-in-list ;      $connections $;|mod;&lmet     (t! th (concat $action "+" ;) (concat "$toggle_" $layer "+lmet_layer")))
   ;; == LSFT ====================
   (if-in-list lsft   $connections lsft             (t! th _                      (concat "$toggle_" $layer "+lsft_layer")))
-  (if-in-list d      $connections $d|lsft&def      (t! th (concat $action "+" d) (concat "$toggle_" $layer "+lsft_layer")))
+  (if-in-list d      $connections $d|modD&lsft     (t! th (concat $action "+" d) (concat "$toggle_" $layer "+lsft_layer")))
   ;; == RSFT ====================
   (if-in-list rsft   $connections rsft             (t! th _                      (concat "$toggle_" $layer "+rsft_layer")))
-  (if-in-list k      $connections $k|rsft&keymap   (t! th (concat $action "+" k) (concat "$toggle_" $layer "+rsft_layer")))
+  (if-in-list k      $connections $k|modK&rsft     (t! th (concat $action "+" k) (concat "$toggle_" $layer "+rsft_layer")))
 )
 
 (deftemplate map_layers (action layer ignore_keys)

@@ -230,16 +230,16 @@
   $bookm            (t! th _ $toggle_bookmarks+lsft_layer)
   $esc|omni         (t! th _ $toggle_omni+lsft_layer)
 
-  $f|lctl&autofill  (t! th _ $toggle_lctl+lsft_layer)
-  $j|lctl&jump      (t! th _ $toggle_lctl+lsft_layer)
+  $f|modF&lctl  (t! th _ $toggle_lctl+lsft_layer)
+  $j|modJ&lctl      (t! th _ $toggle_lctl+lsft_layer)
   $!lctl            (t! th _ $toggle_!lctl&file+lsft_layer)
 
-  $s|lalt&symbol    (t! th _ $toggle_lalt+lsft_layer)
-  $l|lalt&localiz   (t! th _ $toggle_lalt+lsft_layer)
+  $s|modS&lalt    (t! th _ $toggle_lalt+lsft_layer)
+  $l|modL&lalt   (t! th _ $toggle_lalt+lsft_layer)
   $!lalt            (t! th _ $toggle_!lalt&search+lsft_layer)
 
-  $a|lmet&action    (t! th _ $toggle_lmet+lsft_layer)
-  $;|lmet&command   (t! th _ $toggle_lmet+lsft_layer)
+  $a|modA&lmet    (t! th _ $toggle_lmet+lsft_layer)
+  $;|mod;&lmet   (t! th _ $toggle_lmet+lsft_layer)
   $!lmet            (t! th _ $toggle_!lmet&replace+lsft_layer)
 )
 
@@ -253,16 +253,16 @@
   $bookm            (t! th _ $toggle_bookmarks+rsft_layer)
   $esc|omni         (t! th _ $toggle_omni+rsft_layer)
 
-  $f|lctl&autofill  (t! th _ $toggle_lctl+rsft_layer)
-  $j|lctl&jump      (t! th _ $toggle_lctl+rsft_layer)
+  $f|modF&lctl  (t! th _ $toggle_lctl+rsft_layer)
+  $j|modJ&lctl      (t! th _ $toggle_lctl+rsft_layer)
   $!lctl            (t! th _ $toggle_!lctl&file+rsft_layer)
 
-  $s|lalt&symbol    (t! th _ $toggle_lalt+rsft_layer)
-  $l|lalt&localiz   (t! th _ $toggle_lalt+rsft_layer)
+  $s|modS&lalt    (t! th _ $toggle_lalt+rsft_layer)
+  $l|modL&lalt   (t! th _ $toggle_lalt+rsft_layer)
   $!lalt            (t! th _ $toggle_!lalt&search+lsft_layer)
 
-  $a|lmet&action    (t! th _ $toggle_lmet+rsft_layer)
-  $;|lmet&command   (t! th _ $toggle_lmet+rsft_layer)
+  $a|modA&lmet    (t! th _ $toggle_lmet+rsft_layer)
+  $;|mod;&lmet   (t! th _ $toggle_lmet+rsft_layer)
   $!lmet            (t! th _ $toggle_!lmet&replace+lsft_layer)
 )
 

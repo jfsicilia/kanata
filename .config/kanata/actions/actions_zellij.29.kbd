@@ -20,18 +20,18 @@
 ;; #quickfix + spc
 ;; ___TO_SET___ zellij_action_quickfix               
 
-;; == #refs =========================================================
-;; #refs + spc
+;; == modR =========================================================
+;; modR + spc
 ;; ___TO_SET___ zellij_action_refs                   
-;; #refs + lsft + spc
+;; modR + lsft + spc
 ;; ___TO_SET___ zellij_action_refs_in                
-;; #refs + rsft + spc
+;; modR + rsft + spc
 ;; ___TO_SET___ zellij_action_refs_out               
 
-;; == #terminals =========================================================
-;; #terminals + spc
+;; == modT =========================================================
+;; modT + spc
 ;; ___TO_SET___ zellij_action_terminal               
-;; #terminals + n
+;; modT + n
 ;; ___TO_SET___ zellij_action_terminal_new           
 
 ;; == #history =========================================================
@@ -45,26 +45,26 @@
 ;; ___TO_SET___ zellij_action_history_search         
 
 
-;; == #debug =========================================================
-;; #debug + spc
+;; == modU =========================================================
+;; modU + spc
 ;; ___TO_SET___ zellij_action_debug                  
-;; #debug + r
+;; modU + r
 ;; ___TO_SET___ zellij_action_debug_run              
-;; #debug + g
+;; modU + g
 ;; ___TO_SET___ zellij_action_debug_go               
-;; #debug + s
+;; modU + s
 ;; ___TO_SET___ zellij_action_debug_stop             
-;; #debug + i
+;; modU + i
 ;; ___TO_SET___ zellij_action_debug_inside           
-;; #debug + o
+;; modU + o
 ;; ___TO_SET___ zellij_action_debug_over             
 
-;; == #info =========================================================
-;; #info + spc
+;; == modI =========================================================
+;; modI + spc
 ;; ___TO_SET___ zellij_action_info                   
 
-;; == #source =========================================================
-;; #source + spc
+;; == modO =========================================================
+;; modO + spc
 ;; ___TO_SET___ zellij_action_source                 
 
 ;; == #omni ============================================================
@@ -192,46 +192,46 @@
 ;; #actions + spc
 ;; ___TO_SET___ zellij_action_actions                
 
-;; == #symbols =============================================================
-;; #symbols + spc
+;; == modS =============================================================
+;; modS + spc
 ;; ___TO_SET___ zellij_action_symbol                 
-;; #symbols + lsft + spc
+;; modS + lsft + spc
 ;; ___TO_SET___ zellij_action_symbol+lsft            
 
-;; == #defs =============================================================
-;; #defs + spc
+;; == modD =============================================================
+;; modD + spc
 ;; ___TO_SET___ zellij_action_defs                   
 
-;; == #autofill =============================================================
-;; #autofill + spc
+;; == modF =============================================================
+;; modF + spc
 ;; ___TO_SET___ zellij_action_autofill               
 
-;; == #git =============================================================
-;; #git + spc
+;; == modG =============================================================
+;; modG + spc
 ;; ___TO_SET___ zellij_action_git                    
 
-;; == #hyperlinks =============================================================
-;; #hyperlinks + spc
+;; == modH =============================================================
+;; modH + spc
 ;; ___TO_SET___ zellij_action_hyperlinks             
 
-;; == #jumps =============================================================
-;; #jumps + spc
+;; == modJ =============================================================
+;; modJ + spc
 ;; ___TO_SET___ zellij_action_jumps                  
 
-;; == #keymaps =============================================================
-;; #keymaps + spc
+;; == modK =============================================================
+;; modK + spc
 ;; ___TO_SET___ zellij_action_keymaps                
 
-;; == #locations =============================================================
-;; #locations + spc
+;; == modL =============================================================
+;; modL + spc
 ;; ___TO_SET___ zellij_action_locations              
 
 ;; == #commands ===========================================================
 ;; #commands + spc
 ;; ___TO_SET___ zellij_action_command                
 
-;; == #registers =============================================================
-;; #registers + spc
+;; == mod' =============================================================
+;; mod' + spc
 ;; ___TO_SET___ zellij_action_registers              
 
 ;; == #panes =============================================================
@@ -524,8 +524,8 @@ zellij_action_!tab_toggle           $zellij_action_tab_toggle
 ;; #settings + spc
 ;; ___TO_SET___ zellij_action_setting                
 
-;; == #tags =========================================================
-;; #tags + spc
+;; == mod. =========================================================
+;; mod. + spc
 ;; ___TO_SET___ zellij_action_tag                    
 
 ;; == #help ==========================================================

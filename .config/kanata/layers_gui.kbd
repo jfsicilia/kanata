@@ -12,8 +12,8 @@
   ;; == Gui Actions ========================
 
   ;; == SFT ======================
-  $d|lsft&def     (t! th _                   $toggle_window+lsft_layer)
-  $k|rsft&keymap  (t! th $action_window_up  $toggle_window+rsft_layer)
+  $d|modD&lsft     (t! th _                   $toggle_window+lsft_layer)
+  $k|modK&rsft  (t! th $action_window_up  $toggle_window+rsft_layer)
   lsft            (t! th _                   $toggle_window+lsft_layer)
   rsft            (t! th _                   $toggle_window+rsft_layer)
 ;; "" WINDOWS_LAYER """"""""""""""""""""""""""""""
@@ -48,8 +48,8 @@
   $move (t! th _ $toggle_workspace+move_layer)
 
   ;; == SFT ======================
-  $d|lsft&def     (t! th _                    $toggle_workspace+lsft_layer)
-  $k|rsft&keymap  (t! th $action_screen_prev $toggle_workspace+rsft_layer)
+  $d|modD&lsft     (t! th _                    $toggle_workspace+lsft_layer)
+  $k|modK&rsft  (t! th $action_screen_prev $toggle_workspace+rsft_layer)
   lsft            (t! th _                    $toggle_workspace+lsft_layer)
   rsft            (t! th _                    $toggle_workspace+rsft_layer)
   ;; "" WORKSPACES LAYER """"""""""""""""""""
@@ -132,8 +132,8 @@
   .     $action_pane_outlinks
 
   ;; == SFT ======================
-  $d|lsft&def     (t! th $action_pane_docker  $toggle_pane+lsft_layer)
-  $k|rsft&keymap  (t! th $action_pane_above   $toggle_pane+rsft_layer)
+  $d|modD&lsft     (t! th $action_pane_docker  $toggle_pane+lsft_layer)
+  $k|modK&rsft  (t! th $action_pane_above   $toggle_pane+rsft_layer)
   lsft            (t! th _                     $toggle_pane+lsft_layer)
   rsft            (t! th _                     $toggle_pane+rsft_layer)
 
@@ -271,8 +271,8 @@
   9     $action_tab_goto_last
 
   ;; == SFT ======================
-  $d|lsft&def     (t! th _                    $toggle_tab+lsft_layer)
-  $k|rsft&keymap  (t! th $action_tab_last    $toggle_tab+rsft_layer)
+  $d|modD&lsft     (t! th _                    $toggle_tab+lsft_layer)
+  $k|modK&rsft  (t! th $action_tab_last    $toggle_tab+rsft_layer)
   lsft            (t! th _                    $toggle_tab+lsft_layer)
   rsft            (t! th _                    $toggle_tab+rsft_layer)
 
@@ -328,8 +328,8 @@
   up    $~action_!tab_last
 
   ;; == SFT ======================
-  $d|lsft&def     (t! th _                    $toggle_tab+lsft_layer)
-  $k|rsft&keymap  (t! th $~action_!tab_last  $toggle_tab+rsft_layer)
+  $d|modD&lsft     (t! th _                    $toggle_tab+lsft_layer)
+  $k|modK&rsft  (t! th $~action_!tab_last  $toggle_tab+rsft_layer)
   lsft            (t! th _                    $toggle_tab+lsft_layer)
   rsft            (t! th _                    $toggle_tab+rsft_layer)
 
@@ -359,8 +359,8 @@
 ;; """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (session_layer)
   ;; == SFT ======================
-  $d|lsft&def     (t! th _                    $toggle_session+lsft_layer)
-  $k|rsft&keymap  (t! th _                    $toggle_session+rsft_layer)
+  $d|modD&lsft     (t! th _                    $toggle_session+lsft_layer)
+  $k|modK&rsft  (t! th _                    $toggle_session+rsft_layer)
   lsft            (t! th _                    $toggle_session+lsft_layer)
   rsft            (t! th _                    $toggle_session+rsft_layer)
 
