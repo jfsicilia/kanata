@@ -136,6 +136,7 @@
   ;; Time config
   retap_time  200
   hold_time 200
+  fast_type_time 55
 
   ;; Upper row keys.
   tab|open                tab         ;; Tap: Tab, Hold: open_with_layer

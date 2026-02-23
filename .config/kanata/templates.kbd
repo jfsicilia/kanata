@@ -12,7 +12,7 @@
 (deftemplate type (action)
   (multi
     (fork
-      (hold-for-duration 55 vk_fast_typing)
+      (hold-for-duration $fast_type_time vk_fast_typing)
       XX
       (lctl rctl lalt ralt lmet rmet)
     )
