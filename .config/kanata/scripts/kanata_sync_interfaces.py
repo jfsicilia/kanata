@@ -193,7 +193,7 @@ def convert_backtick_to_macro(backtick_content: str) -> str:
             j = backtick_content.find("}", i)
             if j != -1:
                 keyword = backtick_content[i + 1 : j]
-                result.append(keyword)
+                result.append(keyword if keyword != "{" else _char_to_keycode("{"))
                 i = j + 1
                 continue
 
