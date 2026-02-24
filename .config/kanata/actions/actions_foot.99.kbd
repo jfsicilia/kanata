@@ -1,8 +1,5 @@
 (defvar
 
-;; == SFT actions ==========================================================
-foot_action_sft+ent                 (macro \ ent)  ;;""
-
 ;; == replace ==========================================================
 ;; replace + spc
 ;; ___TO_SET___ foot_action_replace_text_in_file   
@@ -158,6 +155,10 @@ foot_action_omni_page_down                      S-pgdn
 ;; not used yet
 ;; omni + u
 ;; not yet used.
+
+;; =====================================================================
+;; === 2. Key Modifiers actions ========================================
+;; =====================================================================
 
 ;; == modA =========================================================
 ;; modA + spc
@@ -453,14 +454,6 @@ foot_action_omni_page_down                      S-pgdn
 ;; panes + /
 ;; ___TO_SET___ foot_action_pane_help              
 
-;; == panes + search (tap) ==============================================
-;; panes + search
-;; ___TO_SET___ foot_action_pane_search            
-
-;; == panes + replace (tap) ==============================================
-;; panes + replace
-;; ___TO_SET___ foot_action_pane_replace           
-
 ;; == tab ===============================================================
 
 ;; tab + spc
@@ -576,6 +569,13 @@ foot_action_omni_page_down                      S-pgdn
 ;; ___TO_SET___ foot_action_session                
 ;; sessions + toggle
 ;; ___TO_SET___ foot_action_session_toggle         
+
+;; =====================================================================
+;; === 4. Physical modifiers actions ===================================
+;; =====================================================================
+
+;; == SFT actions ==========================================================
+foot_action_sft+ent                 (macro \ ent)  ;;""
 
 ;; == LCTL actions ==========================================================
 ;; ___TO_SET___ foot_action_lctl+a                 

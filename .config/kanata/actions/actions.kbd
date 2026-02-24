@@ -83,13 +83,103 @@
 
   ;; @start@ ====== DON'T REMOVE THIS LINE =================================
 
-  ;; == SFT actions ==========================================================
-  action_sft+ent (t! unmod_all (switch ;;@autogen@ 
-    ((input virtual vk_foot)) $foot_action_sft+ent break
-    () S-ent break
-  ))
+  ;; Index.
+  ;;
+  ;; 1. --- Special Modifiers actions ---
+  ;;   1.1. emojis
+  ;;   1.2. replace
+  ;;   1.3. search
+  ;;   1.4. files/folders
+  ;;   1.5. apps
+  ;;   1.6. bookmarks
+  ;;   1.7. opts
+  ;;   1.8. open
+  ;;   1.9. omni
+  ;;     1.9.1. omni nav
+  ;;     1.9.2. omni edit
+  ;;     1.9.3. omni file manager
+  ;;     1.9.4. omni user interface
+  ;;     1.9.5. omni misc
+  ;;
+  ;; 2. --- Key Modifiers actions ---
+  ;;   2.1.  modA
+  ;;   2.2.  modB
+  ;;   2.3.  modC
+  ;;   2.4.  modD
+  ;;   2.5.  modE
+  ;;   2.6.  modF
+  ;;   2.7.  modG
+  ;;   2.8.  modH
+  ;;   2.9.  modI
+  ;;   2.10. modJ
+  ;;   2.11. modK
+  ;;   2.12. modL
+  ;;   2.13. modM
+  ;;   2.14. modN
+  ;;   2.15. modO
+  ;;   2.16. modP
+  ;;   2.17. modQ
+  ;;   2.18. modR
+  ;;   2.19. modS
+  ;;   2.20. modT
+  ;;   2.21. modU
+  ;;   2.22. modV
+  ;;   2.23. modW
+  ;;   2.24. modX
+  ;;   2.25. modY
+  ;;   2.26. modZ
+  ;;   2.27. mod;
+  ;;   2.28. mod'
+  ;;   2.29. mod,
+  ;;   2.30. mod.
+  ;;   2.31. mod/
+  ;;
+  ;; 3. ---- GUI modifiers actions ----
+  ;;   3.1. windows
+  ;;   3.2. workspaces
+  ;;     3.2.1. workspaces + move
+  ;;   3.3. panes
+  ;;     3.3.1. panes + toggle
+  ;;     3.3.2. panes + float
+  ;;     3.3.3. panes + move
+  ;;     3.3.4. panes + resize
+  ;;     3.3.5. panes + swap
+  ;;     3.3.6. panes go by number
+  ;;     3.3.7. panes show pane / focus (app-specific)
+  ;;   3.4. tab
+  ;;     3.4.1. tab + toggle
+  ;;     3.4.2. tab + move
+  ;;     3.4.3. tab go by number
+  ;;   3.5. !tab/groups
+  ;;     3.5.1. !tab + toggle
+  ;;     3.5.2. !tab + move
+  ;;     3.5.3. !tab go by number
+  ;;   3.6. sessions
+  ;;
+  ;; 4. ---- Physical modifiers actions ----
+  ;;   4.1. SFT actions
+  ;;   4.2. LCTL actions
+  ;;     4.2.1. LCTL+LSFT actions
+  ;;     4.2.2. LCTL+RSFT actions
+  ;;   4.3. !LCTL actions
+  ;;     4.3.1. !LCTL+LSFT actions
+  ;;     4.3.2. !LCTL+RSFT actions
+  ;;   4.4. LALT actions
+  ;;     4.4.1. LALT+LSFT actions
+  ;;     4.4.2. LALT+RSFT actions
+  ;;   4.5. !LALT actions
+  ;;     4.5.1. !LALT+LSFT actions
+  ;;     4.5.2. !LALT+RSFT actions
+  ;;   4.6. LMET actions
+  ;;     4.6.1. LMET+LSFT actions
+  ;;     4.6.2. LMET+RSFT actions
+  ;;   4.7. !LMET actions
+  ;;     4.7.1. !LMET+LSFT actions
+  ;;     4.7.2. !LMET+RSFT actions
 
-  ;; == Special Modifiers ====================================================
+  ;; =====================================================================
+  ;; === 1. Special Modifiers actions ====================================
+  ;; =====================================================================
 
   ;; == emojis ============================================================
   ;; emojis + spc
@@ -98,11 +188,13 @@
   ;; == replace ==========================================================
   ;; replace + spc 
   action_replace_text_in_file (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_replace_text_in_file break
     ((input virtual vk_obsidian)) $obsidian_action_replace_text_in_file break
     () XX break
   ))
   ;; replace + lsft + spc 
   action_replace_text_in_filesystem (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_replace_text_in_filesystem break
     ((input virtual vk_obsidian)) $obsidian_action_replace_text_in_filesystem break
     () XX break
   ))
@@ -110,6 +202,7 @@
   ;; == search ============================================================
   ;; search + spc 
   action_search_text_in_file (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_search_text_in_file break
     ((input virtual vk_obsidian)) $obsidian_action_search_text_in_file break
     () XX break
   ))
@@ -150,6 +243,10 @@
   action_apps_toggle (t! unmod_all (switch
     () A-tab break
   ))
+
+  action_apps_walk_through_same_app (switch
+    () A-` break
+  )
 
   ;; == bookmarks =========================================================
   ;; bookmarks + spc
@@ -317,6 +414,7 @@
   ))
   ;; omni + n
   action_omni_new (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_chrome)) $chrome_action_omni_new break
     ((input virtual vk_obsidian)) $obsidian_action_omni_new break
     ((input virtual vk_tmux)) $tmux_action_omni_new break
     () XX break
@@ -449,6 +547,10 @@
   ;; not used yet
   ;; omni + u
   ;; not yet used.
+
+  ;; =====================================================================
+  ;; === 2. Key Modifiers actions ========================================
+  ;; =====================================================================
 
   ;; == modA =========================================================
   ;; modA + spc
@@ -682,7 +784,11 @@
   ;; mod/ + spc 
   action_mod/ (t! unmod_all (switch ;;@autogen@
     () XX break
-  ))
+  )) ;;""
+
+  ;; =====================================================================
+  ;; === 3. GUI modifiers actions ========================================
+  ;; =====================================================================
 
   ;; == windows ===========================================================
   ;; windows + spc
@@ -703,7 +809,7 @@
   action_window_close  (t! unmod_all A-f4)
 
   ;; 2x apps
-  action_window_toggle XX
+  action_window_toggle $action_apps_toggle
 
   ;; == workspaces =====================================================
   ;; workspaces + spc
@@ -739,6 +845,7 @@
 
   ;; panes + ent
   action_pane_max (t! unmod_all (switch ;;@autogen@ 
+    ((input virtual vk_nvim)) $nvim_action_pane_max break
     ((input virtual vk_obsidian)) $obsidian_action_pane_max break
     ((input virtual vk_tmux)) $tmux_action_pane_max break
     ((input virtual vk_zellij)) $zellij_action_pane_max break
@@ -788,6 +895,7 @@
   ;; panes + \
   action_pane_split_v (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_pane_split_v break
+    ((input virtual vk_obsidian)) $obsidian_action_pane_split_v break
     ((input virtual vk_tmux)) $tmux_action_pane_split_v break
     () XX break
   ))
@@ -1066,18 +1174,6 @@
   ))
   ;; panes + /
   action_pane_help (t! unmod_all (switch ;;@autogen@
-    () XX break
-  ))
-
-  ;; == panes + search (tap) ==============================================
-  ;; panes + search
-  action_pane_search (t! unmod_all (switch ;;@autogen@
-    () XX break
-  ))
-
-  ;; == panes + replace (tap) ==============================================
-  ;; panes + replace
-  action_pane_replace (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
@@ -1420,6 +1516,16 @@
   ;; sessions + toggle
   action_session_toggle  (t! unmod_all (switch ;;@autogen@
     () XX break
+  ))
+
+  ;; =====================================================================
+  ;; === 4. Physical modifiers actions ===================================
+  ;; =====================================================================
+
+  ;; == SFT actions ==========================================================
+  action_sft+ent (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_foot)) $foot_action_sft+ent break
+    () S-ent break
   ))
 
   ;; == LCTL actions ==========================================================

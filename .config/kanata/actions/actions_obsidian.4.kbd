@@ -11,9 +11,6 @@ obsidian_action_page_down                      C-f
 obsidian_action_pane_tag                      A-t
 obsidian_action_setting                       C-,
 
-;; == SFT actions ==========================================================
-;; ___TO_SET___ obsidian_action_sft+ent                
-
 ;; == replace ==========================================================
 ;; replace + spc
 obsidian_action_replace_text_in_file            C-A-h
@@ -170,6 +167,10 @@ obsidian_action_omni_parent                         left
 ;; omni + u
 ;; not yet used.
 
+;; =====================================================================
+;; === 2. Key Modifiers actions ========================================
+;; =====================================================================
+
 ;; == modA =========================================================
 ;; modA + spc
 ;; ___TO_SET___ obsidian_action_modA                   
@@ -314,30 +315,24 @@ obsidian_action_mod,                       C-A-,
 obsidian_action_pane_max                       (macro A-s A-S-s)
 
 ;; panes + h | panes + left
-;; panes + h | #panes + left
 obsidian_action_pane_left                      A-left
 ;; panes + l | panes + right
-;; panes + l | #panes + right
 obsidian_action_pane_right                     A-right
 ;; panes + k | panes + up
-;; panes + k | #panes + up
 obsidian_action_pane_above                     A-up
 ;; panes + j | panes + down
-;; panes + j | #panes + down
 obsidian_action_pane_below                     A-down
 
 ;; panes + -
-obsidian_action_pane_split_h                   A-\       ;;""
+obsidian_action_pane_split_h                   A--       ;;""
 ;; panes + \
-;; ___TO_SET___ obsidian_action_pane_split_v           
+obsidian_action_pane_split_v                   A-\       ;;""
 
 ;; panes + w
 obsidian_action_pane_close                     A-w
 
 ;; == panes + toggle ====================================================
 ;; panes + toggle | 2x !lalt
-;; == panes + #toggle ====================================================
-;; panes + #toggle | 2x !lalt
 obsidian_action_pane_toggle                    A-q
 
 ;; == panes + float ====================================================
@@ -470,24 +465,14 @@ obsidian_action_pane_main                      A-m
 ;; panes + /
 ;; ___TO_SET___ obsidian_action_pane_help              
 
-;; == panes + search (tap) ==============================================
-;; panes + search
-;; ___TO_SET___ obsidian_action_pane_search            
-
-;; == panes + replace (tap) ==============================================
-;; panes + replace
-;; ___TO_SET___ obsidian_action_pane_replace           
-
 ;; == tab ===============================================================
 
 ;; tab + spc
 obsidian_action_tab            C-S-A-o
 
 ;; tab + l | tab + right | lsft + rsft | 2x rsft | !lmet + tab
-;; tab + l | #tab + right | lsft + rsft | 2x rsft | !lmet + tab
 obsidian_action_tab_next                       C-pgdn
 ;; tab + h | tab + left | rsft + lsft | 2x lsft | !lmet + sft + tab
-;; tab + h | #tab + left | rsft + lsft | 2x lsft | !lmet + sft + tab
 obsidian_action_tab_prev                       C-pgup
 ;; tab + j | tab + down
 ;; ___TO_SET___ obsidian_action_tab_first              
@@ -523,8 +508,6 @@ obsidian_action_tab_goto_last                  C-9
 
 ;; == tab + toggle =====================================================
 ;; tab + toggle | 2x !lctl
-;; == tab + #toggle =====================================================
-;; tab + #toggle | 2x !lctl
 obsidian_action_tab_toggle                     A-q
 
 ;; == tab + move =====================================================
@@ -543,10 +526,8 @@ obsidian_action_tab_toggle                     A-q
 obsidian_action_!tab                  $obsidian_action_tab                  
 
 ;; !tab + l | !tab + right
-;; !tab + l | #!tab + right
 obsidian_action_!tab_next             $obsidian_action_tab_next             
 ;; !tab + h | !tab + left
-;; !tab + h | #!tab + left
 obsidian_action_!tab_prev             $obsidian_action_tab_prev             
 ;; !tab + j | !tab + down
 ;; ___TO_SET___ obsidian_action_!tab_first             
@@ -582,8 +563,6 @@ obsidian_action_!tab_goto_last        $obsidian_action_tab_goto_last
 
 ;; == !tab + toggle =====================================================
 ;; !tab + toggle
-;; == !tab + #toggle =====================================================
-;; !tab + #toggle
 obsidian_action_!tab_toggle           $obsidian_action_tab_toggle           
 
 ;; == !tab + move =====================================================
@@ -601,6 +580,13 @@ obsidian_action_!tab_toggle           $obsidian_action_tab_toggle
 ;; ___TO_SET___ obsidian_action_session                
 ;; sessions + toggle
 ;; ___TO_SET___ obsidian_action_session_toggle         
+
+;; =====================================================================
+;; === 4. Physical modifiers actions ===================================
+;; =====================================================================
+
+;; == SFT actions ==========================================================
+;; ___TO_SET___ obsidian_action_sft+ent                
 
 ;; == LCTL actions ==========================================================
 ;; ___TO_SET___ obsidian_action_lctl+a                 

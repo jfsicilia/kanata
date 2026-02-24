@@ -1,8 +1,5 @@
 (defvar
 
-;; == SFT actions ==========================================================
-;; ___TO_SET___ chrome_action_sft+ent                
-
 ;; == replace ==========================================================
 ;; replace + spc
 ;; ___TO_SET___ chrome_action_replace_text_in_file   
@@ -97,7 +94,7 @@ chrome_action_omni_hist_prev                      A-left
 ;; omni + rsft + a
 ;; ___TO_SET___ chrome_action_omni_invert_select     
 ;; omni + n
-;; ___TO_SET___ chrome_action_omni_new               
+chrome_action_omni_new               C-n
 ;; omni + lsft + n
 ;; ___TO_SET___ chrome_action_omni_lsft+new          
 ;; omni + rsft + n
@@ -162,6 +159,10 @@ chrome_action_omni_hist_prev                      A-left
 ;; not used yet
 ;; omni + u
 ;; not yet used.
+
+;; =====================================================================
+;; === 2. Key Modifiers actions ========================================
+;; =====================================================================
 
 ;; == modA =========================================================
 ;; modA + spc
@@ -457,14 +458,6 @@ chrome_action_omni_hist_prev                      A-left
 ;; panes + /
 ;; ___TO_SET___ chrome_action_pane_help              
 
-;; == panes + search (tap) ==============================================
-;; panes + search
-;; ___TO_SET___ chrome_action_pane_search            
-
-;; == panes + replace (tap) ==============================================
-;; panes + replace
-;; ___TO_SET___ chrome_action_pane_replace           
-
 ;; == tab ===============================================================
 
 ;; tab + spc
@@ -616,6 +609,13 @@ chrome_action_!tab_toggle           $chrome_action_tab_toggle
 ;; ___TO_SET___ chrome_action_session                
 ;; sessions + toggle
 ;; ___TO_SET___ chrome_action_session_toggle         
+
+;; =====================================================================
+;; === 4. Physical modifiers actions ===================================
+;; =====================================================================
+
+;; == SFT actions ==========================================================
+;; ___TO_SET___ chrome_action_sft+ent                
 
 ;; == LCTL actions ==========================================================
 ;; ___TO_SET___ chrome_action_lctl+a                 

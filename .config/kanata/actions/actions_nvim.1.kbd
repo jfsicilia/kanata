@@ -1,34 +1,34 @@
 (defvar
 
-;; == SFT actions ==========================================================
-;; ___TO_SET___ nvim_action_sft+ent                
-
 ;; == replace ==========================================================
 ;; replace + spc
-;; ___TO_SET___ nvim_action_replace_text_in_file   
+;; nvim_action_replace_text_in_file   `{esc}:lua require('grug-far').open({{} windowCreationCommand = 'topleft vertical split', prefills = {{} paths = vim.fn.expand("%") {}} {}}){ret}`
+nvim_action_replace_text_in_file   (macro esc S-; l u a spc r e q u i r e S-9 ' g r u g - f a r ' S-0 . o p e n S-9 S-[ spc w i n d o w S-c r e a t i o n S-c o m m a n d spc = spc ' t o p l e f t spc v e r t i c a l spc s p l i t ' , spc p r e f i l l s spc = spc S-[ spc p a t h s spc = spc v i m . f n . e x p a n d S-9 S-' S-5 S-' S-0 spc  S-] spc  S-] S-0 ret)
 ;; replace + lsft + spc
-;; ___TO_SET___ nvim_action_replace_text_in_filesystem
+;; nvim_action_replace_text_in_filesystem `{esc}:topleft vertical GrugFar{ret}`
+nvim_action_replace_text_in_filesystem (macro esc S-; t o p l e f t spc v e r t i c a l spc S-g r u g S-f a r ret)
 
 ;; == search ============================================================
 ;; search + spc
-;; ___TO_SET___ nvim_action_search_text_in_file    
+;; nvim_action_search_text_in_file    `{esc}:Telescope current_buffer_fuzzy_find{ret}`
+nvim_action_search_text_in_file    (macro esc S-; S-t e l e s c o p e spc c u r r e n t S-- b u f f e r S-- f u z z y S-- f i n d ret)
 ;; search + lsft + spc
-;; nvim_action_search_text_in_filesystem     `:Telescope live_grep{ret}`
-nvim_action_search_text_in_filesystem     (macro S-; S-t e l e s c o p e spc l i v e S-- g r e p ret)  ;;"" 
+;; nvim_action_search_text_in_filesystem     `{esc}:Telescope live_grep{ret}`
+nvim_action_search_text_in_filesystem     (macro esc S-; S-t e l e s c o p e spc l i v e S-- g r e p ret)  ;;"" 
 ;; search + rsft + spc
 ;; ___TO_SET___ nvim_action_!search_text_in_file   
 
 ;; == files/folders ========================================================
 ;; files/folders + spc
-;; nvim_action_files              `:Telescope find_files{ret}`
+;; nvim_action_files              `{esc}:Telescope find_files{ret}`
 nvim_action_files                 (macro esc S-; S-t e l e s c o p e spc f i n d S-- f i l e s ret)  ;;""
 ;; file/folder + lsft + spc
 nvim_action_folders               XX
 
 ;; == bookmarks =========================================================
 ;; bookmarks + spc
-;; nvim_action_bookmarks             `:Telescope marks{ret}`
-nvim_action_bookmarks             (macro S-; S-t e l e s c o p e spc m a r k s ret)   ;;""
+;; nvim_action_bookmarks             `{esc}:Telescope marks{ret}`
+nvim_action_bookmarks             (macro esc S-; S-t e l e s c o p e spc m a r k s ret)   ;;""
 
 
 ;; == open =============================================================
@@ -161,6 +161,10 @@ nvim_action_omni_parent                        C-t ;; Go back to preceding tag
 ;; not used yet
 ;; omni + u
 ;; not yet used.
+
+;; =====================================================================
+;; === 2. Key Modifiers actions ========================================
+;; =====================================================================
 
 ;; == modA =========================================================
 ;; modA + spc
@@ -325,7 +329,8 @@ nvim_action_mod.                   (macro S-; S-t e l e s c o p e spc t a g s re
 ;; ___TO_SET___ nvim_action_pane                   
 
 ;; panes + ent
-;; ___TO_SET___ nvim_action_pane_max               
+;; nvim_action_pane_max               `{esc}:PaneMaxToggle{ret}`
+nvim_action_pane_max               (macro esc S-; S-p a n e S-m a x S-t o g g l e ret)
 
 ;; panes + h | panes + left
 ;; panes + h | #panes + left
@@ -482,14 +487,6 @@ nvim_action_pane_explorer                  (macro esc S-; S-n e o t r e e spc t 
 ;; panes + /
 ;; ___TO_SET___ nvim_action_pane_help              
 
-;; == panes + search (tap) ==============================================
-;; panes + search
-;; ___TO_SET___ nvim_action_pane_search            
-
-;; == panes + replace (tap) ==============================================
-;; panes + replace
-;; ___TO_SET___ nvim_action_pane_replace           
-
 ;; == tab ===============================================================
 
 ;; tab + spc
@@ -644,6 +641,13 @@ nvim_action_!tab_toggle           $nvim_action_tab_toggle
 ;; ___TO_SET___ nvim_action_session                
 ;; sessions + toggle
 ;; ___TO_SET___ nvim_action_session_toggle         
+
+;; =====================================================================
+;; === 4. Physical modifiers actions ===================================
+;; =====================================================================
+
+;; == SFT actions ==========================================================
+;; ___TO_SET___ nvim_action_sft+ent                
 
 ;; == LCTL actions ==========================================================
 ;; ___TO_SET___ nvim_action_lctl+a                 

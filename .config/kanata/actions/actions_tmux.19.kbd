@@ -1,9 +1,6 @@
 (defvar
 tmux_prefix A-b
 
-;; == SFT actions ==========================================================
-;; ___TO_SET___ tmux_action_sft+ent                
-
 ;; == replace ==========================================================
 ;; replace + spc
 ;; ___TO_SET___ tmux_action_replace_text_in_file   
@@ -162,6 +159,10 @@ tmux_action_omni_new                            (macro $tmux_prefix c) ;; prefix
 ;; not used yet
 ;; omni + u
 ;; not yet used.
+
+;; =====================================================================
+;; === 2. Key Modifiers actions ========================================
+;; =====================================================================
 
 ;; == modA =========================================================
 ;; modA + spc
@@ -469,14 +470,6 @@ tmux_action_pane_toggle                    (macro $tmux_prefix ;) ;; prefix + ; 
 ;; panes + /
 ;; ___TO_SET___ tmux_action_pane_help              
 
-;; == panes + search (tap) ==============================================
-;; panes + search
-;; ___TO_SET___ tmux_action_pane_search            
-
-;; == panes + replace (tap) ==============================================
-;; panes + replace
-;; ___TO_SET___ tmux_action_pane_replace           
-
 ;; == tab ===============================================================
 
 ;; tab + spc
@@ -632,6 +625,13 @@ tmux_action_!tab_move_right       $tmux_action_tab_move_right
 ;; ___TO_SET___ tmux_action_session                
 ;; sessions + toggle
 ;; ___TO_SET___ tmux_action_session_toggle         
+
+;; =====================================================================
+;; === 4. Physical modifiers actions ===================================
+;; =====================================================================
+
+;; == SFT actions ==========================================================
+;; ___TO_SET___ tmux_action_sft+ent                
 
 ;; == LCTL actions ==========================================================
 ;; ___TO_SET___ tmux_action_lctl+a                 
