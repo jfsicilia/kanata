@@ -81,8 +81,6 @@
   ;; at the same time. The alternate combo will be bound to ~action_...,
   ;; giving precedence to the other app when both apps are active.
 
-  ;; @start@ ====== DON'T REMOVE THIS LINE =================================
-
   ;; Index.
   ;;
   ;; 1. --- Special Modifiers actions ---
@@ -176,6 +174,8 @@
   ;;   4.7. !LMET actions
   ;;     4.7.1. !LMET+LSFT actions
   ;;     4.7.2. !LMET+RSFT actions
+
+  ;; @start@ ====== DON'T REMOVE THIS LINE =================================
 
   ;; =====================================================================
   ;; === 1. Special Modifiers actions ====================================
