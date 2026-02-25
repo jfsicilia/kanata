@@ -90,7 +90,7 @@ nvim_action_omni_hist_prev                      C-o
 ;; omni + d
 ;; ___TO_SET___ nvim_action_omni_duplicate         
 ;; omni + a
-nvim_action_omni_select_all                     (macro g g S-v S-g)
+nvim_action_omni_select_all                     (macro esc g g S-v S-g)
 ;; omni + lsft + a
 ;; ___TO_SET___ nvim_action_omni_clear_select      
 ;; omni + rsft + a
@@ -168,8 +168,8 @@ nvim_action_omni_parent                        C-t ;; Go back to preceding tag
 
 ;; == modA =========================================================
 ;; modA + spc
-;; nvim_action_modA                `:Telescope autocommands{ret}`
-nvim_action_modA                (macro S-; S-t e l e s c o p e spc a u t o c o m m a n d s ret)
+;; nvim_action_modA                `{esc}:Telescope autocommands{ret}`
+nvim_action_modA                (macro esc S-; S-t e l e s c o p e spc a u t o c o m m a n d s ret)
 
 ;; == modB =========================================================
 ;; modB + spc
@@ -181,8 +181,8 @@ nvim_action_modA                (macro S-; S-t e l e s c o p e spc a u t o c o m
 
 ;; == modD =============================================================
 ;; modD + spc
-;; nvim_action_modD                   `:Telescope lsp_definitions{ret}`
-nvim_action_modD                   (macro S-; S-t e l e s c o p e spc l s p S-- d e f i n i t i o n s ret)
+;; nvim_action_modD                   `{esc}:Telescope lsp_definitions{ret}`
+nvim_action_modD                   (macro esc S-; S-t e l e s c o p e spc l s p S-- d e f i n i t i o n s ret)
 
 ;; == modE ===========================================================
 ;; modE + spc
@@ -194,8 +194,8 @@ nvim_action_modD                   (macro S-; S-t e l e s c o p e spc l s p S-- 
 
 ;; == modG =============================================================
 ;; modG + spc
-;; nvim_action_modG                 `:Telescope git_files{ret}`
-nvim_action_modG                    (macro S-; S-t e l e s c o p e spc g i t S-- f i l e s ret)  ;;""
+;; nvim_action_modG                 `{esc}:Telescope git_files{ret}`
+nvim_action_modG                    (macro esc S-; S-t e l e s c o p e spc g i t S-- f i l e s ret)  ;;""
 
 ;; == modH =============================================================
 ;; modH + spc
@@ -207,18 +207,18 @@ nvim_action_modG                    (macro S-; S-t e l e s c o p e spc g i t S--
 
 ;; == modJ =============================================================
 ;; modJ + spc
-;; nvim_action_modJ                  `:Telescope jumplist{ret}`
-nvim_action_modJ                  (macro S-; S-t e l e s c o p e spc j u m p l i s t ret)
+;; nvim_action_modJ                  `{esc}:Telescope jumplist{ret}`
+nvim_action_modJ                  (macro esc S-; S-t e l e s c o p e spc j u m p l i s t ret)
 
 ;; == modK =============================================================
 ;; modK + spc
-;; nvim_action_modK                `:Telescope keymaps{ret}`
-nvim_action_modK                (macro S-; S-t e l e s c o p e spc k e y m a p s ret)
+;; nvim_action_modK                `{esc}:Telescope keymaps{ret}`
+nvim_action_modK                (macro esc S-; S-t e l e s c o p e spc k e y m a p s ret)
 
 ;; == modL =============================================================
 ;; modL + spc
-;; nvim_action_modL              `:Telescope loclist{ret}`
-nvim_action_modL              (macro S-; S-t e l e s c o p e spc l o c l i s t ret)
+;; nvim_action_modL              `{esc}:Telescope loclist{ret}`
+nvim_action_modL              (macro esc S-; S-t e l e s c o p e spc l o c l i s t ret)
 
 ;; == modM  ==========================================================
 ;; modM + spc
@@ -230,8 +230,8 @@ nvim_action_modL              (macro S-; S-t e l e s c o p e spc l o c l i s t r
 
 ;; == modO =========================================================
 ;; modO + spc
-;; nvim_action_modO                 `:Telescope lsp_implementations{ret}`
-nvim_action_modO                 (macro S-; S-t e l e s c o p e spc l s p S-- i m p l e m e n t a t i o n s ret)
+;; nvim_action_modO                 `{esc}:Telescope lsp_implementations{ret}`
+nvim_action_modO                 (macro esc S-; S-t e l e s c o p e spc l s p S-- i m p l e m e n t a t i o n s ret)
 
 ;; == modP ===========================================================
 ;; modP + spc
@@ -239,29 +239,29 @@ nvim_action_modO                 (macro S-; S-t e l e s c o p e spc l s p S-- i 
 
 ;; == modQ =========================================================
 ;; modQ + spc
-;; nvim_action_modQ               `:Telescope quickfix{ret}`
-;; nvim_action_modQ               (macro S-; S-t e l e s c o p e spc q u i c k f i x ret)   ;;""
-;; nvim_action_modQ               `:Telescope diagnostics{ret}`
-nvim_action_modQ               (macro S-; S-t e l e s c o p e spc d i a g n o s t i c s ret)
+;; nvim_action_modQ               `{esc}:Telescope quickfix{ret}`
+;; nvim_action_modQ               (macro esc S-; S-t e l e s c o p e spc q u i c k f i x ret)   ;;""
+;; nvim_action_modQ               `{esc}:Telescope diagnostics{ret}`
+nvim_action_modQ               (macro esc S-; S-t e l e s c o p e spc d i a g n o s t i c s ret)
 
 ;; == modR =========================================================
 ;; modR + spc
-;; nvim_action_modR                   `:Telescope lsp_references{ret}`
-nvim_action_modR                   (macro S-; S-t e l e s c o p e spc l s p S-- r e f e r e n c e s ret)
+;; nvim_action_modR                   `{esc}:Telescope lsp_references{ret}`
+nvim_action_modR                   (macro esc S-; S-t e l e s c o p e spc l s p S-- r e f e r e n c e s ret)
 ;; modR + lsft + spc
-;; nvim_action_modR+lsft                `:Telescope lsp_incoming_calls{ret}`
-nvim_action_modR+lsft                (macro S-; S-t e l e s c o p e spc l s p S-- i n c o m i n g S-- c a l l s ret)
+;; nvim_action_modR+lsft                `{esc}:Telescope lsp_incoming_calls{ret}`
+nvim_action_modR+lsft                (macro esc S-; S-t e l e s c o p e spc l s p S-- i n c o m i n g S-- c a l l s ret)
 ;; modR + rsft + spc
-;; nvim_action_modR+rsft               `:Telescope lsp_outgoing_calls{ret}`
-nvim_action_modR+rsft               (macro S-; S-t e l e s c o p e spc l s p S-- o u t g o i n g S-- c a l l s ret)
+;; nvim_action_modR+rsft               `{esc}:Telescope lsp_outgoing_calls{ret}`
+nvim_action_modR+rsft               (macro esc S-; S-t e l e s c o p e spc l s p S-- o u t g o i n g S-- c a l l s ret)
 
 ;; == modS =============================================================
 ;; modS + spc
-;; nvim_action_modS                 `:Telescope lsp_document_symbols{ret}`
-nvim_action_modS                 (macro S-; S-t e l e s c o p e spc l s p S-- d o c u m e n t S-- s y m b o l s ret)
+;; nvim_action_modS                 `{esc}:Telescope lsp_document_symbols{ret}`
+nvim_action_modS                 (macro esc S-; S-t e l e s c o p e spc l s p S-- d o c u m e n t S-- s y m b o l s ret)
 ;; modS + lsft + spc
-;; nvim_action_modS+lsft            `:Telescope lsp_workspace_symbols{ret}`
-nvim_action_modS+lsft            (macro S-; S-t e l e s c o p e spc l s p S-- w o r k s p a c e S-- s y m b o l s ret)
+;; nvim_action_modS+lsft            `{esc}:Telescope lsp_workspace_symbols{ret}`
+nvim_action_modS+lsft            (macro esc S-; S-t e l e s c o p e spc l s p S-- w o r k s p a c e S-- s y m b o l s ret)
 
 ;; == modT =========================================================
 ;; modT + spc
@@ -287,14 +287,14 @@ nvim_action_modS+lsft            (macro S-; S-t e l e s c o p e spc l s p S-- w 
 
 ;; == modY =========================================================
 ;; modY + spc
-;; nvim_action_modY                `:Telescope oldfiles{ret}`
-nvim_action_modY                (macro S-; S-t e l e s c o p e spc o l d f i l e s ret)  ;;""
+;; nvim_action_modY                `{esc}:Telescope oldfiles{ret}`
+nvim_action_modY                (macro esc S-; S-t e l e s c o p e spc o l d f i l e s ret)  ;;""
 ;; modY + mod; + spc
-;; nvim_action_modY_mod;          `:Telescope command_history{ret}`
-nvim_action_modY_mod;          (macro S-; S-t e l e s c o p e spc c o m m a n d S-- h i s t o r y ret)  ;;""
+;; nvim_action_modY_mod;          `{esc}:Telescope command_history{ret}`
+nvim_action_modY_mod;          (macro esc S-; S-t e l e s c o p e spc c o m m a n d S-- h i s t o r y ret)  ;;""
 ;; modY + search + spc
-;; nvim_action_modY_search         `:Telescope search_history{ret}`
-nvim_action_modY_search         (macro S-; S-t e l e s c o p e spc s e a r c h S-- h i s t o r y ret)  ;;""
+;; nvim_action_modY_search         `{esc}:Telescope search_history{ret}`
+nvim_action_modY_search         (macro esc S-; S-t e l e s c o p e spc s e a r c h S-- h i s t o r y ret)  ;;""
 
 ;; == modZ =========================================================
 ;; modZ + spc
@@ -302,23 +302,23 @@ nvim_action_modY_search         (macro S-; S-t e l e s c o p e spc s e a r c h S
 
 ;; == mod; ===========================================================
 ;; mod; + spc
-;; nvim_action_mod;               `:Telescope commands{ret}`
-nvim_action_mod;               (macro S-; S-t e l e s c o p e spc c o m m a n d s ret)   ;;""
+;; nvim_action_mod;               `{esc}:Telescope commands{ret}`
+nvim_action_mod;               (macro esc S-; S-t e l e s c o p e spc c o m m a n d s ret)   ;;""
 
 ;; == mod' =============================================================
 ;; mod' + spc
-;; nvim_action_mod'             `:Telescope registers{ret}`
-nvim_action_mod'             (macro S-; S-t e l e s c o p e spc r e g i s t e r s ret)
+;; nvim_action_mod'             `{esc}:Telescope registers{ret}`
+nvim_action_mod'             (macro esc S-; S-t e l e s c o p e spc r e g i s t e r s ret)
 
 ;; == mod, ==========================================================
 ;; mod, + spc
-;; nvim_action_mod,                `:Telescope vim_options{ret}`
-nvim_action_mod,                (macro S-; S-t e l e s c o p e spc v i m S-- o p t i o n s ret)
+;; nvim_action_mod,                `{esc}:Telescope vim_options{ret}`
+nvim_action_mod,                (macro esc S-; S-t e l e s c o p e spc v i m S-- o p t i o n s ret)
 
 ;; == mod. =========================================================
 ;; mod. + spc
-;; nvim_action_mod.                   `:Telescope tags{ret}`
-nvim_action_mod.                   (macro S-; S-t e l e s c o p e spc t a g s ret)  ;;""
+;; nvim_action_mod.                   `{esc}:Telescope tags{ret}`
+nvim_action_mod.                   (macro esc S-; S-t e l e s c o p e spc t a g s ret)  ;;""
 
 ;; == mod/ ==========================================================
 ;; mod/ + spc
@@ -333,22 +333,18 @@ nvim_action_mod.                   (macro S-; S-t e l e s c o p e spc t a g s re
 nvim_action_pane_max               (macro esc S-; S-p a n e S-m a x S-t o g g l e ret)
 
 ;; panes + h | panes + left
-;; panes + h | #panes + left
-nvim_action_pane_left                      A-h ;; (macro esc S-; w i n c m d spc h ret)  ;;""
+nvim_action_pane_left                      A-h ;; Now has tmux integration (macro esc S-; w i n c m d spc h ret)  ;;""
 ;; panes + l | panes + right
-;; panes + l | #panes + right
-nvim_action_pane_right                     A-l ;; (macro esc S-; w i n c m d spc l ret)  ;;""
+nvim_action_pane_right                     A-l ;; Now has tmux integration (macro esc S-; w i n c m d spc l ret)  ;;""
 ;; panes + k | panes + up
-;; panes + k | #panes + up
-nvim_action_pane_above                     A-k ;; (macro esc S-; w i n c m d spc k ret)  ;;""
+nvim_action_pane_above                     A-k ;; Now has tmux integration (macro esc S-; w i n c m d spc k ret)  ;;""
 ;; panes + j | panes + down
-;; panes + j | #panes + down
-nvim_action_pane_below                     A-j ;; (macro esc S-; w i n c m d spc j ret)  ;;""
+nvim_action_pane_below                     A-j ;; Now has tmux integration (macro esc S-; w i n c m d spc j ret)  ;;""
 
 ;; panes + -
-nvim_action_pane_split_h                   (macro S-; s p ret)  ;;""
+nvim_action_pane_split_h                   (macro esc S-; s p ret)  ;;""
 ;; panes + \
-nvim_action_pane_split_v                   (macro S-; v s ret)  ;;""
+nvim_action_pane_split_v                   (macro esc S-; v s ret)  ;;""
 
 ;; panes + w
 ;; ___TO_SET___ nvim_action_pane_close             
@@ -518,31 +514,31 @@ nvim_action_tab_close                      C-w
 ;; tab + 1
 ;; == tabs go by number ==================================================
 ;; tabs + 1
-nvim_action_tab_goto_1                     (macro , Digit1)
+nvim_action_tab_goto_1                     (macro esc , Digit1)
 ;; tab + 2
 ;; tabs + 2
-nvim_action_tab_goto_2                     (macro , Digit2)
+nvim_action_tab_goto_2                     (macro esc , Digit2)
 ;; tab + 3
 ;; tabs + 3
-nvim_action_tab_goto_3                     (macro , Digit3)
+nvim_action_tab_goto_3                     (macro esc , Digit3)
 ;; tab + 4
 ;; tabs + 4
-nvim_action_tab_goto_4                     (macro , Digit4)
+nvim_action_tab_goto_4                     (macro esc , Digit4)
 ;; tab + 5
 ;; tabs + 5
-nvim_action_tab_goto_5                     (macro , Digit5)
+nvim_action_tab_goto_5                     (macro esc , Digit5)
 ;; tab + 6
 ;; tabs + 6
-nvim_action_tab_goto_6                     (macro , Digit6)
+nvim_action_tab_goto_6                     (macro esc , Digit6)
 ;; tab + 7
 ;; tabs + 7
-nvim_action_tab_goto_7                     (macro , Digit7)
+nvim_action_tab_goto_7                     (macro esc , Digit7)
 ;; tab + 8
 ;; tabs + 8
-nvim_action_tab_goto_8                     (macro , Digit8)
+nvim_action_tab_goto_8                     (macro esc , Digit8)
 ;; tab + 9
 ;; tabs + 9
-nvim_action_tab_goto_last                  (macro , Digit9)
+nvim_action_tab_goto_last                  (macro esc , Digit9)
 
 ;; == tab + toggle =====================================================
 ;; tab + toggle | 2x !lctl
@@ -550,7 +546,7 @@ nvim_action_tab_goto_last                  (macro , Digit9)
 ;; tab + #toggle | 2x !lctl
 ;; == tabs + #toggle =====================================================
 ;; tabs + #toggle | 2x !lctl
-nvim_action_tab_toggle                     (macro S-; b S-3 ret) ;;""
+nvim_action_tab_toggle                     (macro esc S-; b S-3 ret) ;;""
 
 ;; == tab + move =====================================================
 ;; tab + move + h | tab + move + left
@@ -794,7 +790,7 @@ nvim_action_!tab_toggle           $nvim_action_tab_toggle
 ;; ___TO_SET___ nvim_action_lctl+rsft+0            
 
 ;; == !LCTL actions ==========================================================
-nvim_action_!lctl+a  (macro g g S-v S-g)
+nvim_action_!lctl+a  (macro esc g g S-v S-g)
 ;; ___TO_SET___ nvim_action_!lctl+b                
 ;; ___TO_SET___ nvim_action_!lctl+c                
 ;; ___TO_SET___ nvim_action_!lctl+d                
