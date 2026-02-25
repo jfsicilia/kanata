@@ -3,7 +3,6 @@
 (t! simple_domain_layer "search" $action_search_text_in_file $action_search_text_in_filesystem $action_search_text_in_filesystem)
 (t! simple_domain_layer "file" $action_files $action_folders $action_folders)
 (t! simple_domain_layer "replace" $action_replace_text_in_file $action_replace_text_in_filesystem $action_replace_text_in_filesystem)
-(t! simple_domain_layer "open" $action_open_with XX XX)
 
 ;; "" OPTS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (opts_layer)
@@ -17,6 +16,21 @@
 )
 (deflayermap (opts+rsft_layer)
   k $action_opts_restart_kwanata
+)
+
+;; "" OPEN_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (open_layer)
+  (t! map_layers _ "opts" (lsft rsft))
+
+  spc $action_open_with
+
+  m $action_open_with_chrome
+  t $action_open_with_terminal
+  v $action_open_with_nvim
+)
+(deflayermap (open+lsft_layer)
+)
+(deflayermap (open+rsft_layer)
 )
 
 ;; "" OMNI_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
