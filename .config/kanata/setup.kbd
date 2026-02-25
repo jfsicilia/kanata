@@ -283,7 +283,7 @@
       $a|modA_&_lmet       (t! fast_th (t! char|alt_char a)                      $toggle_modA_&_lmet_layer)
       $s|modS_&_lalt       (t! fast_th s                                         $toggle_modS_&_lalt_layer)
       $d|modD_&_lsft       (t! fast_th d                                         $toggle_modD_&_lsft_layer)
-      $f|modF_&_lctl       (t! fast_th f                                         $toggle_modF_&_lctl_layer)
+      $f|modF_&_lctl       (t! fast_th f                                  (multi $toggle_modF_&_lctl_layer (on-release release-vkey vk_lalt)))
       $g|modG              (t! fast_th g                                         $toggle_modG_layer)
       $h|modH              (t! fast_th h                                         $toggle_modH_layer)
       $j|modJ_&_lctl       (t! fast_th j                                  (multi $toggle_modJ_&_lctl_layer (on-release release-vkey vk_lalt)))
