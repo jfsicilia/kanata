@@ -1,6 +1,7 @@
+(defvirtualkeys
+  vk_dolphin_sort  XX
+)
 (defvar
-dolphin_action_open                           ent
-dolphin_action_parent                         bspc
 
 ;; == replace ==========================================================
 ;; replace + spc
@@ -10,15 +11,15 @@ dolphin_action_parent                         bspc
 
 ;; == search ============================================================
 ;; search + spc
-;; ___TO_SET___ dolphin_action_search_text_in_file    
+dolphin_action_search_text_in_file    C-f
 ;; search + lsft + spc
-;; ___TO_SET___ dolphin_action_search_text_in_filesystem
+dolphin_action_search_text_in_filesystem C-S-f
 ;; search + rsft + spc
 ;; ___TO_SET___ dolphin_action_!search_text_in_file   
 
 ;; == files/folders ========================================================
 ;; files/folders + spc
-;; ___TO_SET___ dolphin_action_files                  
+dolphin_action_files                  C-l
 ;; file/folder + lsft + spc
 ;; ___TO_SET___ dolphin_action_folders                
 
@@ -33,7 +34,7 @@ dolphin_action_parent                         bspc
 ;; open + m
 ;; ___TO_SET___ dolphin_action_open_with_chrome       
 ;; open + t
-;; ___TO_SET___ dolphin_action_open_with_terminal     
+dolphin_action_open_with_terminal     A-S-f4
 ;; open + v
 ;; ___TO_SET___ dolphin_action_open_with_nvim         
 
@@ -41,72 +42,77 @@ dolphin_action_parent                         bspc
 
 ;; == omni nav ======================================================
 ;; omni + g
-;; ___TO_SET___ dolphin_action_omni_go                
+dolphin_action_omni_go                C-l
 
 ;; omni + b
-;; ___TO_SET___ dolphin_action_omni_page_up           
+dolphin_action_omni_page_up           pgup
 
 ;; omni + f
-;; ___TO_SET___ dolphin_action_omni_page_down         
+dolphin_action_omni_page_down         pgdn
 
 ;; omni + k
-;; ___TO_SET___ dolphin_action_omni_up                
+dolphin_action_omni_up                up
 ;; omni + j
-;; ___TO_SET___ dolphin_action_omni_down              
+dolphin_action_omni_down              down
 ;; omni + h
-;; ___TO_SET___ dolphin_action_omni_left              
+dolphin_action_omni_left              left 
 ;; omni + l
-;; ___TO_SET___ dolphin_action_omni_right             
+dolphin_action_omni_right             right
 
 ;; omni + ]
-;; ___TO_SET___ dolphin_action_omni_hist_next         
+dolphin_action_omni_hist_next         A-right
 ;; omni + [
-;; ___TO_SET___ dolphin_action_omni_hist_prev         
+dolphin_action_omni_hist_prev         A-left
 
 ;; == omni edit ======================================================
 ;; omni + c
-;; ___TO_SET___ dolphin_action_omni_copy              
+dolphin_action_omni_copy              C-c
 
 ;; omni + x
-;; ___TO_SET___ dolphin_action_omni_cut               
+dolphin_action_omni_cut               C-x
 ;; omni + v
-;; ___TO_SET___ dolphin_action_omni_paste             
+dolphin_action_omni_paste             C-v
 ;; omni + z
-;; ___TO_SET___ dolphin_action_omni_undo              
+dolphin_action_omni_undo              C-z
 ;; omni + lsft + z
-;; ___TO_SET___ dolphin_action_omni_redo              
+dolphin_action_omni_redo              C-S-z
 ;; omni + ;
 ;; ___TO_SET___ dolphin_action_omni_comment           
 
 ;; == omni file manager ===============================================
 ;; omni + spc
-;; ___TO_SET___ dolphin_action_omni_select            
+dolphin_action_omni_select            spc
 ;; omni + r
-;; ___TO_SET___ dolphin_action_omni_rename            
+dolphin_action_omni_rename            f2
 ;; omni + d
-;; ___TO_SET___ dolphin_action_omni_duplicate         
+dolphin_action_omni_duplicate         C-d
 ;; omni + a
-;; ___TO_SET___ dolphin_action_omni_select_all        
+dolphin_action_omni_select_all        C-a
 ;; omni + lsft + a
 ;; ___TO_SET___ dolphin_action_omni_clear_select      
 ;; omni + rsft + a
 ;; ___TO_SET___ dolphin_action_omni_invert_select     
 ;; omni + n
-;; ___TO_SET___ dolphin_action_omni_new               
+dolphin_action_omni_new               A-n   ;; CUSTOM
 ;; omni + lsft + n
-;; ___TO_SET___ dolphin_action_omni_lsft+new          
+dolphin_action_omni_lsft+new          C-S-n
 ;; omni + rsft + n
-;; ___TO_SET___ dolphin_action_omni_rsft+new          
+dolphin_action_omni_rsft+new          C-n
 ;; omni + o
-dolphin_action_omni_open              $dolphin_action_open
+dolphin_action_omni_open              ent
 ;; omni + p
-dolphin_action_omni_parent            $dolphin_action_parent
+dolphin_action_omni_parent            A-up
 ;; omni + s
-;; ___TO_SET___ dolphin_action_omni_sort              
+;;dolphin_action_omni_sort              C-A-n  ;; CUSTOM sort by name
+dolphin_action_omni_sort               (multi (on-press toggle-virtualkey vk_dolphin_sort) 
+  (switch
+    ((input virtual vk_dolphin_sort)) C-A-n break
+    ()                                C-A-d break
+  ))
 ;; omni + lsft + s
-;; ___TO_SET___ dolphin_action_omni_reverse_sort      
+dolphin_action_omni_reverse_sort      C-A-d  ;; CUSTOM sort by date 
 ;; omni + y
-;; ___TO_SET___ dolphin_action_omni_filter            
+dolphin_action_omni_filter            C-i
 ;; omni + e
 ;; ___TO_SET___ dolphin_action_omni_extract           
 ;; omni + lsft + e
@@ -115,9 +121,9 @@ dolphin_action_omni_parent            $dolphin_action_parent
 ;; ___TO_SET___ dolphin_action_omni_info              
 
 ;; == omni user interface ===============================================
-;; ___TO_SET___ dolphin_action_omni_view_1            
-;; ___TO_SET___ dolphin_action_omni_view_2            
-;; ___TO_SET___ dolphin_action_omni_view_3            
+dolphin_action_omni_view_1            C-1
+dolphin_action_omni_view_2            C-2
+dolphin_action_omni_view_3            C-3
 ;; ___TO_SET___ dolphin_action_omni_view_4            
 ;; ___TO_SET___ dolphin_action_omni_view_5            
 ;; ___TO_SET___ dolphin_action_omni_view_6            
@@ -204,7 +210,7 @@ dolphin_action_omni_parent            $dolphin_action_parent
 
 ;; == modK =============================================================
 ;; modK + spc
-;; ___TO_SET___ dolphin_action_modK                   
+dolphin_action_modK                   C-A-,
 
 ;; == modL =============================================================
 ;; modL + spc
@@ -288,7 +294,7 @@ dolphin_action_omni_parent            $dolphin_action_parent
 
 ;; == mod, ==========================================================
 ;; mod, + spc
-;; ___TO_SET___ dolphin_action_mod,                   
+dolphin_action_mod,                   C-S-,
 
 ;; == mod. =========================================================
 ;; mod. + spc
