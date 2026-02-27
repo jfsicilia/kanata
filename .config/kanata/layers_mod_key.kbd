@@ -4,7 +4,7 @@
 (t! simple_domain_layer "modD" $action_modD XX XX)
 (t! simple_domain_layer "modE" $action_modE XX XX)
 (t! simple_domain_layer "modF" $action_modF XX XX)
-(t! simple_domain_layer "modG" $action_modG XX XX)
+;; modG has its own iplementation, see below.
 (t! simple_domain_layer "modH" $action_modH XX XX)
 (t! simple_domain_layer "modI" $action_modI XX XX)
 (t! simple_domain_layer "modJ" $action_modJ XX XX)
@@ -29,6 +29,18 @@
 (t! simple_domain_layer "mod," $action_mod, XX XX)
 (t! simple_domain_layer "mod." $action_mod. XX XX)
 (t! simple_domain_layer "mod/" $action_mod/ XX XX)
+
+;; "" modG_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (modG_layer)
+  (t! map_layers _ "modG" (lsft rsft))
+  spc $action_modG
+
+  l      $action_modG_modL
+)
+(deflayermap (modG+lsft_layer)
+)
+(deflayermap (modG+rsft_layer)
+)
 
 ;; "" modY_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (modY_layer)

@@ -1,7 +1,30 @@
 (defvirtualkeys
-  vk_dolphin_sort  XX
+  ;; This virtual keys allow to iterate over the sort options of dolphin.
+  vk_dolphin_sort1  XX
+  vk_dolphin_sort2  XX
+  vk_dolphin_sort_reverse  XX
 )
 (defvar
+;; Toggles between sorting by name, date and size.
+dolphin_toggle_sort_by (multi 
+  (switch 
+    ((input virtual vk_dolphin_sort1)) (multi (on-press press-virtualkey vk_dolphin_sort2) (on-press release-virtualkey vk_dolphin_sort1)) break
+    ((input virtual vk_dolphin_sort2)) (multi (on-press release-virtualkey vk_dolphin_sort2)) break
+    ()                                 (multi (on-press press-virtualkey vk_dolphin_sort1)) break
+  )
+  (switch
+    ((input virtual vk_dolphin_sort1)) C-A-n break  ;; CUSTOM sort by name
+    ((input virtual vk_dolphin_sort2)) C-A-s break  ;; CUSTOM sort by date
+    ()                                 C-A-d break  ;; CUSTOM sort by size
+  )
+)
+;; Toggles sort ordering A-Z / Z-A
+dolphin_toggle_sort_reverse (multi (on-press toggle-virtualkey vk_dolphin_sort_reverse) 
+  (switch 
+    ((input virtual vk_dolphin_sort_reverse)) C-A-up   break ;; CUSTOM oldest first
+    ()                                        C-A-down break ;; CUSTOM newest first
+  )
+)
 
 ;; == replace ==========================================================
 ;; replace + spc
@@ -26,6 +49,90 @@ dolphin_action_files                  C-l
 ;; == bookmarks =========================================================
 ;; bookmarks + spc
 ;; ___TO_SET___ dolphin_action_bookmarks              
+;; ___TO_SET___ dolphin_action_bookmarks_a            
+;; ___TO_SET___ dolphin_action_bookmarks_b            
+;; ___TO_SET___ dolphin_action_bookmarks_c            
+;;dolphin_action_bookmarks_d            `{C-l}{10}~{10}/{10}Downloads`
+dolphin_action_bookmarks_d            (macro C-l 10 S-grv 10 / 10 S-d o w n l o a d s ent)
+;; ___TO_SET___ dolphin_action_bookmarks_e            
+;; ___TO_SET___ dolphin_action_bookmarks_f            
+;; ___TO_SET___ dolphin_action_bookmarks_g            
+;; ___TO_SET___ dolphin_action_bookmarks_h            
+;; ___TO_SET___ dolphin_action_bookmarks_i            
+;; ___TO_SET___ dolphin_action_bookmarks_j            
+;; ___TO_SET___ dolphin_action_bookmarks_k            
+;; ___TO_SET___ dolphin_action_bookmarks_l            
+;; ___TO_SET___ dolphin_action_bookmarks_m            
+;; ___TO_SET___ dolphin_action_bookmarks_n            
+;; ___TO_SET___ dolphin_action_bookmarks_o            
+;; ___TO_SET___ dolphin_action_bookmarks_p            
+;; ___TO_SET___ dolphin_action_bookmarks_q            
+;; ___TO_SET___ dolphin_action_bookmarks_r            
+;; ___TO_SET___ dolphin_action_bookmarks_s            
+;; ___TO_SET___ dolphin_action_bookmarks_t            
+;; ___TO_SET___ dolphin_action_bookmarks_u            
+;; ___TO_SET___ dolphin_action_bookmarks_v            
+;; dolphin_action_bookmarks_w            `{C-l}{10}~{10}/{10}_/{10}/workarea{ent}`
+dolphin_action_bookmarks_w            (macro C-l 10 S-grv 10 / 10 S-- / 10 / w o r k a r e a ent)
+;; ___TO_SET___ dolphin_action_bookmarks_x            
+;; ___TO_SET___ dolphin_action_bookmarks_y            
+;; ___TO_SET___ dolphin_action_bookmarks_z            
+;; dolphin_action_bookmarks_-            `{C-l}{10}~{10}/{10}_{ent}`
+dolphin_action_bookmarks_-            (macro C-l 10 S-grv 10 / 10 S-- ent)
+;; ___TO_SET___ dolphin_action_bookmarks_a+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_b+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_c+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_d+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_e+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_f+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_g+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_h+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_i+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_j+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_k+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_l+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_m+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_n+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_o+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_p+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_q+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_r+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_s+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_t+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_u+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_v+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_w+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_x+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_y+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_z+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_-+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_a+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_b+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_c+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_d+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_e+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_f+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_g+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_h+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_i+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_j+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_k+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_l+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_m+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_n+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_o+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_p+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_q+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_r+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_s+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_t+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_u+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_v+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_w+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_x+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_y+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_z+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_-+rsft       
 
 
 ;; == open =============================================================
@@ -103,22 +210,17 @@ dolphin_action_omni_open              ent
 ;; omni + p
 dolphin_action_omni_parent            A-up
 ;; omni + s
-;;dolphin_action_omni_sort              C-A-n  ;; CUSTOM sort by name
-dolphin_action_omni_sort               (multi (on-press toggle-virtualkey vk_dolphin_sort) 
-  (switch
-    ((input virtual vk_dolphin_sort)) C-A-n break
-    ()                                C-A-d break
-  ))
-;; omni + lsft + s
-dolphin_action_omni_reverse_sort      C-A-d  ;; CUSTOM sort by date 
+dolphin_action_omni_sort              $dolphin_toggle_sort_by
+;; omni + lsft + s | omni + rsft + s
+dolphin_action_omni_reverse_sort      $dolphin_toggle_sort_reverse 
 ;; omni + y
 dolphin_action_omni_filter            C-i
 ;; omni + e
-;; ___TO_SET___ dolphin_action_omni_extract           
+dolphin_action_omni_extract           (macro S-f10 10 up up up right down down ent) 
 ;; omni + lsft + e
-;; ___TO_SET___ dolphin_action_omni_compress          
+dolphin_action_omni_compress          (macro S-f10 10 up up up right down down ent)
 ;; omni + i
-;; ___TO_SET___ dolphin_action_omni_info              
+dolphin_action_omni_info              A-ret
 
 ;; == omni user interface ===============================================
 dolphin_action_omni_view_1            C-1
@@ -135,13 +237,13 @@ dolphin_action_omni_view_3            C-3
 ;; == omni misc ===============================================
 ;; omni + t
 ;; see tab
-;; ___TO_SET___ dolphin_action_omni_tab_new           
+dolphin_action_omni_tab_new           C-t
 ;; omni + lsft + t
 ;; see tab
-;; ___TO_SET___ dolphin_action_omni_tab_undo_close    
+dolphin_action_omni_tab_undo_close    C-S-t 
 ;; omni + w
 ;; see tab
-;; ___TO_SET___ dolphin_action_omni_tab_close         
+dolphin_action_omni_tab_close         C-w
 ;; omni + q
 ;; see windows
 ;; ___TO_SET___ dolphin_action_omni_window_close      
@@ -195,6 +297,8 @@ dolphin_action_omni_view_3            C-3
 ;; == modG =============================================================
 ;; modG + spc
 ;; ___TO_SET___ dolphin_action_modG                   
+;; modG + modL
+;; ___TO_SET___ dolphin_action_modG_modL              
 
 ;; == modH =============================================================
 ;; modH + spc
@@ -210,7 +314,7 @@ dolphin_action_omni_view_3            C-3
 
 ;; == modK =============================================================
 ;; modK + spc
-dolphin_action_modK                   C-A-,
+dolphin_action_modK                   C-A-,   ;; Dolphin's keymaps
 
 ;; == modL =============================================================
 ;; modL + spc
@@ -294,7 +398,7 @@ dolphin_action_modK                   C-A-,
 
 ;; == mod, ==========================================================
 ;; mod, + spc
-dolphin_action_mod,                   C-S-,
+dolphin_action_mod,                   C-S-,   ;; Dolphin settings.
 
 ;; == mod. =========================================================
 ;; mod. + spc
@@ -302,7 +406,7 @@ dolphin_action_mod,                   C-S-,
 
 ;; == mod/ ==========================================================
 ;; mod/ + spc
-;; ___TO_SET___ dolphin_action_mod/                   
+dolphin_action_mod/                   f1      ;; Dolphin help
 
 ;; == panes =============================================================
 ;; panes + spc
@@ -398,7 +502,7 @@ dolphin_action_mod,                   C-S-,
 ;; panes + r
 ;; ___TO_SET___ dolphin_action_pane_recent            
 ;; panes + t
-;; ___TO_SET___ dolphin_action_pane_terminal          
+dolphin_action_pane_terminal          f4
 ;; panes + u
 ;; ___TO_SET___ dolphin_action_pane_debug             
 ;; panes + y

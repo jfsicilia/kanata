@@ -69,19 +69,31 @@
   9     $action_pane_goto_last
 
   ;; toggle/open panes
+  a     $action_pane_AI
   b     $action_pane_bookmarks
   c     $action_pane_calendar
   e     $action_pane_explorer
+  f     $action_pane_filename
   g     $action_pane_go
+  i     $action_pane_info
   m     $action_pane_main
+  n     $action_pane_notebooks
   o     $action_pane_outline
   p     $action_pane_properties
+  q     $action_pane_quickfix
+  r     $action_pane_recent
   s     $action_pane_sidebar
-  t     $action_pane_tags
+  t     $action_pane_terminal
+  u     $action_pane_debug
   v     $action_pane_vertical_tab
+  x     $action_pane_extensions
+  y     $action_pane_history
+  z     $action_pane_tests
   ;     $action_pane_graph
-  ,     $action_pane_backlinks
-  .     $action_pane_outlinks
+  ,     $action_pane_settings
+  .     $action_pane_tags
+  ]     $action_pane_outlinks
+  [     $action_pane_backlinks
 
   ;; == SFT ======================
   $d|modD_&_lsft  (t! th $action_pane_docker  $toggle_pane+lsft_layer)

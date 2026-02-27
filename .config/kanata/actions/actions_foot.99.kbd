@@ -23,6 +23,87 @@
 ;; == bookmarks =========================================================
 ;; bookmarks + spc
 ;; ___TO_SET___ foot_action_bookmarks              
+;; ___TO_SET___ foot_action_bookmarks_a            
+;; ___TO_SET___ foot_action_bookmarks_b            
+;; ___TO_SET___ foot_action_bookmarks_c            
+;; ___TO_SET___ foot_action_bookmarks_d            
+;; ___TO_SET___ foot_action_bookmarks_e            
+;; ___TO_SET___ foot_action_bookmarks_f            
+;; ___TO_SET___ foot_action_bookmarks_g            
+;; ___TO_SET___ foot_action_bookmarks_h            
+;; ___TO_SET___ foot_action_bookmarks_i            
+;; ___TO_SET___ foot_action_bookmarks_j            
+;; ___TO_SET___ foot_action_bookmarks_k            
+;; ___TO_SET___ foot_action_bookmarks_l            
+;; ___TO_SET___ foot_action_bookmarks_m            
+;; ___TO_SET___ foot_action_bookmarks_n            
+;; ___TO_SET___ foot_action_bookmarks_o            
+;; ___TO_SET___ foot_action_bookmarks_p            
+;; ___TO_SET___ foot_action_bookmarks_q            
+;; ___TO_SET___ foot_action_bookmarks_r            
+;; ___TO_SET___ foot_action_bookmarks_s            
+;; ___TO_SET___ foot_action_bookmarks_t            
+;; ___TO_SET___ foot_action_bookmarks_u            
+;; ___TO_SET___ foot_action_bookmarks_v            
+;; ___TO_SET___ foot_action_bookmarks_w            
+;; ___TO_SET___ foot_action_bookmarks_x            
+;; ___TO_SET___ foot_action_bookmarks_y            
+;; ___TO_SET___ foot_action_bookmarks_z            
+;; ___TO_SET___ foot_action_bookmarks_-            
+;; ___TO_SET___ foot_action_bookmarks_a+lsft       
+;; ___TO_SET___ foot_action_bookmarks_b+lsft       
+;; ___TO_SET___ foot_action_bookmarks_c+lsft       
+;; ___TO_SET___ foot_action_bookmarks_d+lsft       
+;; ___TO_SET___ foot_action_bookmarks_e+lsft       
+;; ___TO_SET___ foot_action_bookmarks_f+lsft       
+;; ___TO_SET___ foot_action_bookmarks_g+lsft       
+;; ___TO_SET___ foot_action_bookmarks_h+lsft       
+;; ___TO_SET___ foot_action_bookmarks_i+lsft       
+;; ___TO_SET___ foot_action_bookmarks_j+lsft       
+;; ___TO_SET___ foot_action_bookmarks_k+lsft       
+;; ___TO_SET___ foot_action_bookmarks_l+lsft       
+;; ___TO_SET___ foot_action_bookmarks_m+lsft       
+;; ___TO_SET___ foot_action_bookmarks_n+lsft       
+;; ___TO_SET___ foot_action_bookmarks_o+lsft       
+;; ___TO_SET___ foot_action_bookmarks_p+lsft       
+;; ___TO_SET___ foot_action_bookmarks_q+lsft       
+;; ___TO_SET___ foot_action_bookmarks_r+lsft       
+;; ___TO_SET___ foot_action_bookmarks_s+lsft       
+;; ___TO_SET___ foot_action_bookmarks_t+lsft       
+;; ___TO_SET___ foot_action_bookmarks_u+lsft       
+;; ___TO_SET___ foot_action_bookmarks_v+lsft       
+;; ___TO_SET___ foot_action_bookmarks_w+lsft       
+;; ___TO_SET___ foot_action_bookmarks_x+lsft       
+;; ___TO_SET___ foot_action_bookmarks_y+lsft       
+;; ___TO_SET___ foot_action_bookmarks_z+lsft       
+;; ___TO_SET___ foot_action_bookmarks_-+lsft       
+;; ___TO_SET___ foot_action_bookmarks_a+rsft       
+;; ___TO_SET___ foot_action_bookmarks_b+rsft       
+;; ___TO_SET___ foot_action_bookmarks_c+rsft       
+;; ___TO_SET___ foot_action_bookmarks_d+rsft       
+;; ___TO_SET___ foot_action_bookmarks_e+rsft       
+;; ___TO_SET___ foot_action_bookmarks_f+rsft       
+;; ___TO_SET___ foot_action_bookmarks_g+rsft       
+;; ___TO_SET___ foot_action_bookmarks_h+rsft       
+;; ___TO_SET___ foot_action_bookmarks_i+rsft       
+;; ___TO_SET___ foot_action_bookmarks_j+rsft       
+;; ___TO_SET___ foot_action_bookmarks_k+rsft       
+;; ___TO_SET___ foot_action_bookmarks_l+rsft       
+;; ___TO_SET___ foot_action_bookmarks_m+rsft       
+;; ___TO_SET___ foot_action_bookmarks_n+rsft       
+;; ___TO_SET___ foot_action_bookmarks_o+rsft       
+;; ___TO_SET___ foot_action_bookmarks_p+rsft       
+;; ___TO_SET___ foot_action_bookmarks_q+rsft       
+;; ___TO_SET___ foot_action_bookmarks_r+rsft       
+;; ___TO_SET___ foot_action_bookmarks_s+rsft       
+;; ___TO_SET___ foot_action_bookmarks_t+rsft       
+;; ___TO_SET___ foot_action_bookmarks_u+rsft       
+;; ___TO_SET___ foot_action_bookmarks_v+rsft       
+;; ___TO_SET___ foot_action_bookmarks_w+rsft       
+;; ___TO_SET___ foot_action_bookmarks_x+rsft       
+;; ___TO_SET___ foot_action_bookmarks_y+rsft       
+;; ___TO_SET___ foot_action_bookmarks_z+rsft       
+;; ___TO_SET___ foot_action_bookmarks_-+rsft       
 
 
 ;; == open =============================================================
@@ -101,7 +182,7 @@ foot_action_omni_page_down                      S-pgdn
 ;; ___TO_SET___ foot_action_omni_parent            
 ;; omni + s
 ;; ___TO_SET___ foot_action_omni_sort              
-;; omni + lsft + s
+;; omni + lsft + s | omni + rsft + s
 ;; ___TO_SET___ foot_action_omni_reverse_sort      
 ;; omni + y
 ;; ___TO_SET___ foot_action_omni_filter            
@@ -187,6 +268,8 @@ foot_action_omni_page_down                      S-pgdn
 ;; == modG =============================================================
 ;; modG + spc
 ;; ___TO_SET___ foot_action_modG                   
+;; modG + modL
+;; ___TO_SET___ foot_action_modG_modL              
 
 ;; == modH =============================================================
 ;; modH + spc

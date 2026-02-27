@@ -337,6 +337,253 @@
     ((input virtual vk_obsidian)) $obsidian_action_bookmarks break
     () XX break
   )) 
+  action_bookmarks_a (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_b (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_c (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_d (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_bookmarks_d break
+    () XX break
+  )) 
+  action_bookmarks_e (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_f (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_g (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_h (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_i (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_j (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_k (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_l (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_m (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_n (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_o (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_p (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_q (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_r (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_s (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_t (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_u (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_v (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_w (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_bookmarks_w break
+    () XX break
+  )) 
+  action_bookmarks_x (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_y (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_z (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_- (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_bookmarks_- break
+    () XX break
+  )) 
+  action_bookmarks_a+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_b+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_c+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_d+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_e+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_f+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_g+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_h+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_i+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_j+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_k+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_l+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_m+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_n+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_o+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_p+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_q+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_r+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_s+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_t+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_u+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_v+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_w+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_x+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_y+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_z+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_-+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_a+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_b+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_c+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_d+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_e+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_f+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_g+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_h+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_i+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_j+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_k+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_l+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_m+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_n+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_o+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_p+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_q+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_r+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_s+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_t+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_u+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_v+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_w+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_x+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_y+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_z+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+  action_bookmarks_-+rsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) 
+
 
   ;; == opts ==============================================================
   ;; opts + lsft/rsft + r 
@@ -473,18 +720,21 @@
   ))
   ;; omni + ;
   action_omni_comment (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_omni_comment break
     () XX break
   ))
 
   ;; == omni file manager ===============================================
   ;; omni + spc
   action_omni_select (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_omni_select break
     ((input virtual vk_dolphin)) $dolphin_action_omni_select break
     ((input virtual vk_obsidian)) $obsidian_action_omni_select break
     () XX break
   ))
   ;; omni + r
   action_omni_rename (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_omni_rename break
     ((input virtual vk_dolphin)) $dolphin_action_omni_rename break
     ((input virtual vk_obsidian)) $obsidian_action_omni_rename break
     ((input virtual vk_tmux)) $tmux_action_omni_rename break
@@ -492,6 +742,7 @@
   ))
   ;; omni + d
   action_omni_duplicate (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_omni_duplicate break
     ((input virtual vk_dolphin)) $dolphin_action_omni_duplicate break
     ((input virtual vk_obsidian)) $obsidian_action_omni_duplicate break
     () XX break
@@ -515,6 +766,7 @@
   ))
   ;; omni + n
   action_omni_new (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_omni_new break
     ((input virtual vk_chrome)) $chrome_action_omni_new break
     ((input virtual vk_dolphin)) $dolphin_action_omni_new break
     ((input virtual vk_obsidian)) $obsidian_action_omni_new break
@@ -552,7 +804,7 @@
     ((input virtual vk_dolphin)) $dolphin_action_omni_sort break
     () XX break
   ))
-  ;; omni + lsft + s
+  ;; omni + lsft + s | omni + rsft + s
   action_omni_reverse_sort (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_dolphin)) $dolphin_action_omni_reverse_sort break
     () XX break
@@ -564,14 +816,17 @@
   ))
   ;; omni + e
   action_omni_extract (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni_extract break
     () XX break
   ))
   ;; omni + lsft + e
   action_omni_compress (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni_compress break
     () XX break
   ))
   ;; omni + i
   action_omni_info (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni_info break
     () XX break
   ))
 
@@ -614,21 +869,28 @@
   ;; omni + t
   ;; see tab
   action_omni_tab_new (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_omni_tab_new break
+    ((input virtual vk_dolphin)) $dolphin_action_omni_tab_new break
     () $action_tab_new break
   ))
   ;; omni + lsft + t
   ;; see tab
   action_omni_tab_undo_close (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_omni_tab_undo_close break
+    ((input virtual vk_dolphin)) $dolphin_action_omni_tab_undo_close break
     () $action_tab_undo_close break
   ))
   ;; omni + w
   ;; see tab
   action_omni_tab_close (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_omni_tab_close break
+    ((input virtual vk_dolphin)) $dolphin_action_omni_tab_close break
     () $action_tab_close break
   ))
   ;; omni + q
   ;; see windows
   action_omni_window_close (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_omni_window_close break
     () $action_window_close break
   ))
 
@@ -640,16 +902,19 @@
   ;; omni + ,
   ;; see mod,
   action_omni_setting (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_omni_setting break
     () $action_mod, break
   ))
   ;; omni + .
   ;; see mod.
   action_omni_tag (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_omni_tag break
     () $action_mod. break
   ))
   ;; omni + /
   ;; see mod/
   action_omni_help (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_omni_help break
     () $action_mod/ break
   ))
 
@@ -697,13 +962,18 @@
   ;; == modF =============================================================
   ;; modF + spc 
   action_modF (t! unmod_all (switch ;;@autogen@
-    () C-spc break
+    ()                              C-spc break  ;; Autofill
   ))
 
   ;; == modG =============================================================
   ;; modG + spc 
   action_modG (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_modG break
+    () XX break
+  ))
+  ;; modG + modL
+  action_modG_modL (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modG_modL break
     () XX break
   ))
 
@@ -723,7 +993,7 @@
   ;; modJ + spc 
   action_modJ (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_modJ break
-    () C-spc break
+    ()                        C-spc break  ;; Autofill
   ))
 
   ;; == modK =============================================================
@@ -744,7 +1014,7 @@
   ;; == modM  ==========================================================
   ;; modM + spc 
   action_modM (t! unmod_all (switch ;;@autogen@
-    () XX break
+    ()                      M-v break  ;; Clipboard history
   ))
 
   ;; == modN  ==========================================================
@@ -895,6 +1165,8 @@
   ;; == mod/ ==========================================================
   ;; mod/ + spc 
   action_mod/ (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_mod/ break
+    ((input virtual vk_dolphin)) $dolphin_action_mod/ break
     () XX break
   )) ;;""
 
@@ -1054,18 +1326,22 @@
   ;; == panes + resize ====================================================
   ;; panes + resize + h | panes + resize + left
   action_pane_resize_left (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_pane_resize_left break
     () XX break
   ))
   ;; panes + resize + l | panes + resize + right
   action_pane_resize_right (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_pane_resize_right break
     () XX break
   ))
   ;; panes + resize + k | panes + resize + up
   action_pane_resize_above (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_pane_resize_above break
     () XX break
   ))
   ;; panes + resize + j | panes + resize + down
   action_pane_resize_below (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_pane_resize_below break
     () XX break
   ))
 
@@ -1150,6 +1426,7 @@
   ))
   ;; panes + t
   action_pane_terminal (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_pane_terminal break
     () XX break
   ))
   ;; panes + u

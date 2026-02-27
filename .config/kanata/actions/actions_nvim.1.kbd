@@ -29,6 +29,87 @@ nvim_action_folders               XX
 ;; bookmarks + spc
 ;; nvim_action_bookmarks             `{esc}:Telescope marks{ret}`
 nvim_action_bookmarks             (macro esc S-; S-t e l e s c o p e spc m a r k s ret)   ;;""
+;; ___TO_SET___ nvim_action_bookmarks_a            
+;; ___TO_SET___ nvim_action_bookmarks_b            
+;; ___TO_SET___ nvim_action_bookmarks_c            
+;; ___TO_SET___ nvim_action_bookmarks_d            
+;; ___TO_SET___ nvim_action_bookmarks_e            
+;; ___TO_SET___ nvim_action_bookmarks_f            
+;; ___TO_SET___ nvim_action_bookmarks_g            
+;; ___TO_SET___ nvim_action_bookmarks_h            
+;; ___TO_SET___ nvim_action_bookmarks_i            
+;; ___TO_SET___ nvim_action_bookmarks_j            
+;; ___TO_SET___ nvim_action_bookmarks_k            
+;; ___TO_SET___ nvim_action_bookmarks_l            
+;; ___TO_SET___ nvim_action_bookmarks_m            
+;; ___TO_SET___ nvim_action_bookmarks_n            
+;; ___TO_SET___ nvim_action_bookmarks_o            
+;; ___TO_SET___ nvim_action_bookmarks_p            
+;; ___TO_SET___ nvim_action_bookmarks_q            
+;; ___TO_SET___ nvim_action_bookmarks_r            
+;; ___TO_SET___ nvim_action_bookmarks_s            
+;; ___TO_SET___ nvim_action_bookmarks_t            
+;; ___TO_SET___ nvim_action_bookmarks_u            
+;; ___TO_SET___ nvim_action_bookmarks_v            
+;; ___TO_SET___ nvim_action_bookmarks_w            
+;; ___TO_SET___ nvim_action_bookmarks_x            
+;; ___TO_SET___ nvim_action_bookmarks_y            
+;; ___TO_SET___ nvim_action_bookmarks_z            
+;; ___TO_SET___ nvim_action_bookmarks_-            
+;; ___TO_SET___ nvim_action_bookmarks_a+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_b+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_c+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_d+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_e+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_f+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_g+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_h+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_i+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_j+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_k+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_l+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_m+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_n+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_o+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_p+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_q+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_r+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_s+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_t+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_u+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_v+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_w+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_x+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_y+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_z+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_-+lsft       
+;; ___TO_SET___ nvim_action_bookmarks_a+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_b+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_c+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_d+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_e+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_f+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_g+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_h+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_i+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_j+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_k+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_l+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_m+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_n+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_o+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_p+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_q+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_r+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_s+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_t+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_u+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_v+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_w+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_x+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_y+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_z+rsft       
+;; ___TO_SET___ nvim_action_bookmarks_-+rsft       
 
 
 ;; == open =============================================================
@@ -80,15 +161,17 @@ nvim_action_omni_hist_prev                      C-o
 ;; omni + lsft + z
 ;; ___TO_SET___ nvim_action_omni_redo              
 ;; omni + ;
-;; ___TO_SET___ nvim_action_omni_comment           
+nvim_action_omni_comment           (macro esc g c c)
 
 ;; == omni file manager ===============================================
 ;; omni + spc
-;; ___TO_SET___ nvim_action_omni_select            
+nvim_action_omni_select            $nvim_action_files
 ;; omni + r
-;; ___TO_SET___ nvim_action_omni_rename            
+;; nvim_action_omni_rename            `{esc}:saveas `
+nvim_action_omni_rename            (macro esc S-; s a v e a s spc)
 ;; omni + d
-;; ___TO_SET___ nvim_action_omni_duplicate         
+;; nvim_action_omni_duplicate         `{esc}:saveas %:r_copy.%:e`
+nvim_action_omni_duplicate         (macro esc S-; s a v e a s spc S-5 S-; r S-- c o p y . S-5 S-; e)
 ;; omni + a
 nvim_action_omni_select_all                     (macro esc g g S-v S-g)
 ;; omni + lsft + a
@@ -96,7 +179,7 @@ nvim_action_omni_select_all                     (macro esc g g S-v S-g)
 ;; omni + rsft + a
 ;; ___TO_SET___ nvim_action_omni_invert_select     
 ;; omni + n
-;; ___TO_SET___ nvim_action_omni_new               
+nvim_action_omni_new               $nvim_action_omni_tab_new
 ;; omni + lsft + n
 ;; ___TO_SET___ nvim_action_omni_lsft+new          
 ;; omni + rsft + n
@@ -107,7 +190,7 @@ nvim_action_omni_open                          C-] ;; Follow tag in help ""
 nvim_action_omni_parent                        C-t ;; Go back to preceding tag
 ;; omni + s
 ;; ___TO_SET___ nvim_action_omni_sort              
-;; omni + lsft + s
+;; omni + lsft + s | omni + rsft + s
 ;; ___TO_SET___ nvim_action_omni_reverse_sort      
 ;; omni + y
 ;; ___TO_SET___ nvim_action_omni_filter            
@@ -133,29 +216,32 @@ nvim_action_omni_parent                        C-t ;; Go back to preceding tag
 ;; == omni misc ===============================================
 ;; omni + t
 ;; see tab
-;; ___TO_SET___ nvim_action_omni_tab_new           
+;; nvim_action_omni_tab_new           `{esc}:tabnew{ent}`
+nvim_action_omni_tab_new           (macro esc S-; t a b n e w ent)
 ;; omni + lsft + t
 ;; see tab
-;; ___TO_SET___ nvim_action_omni_tab_undo_close    
+nvim_action_omni_tab_undo_close    (multi $nvim_action_omni_tab_new C-o)
 ;; omni + w
 ;; see tab
-;; ___TO_SET___ nvim_action_omni_tab_close         
+;; nvim_action_omni_tab_close         `{esc}:bdelete{ent}`
+nvim_action_omni_tab_close         (macro esc S-; b d e l e t e ent)
 ;; omni + q
 ;; see windows
-;; ___TO_SET___ nvim_action_omni_window_close      
+;; nvim_action_omni_window_close      `{esc}:qa{ent}`
+nvim_action_omni_window_close      (macro esc S-; q a ent)
 
 ;; omni + m
 ;; see modM
 ;; ___TO_SET___ nvim_action_omni_clipboard         
 ;; omni + ,
 ;; see mod,
-;; ___TO_SET___ nvim_action_omni_setting           
+nvim_action_omni_setting           $nvim_action_mod,
 ;; omni + .
 ;; see mod.
-;; ___TO_SET___ nvim_action_omni_tag               
+nvim_action_omni_tag               $nvim_action_mod.
 ;; omni + /
 ;; see mod/
-;; ___TO_SET___ nvim_action_omni_help              
+nvim_action_omni_help              $nvim_action_mod/
 
 ;; omni + '
 ;; not used yet
@@ -196,6 +282,9 @@ nvim_action_modD                   (macro esc S-; S-t e l e s c o p e spc l s p 
 ;; modG + spc
 ;; nvim_action_modG                 `{esc}:Telescope git_files{ret}`
 nvim_action_modG                    (macro esc S-; S-t e l e s c o p e spc g i t S-- f i l e s ret)  ;;""
+;; modG + modL
+;; nvim_action_modG_modL              `{esc}:LazyGit{ret}`
+nvim_action_modG_modL              (macro esc S-; S-l a z y S-g i t ret)
 
 ;; == modH =============================================================
 ;; modH + spc
@@ -322,7 +411,8 @@ nvim_action_mod.                   (macro esc S-; S-t e l e s c o p e spc t a g 
 
 ;; == mod/ ==========================================================
 ;; mod/ + spc
-;; ___TO_SET___ nvim_action_mod/                   
+;; nvim_action_mod/                   `{esc}:help{ret}`
+nvim_action_mod/                   (macro esc S-; h e l p ret)
 
 ;; == panes =============================================================
 ;; panes + spc
@@ -369,13 +459,13 @@ nvim_action_pane_split_v                   (macro esc S-; v s ret)  ;;""
 
 ;; == panes + resize ====================================================
 ;; panes + resize + h | panes + resize + left
-;; ___TO_SET___ nvim_action_pane_resize_left       
+nvim_action_pane_resize_left       (macro C-w S-,)
 ;; panes + resize + l | panes + resize + right
-;; ___TO_SET___ nvim_action_pane_resize_right      
+nvim_action_pane_resize_right      (macro C-w S-.)
 ;; panes + resize + k | panes + resize + up
-;; ___TO_SET___ nvim_action_pane_resize_above      
+nvim_action_pane_resize_above      (macro C-w -)
 ;; panes + resize + j | panes + resize + down
-;; ___TO_SET___ nvim_action_pane_resize_below      
+nvim_action_pane_resize_below      (macro C-w S-=)
 
 ;; == panes + swap ======================================================
 ;; panes + swap + h | panes + swap + left
@@ -538,7 +628,8 @@ nvim_action_tab_goto_7                     (macro esc , Digit7)
 nvim_action_tab_goto_8                     (macro esc , Digit8)
 ;; tab + 9
 ;; tabs + 9
-nvim_action_tab_goto_last                  (macro esc , Digit9)
+;; nvim_action_tab_goto_last                  `{esc}:blast{ent}`
+nvim_action_tab_goto_last                  (macro esc S-; b l a s t ent)
 
 ;; == tab + toggle =====================================================
 ;; tab + toggle | 2x !lctl
