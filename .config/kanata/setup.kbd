@@ -172,12 +172,12 @@
      x|modX_&_workspace   x          ;; Tap: x, Hold: workspace_layer and modX_layer
      c|modC_&_pane        c          ;; Tap: c, Hold: pane_layer and modC_layer
      v|modV_&_tab         v          ;; Tap: v, Hold: tab_layer and modV_layer
-     b|modB_&_groups       b          ;; Tap: b, Hold: groups_layer and modB_layer
+     b|modB_&_groups      b          ;; Tap: b, Hold: groups_layer and modB_layer
      n|modN_&_session     n          ;; Tap: n, Hold: session_layer and modN_layer
-     m|modM_&_tab         m          ;; Tap: m, Hold: tab_layer and modM_layer
-     ,|mod,_&_pane        ,          ;; Tap: ,, Hold: pane_layer and mod,_layer
-     .|mod._&_workspace   .          ;; Tap: ., Hold: workspace and mod._layer
-     /|mod/_&_window      /          ;; Tap: /, Hold: window_layer and mod/_layer
+     m|tab_&_modM         m          ;; Tap: m, Hold: modM_layer and tab_layer 
+     ,|pane_&_mod,        ,          ;; Tap: ,, Hold: mod,_layer and pane_layer 
+     .|workspace_&_mod.   .          ;; Tap: ., Hold: mod._layer and workspace 
+     /|window_&_mod/      /          ;; Tap: /, Hold: mod/_layer and window_layer
   
   ;; Modifiers row
   !lmet|replace      $!lmet     ;; Physical lctl is used as lmet, in combo with space works as replace domain. 
@@ -301,10 +301,10 @@
       $v|modV_&_tab        (t! fast_th v                                         $toggle_modV_&_tab_layer)
       $b|modB_&_groups     (t! fast_th b                                         $toggle_modB_&_groups_layer)
       $n|modN_&_session    (t! fast_th (t! char|alt_char n)                      $toggle_modN_&_session_layer)
-      $m|modM_&_tab        (t! fast_th m                                         $toggle_modM_&_tab_layer)
-      $,|mod,_&_pane       (t! fast_th ,                                         $toggle_mod,_&_pane_layer)
-      $.|mod._&_workspace  (t! fast_th .                                         $toggle_mod._layer)
-      $/|mod/_&_window     (t! fast_th /                                         $toggle_mod/_&_window_layer)
+      $m|tab_&_modM        (t! fast_th m                                         $toggle_tab_layer_&_modM)
+      $,|pane_&_mod,       (t! fast_th ,                                         $toggle_pane_layer_&_mod,)
+      $.|workspace_&_mod.  (t! fast_th .                                         $toggle_workspace_layer_&_mod.)
+      $/|window_&_mod/     (t! fast_th /                                         $toggle_window_layer_&_mod/)
   rsft                     (t!      th (t! 2x $action_tab_next)                  $toggle_rsft_layer)
 
   ;; Modifiers row.

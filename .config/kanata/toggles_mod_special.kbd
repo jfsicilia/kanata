@@ -74,9 +74,9 @@
   toggle_modL+rsft_layer             $toggle_modL_&_lalt_+rsft_layer      
 
   ;; modM layer
-  toggle_modM_layer                  $toggle_modM_&_tab_layer             
-  toggle_modM+lsft_layer             $toggle_modM_&_tab+lsft_layer        
-  toggle_modM+rsft_layer             $toggle_modM_&_tab+rsft_layer        
+  toggle_modM_layer                  $toggle_tab_layer_&_modM
+  toggle_modM+lsft_layer             $toggle_tab+lsft_layer_&_modM
+  toggle_modM+rsft_layer             $toggle_tab+rsft_layer_&_modM
 
   ;; modN layer
   toggle_modN_layer                  $toggle_modN_&_session_layer         
@@ -114,9 +114,9 @@
   toggle_mod'+rsft_layer             (t! toggle_mod_layer   rsft  mod'+rsft_layer)
 
   ;; mod, layer
-  toggle_mod,_layer                  $toggle_mod,_&_pane_layer           
-  toggle_mod,+lsft_layer             $toggle_mod,_&_pane+lsft_layer      
-  toggle_mod,+rsft_layer             $toggle_mod,_&_pane+rsft_layer      
+  toggle_mod,_layer                  $toggle_pane_layer_&_mod,
+  toggle_mod,+lsft_layer             $toggle_pane+lsft_layer_&_mod,
+  toggle_mod,+rsft_layer             $toggle_pane+rsft_layer_&_mod,
 
   ;; modO layer
   toggle_modO_layer                  (t! toggle_layer             modO_layer)
@@ -134,9 +134,9 @@
   toggle_modT+rsft_layer             (t! toggle_mod_layer   rsft  modT+rsft_layer)
 
   ;; mod. layer
-  toggle_mod._layer                  (t! toggle_layer             mod._layer)
-  toggle_mod.+lsft_layer             (t! toggle_mod_layer   lsft  mod.+lsft_layer)
-  toggle_mod.+rsft_layer             (t! toggle_mod_layer   rsft  mod.+rsft_layer)
+  toggle_mod._layer                  $toggle_workspace_layer_&_mod. 
+  toggle_mod.+lsft_layer             $toggle_workspace+lsft_layer_&_mod.
+  toggle_mod.+rsft_layer             $toggle_workspace+rsft_layer_&_mod.
 
   ;; modV layer
   toggle_modV_layer                  $toggle_modV_&_tab_layer             
@@ -154,7 +154,7 @@
   toggle_modZ+rsft_layer             $toggle_modZ_&_window+rsft_layer        
 
   ;; mod/ layer
-  toggle_mod/_layer                  $toggle_mod/_&_window_layer         
-  toggle_mod/+lsft_layer             $toggle_mod/_&_window+lsft_layer    
-  toggle_mod/+rsft_layer             $toggle_mod/_&_window+rsft_layer    
+  toggle_mod/_layer                  $toggle_window_layer_&_mod/
+  toggle_mod/+lsft_layer             $toggle_window+lsft_layer_&_mod/
+  toggle_mod/+rsft_layer             $toggle_window+rsft_layer_&_mod/
 )
