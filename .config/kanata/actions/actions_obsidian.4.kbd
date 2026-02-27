@@ -131,117 +131,117 @@ obsidian_action_open_with_nvim                 (macro C-A-p spc S-o p e n spc w 
 
 ;; == omni nav ======================================================
 ;; omni + g
-obsidian_action_omni_go                             $obsidian_action_files                  
+obsidian_action_omni+g                             $obsidian_action_files                  
 
 ;; omni + b
-obsidian_action_omni_page_up                        $obsidian_action_page_up
+obsidian_action_omni+b                        $obsidian_action_page_up
 
 ;; omni + f
-obsidian_action_omni_page_down                      $obsidian_action_page_down
+obsidian_action_omni+f                      $obsidian_action_page_down
 
 ;; omni + k
-;; ___TO_SET___ obsidian_action_omni_up                
+;; ___TO_SET___ obsidian_action_omni+k                 
 ;; omni + j
-;; ___TO_SET___ obsidian_action_omni_down              
+;; ___TO_SET___ obsidian_action_omni+j                 
 ;; omni + h
-;; ___TO_SET___ obsidian_action_omni_left              
+;; ___TO_SET___ obsidian_action_omni+h                 
 ;; omni + l
-;; ___TO_SET___ obsidian_action_omni_right             
+;; ___TO_SET___ obsidian_action_omni+l                 
 
 ;; omni + ]
-obsidian_action_omni_hist_next                      C-A-right
+obsidian_action_omni+]                      C-A-right
 ;; omni + [
-obsidian_action_omni_hist_prev                      C-A-left
+obsidian_action_omni+[                      C-A-left
 
 ;; == omni edit ======================================================
 ;; omni + c
-obsidian_action_omni_copy                           C-A-c
+obsidian_action_omni+c                           C-A-c
 
 ;; omni + x
-obsidian_action_omni_cut                            C-A-x
+obsidian_action_omni+x                            C-A-x
 ;; omni + v
-obsidian_action_omni_paste                          C-A-v
+obsidian_action_omni+v                          C-A-v
 ;; omni + z
-;; ___TO_SET___ obsidian_action_omni_undo              
+;; ___TO_SET___ obsidian_action_omni+z                 
 ;; omni + lsft + z
-;; ___TO_SET___ obsidian_action_omni_redo              
+;; ___TO_SET___ obsidian_action_omni+lsft+z            
 ;; omni + ;
-;; ___TO_SET___ obsidian_action_omni_comment           
+;; ___TO_SET___ obsidian_action_omni+;                 
 
 ;; == omni file manager ===============================================
 ;; omni + spc
-obsidian_action_omni_select                  C-spc
+obsidian_action_omni+spc                  C-spc
 ;; omni + r
-obsidian_action_omni_rename                         C-A-r
+obsidian_action_omni+r                         C-A-r
 ;; omni + d
-obsidian_action_omni_duplicate                      C-A-d
+obsidian_action_omni+d                      C-A-d
 ;; omni + a
-obsidian_action_omni_select_all                     C-A-a
+obsidian_action_omni+a                     C-A-a
 ;; omni + lsft + a
-obsidian_action_omni_clear_select                   C-A-S-a
+obsidian_action_omni+lsft+a                   C-A-S-a
 ;; omni + rsft + a
-obsidian_action_omni_invert_select                  A-S-a
+obsidian_action_omni+rsft+a                  A-S-a
 ;; omni + n
-obsidian_action_omni_new                            C-A-n
+obsidian_action_omni+n                            C-A-n
 ;; omni + lsft + n
-obsidian_action_omni_lsft+new                       C-A-S-n
+obsidian_action_omni+lsft+n                       C-A-S-n
 ;; omni + rsft + n
-obsidian_action_omni_rsft+new                       C-A-s
+obsidian_action_omni+rsft+n                       C-A-s
 ;; omni + o
-obsidian_action_omni_open                           right
+obsidian_action_omni+o                           right
 ;; omni + p
-obsidian_action_omni_parent                         left
+obsidian_action_omni+p                         left
 ;; omni + s
-;; ___TO_SET___ obsidian_action_omni_sort              
+;; ___TO_SET___ obsidian_action_omni+s                 
 ;; omni + lsft + s | omni + rsft + s
-;; ___TO_SET___ obsidian_action_omni_reverse_sort      
+;; ___TO_SET___ obsidian_action_omni+lsft+s            
 ;; omni + y
-;; ___TO_SET___ obsidian_action_omni_filter            
+;; ___TO_SET___ obsidian_action_omni+y                 
 ;; omni + e
-;; ___TO_SET___ obsidian_action_omni_extract           
+;; ___TO_SET___ obsidian_action_omni+e                 
 ;; omni + lsft + e
-;; ___TO_SET___ obsidian_action_omni_compress          
+;; ___TO_SET___ obsidian_action_omni+lsft+e            
 ;; omni + i
-;; ___TO_SET___ obsidian_action_omni_info              
+;; ___TO_SET___ obsidian_action_omni+i                 
 
 ;; == omni user interface ===============================================
-;; ___TO_SET___ obsidian_action_omni_view_1            
-;; ___TO_SET___ obsidian_action_omni_view_2            
-;; ___TO_SET___ obsidian_action_omni_view_3            
-;; ___TO_SET___ obsidian_action_omni_view_4            
-;; ___TO_SET___ obsidian_action_omni_view_5            
-;; ___TO_SET___ obsidian_action_omni_view_6            
-;; ___TO_SET___ obsidian_action_omni_view_7            
-;; ___TO_SET___ obsidian_action_omni_view_8            
-;; ___TO_SET___ obsidian_action_omni_view_9            
-;; ___TO_SET___ obsidian_action_omni_view_0            
+;; ___TO_SET___ obsidian_action_omni+1                 
+;; ___TO_SET___ obsidian_action_omni+2                 
+;; ___TO_SET___ obsidian_action_omni+3                 
+;; ___TO_SET___ obsidian_action_omni+4                 
+;; ___TO_SET___ obsidian_action_omni+5                 
+;; ___TO_SET___ obsidian_action_omni+6                 
+;; ___TO_SET___ obsidian_action_omni+7                 
+;; ___TO_SET___ obsidian_action_omni+8                 
+;; ___TO_SET___ obsidian_action_omni+9                 
+;; ___TO_SET___ obsidian_action_omni+0                 
 
 ;; == omni misc ===============================================
 ;; omni + t
 ;; see tab
-;; ___TO_SET___ obsidian_action_omni_tab_new           
+;; ___TO_SET___ obsidian_action_omni+t                 
 ;; omni + lsft + t
 ;; see tab
-;; ___TO_SET___ obsidian_action_omni_tab_undo_close    
+;; ___TO_SET___ obsidian_action_omni+lsft+t            
 ;; omni + w
 ;; see tab
-;; ___TO_SET___ obsidian_action_omni_tab_close         
+;; ___TO_SET___ obsidian_action_omni+w                 
 ;; omni + q
 ;; see windows
-;; ___TO_SET___ obsidian_action_omni_window_close      
+;; ___TO_SET___ obsidian_action_omni+q                 
 
 ;; omni + m
 ;; see modM
-;; ___TO_SET___ obsidian_action_omni_clipboard         
+;; ___TO_SET___ obsidian_action_omni+m                 
 ;; omni + ,
 ;; see mod,
-;; ___TO_SET___ obsidian_action_omni_setting           
+;; ___TO_SET___ obsidian_action_omni+,                 
 ;; omni + .
 ;; see mod.
-;; ___TO_SET___ obsidian_action_omni_tag               
+;; ___TO_SET___ obsidian_action_omni+.                 
 ;; omni + /
 ;; see mod/
-;; ___TO_SET___ obsidian_action_omni_help              
+;; ___TO_SET___ obsidian_action_omni+/                 
 
 ;; omni + '
 ;; not used yet
@@ -703,8 +703,8 @@ obsidian_action_lctl+,                         $obsidian_action_setting
 ;; ___TO_SET___ obsidian_action_lctl+/                 
 obsidian_action_lctl+;                         $obsidian_vimola
 ;; ___TO_SET___ obsidian_action_lctl+'                 
-obsidian_action_lctl+[                         $obsidian_action_omni_hist_prev
-obsidian_action_lctl+]                         $obsidian_action_omni_hist_next  ;;""
+obsidian_action_lctl+[                         $obsidian_action_omni+[
+obsidian_action_lctl+]                         $obsidian_action_omni+]  ;;""
 ;; ___TO_SET___ obsidian_action_lctl+\                 
 ;; ___TO_SET___ obsidian_action_lctl+-                 
 ;; ___TO_SET___ obsidian_action_lctl+=                 

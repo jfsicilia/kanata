@@ -126,122 +126,122 @@ nvim_action_bookmarks             (macro esc S-; S-t e l e s c o p e spc m a r k
 
 ;; == omni nav ======================================================
 ;; omni + g
-;; ___TO_SET___ nvim_action_omni_go                
+;; ___TO_SET___ nvim_action_omni+g                 
 
 ;; omni + b
-nvim_action_omni_page_up                        C-b
+nvim_action_omni+b                        C-b
 
 ;; omni + f
-nvim_action_omni_page_down                      C-f
+nvim_action_omni+f                      C-f
 
 ;; omni + k
-nvim_action_omni_up                             up
+nvim_action_omni+k                             up
 ;; omni + j
-nvim_action_omni_down                           down
+nvim_action_omni+j                           down
 ;; omni + h
-nvim_action_omni_left                           left
+nvim_action_omni+h                           left
 ;; omni + l
-nvim_action_omni_right                          right
+nvim_action_omni+l                          right
 
 ;; omni + ]
-nvim_action_omni_hist_next                      C-i
+nvim_action_omni+]                      C-i
 ;; omni + [
-nvim_action_omni_hist_prev                      C-o
+nvim_action_omni+[                      C-o
 
 ;; == omni edit ======================================================
 ;; omni + c
-;; ___TO_SET___ nvim_action_omni_copy              
+;; ___TO_SET___ nvim_action_omni+c                 
 
 ;; omni + x
-;; ___TO_SET___ nvim_action_omni_cut               
+;; ___TO_SET___ nvim_action_omni+x                 
 ;; omni + v
-;; ___TO_SET___ nvim_action_omni_paste             
+;; ___TO_SET___ nvim_action_omni+v                 
 ;; omni + z
-;; ___TO_SET___ nvim_action_omni_undo              
+;; ___TO_SET___ nvim_action_omni+z                 
 ;; omni + lsft + z
-;; ___TO_SET___ nvim_action_omni_redo              
+;; ___TO_SET___ nvim_action_omni+lsft+z            
 ;; omni + ;
-nvim_action_omni_comment           (macro esc g c c)
+nvim_action_omni+;           (macro esc g c c)
 
 ;; == omni file manager ===============================================
 ;; omni + spc
-nvim_action_omni_select            $nvim_action_files
+nvim_action_omni+spc            $nvim_action_files
 ;; omni + r
-;; nvim_action_omni_rename            `{esc}:saveas `
-nvim_action_omni_rename            (macro esc S-; s a v e a s spc)
+;; nvim_action_omni+r            `{esc}:saveas `
+nvim_action_omni+r            (macro esc S-; s a v e a s spc)
 ;; omni + d
-;; nvim_action_omni_duplicate         `{esc}:saveas %:r_copy.%:e`
-nvim_action_omni_duplicate         (macro esc S-; s a v e a s spc S-5 S-; r S-- c o p y . S-5 S-; e)
+;; nvim_action_omni+d         `{esc}:saveas %:r_copy.%:e`
+nvim_action_omni+d         (macro esc S-; s a v e a s spc S-5 S-; r S-- c o p y . S-5 S-; e)
 ;; omni + a
-nvim_action_omni_select_all                     (macro esc g g S-v S-g)
+nvim_action_omni+a                     (macro esc g g S-v S-g)
 ;; omni + lsft + a
-;; ___TO_SET___ nvim_action_omni_clear_select      
+;; ___TO_SET___ nvim_action_omni+lsft+a            
 ;; omni + rsft + a
-;; ___TO_SET___ nvim_action_omni_invert_select     
+;; ___TO_SET___ nvim_action_omni+rsft+a            
 ;; omni + n
-nvim_action_omni_new               $nvim_action_omni_tab_new
+nvim_action_omni+n               $nvim_action_omni+t
 ;; omni + lsft + n
-;; ___TO_SET___ nvim_action_omni_lsft+new          
+;; ___TO_SET___ nvim_action_omni+lsft+n            
 ;; omni + rsft + n
-;; ___TO_SET___ nvim_action_omni_rsft+new          
+;; ___TO_SET___ nvim_action_omni+rsft+n            
 ;; omni + o
-nvim_action_omni_open                          C-] ;; Follow tag in help ""
+nvim_action_omni+o                          C-] ;; Follow tag in help ""
 ;; omni + p
-nvim_action_omni_parent                        C-t ;; Go back to preceding tag
+nvim_action_omni+p                        C-t ;; Go back to preceding tag
 ;; omni + s
-;; ___TO_SET___ nvim_action_omni_sort              
+;; ___TO_SET___ nvim_action_omni+s                 
 ;; omni + lsft + s | omni + rsft + s
-;; ___TO_SET___ nvim_action_omni_reverse_sort      
+;; ___TO_SET___ nvim_action_omni+lsft+s            
 ;; omni + y
-;; ___TO_SET___ nvim_action_omni_filter            
+;; ___TO_SET___ nvim_action_omni+y                 
 ;; omni + e
-;; ___TO_SET___ nvim_action_omni_extract           
+;; ___TO_SET___ nvim_action_omni+e                 
 ;; omni + lsft + e
-;; ___TO_SET___ nvim_action_omni_compress          
+;; ___TO_SET___ nvim_action_omni+lsft+e            
 ;; omni + i
-;; ___TO_SET___ nvim_action_omni_info              
+;; ___TO_SET___ nvim_action_omni+i                 
 
 ;; == omni user interface ===============================================
-;; ___TO_SET___ nvim_action_omni_view_1            
-;; ___TO_SET___ nvim_action_omni_view_2            
-;; ___TO_SET___ nvim_action_omni_view_3            
-;; ___TO_SET___ nvim_action_omni_view_4            
-;; ___TO_SET___ nvim_action_omni_view_5            
-;; ___TO_SET___ nvim_action_omni_view_6            
-;; ___TO_SET___ nvim_action_omni_view_7            
-;; ___TO_SET___ nvim_action_omni_view_8            
-;; ___TO_SET___ nvim_action_omni_view_9            
-;; ___TO_SET___ nvim_action_omni_view_0            
+;; ___TO_SET___ nvim_action_omni+1                 
+;; ___TO_SET___ nvim_action_omni+2                 
+;; ___TO_SET___ nvim_action_omni+3                 
+;; ___TO_SET___ nvim_action_omni+4                 
+;; ___TO_SET___ nvim_action_omni+5                 
+;; ___TO_SET___ nvim_action_omni+6                 
+;; ___TO_SET___ nvim_action_omni+7                 
+;; ___TO_SET___ nvim_action_omni+8                 
+;; ___TO_SET___ nvim_action_omni+9                 
+;; ___TO_SET___ nvim_action_omni+0                 
 
 ;; == omni misc ===============================================
 ;; omni + t
 ;; see tab
-;; nvim_action_omni_tab_new           `{esc}:tabnew{ent}`
-nvim_action_omni_tab_new           (macro esc S-; t a b n e w ent)
+;; nvim_action_omni+t           `{esc}:tabnew{ent}`
+nvim_action_omni+t           (macro esc S-; t a b n e w ent)
 ;; omni + lsft + t
 ;; see tab
-nvim_action_omni_tab_undo_close    (multi $nvim_action_omni_tab_new C-o)
+nvim_action_omni+lsft+t    (multi $nvim_action_omni+t C-o)
 ;; omni + w
 ;; see tab
-;; nvim_action_omni_tab_close         `{esc}:bdelete{ent}`
-nvim_action_omni_tab_close         (macro esc S-; b d e l e t e ent)
+;; nvim_action_omni+w         `{esc}:bdelete{ent}`
+nvim_action_omni+w         (macro esc S-; b d e l e t e ent)
 ;; omni + q
 ;; see windows
-;; nvim_action_omni_window_close      `{esc}:qa{ent}`
-nvim_action_omni_window_close      (macro esc S-; q a ent)
+;; nvim_action_omni+q      `{esc}:qa{ent}`
+nvim_action_omni+q      (macro esc S-; q a ent)
 
 ;; omni + m
 ;; see modM
-;; ___TO_SET___ nvim_action_omni_clipboard         
+;; ___TO_SET___ nvim_action_omni+m                 
 ;; omni + ,
 ;; see mod,
-nvim_action_omni_setting           $nvim_action_mod,
+nvim_action_omni+,           $nvim_action_mod,
 ;; omni + .
 ;; see mod.
-nvim_action_omni_tag               $nvim_action_mod.
+nvim_action_omni+.               $nvim_action_mod.
 ;; omni + /
 ;; see mod/
-nvim_action_omni_help              $nvim_action_mod/
+nvim_action_omni+/              $nvim_action_mod/
 
 ;; omni + '
 ;; not used yet

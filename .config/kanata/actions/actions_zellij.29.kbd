@@ -120,117 +120,117 @@
 
 ;; == omni nav ======================================================
 ;; omni + g
-;; ___TO_SET___ zellij_action_omni_go                
+;; ___TO_SET___ zellij_action_omni+g                 
 
 ;; omni + b
-;; ___TO_SET___ zellij_action_omni_page_up           
+;; ___TO_SET___ zellij_action_omni+b                 
 
 ;; omni + f
-;; ___TO_SET___ zellij_action_omni_page_down         
+;; ___TO_SET___ zellij_action_omni+f                 
 
 ;; omni + k
-;; ___TO_SET___ zellij_action_omni_up                
+;; ___TO_SET___ zellij_action_omni+k                 
 ;; omni + j
-;; ___TO_SET___ zellij_action_omni_down              
+;; ___TO_SET___ zellij_action_omni+j                 
 ;; omni + h
-;; ___TO_SET___ zellij_action_omni_left              
+;; ___TO_SET___ zellij_action_omni+h                 
 ;; omni + l
-;; ___TO_SET___ zellij_action_omni_right             
+;; ___TO_SET___ zellij_action_omni+l                 
 
 ;; omni + ]
-;; ___TO_SET___ zellij_action_omni_hist_next         
+;; ___TO_SET___ zellij_action_omni+]                 
 ;; omni + [
-;; ___TO_SET___ zellij_action_omni_hist_prev         
+;; ___TO_SET___ zellij_action_omni+[                 
 
 ;; == omni edit ======================================================
 ;; omni + c
-;; ___TO_SET___ zellij_action_omni_copy              
+;; ___TO_SET___ zellij_action_omni+c                 
 
 ;; omni + x
-;; ___TO_SET___ zellij_action_omni_cut               
+;; ___TO_SET___ zellij_action_omni+x                 
 ;; omni + v
-;; ___TO_SET___ zellij_action_omni_paste             
+;; ___TO_SET___ zellij_action_omni+v                 
 ;; omni + z
-;; ___TO_SET___ zellij_action_omni_undo              
+;; ___TO_SET___ zellij_action_omni+z                 
 ;; omni + lsft + z
-;; ___TO_SET___ zellij_action_omni_redo              
+;; ___TO_SET___ zellij_action_omni+lsft+z            
 ;; omni + ;
-;; ___TO_SET___ zellij_action_omni_comment           
+;; ___TO_SET___ zellij_action_omni+;                 
 
 ;; == omni file manager ===============================================
 ;; omni + spc
-;; ___TO_SET___ zellij_action_omni_select            
+;; ___TO_SET___ zellij_action_omni+spc               
 ;; omni + r
-;; ___TO_SET___ zellij_action_omni_rename            
+;; ___TO_SET___ zellij_action_omni+r                 
 ;; omni + d
-;; ___TO_SET___ zellij_action_omni_duplicate         
+;; ___TO_SET___ zellij_action_omni+d                 
 ;; omni + a
-;; ___TO_SET___ zellij_action_omni_select_all        
+;; ___TO_SET___ zellij_action_omni+a                 
 ;; omni + lsft + a
-;; ___TO_SET___ zellij_action_omni_clear_select      
+;; ___TO_SET___ zellij_action_omni+lsft+a            
 ;; omni + rsft + a
-;; ___TO_SET___ zellij_action_omni_invert_select     
+;; ___TO_SET___ zellij_action_omni+rsft+a            
 ;; omni + n
-;; ___TO_SET___ zellij_action_omni_new               
+;; ___TO_SET___ zellij_action_omni+n                 
 ;; omni + lsft + n
-;; ___TO_SET___ zellij_action_omni_lsft+new          
+;; ___TO_SET___ zellij_action_omni+lsft+n            
 ;; omni + rsft + n
-;; ___TO_SET___ zellij_action_omni_rsft+new          
+;; ___TO_SET___ zellij_action_omni+rsft+n            
 ;; omni + o
-;; ___TO_SET___ zellij_action_omni_open              
+;; ___TO_SET___ zellij_action_omni+o                 
 ;; omni + p
-;; ___TO_SET___ zellij_action_omni_parent            
+;; ___TO_SET___ zellij_action_omni+p                 
 ;; omni + s
-;; ___TO_SET___ zellij_action_omni_sort              
+;; ___TO_SET___ zellij_action_omni+s                 
 ;; omni + lsft + s | omni + rsft + s
-;; ___TO_SET___ zellij_action_omni_reverse_sort      
+;; ___TO_SET___ zellij_action_omni+lsft+s            
 ;; omni + y
-;; ___TO_SET___ zellij_action_omni_filter            
+;; ___TO_SET___ zellij_action_omni+y                 
 ;; omni + e
-;; ___TO_SET___ zellij_action_omni_extract           
+;; ___TO_SET___ zellij_action_omni+e                 
 ;; omni + lsft + e
-;; ___TO_SET___ zellij_action_omni_compress          
+;; ___TO_SET___ zellij_action_omni+lsft+e            
 ;; omni + i
-;; ___TO_SET___ zellij_action_omni_info              
+;; ___TO_SET___ zellij_action_omni+i                 
 
 ;; == omni user interface ===============================================
-;; ___TO_SET___ zellij_action_omni_view_1            
-;; ___TO_SET___ zellij_action_omni_view_2            
-;; ___TO_SET___ zellij_action_omni_view_3            
-;; ___TO_SET___ zellij_action_omni_view_4            
-;; ___TO_SET___ zellij_action_omni_view_5            
-;; ___TO_SET___ zellij_action_omni_view_6            
-;; ___TO_SET___ zellij_action_omni_view_7            
-;; ___TO_SET___ zellij_action_omni_view_8            
-;; ___TO_SET___ zellij_action_omni_view_9            
-;; ___TO_SET___ zellij_action_omni_view_0            
+;; ___TO_SET___ zellij_action_omni+1                 
+;; ___TO_SET___ zellij_action_omni+2                 
+;; ___TO_SET___ zellij_action_omni+3                 
+;; ___TO_SET___ zellij_action_omni+4                 
+;; ___TO_SET___ zellij_action_omni+5                 
+;; ___TO_SET___ zellij_action_omni+6                 
+;; ___TO_SET___ zellij_action_omni+7                 
+;; ___TO_SET___ zellij_action_omni+8                 
+;; ___TO_SET___ zellij_action_omni+9                 
+;; ___TO_SET___ zellij_action_omni+0                 
 
 ;; == omni misc ===============================================
 ;; omni + t
 ;; see tab
-;; ___TO_SET___ zellij_action_omni_tab_new           
+;; ___TO_SET___ zellij_action_omni+t                 
 ;; omni + lsft + t
 ;; see tab
-;; ___TO_SET___ zellij_action_omni_tab_undo_close    
+;; ___TO_SET___ zellij_action_omni+lsft+t            
 ;; omni + w
 ;; see tab
-;; ___TO_SET___ zellij_action_omni_tab_close         
+;; ___TO_SET___ zellij_action_omni+w                 
 ;; omni + q
 ;; see windows
-;; ___TO_SET___ zellij_action_omni_window_close      
+;; ___TO_SET___ zellij_action_omni+q                 
 
 ;; omni + m
 ;; see modM
-;; ___TO_SET___ zellij_action_omni_clipboard         
+;; ___TO_SET___ zellij_action_omni+m                 
 ;; omni + ,
 ;; see mod,
-;; ___TO_SET___ zellij_action_omni_setting           
+;; ___TO_SET___ zellij_action_omni+,                 
 ;; omni + .
 ;; see mod.
-;; ___TO_SET___ zellij_action_omni_tag               
+;; ___TO_SET___ zellij_action_omni+.                 
 ;; omni + /
 ;; see mod/
-;; ___TO_SET___ zellij_action_omni_help              
+;; ___TO_SET___ zellij_action_omni+/                 
 
 ;; omni + '
 ;; not used yet
