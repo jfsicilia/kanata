@@ -43,7 +43,7 @@
 )
 
 (deflayermap (pane_layer)
-  ent   $action_pane+ent
+  ent   $action_pane+max
 
   h     $action_pane+h
   left  $action_pane+h
@@ -96,17 +96,17 @@
   [     $action_pane+[
 
   ;; == SFT ======================
-  $d|modD_&_lsft  (t! th $action_pane+d  $toggle_pane+lsft_layer)
-  $k|modK_&_rsft  (t! th $action_pane+k   $toggle_pane+rsft_layer)
+  $d|modD_&_lsft  (t! th $action_pane+d       $toggle_pane+lsft_layer)
+  $k|modK_&_rsft  (t! th $action_pane+k       $toggle_pane+rsft_layer)
   lsft            (t! th _                    $toggle_pane+lsft_layer)
   rsft            (t! th _                    $toggle_pane+rsft_layer)
 
   ;; == Gui Actions ========================
-  $toggle        $action_pane+ralt
-  $move          (t! th _                   $toggle_pane+move_layer)
-  $resize        (t! th _                   $toggle_pane+resize_layer)
-  $float_&_snap  (t! th $action_pane+prnt  $toggle_pane+snap_layer)
-  $swap          (t! th _                   $toggle_pane+swap_layer)
+  $toggle        $action_pane+toggle
+  $move          (t! th _                        $toggle_pane+move_layer)
+  $resize        (t! th _                        $toggle_pane+resize_layer)
+  $float_&_snap  (t! th $action_pane+float  $toggle_pane+snap_layer)
+  $swap          (t! th _                        $toggle_pane+swap_layer)
 )
 (deflayermap (pane+lsft_layer)
   c $action_pane+lsft+c

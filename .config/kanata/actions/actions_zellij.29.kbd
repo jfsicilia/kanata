@@ -385,7 +385,7 @@
 
 ;; panes + ent
 ;; #panes + ent
-zellij_action_pane+ent                       (macro C-g p f ret)
+zellij_action_pane+max                       (macro C-g p f ret)
 
 ;; panes + h | panes + left
 ;; #panes + h | #panes + left
@@ -410,11 +410,11 @@ zellij_action_pane+j                     (macro C-g p j ret)
 
 ;; == panes + toggle ====================================================
 ;; panes + toggle | 2x !lalt
-;; ___TO_SET___ zellij_action_pane+ralt              
+;; ___TO_SET___ zellij_action_pane+toggle              
 
 ;; == panes + float ====================================================
 ;; panes + float
-;; ___TO_SET___ zellij_action_pane+prnt              
+;; ___TO_SET___ zellij_action_pane+float              
 
 ;; == panes + move ======================================================
 ;; panes + move + h | panes + move + left

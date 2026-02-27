@@ -419,8 +419,8 @@ nvim_action_mod/                   (macro esc S-; h e l p ret)
 ;; ___TO_SET___ nvim_action_pane                   
 
 ;; panes + ent
-;; nvim_action_pane+ent               `{esc}:PaneMaxToggle{ret}`
-nvim_action_pane+ent               (macro esc S-; S-p a n e S-m a x S-t o g g l e ret)
+;; nvim_action_pane+max               `{esc}:PaneMaxToggle{ret}`
+nvim_action_pane+max               (macro esc S-; S-p a n e S-m a x S-t o g g l e ret)
 
 ;; panes + h | panes + left
 nvim_action_pane+h                      A-h ;; Now has tmux integration (macro esc S-; w i n c m d spc h ret)  ;;""
@@ -441,11 +441,11 @@ nvim_action_pane+\                   (macro esc S-; v s ret)  ;;""
 
 ;; == panes + toggle ====================================================
 ;; panes + toggle | 2x !lalt
-;; ___TO_SET___ nvim_action_pane+ralt              
+;; ___TO_SET___ nvim_action_pane+toggle              
 
 ;; == panes + float ====================================================
 ;; panes + float
-;; ___TO_SET___ nvim_action_pane+prnt              
+;; ___TO_SET___ nvim_action_pane+float              
 
 ;; == panes + move ======================================================
 ;; panes + move + h | panes + move + left

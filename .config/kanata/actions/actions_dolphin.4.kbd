@@ -413,7 +413,7 @@ dolphin_action_mod/                   f1      ;; Dolphin help
 ;; ___TO_SET___ dolphin_action_pane                   
 
 ;; panes + ent
-;; ___TO_SET___ dolphin_action_pane+ent               
+;; ___TO_SET___ dolphin_action_pane+max               
 
 ;; panes + h | panes + left
 ;; ___TO_SET___ dolphin_action_pane+h                 
@@ -434,11 +434,11 @@ dolphin_action_mod/                   f1      ;; Dolphin help
 
 ;; == panes + toggle ====================================================
 ;; panes + toggle | 2x !lalt
-;; ___TO_SET___ dolphin_action_pane+ralt              
+;; ___TO_SET___ dolphin_action_pane+toggle              
 
 ;; == panes + float ====================================================
 ;; panes + float
-;; ___TO_SET___ dolphin_action_pane+prnt              
+;; ___TO_SET___ dolphin_action_pane+float              
 
 ;; == panes + move ======================================================
 ;; panes + move + h | panes + move + left

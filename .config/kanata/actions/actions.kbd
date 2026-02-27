@@ -1228,11 +1228,11 @@
   ))
 
   ;; panes + ent
-  action_pane+ent (t! unmod_all (switch ;;@autogen@ 
-    ((input virtual vk_nvim)) $nvim_action_pane+ent break
-    ((input virtual vk_obsidian)) $obsidian_action_pane+ent break
-    ((input virtual vk_tmux)) $tmux_action_pane+ent break
-    ((input virtual vk_zellij)) $zellij_action_pane+ent break
+  action_pane+max (t! unmod_all (switch ;;@autogen@ 
+    ((input virtual vk_nvim)) $nvim_action_pane+max break
+    ((input virtual vk_obsidian)) $obsidian_action_pane+max break
+    ((input virtual vk_tmux)) $tmux_action_pane+max break
+    ((input virtual vk_zellij)) $zellij_action_pane+max break
     () XX break
   ))
 
@@ -1293,15 +1293,15 @@
 
   ;; == panes + toggle ====================================================
   ;; panes + toggle | 2x !lalt
-  action_pane+ralt (t! unmod_all (switch ;;@autogen@ 
-    ((input virtual vk_obsidian)) $obsidian_action_pane+ralt break
-    ((input virtual vk_tmux)) $tmux_action_pane+ralt break
+  action_pane+toggle (t! unmod_all (switch ;;@autogen@ 
+    ((input virtual vk_obsidian)) $obsidian_action_pane+toggle break
+    ((input virtual vk_tmux)) $tmux_action_pane+toggle break
     () XX break
   ))
   
   ;; == panes + float ====================================================
   ;; panes + float
-  action_pane+prnt (t! unmod_all (switch ;;@autogen@ 
+  action_pane+float (t! unmod_all (switch ;;@autogen@ 
     () XX break
   ))
 

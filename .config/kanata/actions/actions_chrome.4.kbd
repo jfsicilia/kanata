@@ -388,7 +388,7 @@ chrome_action_omni+n               C-n
 ;; ___TO_SET___ chrome_action_pane                   
 
 ;; panes + ent
-;; ___TO_SET___ chrome_action_pane+ent               
+;; ___TO_SET___ chrome_action_pane+max               
 
 ;; panes + h | panes + left
 ;; ___TO_SET___ chrome_action_pane+h                 
@@ -409,11 +409,11 @@ chrome_action_omni+n               C-n
 
 ;; == panes + toggle ====================================================
 ;; panes + toggle | 2x !lalt
-;; ___TO_SET___ chrome_action_pane+ralt              
+;; ___TO_SET___ chrome_action_pane+toggle              
 
 ;; == panes + float ====================================================
 ;; panes + float
-;; ___TO_SET___ chrome_action_pane+prnt              
+;; ___TO_SET___ chrome_action_pane+float              
 
 ;; == panes + move ======================================================
 ;; panes + move + h | panes + move + left

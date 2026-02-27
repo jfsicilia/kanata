@@ -395,7 +395,7 @@ obsidian_action_mod,                       C-A-,
 ;; ___TO_SET___ obsidian_action_pane                   
 
 ;; panes + ent
-obsidian_action_pane+ent                       (macro A-s A-S-s)
+obsidian_action_pane+max                       (macro A-s A-S-s)
 
 ;; panes + h | panes + left
 obsidian_action_pane+h                      A-left
@@ -416,11 +416,11 @@ obsidian_action_pane+w                     A-w
 
 ;; == panes + toggle ====================================================
 ;; panes + toggle | 2x !lalt
-obsidian_action_pane+ralt                    A-q
+obsidian_action_pane+toggle                    A-q
 
 ;; == panes + float ====================================================
 ;; panes + float
-;; ___TO_SET___ obsidian_action_pane+prnt              
+;; ___TO_SET___ obsidian_action_pane+float              
 
 ;; == panes + move ======================================================
 ;; panes + move + h | panes + move + left

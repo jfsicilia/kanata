@@ -391,7 +391,7 @@ tmux_action_mod;                 (macro $tmux_prefix S-;) ;; prefix + : (command
 
 ;; panes + ent
 ;; #panes + ent
-tmux_action_pane+ent                       (macro $tmux_prefix z) ;; prefix + z (zoom pane)
+tmux_action_pane+max                       (macro $tmux_prefix z) ;; prefix + z (zoom pane)
 
 ;; panes + h | panes + left
 ;; #panes + h | #panes + left
@@ -421,11 +421,11 @@ tmux_action_pane+w                     (macro $tmux_prefix x) ;; prefix + x (kil
 ;; panes + toggle | 2x !lalt
 ;; == #panes + #toggle ====================================================
 ;; #panes + #toggle | 2x !lalt
-tmux_action_pane+ralt                    (macro $tmux_prefix ;) ;; prefix + ; (last pane)
+tmux_action_pane+toggle                    (macro $tmux_prefix ;) ;; prefix + ; (last pane)
 
 ;; == panes + float ====================================================
 ;; panes + float
-;; ___TO_SET___ tmux_action_pane+prnt              
+;; ___TO_SET___ tmux_action_pane+float              
 
 ;; == panes + move ======================================================
 ;; panes + move + h | panes + move + left
