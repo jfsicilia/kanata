@@ -309,7 +309,7 @@
 
   ;; Modifiers row.
   $!lmet|replace           (t!      th (t! 2x $action_desktop_toggle)            $toggle_replace_&_!lmet_layer)
-  $!lalt|search            (t!      th (t! 2x $action_pane_toggle)               $toggle_search_&_!lalt_layer)
+  $!lalt|search            (t!      th (t! 2x $action_pane+ralt)               $toggle_search_&_!lalt_layer)
   $!lctl|file       (multi (t!      th (t! 2x $action_tab_toggle)                $toggle_file_&_!lctl_layer) (on-release release-vkey vk_lalt))
     $spc|num/sym           (t! fast_th spc                                       $toggle_num/sym_layer)
    $ralt|apps              (t!      th (t! 2x $action_apps_toggle)               $toggle_apps_layer)

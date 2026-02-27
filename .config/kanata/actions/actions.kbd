@@ -65,14 +65,14 @@
   ;; at the same time, and when they are active at the same time, the usual
   ;; combo will work for one, and an alternate combo will work for the other.
   ;;
-  ;; action_pane_left (t! unmod_all (switch ;;@autogen@
-  ;;   ((input virtual vk_nvim)) $nvim_action_pane_left break
-  ;;   ((input virtual vk_tmux)) $tmux_action_pane_left break
+  ;; action_pane+h (t! unmod_all (switch ;;@autogen@
+  ;;   ((input virtual vk_nvim)) $nvim_action_pane+h break
+  ;;   ((input virtual vk_tmux)) $tmux_action_pane+h break
   ;;   () XX break
   ;; ))
-  ;; ~action_pane_left (t! unmod_all (switch ;;@autogen@
-  ;;   ((input virtual vk_tmux)) $tmux_action_pane_left break
-  ;;   ((input virtual vk_nvim)) $nvim_action_pane_left break
+  ;; ~action_pane+h (t! unmod_all (switch ;;@autogen@
+  ;;   ((input virtual vk_tmux)) $tmux_action_pane+h break
+  ;;   ((input virtual vk_nvim)) $nvim_action_pane+h break
   ;;   () XX break
   ;; ))
   ;;
@@ -315,7 +315,7 @@
     () (push-msg "APP:") break
   ))
   action_apps+v (t! unmod_all (switch 
-    () (push-msg "APP:") break
+    () (push-msg "APP:nvim") break
   ))
   action_apps+w (t! unmod_all (switch 
     () (push-msg "APP:") break
@@ -1228,80 +1228,80 @@
   ))
 
   ;; panes + ent
-  action_pane_max (t! unmod_all (switch ;;@autogen@ 
-    ((input virtual vk_nvim)) $nvim_action_pane_max break
-    ((input virtual vk_obsidian)) $obsidian_action_pane_max break
-    ((input virtual vk_tmux)) $tmux_action_pane_max break
-    ((input virtual vk_zellij)) $zellij_action_pane_max break
+  action_pane+ent (t! unmod_all (switch ;;@autogen@ 
+    ((input virtual vk_nvim)) $nvim_action_pane+ent break
+    ((input virtual vk_obsidian)) $obsidian_action_pane+ent break
+    ((input virtual vk_tmux)) $tmux_action_pane+ent break
+    ((input virtual vk_zellij)) $zellij_action_pane+ent break
     () XX break
   ))
 
   ;; panes + h | panes + left 
-  action_pane_left (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_pane_left break
-    ((input virtual vk_obsidian)) $obsidian_action_pane_left break
-    ((input virtual vk_tmux)) $tmux_action_pane_left break
-    ((input virtual vk_zellij)) $zellij_action_pane_left break
+  action_pane+h (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_pane+h break
+    ((input virtual vk_obsidian)) $obsidian_action_pane+h break
+    ((input virtual vk_tmux)) $tmux_action_pane+h break
+    ((input virtual vk_zellij)) $zellij_action_pane+h break
     () XX break
   ))
   ;; panes + l | panes + right 
-  action_pane_right (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_pane_right break
-    ((input virtual vk_obsidian)) $obsidian_action_pane_right break
-    ((input virtual vk_tmux)) $tmux_action_pane_right break
-    ((input virtual vk_zellij)) $zellij_action_pane_right break
+  action_pane+l (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_pane+l break
+    ((input virtual vk_obsidian)) $obsidian_action_pane+l break
+    ((input virtual vk_tmux)) $tmux_action_pane+l break
+    ((input virtual vk_zellij)) $zellij_action_pane+l break
     () XX break
   ))
   ;; panes + k | panes + up 
-  action_pane_above (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_pane_above break
-    ((input virtual vk_obsidian)) $obsidian_action_pane_above break
-    ((input virtual vk_tmux)) $tmux_action_pane_above break
-    ((input virtual vk_zellij)) $zellij_action_pane_above break
+  action_pane+k (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_pane+k break
+    ((input virtual vk_obsidian)) $obsidian_action_pane+k break
+    ((input virtual vk_tmux)) $tmux_action_pane+k break
+    ((input virtual vk_zellij)) $zellij_action_pane+k break
     () XX break
   ))
   ;; panes + j | panes + down 
-  action_pane_below (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_pane_below break
-    ((input virtual vk_obsidian)) $obsidian_action_pane_below break
-    ((input virtual vk_tmux)) $tmux_action_pane_below break
-    ((input virtual vk_zellij)) $zellij_action_pane_below break
+  action_pane+j (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_pane+j break
+    ((input virtual vk_obsidian)) $obsidian_action_pane+j break
+    ((input virtual vk_tmux)) $tmux_action_pane+j break
+    ((input virtual vk_zellij)) $zellij_action_pane+j break
     () XX break
   ))
 
   ;; panes + -
-  action_pane_split_h (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_pane_split_h break
-    ((input virtual vk_obsidian)) $obsidian_action_pane_split_h break
-    ((input virtual vk_tmux)) $tmux_action_pane_split_h break
+  action_pane+- (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_pane+- break
+    ((input virtual vk_obsidian)) $obsidian_action_pane+- break
+    ((input virtual vk_tmux)) $tmux_action_pane+- break
     () XX break
   ))
   ;; panes + \
-  action_pane_split_v (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_pane_split_v break
-    ((input virtual vk_obsidian)) $obsidian_action_pane_split_v break
-    ((input virtual vk_tmux)) $tmux_action_pane_split_v break
+  action_pane+\ (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_pane+\ break
+    ((input virtual vk_obsidian)) $obsidian_action_pane+\ break
+    ((input virtual vk_tmux)) $tmux_action_pane+\ break
     () XX break
   ))
 
   ;; panes + w
-  action_pane_close (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_pane_close break
-    ((input virtual vk_tmux)) $tmux_action_pane_close break
+  action_pane+w (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_pane+w break
+    ((input virtual vk_tmux)) $tmux_action_pane+w break
     () XX break
   ))
 
   ;; == panes + toggle ====================================================
   ;; panes + toggle | 2x !lalt
-  action_pane_toggle (t! unmod_all (switch ;;@autogen@ 
-    ((input virtual vk_obsidian)) $obsidian_action_pane_toggle break
-    ((input virtual vk_tmux)) $tmux_action_pane_toggle break
+  action_pane+ralt (t! unmod_all (switch ;;@autogen@ 
+    ((input virtual vk_obsidian)) $obsidian_action_pane+ralt break
+    ((input virtual vk_tmux)) $tmux_action_pane+ralt break
     () XX break
   ))
   
   ;; == panes + float ====================================================
   ;; panes + float
-  action_pane_float (t! unmod_all (switch ;;@autogen@ 
+  action_pane+prnt (t! unmod_all (switch ;;@autogen@ 
     () XX break
   ))
 
@@ -1365,168 +1365,168 @@
 
   ;; == panes go by number ============================================
   ;; panes + 1
-  action_pane_goto_1 (t! unmod_all (switch ;;@autogen@
+  action_pane+1 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; panes + 2
-  action_pane_goto_2 (t! unmod_all (switch ;;@autogen@
+  action_pane+2 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; panes + 3
-  action_pane_goto_3 (t! unmod_all (switch ;;@autogen@
+  action_pane+3 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; panes + 4
-  action_pane_goto_4 (t! unmod_all (switch ;;@autogen@
+  action_pane+4 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; panes + 5
-  action_pane_goto_5 (t! unmod_all (switch ;;@autogen@
+  action_pane+5 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; panes + 6
-  action_pane_goto_6 (t! unmod_all (switch ;;@autogen@
+  action_pane+6 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; panes + 7
-  action_pane_goto_7 (t! unmod_all (switch ;;@autogen@
+  action_pane+7 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; panes + 8
-  action_pane_goto_8 (t! unmod_all (switch ;;@autogen@
+  action_pane+8 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; panes + 9
-  action_pane_goto_last (t! unmod_all (switch ;;@autogen@
+  action_pane+9 (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 
   ;; == panes show pane / focus (app-specific) =============================
   ;; panes + q
-  action_pane_quickfix (t! unmod_all (switch ;;@autogen@
+  action_pane+q (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; panes + w 
   ;; see panes 
   ;; panes + e
-  action_pane_explorer (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_pane_explorer break
-    ((input virtual vk_obsidian)) $obsidian_action_pane_explorer break
+  action_pane+e (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_pane+e break
+    ((input virtual vk_obsidian)) $obsidian_action_pane+e break
     () XX break
   ))
   ;; panes + lsft + e
-  action_pane+lsft_explorer (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_pane+lsft_explorer break
+  action_pane+lsft+e (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_pane+lsft+e break
     () XX break
   ))
   ;; panes + r
-  action_pane_recent (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_pane_recent break
+  action_pane+r (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_pane+r break
     () XX break
   ))
   ;; panes + t
-  action_pane_terminal (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_pane_terminal break
+  action_pane+t (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_pane+t break
     () XX break
   ))
   ;; panes + u
-  action_pane_debug (t! unmod_all (switch ;;@autogen@
+  action_pane+u (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; panes + y
-  action_pane_history (t! unmod_all (switch ;;@autogen@
+  action_pane+y (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; panes + i
-  action_pane_info (t! unmod_all (switch ;;@autogen@
+  action_pane+i (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; panes + o
-  action_pane_outline (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_pane_outline break
+  action_pane+o (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_pane+o break
     () XX break
   ))
   ;; panes + lsft + o
-  action_pane_output (t! unmod_all (switch ;;@autogen@
+  action_pane+lsft+o (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; panes + p
-  action_pane_properties (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_pane_properties break
+  action_pane+p (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_pane+p break
     () XX break
   ))
   ;; panes + lsft + p
-  action_pane+lsft_properties (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_pane+lsft_properties break
+  action_pane+lsft+p (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_pane+lsft+p break
     () XX break
   ))
   ;; panes + [
-  action_pane_backlinks (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_pane_backlinks break
+  action_pane+[ (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_pane+[ break
     () XX break
   ))
   ;; panes + ]
-  action_pane_outlinks (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_pane_outlinks break
+  action_pane+] (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_pane+] break
     () XX break
   ))
   ;; panes + lsft + ]
-  action_pane+lsft_outlinks (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_pane+lsft_outlinks break
+  action_pane+lsft+. (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_pane+lsft+. break
     () XX break
   ))
 
   ;; panes + a
-  action_pane_AI (t! unmod_all (switch ;;@autogen@
+  action_pane+a (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; panes + s
-  action_pane_sidebar (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_pane_sidebar break
+  action_pane+s (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_pane+s break
     () XX break
   ))
   ;; panes + lsft + s
-  action_pane+lsft_sidebar (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_pane+lsft_sidebar break
+  action_pane+lsft+s (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_pane+lsft+s break
     () XX break
   ))
   ;; panes + d
-  action_pane_docker (t! unmod_all (switch ;;@autogen@
+  action_pane+d (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; panes + f
-  action_pane_filename (t! unmod_all (switch ;;@autogen@
+  action_pane+f (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; panes + g
-  action_pane_go (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_pane_go break
+  action_pane+g (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_pane+g break
     () XX break
   ))
   ;; panes + ;
-  action_pane_graph (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_pane_graph break
+  action_pane+; (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_pane+; break
     () XX break
   ))
   ;; panes + '
   ;; not yet used.
 
   ;; panes + z
-  action_pane_tests (t! unmod_all (switch ;;@autogen@
+  action_pane+z (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; panes + x
-  action_pane_extensions (t! unmod_all (switch ;;@autogen@
+  action_pane+x (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; panes + c
-  action_pane_calendar (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_pane_calendar break
+  action_pane+c (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_pane+c break
     () XX break
   ))
   ;; panes + lsft + c
-  action_pane_day (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_pane_day break
+  action_pane+lsft+c (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_pane+lsft+c break
     () XX break
   ))
   ;; panes + rsft + c
@@ -1535,34 +1535,34 @@
     () XX break
   ))
   ;; panes + v
-  action_pane_vertical_tab (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_pane_vertical_tab break
+  action_pane+v (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_pane+v break
     () XX break
   ))
   ;; panes + b
-  action_pane_bookmarks (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_pane_bookmarks break
+  action_pane+b (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_pane+b break
     () XX break
   ))
   ;; panes + n
-  action_pane_notebooks (t! unmod_all (switch ;;@autogen@
+  action_pane+n (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; panes + m
-  action_pane_main (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_obsidian)) $obsidian_action_pane_main break
+  action_pane+m (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_obsidian)) $obsidian_action_pane+m break
     () XX break
   ))
   ;; panes + ,
-  action_pane_settings (t! unmod_all (switch ;;@autogen@
+  action_pane+, (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; panes + .
-  action_pane_tags (t! unmod_all (switch ;;@autogen@
+  action_pane+. (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
   ;; panes + /
-  action_pane_help (t! unmod_all (switch ;;@autogen@
+  action_pane+/ (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 

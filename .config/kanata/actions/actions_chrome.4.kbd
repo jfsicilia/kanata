@@ -388,32 +388,32 @@ chrome_action_omni+n               C-n
 ;; ___TO_SET___ chrome_action_pane                   
 
 ;; panes + ent
-;; ___TO_SET___ chrome_action_pane_max               
+;; ___TO_SET___ chrome_action_pane+ent               
 
 ;; panes + h | panes + left
-;; ___TO_SET___ chrome_action_pane_left              
+;; ___TO_SET___ chrome_action_pane+h                 
 ;; panes + l | panes + right
-;; ___TO_SET___ chrome_action_pane_right             
+;; ___TO_SET___ chrome_action_pane+l                 
 ;; panes + k | panes + up
-;; ___TO_SET___ chrome_action_pane_above             
+;; ___TO_SET___ chrome_action_pane+k                 
 ;; panes + j | panes + down
-;; ___TO_SET___ chrome_action_pane_below             
+;; ___TO_SET___ chrome_action_pane+j                 
 
 ;; panes + -
-;; ___TO_SET___ chrome_action_pane_split_h           
+;; ___TO_SET___ chrome_action_pane+-                 
 ;; panes + \
-;; ___TO_SET___ chrome_action_pane_split_v           
+;; ___TO_SET___ chrome_action_pane+\                 
 
 ;; panes + w
-;; ___TO_SET___ chrome_action_pane_close             
+;; ___TO_SET___ chrome_action_pane+w                 
 
 ;; == panes + toggle ====================================================
 ;; panes + toggle | 2x !lalt
-;; ___TO_SET___ chrome_action_pane_toggle            
+;; ___TO_SET___ chrome_action_pane+ralt              
 
 ;; == panes + float ====================================================
 ;; panes + float
-;; ___TO_SET___ chrome_action_pane_float             
+;; ___TO_SET___ chrome_action_pane+prnt              
 
 ;; == panes + move ======================================================
 ;; panes + move + h | panes + move + left
@@ -447,99 +447,99 @@ chrome_action_omni+n               C-n
 
 ;; == panes go by number ============================================
 ;; panes + 1
-;; ___TO_SET___ chrome_action_pane_goto_1            
+;; ___TO_SET___ chrome_action_pane+1                 
 ;; panes + 2
-;; ___TO_SET___ chrome_action_pane_goto_2            
+;; ___TO_SET___ chrome_action_pane+2                 
 ;; panes + 3
-;; ___TO_SET___ chrome_action_pane_goto_3            
+;; ___TO_SET___ chrome_action_pane+3                 
 ;; panes + 4
-;; ___TO_SET___ chrome_action_pane_goto_4            
+;; ___TO_SET___ chrome_action_pane+4                 
 ;; panes + 5
-;; ___TO_SET___ chrome_action_pane_goto_5            
+;; ___TO_SET___ chrome_action_pane+5                 
 ;; panes + 6
-;; ___TO_SET___ chrome_action_pane_goto_6            
+;; ___TO_SET___ chrome_action_pane+6                 
 ;; panes + 7
-;; ___TO_SET___ chrome_action_pane_goto_7            
+;; ___TO_SET___ chrome_action_pane+7                 
 ;; panes + 8
-;; ___TO_SET___ chrome_action_pane_goto_8            
+;; ___TO_SET___ chrome_action_pane+8                 
 ;; panes + 9
-;; ___TO_SET___ chrome_action_pane_goto_last         
+;; ___TO_SET___ chrome_action_pane+9                 
 
 ;; == panes show pane / focus (app-specific) =============================
 ;; panes + q
-;; ___TO_SET___ chrome_action_pane_quickfix          
+;; ___TO_SET___ chrome_action_pane+q                 
 ;; panes + w
 ;; see panes
 ;; panes + e
-;; ___TO_SET___ chrome_action_pane_explorer          
+;; ___TO_SET___ chrome_action_pane+e                 
 ;; panes + lsft + e
-;; ___TO_SET___ chrome_action_pane+lsft_explorer     
+;; ___TO_SET___ chrome_action_pane+lsft+e            
 ;; panes + r
-;; ___TO_SET___ chrome_action_pane_recent            
+;; ___TO_SET___ chrome_action_pane+r                 
 ;; panes + t
-;; ___TO_SET___ chrome_action_pane_terminal          
+;; ___TO_SET___ chrome_action_pane+t                 
 ;; panes + u
-;; ___TO_SET___ chrome_action_pane_debug             
+;; ___TO_SET___ chrome_action_pane+u                 
 ;; panes + y
-;; ___TO_SET___ chrome_action_pane_history           
+;; ___TO_SET___ chrome_action_pane+y                 
 ;; panes + i
-;; ___TO_SET___ chrome_action_pane_info              
+;; ___TO_SET___ chrome_action_pane+i                 
 ;; panes + o
-;; ___TO_SET___ chrome_action_pane_outline           
+;; ___TO_SET___ chrome_action_pane+o                 
 ;; panes + lsft + o
-;; ___TO_SET___ chrome_action_pane_output            
+;; ___TO_SET___ chrome_action_pane+lsft+o            
 ;; panes + p
-;; ___TO_SET___ chrome_action_pane_properties        
+;; ___TO_SET___ chrome_action_pane+p                 
 ;; panes + lsft + p
-;; ___TO_SET___ chrome_action_pane+lsft_properties   
+;; ___TO_SET___ chrome_action_pane+lsft+p            
 ;; panes + [
-;; ___TO_SET___ chrome_action_pane_backlinks         
+;; ___TO_SET___ chrome_action_pane+[                 
 ;; panes + ]
-;; ___TO_SET___ chrome_action_pane_outlinks          
+;; ___TO_SET___ chrome_action_pane+]                 
 ;; panes + lsft + ]
-;; ___TO_SET___ chrome_action_pane+lsft_outlinks     
+;; ___TO_SET___ chrome_action_pane+lsft+.            
 
 ;; panes + a
-;; ___TO_SET___ chrome_action_pane_AI                
+;; ___TO_SET___ chrome_action_pane+a                 
 ;; panes + s
-;; ___TO_SET___ chrome_action_pane_sidebar           
+;; ___TO_SET___ chrome_action_pane+s                 
 ;; panes + lsft + s
-;; ___TO_SET___ chrome_action_pane+lsft_sidebar      
+;; ___TO_SET___ chrome_action_pane+lsft+s            
 ;; panes + d
-;; ___TO_SET___ chrome_action_pane_docker            
+;; ___TO_SET___ chrome_action_pane+d                 
 ;; panes + f
-;; ___TO_SET___ chrome_action_pane_filename          
+;; ___TO_SET___ chrome_action_pane+f                 
 ;; panes + g
-;; ___TO_SET___ chrome_action_pane_go                
+;; ___TO_SET___ chrome_action_pane+g                 
 ;; panes + ;
-;; ___TO_SET___ chrome_action_pane_graph             
+;; ___TO_SET___ chrome_action_pane+;                 
 ;; panes + '
 ;; not yet used.
 
 ;; panes + z
-;; ___TO_SET___ chrome_action_pane_tests             
+;; ___TO_SET___ chrome_action_pane+z                 
 ;; panes + x
-;; ___TO_SET___ chrome_action_pane_extensions        
+;; ___TO_SET___ chrome_action_pane+x                 
 ;; panes + c
-;; ___TO_SET___ chrome_action_pane_calendar          
+;; ___TO_SET___ chrome_action_pane+c                 
 ;; panes + lsft + c
-;; ___TO_SET___ chrome_action_pane_day               
+;; ___TO_SET___ chrome_action_pane+lsft+c            
 ;; panes + rsft + c
 ;; ___TO_SET___ chrome_action_pane+!day              
 ;; panes + v
-;; ___TO_SET___ chrome_action_pane_vertical_tab      
+;; ___TO_SET___ chrome_action_pane+v                 
 ;; panes + b
-;; ___TO_SET___ chrome_action_pane_bookmarks         
+;; ___TO_SET___ chrome_action_pane+b                 
 ;; panes + n
-;; ___TO_SET___ chrome_action_pane_notebooks         
+;; ___TO_SET___ chrome_action_pane+n                 
 ;; panes + m
-;; ___TO_SET___ chrome_action_pane_main              
+;; ___TO_SET___ chrome_action_pane+m                 
 ;; panes + ,
-;; ___TO_SET___ chrome_action_pane_settings          
+;; ___TO_SET___ chrome_action_pane+,                 
 ;; panes + .
-;; ___TO_SET___ chrome_action_pane_tags              
+;; ___TO_SET___ chrome_action_pane+.                 
 ;; panes + /
-;; ___TO_SET___ chrome_action_pane_help              
+;; ___TO_SET___ chrome_action_pane+/                 
 
 ;; == tab ===============================================================
 

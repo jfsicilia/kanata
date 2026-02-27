@@ -43,84 +43,84 @@
 )
 
 (deflayermap (pane_layer)
-  ent   $action_pane_max
+  ent   $action_pane+ent
 
-  h     $action_pane_left
-  left  $action_pane_left
-  j     $action_pane_below
-  down  $action_pane_below
-  up    $action_pane_above
-  l     $action_pane_right
-  right $action_pane_right
+  h     $action_pane+h
+  left  $action_pane+h
+  j     $action_pane+j
+  down  $action_pane+j
+  up    $action_pane+k
+  l     $action_pane+l
+  right $action_pane+l
 
-  -     $action_pane_split_h
-  \     $action_pane_split_v ;;""
+  -     $action_pane+-
+  \     $action_pane+\ ;;""
 
-  w     $action_pane_close
+  w     $action_pane+w
 
-  1     $action_pane_goto_1
-  2     $action_pane_goto_2
-  3     $action_pane_goto_3
-  4     $action_pane_goto_4
-  5     $action_pane_goto_5
-  6     $action_pane_goto_6
-  7     $action_pane_goto_7
-  8     $action_pane_goto_8
-  9     $action_pane_goto_last
+  1     $action_pane+1
+  2     $action_pane+2
+  3     $action_pane+3
+  4     $action_pane+4
+  5     $action_pane+5
+  6     $action_pane+6
+  7     $action_pane+7
+  8     $action_pane+8
+  9     $action_pane+9
 
   ;; toggle/open panes
-  a     $action_pane_AI
-  b     $action_pane_bookmarks
-  c     $action_pane_calendar
-  e     $action_pane_explorer
-  f     $action_pane_filename
-  g     $action_pane_go
-  i     $action_pane_info
-  m     $action_pane_main
-  n     $action_pane_notebooks
-  o     $action_pane_outline
-  p     $action_pane_properties
-  q     $action_pane_quickfix
-  r     $action_pane_recent
-  s     $action_pane_sidebar
-  t     $action_pane_terminal
-  u     $action_pane_debug
-  v     $action_pane_vertical_tab
-  x     $action_pane_extensions
-  y     $action_pane_history
-  z     $action_pane_tests
-  ;     $action_pane_graph
-  ,     $action_pane_settings
-  .     $action_pane_tags
-  ]     $action_pane_outlinks
-  [     $action_pane_backlinks
+  a     $action_pane+a
+  b     $action_pane+b
+  c     $action_pane+c
+  e     $action_pane+e
+  f     $action_pane+f
+  g     $action_pane+g
+  i     $action_pane+i
+  m     $action_pane+m
+  n     $action_pane+n
+  o     $action_pane+o
+  p     $action_pane+p
+  q     $action_pane+q
+  r     $action_pane+r
+  s     $action_pane+s
+  t     $action_pane+t
+  u     $action_pane+u
+  v     $action_pane+v
+  x     $action_pane+x
+  y     $action_pane+y
+  z     $action_pane+z
+  ;     $action_pane+;
+  ,     $action_pane+,
+  .     $action_pane+.
+  ]     $action_pane+]
+  [     $action_pane+[
 
   ;; == SFT ======================
-  $d|modD_&_lsft  (t! th $action_pane_docker  $toggle_pane+lsft_layer)
-  $k|modK_&_rsft  (t! th $action_pane_above   $toggle_pane+rsft_layer)
+  $d|modD_&_lsft  (t! th $action_pane+d  $toggle_pane+lsft_layer)
+  $k|modK_&_rsft  (t! th $action_pane+k   $toggle_pane+rsft_layer)
   lsft            (t! th _                    $toggle_pane+lsft_layer)
   rsft            (t! th _                    $toggle_pane+rsft_layer)
 
   ;; == Gui Actions ========================
-  $toggle        $action_pane_toggle
+  $toggle        $action_pane+ralt
   $move          (t! th _                   $toggle_pane+move_layer)
   $resize        (t! th _                   $toggle_pane+resize_layer)
-  $float_&_snap  (t! th $action_pane_float  $toggle_pane+snap_layer)
+  $float_&_snap  (t! th $action_pane+prnt  $toggle_pane+snap_layer)
   $swap          (t! th _                   $toggle_pane+swap_layer)
 )
 (deflayermap (pane+lsft_layer)
-  c $action_pane_day
-  e $action_pane+lsft_explorer
-  p $action_pane+lsft_properties
-  s $action_pane+lsft_sidebar
-  . $action_pane+lsft_outlinks
+  c $action_pane+lsft+c
+  e $action_pane+lsft+e
+  p $action_pane+lsft+p
+  s $action_pane+lsft+s
+  . $action_pane+lsft+.
 )
 (deflayermap (pane+rsft_layer)
-  c $action_pane_day
-  e $action_pane+lsft_explorer
-  p $action_pane+lsft_properties
-  s $action_pane+lsft_sidebar
-  . $action_pane+lsft_outlinks
+  c $action_pane+lsft+c
+  e $action_pane+lsft+e
+  p $action_pane+lsft+p
+  s $action_pane+lsft+s
+  . $action_pane+lsft+.
 )
 (deflayermap (pane+move_layer)
   h     $action_pane_move_left
