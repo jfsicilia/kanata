@@ -48,7 +48,7 @@ ACTIONS_PREFIX = "actions_"
 # Matches an @autogen@-tagged action definition in actions.kbd, e.g.:
 #   action_lctl+a (t! unmod_all (switch ;;@autogen@
 #   ~action_tab_next (t! unmod_all (switch ;;@autogen@
-AUTOGEN_ACTION_RE = re.compile(r"^\s*(~action_[^\s]+|action_[^\s]+)\s.*@autogen@.*")
+AUTOGEN_ACTION_RE = re.compile(r"^\s*(~?action_[^\s]+)\s.*@autogen@.*")
 
 REVERSE_ACTION_FLAG = "~"
 ACTION_END = ")"
