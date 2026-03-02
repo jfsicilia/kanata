@@ -13,8 +13,10 @@
   rsft            (t! th _                   $toggle_window+rsft_layer)
 )
 (deflayermap (window+lsft_layer)
+  ent          $action_window_full
 )
 (deflayermap (window+rsft_layer)
+  ent          $action_window_full
 )
 
 ;; "" WORKSPACES LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""

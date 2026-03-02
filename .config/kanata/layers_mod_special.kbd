@@ -6,6 +6,16 @@
 (deflayermap (apps_layer)
   (t! map_layers _ "apps" (lsft rsft))
   spc $action_apps
+  0   $action_apps+0
+  1   $action_apps+1
+  2   $action_apps+2
+  3   $action_apps+3
+  4   $action_apps+4
+  5   $action_apps+5
+  6   $action_apps+6
+  7   $action_apps+7
+  8   $action_apps+8
+  9   $action_apps+9
   a   $action_apps+a
   b   $action_apps+b
   c   $action_apps+c
@@ -192,6 +202,7 @@
   v $action_omni+v
   z $action_omni+z
 
+  u $action_omni+u
   e $action_omni+e
   d $action_omni+d
   a $action_omni+a
@@ -202,6 +213,7 @@
   i $action_omni+i
   m $action_omni+m
   . $action_omni+.
+  ' $action_omni+'
 
   g $action_omni+g
 

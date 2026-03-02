@@ -146,7 +146,7 @@ chrome_action_omni+]                      A-right
 ;; omni + [
 chrome_action_omni+[                      A-left
 
-;; == omni edit ======================================================
+;; == omni edit ======================================================""
 ;; omni + c
 ;; ___TO_SET___ chrome_action_omni+c                 
 
@@ -161,7 +161,7 @@ chrome_action_omni+[                      A-left
 ;; omni + ;
 ;; ___TO_SET___ chrome_action_omni+;                 
 
-;; == omni file manager ===============================================
+;; == omni file manager ===============================================""
 ;; omni + spc
 ;; ___TO_SET___ chrome_action_omni+spc               
 ;; omni + r
@@ -235,11 +235,10 @@ chrome_action_omni+n               C-n
 ;; omni + /
 ;; see mod/
 ;; ___TO_SET___ chrome_action_omni+/                 
-
 ;; omni + '
-;; not used yet
+;; ___TO_SET___ chrome_action_omni+'                 
 ;; omni + u
-;; not yet used.
+;; ___TO_SET___ chrome_action_omni+u                 
 
 ;; =====================================================================
 ;; === 2. Key Modifiers actions ========================================
@@ -409,11 +408,11 @@ chrome_action_omni+n               C-n
 
 ;; == panes + toggle ====================================================
 ;; panes + toggle | 2x !lalt
-;; ___TO_SET___ chrome_action_pane+toggle              
+;; ___TO_SET___ chrome_action_pane+toggle            
 
 ;; == panes + float ====================================================
 ;; panes + float
-;; ___TO_SET___ chrome_action_pane+float              
+;; ___TO_SET___ chrome_action_pane+float             
 
 ;; == panes + move ======================================================
 ;; panes + move + h | panes + move + left

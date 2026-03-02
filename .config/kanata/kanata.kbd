@@ -47,6 +47,9 @@
 (include layers_mod_special.kbd)
 (include layers_mod_physical.kbd)
 
+;; Bookmarks =============================================================
+(include bookmarks.kbd)
+
 ;; Actions ===============================================================
 (include actions/actions.kbd)
 

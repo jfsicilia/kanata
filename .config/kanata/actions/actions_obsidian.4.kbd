@@ -153,8 +153,9 @@ obsidian_action_omni+]                      C-A-right
 ;; omni + [
 obsidian_action_omni+[                      C-A-left
 
-;; == omni edit ======================================================
+;; == omni edit ======================================================""
 ;; omni + c
+;; == omni edit ======================================================
 obsidian_action_omni+c                           C-A-c
 
 ;; omni + x
@@ -168,8 +169,9 @@ obsidian_action_omni+v                          C-A-v
 ;; omni + ;
 ;; ___TO_SET___ obsidian_action_omni+;                 
 
-;; == omni file manager ===============================================
+;; == omni file manager ===============================================""
 ;; omni + spc
+;; == omni file manager ===============================================
 obsidian_action_omni+spc                  C-spc
 ;; omni + r
 obsidian_action_omni+r                         C-A-r
@@ -242,11 +244,10 @@ obsidian_action_omni+p                         left
 ;; omni + /
 ;; see mod/
 ;; ___TO_SET___ obsidian_action_omni+/                 
-
 ;; omni + '
-;; not used yet
+;; ___TO_SET___ obsidian_action_omni+'                 
 ;; omni + u
-;; not yet used.
+;; ___TO_SET___ obsidian_action_omni+u                 
 
 ;; =====================================================================
 ;; === 2. Key Modifiers actions ========================================
@@ -420,7 +421,7 @@ obsidian_action_pane+toggle                    A-q
 
 ;; == panes + float ====================================================
 ;; panes + float
-;; ___TO_SET___ obsidian_action_pane+float              
+;; ___TO_SET___ obsidian_action_pane+float             
 
 ;; == panes + move ======================================================
 ;; panes + move + h | panes + move + left

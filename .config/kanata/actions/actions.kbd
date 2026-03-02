@@ -244,13 +244,43 @@
   ))
 
   action_apps_toggle (t! unmod_all (switch
-    () A-tab break
+    () M-tab break
   ))
 
   action_apps_walk_through_same_app (switch
     () A-` break
   )
 
+  action_apps+0 (t! unmod_all (switch 
+    () (push-msg "APP:chromeMisc") break
+  ))
+  action_apps+1 (t! unmod_all (switch 
+    () (push-msg "APP:chromeMgmt") break
+  ))
+  action_apps+2 (t! unmod_all (switch 
+    () (push-msg "APP:chromeCloud") break
+  ))
+  action_apps+3 (t! unmod_all (switch 
+    () (push-msg "APP:chromeAI") break
+  ))
+  action_apps+4 (t! unmod_all (switch 
+    () (push-msg "APP:chromeBanks") break
+  ))
+  action_apps+5 (t! unmod_all (switch 
+    () (push-msg "APP:chromeMisc") break
+  ))
+  action_apps+6 (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+7 (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+8 (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+9 (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
   action_apps+a (t! unmod_all (switch 
     () (push-msg "APP:") break
   ))
@@ -258,7 +288,7 @@
     () (push-msg "APP:") break
   ))
   action_apps+c (t! unmod_all (switch
-    () (push-msg "APP:") break
+    () (push-msg "APP:claude_code") break
   ))
   action_apps+d (t! unmod_all (switch 
     () (push-msg "APP:") break
@@ -686,7 +716,7 @@
     () XX break
   ))
 
-  ;; == omni edit ======================================================
+  ;; == omni edit ======================================================""
   ;; omni + c
   action_omni+c (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_dolphin)) $dolphin_action_omni+c break
@@ -706,7 +736,7 @@
     ((input virtual vk_dolphin)) $dolphin_action_omni+v break
     ((input virtual vk_obsidian)) $obsidian_action_omni+v break
     ((input virtual vk_tmux)) $tmux_action_omni+v break
-    () C-p break
+    () C-v break
   ))
   ;; omni + z
   action_omni+z (t! unmod_all (switch ;;@autogen@
@@ -724,7 +754,7 @@
     () XX break
   ))
 
-  ;; == omni file manager ===============================================
+  ;; == omni file manager ===============================================""
   ;; omni + spc
   action_omni+spc (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_omni+spc break
@@ -833,36 +863,42 @@
   ;; == omni user interface ===============================================
   action_omni+1 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_dolphin)) $dolphin_action_omni+1 break
-    () XX break
+    () C-1 break
   ))
   action_omni+2 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_dolphin)) $dolphin_action_omni+2 break
-    () XX break
+    () C-2 break
   ))
   action_omni+3 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_dolphin)) $dolphin_action_omni+3 break
-    () XX break
+    () C-3 break
   ))
   action_omni+4 (t! unmod_all (switch ;;@autogen@
-    () XX break
+    ((input virtual vk_dolphin)) $dolphin_action_omni+4 break
+    () C-4 break
   ))
   action_omni+5 (t! unmod_all (switch ;;@autogen@
-    () XX break
+    ((input virtual vk_dolphin)) $dolphin_action_omni+5 break
+    () C-5 break
   ))
   action_omni+6 (t! unmod_all (switch ;;@autogen@
-    () XX break
+    ((input virtual vk_dolphin)) $dolphin_action_omni+6 break
+    () C-6 break
   ))
   action_omni+7 (t! unmod_all (switch ;;@autogen@
-    () XX break
+    ((input virtual vk_dolphin)) $dolphin_action_omni+7 break
+    () C-7 break
   ))
   action_omni+8 (t! unmod_all (switch ;;@autogen@
-    () XX break
+    ((input virtual vk_dolphin)) $dolphin_action_omni+8 break
+    () C-8 break
   ))
   action_omni+9 (t! unmod_all (switch ;;@autogen@
-    () XX break
+    ((input virtual vk_dolphin)) $dolphin_action_omni+9 break
+    () C-9 break
   ))
   action_omni+0 (t! unmod_all (switch ;;@autogen@
-    () XX break
+    () C-0 break
   ))
 
   ;; == omni misc ===============================================
@@ -916,12 +952,16 @@
   action_omni+/ (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_omni+/ break
     () $action_mod/ break
-  ))
-
+  )) ;;""
   ;; omni + '
-  ;; not used yet
+  action_omni+' (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
   ;; omni + u
-  ;; not yet used.
+  action_omni+u (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+u break
+    () XX break
+  ))
 
   ;; =====================================================================
   ;; === 2. Key Modifiers actions ========================================
@@ -1179,6 +1219,8 @@
   action_window         (t! unmod_all M-m)
   ;; windows + ent
   action_window_max    (t! unmod_all M-m)
+  ;; windows + lsft + ent | windows + rsft + ent
+  action_window_full   (t! unmod_all M-S-m)
 
   ;; windows + k
   action_window_up     (t! unmod_all  M-up)

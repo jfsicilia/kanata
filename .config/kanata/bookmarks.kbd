@@ -1,0 +1,11 @@
+(defvar
+
+;; ~/Downloads
+
+;;folder_downloads            `~/Downloads`
+folder_downloads (S-grv 10 / 10 S-d o w n l o a d s)
+;;folder_workarea            `~/_/workarea`
+folder_workarea (S-grv 10 / 10 S-- 10 / 10 w o r k a r e a)
+;;folder_underscore          `~/_`
+folder_underscore (S-grv 10 / 10 S--)
+)

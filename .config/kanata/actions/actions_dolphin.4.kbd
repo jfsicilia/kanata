@@ -3,6 +3,11 @@
   vk_dolphin_sort1  XX
   vk_dolphin_sort2  XX
   vk_dolphin_sort_reverse  XX
+  vk_dolphin_view1  XX
+  vk_dolphin_view2  XX
+)
+(deftemplate goto_folder (folder)
+  (macro C-l $folder ent)
 )
 (defvar
 ;; Toggles between sorting by name, date and size.
@@ -23,6 +28,19 @@ dolphin_toggle_sort_reverse (multi (on-press toggle-virtualkey vk_dolphin_sort_r
   (switch 
     ((input virtual vk_dolphin_sort_reverse)) C-A-up   break ;; CUSTOM oldest first
     ()                                        C-A-down break ;; CUSTOM newest first
+  )
+)
+;; Toggles between view modes 1, 2 and 3.
+dolphin_toggle_view (multi 
+  (switch 
+    ((input virtual vk_dolphin_view1)) (multi (on-press press-virtualkey vk_dolphin_view2) (on-press release-virtualkey vk_dolphin_view1)) break
+    ((input virtual vk_dolphin_view2)) (multi (on-press release-virtualkey vk_dolphin_view2)) break
+    ()                                 (multi (on-press press-virtualkey vk_dolphin_view1)) break
+  )
+  (switch
+    ((input virtual vk_dolphin_view1)) C-1 break  ;; View 1
+    ((input virtual vk_dolphin_view2)) C-2 break  ;; View 2
+    ()                                 C-3 break  ;; View 3
   )
 )
 
@@ -52,8 +70,7 @@ dolphin_action_files                  C-l
 ;; ___TO_SET___ dolphin_action_bookmarks_a            
 ;; ___TO_SET___ dolphin_action_bookmarks_b            
 ;; ___TO_SET___ dolphin_action_bookmarks_c            
-;;dolphin_action_bookmarks_d            `{C-l}{10}~{10}/{10}Downloads`
-dolphin_action_bookmarks_d            (macro C-l 10 S-grv 10 / 10 S-d o w n l o a d s ent)
+dolphin_action_bookmarks_d            (t! goto_folder $folder_downloads)
 ;; ___TO_SET___ dolphin_action_bookmarks_e            
 ;; ___TO_SET___ dolphin_action_bookmarks_f            
 ;; ___TO_SET___ dolphin_action_bookmarks_g            
@@ -72,13 +89,11 @@ dolphin_action_bookmarks_d            (macro C-l 10 S-grv 10 / 10 S-d o w n l o 
 ;; ___TO_SET___ dolphin_action_bookmarks_t            
 ;; ___TO_SET___ dolphin_action_bookmarks_u            
 ;; ___TO_SET___ dolphin_action_bookmarks_v            
-;; dolphin_action_bookmarks_w            `{C-l}{10}~{10}/{10}_/{10}/workarea{ent}`
-dolphin_action_bookmarks_w            (macro C-l 10 S-grv 10 / 10 S-- / 10 / w o r k a r e a ent)
+dolphin_action_bookmarks_w            (t! goto_folder $folder_workarea)
 ;; ___TO_SET___ dolphin_action_bookmarks_x            
 ;; ___TO_SET___ dolphin_action_bookmarks_y            
 ;; ___TO_SET___ dolphin_action_bookmarks_z            
-;; dolphin_action_bookmarks_-            `{C-l}{10}~{10}/{10}_{ent}`
-dolphin_action_bookmarks_-            (macro C-l 10 S-grv 10 / 10 S-- ent)
+dolphin_action_bookmarks_-            (t! goto_folder $folder_underscore)
 ;; ___TO_SET___ dolphin_action_bookmarks_a+lsft       
 ;; ___TO_SET___ dolphin_action_bookmarks_b+lsft       
 ;; ___TO_SET___ dolphin_action_bookmarks_c+lsft       
@@ -171,8 +186,9 @@ dolphin_action_omni+]         A-right
 ;; omni + [
 dolphin_action_omni+[         A-left
 
-;; == omni edit ======================================================
+;; == omni edit ======================================================""
 ;; omni + c
+;; == omni edit ======================================================
 dolphin_action_omni+c              C-c
 
 ;; omni + x
@@ -186,8 +202,9 @@ dolphin_action_omni+lsft+z              C-S-z
 ;; omni + ;
 ;; ___TO_SET___ dolphin_action_omni+;                 
 
-;; == omni file manager ===============================================
+;; == omni file manager ===============================================""
 ;; omni + spc
+;; == omni file manager ===============================================
 dolphin_action_omni+spc            spc
 ;; omni + r
 dolphin_action_omni+r            f2
@@ -223,15 +240,15 @@ dolphin_action_omni+lsft+e          (macro S-f10 10 up up up right down down ent
 dolphin_action_omni+i              A-ret
 
 ;; == omni user interface ===============================================
-dolphin_action_omni+1            C-1
-dolphin_action_omni+2            C-2
-dolphin_action_omni+3            C-3
-;; ___TO_SET___ dolphin_action_omni+4                 
-;; ___TO_SET___ dolphin_action_omni+5                 
-;; ___TO_SET___ dolphin_action_omni+6                 
-;; ___TO_SET___ dolphin_action_omni+7                 
-;; ___TO_SET___ dolphin_action_omni+8                 
-;; ___TO_SET___ dolphin_action_omni+9                 
+dolphin_action_omni+1                 A-1
+dolphin_action_omni+2                 A-2
+dolphin_action_omni+3                 A-3
+dolphin_action_omni+4                 A-4
+dolphin_action_omni+5                 A-5
+dolphin_action_omni+6                 A-6
+dolphin_action_omni+7                 A-7
+dolphin_action_omni+8                 A-8
+dolphin_action_omni+9                 A-9
 ;; ___TO_SET___ dolphin_action_omni+0                 
 
 ;; == omni misc ===============================================
@@ -260,11 +277,10 @@ dolphin_action_omni+w         C-w
 ;; omni + /
 ;; see mod/
 ;; ___TO_SET___ dolphin_action_omni+/                 
-
 ;; omni + '
-;; not used yet
+;; ___TO_SET___ dolphin_action_omni+'                 
 ;; omni + u
-;; not yet used.
+dolphin_action_omni+u                 $dolphin_toggle_view
 
 ;; =====================================================================
 ;; === 2. Key Modifiers actions ========================================
@@ -434,11 +450,11 @@ dolphin_action_mod/                   f1      ;; Dolphin help
 
 ;; == panes + toggle ====================================================
 ;; panes + toggle | 2x !lalt
-;; ___TO_SET___ dolphin_action_pane+toggle              
+;; ___TO_SET___ dolphin_action_pane+toggle            
 
 ;; == panes + float ====================================================
 ;; panes + float
-;; ___TO_SET___ dolphin_action_pane+float              
+;; ___TO_SET___ dolphin_action_pane+float             
 
 ;; == panes + move ======================================================
 ;; panes + move + h | panes + move + left
