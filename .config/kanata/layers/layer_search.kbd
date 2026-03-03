@@ -1,1 +1,11 @@
-(t! simple_domain_layer "search" $action_search $action_search+lsft $action_search+lsft)
+(deflayermap (search_layer)
+    (t! map_layers _ "search" ($lsft $rsft lsft rsft))
+    spc $action_search
+)
+(deflayermap (search+lsft_layer)
+    spc $action_search+lsft
+)
+(deflayermap (search+rsft_layer)
+    spc $action_search+rsft
+)
+

@@ -182,7 +182,7 @@
   ;; Modifiers row
   !lmet|replace      $!lmet     ;; Physical lctl is used as lmet, in combo with space works as replace domain. 
   !lalt|search       $!lalt     ;; Physical lmet is used as lalt, in combo with space works as search domain.
-  !lctl|file         $!lctl     ;; Physical lalt is used as lctl, in combo with space works as file/folder domain.
+  !lctl|seek_sel     $!lctl     ;; Physical lalt is used as lctl, in combo with space works as seek_sel domain.
     spc|num/sym      spc        ;; Spacebar is used as space and as num/sym layer when hold.
    ralt|apps         ralt       ;; Physical ralt key will be used for app launching/focusing.
    prnt|bookm        prnt       ;; Physical prnt key will be used for bookmark layer when hold.
@@ -236,7 +236,7 @@
   opts               rctl       ;; Physical rctl key will be used for option layer when hold.    
   replace            $!lmet
   search             $!lalt
-  file               $!lctl
+  seek_sel               $!lctl
 
   ;; GUI objects
   window             z
@@ -310,7 +310,7 @@
   ;; Modifiers row.
   $!lmet|replace           (t!      th (t! 2x $action_desktops_toggle)           $toggle_replace_&_!lmet_layer)
   $!lalt|search            (t!      th (t! 2x $action_panes+toggle)              $toggle_search_&_!lalt_layer)
-  $!lctl|file       (multi (t!      th (t! 2x $action_tabs_toggle)               $toggle_seek_n_select_&_!lctl_layer) (on-release release-vkey vk_lalt))
+  $!lctl|seek_sel   (multi (t!      th (t! 2x $action_tabs_toggle)               $toggle_seek_n_select_&_!lctl_layer) (on-release release-vkey vk_lalt))
     $spc|num/sym           (t! fast_th spc                                       $toggle_num/sym_layer)
    $ralt|apps              (t!      th (t! 2x $action_apps_toggle)               $toggle_apps_layer)
    $prnt|bookm             (t!      th (t! 2x $action_sessions_toggle)           $toggle_bookmarks_layer)

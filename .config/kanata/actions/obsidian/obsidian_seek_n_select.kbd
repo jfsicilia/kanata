@@ -1,8 +1,10 @@
 (defvar
 
-;; == files/folders ========================================================
-;; files/folders + spc
+;; == seek_sel ========================================================
+;; seek_sel + spc
 obsidian_action_seek_and_select                   C-A-o
-;; file/folder + lsft + spc
+;; seek_sel + lsft + spc
 obsidian_action_seek_and_select+lsft                 C-S-o
+;; seek_sel + rsft + spc
+;; ___TO_SET___ obsidian_action_seek_and_select+rsft   
 )

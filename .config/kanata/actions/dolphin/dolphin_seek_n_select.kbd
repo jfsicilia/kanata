@@ -1,8 +1,10 @@
 (defvar
 
-;; == files/folders ========================================================
-;; files/folders + spc
+;; == seek_sel ========================================================
+;; seek_sel + spc
 dolphin_action_seek_and_select                  C-l
-;; file/folder + lsft + spc
+;; seek_sel + lsft + spc
 ;; ___TO_SET___ dolphin_action_seek_and_select+lsft   
+;; seek_sel + rsft + spc
+;; ___TO_SET___ dolphin_action_seek_and_select+rsft   
 )

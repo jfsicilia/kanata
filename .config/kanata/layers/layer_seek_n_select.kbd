@@ -1,1 +1,11 @@
-(t! simple_domain_layer "seek_n_select" $action_seek_and_select $action_seek_and_select+lsft $action_seek_and_select+lsft)
+(deflayermap (seek_n_select_layer)
+    (t! map_layers _ "seek_n_select" ($lsft $rsft lsft rsft))
+    spc $action_seek_and_select
+)
+(deflayermap (seek_n_select+lsft_layer)
+    spc $action_seek_and_select+lsft
+)
+(deflayermap (seek_n_select+rsft_layer)
+    spc $action_seek_and_select+rsft
+)
+

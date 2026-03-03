@@ -5,4 +5,6 @@
 obsidian_action_replace            C-A-h
 ;; replace + lsft + spc
 obsidian_action_replace+lsft      C-A-S-h
+;; replace + rsft + spc
+;; ___TO_SET___ obsidian_action_replace+rsft           
 )
