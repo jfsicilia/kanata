@@ -75,7 +75,7 @@ dolphin_action_bookmarks_d            (t! goto_folder $folder_downloads)
 ;; ___TO_SET___ dolphin_action_bookmarks_f            
 ;; ___TO_SET___ dolphin_action_bookmarks_g            
 ;; ___TO_SET___ dolphin_action_bookmarks_h            
-;; ___TO_SET___ dolphin_action_bookmarks_i            
+dolphin_action_bookmarks_i            (t! goto_folder $folder_inbox)
 ;; ___TO_SET___ dolphin_action_bookmarks_j            
 ;; ___TO_SET___ dolphin_action_bookmarks_k            
 ;; ___TO_SET___ dolphin_action_bookmarks_l            

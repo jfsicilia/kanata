@@ -2,6 +2,8 @@
 
 ;; ~/Downloads
 
+;;folder_inbox            `~/inbox`
+folder_inbox (S-grv 10 / 10 S-- 10 / 10 i n b o x)
 ;;folder_downloads            `~/Downloads`
 folder_downloads (S-grv 10 / 10 S-d o w n l o a d s)
 ;;folder_workarea            `~/_/workarea`

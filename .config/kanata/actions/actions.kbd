@@ -393,6 +393,7 @@
     () XX break
   )) 
   action_bookmarks_i (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_bookmarks_i break
     () XX break
   )) 
   action_bookmarks_j (t! unmod_all (switch ;;@autogen@
