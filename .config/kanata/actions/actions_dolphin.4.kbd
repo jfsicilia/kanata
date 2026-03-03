@@ -2,9 +2,10 @@
   ;; This virtual keys allow to iterate over the sort options of dolphin.
   vk_dolphin_sort1  XX
   vk_dolphin_sort2  XX
-  vk_dolphin_sort_reverse  XX
+  vk_dolphin_sort_toggle  XX
   vk_dolphin_view1  XX
   vk_dolphin_view2  XX
+  vk_dolphin_tab_toggle  XX
 )
 (deftemplate goto_folder (folder)
   (macro C-l $folder ent)
@@ -24,10 +25,10 @@ dolphin_toggle_sort_by (multi
   )
 )
 ;; Toggles sort ordering A-Z / Z-A
-dolphin_toggle_sort_reverse (multi (on-press toggle-virtualkey vk_dolphin_sort_reverse) 
+dolphin_toggle_sort_toggle (multi (on-press toggle-virtualkey vk_dolphin_sort_toggle) 
   (switch 
-    ((input virtual vk_dolphin_sort_reverse)) C-A-up   break ;; CUSTOM oldest first
-    ()                                        C-A-down break ;; CUSTOM newest first
+    ((input virtual vk_dolphin_sort_toggle)) C-A-up   break ;; CUSTOM oldest first
+    ()                                       C-A-down break ;; CUSTOM newest first
   )
 )
 ;; Toggles between view modes 1, 2 and 3.
@@ -41,6 +42,13 @@ dolphin_toggle_view (multi
     ((input virtual vk_dolphin_view1)) C-1 break  ;; View 1
     ((input virtual vk_dolphin_view2)) C-2 break  ;; View 2
     ()                                 C-3 break  ;; View 3
+  )
+)
+;; Toggles sort ordering A-Z / Z-A
+dolphin_toggle_tab (multi (on-press toggle-virtualkey vk_dolphin_tab_toggle) 
+  (switch 
+    ((input virtual vk_dolphin_tab_toggle))   C-tab   break 
+    ()                                        C-S-tab break 
   )
 )
 
@@ -229,7 +237,7 @@ dolphin_action_omni+p            A-up
 ;; omni + s
 dolphin_action_omni+s              $dolphin_toggle_sort_by
 ;; omni + lsft + s | omni + rsft + s
-dolphin_action_omni+lsft+s      $dolphin_toggle_sort_reverse 
+dolphin_action_omni+lsft+s      $dolphin_toggle_sort_toggle
 ;; omni + y
 dolphin_action_omni+y            C-i
 ;; omni + e
@@ -277,6 +285,8 @@ dolphin_action_omni+w         C-w
 ;; omni + /
 ;; see mod/
 ;; ___TO_SET___ dolphin_action_omni+/                 
+;; omni + =
+;; ___TO_SET___ dolphin_action_omni+=                 
 ;; omni + '
 ;; ___TO_SET___ dolphin_action_omni+'                 
 ;; omni + u
@@ -429,28 +439,28 @@ dolphin_action_mod/                   f1      ;; Dolphin help
 ;; ___TO_SET___ dolphin_action_pane                   
 
 ;; panes + ent
-;; ___TO_SET___ dolphin_action_pane+max               
+dolphin_action_pane+max               f3
 
 ;; panes + h | panes + left
-;; ___TO_SET___ dolphin_action_pane+h                 
+dolphin_action_pane+h                 tab
 ;; panes + l | panes + right
-;; ___TO_SET___ dolphin_action_pane+l                 
+dolphin_action_pane+l                 tab
 ;; panes + k | panes + up
-;; ___TO_SET___ dolphin_action_pane+k                 
+dolphin_action_pane+k                 tab
 ;; panes + j | panes + down
-;; ___TO_SET___ dolphin_action_pane+j                 
+dolphin_action_pane+j                 tab
 
 ;; panes + -
-;; ___TO_SET___ dolphin_action_pane+-                 
+dolphin_action_pane+-                 f3
 ;; panes + \
-;; ___TO_SET___ dolphin_action_pane+\                 
+dolphin_action_pane+\                 f3    ;;""
 
 ;; panes + w
-;; ___TO_SET___ dolphin_action_pane+w                 
+dolphin_action_pane+w                 f3
 
 ;; == panes + toggle ====================================================
 ;; panes + toggle | 2x !lalt
-;; ___TO_SET___ dolphin_action_pane+toggle            
+dolphin_action_pane+toggle            tab
 
 ;; == panes + float ====================================================
 ;; panes + float
@@ -605,27 +615,27 @@ dolphin_action_pane+t          f4
 
 ;; == tab go by number ==================================================
 ;; tab + 1
-;; ___TO_SET___ dolphin_action_tab_goto_1             
+dolphin_action_tab_goto_1             A-1
 ;; tab + 2
-;; ___TO_SET___ dolphin_action_tab_goto_2             
+dolphin_action_tab_goto_2             A-2
 ;; tab + 3
-;; ___TO_SET___ dolphin_action_tab_goto_3             
+dolphin_action_tab_goto_3             A-3
 ;; tab + 4
-;; ___TO_SET___ dolphin_action_tab_goto_4             
+dolphin_action_tab_goto_4             A-4
 ;; tab + 5
-;; ___TO_SET___ dolphin_action_tab_goto_5             
+dolphin_action_tab_goto_5             A-5
 ;; tab + 6
-;; ___TO_SET___ dolphin_action_tab_goto_6             
+dolphin_action_tab_goto_6             A-6
 ;; tab + 7
-;; ___TO_SET___ dolphin_action_tab_goto_7             
+dolphin_action_tab_goto_7             A-7
 ;; tab + 8
-;; ___TO_SET___ dolphin_action_tab_goto_8             
+dolphin_action_tab_goto_8             A-8
 ;; tab + 9
-;; ___TO_SET___ dolphin_action_tab_goto_last          
+dolphin_action_tab_goto_last          A-9
 
 ;; == tab + toggle =====================================================
 ;; tab + toggle | 2x !lctl
-;; ___TO_SET___ dolphin_action_tab_toggle             
+dolphin_action_tab_toggle             $dolphin_toggle_tab
 
 ;; == tab + move =====================================================
 ;; tab + move + h | tab + move + left

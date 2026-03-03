@@ -231,6 +231,8 @@
 ;; omni + /
 ;; see mod/
 ;; ___TO_SET___ zellij_action_omni+/                 
+;; omni + =
+;; ___TO_SET___ zellij_action_omni+=                 
 ;; omni + '
 ;; ___TO_SET___ zellij_action_omni+'                 
 ;; omni + u

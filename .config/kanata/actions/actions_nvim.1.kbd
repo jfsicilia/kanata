@@ -243,6 +243,8 @@ nvim_action_omni+.               $nvim_action_mod.
 ;; omni + /
 ;; see mod/
 nvim_action_omni+/              $nvim_action_mod/
+;; omni + =
+;; ___TO_SET___ nvim_action_omni+=                 
 ;; omni + '
 ;; ___TO_SET___ nvim_action_omni+'                 
 ;; omni + u

@@ -231,6 +231,8 @@ foot_action_omni+f                      S-pgdn
 ;; omni + /
 ;; see mod/
 ;; ___TO_SET___ foot_action_omni+/                 
+;; omni + =
+;; ___TO_SET___ foot_action_omni+=                 
 ;; omni + '
 ;; ___TO_SET___ foot_action_omni+'                 
 ;; omni + u

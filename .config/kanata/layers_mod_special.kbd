@@ -214,6 +214,7 @@
   m $action_omni+m
   . $action_omni+.
   ' $action_omni+'
+  = $action_omni+=
 
   g $action_omni+g
 

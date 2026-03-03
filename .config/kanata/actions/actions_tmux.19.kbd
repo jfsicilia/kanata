@@ -236,6 +236,8 @@ tmux_action_omni+n                            (macro $tmux_prefix c) ;; prefix +
 ;; omni + /
 ;; see mod/
 ;; ___TO_SET___ tmux_action_omni+/                 
+;; omni + =
+;; ___TO_SET___ tmux_action_omni+=                 
 ;; omni + '
 ;; ___TO_SET___ tmux_action_omni+'                 
 ;; omni + u

@@ -235,6 +235,8 @@ chrome_action_omni+n               C-n
 ;; omni + /
 ;; see mod/
 ;; ___TO_SET___ chrome_action_omni+/                 
+;; omni + =
+;; ___TO_SET___ chrome_action_omni+=                 
 ;; omni + '
 ;; ___TO_SET___ chrome_action_omni+'                 
 ;; omni + u

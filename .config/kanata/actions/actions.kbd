@@ -954,6 +954,10 @@
     ((input virtual vk_nvim)) $nvim_action_omni+/ break
     () $action_mod/ break
   )) ;;""
+  ;; omni + =
+  action_omni+= (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
   ;; omni + '
   action_omni+' (t! unmod_all (switch ;;@autogen@
     () XX break
@@ -1273,6 +1277,7 @@
   ;; panes + ent
   action_pane+max (t! unmod_all (switch ;;@autogen@ 
     ((input virtual vk_nvim)) $nvim_action_pane+max break
+    ((input virtual vk_dolphin)) $dolphin_action_pane+max break
     ((input virtual vk_obsidian)) $obsidian_action_pane+max break
     ((input virtual vk_tmux)) $tmux_action_pane+max break
     ((input virtual vk_zellij)) $zellij_action_pane+max break
@@ -1282,6 +1287,7 @@
   ;; panes + h | panes + left 
   action_pane+h (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_pane+h break
+    ((input virtual vk_dolphin)) $dolphin_action_pane+h break
     ((input virtual vk_obsidian)) $obsidian_action_pane+h break
     ((input virtual vk_tmux)) $tmux_action_pane+h break
     ((input virtual vk_zellij)) $zellij_action_pane+h break
@@ -1290,6 +1296,7 @@
   ;; panes + l | panes + right 
   action_pane+l (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_pane+l break
+    ((input virtual vk_dolphin)) $dolphin_action_pane+l break
     ((input virtual vk_obsidian)) $obsidian_action_pane+l break
     ((input virtual vk_tmux)) $tmux_action_pane+l break
     ((input virtual vk_zellij)) $zellij_action_pane+l break
@@ -1298,6 +1305,7 @@
   ;; panes + k | panes + up 
   action_pane+k (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_pane+k break
+    ((input virtual vk_dolphin)) $dolphin_action_pane+k break
     ((input virtual vk_obsidian)) $obsidian_action_pane+k break
     ((input virtual vk_tmux)) $tmux_action_pane+k break
     ((input virtual vk_zellij)) $zellij_action_pane+k break
@@ -1306,6 +1314,7 @@
   ;; panes + j | panes + down 
   action_pane+j (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_pane+j break
+    ((input virtual vk_dolphin)) $dolphin_action_pane+j break
     ((input virtual vk_obsidian)) $obsidian_action_pane+j break
     ((input virtual vk_tmux)) $tmux_action_pane+j break
     ((input virtual vk_zellij)) $zellij_action_pane+j break
@@ -1315,6 +1324,7 @@
   ;; panes + -
   action_pane+- (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_pane+- break
+    ((input virtual vk_dolphin)) $dolphin_action_pane+- break
     ((input virtual vk_obsidian)) $obsidian_action_pane+- break
     ((input virtual vk_tmux)) $tmux_action_pane+- break
     () XX break
@@ -1322,6 +1332,7 @@
   ;; panes + \
   action_pane+\ (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_pane+\ break
+    ((input virtual vk_dolphin)) $dolphin_action_pane+\ break
     ((input virtual vk_obsidian)) $obsidian_action_pane+\ break
     ((input virtual vk_tmux)) $tmux_action_pane+\ break
     () XX break
@@ -1329,6 +1340,7 @@
 
   ;; panes + w
   action_pane+w (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_pane+w break
     ((input virtual vk_obsidian)) $obsidian_action_pane+w break
     ((input virtual vk_tmux)) $tmux_action_pane+w break
     () XX break
@@ -1337,6 +1349,7 @@
   ;; == panes + toggle ====================================================
   ;; panes + toggle | 2x !lalt
   action_pane+toggle (t! unmod_all (switch ;;@autogen@ 
+    ((input virtual vk_dolphin)) $dolphin_action_pane+toggle break
     ((input virtual vk_obsidian)) $obsidian_action_pane+toggle break
     ((input virtual vk_tmux)) $tmux_action_pane+toggle break
     () XX break
@@ -1674,6 +1687,7 @@
   action_tab_goto_1 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_tab_goto_1 break
     ((input virtual vk_chrome)) $chrome_action_tab_goto_1 break
+    ((input virtual vk_dolphin)) $dolphin_action_tab_goto_1 break
     ((input virtual vk_obsidian)) $obsidian_action_tab_goto_1 break
     ((input virtual vk_tmux)) $tmux_action_tab_goto_1 break
     () XX break
@@ -1682,6 +1696,7 @@
   action_tab_goto_2 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_tab_goto_2 break
     ((input virtual vk_chrome)) $chrome_action_tab_goto_2 break
+    ((input virtual vk_dolphin)) $dolphin_action_tab_goto_2 break
     ((input virtual vk_obsidian)) $obsidian_action_tab_goto_2 break
     ((input virtual vk_tmux)) $tmux_action_tab_goto_2 break
     () XX break
@@ -1690,6 +1705,7 @@
   action_tab_goto_3 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_tab_goto_3 break
     ((input virtual vk_chrome)) $chrome_action_tab_goto_3 break
+    ((input virtual vk_dolphin)) $dolphin_action_tab_goto_3 break
     ((input virtual vk_obsidian)) $obsidian_action_tab_goto_3 break
     ((input virtual vk_tmux)) $tmux_action_tab_goto_3 break
     () XX break
@@ -1698,6 +1714,7 @@
   action_tab_goto_4 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_tab_goto_4 break
     ((input virtual vk_chrome)) $chrome_action_tab_goto_4 break
+    ((input virtual vk_dolphin)) $dolphin_action_tab_goto_4 break
     ((input virtual vk_obsidian)) $obsidian_action_tab_goto_4 break
     ((input virtual vk_tmux)) $tmux_action_tab_goto_4 break
     () XX break
@@ -1706,6 +1723,7 @@
   action_tab_goto_5 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_tab_goto_5 break
     ((input virtual vk_chrome)) $chrome_action_tab_goto_5 break
+    ((input virtual vk_dolphin)) $dolphin_action_tab_goto_5 break
     ((input virtual vk_obsidian)) $obsidian_action_tab_goto_5 break
     ((input virtual vk_tmux)) $tmux_action_tab_goto_5 break
     () XX break
@@ -1714,6 +1732,7 @@
   action_tab_goto_6 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_tab_goto_6 break
     ((input virtual vk_chrome)) $chrome_action_tab_goto_6 break
+    ((input virtual vk_dolphin)) $dolphin_action_tab_goto_6 break
     ((input virtual vk_obsidian)) $obsidian_action_tab_goto_6 break
     ((input virtual vk_tmux)) $tmux_action_tab_goto_6 break
     () XX break
@@ -1722,6 +1741,7 @@
   action_tab_goto_7 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_tab_goto_7 break
     ((input virtual vk_chrome)) $chrome_action_tab_goto_7 break
+    ((input virtual vk_dolphin)) $dolphin_action_tab_goto_7 break
     ((input virtual vk_obsidian)) $obsidian_action_tab_goto_7 break
     ((input virtual vk_tmux)) $tmux_action_tab_goto_7 break
     () XX break
@@ -1730,6 +1750,7 @@
   action_tab_goto_8 (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_tab_goto_8 break
     ((input virtual vk_chrome)) $chrome_action_tab_goto_8 break
+    ((input virtual vk_dolphin)) $dolphin_action_tab_goto_8 break
     ((input virtual vk_obsidian)) $obsidian_action_tab_goto_8 break
     ((input virtual vk_tmux)) $tmux_action_tab_goto_8 break
     () XX break
@@ -1738,6 +1759,7 @@
   action_tab_goto_last (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_nvim)) $nvim_action_tab_goto_last break
     ((input virtual vk_chrome)) $chrome_action_tab_goto_last break
+    ((input virtual vk_dolphin)) $dolphin_action_tab_goto_last break
     ((input virtual vk_obsidian)) $obsidian_action_tab_goto_last break
     ((input virtual vk_tmux)) $tmux_action_tab_goto_last break
     () XX break
@@ -1748,6 +1770,7 @@
   action_tab_toggle (t! unmod_all (switch ;;@autogen@ 
     ((input virtual vk_nvim)) $nvim_action_tab_toggle break
     ((input virtual vk_chrome)) $chrome_action_tab_toggle break
+    ((input virtual vk_dolphin)) $dolphin_action_tab_toggle break
     ((input virtual vk_obsidian)) $obsidian_action_tab_toggle break
     ((input virtual vk_tmux)) $tmux_action_tab_toggle break
     ((input virtual vk_zellij)) $zellij_action_tab_toggle break
