@@ -20,9 +20,7 @@ A kanata (keyboard remapper for Linux) configuration with an **app-polymorphic a
 # Regenerate kanata.kbd virtual keys + switch conditions (after adding/removing app files):
 ./scripts/kanata_sync_apps.py -f
 
-# Reload kanata config: Tab+r
-
-# Run kanata_sync_interfaces and kanata_sync_apps (Tab+shift+r)
+# Reload kanata config, reload kwanata config, run kanata_sync_interfaces and kanata_sync_apps: RCtrl + k
 
 # Restart kanata service:
 systemctl --user restart kanata.service
@@ -74,11 +72,12 @@ kanata.kbd  (entry point, includes everything)
       │   ├── nvim_omni.kbd
       │   ├── nvim_groups.1.kbd   (priority for ~ reversed actions)
       │   └── ...
+      ├── ...
       ├── dolphin/
       ├── foot/
       ├── obsidian/
       ├── tmux/
-      └── zellij/                 (7 apps × 12 interfaces)
+      └── zellij/
 ```
 
 ### App-Polymorphism Pattern
@@ -109,7 +108,7 @@ action_tab_next (t! unmod_all (switch ;;@autogen@
 - **Physical key remapping**: `lctl→lmet`, `lmet→lalt`, `lalt→lctl` (Mac-like `ctrl|alt|cmd` layout).
 - **Modifier layers compose**: holding `lctl` activates `lctl_layer`; then holding `lalt` on top activates `lctl+lalt_layer`, etc. up to 3-modifier combos.
 - **`!` prefix layers**: There are 2 sets of modifiers: homerow keys (lctl/lalt/lmet) and physical keyboard keys (!lctl/!lalt/!lmet). In normal apps they have the same functionality. In apps with a vim mode, you get 2 sets of functionality: one for vim-mode commands, the other for the app's own commands (e.g. obsidian, VS Code).
-- **Special layers** (defined in layer_*.kbd files):
+- **Special layers** (defined in layer\_\*.kbd files):
   - GUI layers: `windows_layer`, `workspaces_layer`, `tabs_layer`, `panes_layer`, `groups_layer`
   - Domain layers: `omni_layer` (caps hold), `opts_layer` (tab hold), `apps_layer` (ralt), `bookmarks_layer` (prnt), `num_layer`, etc.
   - Pane sublayers: `panes+move_layer`, `panes+resize_layer`, `panes+snap_layer`, `panes+swap_layer`
