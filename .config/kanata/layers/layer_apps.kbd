@@ -1,0 +1,47 @@
+;; "" APPS_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (apps_layer)
+  (t! map_layers _ "apps" (lsft rsft))
+  spc $action_apps
+  0   $action_apps+0
+  1   $action_apps+1
+  2   $action_apps+2
+  3   $action_apps+3
+  4   $action_apps+4
+  5   $action_apps+5
+  6   $action_apps+6
+  7   $action_apps+7
+  8   $action_apps+8
+  9   $action_apps+9
+  a   $action_apps+a
+  b   $action_apps+b
+  c   $action_apps+c
+  d   $action_apps+d
+  e   $action_apps+e
+  f   $action_apps+f
+  g   $action_apps+g
+  h   $action_apps+h
+  i   $action_apps+i
+  j   $action_apps+j
+  k   $action_apps+k
+  l   $action_apps+l
+  m   $action_apps+m
+  n   $action_apps+n
+  o   $action_apps+o
+  p   $action_apps+p
+  q   $action_apps+q
+  r   $action_apps+r
+  s   $action_apps+s
+  t   $action_apps+t
+  u   $action_apps+u
+  v   $action_apps+v
+  w   $action_apps+w
+  x   $action_apps+x
+  y   $action_apps+y
+  z   $action_apps+z
+)
+
+(deflayermap (apps+lsft_layer)
+)
+
+(deflayermap (apps+rsft_layer)
+)

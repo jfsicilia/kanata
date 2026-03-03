@@ -1,0 +1,7 @@
+(defvar
+  ;; == opts ==============================================================
+  ;; opts + lsft/rsft + r
+  action_opts_restart_kwanata (t! unmod_all
+    (macro RA-spc 300 s y s t e m c t l spc - - u s e r spc r e s t a r t spc k w a n a t a 300 ent))
+
+)

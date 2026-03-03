@@ -1,0 +1,24 @@
+(defvar
+  ;; == windows ===========================================================
+  ;; windows + spc
+  action_windows         (t! unmod_all M-m)
+  ;; windows + ent
+  action_windows_max    (t! unmod_all M-m)
+  ;; windows + lsft + ent | windows + rsft + ent
+  action_windows_full   (t! unmod_all M-S-m)
+
+  ;; windows + k
+  action_windows_up     (t! unmod_all  M-up)
+  ;; windows + j
+  action_windows_down   (t! unmod_all M-down)
+  ;; windows + h
+  action_windows_left   (t! unmod_all M-left)
+  ;; windows + l
+  action_windows_right  (t! unmod_all M-right)
+
+  ;; windows 
+  action_windows_close  (t! unmod_all A-f4)
+
+  ;; 2x apps
+  action_windows_toggle $action_apps_toggle
+)

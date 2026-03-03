@@ -1,0 +1,8 @@
+(defvar
+
+;; == replace ==========================================================
+;; replace + spc
+obsidian_action_replace            C-A-h
+;; replace + lsft + spc
+obsidian_action_replace+lsft      C-A-S-h
+)

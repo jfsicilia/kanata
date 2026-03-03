@@ -1,0 +1,8 @@
+(defvar
+
+;; == files/folders ========================================================
+;; files/folders + spc
+;; ___TO_SET___ zellij_action_seek_and_select        
+;; file/folder + lsft + spc
+;; ___TO_SET___ zellij_action_seek_and_select+lsft   
+)

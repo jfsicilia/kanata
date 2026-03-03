@@ -1,0 +1,15 @@
+;; "" OPTS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (opts_layer)
+  (t! map_layers _ "opts" (lsft rsft))
+
+  k (multi (cmd kanata_sync_apps.py -f) (cmd kanata_sync_all_apps_interfaces.sh) (push-msg "RELOAD:") lrld)
+  d (push-msg "DEBUG: hola!")
+  p prnt
+)
+
+(deflayermap (opts+lsft_layer)
+  k $action_opts_restart_kwanata
+)
+
+(deflayermap (opts+rsft_layer)
+)

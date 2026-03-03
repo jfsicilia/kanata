@@ -1,0 +1,21 @@
+;; "" LANG_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (lang_layer)
+  a  (t! tilde a)
+  e  (t! tilde e)
+  i  (t! tilde i)
+  o  (t! tilde o)
+  u  (t! tilde u)
+  n  (t! birgulilla n)
+  h  left
+  j  down
+  k  up
+  l  right
+
+  spc $action_emojis
+)
+
+(deflayermap (lang_alt_layer)
+  e (t! euro)
+  u (t! dieresis u)
+  o (t! dieresis o)
+)

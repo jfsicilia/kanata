@@ -1,0 +1,9 @@
+(defvar
+
+;; == files/folders ========================================================
+;; files/folders + spc
+;; nvim_action_seek_and_select              `{esc}:Telescope find_files{ret}`
+nvim_action_seek_and_select                 (macro esc S-; S-t e l e s c o p e spc f i n d S-- f i l e s ret)  ;;""
+;; file/folder + lsft + spc
+nvim_action_seek_and_select+lsft               XX
+)

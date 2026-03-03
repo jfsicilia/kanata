@@ -1,0 +1,21 @@
+(defvar
+  ;; @start@ ====== DON'T REMOVE THIS LINE =================================
+
+  ;; == files/folders ========================================================
+  ;; files/folders + spc 
+  action_seek_and_select (t! unmod_all (switch ;;@autogen@ 
+    ((input virtual vk_chrome)) $chrome_action_seek_and_select break
+    ((input virtual vk_dolphin)) $dolphin_action_seek_and_select break
+    ((input virtual vk_nvim)) $nvim_action_seek_and_select break
+    ((input virtual vk_obsidian)) $obsidian_action_seek_and_select break
+    ((input virtual vk_tmux)) $tmux_action_seek_and_select break
+    () XX break
+  ))
+  ;; file/folder + lsft + spc 
+  action_seek_and_select+lsft (t! unmod_all (switch ;;@autogen@ 
+    ((input virtual vk_chrome)) $chrome_action_seek_and_select+lsft break
+    ((input virtual vk_nvim)) $nvim_action_seek_and_select+lsft break
+    ((input virtual vk_obsidian)) $obsidian_action_seek_and_select+lsft break
+    () XX break
+  ))
+)

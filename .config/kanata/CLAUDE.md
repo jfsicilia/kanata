@@ -9,15 +9,15 @@ A kanata (keyboard remapper for Linux) configuration with an **app-polymorphic a
 ## Key Commands
 
 ```bash
-# Sync all app action files with the shared interface (after editing actions.kbd):
+# Sync all per-app action files with their shared app_*.kbd definitions (after editing app_*.kbd):
 ./scripts/kanata_sync_all_apps_interfaces.sh
 
-# Sync a single app file (dry-run, prints to stdout):
-./scripts/kanata_sync_interfaces.py actions/actions_chrome.4.kbd
+# Sync a single per-app action file (dry-run, prints to stdout):
+./scripts/kanata_sync_interfaces.py actions/chrome/chrome_omni.kbd
 # Write mode:
-./scripts/kanata_sync_interfaces.py -w actions/actions_chrome.4.kbd
+./scripts/kanata_sync_interfaces.py -w actions/chrome/chrome_omni.kbd
 
-# Regenerate kanata.kbd virtual keys + actions.kbd switch conditions (after adding/removing app files):
+# Regenerate kanata.kbd virtual keys + switch conditions (after adding/removing app files):
 ./scripts/kanata_sync_apps.py -f
 
 # Reload kanata config: Tab+r
@@ -43,23 +43,47 @@ kanata app aware.
 kanata.kbd  (entry point, includes everything)
   ├── templates.kbd           (reusable macros: homerowmod, tap-dance, layer toggles, etc.)
   ├── setup.kbd               (defsrc, default layer, homerow mod aliases, variable definitions)
-  ├── layers_modifiers.kbd    (modifier layers: lctl, lalt, lmet, lsft, rsft + ! variants)
-  ├── layers_gui.kbd          (window/workspace/tab/pane/group management layers)
-  ├── layers_domain.kbd       (feature layers: omni, apps, bookmarks, opts, num, etc.)
+  ├── bookmarks.kbd           (bookmark actions)
+  ├── layers/
+  │   ├── layer_windows.kbd       (GUI layers: windows, workspaces, tabs, etc.)
+  │   ├── layer_omni.kbd          (domain layers: omni, apps, bookmarks, etc.)
+  │   ├── layer_mod_key.kbd       (modifier layers: key-based)
+  │   ├── layer_mod_physical.kbd  (modifier layers: physical keys)
+  │   └── layer_*.kbd             (one per layer)
+  ├── layers_toggle/
+  │   ├── toggles_combined.kbd    (combined toggle definitions)
+  │   ├── toggles_mod_gui.kbd
+  │   ├── toggles_mod_key.kbd
+  │   ├── toggles_mod_physical.kbd
+  │   └── toggles_mod_special.kbd
   └── actions/
-      ├── actions.kbd             (shared action interface — all @autogen@ tagged switch statements)
-      ├── actions_nvim.1.kbd      (priority 1, highest)
-      ├── actions_chrome.4.kbd
-      ├── actions_dolphin.4.kbd
-      ├── actions_obsidian.4.kbd
-      ├── actions_tmux.19.kbd
-      ├── actions_zellij.29.kbd
-      └── actions_foot.99.kbd     (priority 99, lowest)
+      ├── global_apps.kbd         (non-overridable: apps, apps_toggle, apps+0-9, apps+a-z)
+      ├── global_windows.kbd      (non-overridable: window_*)
+      ├── global_workspaces.kbd   (non-overridable: desktop_*, screen_*)
+      ├── global_misc.kbd         (non-overridable: emojis, opts_restart_kwanata)
+      ├── app_omni.kbd            (@autogen@ switch dispatch)
+      ├── app_tabs.kbd
+      ├── app_panes.kbd
+      ├── app_groups.kbd          (contains ~ reversed actions)
+      ├── app_*.kbd               (one per interface)
+      ├── chrome/
+      │   ├── chrome_omni.kbd
+      │   ├── chrome_tabs.kbd
+      │   └── ...
+      ├── nvim/
+      │   ├── nvim_omni.kbd
+      │   ├── nvim_groups.1.kbd   (priority for ~ reversed actions)
+      │   └── ...
+      ├── dolphin/
+      ├── foot/
+      ├── obsidian/
+      ├── tmux/
+      └── zellij/                 (7 apps × 12 interfaces)
 ```
 
 ### App-Polymorphism Pattern
 
-Each app has a virtual key (`vk_<app>`) toggled by external software when the app gains/loses focus. Actions in `actions.kbd` use `(switch ;;@autogen@` to dispatch based on which virtual key is pressed:
+Each app has a virtual key (`vk_<app>`) toggled by external software when the app gains/loses focus. Shared action files (`app_*.kbd`) use `(switch ;;@autogen@` to dispatch based on which virtual key is pressed:
 
 ```lisp
 action_tab_next (t! unmod_all (switch ;;@autogen@
@@ -69,15 +93,15 @@ action_tab_next (t! unmod_all (switch ;;@autogen@
 ))
 ```
 
-- **Priority**: Lower filename index = checked first. `actions_nvim.1.kbd` beats `actions_tmux.19.kbd` beats `actions_foot.99.kbd`.
-- **Reversed actions**: `~action_<name>` checks apps in reverse order, enabling alternate behavior when apps overlap (e.g. nvim inside tmux). The `~` prefix before `action_` reverses the app priority in switch conditions.
-- App files can define **app variables** (e.g. `tmux_prefix A-b`) and **app-specific actions** not in the shared interface — both are preserved by the sync scripts.
+- **Priority**: Per-interface, controlled by the optional index in the per-app filename. `nvim_groups.1.kbd` (priority 1) beats `chrome_groups.4.kbd` (priority 4).
+- **Reversed actions**: `~action_<name>` checks apps in reverse order, enabling alternate behavior when apps overlap (e.g. nvim inside tmux). The `~` prefix before `action_` reverses the app priority in switch conditions. Currently only in `app_groups.kbd`.
+- App files can define **app variables** (e.g. `tmux_prefix A-b`) and **app-specific actions** not in the shared action file — both are preserved by the sync scripts. Extra vars go in the alphabetically-first per-app file.
 
 ### Sync Workflow
 
-1. **Adding a new action**: Edit `actions.kbd`, add the action with `;;@autogen@` tag, then run `kanata_sync_all_apps_interfaces.sh` to propagate the placeholder to all app files.
-2. **Adding a new app**: Create `actions/actions_<app>.<priority>.kbd`, then run `kanata_sync_apps.py -f` to register it in `kanata.kbd` and `actions.kbd`.
-3. **Implementing an app action**: Uncomment the placeholder line in the app file (e.g. change `;;  tmux_action_tab_new` to `tmux_action_tab_new (macro $tmux_prefix c)`), then run `kanata_sync_apps.py -f` to wire it into `actions.kbd` switch conditions.
+1. **Adding a new action**: Edit the relevant `app_*.kbd` file, add the action with `;;@autogen@` tag, then run `kanata_sync_all_apps_interfaces.sh` to propagate the placeholder to all per-app files.
+2. **Adding a new app**: Create a subdirectory `actions/<app>/` with files `<app>_<name>.kbd` for each interface, then run `kanata_sync_apps.py -f` to register it in `kanata.kbd` and update switch conditions.
+3. **Implementing an app action**: Uncomment the placeholder line in the per-app file (e.g. change `;;  tmux_action_tab_new` to `tmux_action_tab_new (macro $tmux_prefix c)`), then run `kanata_sync_apps.py -f` to wire it into the switch conditions.
 
 ### Layer System
 
@@ -85,7 +109,7 @@ action_tab_next (t! unmod_all (switch ;;@autogen@
 - **Physical key remapping**: `lctl→lmet`, `lmet→lalt`, `lalt→lctl` (Mac-like `ctrl|alt|cmd` layout).
 - **Modifier layers compose**: holding `lctl` activates `lctl_layer`; then holding `lalt` on top activates `lctl+lalt_layer`, etc. up to 3-modifier combos.
 - **`!` prefix layers**: There are 2 sets of modifiers: homerow keys (lctl/lalt/lmet) and physical keyboard keys (!lctl/!lalt/!lmet). In normal apps they have the same functionality. In apps with a vim mode, you get 2 sets of functionality: one for vim-mode commands, the other for the app's own commands (e.g. obsidian, VS Code).
-- **Special layers** (defined in layers_domain.kbd and layers_gui.kbd):
+- **Special layers** (defined in layer_*.kbd files):
   - GUI layers: `windows_layer`, `workspaces_layer`, `tabs_layer`, `panes_layer`, `groups_layer`
   - Domain layers: `omni_layer` (caps hold), `opts_layer` (tab hold), `apps_layer` (ralt), `bookmarks_layer` (prnt), `num_layer`, etc.
   - Pane sublayers: `panes+move_layer`, `panes+resize_layer`, `panes+snap_layer`, `panes+swap_layer`
@@ -105,7 +129,7 @@ Key templates used throughout:
 
 ### Conventions
 
-- **Actions naming**: `action_<name>` in `actions.kbd`, `<app>_action_<name>` in app files.
+- **Actions naming**: `action_<name>` in `app_*.kbd`, `<app>_action_<name>` in per-app files.
 - **`~` prefix** (tilde before `action_`): `~action_tab_next` reverses app priority in switch conditions — apps are checked in reverse order. Allows alternate behavior when apps overlap (e.g. nvim inside tmux).
 - **`!` prefix** has different meanings depending on context:
   - **Within action name** (`action_!lctl+a`): action triggered by physical lctl key (vs homerow mod)

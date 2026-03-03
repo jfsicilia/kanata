@@ -1,0 +1,2549 @@
+(defvar
+  ;; @start@ ====== DON'T REMOVE THIS LINE =================================
+
+  ;; === 4. Physical modifiers actions ===================================
+  ;; =====================================================================
+
+  ;; == SFT actions ==========================================================
+  action_sft+ent (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_foot)) $foot_action_sft+ent break
+    () S-ent break
+  ))
+
+  ;; == LCTL actions ==========================================================
+  action_lctl+a (switch ;;@autogen@ 
+    () C-a break
+  )
+  action_lctl+b (switch ;;@autogen@ 
+    ((input virtual vk_obsidian)) $obsidian_action_lctl+b break
+    () C-b break
+  )
+  action_lctl+c  (switch ;;@autogen@ 
+    () C-c  break
+  )
+  action_lctl+d (switch ;;@autogen@ 
+    () C-d break
+  )
+  action_lctl+e  (switch ;;@autogen@ 
+    () C-e  break
+  )
+  action_lctl+f  (switch ;;@autogen@ 
+    ((input virtual vk_obsidian)) $obsidian_action_lctl+f break
+    () C-f  break
+  )
+  action_lctl+g  (switch ;;@autogen@ 
+    () C-g  break
+  )
+  action_lctl+h  (switch ;;@autogen@ 
+    () C-h  break
+  )
+  action_lctl+i  (switch ;;@autogen@ 
+    () C-i  break
+  )
+  action_lctl+j  (switch ;;@autogen@ 
+    () C-j  break
+  )
+  action_lctl+k  (switch ;;@autogen@ 
+    () C-k  break
+  )
+  action_lctl+l  (switch ;;@autogen@ 
+    () C-l  break
+  )
+  action_lctl+m  (switch ;;@autogen@ 
+    () C-m  break
+  )
+  action_lctl+n  (switch ;;@autogen@ 
+    () C-n  break
+  )
+  action_lctl+o  (switch ;;@autogen@ 
+    () C-o  break
+  )
+  action_lctl+p  (switch ;;@autogen@ 
+    () C-p  break
+  )
+  action_lctl+q  (switch ;;@autogen@ 
+    () C-q  break
+  )
+  action_lctl+r  (switch ;;@autogen@ 
+    () C-r  break
+  )
+  action_lctl+s  (switch ;;@autogen@ 
+    () C-s  break
+  )
+  action_lctl+t  (switch ;;@autogen@ 
+    ((input virtual vk_obsidian)) $obsidian_action_lctl+t break
+    () C-t  break
+  )
+  action_lctl+u  (switch ;;@autogen@ 
+    () C-u  break
+  )
+  action_lctl+v  (switch ;;@autogen@ 
+    () C-v  break
+  )
+  action_lctl+w  (switch ;;@autogen@ 
+    () C-w  break
+  )
+  action_lctl+x  (switch ;;@autogen@ 
+    () C-x  break
+  )
+  action_lctl+y  (switch ;;@autogen@ 
+    () C-y  break
+  )
+  action_lctl+z  (switch ;;@autogen@ 
+    () C-z break
+  )
+  action_lctl+,  (switch ;;@autogen@ 
+    ((input virtual vk_obsidian)) $obsidian_action_lctl+, break
+    () C-, break
+  )
+  action_lctl+.  (switch ;;@autogen@ 
+    () C-.  break
+  )
+  action_lctl+/  (switch ;;@autogen@ 
+    () C-/  break
+  )
+  action_lctl+;  (switch ;;@autogen@ 
+    ((input virtual vk_obsidian)) $obsidian_action_lctl+; break
+    () C-;  break
+  )
+  action_lctl+'  (switch ;;@autogen@ 
+    () C-'  break
+  )
+  action_lctl+[  (switch ;;@autogen@ 
+    ((input virtual vk_obsidian)) $obsidian_action_lctl+[ break
+    () C-[  break
+  )
+  action_lctl+]  (switch ;;@autogen@ 
+    ((input virtual vk_obsidian)) $obsidian_action_lctl+] break
+    () C-]  break
+  )  ;; ""
+  action_lctl+\  (switch ;;@autogen@ 
+    () C-\  break
+  )  ;; ""
+  action_lctl+-  (switch ;;@autogen@ 
+    () C--  break
+  )
+  action_lctl+=  (switch ;;@autogen@ 
+    () C-=  break
+  )
+  action_lctl+1  (switch ;;@autogen@ 
+    () C-1  break
+  )
+  action_lctl+2  (switch ;;@autogen@ 
+    () C-2  break
+  )
+  action_lctl+3  (switch ;;@autogen@ 
+    () C-3  break
+  )
+  action_lctl+4  (switch ;;@autogen@ 
+    () C-4  break
+  )
+  action_lctl+5  (switch ;;@autogen@ 
+    () C-5  break
+  )
+  action_lctl+6  (switch ;;@autogen@ 
+    () C-6  break
+  )
+  action_lctl+7  (switch ;;@autogen@ 
+    () C-7  break
+  )
+  action_lctl+8  (switch ;;@autogen@ 
+    () C-8  break
+  )
+  action_lctl+9  (switch ;;@autogen@ 
+    () C-9  break
+  )
+  action_lctl+0  (switch ;;@autogen@ 
+    () C-0  break
+  )
+
+  ;; == LCTL+LSFT actions ==========================================================
+  action_lctl+lsft+a (switch ;;@autogen@ 
+    () C-S-a break
+  )
+  action_lctl+lsft+b (switch ;;@autogen@ 
+    () C-S-b break
+  )
+  action_lctl+lsft+c  (switch ;;@autogen@ 
+    () C-S-c  break
+  )
+  action_lctl+lsft+d (switch ;;@autogen@ 
+    () C-S-d break
+  )
+  action_lctl+lsft+e  (switch ;;@autogen@ 
+    () C-S-e  break
+  )
+  action_lctl+lsft+f  (switch ;;@autogen@ 
+    () C-S-f  break
+  )
+  action_lctl+lsft+g  (switch ;;@autogen@ 
+    () C-S-g  break
+  )
+  action_lctl+lsft+h  (switch ;;@autogen@ 
+    () C-S-h  break
+  )
+  action_lctl+lsft+i  (switch ;;@autogen@ 
+    () C-S-i  break
+  )
+  action_lctl+lsft+j  (switch ;;@autogen@ 
+    () C-S-j  break
+  )
+  action_lctl+lsft+k  (switch ;;@autogen@ 
+    () C-S-k  break
+  )
+  action_lctl+lsft+l  (switch ;;@autogen@ 
+    () C-S-l  break
+  )
+  action_lctl+lsft+m  (switch ;;@autogen@ 
+    () C-S-m  break
+  )
+  action_lctl+lsft+n  (switch ;;@autogen@ 
+    () C-S-n  break
+  )
+  action_lctl+lsft+o  (switch ;;@autogen@ 
+    () C-S-o  break
+  )
+  action_lctl+lsft+p  (switch ;;@autogen@ 
+    () C-S-p  break
+  )
+  action_lctl+lsft+q  (switch ;;@autogen@ 
+    () C-S-q  break
+  )
+  action_lctl+lsft+r  (switch ;;@autogen@ 
+    () C-S-r  break
+  )
+  action_lctl+lsft+s  (switch ;;@autogen@ 
+    () C-S-s  break
+  )
+  action_lctl+lsft+t  (switch ;;@autogen@ 
+    ((input virtual vk_obsidian)) $obsidian_action_lctl+lsft+t break
+    () C-S-t  break
+  )
+  action_lctl+lsft+u  (switch ;;@autogen@ 
+    () C-S-u  break
+  )
+  action_lctl+lsft+v  (switch ;;@autogen@ 
+    () C-S-v  break
+  )
+  action_lctl+lsft+w  (switch ;;@autogen@ 
+    () C-S-w  break
+  )
+  action_lctl+lsft+x  (switch ;;@autogen@ 
+    () C-S-x  break
+  )
+  action_lctl+lsft+y  (switch ;;@autogen@ 
+    () C-S-y  break
+  )
+  action_lctl+lsft+z  (switch ;;@autogen@ 
+    () C-S-z break
+  )
+  action_lctl+lsft+,  (switch ;;@autogen@ 
+    () C-S-, break
+  )
+  action_lctl+lsft+.  (switch ;;@autogen@ 
+    () C-S-.  break
+  )
+  action_lctl+lsft+/  (switch ;;@autogen@ 
+    () C-S-/  break
+  )
+  action_lctl+lsft+;  (switch ;;@autogen@ 
+    () C-S-;  break
+  )
+  action_lctl+lsft+'  (switch ;;@autogen@ 
+    () C-S-'  break
+  )
+  action_lctl+lsft+[  (switch ;;@autogen@ 
+    () C-S-[  break
+  )
+  action_lctl+lsft+]  (switch ;;@autogen@ 
+    () C-S-]  break
+  )  ;; ""
+  action_lctl+lsft+\  (switch ;;@autogen@ 
+    () C-S-\  break
+  )  ;; ""
+  action_lctl+lsft+-  (switch ;;@autogen@ 
+    () C-S--  break
+  )
+  action_lctl+lsft+=  (switch ;;@autogen@ 
+    () C-S-=  break
+  )
+  action_lctl+lsft+1  (switch ;;@autogen@ 
+    () C-S-1  break
+  )
+  action_lctl+lsft+2  (switch ;;@autogen@ 
+    () C-S-2  break
+  )
+  action_lctl+lsft+3  (switch ;;@autogen@ 
+    () C-S-3  break
+  )
+  action_lctl+lsft+4  (switch ;;@autogen@ 
+    () C-S-4  break
+  )
+  action_lctl+lsft+5  (switch ;;@autogen@ 
+    () C-S-5  break
+  )
+  action_lctl+lsft+6  (switch ;;@autogen@ 
+    () C-S-6  break
+  )
+  action_lctl+lsft+7  (switch ;;@autogen@ 
+    () C-S-7  break
+  )
+  action_lctl+lsft+8  (switch ;;@autogen@ 
+    () C-S-8  break
+  )
+  action_lctl+lsft+9  (switch ;;@autogen@ 
+    () C-S-9  break
+  )
+  action_lctl+lsft+0  (switch ;;@autogen@ 
+    () C-S-0  break
+  )
+
+  ;; == LCTL+RSFT actions ==========================================================
+  action_lctl+rsft+a (switch ;;@autogen@ 
+    () C-S-a break
+  )
+  action_lctl+rsft+b (switch ;;@autogen@ 
+    () C-S-b break
+  )
+  action_lctl+rsft+c  (switch ;;@autogen@ 
+    () C-S-c  break
+  )
+  action_lctl+rsft+d (switch ;;@autogen@ 
+    () C-S-d break
+  )
+  action_lctl+rsft+e  (switch ;;@autogen@ 
+    () C-S-e  break
+  )
+  action_lctl+rsft+f  (switch ;;@autogen@ 
+    () C-S-f  break
+  )
+  action_lctl+rsft+g  (switch ;;@autogen@ 
+    () C-S-g  break
+  )
+  action_lctl+rsft+h  (switch ;;@autogen@ 
+    () C-S-h  break
+  )
+  action_lctl+rsft+i  (switch ;;@autogen@ 
+    () C-S-i  break
+  )
+  action_lctl+rsft+j  (switch ;;@autogen@ 
+    () C-S-j  break
+  )
+  action_lctl+rsft+k  (switch ;;@autogen@ 
+    () C-S-k  break
+  )
+  action_lctl+rsft+l  (switch ;;@autogen@ 
+    () C-S-l  break
+  )
+  action_lctl+rsft+m  (switch ;;@autogen@ 
+    () C-S-m  break
+  )
+  action_lctl+rsft+n  (switch ;;@autogen@ 
+    () C-S-n  break
+  )
+  action_lctl+rsft+o  (switch ;;@autogen@ 
+    () C-S-o  break
+  )
+  action_lctl+rsft+p  (switch ;;@autogen@ 
+    () C-S-p  break
+  )
+  action_lctl+rsft+q  (switch ;;@autogen@ 
+    () C-S-q  break
+  )
+  action_lctl+rsft+r  (switch ;;@autogen@ 
+    () C-S-r  break
+  )
+  action_lctl+rsft+s  (switch ;;@autogen@ 
+    () C-S-s  break
+  )
+  action_lctl+rsft+t  (switch ;;@autogen@ 
+    () C-S-t  break
+  )
+  action_lctl+rsft+u  (switch ;;@autogen@ 
+    () C-S-u  break
+  )
+  action_lctl+rsft+v  (switch ;;@autogen@ 
+    () C-S-v  break
+  )
+  action_lctl+rsft+w  (switch ;;@autogen@ 
+    () C-S-w  break
+  )
+  action_lctl+rsft+x  (switch ;;@autogen@ 
+    () C-S-x  break
+  )
+  action_lctl+rsft+y  (switch ;;@autogen@ 
+    () C-S-y  break
+  )
+  action_lctl+rsft+z  (switch ;;@autogen@ 
+    () C-S-z break
+  )
+  action_lctl+rsft+,  (switch ;;@autogen@ 
+    () C-S-, break
+  )
+  action_lctl+rsft+.  (switch ;;@autogen@ 
+    () C-S-.  break
+  )
+  action_lctl+rsft+/  (switch ;;@autogen@ 
+    () C-S-/  break
+  )
+  action_lctl+rsft+;  (switch ;;@autogen@ 
+    () C-S-;  break
+  )
+  action_lctl+rsft+'  (switch ;;@autogen@ 
+    () C-S-'  break
+  )
+  action_lctl+rsft+[  (switch ;;@autogen@ 
+    () C-S-[  break
+  )
+  action_lctl+rsft+]  (switch ;;@autogen@ 
+    () C-S-]  break
+  )  ;; ""
+  action_lctl+rsft+\  (switch ;;@autogen@ 
+    () C-S-\  break
+  )  ;; ""
+  action_lctl+rsft+-  (switch ;;@autogen@ 
+    () C-S--  break
+  )
+  action_lctl+rsft+=  (switch ;;@autogen@ 
+    () C-S-=  break
+  )
+  action_lctl+rsft+1  (switch ;;@autogen@ 
+    () C-S-1  break
+  )
+  action_lctl+rsft+2  (switch ;;@autogen@ 
+    () C-S-2  break
+  )
+  action_lctl+rsft+3  (switch ;;@autogen@ 
+    () C-S-3  break
+  )
+  action_lctl+rsft+4  (switch ;;@autogen@ 
+    () C-S-4  break
+  )
+  action_lctl+rsft+5  (switch ;;@autogen@ 
+    () C-S-5  break
+  )
+  action_lctl+rsft+6  (switch ;;@autogen@ 
+    () C-S-6  break
+  )
+  action_lctl+rsft+7  (switch ;;@autogen@ 
+    () C-S-7  break
+  )
+  action_lctl+rsft+8  (switch ;;@autogen@ 
+    () C-S-8  break
+  )
+  action_lctl+rsft+9  (switch ;;@autogen@ 
+    () C-S-9  break
+  )
+  action_lctl+rsft+0  (switch ;;@autogen@ 
+    () C-S-0  break
+  )
+
+  ;; == !LCTL actions ==========================================================
+  action_!lctl+a (switch ;;@autogen@ 
+    ((input virtual vk_nvim)) $nvim_action_!lctl+a break
+    ((input virtual vk_obsidian)) $obsidian_action_!lctl+a break
+    () C-a break
+  )
+  action_!lctl+b (switch ;;@autogen@ 
+    ((input virtual vk_obsidian)) $obsidian_action_!lctl+b break
+    () C-b break
+  )
+  action_!lctl+c  (switch ;;@autogen@ 
+    () C-c  break
+  )
+  action_!lctl+d (switch ;;@autogen@ 
+    () C-d break
+  )
+  action_!lctl+e  (switch ;;@autogen@ 
+    ((input virtual vk_obsidian)) $obsidian_action_!lctl+e break
+    () C-e  break
+  )
+  action_!lctl+f  (switch ;;@autogen@ 
+    () C-f  break
+  )
+  action_!lctl+g  (switch ;;@autogen@ 
+    () C-g  break
+  )
+  action_!lctl+h  (switch ;;@autogen@ 
+    () C-h  break
+  )
+  action_!lctl+i  (switch ;;@autogen@ 
+    () C-i  break
+  )
+  action_!lctl+j  (switch ;;@autogen@ 
+    () C-j  break
+  )
+  action_!lctl+k  (switch ;;@autogen@ 
+    () C-k  break
+  )
+  action_!lctl+l  (switch ;;@autogen@ 
+    () C-l  break
+  )
+  action_!lctl+m  (switch ;;@autogen@ 
+    () C-m  break
+  )
+  action_!lctl+n  (switch ;;@autogen@ 
+    () C-n  break
+  )
+  action_!lctl+o  (switch ;;@autogen@ 
+    () C-o  break
+  )
+  action_!lctl+p  (switch ;;@autogen@ 
+    ((input virtual vk_obsidian)) $obsidian_action_!lctl+p break
+    () C-p  break
+  )
+  action_!lctl+q  (switch ;;@autogen@ 
+    () C-q  break
+  )
+  action_!lctl+r  (switch ;;@autogen@ 
+    ((input virtual vk_obsidian)) $obsidian_action_!lctl+r break
+    () C-r  break
+  )
+  action_!lctl+s  (switch ;;@autogen@ 
+    () C-s  break
+  )
+  action_!lctl+t  (switch ;;@autogen@ 
+    () C-t  break
+  )
+  action_!lctl+u  (switch ;;@autogen@ 
+    () C-u  break
+  )
+  action_!lctl+v  (switch ;;@autogen@ 
+    () C-v  break
+  )
+  action_!lctl+w  (switch ;;@autogen@ 
+    () C-w  break
+  )
+  action_!lctl+x  (switch ;;@autogen@ 
+    () C-x  break
+  )
+  action_!lctl+y  (switch ;;@autogen@ 
+    () C-y  break
+  )
+  action_!lctl+z  (switch ;;@autogen@ 
+    () C-z  break
+  )
+  action_!lctl+,  (switch ;;@autogen@ 
+    ((input virtual vk_obsidian)) $obsidian_action_!lctl+, break
+    () C-,  break
+  )
+  action_!lctl+.  (switch ;;@autogen@ 
+    () C-.  break
+  )
+  action_!lctl+/  (switch ;;@autogen@ 
+    () C-/  break
+  )
+  action_!lctl+;  (switch ;;@autogen@ 
+    () C-;  break
+  )
+  action_!lctl+'  (switch ;;@autogen@ 
+    () C-'  break
+  )
+  action_!lctl+[  (switch ;;@autogen@ 
+    () C-[  break
+  )
+  action_!lctl+]  (switch ;;@autogen@ 
+    () C-]  break
+  )  
+  action_!lctl+\  (switch ;;@autogen@ 
+    () C-\  break
+  )
+  action_!lctl+-  (switch ;;@autogen@ 
+    () C--  break
+  )
+  action_!lctl+=  (switch ;;@autogen@ 
+    () C-=  break
+  )
+  action_!lctl+1  (switch ;;@autogen@ 
+    () C-1  break
+  )
+  action_!lctl+2  (switch ;;@autogen@ 
+    () C-2  break
+  )
+  action_!lctl+3  (switch ;;@autogen@ 
+    () C-3  break
+  )
+  action_!lctl+4  (switch ;;@autogen@ 
+    () C-4  break
+  )
+  action_!lctl+5  (switch ;;@autogen@ 
+    () C-5  break
+  )
+  action_!lctl+6  (switch ;;@autogen@ 
+    () C-6  break
+  )
+  action_!lctl+7  (switch ;;@autogen@ 
+    () C-7  break
+  )
+  action_!lctl+8  (switch ;;@autogen@ 
+    () C-8  break
+  )
+  action_!lctl+9  (switch ;;@autogen@ 
+    () C-9  break
+  )
+  action_!lctl+0  (switch ;;@autogen@ 
+    () C-0  break
+  ) ;; ""
+
+  ;; == !LCTL+LSFT actions ======================================================
+  action_!lctl+lsft+a (switch ;;@autogen@ 
+    () C-S-a break
+  )
+  action_!lctl+lsft+b (switch ;;@autogen@ 
+    () C-S-b break
+  )
+  action_!lctl+lsft+c  (switch ;;@autogen@ 
+    () C-S-c  break
+  )
+  action_!lctl+lsft+d (switch ;;@autogen@ 
+    () C-S-d break
+  )
+  action_!lctl+lsft+e  (switch ;;@autogen@ 
+    () C-S-e  break
+  )
+  action_!lctl+lsft+f  (switch ;;@autogen@ 
+    () C-S-f  break
+  )
+  action_!lctl+lsft+g  (switch ;;@autogen@ 
+    () C-S-g  break
+  )
+  action_!lctl+lsft+h  (switch ;;@autogen@ 
+    () C-S-h  break
+  )
+  action_!lctl+lsft+i  (switch ;;@autogen@ 
+    () C-S-i  break
+  )
+  action_!lctl+lsft+j  (switch ;;@autogen@ 
+    () C-S-j  break
+  )
+  action_!lctl+lsft+k  (switch ;;@autogen@ 
+    () C-S-k  break
+  )
+  action_!lctl+lsft+l  (switch ;;@autogen@ 
+    () C-S-l  break
+  )
+  action_!lctl+lsft+m  (switch ;;@autogen@ 
+    () C-S-m  break
+  )
+  action_!lctl+lsft+n  (switch ;;@autogen@ 
+    () C-S-n  break
+  )
+  action_!lctl+lsft+o  (switch ;;@autogen@ 
+    () C-S-o  break
+  )
+  action_!lctl+lsft+p  (switch ;;@autogen@ 
+    ((input virtual vk_obsidian)) $obsidian_action_!lctl+lsft+p break
+    () C-S-p  break
+  )
+  action_!lctl+lsft+q  (switch ;;@autogen@ 
+    () C-S-q  break
+  )
+  action_!lctl+lsft+r  (switch ;;@autogen@ 
+    () C-S-r  break
+  )
+  action_!lctl+lsft+s  (switch ;;@autogen@ 
+    () C-S-s  break
+  )
+  action_!lctl+lsft+t  (switch ;;@autogen@ 
+    () C-S-t  break
+  )
+  action_!lctl+lsft+u  (switch ;;@autogen@ 
+    () C-S-u  break
+  )
+  action_!lctl+lsft+v  (switch ;;@autogen@ 
+    () C-S-v  break
+  )
+  action_!lctl+lsft+w  (switch ;;@autogen@ 
+    () C-S-w  break
+  )
+  action_!lctl+lsft+x  (switch ;;@autogen@ 
+    () C-S-x  break
+  )
+  action_!lctl+lsft+y  (switch ;;@autogen@ 
+    () C-S-y  break
+  )
+  action_!lctl+lsft+z  (switch ;;@autogen@ 
+    () C-S-z  break
+  )
+  action_!lctl+lsft+,  (switch ;;@autogen@ 
+    () C-S-,  break
+  )
+  action_!lctl+lsft+.  (switch ;;@autogen@ 
+    () C-S-.  break
+  )
+  action_!lctl+lsft+/  (switch ;;@autogen@ 
+    () C-S-/  break
+  )
+  action_!lctl+lsft+;  (switch ;;@autogen@ 
+    () C-S-;  break
+  )
+  action_!lctl+lsft+'  (switch ;;@autogen@ 
+    () C-S-'  break
+  )
+  action_!lctl+lsft+[  (switch ;;@autogen@ 
+    () C-S-[  break
+  )
+  action_!lctl+lsft+]  (switch ;;@autogen@ 
+    () C-S-]  break
+  )  
+  action_!lctl+lsft+\  (switch ;;@autogen@ 
+    () C-S-\  break
+  )
+  action_!lctl+lsft+-  (switch ;;@autogen@ 
+    () C-S--  break
+  )
+  action_!lctl+lsft+=  (switch ;;@autogen@ 
+    () C-S-=  break
+  )
+  action_!lctl+lsft+1  (switch ;;@autogen@ 
+    () C-S-1  break
+  )
+  action_!lctl+lsft+2  (switch ;;@autogen@ 
+    () C-S-2  break
+  )
+  action_!lctl+lsft+3  (switch ;;@autogen@ 
+    () C-S-3  break
+  )
+  action_!lctl+lsft+4  (switch ;;@autogen@ 
+    () C-S-4  break
+  )
+  action_!lctl+lsft+5  (switch ;;@autogen@ 
+    () C-S-5  break
+  )
+  action_!lctl+lsft+6  (switch ;;@autogen@ 
+    () C-S-6  break
+  )
+  action_!lctl+lsft+7  (switch ;;@autogen@ 
+    () C-S-7  break
+  )
+  action_!lctl+lsft+8  (switch ;;@autogen@ 
+    () C-S-8  break
+  )
+  action_!lctl+lsft+9  (switch ;;@autogen@ 
+    () C-S-9  break
+  )
+  action_!lctl+lsft+0  (switch ;;@autogen@ 
+    () C-S-0  break
+  ) ;; ""
+
+
+  ;; == !LCTL+RSFT actions ==========================================================
+  action_!lctl+rsft+a (switch ;;@autogen@ 
+    () C-S-a break
+  )
+  action_!lctl+rsft+b (switch ;;@autogen@ 
+    () C-S-b break
+  )
+  action_!lctl+rsft+c  (switch ;;@autogen@ 
+    () C-S-c  break
+  )
+  action_!lctl+rsft+d (switch ;;@autogen@ 
+    () C-S-d break
+  )
+  action_!lctl+rsft+e  (switch ;;@autogen@ 
+    () C-S-e  break
+  )
+  action_!lctl+rsft+f  (switch ;;@autogen@ 
+    () C-S-f  break
+  )
+  action_!lctl+rsft+g  (switch ;;@autogen@ 
+    () C-S-g  break
+  )
+  action_!lctl+rsft+h  (switch ;;@autogen@ 
+    () C-S-h  break
+  )
+  action_!lctl+rsft+i  (switch ;;@autogen@ 
+    () C-S-i  break
+  )
+  action_!lctl+rsft+j  (switch ;;@autogen@ 
+    () C-S-j  break
+  )
+  action_!lctl+rsft+k  (switch ;;@autogen@ 
+    () C-S-k  break
+  )
+  action_!lctl+rsft+l  (switch ;;@autogen@ 
+    () C-S-l  break
+  )
+  action_!lctl+rsft+m  (switch ;;@autogen@ 
+    () C-S-m  break
+  )
+  action_!lctl+rsft+n  (switch ;;@autogen@ 
+    () C-S-n  break
+  )
+  action_!lctl+rsft+o  (switch ;;@autogen@ 
+    () C-S-o  break
+  )
+  action_!lctl+rsft+p  (switch ;;@autogen@ 
+    () C-S-p  break
+  )
+  action_!lctl+rsft+q  (switch ;;@autogen@ 
+    () C-S-q  break
+  )
+  action_!lctl+rsft+r  (switch ;;@autogen@ 
+    () C-S-r  break
+  )
+  action_!lctl+rsft+s  (switch ;;@autogen@ 
+    () C-S-s  break
+  )
+  action_!lctl+rsft+t  (switch ;;@autogen@ 
+    () C-S-t  break
+  )
+  action_!lctl+rsft+u  (switch ;;@autogen@ 
+    () C-S-u  break
+  )
+  action_!lctl+rsft+v  (switch ;;@autogen@ 
+    () C-S-v  break
+  )
+  action_!lctl+rsft+w  (switch ;;@autogen@ 
+    () C-S-w  break
+  )
+  action_!lctl+rsft+x  (switch ;;@autogen@ 
+    () C-S-x  break
+  )
+  action_!lctl+rsft+y  (switch ;;@autogen@ 
+    () C-S-y  break
+  )
+  action_!lctl+rsft+z  (switch ;;@autogen@ 
+    () C-S-z  break
+  )
+  action_!lctl+rsft+,  (switch ;;@autogen@ 
+    () C-S-,  break
+  )
+  action_!lctl+rsft+.  (switch ;;@autogen@ 
+    () C-S-.  break
+  )
+  action_!lctl+rsft+/  (switch ;;@autogen@ 
+    () C-S-/  break
+  )
+  action_!lctl+rsft+;  (switch ;;@autogen@ 
+    () C-S-;  break
+  )
+  action_!lctl+rsft+'  (switch ;;@autogen@ 
+    () C-S-'  break
+  )
+  action_!lctl+rsft+[  (switch ;;@autogen@ 
+    () C-S-[  break
+  )
+  action_!lctl+rsft+]  (switch ;;@autogen@ 
+    () C-S-]  break
+  )  
+  action_!lctl+rsft+\  (switch ;;@autogen@ 
+    () C-S-\  break
+  )
+  action_!lctl+rsft+-  (switch ;;@autogen@ 
+    () C-S--  break
+  )
+  action_!lctl+rsft+=  (switch ;;@autogen@ 
+    () C-S-=  break
+  )
+  action_!lctl+rsft+1  (switch ;;@autogen@ 
+    () C-S-1  break
+  )
+  action_!lctl+rsft+2  (switch ;;@autogen@ 
+    () C-S-2  break
+  )
+  action_!lctl+rsft+3  (switch ;;@autogen@ 
+    () C-S-3  break
+  )
+  action_!lctl+rsft+4  (switch ;;@autogen@ 
+    () C-S-4  break
+  )
+  action_!lctl+rsft+5  (switch ;;@autogen@ 
+    () C-S-5  break
+  )
+  action_!lctl+rsft+6  (switch ;;@autogen@ 
+    () C-S-6  break
+  )
+  action_!lctl+rsft+7  (switch ;;@autogen@ 
+    () C-S-7  break
+  )
+  action_!lctl+rsft+8  (switch ;;@autogen@ 
+    () C-S-8  break
+  )
+  action_!lctl+rsft+9  (switch ;;@autogen@ 
+    () C-S-9  break
+  )
+  action_!lctl+rsft+0  (switch ;;@autogen@ 
+    () C-S-0  break
+  ) ;; ""
+
+  ;; == LALT actions ==========================================================
+  action_lalt+a (switch ;;@autogen@ 
+    () A-a break
+  )
+  action_lalt+b (switch ;;@autogen@ 
+    () A-b break
+  )
+  action_lalt+c  (switch ;;@autogen@ 
+    () A-c  break
+  )
+  action_lalt+d (switch ;;@autogen@ 
+    () A-d break
+  )
+  action_lalt+e  (switch ;;@autogen@ 
+    () A-e  break
+  )
+  action_lalt+f  (switch ;;@autogen@ 
+    () A-f  break
+  )
+  action_lalt+g  (switch ;;@autogen@ 
+    () A-g  break
+  )
+  action_lalt+h  (switch ;;@autogen@ 
+    () A-h  break
+  )
+  action_lalt+i  (switch ;;@autogen@ 
+    () A-i  break
+  )
+  action_lalt+j  (switch ;;@autogen@ 
+    () A-j  break
+  )
+  action_lalt+k  (switch ;;@autogen@ 
+    () A-k  break
+  )
+  action_lalt+l  (switch ;;@autogen@ 
+    () A-l  break
+  )
+  action_lalt+m  (switch ;;@autogen@ 
+    () A-m  break
+  )
+  action_lalt+n  (switch ;;@autogen@ 
+    () A-n  break
+  )
+  action_lalt+o  (switch ;;@autogen@ 
+    () A-o  break
+  )
+  action_lalt+p  (switch ;;@autogen@ 
+    () A-p  break
+  )
+  action_lalt+q  (switch ;;@autogen@ 
+    () A-q  break
+  )
+  action_lalt+r  (switch ;;@autogen@ 
+    () A-r  break
+  )
+  action_lalt+s  (switch ;;@autogen@ 
+    () A-s  break
+  )
+  action_lalt+t  (switch ;;@autogen@ 
+    () A-t  break
+  )
+  action_lalt+u  (switch ;;@autogen@ 
+    () A-u  break
+  )
+  action_lalt+v  (switch ;;@autogen@ 
+    () A-v  break
+  )
+  action_lalt+w  (switch ;;@autogen@ 
+    () A-w  break
+  )
+  action_lalt+x  (switch ;;@autogen@ 
+    () A-x  break
+  )
+  action_lalt+y  (switch ;;@autogen@ 
+    () A-y  break
+  )
+  action_lalt+z  (switch ;;@autogen@ 
+    () A-z break
+  )
+  action_lalt+,  (switch ;;@autogen@ 
+    () A-, break
+  )
+  action_lalt+.  (switch ;;@autogen@ 
+    () A-.  break
+  )
+  action_lalt+/  (switch ;;@autogen@ 
+    () A-/  break
+  )
+  action_lalt+;  (switch ;;@autogen@ 
+    () A-;  break
+  )
+  action_lalt+'  (switch ;;@autogen@ 
+    () A-'  break
+  )
+  action_lalt+[  (switch ;;@autogen@ 
+    () A-[  break
+  )
+  action_lalt+]  (switch ;;@autogen@ 
+    () A-]  break
+  )  ;; ""
+  action_lalt+\  (switch ;;@autogen@ 
+    () A-\  break
+  )  ;; ""
+  action_lalt+-  (switch ;;@autogen@ 
+    () A--  break
+  )
+  action_lalt+=  (switch ;;@autogen@ 
+    () A-=  break
+  )
+  action_lalt+1  (switch ;;@autogen@ 
+    () A-1  break
+  )
+  action_lalt+2  (switch ;;@autogen@ 
+    () A-2  break
+  )
+  action_lalt+3  (switch ;;@autogen@ 
+    () A-3  break
+  )
+  action_lalt+4  (switch ;;@autogen@ 
+    () A-4  break
+  )
+  action_lalt+5  (switch ;;@autogen@ 
+    () A-5  break
+  )
+  action_lalt+6  (switch ;;@autogen@ 
+    () A-6  break
+  )
+  action_lalt+7  (switch ;;@autogen@ 
+    () A-7  break
+  )
+  action_lalt+8  (switch ;;@autogen@ 
+    () A-8  break
+  )
+  action_lalt+9  (switch ;;@autogen@ 
+    () A-9  break
+  )
+  action_lalt+0  (switch ;;@autogen@ 
+    () A-0  break
+  )
+
+  ;; == LALT+LSFT actions ==========================================================
+  action_lalt+lsft+a (switch ;;@autogen@ 
+    () A-S-a break
+  )
+  action_lalt+lsft+b (switch ;;@autogen@ 
+    () A-S-b break
+  )
+  action_lalt+lsft+c  (switch ;;@autogen@ 
+    () A-S-c  break
+  )
+  action_lalt+lsft+d (switch ;;@autogen@ 
+    () A-S-d break
+  )
+  action_lalt+lsft+e  (switch ;;@autogen@ 
+    () A-S-e  break
+  )
+  action_lalt+lsft+f  (switch ;;@autogen@ 
+    () A-S-f  break
+  )
+  action_lalt+lsft+g  (switch ;;@autogen@ 
+    () A-S-g  break
+  )
+  action_lalt+lsft+h  (switch ;;@autogen@ 
+    () A-S-h  break
+  )
+  action_lalt+lsft+i  (switch ;;@autogen@ 
+    () A-S-i  break
+  )
+  action_lalt+lsft+j  (switch ;;@autogen@ 
+    () A-S-j  break
+  )
+  action_lalt+lsft+k  (switch ;;@autogen@ 
+    () A-S-k  break
+  )
+  action_lalt+lsft+l  (switch ;;@autogen@ 
+    () A-S-l  break
+  )
+  action_lalt+lsft+m  (switch ;;@autogen@ 
+    () A-S-m  break
+  )
+  action_lalt+lsft+n  (switch ;;@autogen@ 
+    () A-S-n  break
+  )
+  action_lalt+lsft+o  (switch ;;@autogen@ 
+    () A-S-o  break
+  )
+  action_lalt+lsft+p  (switch ;;@autogen@ 
+    () A-S-p  break
+  )
+  action_lalt+lsft+q  (switch ;;@autogen@ 
+    () A-S-q  break
+  )
+  action_lalt+lsft+r  (switch ;;@autogen@ 
+    () A-S-r  break
+  )
+  action_lalt+lsft+s  (switch ;;@autogen@ 
+    () A-S-s  break
+  )
+  action_lalt+lsft+t  (switch ;;@autogen@ 
+    () A-S-t  break
+  )
+  action_lalt+lsft+u  (switch ;;@autogen@ 
+    () A-S-u  break
+  )
+  action_lalt+lsft+v  (switch ;;@autogen@ 
+    () A-S-v  break
+  )
+  action_lalt+lsft+w  (switch ;;@autogen@ 
+    () A-S-w  break
+  )
+  action_lalt+lsft+x  (switch ;;@autogen@ 
+    () A-S-x  break
+  )
+  action_lalt+lsft+y  (switch ;;@autogen@ 
+    () A-S-y  break
+  )
+  action_lalt+lsft+z  (switch ;;@autogen@ 
+    () A-S-z break
+  )
+  action_lalt+lsft+,  (switch ;;@autogen@ 
+    () A-S-, break
+  )
+  action_lalt+lsft+.  (switch ;;@autogen@ 
+    () A-S-.  break
+  )
+  action_lalt+lsft+/  (switch ;;@autogen@ 
+    () A-S-/  break
+  )
+  action_lalt+lsft+;  (switch ;;@autogen@ 
+    () A-S-;  break
+  )
+  action_lalt+lsft+'  (switch ;;@autogen@ 
+    () A-S-'  break
+  )
+  action_lalt+lsft+[  (switch ;;@autogen@ 
+    () A-S-[  break
+  )
+  action_lalt+lsft+]  (switch ;;@autogen@ 
+    () A-S-]  break
+  )  ;; ""
+  action_lalt+lsft+\  (switch ;;@autogen@ 
+    () A-S-\  break
+  )  ;; ""
+  action_lalt+lsft+-  (switch ;;@autogen@ 
+    () A-S--  break
+  )
+  action_lalt+lsft+=  (switch ;;@autogen@ 
+    () A-S-=  break
+  )
+  action_lalt+lsft+1  (switch ;;@autogen@ 
+    () A-S-1  break
+  )
+  action_lalt+lsft+2  (switch ;;@autogen@ 
+    () A-S-2  break
+  )
+  action_lalt+lsft+3  (switch ;;@autogen@ 
+    () A-S-3  break
+  )
+  action_lalt+lsft+4  (switch ;;@autogen@ 
+    () A-S-4  break
+  )
+  action_lalt+lsft+5  (switch ;;@autogen@ 
+    () A-S-5  break
+  )
+  action_lalt+lsft+6  (switch ;;@autogen@ 
+    () A-S-6  break
+  )
+  action_lalt+lsft+7  (switch ;;@autogen@ 
+    () A-S-7  break
+  )
+  action_lalt+lsft+8  (switch ;;@autogen@ 
+    () A-S-8  break
+  )
+  action_lalt+lsft+9  (switch ;;@autogen@ 
+    () A-S-9  break
+  )
+  action_lalt+lsft+0  (switch ;;@autogen@ 
+    () A-S-0  break
+  )
+
+  ;; == LALT+RSFT actions ==========================================================
+  action_lalt+rsft+a (switch ;;@autogen@ 
+    () A-S-a break
+  )
+  action_lalt+rsft+b (switch ;;@autogen@ 
+    () A-S-b break
+  )
+  action_lalt+rsft+c  (switch ;;@autogen@ 
+    () A-S-c  break
+  )
+  action_lalt+rsft+d (switch ;;@autogen@ 
+    () A-S-d break
+  )
+  action_lalt+rsft+e  (switch ;;@autogen@ 
+    () A-S-e  break
+  )
+  action_lalt+rsft+f  (switch ;;@autogen@ 
+    () A-S-f  break
+  )
+  action_lalt+rsft+g  (switch ;;@autogen@ 
+    () A-S-g  break
+  )
+  action_lalt+rsft+h  (switch ;;@autogen@ 
+    () A-S-h  break
+  )
+  action_lalt+rsft+i  (switch ;;@autogen@ 
+    () A-S-i  break
+  )
+  action_lalt+rsft+j  (switch ;;@autogen@ 
+    () A-S-j  break
+  )
+  action_lalt+rsft+k  (switch ;;@autogen@ 
+    () A-S-k  break
+  )
+  action_lalt+rsft+l  (switch ;;@autogen@ 
+    () A-S-l  break
+  )
+  action_lalt+rsft+m  (switch ;;@autogen@ 
+    () A-S-m  break
+  )
+  action_lalt+rsft+n  (switch ;;@autogen@ 
+    () A-S-n  break
+  )
+  action_lalt+rsft+o  (switch ;;@autogen@ 
+    () A-S-o  break
+  )
+  action_lalt+rsft+p  (switch ;;@autogen@ 
+    () A-S-p  break
+  )
+  action_lalt+rsft+q  (switch ;;@autogen@ 
+    () A-S-q  break
+  )
+  action_lalt+rsft+r  (switch ;;@autogen@ 
+    () A-S-r  break
+  )
+  action_lalt+rsft+s  (switch ;;@autogen@ 
+    () A-S-s  break
+  )
+  action_lalt+rsft+t  (switch ;;@autogen@ 
+    () A-S-t  break
+  )
+  action_lalt+rsft+u  (switch ;;@autogen@ 
+    () A-S-u  break
+  )
+  action_lalt+rsft+v  (switch ;;@autogen@ 
+    () A-S-v  break
+  )
+  action_lalt+rsft+w  (switch ;;@autogen@ 
+    () A-S-w  break
+  )
+  action_lalt+rsft+x  (switch ;;@autogen@ 
+    () A-S-x  break
+  )
+  action_lalt+rsft+y  (switch ;;@autogen@ 
+    () A-S-y  break
+  )
+  action_lalt+rsft+z  (switch ;;@autogen@ 
+    () A-S-z break
+  )
+  action_lalt+rsft+,  (switch ;;@autogen@ 
+    () A-S-, break
+  )
+  action_lalt+rsft+.  (switch ;;@autogen@ 
+    () A-S-.  break
+  )
+  action_lalt+rsft+/  (switch ;;@autogen@ 
+    () A-S-/  break
+  )
+  action_lalt+rsft+;  (switch ;;@autogen@ 
+    () A-S-;  break
+  )
+  action_lalt+rsft+'  (switch ;;@autogen@ 
+    () A-S-'  break
+  )
+  action_lalt+rsft+[  (switch ;;@autogen@ 
+    () A-S-[  break
+  )
+  action_lalt+rsft+]  (switch ;;@autogen@ 
+    () A-S-]  break
+  )  ;; ""
+  action_lalt+rsft+\  (switch ;;@autogen@ 
+    () A-S-\  break
+  )  ;; ""
+  action_lalt+rsft+-  (switch ;;@autogen@ 
+    () A-S--  break
+  )
+  action_lalt+rsft+=  (switch ;;@autogen@ 
+    () A-S-=  break
+  )
+  action_lalt+rsft+1  (switch ;;@autogen@ 
+    () A-S-1  break
+  )
+  action_lalt+rsft+2  (switch ;;@autogen@ 
+    () A-S-2  break
+  )
+  action_lalt+rsft+3  (switch ;;@autogen@ 
+    () A-S-3  break
+  )
+  action_lalt+rsft+4  (switch ;;@autogen@ 
+    () A-S-4  break
+  )
+  action_lalt+rsft+5  (switch ;;@autogen@ 
+    () A-S-5  break
+  )
+  action_lalt+rsft+6  (switch ;;@autogen@ 
+    () A-S-6  break
+  )
+  action_lalt+rsft+7  (switch ;;@autogen@ 
+    () A-S-7  break
+  )
+  action_lalt+rsft+8  (switch ;;@autogen@ 
+    () A-S-8  break
+  )
+  action_lalt+rsft+9  (switch ;;@autogen@ 
+    () A-S-9  break
+  )
+  action_lalt+rsft+0  (switch ;;@autogen@ 
+    () A-S-0  break
+  )
+
+  ;; == !LALT actions ==========================================================
+  action_!lalt+a (switch ;;@autogen@ 
+    () A-a break
+  )
+  action_!lalt+b (switch ;;@autogen@ 
+    () A-b break
+  )
+  action_!lalt+c  (switch ;;@autogen@ 
+    () A-c  break
+  )
+  action_!lalt+d (switch ;;@autogen@ 
+    () A-d break
+  )
+  action_!lalt+e  (switch ;;@autogen@ 
+    () A-e  break
+  )
+  action_!lalt+f  (switch ;;@autogen@ 
+    () A-f  break
+  )
+  action_!lalt+g  (switch ;;@autogen@ 
+    () A-g  break
+  )
+  action_!lalt+h  (switch ;;@autogen@ 
+    () A-h  break
+  )
+  action_!lalt+i  (switch ;;@autogen@ 
+    () A-i  break
+  )
+  action_!lalt+j  (switch ;;@autogen@ 
+    () A-j  break
+  )
+  action_!lalt+k  (switch ;;@autogen@ 
+    () A-k  break
+  )
+  action_!lalt+l  (switch ;;@autogen@ 
+    () A-l  break
+  )
+  action_!lalt+m  (switch ;;@autogen@ 
+    () A-m  break
+  )
+  action_!lalt+n  (switch ;;@autogen@ 
+    () A-n  break
+  )
+  action_!lalt+o  (switch ;;@autogen@ 
+    () A-o  break
+  )
+  action_!lalt+p  (switch ;;@autogen@ 
+    () A-p  break
+  )
+  action_!lalt+q  (switch ;;@autogen@ 
+    () A-q  break
+  )
+  action_!lalt+r  (switch ;;@autogen@ 
+    () A-r  break
+  )
+  action_!lalt+s  (switch ;;@autogen@ 
+    () A-s  break
+  )
+  action_!lalt+t  (switch ;;@autogen@ 
+    () A-t  break
+  )
+  action_!lalt+u  (switch ;;@autogen@ 
+    () A-u  break
+  )
+  action_!lalt+v  (switch ;;@autogen@ 
+    () A-v  break
+  )
+  action_!lalt+w  (switch ;;@autogen@ 
+    () A-w  break
+  )
+  action_!lalt+x  (switch ;;@autogen@ 
+    () A-x  break
+  )
+  action_!lalt+y  (switch ;;@autogen@ 
+    () A-y  break
+  )
+  action_!lalt+z  (switch ;;@autogen@ 
+    () A-z  break
+  )
+  action_!lalt+,  (switch ;;@autogen@ 
+    () A-,  break
+  )
+  action_!lalt+.  (switch ;;@autogen@ 
+    () A-.  break
+  )
+  action_!lalt+/  (switch ;;@autogen@ 
+    () A-/  break
+  )
+  action_!lalt+;  (switch ;;@autogen@ 
+    () A-;  break
+  )
+  action_!lalt+'  (switch ;;@autogen@ 
+    () A-'  break
+  )
+  action_!lalt+[  (switch ;;@autogen@ 
+    () A-[  break
+  )
+  action_!lalt+]  (switch ;;@autogen@ 
+    () A-]  break
+  )  
+  action_!lalt+\  (switch ;;@autogen@ 
+    () A-\  break
+  )
+  action_!lalt+-  (switch ;;@autogen@ 
+    () A--  break
+  )
+  action_!lalt+=  (switch ;;@autogen@ 
+    () A-=  break
+  )
+  action_!lalt+1  (switch ;;@autogen@ 
+    () A-1  break
+  )
+  action_!lalt+2  (switch ;;@autogen@ 
+    () A-2  break
+  )
+  action_!lalt+3  (switch ;;@autogen@ 
+    () A-3  break
+  )
+  action_!lalt+4  (switch ;;@autogen@ 
+    () A-4  break
+  )
+  action_!lalt+5  (switch ;;@autogen@ 
+    () A-5  break
+  )
+  action_!lalt+6  (switch ;;@autogen@ 
+    () A-6  break
+  )
+  action_!lalt+7  (switch ;;@autogen@ 
+    () A-7  break
+  )
+  action_!lalt+8  (switch ;;@autogen@ 
+    () A-8  break
+  )
+  action_!lalt+9  (switch ;;@autogen@ 
+    () A-9  break
+  )
+  action_!lalt+0  (switch ;;@autogen@ 
+    () A-0  break
+  ) ;; ""
+
+  ;; == !LALT+LSFT actions ==========================================================
+  action_!lalt+lsft+a (switch ;;@autogen@ 
+    () A-S-a break
+  )
+  action_!lalt+lsft+b (switch ;;@autogen@ 
+    () A-S-b break
+  )
+  action_!lalt+lsft+c  (switch ;;@autogen@ 
+    () A-S-c  break
+  )
+  action_!lalt+lsft+d (switch ;;@autogen@ 
+    () A-S-d break
+  )
+  action_!lalt+lsft+e  (switch ;;@autogen@ 
+    () A-S-e  break
+  )
+  action_!lalt+lsft+f  (switch ;;@autogen@ 
+    () A-S-f  break
+  )
+  action_!lalt+lsft+g  (switch ;;@autogen@ 
+    () A-S-g  break
+  )
+  action_!lalt+lsft+h  (switch ;;@autogen@ 
+    () A-S-h  break
+  )
+  action_!lalt+lsft+i  (switch ;;@autogen@ 
+    () A-S-i  break
+  )
+  action_!lalt+lsft+j  (switch ;;@autogen@ 
+    () A-S-j  break
+  )
+  action_!lalt+lsft+k  (switch ;;@autogen@ 
+    () A-S-k  break
+  )
+  action_!lalt+lsft+l  (switch ;;@autogen@ 
+    () A-S-l  break
+  )
+  action_!lalt+lsft+m  (switch ;;@autogen@ 
+    () A-S-m  break
+  )
+  action_!lalt+lsft+n  (switch ;;@autogen@ 
+    () A-S-n  break
+  )
+  action_!lalt+lsft+o  (switch ;;@autogen@ 
+    () A-S-o  break
+  )
+  action_!lalt+lsft+p  (switch ;;@autogen@ 
+    () A-S-p  break
+  )
+  action_!lalt+lsft+q  (switch ;;@autogen@ 
+    () A-S-q  break
+  )
+  action_!lalt+lsft+r  (switch ;;@autogen@ 
+    () A-S-r  break
+  )
+  action_!lalt+lsft+s  (switch ;;@autogen@ 
+    () A-S-s  break
+  )
+  action_!lalt+lsft+t  (switch ;;@autogen@ 
+    () A-S-t  break
+  )
+  action_!lalt+lsft+u  (switch ;;@autogen@ 
+    () A-S-u  break
+  )
+  action_!lalt+lsft+v  (switch ;;@autogen@ 
+    () A-S-v  break
+  )
+  action_!lalt+lsft+w  (switch ;;@autogen@ 
+    () A-S-w  break
+  )
+  action_!lalt+lsft+x  (switch ;;@autogen@ 
+    () A-S-x  break
+  )
+  action_!lalt+lsft+y  (switch ;;@autogen@ 
+    () A-S-y  break
+  )
+  action_!lalt+lsft+z  (switch ;;@autogen@ 
+    () A-S-z break
+  )
+  action_!lalt+lsft+,  (switch ;;@autogen@ 
+    () A-S-, break
+  )
+  action_!lalt+lsft+.  (switch ;;@autogen@ 
+    () A-S-.  break
+  )
+  action_!lalt+lsft+/  (switch ;;@autogen@ 
+    () A-S-/  break
+  )
+  action_!lalt+lsft+;  (switch ;;@autogen@ 
+    () A-S-;  break
+  )
+  action_!lalt+lsft+'  (switch ;;@autogen@ 
+    () A-S-'  break
+  )
+  action_!lalt+lsft+[  (switch ;;@autogen@ 
+    () A-S-[  break
+  )
+  action_!lalt+lsft+]  (switch ;;@autogen@ 
+    () A-S-]  break
+  )  ;; ""
+  action_!lalt+lsft+\  (switch ;;@autogen@ 
+    () A-S-\  break
+  )  ;; ""
+  action_!lalt+lsft+-  (switch ;;@autogen@ 
+    () A-S--  break
+  )
+  action_!lalt+lsft+=  (switch ;;@autogen@ 
+    () A-S-=  break
+  )
+  action_!lalt+lsft+1  (switch ;;@autogen@ 
+    () A-S-1  break
+  )
+  action_!lalt+lsft+2  (switch ;;@autogen@ 
+    () A-S-2  break
+  )
+  action_!lalt+lsft+3  (switch ;;@autogen@ 
+    () A-S-3  break
+  )
+  action_!lalt+lsft+4  (switch ;;@autogen@ 
+    () A-S-4  break
+  )
+  action_!lalt+lsft+5  (switch ;;@autogen@ 
+    () A-S-5  break
+  )
+  action_!lalt+lsft+6  (switch ;;@autogen@ 
+    () A-S-6  break
+  )
+  action_!lalt+lsft+7  (switch ;;@autogen@ 
+    () A-S-7  break
+  )
+  action_!lalt+lsft+8  (switch ;;@autogen@ 
+    () A-S-8  break
+  )
+  action_!lalt+lsft+9  (switch ;;@autogen@ 
+    () A-S-9  break
+  )
+  action_!lalt+lsft+0  (switch ;;@autogen@ 
+    () A-S-0  break
+  )
+
+  ;; == !LALT+RSFT actions ==========================================================
+  action_!lalt+rsft+a (switch ;;@autogen@ 
+    () A-S-a break
+  )
+  action_!lalt+rsft+b (switch ;;@autogen@ 
+    () A-S-b break
+  )
+  action_!lalt+rsft+c  (switch ;;@autogen@ 
+    () A-S-c  break
+  )
+  action_!lalt+rsft+d (switch ;;@autogen@ 
+    () A-S-d break
+  )
+  action_!lalt+rsft+e  (switch ;;@autogen@ 
+    () A-S-e  break
+  )
+  action_!lalt+rsft+f  (switch ;;@autogen@ 
+    () A-S-f  break
+  )
+  action_!lalt+rsft+g  (switch ;;@autogen@ 
+    () A-S-g  break
+  )
+  action_!lalt+rsft+h  (switch ;;@autogen@ 
+    () A-S-h  break
+  )
+  action_!lalt+rsft+i  (switch ;;@autogen@ 
+    () A-S-i  break
+  )
+  action_!lalt+rsft+j  (switch ;;@autogen@ 
+    () A-S-j  break
+  )
+  action_!lalt+rsft+k  (switch ;;@autogen@ 
+    () A-S-k  break
+  )
+  action_!lalt+rsft+l  (switch ;;@autogen@ 
+    () A-S-l  break
+  )
+  action_!lalt+rsft+m  (switch ;;@autogen@ 
+    () A-S-m  break
+  )
+  action_!lalt+rsft+n  (switch ;;@autogen@ 
+    () A-S-n  break
+  )
+  action_!lalt+rsft+o  (switch ;;@autogen@ 
+    () A-S-o  break
+  )
+  action_!lalt+rsft+p  (switch ;;@autogen@ 
+    () A-S-p  break
+  )
+  action_!lalt+rsft+q  (switch ;;@autogen@ 
+    () A-S-q  break
+  )
+  action_!lalt+rsft+r  (switch ;;@autogen@ 
+    () A-S-r  break
+  )
+  action_!lalt+rsft+s  (switch ;;@autogen@ 
+    () A-S-s  break
+  )
+  action_!lalt+rsft+t  (switch ;;@autogen@ 
+    () A-S-t  break
+  )
+  action_!lalt+rsft+u  (switch ;;@autogen@ 
+    () A-S-u  break
+  )
+  action_!lalt+rsft+v  (switch ;;@autogen@ 
+    () A-S-v  break
+  )
+  action_!lalt+rsft+w  (switch ;;@autogen@ 
+    () A-S-w  break
+  )
+  action_!lalt+rsft+x  (switch ;;@autogen@ 
+    () A-S-x  break
+  )
+  action_!lalt+rsft+y  (switch ;;@autogen@ 
+    () A-S-y  break
+  )
+  action_!lalt+rsft+z  (switch ;;@autogen@ 
+    () A-S-z break
+  )
+  action_!lalt+rsft+,  (switch ;;@autogen@ 
+    () A-S-, break
+  )
+  action_!lalt+rsft+.  (switch ;;@autogen@ 
+    () A-S-.  break
+  )
+  action_!lalt+rsft+/  (switch ;;@autogen@ 
+    () A-S-/  break
+  )
+  action_!lalt+rsft+;  (switch ;;@autogen@ 
+    () A-S-;  break
+  )
+  action_!lalt+rsft+'  (switch ;;@autogen@ 
+    () A-S-'  break
+  )
+  action_!lalt+rsft+[  (switch ;;@autogen@ 
+    () A-S-[  break
+  )
+  action_!lalt+rsft+]  (switch ;;@autogen@ 
+    () A-S-]  break
+  )  ;; ""
+  action_!lalt+rsft+\  (switch ;;@autogen@ 
+    () A-S-\  break
+  )  ;; ""
+  action_!lalt+rsft+-  (switch ;;@autogen@ 
+    () A-S--  break
+  )
+  action_!lalt+rsft+=  (switch ;;@autogen@ 
+    () A-S-=  break
+  )
+  action_!lalt+rsft+1  (switch ;;@autogen@ 
+    () A-S-1  break
+  )
+  action_!lalt+rsft+2  (switch ;;@autogen@ 
+    () A-S-2  break
+  )
+  action_!lalt+rsft+3  (switch ;;@autogen@ 
+    () A-S-3  break
+  )
+  action_!lalt+rsft+4  (switch ;;@autogen@ 
+    () A-S-4  break
+  )
+  action_!lalt+rsft+5  (switch ;;@autogen@ 
+    () A-S-5  break
+  )
+  action_!lalt+rsft+6  (switch ;;@autogen@ 
+    () A-S-6  break
+  )
+  action_!lalt+rsft+7  (switch ;;@autogen@ 
+    () A-S-7  break
+  )
+  action_!lalt+rsft+8  (switch ;;@autogen@ 
+    () A-S-8  break
+  )
+  action_!lalt+rsft+9  (switch ;;@autogen@ 
+    () A-S-9  break
+  )
+  action_!lalt+rsft+0  (switch ;;@autogen@ 
+    () A-S-0  break
+  )
+
+  ;; == LMET actions ==========================================================
+  action_lmet+a (switch ;;@autogen@ 
+    () M-a break
+  )
+  action_lmet+b (switch ;;@autogen@ 
+    () M-b break
+  )
+  action_lmet+c  (switch ;;@autogen@ 
+    () M-c  break
+  )
+  action_lmet+d (switch ;;@autogen@ 
+    () M-d break
+  )
+  action_lmet+e  (switch ;;@autogen@ 
+    () M-e  break
+  )
+  action_lmet+f  (switch ;;@autogen@ 
+    () M-f  break
+  )
+  action_lmet+g  (switch ;;@autogen@ 
+    () M-g  break
+  )
+  action_lmet+h  (switch ;;@autogen@ 
+    () M-h  break
+  )
+  action_lmet+i  (switch ;;@autogen@ 
+    () M-i  break
+  )
+  action_lmet+j  (switch ;;@autogen@ 
+    () M-j  break
+  )
+  action_lmet+k  (switch ;;@autogen@ 
+    () M-k  break
+  )
+  action_lmet+l  (switch ;;@autogen@ 
+    () M-l  break
+  )
+  action_lmet+m  (switch ;;@autogen@ 
+    () M-m  break
+  )
+  action_lmet+n  (switch ;;@autogen@ 
+    () M-n  break
+  )
+  action_lmet+o  (switch ;;@autogen@ 
+    () M-o  break
+  )
+  action_lmet+p  (switch ;;@autogen@ 
+    () M-p  break
+  )
+  action_lmet+q  (switch ;;@autogen@ 
+    () M-q  break
+  )
+  action_lmet+r  (switch ;;@autogen@ 
+    () M-r  break
+  )
+  action_lmet+s  (switch ;;@autogen@ 
+    () M-s  break
+  )
+  action_lmet+t  (switch ;;@autogen@ 
+    () M-t  break
+  )
+  action_lmet+u  (switch ;;@autogen@ 
+    () M-u  break
+  )
+  action_lmet+v  (switch ;;@autogen@ 
+    () M-v  break
+  )
+  action_lmet+w  (switch ;;@autogen@ 
+    () M-w  break
+  )
+  action_lmet+x  (switch ;;@autogen@ 
+    () M-x  break
+  )
+  action_lmet+y  (switch ;;@autogen@ 
+    () M-y  break
+  )
+  action_lmet+z  (switch ;;@autogen@ 
+    () M-z break
+  )
+  action_lmet+,  (switch ;;@autogen@ 
+    () M-, break
+  )
+  action_lmet+.  (switch ;;@autogen@ 
+    () M-.  break
+  )
+  action_lmet+/  (switch ;;@autogen@ 
+    () M-/  break
+  )
+  action_lmet+;  (switch ;;@autogen@ 
+    () M-;  break
+  )
+  action_lmet+'  (switch ;;@autogen@ 
+    () M-'  break
+  )
+  action_lmet+[  (switch ;;@autogen@ 
+    () M-[  break
+  )
+  action_lmet+]  (switch ;;@autogen@ 
+    () M-]  break
+  )  ;; ""
+  action_lmet+\  (switch ;;@autogen@ 
+    () M-\  break
+  )  ;; ""
+  action_lmet+-  (switch ;;@autogen@ 
+    () M--  break
+  )
+  action_lmet+=  (switch ;;@autogen@ 
+    () M-=  break
+  )
+  action_lmet+1  (switch ;;@autogen@ 
+    () M-1  break
+  )
+  action_lmet+2  (switch ;;@autogen@ 
+    () M-2  break
+  )
+  action_lmet+3  (switch ;;@autogen@ 
+    () M-3  break
+  )
+  action_lmet+4  (switch ;;@autogen@ 
+    () M-4  break
+  )
+  action_lmet+5  (switch ;;@autogen@ 
+    () M-5  break
+  )
+  action_lmet+6  (switch ;;@autogen@ 
+    () M-6  break
+  )
+  action_lmet+7  (switch ;;@autogen@ 
+    () M-7  break
+  )
+  action_lmet+8  (switch ;;@autogen@ 
+    () M-8  break
+  )
+  action_lmet+9  (switch ;;@autogen@ 
+    () M-9  break
+  )
+  action_lmet+0  (switch ;;@autogen@ 
+    () M-0  break
+  )
+
+  ;; == LMET+LSFT actions ==========================================================
+  action_lmet+lsft+a (switch ;;@autogen@ 
+    () M-S-a break
+  )
+  action_lmet+lsft+b (switch ;;@autogen@ 
+    () M-S-b break
+  )
+  action_lmet+lsft+c  (switch ;;@autogen@ 
+    () M-S-c  break
+  )
+  action_lmet+lsft+d (switch ;;@autogen@ 
+    () M-S-d break
+  )
+  action_lmet+lsft+e  (switch ;;@autogen@ 
+    () M-S-e  break
+  )
+  action_lmet+lsft+f  (switch ;;@autogen@ 
+    () M-S-f  break
+  )
+  action_lmet+lsft+g  (switch ;;@autogen@ 
+    () M-S-g  break
+  )
+  action_lmet+lsft+h  (switch ;;@autogen@ 
+    () M-S-h  break
+  )
+  action_lmet+lsft+i  (switch ;;@autogen@ 
+    () M-S-i  break
+  )
+  action_lmet+lsft+j  (switch ;;@autogen@ 
+    () M-S-j  break
+  )
+  action_lmet+lsft+k  (switch ;;@autogen@ 
+    () M-S-k  break
+  )
+  action_lmet+lsft+l  (switch ;;@autogen@ 
+    () M-S-l  break
+  )
+  action_lmet+lsft+m  (switch ;;@autogen@ 
+    () M-S-m  break
+  )
+  action_lmet+lsft+n  (switch ;;@autogen@ 
+    () M-S-n  break
+  )
+  action_lmet+lsft+o  (switch ;;@autogen@ 
+    () M-S-o  break
+  )
+  action_lmet+lsft+p  (switch ;;@autogen@ 
+    () M-S-p  break
+  )
+  action_lmet+lsft+q  (switch ;;@autogen@ 
+    () M-S-q  break
+  )
+  action_lmet+lsft+r  (switch ;;@autogen@ 
+    () M-S-r  break
+  )
+  action_lmet+lsft+s  (switch ;;@autogen@ 
+    () M-S-s  break
+  )
+  action_lmet+lsft+t  (switch ;;@autogen@ 
+    () M-S-t  break
+  )
+  action_lmet+lsft+u  (switch ;;@autogen@ 
+    () M-S-u  break
+  )
+  action_lmet+lsft+v  (switch ;;@autogen@ 
+    () M-S-v  break
+  )
+  action_lmet+lsft+w  (switch ;;@autogen@ 
+    () M-S-w  break
+  )
+  action_lmet+lsft+x  (switch ;;@autogen@ 
+    () M-S-x  break
+  )
+  action_lmet+lsft+y  (switch ;;@autogen@ 
+    () M-S-y  break
+  )
+  action_lmet+lsft+z  (switch ;;@autogen@ 
+    () M-S-z break
+  )
+  action_lmet+lsft+,  (switch ;;@autogen@ 
+    () M-S-, break
+  )
+  action_lmet+lsft+.  (switch ;;@autogen@ 
+    () M-S-.  break
+  )
+  action_lmet+lsft+/  (switch ;;@autogen@ 
+    () M-S-/  break
+  )
+  action_lmet+lsft+;  (switch ;;@autogen@ 
+    () M-S-;  break
+  )
+  action_lmet+lsft+'  (switch ;;@autogen@ 
+    () M-S-'  break
+  )
+  action_lmet+lsft+[  (switch ;;@autogen@ 
+    () M-S-[  break
+  )
+  action_lmet+lsft+]  (switch ;;@autogen@ 
+    () M-S-]  break
+  )  ;; ""
+  action_lmet+lsft+\  (switch ;;@autogen@ 
+    () M-S-\  break
+  )  ;; ""
+  action_lmet+lsft+-  (switch ;;@autogen@ 
+    () M-S--  break
+  )
+  action_lmet+lsft+=  (switch ;;@autogen@ 
+    () M-S-=  break
+  )
+  action_lmet+lsft+1  (switch ;;@autogen@ 
+    () M-S-1  break
+  )
+  action_lmet+lsft+2  (switch ;;@autogen@ 
+    () M-S-2  break
+  )
+  action_lmet+lsft+3  (switch ;;@autogen@ 
+    () M-S-3  break
+  )
+  action_lmet+lsft+4  (switch ;;@autogen@ 
+    () M-S-4  break
+  )
+  action_lmet+lsft+5  (switch ;;@autogen@ 
+    () M-S-5  break
+  )
+  action_lmet+lsft+6  (switch ;;@autogen@ 
+    () M-S-6  break
+  )
+  action_lmet+lsft+7  (switch ;;@autogen@ 
+    () M-S-7  break
+  )
+  action_lmet+lsft+8  (switch ;;@autogen@ 
+    () M-S-8  break
+  )
+  action_lmet+lsft+9  (switch ;;@autogen@ 
+    () M-S-9  break
+  )
+  action_lmet+lsft+0  (switch ;;@autogen@ 
+    () M-S-0  break
+  )
+
+  ;; == LMET+RSFT actions ==========================================================
+  action_lmet+rsft+a (switch ;;@autogen@ 
+    () M-S-a break
+  )
+  action_lmet+rsft+b (switch ;;@autogen@ 
+    () M-S-b break
+  )
+  action_lmet+rsft+c  (switch ;;@autogen@ 
+    () M-S-c  break
+  )
+  action_lmet+rsft+d (switch ;;@autogen@ 
+    () M-S-d break
+  )
+  action_lmet+rsft+e  (switch ;;@autogen@ 
+    () M-S-e  break
+  )
+  action_lmet+rsft+f  (switch ;;@autogen@ 
+    () M-S-f  break
+  )
+  action_lmet+rsft+g  (switch ;;@autogen@ 
+    () M-S-g  break
+  )
+  action_lmet+rsft+h  (switch ;;@autogen@ 
+    () M-S-h  break
+  )
+  action_lmet+rsft+i  (switch ;;@autogen@ 
+    () M-S-i  break
+  )
+  action_lmet+rsft+j  (switch ;;@autogen@ 
+    () M-S-j  break
+  )
+  action_lmet+rsft+k  (switch ;;@autogen@ 
+    () M-S-k  break
+  )
+  action_lmet+rsft+l  (switch ;;@autogen@ 
+    () M-S-l  break
+  )
+  action_lmet+rsft+m  (switch ;;@autogen@ 
+    () M-S-m  break
+  )
+  action_lmet+rsft+n  (switch ;;@autogen@ 
+    () M-S-n  break
+  )
+  action_lmet+rsft+o  (switch ;;@autogen@ 
+    () M-S-o  break
+  )
+  action_lmet+rsft+p  (switch ;;@autogen@ 
+    () M-S-p  break
+  )
+  action_lmet+rsft+q  (switch ;;@autogen@ 
+    () M-S-q  break
+  )
+  action_lmet+rsft+r  (switch ;;@autogen@ 
+    () M-S-r  break
+  )
+  action_lmet+rsft+s  (switch ;;@autogen@ 
+    () M-S-s  break
+  )
+  action_lmet+rsft+t  (switch ;;@autogen@ 
+    () M-S-t  break
+  )
+  action_lmet+rsft+u  (switch ;;@autogen@ 
+    () M-S-u  break
+  )
+  action_lmet+rsft+v  (switch ;;@autogen@ 
+    () M-S-v  break
+  )
+  action_lmet+rsft+w  (switch ;;@autogen@ 
+    () M-S-w  break
+  )
+  action_lmet+rsft+x  (switch ;;@autogen@ 
+    () M-S-x  break
+  )
+  action_lmet+rsft+y  (switch ;;@autogen@ 
+    () M-S-y  break
+  )
+  action_lmet+rsft+z  (switch ;;@autogen@ 
+    () M-S-z break
+  )
+  action_lmet+rsft+,  (switch ;;@autogen@ 
+    () M-S-, break
+  )
+  action_lmet+rsft+.  (switch ;;@autogen@ 
+    () M-S-.  break
+  )
+  action_lmet+rsft+/  (switch ;;@autogen@ 
+    () M-S-/  break
+  )
+  action_lmet+rsft+;  (switch ;;@autogen@ 
+    () M-S-;  break
+  )
+  action_lmet+rsft+'  (switch ;;@autogen@ 
+    () M-S-'  break
+  )
+  action_lmet+rsft+[  (switch ;;@autogen@ 
+    () M-S-[  break
+  )
+  action_lmet+rsft+]  (switch ;;@autogen@ 
+    () M-S-]  break
+  )  ;; ""
+  action_lmet+rsft+\  (switch ;;@autogen@ 
+    () M-S-\  break
+  )  ;; ""
+  action_lmet+rsft+-  (switch ;;@autogen@ 
+    () M-S--  break
+  )
+  action_lmet+rsft+=  (switch ;;@autogen@ 
+    () M-S-=  break
+  )
+  action_lmet+rsft+1  (switch ;;@autogen@ 
+    () M-S-1  break
+  )
+  action_lmet+rsft+2  (switch ;;@autogen@ 
+    () M-S-2  break
+  )
+  action_lmet+rsft+3  (switch ;;@autogen@ 
+    () M-S-3  break
+  )
+  action_lmet+rsft+4  (switch ;;@autogen@ 
+    () M-S-4  break
+  )
+  action_lmet+rsft+5  (switch ;;@autogen@ 
+    () M-S-5  break
+  )
+  action_lmet+rsft+6  (switch ;;@autogen@ 
+    () M-S-6  break
+  )
+  action_lmet+rsft+7  (switch ;;@autogen@ 
+    () M-S-7  break
+  )
+  action_lmet+rsft+8  (switch ;;@autogen@ 
+    () M-S-8  break
+  )
+  action_lmet+rsft+9  (switch ;;@autogen@ 
+    () M-S-9  break
+  )
+  action_lmet+rsft+0  (switch ;;@autogen@ 
+    () M-S-0  break
+  )
+
+  ;; == !LMET actions ==========================================================
+  action_!lmet+a (switch ;;@autogen@ 
+    () M-a break
+  )
+  action_!lmet+b (switch ;;@autogen@ 
+    () M-b break
+  )
+  action_!lmet+c  (switch ;;@autogen@ 
+    () M-c  break
+  )
+  action_!lmet+d (switch ;;@autogen@ 
+    () M-d break
+  )
+  action_!lmet+e  (switch ;;@autogen@ 
+    () M-e  break
+  )
+  action_!lmet+f  (switch ;;@autogen@ 
+    () M-f  break
+  )
+  action_!lmet+g  (switch ;;@autogen@ 
+    () M-g  break
+  )
+  action_!lmet+h  (switch ;;@autogen@ 
+    () M-h  break
+  )
+  action_!lmet+i  (switch ;;@autogen@ 
+    () M-i  break
+  )
+  action_!lmet+j  (switch ;;@autogen@ 
+    () M-j  break
+  )
+  action_!lmet+k  (switch ;;@autogen@ 
+    () M-k  break
+  )
+  action_!lmet+l  (switch ;;@autogen@ 
+    () M-l  break
+  )
+  action_!lmet+m  (switch ;;@autogen@ 
+    () M-m  break
+  )
+  action_!lmet+n  (switch ;;@autogen@ 
+    () M-n  break
+  )
+  action_!lmet+o  (switch ;;@autogen@ 
+    () M-o  break
+  )
+  action_!lmet+p  (switch ;;@autogen@ 
+    () M-p  break
+  )
+  action_!lmet+q  (switch ;;@autogen@ 
+    () M-q  break
+  )
+  action_!lmet+r  (switch ;;@autogen@ 
+    () M-r  break
+  )
+  action_!lmet+s  (switch ;;@autogen@ 
+    () M-s  break
+  )
+  action_!lmet+t  (switch ;;@autogen@ 
+    () M-t  break
+  )
+  action_!lmet+u  (switch ;;@autogen@ 
+    () M-u  break
+  )
+  action_!lmet+v  (switch ;;@autogen@ 
+    () M-v  break
+  )
+  action_!lmet+w  (switch ;;@autogen@ 
+    () M-w  break
+  )
+  action_!lmet+x  (switch ;;@autogen@ 
+    () M-x  break
+  )
+  action_!lmet+y  (switch ;;@autogen@ 
+    () M-y  break
+  )
+  action_!lmet+z  (switch ;;@autogen@ 
+    () M-z  break
+  )
+  action_!lmet+,  (switch ;;@autogen@ 
+    () M-,  break
+  )
+  action_!lmet+.  (switch ;;@autogen@ 
+    () M-.  break
+  )
+  action_!lmet+/  (switch ;;@autogen@ 
+    () M-/  break
+  )
+  action_!lmet+;  (switch ;;@autogen@ 
+    () M-;  break
+  )
+  action_!lmet+'  (switch ;;@autogen@ 
+    () M-'  break
+  )
+  action_!lmet+[  (switch ;;@autogen@ 
+    () M-[  break
+  )
+  action_!lmet+]  (switch ;;@autogen@ 
+    () M-]  break
+  )  
+  action_!lmet+\  (switch ;;@autogen@ 
+    () M-\  break
+  )
+  action_!lmet+-  (switch ;;@autogen@ 
+    () M--  break
+  )
+  action_!lmet+=  (switch ;;@autogen@ 
+    () M-=  break
+  )
+  action_!lmet+1  (switch ;;@autogen@ 
+    () M-1  break
+  )
+  action_!lmet+2  (switch ;;@autogen@ 
+    () M-2  break
+  )
+  action_!lmet+3  (switch ;;@autogen@ 
+    () M-3  break
+  )
+  action_!lmet+4  (switch ;;@autogen@ 
+    () M-4  break
+  )
+  action_!lmet+5  (switch ;;@autogen@ 
+    () M-5  break
+  )
+  action_!lmet+6  (switch ;;@autogen@ 
+    () M-6  break
+  )
+  action_!lmet+7  (switch ;;@autogen@ 
+    () M-7  break
+  )
+  action_!lmet+8  (switch ;;@autogen@ 
+    () M-8  break
+  )
+  action_!lmet+9  (switch ;;@autogen@ 
+    () M-9  break
+  )
+  action_!lmet+0  (switch ;;@autogen@ 
+    () M-0  break
+  ) ;; ""
+
+  ;; == !LMET+LSFT actions ==========================================================
+  action_!lmet+lsft+a (switch ;;@autogen@ 
+    () M-S-a break
+  )
+  action_!lmet+lsft+b (switch ;;@autogen@ 
+    () M-S-b break
+  )
+  action_!lmet+lsft+c  (switch ;;@autogen@ 
+    () M-S-c  break
+  )
+  action_!lmet+lsft+d (switch ;;@autogen@ 
+    () M-S-d break
+  )
+  action_!lmet+lsft+e  (switch ;;@autogen@ 
+    () M-S-e  break
+  )
+  action_!lmet+lsft+f  (switch ;;@autogen@ 
+    () M-S-f  break
+  )
+  action_!lmet+lsft+g  (switch ;;@autogen@ 
+    () M-S-g  break
+  )
+  action_!lmet+lsft+h  (switch ;;@autogen@ 
+    () M-S-h  break
+  )
+  action_!lmet+lsft+i  (switch ;;@autogen@ 
+    () M-S-i  break
+  )
+  action_!lmet+lsft+j  (switch ;;@autogen@ 
+    () M-S-j  break
+  )
+  action_!lmet+lsft+k  (switch ;;@autogen@ 
+    () M-S-k  break
+  )
+  action_!lmet+lsft+l  (switch ;;@autogen@ 
+    () M-S-l  break
+  )
+  action_!lmet+lsft+m  (switch ;;@autogen@ 
+    () M-S-m  break
+  )
+  action_!lmet+lsft+n  (switch ;;@autogen@ 
+    () M-S-n  break
+  )
+  action_!lmet+lsft+o  (switch ;;@autogen@ 
+    () M-S-o  break
+  )
+  action_!lmet+lsft+p  (switch ;;@autogen@ 
+    () M-S-p  break
+  )
+  action_!lmet+lsft+q  (switch ;;@autogen@ 
+    () M-S-q  break
+  )
+  action_!lmet+lsft+r  (switch ;;@autogen@ 
+    () M-S-r  break
+  )
+  action_!lmet+lsft+s  (switch ;;@autogen@ 
+    () M-S-s  break
+  )
+  action_!lmet+lsft+t  (switch ;;@autogen@ 
+    () M-S-t  break
+  )
+  action_!lmet+lsft+u  (switch ;;@autogen@ 
+    () M-S-u  break
+  )
+  action_!lmet+lsft+v  (switch ;;@autogen@ 
+    () M-S-v  break
+  )
+  action_!lmet+lsft+w  (switch ;;@autogen@ 
+    () M-S-w  break
+  )
+  action_!lmet+lsft+x  (switch ;;@autogen@ 
+    () M-S-x  break
+  )
+  action_!lmet+lsft+y  (switch ;;@autogen@ 
+    () M-S-y  break
+  )
+  action_!lmet+lsft+z  (switch ;;@autogen@ 
+    () M-S-z break
+  )
+  action_!lmet+lsft+,  (switch ;;@autogen@ 
+    () M-S-, break
+  )
+  action_!lmet+lsft+.  (switch ;;@autogen@ 
+    () M-S-.  break
+  )
+  action_!lmet+lsft+/  (switch ;;@autogen@ 
+    () M-S-/  break
+  )
+  action_!lmet+lsft+;  (switch ;;@autogen@ 
+    () M-S-;  break
+  )
+  action_!lmet+lsft+'  (switch ;;@autogen@ 
+    () M-S-'  break
+  )
+  action_!lmet+lsft+[  (switch ;;@autogen@ 
+    () M-S-[  break
+  )
+  action_!lmet+lsft+]  (switch ;;@autogen@ 
+    () M-S-]  break
+  )  ;; ""
+  action_!lmet+lsft+\  (switch ;;@autogen@ 
+    () M-S-\  break
+  )  ;; ""
+  action_!lmet+lsft+-  (switch ;;@autogen@ 
+    () M-S--  break
+  )
+  action_!lmet+lsft+=  (switch ;;@autogen@ 
+    () M-S-=  break
+  )
+  action_!lmet+lsft+1  (switch ;;@autogen@ 
+    () M-S-1  break
+  )
+  action_!lmet+lsft+2  (switch ;;@autogen@ 
+    () M-S-2  break
+  )
+  action_!lmet+lsft+3  (switch ;;@autogen@ 
+    () M-S-3  break
+  )
+  action_!lmet+lsft+4  (switch ;;@autogen@ 
+    () M-S-4  break
+  )
+  action_!lmet+lsft+5  (switch ;;@autogen@ 
+    () M-S-5  break
+  )
+  action_!lmet+lsft+6  (switch ;;@autogen@ 
+    () M-S-6  break
+  )
+  action_!lmet+lsft+7  (switch ;;@autogen@ 
+    () M-S-7  break
+  )
+  action_!lmet+lsft+8  (switch ;;@autogen@ 
+    () M-S-8  break
+  )
+  action_!lmet+lsft+9  (switch ;;@autogen@ 
+    () M-S-9  break
+  )
+  action_!lmet+lsft+0  (switch ;;@autogen@ 
+    () M-S-0  break
+  )
+
+  ;; == !LMET+RSFT actions ==========================================================
+  action_!lmet+rsft+a (switch ;;@autogen@ 
+    () M-S-a break
+  )
+  action_!lmet+rsft+b (switch ;;@autogen@ 
+    () M-S-b break
+  )
+  action_!lmet+rsft+c  (switch ;;@autogen@ 
+    () M-S-c  break
+  )
+  action_!lmet+rsft+d (switch ;;@autogen@ 
+    () M-S-d break
+  )
+  action_!lmet+rsft+e  (switch ;;@autogen@ 
+    () M-S-e  break
+  )
+  action_!lmet+rsft+f  (switch ;;@autogen@ 
+    () M-S-f  break
+  )
+  action_!lmet+rsft+g  (switch ;;@autogen@ 
+    () M-S-g  break
+  )
+  action_!lmet+rsft+h  (switch ;;@autogen@ 
+    () M-S-h  break
+  )
+  action_!lmet+rsft+i  (switch ;;@autogen@ 
+    () M-S-i  break
+  )
+  action_!lmet+rsft+j  (switch ;;@autogen@ 
+    () M-S-j  break
+  )
+  action_!lmet+rsft+k  (switch ;;@autogen@ 
+    () M-S-k  break
+  )
+  action_!lmet+rsft+l  (switch ;;@autogen@ 
+    () M-S-l  break
+  )
+  action_!lmet+rsft+m  (switch ;;@autogen@ 
+    () M-S-m  break
+  )
+  action_!lmet+rsft+n  (switch ;;@autogen@ 
+    () M-S-n  break
+  )
+  action_!lmet+rsft+o  (switch ;;@autogen@ 
+    () M-S-o  break
+  )
+  action_!lmet+rsft+p  (switch ;;@autogen@ 
+    () M-S-p  break
+  )
+  action_!lmet+rsft+q  (switch ;;@autogen@ 
+    () M-S-q  break
+  )
+  action_!lmet+rsft+r  (switch ;;@autogen@ 
+    () M-S-r  break
+  )
+  action_!lmet+rsft+s  (switch ;;@autogen@ 
+    () M-S-s  break
+  )
+  action_!lmet+rsft+t  (switch ;;@autogen@ 
+    () M-S-t  break
+  )
+  action_!lmet+rsft+u  (switch ;;@autogen@ 
+    () M-S-u  break
+  )
+  action_!lmet+rsft+v  (switch ;;@autogen@ 
+    () M-S-v  break
+  )
+  action_!lmet+rsft+w  (switch ;;@autogen@ 
+    () M-S-w  break
+  )
+  action_!lmet+rsft+x  (switch ;;@autogen@ 
+    () M-S-x  break
+  )
+  action_!lmet+rsft+y  (switch ;;@autogen@ 
+    () M-S-y  break
+  )
+  action_!lmet+rsft+z  (switch ;;@autogen@ 
+    () M-S-z break
+  )
+  action_!lmet+rsft+,  (switch ;;@autogen@ 
+    () M-S-, break
+  )
+  action_!lmet+rsft+.  (switch ;;@autogen@ 
+    () M-S-.  break
+  )
+  action_!lmet+rsft+/  (switch ;;@autogen@ 
+    () M-S-/  break
+  )
+  action_!lmet+rsft+;  (switch ;;@autogen@ 
+    () M-S-;  break
+  )
+  action_!lmet+rsft+'  (switch ;;@autogen@ 
+    () M-S-'  break
+  )
+  action_!lmet+rsft+[  (switch ;;@autogen@ 
+    () M-S-[  break
+  )
+  action_!lmet+rsft+]  (switch ;;@autogen@ 
+    () M-S-]  break
+  )  ;; ""
+  action_!lmet+rsft+\  (switch ;;@autogen@ 
+    () M-S-\  break
+  )  ;; ""
+  action_!lmet+rsft+-  (switch ;;@autogen@ 
+    () M-S--  break
+  )
+  action_!lmet+rsft+=  (switch ;;@autogen@ 
+    () M-S-=  break
+  )
+  action_!lmet+rsft+1  (switch ;;@autogen@ 
+    () M-S-1  break
+  )
+  action_!lmet+rsft+2  (switch ;;@autogen@ 
+    () M-S-2  break
+  )
+  action_!lmet+rsft+3  (switch ;;@autogen@ 
+    () M-S-3  break
+  )
+  action_!lmet+rsft+4  (switch ;;@autogen@ 
+    () M-S-4  break
+  )
+  action_!lmet+rsft+5  (switch ;;@autogen@ 
+    () M-S-5  break
+  )
+  action_!lmet+rsft+6  (switch ;;@autogen@ 
+    () M-S-6  break
+  )
+  action_!lmet+rsft+7  (switch ;;@autogen@ 
+    () M-S-7  break
+  )
+  action_!lmet+rsft+8  (switch ;;@autogen@ 
+    () M-S-8  break
+  )
+  action_!lmet+rsft+9  (switch ;;@autogen@ 
+    () M-S-9  break
+  )
+  action_!lmet+rsft+0  (switch ;;@autogen@ 
+    () M-S-0  break
+  )
+)

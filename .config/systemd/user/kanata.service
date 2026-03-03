@@ -1,9 +1,0 @@
-[Unit]
-Description=Kanata Service
-
-[Service]
-ExecStart=%h/.cargo/bin/kanata -p 10101 -c %h/.config/kanata/kanata.kbd
-Restart=no
-
-[Install]
-WantedBy=default.target

@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-Sync action interfaces from a shared actions.kbd into an app-specific
-actions file (e.g. actions_chrome.4.kbd).
+Sync action interfaces from a shared app_*.kbd file into a per-app
+action file (e.g. actions/chrome/chrome_omni.kbd).
 
 When the target file already exists, the script preserves:
   - Existing action implementations (uncommented action lines).
   - Non-action variable definitions and their preceding comments
     (e.g. tmux_prefix).
-  - App-specific actions not present in actions.kbd.
-Actions that exist in actions.kbd but are missing from the app file are
-added as commented-out placeholders.
+  - App-specific actions not present in the shared file.
+Actions that exist in the shared file but are missing from the app file
+are added as commented-out placeholders.
 
 BACKTICK STRING CONVERSION:
   Actions can be defined using a simplified backtick syntax which gets
@@ -33,20 +33,20 @@ BACKTICK STRING CONVERSION:
 
 Usage:
   # Dry-run (prints to stdout):
-  ./kanata_sync_interfaces.py actions/actions_tmux.98.kbd
+  ./kanata_sync_interfaces.py actions/tmux/tmux_panes.19.kbd
 
   # Write changes to the file:
-  ./kanata_sync_interfaces.py -w actions/actions_tmux.98.kbd
+  ./kanata_sync_interfaces.py -w actions/tmux/tmux_panes.19.kbd
 
-  # Use a custom actions.kbd location:
-  ./kanata_sync_interfaces.py -a /path/to/actions.kbd -w actions/actions_tmux.98.kbd
+  # Use a custom shared action file:
+  ./kanata_sync_interfaces.py -a /path/to/app_panes.kbd -w actions/tmux/tmux_panes.19.kbd
 """
 
 import argparse
 import re
 from pathlib import Path
 
-DEFAULT_ACTIONS_FILE = Path.home() / ".config" / "kanata" / "actions" / "actions.kbd"
+DEFAULT_ACTIONS_FOLDER = Path.home() / ".config" / "kanata" / "actions"
 
 # Matches an autogen-tagged action in actions.kbd, e.g.:
 #   action_lctl+a (t! unmod_all (switch ;;@autogen@
@@ -79,6 +79,8 @@ CLOSE_PAREN_RE = re.compile(r"^\s*\)")
 # Matches any variable definition line (identifier followed by whitespace).
 # Excludes comments (;), open-parens, and blank lines.
 VAR_RE = re.compile(r"^\s*([^\s;(][^\s]*)\s")
+
+IFACE_PRIORITY_RE = re.compile(r"^(\w+)(?:\.\d+)?$")
 
 REVERSE_ACTION_FLAG = "~"
 
@@ -203,22 +205,34 @@ def convert_backtick_to_macro(backtick_content: str) -> str:
     return " ".join(result)
 
 
-def get_app_from_filename(path: Path) -> str:
-    """Extract the app name from an app actions filename.
+def get_app_and_interface_from_filename(path: Path) -> tuple[str, str]:
+    """Extract app name and interface name from a per-app action filename.
+
+    Uses the parent directory name as the app name and strips the <app>_
+    prefix from the filename stem to get the interface name.
 
     Args:
-        path: Path to a file named actions_<app>[.<order>].kbd.
+        path: Path to a file named <app>_<name>[.<priority>].kbd inside
+              an <app>/ subdirectory.
 
     Returns:
-        The app name portion of the filename (e.g. "tmux", "chrome").
+        Tuple of (app_name, interface_name).
 
     Raises:
         ValueError: If the filename doesn't match the expected pattern.
     """
-    m = re.match(r"actions_([^\.]+)", path.stem)
+    app_name = path.parent.name
+    prefix = f"{app_name}_"
+    stem = path.stem
+    if not stem.startswith(prefix):
+        raise ValueError(
+            f"Filename {path.name} does not start with expected prefix '{prefix}'"
+        )
+    remainder = stem[len(prefix) :]
+    m = re.match(IFACE_PRIORITY_RE, remainder)
     if not m:
-        raise ValueError(f"Cannot get app name from filename: {path.name}")
-    return m.group(1)
+        raise ValueError(f"Cannot parse per-app action filename: {path.name}")
+    return app_name, m.group(1)
 
 
 def _count_parens(text: str) -> tuple[int, int]:
@@ -236,9 +250,7 @@ def _count_parens(text: str) -> tuple[int, int]:
 
 
 def _read_multiline_expression(
-    lines: list[str],
-    start_index: int,
-    initial_line: str
+    lines: list[str], start_index: int, initial_line: str
 ) -> tuple[str, int]:
     """Read a potentially multi-line lisp expression.
 
@@ -397,10 +409,6 @@ def merge_comments(official_comments: list[str], app_comments: list[str]) -> lis
     # Find comments that are in app file but NOT in official comments
     official_set = set(official_comments)
     user_comments = [c for c in app_comments if c not in official_set]
-    # print("=============== MERGE ===============")
-    # print(official_set)
-    # print(user_comments)
-    # print("=====================================")
 
     # Return: official comments + user-added comments
     return official_comments + user_comments
@@ -499,20 +507,20 @@ def gen_app_actions(
 
 
 def process_actions(
-    actions_file: Path,
+    interface_file: Path,
     app: str,
     app_actions: dict[str, tuple[list[str], str]],
     extra_vars: list[tuple[list[str], str]],
     prelude: list[str],
 ) -> list[str]:
-    """Parse the shared actions.kbd and generate app-specific output.
+    """Parse an interface file and generate app-specific output.
 
-    Reads actions.kbd, skips everything before the @start@ marker, then
-    collects all @autogen@-tagged action names and their preceding
+    Reads the interface file, skips everything before the @start@ marker,
+    then collects all @autogen@-tagged action names and their preceding
     comments. Delegates to gen_app_actions to produce the output.
 
     Args:
-        actions_file: Path to the shared actions.kbd file.
+        interface_file: Path to the interface_*.kbd file.
         app: App name (e.g. "tmux").
         app_actions: Existing action implementations from the app file.
         extra_vars: List of tuples (comments_list, var_line) for non-action
@@ -522,7 +530,7 @@ def process_actions(
     Returns:
         List of output lines forming the complete app file content.
     """
-    lines = actions_file.read_text().splitlines()
+    lines = interface_file.read_text().splitlines()
     i = 0
     comments: list[str] = []
     actions_comments: dict[str, list[str]] = {}
@@ -567,8 +575,8 @@ def process_actions(
 def main() -> None:
     parser = argparse.ArgumentParser(
         description=(
-            "Sync action interfaces from a shared actions.kbd into an\n"
-            "app-specific actions file (e.g. actions_chrome.4.kbd).\n\n"
+            "Sync action interfaces from a shared app_*.kbd file into a\n"
+            "per-app action file (e.g. actions/chrome/chrome_omni.kbd).\n\n"
             "When the target file exists, existing action implementations,\n"
             "non-action variables, and app-specific actions are preserved.\n"
             "Missing actions are added as commented-out placeholders."
@@ -577,9 +585,9 @@ def main() -> None:
     )
 
     parser.add_argument(
-        "actions_app_file",
+        "app_interface_file",
         help=(
-            "Output actions file (e.g. actions/actions_chrome.4.kbd).\n"
+            "Output per-app action file (e.g. actions/chrome/chrome_omni.kbd).\n"
             "If the file exists it will be updated, preserving existing\n"
             "implementations. If it doesn't exist it will be created with\n"
             "all actions commented out."
@@ -597,23 +605,29 @@ def main() -> None:
         "-a",
         "--actions-file",
         type=Path,
-        default=DEFAULT_ACTIONS_FILE,
-        help=f"Path to the shared actions.kbd file (default: {DEFAULT_ACTIONS_FILE}).",
+        default=None,
+        help="Path to the shared app_*.kbd file (default: auto-inferred from filename).",
     )
 
     args = parser.parse_args()
 
-    actions_file: Path = args.actions_file
-    output_path = Path(args.actions_app_file)
-    app = get_app_from_filename(output_path)
+    output_path = Path(args.app_interface_file)
+    app, interface_name = get_app_and_interface_from_filename(output_path)
 
-    print(f"Input actions file : {actions_file}")
+    # Auto-infer the interface file from the app filename
+    if args.actions_file:
+        interface_file: Path = args.actions_file
+    else:
+        interface_file = output_path.parent.parent / f"app_{interface_name}.kbd"
+
+    print(f"Shared action file : {interface_file}")
     print(f"Output file        : {output_path}")
     print(f"Inferred app       : {app}")
+    print(f"Inferred interface : {interface_name}")
     print(f"Mode               : {'WRITE' if args.write else 'DRY-RUN'}")
 
     prelude, app_actions, extra_vars = read_existing_app_file(output_path)
-    result = process_actions(actions_file, app, app_actions, extra_vars, prelude)
+    result = process_actions(interface_file, app, app_actions, extra_vars, prelude)
     output = "\n".join(result)
 
     if args.write:

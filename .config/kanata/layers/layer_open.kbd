@@ -1,0 +1,16 @@
+;; "" OPEN_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (open_layer)
+  (t! map_layers _ "opts" (lsft rsft))
+
+  spc $action_open_with
+
+  m $action_open_with_chrome
+  t $action_open_with_terminal
+  v $action_open_with_nvim
+)
+
+(deflayermap (open+lsft_layer)
+)
+
+(deflayermap (open+rsft_layer)
+)

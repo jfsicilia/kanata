@@ -1,0 +1,11 @@
+(defvar
+
+;; == files/folders ========================================================
+;; files/folders + spc
+;; == #files/folders ========================================================
+;; #files/folders + spc
+chrome_action_seek_and_select                   C-S-a
+;; file/folder + lsft + spc
+;; #file/folder + lsft + spc
+chrome_action_seek_and_select+lsft                 XX
+)

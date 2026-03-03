@@ -1,0 +1,250 @@
+(defvar
+  ;; @start@ ====== DON'T REMOVE THIS LINE =================================
+
+  ;; === 2. Key Modifiers actions ========================================
+  ;; =====================================================================
+
+  ;; == modA =========================================================
+  ;; modA + spc
+  action_modA (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modA break
+    () XX break
+  ))
+
+  ;; == modB =========================================================
+  ;; modB + spc
+  action_modB (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == modC =========================================================
+  ;; modC + spc
+  action_modC (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == modD =============================================================
+  ;; modD + spc 
+  action_modD (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modD break
+    () XX break
+  ))
+
+  ;; == modE ===========================================================
+  ;; modE + spc 
+  action_modE (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == modF =============================================================
+  ;; modF + spc 
+  action_modF (t! unmod_all (switch ;;@autogen@
+    ()                              C-spc break  ;; Autofill
+  ))
+
+  ;; == modG =============================================================
+  ;; modG + spc 
+  action_modG (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modG break
+    () XX break
+  ))
+  ;; modG + modL
+  action_modG_modL (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modG_modL break
+    () XX break
+  ))
+
+  ;; == modH =============================================================
+  ;; modH + spc 
+  action_modH (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == modI =========================================================
+  ;; modI + spc
+  action_modI (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == modJ =============================================================
+  ;; modJ + spc 
+  action_modJ (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modJ break
+    ()                        C-spc break  ;; Autofill
+  ))
+
+  ;; == modK =============================================================
+  ;; modK + spc 
+  action_modK (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_modK break
+    ((input virtual vk_nvim)) $nvim_action_modK break
+    () XX break
+  ))
+
+  ;; == modL =============================================================
+  ;; modL + spc 
+  action_modL (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modL break
+    () XX break
+  ))
+
+  ;; == modM  ==========================================================
+  ;; modM + spc 
+  action_modM (t! unmod_all (switch ;;@autogen@
+    ()                      M-v break  ;; Clipboard history
+  ))
+
+  ;; == modN  ==========================================================
+  ;; modN + spc 
+  action_modN (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == modO =========================================================
+  ;; modO + spc
+  action_modO (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modO break
+    () XX break
+  ))
+
+  ;; == modP ===========================================================
+  ;; modP + spc 
+  action_modP (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  
+  ;; == modQ =========================================================
+  ;; modQ + spc
+  action_modQ (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modQ break
+    () XX break
+  ))
+
+  ;; == modR =========================================================
+  ;; modR + spc
+  action_modR (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modR break
+    () XX break
+  ))
+  ;; modR + lsft + spc
+  action_modR+lsft (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modR+lsft break
+    () XX break
+  ))
+  ;; modR + rsft + spc
+  action_modR+rsft (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modR+rsft break
+    () XX break
+  ))
+
+  ;; == modS =============================================================
+  ;; modS + spc 
+  action_modS (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modS break
+    ((input virtual vk_obsidian)) $obsidian_action_modS break
+    () XX break
+  ))
+  ;; modS + lsft + spc 
+  action_modS+lsft (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modS+lsft break
+    () XX break
+  ))
+
+  ;; == modT =========================================================
+  ;; modT + spc
+  action_modT (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; modT + n
+  action_modT+lsft (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == modU =========================================================
+  ;; modU + spc
+  action_modU (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == modV =========================================================
+  ;; modV + spc
+  action_modV (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == modW ===========================================================
+  ;; modW + spc 
+  action_modW (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == modX =========================================================
+  ;; modX + spc
+  action_modX (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == modY =========================================================
+  ;; modY + spc
+  action_modY (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modY break
+    () XX break
+  ))
+  ;; modY + mod; + spc  
+  action_modY_mod; (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modY_mod; break
+    () XX break
+  )) ;;""
+  ;; modY + search + spc 
+  action_modY_search (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_modY_search break
+    () XX break
+  ))
+
+  ;; == modZ =========================================================
+  ;; modZ + spc
+  action_modZ (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == mod; ===========================================================
+  ;; mod; + spc 
+  action_mod; (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_mod; break
+    ((input virtual vk_obsidian)) $obsidian_action_mod; break
+    ((input virtual vk_tmux)) $tmux_action_mod; break
+    () XX break
+  ))
+
+  ;; == mod' =============================================================
+  ;; mod' + spc 
+  action_mod' (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_mod' break
+    () XX break
+  ))
+
+  ;; == mod, ==========================================================
+  ;; mod, + spc 
+  action_mod, (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_mod, break
+    ((input virtual vk_nvim)) $nvim_action_mod, break
+    ((input virtual vk_obsidian)) $obsidian_action_mod, break
+    () XX break
+  ))
+
+  ;; == mod. =========================================================
+  ;; mod. + spc
+  action_mod. (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_mod. break
+    () XX break
+  ))
+
+  ;; == mod/ ==========================================================
+  ;; mod/ + spc 
+  action_mod/ (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_mod/ break
+    ((input virtual vk_nvim)) $nvim_action_mod/ break
+    () XX break
+  )) ;;""
+
+)

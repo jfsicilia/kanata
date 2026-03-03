@@ -1,0 +1,20 @@
+;; "" WINDOWS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (windows_layer)
+  ent          $action_windows_max
+
+  h            $action_windows_left
+  l            $action_windows_right
+  j            $action_windows_down
+
+  ;; == SFT ======================
+  $d|modD_&_lsft  (t! th _                   $toggle_windows+lsft_layer)
+  $k|modK_&_rsft  (t! th $action_windows_up   $toggle_windows+rsft_layer)
+  lsft            (t! th _                   $toggle_windows+lsft_layer)
+  rsft            (t! th _                   $toggle_windows+rsft_layer)
+)
+(deflayermap (windows+lsft_layer)
+  ent          $action_windows_full
+)
+(deflayermap (windows+rsft_layer)
+  ent          $action_windows_full
+)

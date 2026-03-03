@@ -1,0 +1,160 @@
+(defvar
+
+;; == panes =============================================================
+;; panes + spc
+;; ___TO_SET___ obsidian_action_panes                  
+
+;; panes + ent
+obsidian_action_panes+max                       (macro A-s A-S-s)
+
+;; panes + h | panes + left
+obsidian_action_panes+h                      A-left
+;; panes + l | panes + right
+obsidian_action_panes+l                     A-right
+;; panes + k | panes + up
+obsidian_action_panes+k                     A-up
+;; panes + j | panes + down
+obsidian_action_panes+j                     A-down
+
+;; panes + -
+obsidian_action_panes+-                   A--       ;;""
+;; panes + \
+obsidian_action_panes+\                   A-\       ;;""
+
+;; panes + w
+obsidian_action_panes+w                     A-w
+
+;; == panes + toggle ====================================================
+;; panes + toggle | 2x !lalt
+obsidian_action_panes+toggle                    A-q
+
+;; == panes + float ====================================================
+;; panes + float
+;; ___TO_SET___ obsidian_action_panes+float            
+
+;; == panes + move ======================================================
+;; panes + move + h | panes + move + left
+;; ___TO_SET___ obsidian_action_panes_move_left        
+;; panes + move + l | panes + move + right
+;; ___TO_SET___ obsidian_action_panes_move_right       
+;; panes + move + k | panes + move + up
+;; ___TO_SET___ obsidian_action_panes_move_above       
+;; panes + move + j | panes + move + down
+;; ___TO_SET___ obsidian_action_panes_move_below       
+
+;; == panes + resize ====================================================
+;; panes + resize + h | panes + resize + left
+;; ___TO_SET___ obsidian_action_panes_resize_left      
+;; panes + resize + l | panes + resize + right
+;; ___TO_SET___ obsidian_action_panes_resize_right     
+;; panes + resize + k | panes + resize + up
+;; ___TO_SET___ obsidian_action_panes_resize_above     
+;; panes + resize + j | panes + resize + down
+;; ___TO_SET___ obsidian_action_panes_resize_below     
+
+;; == panes + swap ======================================================
+;; panes + swap + h | panes + swap + left
+;; ___TO_SET___ obsidian_action_panes_swap_left        
+;; panes + swap + l | panes + swap + right
+;; ___TO_SET___ obsidian_action_panes_swap_right       
+;; panes + swap + k | panes + swap + up
+;; ___TO_SET___ obsidian_action_panes_swap_above       
+;; panes + swap + j | panes + swap + down
+;; ___TO_SET___ obsidian_action_panes_swap_below       
+
+;; == panes go by number ============================================
+;; panes + 1
+;; ___TO_SET___ obsidian_action_panes+1                
+;; panes + 2
+;; ___TO_SET___ obsidian_action_panes+2                
+;; panes + 3
+;; ___TO_SET___ obsidian_action_panes+3                
+;; panes + 4
+;; ___TO_SET___ obsidian_action_panes+4                
+;; panes + 5
+;; ___TO_SET___ obsidian_action_panes+5                
+;; panes + 6
+;; ___TO_SET___ obsidian_action_panes+6                
+;; panes + 7
+;; ___TO_SET___ obsidian_action_panes+7                
+;; panes + 8
+;; ___TO_SET___ obsidian_action_panes+8                
+;; panes + 9
+;; ___TO_SET___ obsidian_action_panes+9                
+
+;; == panes show pane / focus (app-specific) =============================
+;; panes + q
+;; ___TO_SET___ obsidian_action_panes+q                
+;; panes + w
+;; see panes
+;; panes + e
+obsidian_action_panes+e                  A-e
+;; panes + lsft + e
+obsidian_action_panes+lsft+e             A-S-e
+;; panes + r
+obsidian_action_panes+r                    A-r
+;; panes + t
+;; ___TO_SET___ obsidian_action_panes+t                
+;; panes + u
+;; ___TO_SET___ obsidian_action_panes+u                
+;; panes + y
+;; ___TO_SET___ obsidian_action_panes+y                
+;; panes + i
+;; ___TO_SET___ obsidian_action_panes+i                
+;; panes + o
+obsidian_action_panes+o                   A-o
+;; panes + lsft + o
+;; ___TO_SET___ obsidian_action_panes+lsft+o           
+;; panes + p
+obsidian_action_panes+p                A-p
+;; panes + lsft + p
+obsidian_action_panes+lsft+p           A-S-p
+;; panes + [
+obsidian_action_panes+[                 A-,
+;; panes + ]
+obsidian_action_panes+]                  A-.
+;; panes + lsft + ]
+obsidian_action_panes+lsft+.             A-S-.
+
+;; panes + a
+;; ___TO_SET___ obsidian_action_panes+a                
+;; panes + s
+obsidian_action_panes+s                   A-s
+;; panes + lsft + s
+obsidian_action_panes+lsft+s             A-S-s
+;; panes + d
+;; ___TO_SET___ obsidian_action_panes+d                
+;; panes + f
+;; ___TO_SET___ obsidian_action_panes+f                
+;; panes + g
+obsidian_action_panes+g                        $obsidian_action_select_files                  
+;; panes + ;
+obsidian_action_panes+;                     A-g
+;; panes + '
+;; not yet used.
+
+;; panes + z
+;; ___TO_SET___ obsidian_action_panes+z                
+;; panes + x
+;; ___TO_SET___ obsidian_action_panes+x                
+;; panes + c
+obsidian_action_panes+c                  A-c
+;; panes + lsft + c
+obsidian_action_panes+lsft+c                       A-d
+;; panes + rsft + c
+obsidian_action_panes+!day                      A-S-d
+;; panes + v
+obsidian_action_panes+v             (macro A-v m)
+;; panes + b
+obsidian_action_panes+b                 A-b
+;; panes + n
+;; ___TO_SET___ obsidian_action_panes+n                
+;; panes + m
+obsidian_action_panes+m                      A-m
+;; panes + ,
+;; ___TO_SET___ obsidian_action_panes+,                
+;; panes + .
+;; ___TO_SET___ obsidian_action_panes+.                
+;; panes + /
+;; ___TO_SET___ obsidian_action_panes+/                
+)

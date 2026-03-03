@@ -1,0 +1,124 @@
+(defvar
+
+;; == omni ============================================================
+
+;; == omni nav ======================================================
+;; omni + g
+;; ___TO_SET___ tmux_action_omni+g                 
+
+;; omni + b
+tmux_action_omni+b                        (macro $tmux_prefix pgup) ;; prefix + PgUp (enter copy mode + page up)
+
+;; omni + f
+tmux_action_omni+f                      C-f ;; prefix + PgDn (page down, requires copy mode)
+
+;; omni + k
+;; ___TO_SET___ tmux_action_omni+k                 
+;; omni + j
+;; ___TO_SET___ tmux_action_omni+j                 
+;; omni + h
+;; ___TO_SET___ tmux_action_omni+h                 
+;; omni + l
+;; ___TO_SET___ tmux_action_omni+l                 
+
+;; omni + ]
+;; ___TO_SET___ tmux_action_omni+]                 
+;; omni + [
+;; ___TO_SET___ tmux_action_omni+[                 
+
+;; == omni edit ======================================================""
+;; omni + c
+;; == omni edit ======================================================
+;; == #omni edit ======================================================
+tmux_action_omni+c                           (macro $tmux_prefix [) ;; prefix + [ (enter copy mode) ;;""
+
+;; omni + x
+;; ___TO_SET___ tmux_action_omni+x                 
+;; omni + v
+tmux_action_omni+v                          (macro $tmux_prefix ]) ;; prefix + ] (paste buffer)  ;;""
+;; omni + z
+;; ___TO_SET___ tmux_action_omni+z                 
+;; omni + lsft + z
+;; ___TO_SET___ tmux_action_omni+lsft+z            
+;; omni + ;
+;; ___TO_SET___ tmux_action_omni+;                 
+
+;; == omni file manager ===============================================""
+;; omni + spc
+;; ___TO_SET___ tmux_action_omni+spc               
+;; omni + r
+tmux_action_omni+r                         (macro $tmux_prefix ,) ;; prefix + , (rename window)
+;; omni + d
+;; ___TO_SET___ tmux_action_omni+d                 
+;; omni + a
+;; ___TO_SET___ tmux_action_omni+a                 
+;; omni + lsft + a
+;; ___TO_SET___ tmux_action_omni+lsft+a            
+;; omni + rsft + a
+;; ___TO_SET___ tmux_action_omni+rsft+a            
+;; omni + n
+tmux_action_omni+n                            (macro $tmux_prefix c) ;; prefix + c (new window)
+;; omni + lsft + n
+;; ___TO_SET___ tmux_action_omni+lsft+n            
+;; omni + rsft + n
+;; ___TO_SET___ tmux_action_omni+rsft+n            
+;; omni + o
+;; ___TO_SET___ tmux_action_omni+o                 
+;; omni + p
+;; ___TO_SET___ tmux_action_omni+p                 
+;; omni + s
+;; ___TO_SET___ tmux_action_omni+s                 
+;; omni + lsft + s | omni + rsft + s
+;; ___TO_SET___ tmux_action_omni+lsft+s            
+;; omni + y
+;; ___TO_SET___ tmux_action_omni+y                 
+;; omni + e
+;; ___TO_SET___ tmux_action_omni+e                 
+;; omni + lsft + e
+;; ___TO_SET___ tmux_action_omni+lsft+e            
+;; omni + i
+;; ___TO_SET___ tmux_action_omni+i                 
+
+;; == omni user interface ===============================================
+;; ___TO_SET___ tmux_action_omni+1                 
+;; ___TO_SET___ tmux_action_omni+2                 
+;; ___TO_SET___ tmux_action_omni+3                 
+;; ___TO_SET___ tmux_action_omni+4                 
+;; ___TO_SET___ tmux_action_omni+5                 
+;; ___TO_SET___ tmux_action_omni+6                 
+;; ___TO_SET___ tmux_action_omni+7                 
+;; ___TO_SET___ tmux_action_omni+8                 
+;; ___TO_SET___ tmux_action_omni+9                 
+;; ___TO_SET___ tmux_action_omni+0                 
+
+;; == omni misc ===============================================
+;; omni + t
+;; see tab
+;; ___TO_SET___ tmux_action_omni+t                 
+;; omni + lsft + t
+;; see tab
+;; ___TO_SET___ tmux_action_omni+lsft+t            
+;; omni + w
+;; see tab
+;; ___TO_SET___ tmux_action_omni+w                 
+;; omni + q
+;; see windows
+;; ___TO_SET___ tmux_action_omni+q                 
+
+;; omni + m
+;; see modM
+;; ___TO_SET___ tmux_action_omni+m                 
+;; omni + ,
+;; see mod,
+;; ___TO_SET___ tmux_action_omni+,                 
+;; omni + .
+;; see mod.
+;; ___TO_SET___ tmux_action_omni+.                 
+;; omni + /
+;; see mod/
+;; ___TO_SET___ tmux_action_omni+/                 
+;; omni + '
+;; ___TO_SET___ tmux_action_omni+'                 
+;; omni + u
+;; ___TO_SET___ tmux_action_omni+u                 
+)

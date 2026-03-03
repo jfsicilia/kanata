@@ -1,0 +1,8 @@
+(defvar
+
+;; == files/folders ========================================================
+;; files/folders + spc
+obsidian_action_seek_and_select                   C-A-o
+;; file/folder + lsft + spc
+obsidian_action_seek_and_select+lsft                 C-S-o
+)

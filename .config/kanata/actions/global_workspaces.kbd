@@ -1,0 +1,27 @@
+(defvar
+  ;; == workspaces =====================================================
+  ;; workspaces + spc
+  action_desktops       XX
+
+  ;; workspaces + j 
+  action_screens_next  (t! unmod_all M-S-down)
+  ;; workspaces + k
+  action_screens_prev  (t! unmod_all M-S-up)
+  ;; workspaces + l
+  action_desktops_next (t! unmod_all M-C-right)
+  ;; workspaces + j
+  action_desktops_prev (t! unmod_all M-C-left)
+
+  ;; workspaces + toggle
+  action_desktops_toggle XX
+
+  ;; == workspaces + move ===============================================
+  ;; workspaces + move + j 
+  action_screens_next_move_window  (t! unmod_all M-S-right)
+  ;; workspaces + move + k 
+  action_screens_prev_move_window  (t! unmod_all M-S-left)
+  ;; workspaces + move + l 
+  action_desktops_next_move_window (t! unmod_all M-C-S-right)
+  ;; workspaces + move + h 
+  action_desktops_prev_move_window (t! unmod_all M-C-S-left)
+)

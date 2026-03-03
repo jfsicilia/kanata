@@ -1,0 +1,75 @@
+(defvar
+
+;; == tab ===============================================================
+
+;; tab + spc
+;; #tab + spc
+chrome_action_tabs            XX
+
+;; tab + l | tab + right | lsft + rsft | 2x rsft | !lmet + tab
+;; #tab + l | #tab + right | lsft + rsft | 2x rsft | !lmet + tab
+chrome_action_tabs_next                       C-tab
+;; tab + h | tab + left | rsft + lsft | 2x lsft | !lmet + sft + tab
+;; #tab + h | #tab + left | rsft + lsft | 2x lsft | !lmet + sft + tab
+chrome_action_tabs_prev                       C-S-tab
+;; tab + j | tab + down
+;; ___TO_SET___ chrome_action_tabs_first             
+;; tab + k | tab + up
+;; ___TO_SET___ chrome_action_tabs_last              
+
+;; tab + t
+;; #tab + t
+chrome_action_tabs_new                        C-t
+;; tab + w
+;; #tab + w
+chrome_action_tabs_close                      C-w
+;; tab + lsft + t
+;; #tab + lsft + t
+chrome_action_tabs_undo_close                 C-S-t
+
+;; == tab go by number ==================================================
+;; tab + 1
+;; == #tab go by number ==================================================
+;; #tab + 1
+chrome_action_tabs_goto_1                     C-1
+;; tab + 2
+;; #tab + 2
+chrome_action_tabs_goto_2                     C-2
+;; tab + 3
+;; #tab + 3
+chrome_action_tabs_goto_3                     C-3
+;; tab + 4
+;; #tab + 4
+chrome_action_tabs_goto_4                     C-4
+;; tab + 5
+;; #tab + 5
+chrome_action_tabs_goto_5                     C-5
+;; tab + 6
+;; #tab + 6
+chrome_action_tabs_goto_6                     C-6
+;; tab + 7
+;; #tab + 7
+chrome_action_tabs_goto_7                     C-7
+;; tab + 8
+;; #tab + 8
+chrome_action_tabs_goto_8                     C-8
+;; tab + 9
+;; #tab + 9
+chrome_action_tabs_goto_last                  C-9
+
+;; == tab + toggle =====================================================
+;; tab + toggle | 2x !lctl
+;; == #tab + #toggle =====================================================
+;; #tab + #toggle | 2x !lctl
+chrome_action_tabs_toggle                     A-w
+
+;; == tab + move =====================================================
+;; tab + move + h | tab + move + left
+;; ___TO_SET___ chrome_action_tabs_move_left         
+;; tab + move + l | tab + move + right
+;; ___TO_SET___ chrome_action_tabs_move_right        
+;; tab + move + k | tab + move + up
+;; ___TO_SET___ chrome_action_tabs_move_first        
+;; tab + move + j | tab + move + down
+;; ___TO_SET___ chrome_action_tabs_move_last         
+)
