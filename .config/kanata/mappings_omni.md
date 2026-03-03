@@ -37,4 +37,4 @@
 | ]          | forward           | forward             |                 |                |                    |                            |
 | \          |                   |                     |                 |                |                    |                            |
 | -          |                   |                     |                 |                |                    |                            |
-| =          |                   |                     |                 |                |                    |                            |
+| =          | ~compare          | ~compare            |                 |                |                    |                            |
