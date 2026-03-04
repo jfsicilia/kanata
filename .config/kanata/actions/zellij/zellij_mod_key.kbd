@@ -1,0 +1,143 @@
+(defvar
+
+;; === 2. Key Modifiers actions ========================================
+;; =====================================================================
+
+;; == modA =========================================================
+;; modA + spc
+;; ___TO_SET___ zellij_action_modA                   
+
+;; == modB =========================================================
+;; modB + spc
+;; ___TO_SET___ zellij_action_modB                   
+
+;; == modC =========================================================
+;; modC + spc
+;; ___TO_SET___ zellij_action_modC                   
+
+;; == modD =============================================================
+;; modD + spc
+;; ___TO_SET___ zellij_action_modD                   
+
+;; == modE ===========================================================
+;; modE + spc
+;; ___TO_SET___ zellij_action_modE                   
+
+;; == modF =============================================================
+;; modF + spc
+;; ___TO_SET___ zellij_action_modF                   
+
+;; == modG =============================================================
+;; modG + spc
+;; ___TO_SET___ zellij_action_modG                   
+;; modG + modL
+;; ___TO_SET___ zellij_action_modG_modL              
+
+;; == modH =============================================================
+;; modH + spc
+;; ___TO_SET___ zellij_action_modH                   
+
+;; == modI =========================================================
+;; modI + spc
+;; ___TO_SET___ zellij_action_modI                   
+
+;; == modJ =============================================================
+;; modJ + spc
+;; ___TO_SET___ zellij_action_modJ                   
+
+;; == modK =============================================================
+;; modK + spc
+;; ___TO_SET___ zellij_action_modK                   
+
+;; == modL =============================================================
+;; modL + spc
+;; ___TO_SET___ zellij_action_modL                   
+
+;; == modM  ==========================================================
+;; modM + spc
+;; ___TO_SET___ zellij_action_modM                   
+
+;; == modN  ==========================================================
+;; modN + spc
+;; ___TO_SET___ zellij_action_modN                   
+
+;; == modO =========================================================
+;; modO + spc
+;; ___TO_SET___ zellij_action_modO                   
+
+;; == modP ===========================================================
+;; modP + spc
+;; ___TO_SET___ zellij_action_modP                   
+
+;; == modQ =========================================================
+;; modQ + spc
+;; ___TO_SET___ zellij_action_modQ                   
+
+;; == modR =========================================================
+;; modR + spc
+;; ___TO_SET___ zellij_action_modR                   
+;; modR + lsft + spc
+;; ___TO_SET___ zellij_action_modR+lsft              
+;; modR + rsft + spc
+;; ___TO_SET___ zellij_action_modR+rsft              
+
+;; == modS =============================================================
+;; modS + spc
+;; ___TO_SET___ zellij_action_modS                   
+;; modS + lsft + spc
+;; ___TO_SET___ zellij_action_modS+lsft              
+
+;; == modT =========================================================
+;; modT + spc
+;; ___TO_SET___ zellij_action_modT                   
+;; modT + n
+;; ___TO_SET___ zellij_action_modT+lsft              
+
+;; == modU =========================================================
+;; modU + spc
+;; ___TO_SET___ zellij_action_modU                   
+
+;; == modV =========================================================
+;; modV + spc
+;; ___TO_SET___ zellij_action_modV                   
+
+;; == modW ===========================================================
+;; modW + spc
+;; ___TO_SET___ zellij_action_modW                   
+
+;; == modX =========================================================
+;; modX + spc
+;; ___TO_SET___ zellij_action_modX                   
+
+;; == modY =========================================================
+;; modY + spc
+;; ___TO_SET___ zellij_action_modY                   
+;; modY + mod; + spc
+;; ___TO_SET___ zellij_action_modY_mod;              
+;; modY + search + spc
+;; ___TO_SET___ zellij_action_modY_search            
+
+;; == modZ =========================================================
+;; modZ + spc
+;; ___TO_SET___ zellij_action_modZ                   
+
+;; == mod; ===========================================================
+;; mod; + spc
+;; ___TO_SET___ zellij_action_mod;                   
+
+;; == mod' =============================================================
+;; mod' + spc
+;; ___TO_SET___ zellij_action_mod'                   
+
+;; == mod, ==========================================================
+;; mod, + spc
+;; ___TO_SET___ zellij_action_mod,                   
+
+;; == mod. =========================================================
+;; mod. + spc
+;; ___TO_SET___ zellij_action_mod.                   
+
+;; == mod/ ==========================================================
+;; mod/ + spc
+;; ___TO_SET___ zellij_action_mod/                   
+)

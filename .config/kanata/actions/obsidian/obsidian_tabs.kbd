@@ -1,0 +1,57 @@
+(defvar
+
+;; == tab ===============================================================
+
+;; tab + spc
+obsidian_action_tabs            C-S-A-o
+
+;; tab + l | tab + right | lsft + rsft | 2x rsft | !lmet + tab
+obsidian_action_tabs_next                       C-pgdn
+;; tab + h | tab + left | rsft + lsft | 2x lsft | !lmet + sft + tab
+obsidian_action_tabs_prev                       C-pgup
+;; tab + j | tab + down
+;; ___TO_SET___ obsidian_action_tabs_first             
+;; tab + k | tab + up
+;; ___TO_SET___ obsidian_action_tabs_last              
+
+;; tab + t
+obsidian_action_tabs_new                        A-C-t
+;; tab + w
+obsidian_action_tabs_close                      A-C-w
+;; tab + lsft + t
+obsidian_action_tabs_undo_close                 A-C-S-t
+
+;; == tab go by number ==================================================
+;; tab + 1
+obsidian_action_tabs_goto_1                     C-1
+;; tab + 2
+obsidian_action_tabs_goto_2                     C-2
+;; tab + 3
+obsidian_action_tabs_goto_3                     C-3
+;; tab + 4
+obsidian_action_tabs_goto_4                     C-4
+;; tab + 5
+obsidian_action_tabs_goto_5                     C-5
+;; tab + 6
+obsidian_action_tabs_goto_6                     C-6
+;; tab + 7
+obsidian_action_tabs_goto_7                     C-7
+;; tab + 8
+obsidian_action_tabs_goto_8                     C-8
+;; tab + 9
+obsidian_action_tabs_goto_last                  C-9
+
+;; == tab + toggle =====================================================
+;; tab + toggle | 2x !lctl
+obsidian_action_tabs_toggle                     A-q
+
+;; == tab + move =====================================================
+;; tab + move + h | tab + move + left
+;; ___TO_SET___ obsidian_action_tabs_move_left         
+;; tab + move + l | tab + move + right
+;; ___TO_SET___ obsidian_action_tabs_move_right        
+;; tab + move + k | tab + move + up
+;; ___TO_SET___ obsidian_action_tabs_move_first        
+;; tab + move + j | tab + move + down
+;; ___TO_SET___ obsidian_action_tabs_move_last         
+)

@@ -1,0 +1,125 @@
+(defvar
+
+;; == omni ============================================================
+
+;; == omni nav ======================================================
+;; omni + g
+;; == #omni nav ======================================================
+chrome_action_omni+g                             C-l
+
+;; omni + b
+;; ___TO_SET___ chrome_action_omni+b                 
+
+;; omni + f
+;; ___TO_SET___ chrome_action_omni+f                 
+
+;; omni + k
+;; ___TO_SET___ chrome_action_omni+k                 
+;; omni + j
+;; ___TO_SET___ chrome_action_omni+j                 
+;; omni + h
+;; ___TO_SET___ chrome_action_omni+h                 
+;; omni + l
+;; ___TO_SET___ chrome_action_omni+l                 
+
+;; omni + ]
+chrome_action_omni+]                      A-right
+;; omni + [
+chrome_action_omni+[                      A-left
+
+;; == omni edit ======================================================""
+;; omni + c
+;; ___TO_SET___ chrome_action_omni+c                 
+
+;; omni + x
+;; ___TO_SET___ chrome_action_omni+x                 
+;; omni + v
+;; ___TO_SET___ chrome_action_omni+v                 
+;; omni + z
+;; ___TO_SET___ chrome_action_omni+z                 
+;; omni + lsft + z
+;; ___TO_SET___ chrome_action_omni+lsft+z            
+;; omni + ;
+;; ___TO_SET___ chrome_action_omni+;                 
+
+;; == omni file manager ===============================================""
+;; omni + spc
+;; ___TO_SET___ chrome_action_omni+spc               
+;; omni + r
+;; ___TO_SET___ chrome_action_omni+r                 
+;; omni + d
+;; ___TO_SET___ chrome_action_omni+d                 
+;; omni + a
+;; ___TO_SET___ chrome_action_omni+a                 
+;; omni + lsft + a
+;; ___TO_SET___ chrome_action_omni+lsft+a            
+;; omni + rsft + a
+;; ___TO_SET___ chrome_action_omni+rsft+a            
+;; omni + n
+chrome_action_omni+n               C-n
+;; omni + lsft + n
+;; ___TO_SET___ chrome_action_omni+lsft+n            
+;; omni + rsft + n
+;; ___TO_SET___ chrome_action_omni+rsft+n            
+;; omni + o
+;; ___TO_SET___ chrome_action_omni+o                 
+;; omni + p
+;; ___TO_SET___ chrome_action_omni+p                 
+;; omni + s
+;; ___TO_SET___ chrome_action_omni+s                 
+;; omni + lsft + s | omni + rsft + s
+;; ___TO_SET___ chrome_action_omni+lsft+s            
+;; omni + y
+;; ___TO_SET___ chrome_action_omni+y                 
+;; omni + e
+;; ___TO_SET___ chrome_action_omni+e                 
+;; omni + lsft + e
+;; ___TO_SET___ chrome_action_omni+lsft+e            
+;; omni + i
+;; ___TO_SET___ chrome_action_omni+i                 
+
+;; == omni user interface ===============================================
+;; ___TO_SET___ chrome_action_omni+1                 
+;; ___TO_SET___ chrome_action_omni+2                 
+;; ___TO_SET___ chrome_action_omni+3                 
+;; ___TO_SET___ chrome_action_omni+4                 
+;; ___TO_SET___ chrome_action_omni+5                 
+;; ___TO_SET___ chrome_action_omni+6                 
+;; ___TO_SET___ chrome_action_omni+7                 
+;; ___TO_SET___ chrome_action_omni+8                 
+;; ___TO_SET___ chrome_action_omni+9                 
+;; ___TO_SET___ chrome_action_omni+0                 
+
+;; == omni misc ===============================================
+;; omni + t
+;; see tab
+;; ___TO_SET___ chrome_action_omni+t                 
+;; omni + lsft + t
+;; see tab
+;; ___TO_SET___ chrome_action_omni+lsft+t            
+;; omni + w
+;; see tab
+;; ___TO_SET___ chrome_action_omni+w                 
+;; omni + q
+;; see windows
+;; ___TO_SET___ chrome_action_omni+q                 
+
+;; omni + m
+;; see modM
+;; ___TO_SET___ chrome_action_omni+m                 
+;; omni + ,
+;; see mod,
+;; ___TO_SET___ chrome_action_omni+,                 
+;; omni + .
+;; see mod.
+;; ___TO_SET___ chrome_action_omni+.                 
+;; omni + /
+;; see mod/
+;; ___TO_SET___ chrome_action_omni+/                 
+;; omni + =
+;; ___TO_SET___ chrome_action_omni+=                 
+;; omni + '
+;; ___TO_SET___ chrome_action_omni+'                 
+;; omni + u
+;; ___TO_SET___ chrome_action_omni+u                 
+)

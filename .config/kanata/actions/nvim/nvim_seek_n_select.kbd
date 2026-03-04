@@ -1,0 +1,11 @@
+(defvar
+
+;; == seek_sel ========================================================
+;; seek_sel + spc
+;; nvim_action_seek_and_select              `{esc}:Telescope find_files{ret}`
+nvim_action_seek_and_select                 (macro esc S-; S-t e l e s c o p e spc f i n d S-- f i l e s ret)  ;;""
+;; seek_sel + lsft + spc
+nvim_action_seek_and_select+lsft               XX
+;; seek_sel + rsft + spc
+;; ___TO_SET___ nvim_action_seek_and_select+rsft   
+)

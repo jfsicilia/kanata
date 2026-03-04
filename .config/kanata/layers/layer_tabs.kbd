@@ -1,0 +1,50 @@
+;; "" TAB LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (tabs_layer)
+  spc   $action_tabs
+
+  h     $action_tabs_prev
+  left  $action_tabs_prev
+  l     $action_tabs_next
+  right $action_tabs_next
+  j     $action_tabs_first
+  down  $action_tabs_first
+  up    $action_tabs_last
+
+  t     $action_tabs_new
+  w     $action_tabs_close
+
+  1     $action_tabs_goto_1
+  2     $action_tabs_goto_2
+  3     $action_tabs_goto_3
+  4     $action_tabs_goto_4
+  5     $action_tabs_goto_5
+  6     $action_tabs_goto_6
+  7     $action_tabs_goto_7
+  8     $action_tabs_goto_8
+  9     $action_tabs_goto_last
+
+  ;; == SFT ======================
+  $d|modD_&_lsft     (t! th _                    $toggle_tabs+lsft_layer)
+  $k|modK_&_rsft  (t! th $action_tabs_last    $toggle_tabs+rsft_layer)
+  lsft            (t! th _                    $toggle_tabs+lsft_layer)
+  rsft            (t! th _                    $toggle_tabs+rsft_layer)
+
+  ;; == Gui Actions ========================
+  $move (t! th _ $toggle_tabs+move_layer)
+)
+(deflayermap (tabs+move_layer)
+  h     $action_tabs_move_left
+  left  $action_tabs_move_left
+  l     $action_tabs_move_right
+  right $action_tabs_move_right
+  j     $action_tabs_move_first
+  down  $action_tabs_move_first
+  k     $action_tabs_move_last
+  up    $action_tabs_move_last
+)
+(deflayermap (tabs+lsft_layer)
+  t $action_tabs_undo_close
+)
+(deflayermap (tabs+rsft_layer)
+  t $action_tabs_undo_close
+)

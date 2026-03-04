@@ -1,0 +1,12 @@
+(defvar
+
+;; == open =============================================================
+;; open + spc
+;; ___TO_SET___ dolphin_action_open_with              
+;; open + m
+;; ___TO_SET___ dolphin_action_open_with_chrome       
+;; open + t
+dolphin_action_open_with_terminal     A-S-f4
+;; open + v
+;; ___TO_SET___ dolphin_action_open_with_nvim         
+)

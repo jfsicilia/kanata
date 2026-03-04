@@ -1,0 +1,57 @@
+(defvar
+
+;; == !tab/groups =====================================================
+
+;; !tab + spc
+obsidian_action_!tabs                  $obsidian_action_tabs                  
+
+;; !tab + l | !tab + right
+obsidian_action_!tabs_next             $obsidian_action_tabs_next             
+;; !tab + h | !tab + left
+obsidian_action_!tabs_prev             $obsidian_action_tabs_prev             
+;; !tab + j | !tab + down
+;; ___TO_SET___ obsidian_action_!tabs_first            
+;; !tab + k | !tab + up
+;; ___TO_SET___ obsidian_action_!tabs_last             
+
+;; !tab + t
+obsidian_action_!tabs_new              $obsidian_action_tabs_new              
+;; !tab + w
+obsidian_action_!tabs_close            $obsidian_action_tabs_close            
+;; !tab + lsft + t
+obsidian_action_!tabs_undo_close       $obsidian_action_tabs_undo_close       
+
+;; == !tab go by number ==================================================
+;; !tab + 1
+obsidian_action_!tabs_goto_1           $obsidian_action_tabs_goto_1           
+;; !tab + 2
+obsidian_action_!tabs_goto_2           $obsidian_action_tabs_goto_2           
+;; !tab + 3
+obsidian_action_!tabs_goto_3           $obsidian_action_tabs_goto_3           
+;; !tab + 4
+obsidian_action_!tabs_goto_4           $obsidian_action_tabs_goto_4           
+;; !tab + 5
+obsidian_action_!tabs_goto_5           $obsidian_action_tabs_goto_5           
+;; !tab + 6
+obsidian_action_!tabs_goto_6           $obsidian_action_tabs_goto_6           
+;; !tab + 7
+obsidian_action_!tabs_goto_7           $obsidian_action_tabs_goto_7           
+;; !tab + 8
+obsidian_action_!tabs_goto_8           $obsidian_action_tabs_goto_8           
+;; !tab + 9
+obsidian_action_!tabs_goto_last        $obsidian_action_tabs_goto_last        
+
+;; == !tab + toggle =====================================================
+;; !tab + toggle
+obsidian_action_!tabs_toggle           $obsidian_action_tabs_toggle           
+
+;; == !tab + move =====================================================
+;; !tab + move + h | !tab + move + left
+;; ___TO_SET___ obsidian_action_!tabs_move_left        
+;; !tab + move + l | !tab + move + right
+;; ___TO_SET___ obsidian_action_!tabs_move_right       
+;; !tab + move + k | !tab + move + up
+;; ___TO_SET___ obsidian_action_!tabs_move_first       
+;; !tab + move + j | !tab + move + down
+;; ___TO_SET___ obsidian_action_!tabs_move_last        
+)

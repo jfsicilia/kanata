@@ -1,0 +1,139 @@
+(defvirtualkeys
+  ;; This virtual keys allow to iterate over the sort options of dolphin.
+  vk_dolphin_sort1  XX
+  vk_dolphin_sort2  XX
+  vk_dolphin_sort_toggle  XX
+  vk_dolphin_view1  XX
+  vk_dolphin_view2  XX
+  vk_dolphin_tab_toggle  XX
+)
+(deftemplate goto_folder (folder)
+  (macro C-l $folder ent)
+)
+(defvar
+;; Toggles between sorting by name, date and size.
+dolphin_toggle_sort_by (multi 
+  (switch 
+    ((input virtual vk_dolphin_sort1)) (multi (on-press press-virtualkey vk_dolphin_sort2) (on-press release-virtualkey vk_dolphin_sort1)) break
+    ((input virtual vk_dolphin_sort2)) (multi (on-press release-virtualkey vk_dolphin_sort2)) break
+    ()                                 (multi (on-press press-virtualkey vk_dolphin_sort1)) break
+  )
+  (switch
+    ((input virtual vk_dolphin_sort1)) C-A-n break  ;; CUSTOM sort by name
+    ((input virtual vk_dolphin_sort2)) C-A-s break  ;; CUSTOM sort by date
+    ()                                 C-A-d break  ;; CUSTOM sort by size
+  )
+)
+;; Toggles sort ordering A-Z / Z-A
+dolphin_toggle_sort_toggle (multi (on-press toggle-virtualkey vk_dolphin_sort_toggle) 
+  (switch 
+    ((input virtual vk_dolphin_sort_toggle)) C-A-up   break ;; CUSTOM oldest first
+    ()                                       C-A-down break ;; CUSTOM newest first
+  )
+)
+;; Toggles between view modes 1, 2 and 3.
+dolphin_toggle_view (multi 
+  (switch 
+    ((input virtual vk_dolphin_view1)) (multi (on-press press-virtualkey vk_dolphin_view2) (on-press release-virtualkey vk_dolphin_view1)) break
+    ((input virtual vk_dolphin_view2)) (multi (on-press release-virtualkey vk_dolphin_view2)) break
+    ()                                 (multi (on-press press-virtualkey vk_dolphin_view1)) break
+  )
+  (switch
+    ((input virtual vk_dolphin_view1)) C-1 break  ;; View 1
+    ((input virtual vk_dolphin_view2)) C-2 break  ;; View 2
+    ()                                 C-3 break  ;; View 3
+  )
+)
+;; Toggles sort ordering A-Z / Z-A
+dolphin_toggle_tab (multi (on-press toggle-virtualkey vk_dolphin_tab_toggle) 
+  (switch 
+    ((input virtual vk_dolphin_tab_toggle))   C-tab   break 
+    ()                                        C-S-tab break 
+  )
+)
+
+;; == bookmarks =========================================================
+;; bookmarks + spc
+;; ___TO_SET___ dolphin_action_bookmarks              
+;; ___TO_SET___ dolphin_action_bookmarks_a            
+;; ___TO_SET___ dolphin_action_bookmarks_b            
+;; ___TO_SET___ dolphin_action_bookmarks_c            
+dolphin_action_bookmarks_d            (t! goto_folder $folder_downloads)
+;; ___TO_SET___ dolphin_action_bookmarks_e            
+;; ___TO_SET___ dolphin_action_bookmarks_f            
+;; ___TO_SET___ dolphin_action_bookmarks_g            
+;; ___TO_SET___ dolphin_action_bookmarks_h            
+dolphin_action_bookmarks_i            (t! goto_folder $folder_inbox)
+;; ___TO_SET___ dolphin_action_bookmarks_j            
+;; ___TO_SET___ dolphin_action_bookmarks_k            
+;; ___TO_SET___ dolphin_action_bookmarks_l            
+;; ___TO_SET___ dolphin_action_bookmarks_m            
+;; ___TO_SET___ dolphin_action_bookmarks_n            
+;; ___TO_SET___ dolphin_action_bookmarks_o            
+;; ___TO_SET___ dolphin_action_bookmarks_p            
+;; ___TO_SET___ dolphin_action_bookmarks_q            
+;; ___TO_SET___ dolphin_action_bookmarks_r            
+;; ___TO_SET___ dolphin_action_bookmarks_s            
+;; ___TO_SET___ dolphin_action_bookmarks_t            
+;; ___TO_SET___ dolphin_action_bookmarks_u            
+;; ___TO_SET___ dolphin_action_bookmarks_v            
+dolphin_action_bookmarks_w            (t! goto_folder $folder_workarea)
+;; ___TO_SET___ dolphin_action_bookmarks_x            
+;; ___TO_SET___ dolphin_action_bookmarks_y            
+;; ___TO_SET___ dolphin_action_bookmarks_z            
+dolphin_action_bookmarks_-            (t! goto_folder $folder_underscore)
+;; ___TO_SET___ dolphin_action_bookmarks_a+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_b+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_c+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_d+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_e+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_f+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_g+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_h+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_i+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_j+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_k+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_l+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_m+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_n+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_o+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_p+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_q+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_r+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_s+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_t+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_u+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_v+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_w+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_x+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_y+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_z+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_-+lsft       
+;; ___TO_SET___ dolphin_action_bookmarks_a+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_b+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_c+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_d+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_e+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_f+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_g+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_h+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_i+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_j+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_k+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_l+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_m+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_n+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_o+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_p+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_q+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_r+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_s+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_t+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_u+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_v+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_w+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_x+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_y+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_z+rsft       
+;; ___TO_SET___ dolphin_action_bookmarks_-+rsft       
+)

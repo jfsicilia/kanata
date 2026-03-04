@@ -1,0 +1,12 @@
+;; "" SESSION_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (sessions_layer)
+  ;; == SFT ======================
+  $d|modD_&_lsft     (t! th _                    $toggle_sessions+lsft_layer)
+  $k|modK_&_rsft  (t! th _                    $toggle_sessions+rsft_layer)
+  lsft            (t! th _                    $toggle_sessions+lsft_layer)
+  rsft            (t! th _                    $toggle_sessions+rsft_layer)
+)
+(deflayermap (sessions+lsft_layer)
+)
+(deflayermap (sessions+rsft_layer)
+)

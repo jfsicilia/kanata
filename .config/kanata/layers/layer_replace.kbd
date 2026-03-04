@@ -1,0 +1,11 @@
+(deflayermap (replace_layer)
+    (t! map_layers _ "replace" ($lsft $rsft lsft rsft))
+    spc $action_replace
+)
+(deflayermap (replace+lsft_layer)
+    spc $action_replace+lsft
+)
+(deflayermap (replace+rsft_layer)
+    spc $action_replace+rsft
+)
+

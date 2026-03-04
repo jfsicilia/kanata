@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 #
-# Sync all app action files with the shared actions.kbd interfaces.
+# Sync all per-app action files with the shared app_*.kbd definitions.
 #
-# Finds every actions_<app>[.<priority>].kbd file in the actions folder
-# and runs kanata_sync_interfaces.py -w on each one, updating them
-# in-place with any new or removed actions from actions.kbd while
-# preserving existing implementations and app-specific variables.
+# Finds every <app>_<name>[.<priority>].kbd file in per-app
+# subdirectories of actions/ and runs kanata_sync_interfaces.py -w on
+# each one, updating them in-place with any new or removed actions from
+# the corresponding app_*.kbd file while preserving existing
+# implementations and app-specific variables.
 #
 # Usage:
 #   ./kanata_sync_all_apps_interfaces.sh
@@ -20,7 +21,7 @@ shopt -s nullglob  # Avoid literal glob if no files match.
 SCRIPT="$HOME/.config/kanata/scripts/kanata_sync_interfaces.py"
 DIR="$HOME/.config/kanata/actions"
 
-for file in "$DIR"/actions_*.kbd; do
+for file in "$DIR"/*/*.kbd; do
   echo "Processing: $file"
   "$SCRIPT" "-w" "$file"
 done

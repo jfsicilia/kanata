@@ -1,0 +1,124 @@
+(defvar
+  ;; == 1.5 apps =========================================================
+  ;; apps + spc
+  action_apps (t! unmod_all (switch
+    () RA-spc break
+  ))
+
+  action_apps_toggle (t! unmod_all (switch
+    () M-tab break
+  ))
+
+  action_apps_walk_through_same_app (switch
+    () A-` break
+  )
+
+  action_apps+0 (t! unmod_all (switch 
+    () (push-msg "APP:chromeMisc") break
+  ))
+  action_apps+1 (t! unmod_all (switch 
+    () (push-msg "APP:chromeMgmt") break
+  ))
+  action_apps+2 (t! unmod_all (switch 
+    () (push-msg "APP:chromeCloud") break
+  ))
+  action_apps+3 (t! unmod_all (switch 
+    () (push-msg "APP:chromeAI") break
+  ))
+  action_apps+4 (t! unmod_all (switch 
+    () (push-msg "APP:chromeBanks") break
+  ))
+  action_apps+5 (t! unmod_all (switch 
+    () (push-msg "APP:chromeMisc") break
+  ))
+  action_apps+6 (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+7 (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+8 (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+9 (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+a (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+b (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+c (t! unmod_all (switch
+    () (push-msg "APP:claude_code") break
+  ))
+  action_apps+d (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+e (t! unmod_all (switch 
+    () (push-msg "APP:fileexplorer") break
+  ))
+  action_apps+f (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+g (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+h (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+i (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+j (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+k (t! unmod_all (switch
+    () (push-msg "APP:keepassxc") break
+  ))
+  action_apps+l (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+m (t! unmod_all (switch
+    () (push-msg "APP:chrome") break
+  ))
+  action_apps+n (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+o (t! unmod_all (switch 
+    () (push-msg "APP:obsidian") break
+  ))
+  action_apps+p (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+q (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+r (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+s (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+t (t! unmod_all (switch
+    () (push-msg "APP:terminal") break
+  ))
+  action_apps+u (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+v (t! unmod_all (switch 
+    () (push-msg "APP:nvim") break
+  ))
+  action_apps+w (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+x (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+y (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+z (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+)

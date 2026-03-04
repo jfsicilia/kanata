@@ -1,0 +1,14 @@
+(defvar
+  ;; @start@ ====== DON'T REMOVE THIS LINE =================================
+
+  ;; == sessions =====================================================
+  ;; sessions + spc
+  action_sessions (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; sessions + toggle
+  action_sessions_toggle  (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+)

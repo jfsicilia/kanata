@@ -1,0 +1,10 @@
+(defvar
+
+;; == replace ==========================================================
+;; replace + spc
+;; ___TO_SET___ tmux_action_replace                
+;; replace + lsft + spc
+;; ___TO_SET___ tmux_action_replace+lsft           
+;; replace + rsft + spc
+;; ___TO_SET___ tmux_action_replace+rsft           
+)

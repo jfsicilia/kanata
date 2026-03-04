@@ -1,0 +1,10 @@
+(defvar
+
+;; == search ============================================================
+;; search + spc
+dolphin_action_search    C-f
+;; search + lsft + spc
+dolphin_action_search+lsft C-S-f
+;; search + rsft + spc
+;; ___TO_SET___ dolphin_action_search+rsft            
+)

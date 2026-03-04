@@ -1,0 +1,22 @@
+;; "" GROUPS LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (groups_layer)
+  h     $~action_!tabs_prev
+  left  $~action_!tabs_prev
+  l     $~action_!tabs_next
+  right $~action_!tabs_next
+  j     $~action_!tabs_first
+  down  $~action_!tabs_first
+  up    $~action_!tabs_last
+
+  ;; == SFT ======================
+  $d|modD_&_lsft  (t! th _                    $toggle_groups+lsft_layer)
+  $k|modK_&_rsft  (t! th $~action_!tabs_last   $toggle_groups+rsft_layer)
+  lsft            (t! th _                    $toggle_groups+lsft_layer)
+  rsft            (t! th _                    $toggle_groups+rsft_layer)
+)
+
+(deflayermap (groups+lsft_layer)
+)
+
+(deflayermap (groups+rsft_layer)
+)

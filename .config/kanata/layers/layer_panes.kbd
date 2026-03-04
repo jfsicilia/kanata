@@ -1,0 +1,120 @@
+(deflayermap (panes_layer)
+  ent   $action_panes+max
+
+  h     $action_panes+h
+  left  $action_panes+h
+  j     $action_panes+j
+  down  $action_panes+j
+  up    $action_panes+k
+  l     $action_panes+l
+  right $action_panes+l
+
+  -     $action_panes+-
+  \     $action_panes+\ ;;""
+
+  w     $action_panes+w
+
+  1     $action_panes+1
+  2     $action_panes+2
+  3     $action_panes+3
+  4     $action_panes+4
+  5     $action_panes+5
+  6     $action_panes+6
+  7     $action_panes+7
+  8     $action_panes+8
+  9     $action_panes+9
+
+  ;; toggle/open panes
+  a     $action_panes+a
+  b     $action_panes+b
+  c     $action_panes+c
+  e     $action_panes+e
+  f     $action_panes+f
+  g     $action_panes+g
+  i     $action_panes+i
+  m     $action_panes+m
+  n     $action_panes+n
+  o     $action_panes+o
+  p     $action_panes+p
+  q     $action_panes+q
+  r     $action_panes+r
+  s     $action_panes+s
+  t     $action_panes+t
+  u     $action_panes+u
+  v     $action_panes+v
+  x     $action_panes+x
+  y     $action_panes+y
+  z     $action_panes+z
+  ;     $action_panes+;
+  ,     $action_panes+,
+  .     $action_panes+.
+  ]     $action_panes+]
+  [     $action_panes+[
+
+  ;; == SFT ======================
+  $d|modD_&_lsft  (t! th $action_panes+d       $toggle_panes+lsft_layer)
+  $k|modK_&_rsft  (t! th $action_panes+k       $toggle_panes+rsft_layer)
+  lsft            (t! th _                    $toggle_panes+lsft_layer)
+  rsft            (t! th _                    $toggle_panes+rsft_layer)
+
+  ;; == Gui Actions ========================
+  $toggle        $action_panes+toggle
+  $move          (t! th _                        $toggle_panes+move_layer)
+  $resize        (t! th _                        $toggle_panes+resize_layer)
+  $float_&_snap  (t! th $action_panes+float  $toggle_panes+snap_layer)
+  $swap          (t! th _                        $toggle_panes+swap_layer)
+)
+(deflayermap (panes+lsft_layer)
+  c $action_panes+lsft+c
+  e $action_panes+lsft+e
+  p $action_panes+lsft+p
+  s $action_panes+lsft+s
+  . $action_panes+lsft+.
+)
+(deflayermap (panes+rsft_layer)
+  c $action_panes+lsft+c
+  e $action_panes+lsft+e
+  p $action_panes+lsft+p
+  s $action_panes+lsft+s
+  . $action_panes+lsft+.
+)
+(deflayermap (panes+move_layer)
+  h     $action_panes_move_left
+  left  $action_panes_move_left
+  j     $action_panes_move_below
+  down  $action_panes_move_below
+  k     $action_panes_move_above
+  up    $action_panes_move_above
+  l     $action_panes_move_right
+  right $action_panes_move_right
+)
+(deflayermap (panes+snap_layer)
+;;  h     $action_panes_snap_left
+;;  left  $action_panes_snap_left
+;;  j     $action_panes_snap_below
+;;  down  $action_panes_snap_below
+;;  k     $action_panes_snap_above
+;;  up    $action_panes_snap_above
+;;  l     $action_panes_snap_right
+;;  right $action_panes_snap_right
+)
+(deflayermap (panes+resize_layer)
+  h     $action_panes_resize_left
+  l     $action_panes_resize_right
+  k     $action_panes_resize_above
+  j     $action_panes_resize_below
+  left  $action_panes_resize_left
+  right $action_panes_resize_right
+  up    $action_panes_resize_above
+  down  $action_panes_resize_below
+)
+(deflayermap (panes+swap_layer)
+  h     $action_panes_swap_left
+  l     $action_panes_swap_right
+  k     $action_panes_swap_above
+  j     $action_panes_swap_below
+  left  $action_panes_swap_left
+  right $action_panes_swap_right
+  up    $action_panes_swap_above
+  down  $action_panes_swap_below
+)

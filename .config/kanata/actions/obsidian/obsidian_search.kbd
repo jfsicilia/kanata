@@ -1,0 +1,10 @@
+(defvar
+
+;; == search ============================================================
+;; search + spc
+obsidian_action_search               C-A-m
+;; search + lsft + spc
+obsidian_action_search+lsft         C-A-S-m
+;; search + rsft + spc
+;; ___TO_SET___ obsidian_action_search+rsft            
+)
