@@ -39,9 +39,7 @@ from pathlib import Path
 
 KANATA_EXT = "kbd"
 
-DEFAULT_KANATA_FOLDER = (
-    Path.home() / ".config" / "kanata_interfaces" / ".config" / "kanata"
-)
+DEFAULT_KANATA_FOLDER = Path.home() / ".config" / "kanata"
 # DEFAULT_KANATA_FOLDER = Path.home() / ".config" / "kanata"
 DEFAULT_KANATA_FILE = DEFAULT_KANATA_FOLDER / "kanata.kbd"
 DEFAULT_ACTIONS_FOLDER = DEFAULT_KANATA_FOLDER / "actions"

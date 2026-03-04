@@ -78,12 +78,14 @@
 ;; Apps Virtual Keys =====================================================
 (defvirtualkeys
   vk_obsidian     XX
-  vk_chrome       XX
   vk_tmux         XX
-  vk_dolphin      XX
-  vk_nvim         XX
+  vk_apps         XX
   vk_zellij       XX
+  vk_dolphin      XX
+  vk_chrome       XX
+  vk_vscode       XX
   vk_foot         XX
+  vk_nvim         XX
 )
 
 ;; Apps' Actions ========================================================
@@ -141,6 +143,7 @@
 (include actions/tmux/tmux_seek_n_select.kbd)
 (include actions/tmux/tmux_sessions.kbd)
 (include actions/tmux/tmux_tabs.kbd)
+(include actions/vscode/vscode_omni.kbd)
 (include actions/zellij/zellij_groups.29.kbd)
 (include actions/zellij/zellij_mod_key.kbd)
 (include actions/zellij/zellij_mod_physical.kbd)
