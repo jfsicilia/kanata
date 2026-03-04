@@ -31,4 +31,5 @@ To view log:
 journalctl --user -u kanata -f -n 100
 ```
 
-To reload kanata configuration use `Tab+r`.
+To reload kanata configuration use `opts+k`.
+**NOTE**: By default `opts` is configured as RCtrl.
