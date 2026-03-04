@@ -40,7 +40,6 @@ from pathlib import Path
 KANATA_EXT = "kbd"
 
 DEFAULT_KANATA_FOLDER = Path.home() / ".config" / "kanata"
-# DEFAULT_KANATA_FOLDER = Path.home() / ".config" / "kanata"
 DEFAULT_KANATA_FILE = DEFAULT_KANATA_FOLDER / "kanata.kbd"
 DEFAULT_ACTIONS_FOLDER = DEFAULT_KANATA_FOLDER / "actions"
 
@@ -105,7 +104,7 @@ IFACE_PRIORITY_RE = re.compile(r"^(\w+)(?:\.(\d+))?\.kbd$")
 
 def find_apps(
     actions_folder: Path,
-) -> tuple[set[str], dict[str, list[tuple[str, str, int]]]]:
+) -> tuple[list[str], dict[str, list[tuple[str, str, int]]]]:
     """Discover per-app action files from per-app subdirectories.
 
     Scans subdirectories of actions_folder for files matching the pattern
@@ -156,12 +155,12 @@ def find_apps(
     for interface in iface2app:
         iface2app[interface].sort(key=lambda x: x[2])
 
-    return (apps, iface2app)
+    return (sorted(apps), iface2app)
 
 
 def autogen_kanata_file(
     lines: list[str],
-    apps: set[str],
+    apps: list[str],
     iface2app: dict[str, list[tuple[str, str, int]]],
     actions_folder: Path,
     kanata_folder: Path,

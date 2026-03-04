@@ -77,15 +77,15 @@
 
 ;; Apps Virtual Keys =====================================================
 (defvirtualkeys
-  vk_obsidian     XX
-  vk_tmux         XX
   vk_apps         XX
-  vk_zellij       XX
-  vk_dolphin      XX
   vk_chrome       XX
-  vk_vscode       XX
+  vk_dolphin      XX
   vk_foot         XX
   vk_nvim         XX
+  vk_obsidian     XX
+  vk_tmux         XX
+  vk_vscode       XX
+  vk_zellij       XX
 )
 
 ;; Apps' Actions ========================================================
