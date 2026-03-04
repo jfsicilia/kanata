@@ -16,12 +16,12 @@
 #   - Python 3.10+ must be available.
 
 set -euo pipefail
-shopt -s nullglob  # Avoid literal glob if no files match.
+shopt -s nullglob # Avoid literal glob if no files match.
 
-SCRIPT="$HOME/.config/kanata/scripts/kanata_sync_interfaces.py"
+SCRIPT="kanata_sync_interfaces.py"
 DIR="$HOME/.config/kanata/actions"
 
 for file in "$DIR"/*/*.kbd; do
-  echo "Processing: $file"
-  "$SCRIPT" "-w" "$file"
+    echo "Processing: $file"
+    "$SCRIPT" "-w" "$file"
 done
