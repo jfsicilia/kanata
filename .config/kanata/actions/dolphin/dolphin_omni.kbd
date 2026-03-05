@@ -1,84 +1,171 @@
+(defvirtualkeys
+  ;; This virtual keys allow to iterate over the sort options of dolphin.
+  vk_dolphin_sort1  XX
+  vk_dolphin_sort2  XX
+  vk_dolphin_sort_toggle  XX
+  vk_dolphin_view1  XX
+  vk_dolphin_view2  XX
+  vk_dolphin_tab_toggle  XX
+)
+(deftemplate goto_folder (folder)
+  (macro C-l $folder ent)
+)
+
 (defvar
+;; Toggles between sorting by name, date and size.
+dolphin_toggle_sort_by (multi 
+  (switch 
+    ((input virtual vk_dolphin_sort1)) (multi (on-press press-virtualkey vk_dolphin_sort2) (on-press release-virtualkey vk_dolphin_sort1)) break
+    ((input virtual vk_dolphin_sort2)) (multi (on-press release-virtualkey vk_dolphin_sort2)) break
+    ()                                 (multi (on-press press-virtualkey vk_dolphin_sort1)) break
+  )
+  (switch
+    ((input virtual vk_dolphin_sort1)) C-A-n break  ;; CUSTOM sort by name
+    ((input virtual vk_dolphin_sort2)) C-A-s break  ;; CUSTOM sort by date
+    ()                                 C-A-d break  ;; CUSTOM sort by size
+  )
+)
+;; Toggles sort ordering A-Z / Z-A
+dolphin_toggle_sort_toggle (multi (on-press toggle-virtualkey vk_dolphin_sort_toggle) 
+  (switch 
+    ((input virtual vk_dolphin_sort_toggle)) C-A-up   break ;; CUSTOM oldest first
+    ()                                       C-A-down break ;; CUSTOM newest first
+  )
+)
+;; Toggles between view modes 1, 2 and 3.
+dolphin_toggle_view (multi 
+  (switch 
+    ((input virtual vk_dolphin_view1)) (multi (on-press press-virtualkey vk_dolphin_view2) (on-press release-virtualkey vk_dolphin_view1)) break
+    ((input virtual vk_dolphin_view2)) (multi (on-press release-virtualkey vk_dolphin_view2)) break
+    ()                                 (multi (on-press press-virtualkey vk_dolphin_view1)) break
+  )
+  (switch
+    ((input virtual vk_dolphin_view1)) C-1 break  ;; View 1
+    ((input virtual vk_dolphin_view2)) C-2 break  ;; View 2
+    ()                                 C-3 break  ;; View 3
+  )
+)
+;; Toggles sort ordering A-Z / Z-A
+dolphin_toggle_tab (multi (on-press toggle-virtualkey vk_dolphin_tab_toggle) 
+  (switch 
+    ((input virtual vk_dolphin_tab_toggle))   C-tab   break 
+    ()                                        C-S-tab break 
+  )
+)
 
 ;; == omni ============================================================
 
-;; == omni nav ======================================================
-;; omni + g
-dolphin_action_omni+g                C-l
-
-;; omni + b
-dolphin_action_omni+b           pgup
-
-;; omni + f
-dolphin_action_omni+f         pgdn
-
-;; omni + k
-dolphin_action_omni+k                up
-;; omni + j
-dolphin_action_omni+j              down
-;; omni + h
-dolphin_action_omni+h              left 
-;; omni + l
-dolphin_action_omni+l             right
-
-;; omni + ]
-dolphin_action_omni+]         A-right
-;; omni + [
-dolphin_action_omni+[         A-left
-
-;; == omni edit ======================================================""
-;; omni + c
-;; == omni edit ======================================================
-dolphin_action_omni+c              C-c
-
-;; omni + x
-dolphin_action_omni+x               C-x
-;; omni + v
-dolphin_action_omni+v             C-v
-;; omni + z
-dolphin_action_omni+z              C-z
-;; omni + lsft + z
-dolphin_action_omni+lsft+z              C-S-z
-;; omni + ;
-;; ___TO_SET___ dolphin_action_omni+;                 
-
-;; == omni file manager ===============================================""
 ;; omni + spc
+;; == omni file manager ===============================================""
 ;; == omni file manager ===============================================
 dolphin_action_omni+spc            spc
-;; omni + r
-dolphin_action_omni+r            f2
-;; omni + d
-dolphin_action_omni+d         C-d
+
 ;; omni + a
 dolphin_action_omni+a        C-a
 ;; omni + lsft + a
 ;; ___TO_SET___ dolphin_action_omni+lsft+a            
 ;; omni + rsft + a
 ;; ___TO_SET___ dolphin_action_omni+rsft+a            
+
+;; omni + b
+dolphin_action_omni+b           pgup
+
+;; omni + c
+;; == omni edit ======================================================""
+;; == omni edit ======================================================
+dolphin_action_omni+c              C-c
+
+;; omni + d
+dolphin_action_omni+d         C-d
+
+;; omni + e
+dolphin_action_omni+e           (macro S-f10 10 up up up right down down ent) 
+;; omni + lsft + e
+dolphin_action_omni+lsft+e          (macro S-f10 10 up up up right down down ent)
+
+;; omni + f
+dolphin_action_omni+f         pgdn
+
+;; omni + g
+;; == omni nav ======================================================
+dolphin_action_omni+g                C-l
+
+;; omni + h
+dolphin_action_omni+h              left 
+
+;; omni + i
+dolphin_action_omni+i              A-ret
+
+;; omni + j
+dolphin_action_omni+j              down
+
+;; omni + k
+dolphin_action_omni+k                up
+
+;; omni + l
+dolphin_action_omni+l             right
+
+;; omni + m
+;; see modM
+;; ___TO_SET___ dolphin_action_omni+m                 
+
 ;; omni + n
 dolphin_action_omni+n               A-n   ;; CUSTOM
 ;; omni + lsft + n
 dolphin_action_omni+lsft+n          C-S-n
 ;; omni + rsft + n
 dolphin_action_omni+rsft+n          C-n
+
 ;; omni + o
 dolphin_action_omni+o              ent
+
 ;; omni + p
 dolphin_action_omni+p            A-up
+
+;; omni + q
+;; see windows
+;; ___TO_SET___ dolphin_action_omni+q                 
+
+;; omni + r
+dolphin_action_omni+r            f2
+
 ;; omni + s
 dolphin_action_omni+s              $dolphin_toggle_sort_by
 ;; omni + lsft + s | omni + rsft + s
 dolphin_action_omni+lsft+s      $dolphin_toggle_sort_toggle
+
+;; omni + t
+;; see tab
+;; == omni misc ===============================================
+dolphin_action_omni+t           C-t
+;; omni + lsft + t
+;; see tab
+dolphin_action_omni+lsft+t    C-S-t 
+
+;; omni + u
+dolphin_action_omni+u                 $dolphin_toggle_view
+
+;; omni + v
+dolphin_action_omni+v             C-v
+
+;; omni + w
+;; see tab
+dolphin_action_omni+w         C-w
+
+;; omni + x
+dolphin_action_omni+x               C-x
+
 ;; omni + y
 dolphin_action_omni+y            C-i
-;; omni + e
-dolphin_action_omni+e           (macro S-f10 10 up up up right down down ent) 
-;; omni + lsft + e
-dolphin_action_omni+lsft+e          (macro S-f10 10 up up up right down down ent)
-;; omni + i
-dolphin_action_omni+i              A-ret
 
+;; omni + z
+dolphin_action_omni+z              C-z
+;; omni + lsft + z
+dolphin_action_omni+lsft+z              C-S-z
+
+
+
+;; ___TO_SET___ dolphin_action_omni+0                 
 ;; == omni user interface ===============================================
 dolphin_action_omni+1                 A-1
 dolphin_action_omni+2                 A-2
@@ -89,25 +176,26 @@ dolphin_action_omni+6                 A-6
 dolphin_action_omni+7                 A-7
 dolphin_action_omni+8                 A-8
 dolphin_action_omni+9                 A-9
-;; ___TO_SET___ dolphin_action_omni+0                 
 
-;; == omni misc ===============================================
-;; omni + t
-;; see tab
-dolphin_action_omni+t           C-t
-;; omni + lsft + t
-;; see tab
-dolphin_action_omni+lsft+t    C-S-t 
-;; omni + w
-;; see tab
-dolphin_action_omni+w         C-w
-;; omni + q
-;; see windows
-;; ___TO_SET___ dolphin_action_omni+q                 
+;; omni + `
+;; ___TO_SET___ dolphin_action_omni+`                 
+;; omni + -
+;; ___TO_SET___ dolphin_action_omni+-                 
+;; omni + =
+;; ___TO_SET___ dolphin_action_omni+=                 
 
-;; omni + m
-;; see modM
-;; ___TO_SET___ dolphin_action_omni+m                 
+;; omni + ]
+dolphin_action_omni+]         A-right
+;; omni + [
+dolphin_action_omni+[         A-left
+;; omni + \
+;; ___TO_SET___ dolphin_action_omni+\                 
+
+;; omni + ;
+;; ___TO_SET___ dolphin_action_omni+;                 
+;; omni + '
+;; ___TO_SET___ dolphin_action_omni+'                 
+
 ;; omni + ,
 ;; see mod,
 ;; ___TO_SET___ dolphin_action_omni+,                 
@@ -117,10 +205,17 @@ dolphin_action_omni+w         C-w
 ;; omni + /
 ;; see mod/
 ;; ___TO_SET___ dolphin_action_omni+/                 
-;; omni + =
-;; ___TO_SET___ dolphin_action_omni+=                 
-;; omni + '
-;; ___TO_SET___ dolphin_action_omni+'                 
-;; omni + u
-dolphin_action_omni+u                 $dolphin_toggle_view
+
+;; omni + !lmet
+;; ___TO_SET___ dolphin_action_omni+!lmet             
+;; omni + !lalt
+;; ___TO_SET___ dolphin_action_omni+!lalt             
+;; omni + !lctl
+;; ___TO_SET___ dolphin_action_omni+!lctl             
+;; omni + ralt
+;; ___TO_SET___ dolphin_action_omni+ralt              
+;; omni + prnt
+;; ___TO_SET___ dolphin_action_omni+prnt              
+;; omni + rctl
+;; ___TO_SET___ dolphin_action_omni+rctl              
 )

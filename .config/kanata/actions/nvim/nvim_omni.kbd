@@ -1,98 +1,99 @@
+(defvirtualkeys
+  vk_nvim_compare_toggle  XX
+)
 (defvar
+;; Toggles compare mode.
+nvim_compare_toggle (multi (on-press toggle-virtualkey vk_nvim_compare_toggle) 
+  (switch 
+    ;; `{esc}:diffthis{ent}{C-w}p:diffthis{ent}{C-w}p`
+    ((input virtual vk_nvim_compare_toggle)) (macro esc S-; d i f f t h i s ent C-w p S-; d i f f t h i s ent C-w p)  break 
+    ()                                       (macro esc S-; d i f f o f f ent C-w p S-; d i f f o f f ent C-w p)  break 
+  )
+)
 
 ;; == omni ============================================================
 
-;; == omni nav ======================================================
-;; omni + g
-;; ___TO_SET___ nvim_action_omni+g                 
-
-;; omni + b
-nvim_action_omni+b                      C-b
-
-;; omni + f
-nvim_action_omni+f                      C-f
-
-;; omni + k
-nvim_action_omni+k                      up
-;; omni + j
-nvim_action_omni+j                      down
-;; omni + h
-nvim_action_omni+h                      left
-;; omni + l
-nvim_action_omni+l                      right
-
-;; omni + ]
-nvim_action_omni+]                      C-i
-;; omni + [
-nvim_action_omni+[                      C-o
-
-;; == omni edit ======================================================""
-;; omni + c
-;; ___TO_SET___ nvim_action_omni+c                 
-
-;; omni + x
-;; ___TO_SET___ nvim_action_omni+x                 
-;; omni + v
-;; ___TO_SET___ nvim_action_omni+v                 
-;; omni + z
-;; ___TO_SET___ nvim_action_omni+z                 
-;; omni + lsft + z
-;; ___TO_SET___ nvim_action_omni+lsft+z            
-;; omni + ;
-nvim_action_omni+;           (macro esc g c c)
-
-;; == omni file manager ===============================================""
 ;; omni + spc
-;; == omni file manager ===============================================
 nvim_action_omni+spc            $nvim_action_seek_and_select
-;; omni + r
-;; nvim_action_omni+r            `{esc}:saveas `
-nvim_action_omni+r            (macro esc S-; s a v e a s spc)
-;; omni + d
-;; nvim_action_omni+d         `{esc}:saveas %:r_copy.%:e`
-nvim_action_omni+d         (macro esc S-; s a v e a s spc S-5 S-; r S-- c o p y . S-5 S-; e)
+
 ;; omni + a
 nvim_action_omni+a                     (macro esc g g S-v S-g)
 ;; omni + lsft + a
 ;; ___TO_SET___ nvim_action_omni+lsft+a            
 ;; omni + rsft + a
 ;; ___TO_SET___ nvim_action_omni+rsft+a            
-;; omni + n
-nvim_action_omni+n               $nvim_action_omni+t
-;; omni + lsft + n
-;; ___TO_SET___ nvim_action_omni+lsft+n            
-;; omni + rsft + n
-;; ___TO_SET___ nvim_action_omni+rsft+n            
-;; omni + o
-nvim_action_omni+o                          C-] ;; Follow tag in help ""
-;; omni + p
-nvim_action_omni+p                        C-t ;; Go back to preceding tag
-;; omni + s
-;; ___TO_SET___ nvim_action_omni+s                 
-;; omni + lsft + s | omni + rsft + s
-;; ___TO_SET___ nvim_action_omni+lsft+s            
-;; omni + y
-;; ___TO_SET___ nvim_action_omni+y                 
+
+;; omni + b
+nvim_action_omni+b                      C-b
+
+;; omni + c
+nvim_action_omni+c                 y
+
+;; omni + d
+;; nvim_action_omni+d         `{esc}:saveas %:r_copy.%:e`
+nvim_action_omni+d         (macro esc S-; s a v e a s spc S-5 S-; r S-- c o p y . S-5 S-; e)
+
 ;; omni + e
 ;; ___TO_SET___ nvim_action_omni+e                 
 ;; omni + lsft + e
 ;; ___TO_SET___ nvim_action_omni+lsft+e            
+
+;; omni + f
+nvim_action_omni+f                      C-f
+
+;; omni + g
+;; ___TO_SET___ nvim_action_omni+g                 
+
+;; omni + h
+nvim_action_omni+h                      left
+
 ;; omni + i
 ;; ___TO_SET___ nvim_action_omni+i                 
 
-;; == omni user interface ===============================================
-;; ___TO_SET___ nvim_action_omni+1                 
-;; ___TO_SET___ nvim_action_omni+2                 
-;; ___TO_SET___ nvim_action_omni+3                 
-;; ___TO_SET___ nvim_action_omni+4                 
-;; ___TO_SET___ nvim_action_omni+5                 
-;; ___TO_SET___ nvim_action_omni+6                 
-;; ___TO_SET___ nvim_action_omni+7                 
-;; ___TO_SET___ nvim_action_omni+8                 
-;; ___TO_SET___ nvim_action_omni+9                 
-;; ___TO_SET___ nvim_action_omni+0                 
+;; omni + j
+nvim_action_omni+j                      down
 
-;; == omni misc ===============================================
+;; omni + k
+nvim_action_omni+k                      up
+
+;; omni + l
+nvim_action_omni+l                      right
+
+;; omni + m
+;; see modM
+;; ___TO_SET___ nvim_action_omni+m                 
+
+;; omni + n
+;; nvim_action_omni+n           `{esc}:tabnew{ent}:e `
+nvim_action_omni+n          (macro esc S-; t a b n e w ent S-; e spc) 
+;; omni + lsft + n
+;; nvim_action_omni+lsft+n           `{esc}:!mkdir -p `
+nvim_action_omni+lsft+n           (macro esc S-; S-1 m k d i r spc - p spc)
+;; omni + rsft + n
+;; ___TO_SET___ nvim_action_omni+rsft+n            
+
+;; omni + o
+nvim_action_omni+o                          C-] ;; Follow tag in help ""
+
+;; omni + p
+nvim_action_omni+p                        C-t ;; Go back to preceding tag
+
+;; omni + q
+;; see windows
+;; nvim_action_omni+q      `{esc}:qa{ent}`
+nvim_action_omni+q      (macro esc S-; q a ent)
+
+;; omni + r
+;; nvim_action_omni+r            `{esc}:saveas `
+nvim_action_omni+r            (macro esc S-; s a v e a s spc)
+
+;; omni + s
+;; nvim_action_omni+s                 `:sort{ent}`
+nvim_action_omni+s                 (macro S-; s o r t ent)
+;; omni + lsft + s | omni + rsft + s
+;; nvim_action_omni+lsft+s            `:sort!{ent}`
+nvim_action_omni+lsft+s            (macro S-; s o r t S-1 ent)
+
 ;; omni + t
 ;; see tab
 ;; nvim_action_omni+t           `{esc}:tabnew{ent}`
@@ -100,18 +101,63 @@ nvim_action_omni+t           (macro esc S-; t a b n e w ent)
 ;; omni + lsft + t
 ;; see tab
 nvim_action_omni+lsft+t    (multi $nvim_action_omni+t C-o)
+
+;; omni + u
+;; nvim_action_omni+u                 `:%!awk 'seen[$0]++ == 0'{ent}`
+nvim_action_omni+u                 (macro S-; S-5 S-1 a w k spc ' s e e n [ S-4 Digit0 ] S-= S-= spc = = spc Digit0 ' ent)
+
+;; omni + v
+nvim_action_omni+v                 C-S-v
+
 ;; omni + w
 ;; see tab
 ;; nvim_action_omni+w         `{esc}:bdelete{ent}`
 nvim_action_omni+w         (macro esc S-; b d e l e t e ent)
-;; omni + q
-;; see windows
-;; nvim_action_omni+q      `{esc}:qa{ent}`
-nvim_action_omni+q      (macro esc S-; q a ent)
 
-;; omni + m
-;; see modM
-;; ___TO_SET___ nvim_action_omni+m                 
+;; omni + x
+nvim_action_omni+x                 d
+
+;; omni + y
+nvim_action_omni+y                $nvim_action_modY_mod;           
+
+;; omni + z
+nvim_action_omni+z                 u
+;; omni + lsft + z
+nvim_action_omni+lsft+z            C-r
+
+
+
+;; ___TO_SET___ nvim_action_omni+0                 
+;; nvim_action_omni+1                 `{esc}:lua require('bufferline').go_to_buffer(1,true){ent}`
+nvim_action_omni+1                 (macro esc S-; l u a spc r e q u i r e S-9 ' b u f f e r l i n e ' S-0 . g o S-- t o S-- b u f f e r S-9 Digit1 , t r u e S-0 ent)
+nvim_action_omni+2                 (macro esc S-; l u a spc r e q u i r e S-9 ' b u f f e r l i n e ' S-0 . g o S-- t o S-- b u f f e r S-9 Digit2 , t r u e S-0 ent)
+nvim_action_omni+3                 (macro esc S-; l u a spc r e q u i r e S-9 ' b u f f e r l i n e ' S-0 . g o S-- t o S-- b u f f e r S-9 Digit3 , t r u e S-0 ent)
+nvim_action_omni+4                 (macro esc S-; l u a spc r e q u i r e S-9 ' b u f f e r l i n e ' S-0 . g o S-- t o S-- b u f f e r S-9 Digit4 , t r u e S-0 ent)
+nvim_action_omni+5                 (macro esc S-; l u a spc r e q u i r e S-9 ' b u f f e r l i n e ' S-0 . g o S-- t o S-- b u f f e r S-9 Digit5 , t r u e S-0 ent)
+nvim_action_omni+6                 (macro esc S-; l u a spc r e q u i r e S-9 ' b u f f e r l i n e ' S-0 . g o S-- t o S-- b u f f e r S-9 Digit6 , t r u e S-0 ent)
+nvim_action_omni+7                 (macro esc S-; l u a spc r e q u i r e S-9 ' b u f f e r l i n e ' S-0 . g o S-- t o S-- b u f f e r S-9 Digit7 , t r u e S-0 ent)
+nvim_action_omni+8                 (macro esc S-; l u a spc r e q u i r e S-9 ' b u f f e r l i n e ' S-0 . g o S-- t o S-- b u f f e r S-9 Digit8 , t r u e S-0 ent)
+nvim_action_omni+9                 (macro esc S-; l u a spc r e q u i r e S-9 ' b u f f e r l i n e ' S-0 . g o S-- t o S-- b u f f e r S-9 Digit9 , t r u e S-0 ent)
+
+;; omni + `
+;; ___TO_SET___ nvim_action_omni+`                 
+;; omni + -
+;; ___TO_SET___ nvim_action_omni+-                 
+;; omni + =
+;; ___TO_SET___ nvim_action_omni+=                 
+
+;; omni + ]
+nvim_action_omni+]                      C-i
+;; omni + [
+nvim_action_omni+[                      C-o
+;; omni + \
+nvim_action_omni+\                 $nvim_compare_toggle  ;;""
+
+;; omni + ;
+nvim_action_omni+;           (macro esc g c c)  ;; Comment block
+;; omni + '
+;; ___TO_SET___ nvim_action_omni+'                 
+
 ;; omni + ,
 ;; see mod,
 nvim_action_omni+,           $nvim_action_mod,
@@ -121,10 +167,17 @@ nvim_action_omni+.               $nvim_action_mod.
 ;; omni + /
 ;; see mod/
 nvim_action_omni+/              $nvim_action_mod/
-;; omni + =
-;; ___TO_SET___ nvim_action_omni+=                 
-;; omni + '
-;; ___TO_SET___ nvim_action_omni+'                 
-;; omni + u
-;; ___TO_SET___ nvim_action_omni+u                 
+
+;; omni + !lmet
+;; ___TO_SET___ nvim_action_omni+!lmet             
+;; omni + !lalt
+;; ___TO_SET___ nvim_action_omni+!lalt             
+;; omni + !lctl
+;; ___TO_SET___ nvim_action_omni+!lctl             
+;; omni + ralt
+;; ___TO_SET___ nvim_action_omni+ralt              
+;; omni + prnt
+;; ___TO_SET___ nvim_action_omni+prnt              
+;; omni + rctl
+;; ___TO_SET___ nvim_action_omni+rctl              
 )

@@ -35,10 +35,10 @@
 | '        | registries          |                     |                  |                  |                    |                            |
 | [        |                     |                     |                  |                  |                    |                            |
 | ]        |                     |                     |                  |                  |                    |                            |
-| \        |                     |                     |                  |                  |                    |                            |
+| \        | ~compare            | ~compare            | ~compare         |                  |                    |                            |
 | `        |                     |                     |                  |                  |                    |                            |
 | -        |                     |                     |                  |                  |                    |                            |
-| =        | ~compare            | ~compare            | ~compare         |                  |                    |                            |
+| =        | ~format             | ~format             | ~format          |                  |                    |                            |
 | 1        |                     |                     |                  |                  |                    |                            |
 | 2        |                     |                     |                  |                  |                    |                            |
 | 3        |                     |                     |                  |                  |                    |                            |

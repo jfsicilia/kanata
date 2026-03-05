@@ -2,82 +2,114 @@
 
 ;; == omni ============================================================
 
-;; == omni nav ======================================================
-;; omni + g
-;; ___TO_SET___ foot_action_omni+g                 
-
-;; omni + b
-foot_action_omni+b                        S-pgup
-
-;; omni + f
-foot_action_omni+f                      S-pgdn
-
-;; omni + k
-;; ___TO_SET___ foot_action_omni+k                 
-;; omni + j
-;; ___TO_SET___ foot_action_omni+j                 
-;; omni + h
-;; ___TO_SET___ foot_action_omni+h                 
-;; omni + l
-;; ___TO_SET___ foot_action_omni+l                 
-
-;; omni + ]
-;; ___TO_SET___ foot_action_omni+]                 
-;; omni + [
-;; ___TO_SET___ foot_action_omni+[                 
-
-;; == omni edit ======================================================""
-;; omni + c
-;; ___TO_SET___ foot_action_omni+c                 
-
-;; omni + x
-;; ___TO_SET___ foot_action_omni+x                 
-;; omni + v
-;; ___TO_SET___ foot_action_omni+v                 
-;; omni + z
-;; ___TO_SET___ foot_action_omni+z                 
-;; omni + lsft + z
-;; ___TO_SET___ foot_action_omni+lsft+z            
-;; omni + ;
-;; ___TO_SET___ foot_action_omni+;                 
-
-;; == omni file manager ===============================================""
 ;; omni + spc
 ;; ___TO_SET___ foot_action_omni+spc               
-;; omni + r
-;; ___TO_SET___ foot_action_omni+r                 
-;; omni + d
-;; ___TO_SET___ foot_action_omni+d                 
+
 ;; omni + a
 ;; ___TO_SET___ foot_action_omni+a                 
 ;; omni + lsft + a
 ;; ___TO_SET___ foot_action_omni+lsft+a            
 ;; omni + rsft + a
 ;; ___TO_SET___ foot_action_omni+rsft+a            
+
+;; omni + b
+foot_action_omni+b                        S-pgup
+
+;; omni + c
+;; == omni edit ======================================================""
+foot_action_omni+c                 C-S-c
+
+;; omni + d
+;; ___TO_SET___ foot_action_omni+d                 
+
+;; omni + e
+;; foot_action_omni+e                 `{esc}dditar -xaf <file>{esc}vF<`
+foot_action_omni+e                 (macro esc d d i t a r spc - x a f spc S-, f i l e S-. esc v S-f S-,)
+;; omni + lsft + e
+;; foot_action_omni+lsft+e            `{esc}dditar -czf <zipfile> <files and/or folders>{esc}vF<;`
+foot_action_omni+lsft+e            (macro esc d d i t a r spc - c z f spc S-, z i p f i l e S-. spc S-, f i l e s spc a n d / o r spc f o l d e r s S-. esc v S-f S-, ;)
+
+;; omni + f
+foot_action_omni+f                        S-pgdn
+
+;; omni + g
+;; ___TO_SET___ foot_action_omni+g                 
+
+;; omni + h
+;; ___TO_SET___ foot_action_omni+h                 
+
+;; omni + i
+;; ___TO_SET___ foot_action_omni+i                 
+
+;; omni + j
+;; ___TO_SET___ foot_action_omni+j                 
+
+;; omni + k
+;; ___TO_SET___ foot_action_omni+k                 
+
+;; omni + l
+;; ___TO_SET___ foot_action_omni+l                 
+
+;; omni + m
+;; see modM
+;; ___TO_SET___ foot_action_omni+m                 
+
 ;; omni + n
 ;; ___TO_SET___ foot_action_omni+n                 
 ;; omni + lsft + n
 ;; ___TO_SET___ foot_action_omni+lsft+n            
 ;; omni + rsft + n
 ;; ___TO_SET___ foot_action_omni+rsft+n            
+
 ;; omni + o
 ;; ___TO_SET___ foot_action_omni+o                 
+
 ;; omni + p
 ;; ___TO_SET___ foot_action_omni+p                 
+
+;; omni + q
+;; see windows
+;; ___TO_SET___ foot_action_omni+q                 
+
+;; omni + r
+;; ___TO_SET___ foot_action_omni+r                 
+
 ;; omni + s
 ;; ___TO_SET___ foot_action_omni+s                 
 ;; omni + lsft + s | omni + rsft + s
 ;; ___TO_SET___ foot_action_omni+lsft+s            
-;; omni + y
-;; ___TO_SET___ foot_action_omni+y                 
-;; omni + e
-;; ___TO_SET___ foot_action_omni+e                 
-;; omni + lsft + e
-;; ___TO_SET___ foot_action_omni+lsft+e            
-;; omni + i
-;; ___TO_SET___ foot_action_omni+i                 
 
-;; == omni user interface ===============================================
+;; omni + t
+;; see tab
+;; ___TO_SET___ foot_action_omni+t                 
+;; omni + lsft + t
+;; see tab
+;; ___TO_SET___ foot_action_omni+lsft+t            
+
+;; omni + u
+;; ___TO_SET___ foot_action_omni+u                 
+
+;; omni + v
+foot_action_omni+v                 C-S-v 
+
+;; omni + w
+;; see tab
+;; ___TO_SET___ foot_action_omni+w                 
+
+;; omni + x
+;; ___TO_SET___ foot_action_omni+x                 
+
+;; omni + y
+foot_action_omni+y                 C-y   ;; shell history
+
+;; omni + z
+;; ___TO_SET___ foot_action_omni+z                 
+;; omni + lsft + z
+;; ___TO_SET___ foot_action_omni+lsft+z            
+
+
+
+;; ___TO_SET___ foot_action_omni+0                 
 ;; ___TO_SET___ foot_action_omni+1                 
 ;; ___TO_SET___ foot_action_omni+2                 
 ;; ___TO_SET___ foot_action_omni+3                 
@@ -87,25 +119,27 @@ foot_action_omni+f                      S-pgdn
 ;; ___TO_SET___ foot_action_omni+7                 
 ;; ___TO_SET___ foot_action_omni+8                 
 ;; ___TO_SET___ foot_action_omni+9                 
-;; ___TO_SET___ foot_action_omni+0                 
 
-;; == omni misc ===============================================
-;; omni + t
-;; see tab
-;; ___TO_SET___ foot_action_omni+t                 
-;; omni + lsft + t
-;; see tab
-;; ___TO_SET___ foot_action_omni+lsft+t            
-;; omni + w
-;; see tab
-;; ___TO_SET___ foot_action_omni+w                 
-;; omni + q
-;; see windows
-;; ___TO_SET___ foot_action_omni+q                 
+;; omni + `
+;; ___TO_SET___ foot_action_omni+`                 
+;; omni + -
+;; ___TO_SET___ foot_action_omni+-                 
+;; omni + =
+;; ___TO_SET___ foot_action_omni+=                 
 
-;; omni + m
-;; see modM
-;; ___TO_SET___ foot_action_omni+m                 
+;; omni + ]
+;; ___TO_SET___ foot_action_omni+]                 
+;; omni + [
+;; ___TO_SET___ foot_action_omni+[                 
+;; omni + \
+;; foot_action_omni+\                `{esc}ddinvim -d <file1> <file2>{esc}vF<;`
+foot_action_omni+\                (macro esc d d i n v i m spc - d spc S-, f i l e Digit1 S-. spc S-, f i l e Digit2 S-. esc v b b b b b)
+
+;; omni + ;
+;; ___TO_SET___ foot_action_omni+;                 
+;; omni + '
+;; ___TO_SET___ foot_action_omni+'                 
+
 ;; omni + ,
 ;; see mod,
 ;; ___TO_SET___ foot_action_omni+,                 
@@ -115,10 +149,17 @@ foot_action_omni+f                      S-pgdn
 ;; omni + /
 ;; see mod/
 ;; ___TO_SET___ foot_action_omni+/                 
-;; omni + =
-;; ___TO_SET___ foot_action_omni+=                 
-;; omni + '
-;; ___TO_SET___ foot_action_omni+'                 
-;; omni + u
-;; ___TO_SET___ foot_action_omni+u                 
+
+;; omni + !lmet
+;; ___TO_SET___ foot_action_omni+!lmet             
+;; omni + !lalt
+;; ___TO_SET___ foot_action_omni+!lalt             
+;; omni + !lctl
+;; ___TO_SET___ foot_action_omni+!lctl             
+;; omni + ralt
+;; ___TO_SET___ foot_action_omni+ralt              
+;; omni + prnt
+;; ___TO_SET___ foot_action_omni+prnt              
+;; omni + rctl
+;; ___TO_SET___ foot_action_omni+rctl              
 )

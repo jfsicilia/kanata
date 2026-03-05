@@ -60,10 +60,8 @@ nvim_action_tabs_goto_last                  (macro esc S-; b l a s t ent)
 
 ;; == tab + toggle =====================================================
 ;; tab + toggle | 2x !lctl
-;; == tab + #toggle =====================================================
-;; tab + #toggle | 2x !lctl
-;; == tabs + #toggle =====================================================
-;; tabs + #toggle | 2x !lctl
+;; == tabs + toggle =====================================================
+;; tabs + toggle | 2x !lctl
 nvim_action_tabs_toggle                     (macro esc S-; b S-3 ret) ;;""
 
 ;; == tab + move =====================================================

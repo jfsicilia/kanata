@@ -27,7 +27,7 @@ nvim_action_panes+\                   (macro esc S-; v s ret)  ;;""
 
 ;; == panes + toggle ====================================================
 ;; panes + toggle | 2x !lalt
-;; ___TO_SET___ nvim_action_panes+toggle           
+nvim_action_panes+toggle           (macro C-w p)
 
 ;; == panes + float ====================================================
 ;; panes + float

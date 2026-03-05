@@ -4,53 +4,44 @@
 
   spc  $action_omni+spc
 
-  ;; Cursor
+  a $action_omni+a
+  b $action_omni+b
+  c $action_omni+c
+  d $action_omni+d
+  e $action_omni+e
+  f $action_omni+f
+  g $action_omni+g
+  h $action_omni+h
+  i $action_omni+i
   j $action_omni+j
   k $action_omni+k
-  h $action_omni+h
   l $action_omni+l
-  b $action_omni+b
-  f $action_omni+f
-
+  m $action_omni+m
+  n $action_omni+n
   o $action_omni+o
   p $action_omni+p
-
-  ;; History
+  q $action_omni+q
+  r $action_omni+r
+  s $action_omni+s
+  t $action_omni+t
+  u $action_omni+u
+  v $action_omni+v
+  w $action_omni+w
+  x $action_omni+x
+  y $action_omni+y
+  z $action_omni+z
+  ` $action_omni+`
+  - $action_omni+-
+  = $action_omni+=
+  bspc del
   [ $action_omni+[
   ] $action_omni+]
-
-  t $action_omni+t
-  w $action_omni+w
-  q $action_omni+q
-
-  ;; Cut&Paste
-  x $action_omni+x
-  c $action_omni+c
-  v $action_omni+v
-  z $action_omni+z
-
-  u $action_omni+u
-  e $action_omni+e
-  d $action_omni+d
-  a $action_omni+a
-  n $action_omni+n
-  s $action_omni+s
-  y $action_omni+y
-  r $action_omni+r
-  i $action_omni+i
-  m $action_omni+m
-  . $action_omni+.
-  ' $action_omni+'
-  = $action_omni+=
-
-  g $action_omni+g
-
+  \ $action_omni+\
   ; $action_omni+;   ;;""
-
+  ' $action_omni+'
   , $action_omni+,
+  . $action_omni+.
   / $action_omni+/
-
-  bspc del
 
   1 $action_omni+1
   2 $action_omni+2
@@ -62,6 +53,8 @@
   8 $action_omni+8
   9 $action_omni+9
   0 $action_omni+0
+
+
 )
 
 (deflayermap (omni+lsft_layer)

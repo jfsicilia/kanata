@@ -83,6 +83,7 @@
   ;; panes + toggle | 2x !lalt
   action_panes+toggle (t! unmod_all (switch ;;@autogen@ 
     ((input virtual vk_dolphin)) $dolphin_action_panes+toggle break
+    ((input virtual vk_nvim)) $nvim_action_panes+toggle break
     ((input virtual vk_obsidian)) $obsidian_action_panes+toggle break
     ((input virtual vk_tmux)) $tmux_action_panes+toggle break
     () XX break

@@ -2,82 +2,111 @@
 
 ;; == omni ============================================================
 
-;; == omni nav ======================================================
-;; omni + g
-;; ___TO_SET___ vscode_action_omni+g                 
-
-;; omni + b
-;; ___TO_SET___ vscode_action_omni+b                 
-
-;; omni + f
-;; ___TO_SET___ vscode_action_omni+f                 
-
-;; omni + k
-;; ___TO_SET___ vscode_action_omni+k                 
-;; omni + j
-;; ___TO_SET___ vscode_action_omni+j                 
-;; omni + h
-;; ___TO_SET___ vscode_action_omni+h                 
-;; omni + l
-;; ___TO_SET___ vscode_action_omni+l                 
-
-;; omni + ]
-;; ___TO_SET___ vscode_action_omni+]                 
-;; omni + [
-;; ___TO_SET___ vscode_action_omni+[                 
-
-;; == omni edit ======================================================""
-;; omni + c
-;; ___TO_SET___ vscode_action_omni+c                 
-
-;; omni + x
-;; ___TO_SET___ vscode_action_omni+x                 
-;; omni + v
-;; ___TO_SET___ vscode_action_omni+v                 
-;; omni + z
-;; ___TO_SET___ vscode_action_omni+z                 
-;; omni + lsft + z
-;; ___TO_SET___ vscode_action_omni+lsft+z            
-;; omni + ;
-;; ___TO_SET___ vscode_action_omni+;                 
-
-;; == omni file manager ===============================================""
 ;; omni + spc
 ;; ___TO_SET___ vscode_action_omni+spc               
-;; omni + r
-;; ___TO_SET___ vscode_action_omni+r                 
-;; omni + d
-;; ___TO_SET___ vscode_action_omni+d                 
+
 ;; omni + a
 ;; ___TO_SET___ vscode_action_omni+a                 
 ;; omni + lsft + a
 ;; ___TO_SET___ vscode_action_omni+lsft+a            
 ;; omni + rsft + a
 ;; ___TO_SET___ vscode_action_omni+rsft+a            
+
+;; omni + b
+;; ___TO_SET___ vscode_action_omni+b                 
+
+;; omni + c
+;; ___TO_SET___ vscode_action_omni+c                 
+
+;; omni + d
+;; ___TO_SET___ vscode_action_omni+d                 
+
+;; omni + e
+;; ___TO_SET___ vscode_action_omni+e                 
+;; omni + lsft + e
+;; ___TO_SET___ vscode_action_omni+lsft+e            
+
+;; omni + f
+;; ___TO_SET___ vscode_action_omni+f                 
+
+;; omni + g
+;; ___TO_SET___ vscode_action_omni+g                 
+
+;; omni + h
+;; ___TO_SET___ vscode_action_omni+h                 
+
+;; omni + i
+;; ___TO_SET___ vscode_action_omni+i                 
+
+;; omni + j
+;; ___TO_SET___ vscode_action_omni+j                 
+
+;; omni + k
+;; ___TO_SET___ vscode_action_omni+k                 
+
+;; omni + l
+;; ___TO_SET___ vscode_action_omni+l                 
+
+;; omni + m
+;; see modM
+;; ___TO_SET___ vscode_action_omni+m                 
+
 ;; omni + n
 ;; ___TO_SET___ vscode_action_omni+n                 
 ;; omni + lsft + n
 ;; ___TO_SET___ vscode_action_omni+lsft+n            
 ;; omni + rsft + n
 ;; ___TO_SET___ vscode_action_omni+rsft+n            
+
 ;; omni + o
 ;; ___TO_SET___ vscode_action_omni+o                 
+
 ;; omni + p
 ;; ___TO_SET___ vscode_action_omni+p                 
+
+;; omni + q
+;; see windows
+;; ___TO_SET___ vscode_action_omni+q                 
+
+;; omni + r
+;; ___TO_SET___ vscode_action_omni+r                 
+
 ;; omni + s
 ;; ___TO_SET___ vscode_action_omni+s                 
 ;; omni + lsft + s | omni + rsft + s
 ;; ___TO_SET___ vscode_action_omni+lsft+s            
+
+;; omni + t
+;; see tab
+;; ___TO_SET___ vscode_action_omni+t                 
+;; omni + lsft + t
+;; see tab
+;; ___TO_SET___ vscode_action_omni+lsft+t            
+
+;; omni + u
+;; ___TO_SET___ vscode_action_omni+u                 
+
+;; omni + v
+;; ___TO_SET___ vscode_action_omni+v                 
+
+;; omni + w
+;; see tab
+;; ___TO_SET___ vscode_action_omni+w                 
+
+;; omni + x
+;; ___TO_SET___ vscode_action_omni+x                 
+
 ;; omni + y
 ;; ___TO_SET___ vscode_action_omni+y                 
-;; omni + e
-;; ___TO_SET___ vscode_action_omni+e                 
-;; omni + lsft + e
-;; ___TO_SET___ vscode_action_omni+lsft+e            
-;; omni + i
-;; ___TO_SET___ vscode_action_omni+i                 
 
-;; == omni user interface ===============================================
+;; omni + z
+;; ___TO_SET___ vscode_action_omni+z                 
+;; omni + lsft + z
+;; ___TO_SET___ vscode_action_omni+lsft+z            
+
+
+
+;; ___TO_SET___ vscode_action_omni+0                 
 ;; ___TO_SET___ vscode_action_omni+1                 
 ;; ___TO_SET___ vscode_action_omni+2                 
 ;; ___TO_SET___ vscode_action_omni+3                 
@@ -87,25 +116,26 @@
 ;; ___TO_SET___ vscode_action_omni+7                 
 ;; ___TO_SET___ vscode_action_omni+8                 
 ;; ___TO_SET___ vscode_action_omni+9                 
-;; ___TO_SET___ vscode_action_omni+0                 
 
-;; == omni misc ===============================================
-;; omni + t
-;; see tab
-;; ___TO_SET___ vscode_action_omni+t                 
-;; omni + lsft + t
-;; see tab
-;; ___TO_SET___ vscode_action_omni+lsft+t            
-;; omni + w
-;; see tab
-;; ___TO_SET___ vscode_action_omni+w                 
-;; omni + q
-;; see windows
-;; ___TO_SET___ vscode_action_omni+q                 
+;; omni + `
+;; ___TO_SET___ vscode_action_omni+`                 
+;; omni + -
+;; ___TO_SET___ vscode_action_omni+-                 
+;; omni + =
+;; ___TO_SET___ vscode_action_omni+=                 
 
-;; omni + m
-;; see modM
-;; ___TO_SET___ vscode_action_omni+m                 
+;; omni + ]
+;; ___TO_SET___ vscode_action_omni+]                 
+;; omni + [
+;; ___TO_SET___ vscode_action_omni+[                 
+;; omni + \
+;; ___TO_SET___ vscode_action_omni+\                 
+
+;; omni + ;
+;; ___TO_SET___ vscode_action_omni+;                 
+;; omni + '
+;; ___TO_SET___ vscode_action_omni+'                 
+
 ;; omni + ,
 ;; see mod,
 ;; ___TO_SET___ vscode_action_omni+,                 
@@ -115,10 +145,17 @@
 ;; omni + /
 ;; see mod/
 ;; ___TO_SET___ vscode_action_omni+/                 
-;; omni + =
-;; ___TO_SET___ vscode_action_omni+=                 
-;; omni + '
-;; ___TO_SET___ vscode_action_omni+'                 
-;; omni + u
-;; ___TO_SET___ vscode_action_omni+u                 
+
+;; omni + !lmet
+;; ___TO_SET___ vscode_action_omni+!lmet             
+;; omni + !lalt
+;; ___TO_SET___ vscode_action_omni+!lalt             
+;; omni + !lctl
+;; ___TO_SET___ vscode_action_omni+!lctl             
+;; omni + ralt
+;; ___TO_SET___ vscode_action_omni+ralt              
+;; omni + prnt
+;; ___TO_SET___ vscode_action_omni+prnt              
+;; omni + rctl
+;; ___TO_SET___ vscode_action_omni+rctl              
 )

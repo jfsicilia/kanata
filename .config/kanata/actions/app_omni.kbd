@@ -3,116 +3,6 @@
 
   ;; == omni ============================================================
 
-  ;; == omni nav ======================================================
-  ;; omni + g
-  action_omni+g (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_chrome)) $chrome_action_omni+g break
-    ((input virtual vk_dolphin)) $dolphin_action_omni+g break
-    ((input virtual vk_obsidian)) $obsidian_action_omni+g break
-    () XX break
-  ))
-
-  ;; omni + b
-  action_omni+b (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+b break
-    ((input virtual vk_foot)) $foot_action_omni+b break
-    ((input virtual vk_nvim)) $nvim_action_omni+b break
-    ((input virtual vk_obsidian)) $obsidian_action_omni+b break
-    ((input virtual vk_tmux)) $tmux_action_omni+b break
-    () pgup break
-  ))
-
-  ;; omni + f
-  action_omni+f (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+f break
-    ((input virtual vk_foot)) $foot_action_omni+f break
-    ((input virtual vk_nvim)) $nvim_action_omni+f break
-    ((input virtual vk_obsidian)) $obsidian_action_omni+f break
-    ((input virtual vk_tmux)) $tmux_action_omni+f break
-    () pgdn break
-  ))
-
-  ;; omni + k
-  action_omni+k (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+k break
-    ((input virtual vk_nvim)) $nvim_action_omni+k break
-    () up break
-  )
-  ;; omni + j
-  action_omni+j (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+j break
-    ((input virtual vk_nvim)) $nvim_action_omni+j break
-    () down break
-  )
-  ;; omni + h
-  action_omni+h (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+h break
-    ((input virtual vk_nvim)) $nvim_action_omni+h break
-    () left break
-  )
-  ;; omni + l
-  action_omni+l (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+l break
-    ((input virtual vk_nvim)) $nvim_action_omni+l break
-    () right break
-  )
-
-  ;; omni + ] 
-  action_omni+] (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_chrome)) $chrome_action_omni+] break
-    ((input virtual vk_dolphin)) $dolphin_action_omni+] break
-    ((input virtual vk_nvim)) $nvim_action_omni+] break
-    ((input virtual vk_obsidian)) $obsidian_action_omni+] break
-    () XX break
-  )) ;;""
-  ;; omni + [ 
-  action_omni+[ (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_chrome)) $chrome_action_omni+[ break
-    ((input virtual vk_dolphin)) $dolphin_action_omni+[ break
-    ((input virtual vk_nvim)) $nvim_action_omni+[ break
-    ((input virtual vk_obsidian)) $obsidian_action_omni+[ break
-    () XX break
-  ))
-
-  ;; == omni edit ======================================================""
-  ;; omni + c
-  action_omni+c (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+c break
-    ((input virtual vk_obsidian)) $obsidian_action_omni+c break
-    ((input virtual vk_tmux)) $tmux_action_omni+c break
-    () C-c break
-  ))
-
-  ;; omni + x
-  action_omni+x (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+x break
-    ((input virtual vk_obsidian)) $obsidian_action_omni+x break
-    () C-x break
-  ))
-  ;; omni + v
-  action_omni+v (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+v break
-    ((input virtual vk_obsidian)) $obsidian_action_omni+v break
-    ((input virtual vk_tmux)) $tmux_action_omni+v break
-    () C-v break
-  ))
-  ;; omni + z
-  action_omni+z (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+z break
-    () C-z break
-  ))
-  ;; omni + lsft + z
-  action_omni+lsft+z (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+lsft+z break
-    () C-S-z break
-  ))
-  ;; omni + ;
-  action_omni+; (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_omni+; break
-    () XX break
-  ))
-
-  ;; == omni file manager ===============================================""
   ;; omni + spc
   action_omni+spc (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_dolphin)) $dolphin_action_omni+spc break
@@ -120,21 +10,7 @@
     ((input virtual vk_obsidian)) $obsidian_action_omni+spc break
     () XX break
   ))
-  ;; omni + r
-  action_omni+r (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+r break
-    ((input virtual vk_nvim)) $nvim_action_omni+r break
-    ((input virtual vk_obsidian)) $obsidian_action_omni+r break
-    ((input virtual vk_tmux)) $tmux_action_omni+r break
-    () XX break
-  ))
-  ;; omni + d
-  action_omni+d (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+d break
-    ((input virtual vk_nvim)) $nvim_action_omni+d break
-    ((input virtual vk_obsidian)) $obsidian_action_omni+d break
-    () XX break
-  ))
+
   ;; omni + a
   action_omni+a (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_dolphin)) $dolphin_action_omni+a break
@@ -152,6 +28,106 @@
     ((input virtual vk_obsidian)) $obsidian_action_omni+rsft+a break
     () XX break
   ))
+
+  ;; omni + b
+  action_omni+b (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+b break
+    ((input virtual vk_foot)) $foot_action_omni+b break
+    ((input virtual vk_nvim)) $nvim_action_omni+b break
+    ((input virtual vk_obsidian)) $obsidian_action_omni+b break
+    ((input virtual vk_tmux)) $tmux_action_omni+b break
+    () pgup break
+  ))
+
+  ;; omni + c
+  action_omni+c (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+c break
+    ((input virtual vk_foot)) $foot_action_omni+c break
+    ((input virtual vk_nvim)) $nvim_action_omni+c break
+    ((input virtual vk_obsidian)) $obsidian_action_omni+c break
+    ((input virtual vk_tmux)) $tmux_action_omni+c break
+    () C-c break
+  ))
+
+  ;; omni + d
+  action_omni+d (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+d break
+    ((input virtual vk_nvim)) $nvim_action_omni+d break
+    ((input virtual vk_obsidian)) $obsidian_action_omni+d break
+    () XX break
+  ))
+
+  ;; omni + e
+  action_omni+e (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+e break
+    ((input virtual vk_foot)) $foot_action_omni+e break
+    () XX break
+  ))
+  ;; omni + lsft + e
+  action_omni+lsft+e (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+lsft+e break
+    ((input virtual vk_foot)) $foot_action_omni+lsft+e break
+    () XX break
+  ))
+
+  ;; omni + f
+  action_omni+f (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+f break
+    ((input virtual vk_foot)) $foot_action_omni+f break
+    ((input virtual vk_nvim)) $nvim_action_omni+f break
+    ((input virtual vk_obsidian)) $obsidian_action_omni+f break
+    ((input virtual vk_tmux)) $tmux_action_omni+f break
+    () pgdn break
+  ))
+
+  ;; omni + g
+  action_omni+g (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_chrome)) $chrome_action_omni+g break
+    ((input virtual vk_dolphin)) $dolphin_action_omni+g break
+    ((input virtual vk_obsidian)) $obsidian_action_omni+g break
+    () XX break
+  ))
+
+  ;; omni + h
+  action_omni+h (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+h break
+    ((input virtual vk_nvim)) $nvim_action_omni+h break
+    () left break
+  )
+
+  ;; omni + i
+  action_omni+i (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+i break
+    () XX break
+  ))
+
+  ;; omni + j
+  action_omni+j (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+j break
+    ((input virtual vk_nvim)) $nvim_action_omni+j break
+    () down break
+  )
+
+  ;; omni + k
+  action_omni+k (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+k break
+    ((input virtual vk_nvim)) $nvim_action_omni+k break
+    () up break
+  )
+
+  ;; omni + l
+  action_omni+l (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+l break
+    ((input virtual vk_nvim)) $nvim_action_omni+l break
+    () right break
+  )
+
+  ;; omni + m
+  ;; see modM
+  action_omni+m (t! unmod_all (switch ;;@autogen@
+    () $action_modM break
+  ))
+
   ;; omni + n
   action_omni+n (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_chrome)) $chrome_action_omni+n break
@@ -164,6 +140,7 @@
   ;; omni + lsft + n
   action_omni+lsft+n (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_dolphin)) $dolphin_action_omni+lsft+n break
+    ((input virtual vk_nvim)) $nvim_action_omni+lsft+n break
     ((input virtual vk_obsidian)) $obsidian_action_omni+lsft+n break
     () XX break
   ))
@@ -173,6 +150,7 @@
     ((input virtual vk_obsidian)) $obsidian_action_omni+rsft+n break
     () XX break
   ))
+
   ;; omni + o
   action_omni+o (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_dolphin)) $dolphin_action_omni+o break
@@ -180,6 +158,7 @@
     ((input virtual vk_obsidian)) $obsidian_action_omni+o break
     () right break
   ))
+
   ;; omni + p
   action_omni+p (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_dolphin)) $dolphin_action_omni+p break
@@ -187,79 +166,36 @@
     ((input virtual vk_obsidian)) $obsidian_action_omni+p break
     () left break
   ))
+
+  ;; omni + q
+  ;; see windows
+  action_omni+q (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_omni+q break
+    () $action_windows_close break
+  ))
+
+  ;; omni + r
+  action_omni+r (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+r break
+    ((input virtual vk_nvim)) $nvim_action_omni+r break
+    ((input virtual vk_obsidian)) $obsidian_action_omni+r break
+    ((input virtual vk_tmux)) $tmux_action_omni+r break
+    () XX break
+  ))
+
   ;; omni + s
   action_omni+s (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_dolphin)) $dolphin_action_omni+s break
+    ((input virtual vk_nvim)) $nvim_action_omni+s break
     () XX break
   ))
   ;; omni + lsft + s | omni + rsft + s
   action_omni+lsft+s (t! unmod_all (switch ;;@autogen@
     ((input virtual vk_dolphin)) $dolphin_action_omni+lsft+s break
-    () XX break
-  ))
-  ;; omni + y
-  action_omni+y (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+y break
-    () XX break
-  ))
-  ;; omni + e
-  action_omni+e (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+e break
-    () XX break
-  ))
-  ;; omni + lsft + e
-  action_omni+lsft+e (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+lsft+e break
-    () XX break
-  ))
-  ;; omni + i
-  action_omni+i (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+i break
+    ((input virtual vk_nvim)) $nvim_action_omni+lsft+s break
     () XX break
   ))
 
-  ;; == omni user interface ===============================================
-  action_omni+1 (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+1 break
-    () C-1 break
-  ))
-  action_omni+2 (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+2 break
-    () C-2 break
-  ))
-  action_omni+3 (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+3 break
-    () C-3 break
-  ))
-  action_omni+4 (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+4 break
-    () C-4 break
-  ))
-  action_omni+5 (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+5 break
-    () C-5 break
-  ))
-  action_omni+6 (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+6 break
-    () C-6 break
-  ))
-  action_omni+7 (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+7 break
-    () C-7 break
-  ))
-  action_omni+8 (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+8 break
-    () C-8 break
-  ))
-  action_omni+9 (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+9 break
-    () C-9 break
-  ))
-  action_omni+0 (t! unmod_all (switch ;;@autogen@
-    () C-0 break
-  ))
-
-  ;; == omni misc ===============================================
   ;; omni + t
   ;; see tab
   action_omni+t (t! unmod_all (switch ;;@autogen@
@@ -274,6 +210,24 @@
     ((input virtual vk_nvim)) $nvim_action_omni+lsft+t break
     () $action_tabs_undo_close break
   ))
+
+  ;; omni + u
+  action_omni+u (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+u break
+    ((input virtual vk_nvim)) $nvim_action_omni+u break
+    () XX break
+  ))
+
+  ;; omni + v
+  action_omni+v (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+v break
+    ((input virtual vk_foot)) $foot_action_omni+v break
+    ((input virtual vk_nvim)) $nvim_action_omni+v break
+    ((input virtual vk_obsidian)) $obsidian_action_omni+v break
+    ((input virtual vk_tmux)) $tmux_action_omni+v break
+    () C-v break
+  ))
+
   ;; omni + w
   ;; see tab
   action_omni+w (t! unmod_all (switch ;;@autogen@
@@ -281,18 +235,133 @@
     ((input virtual vk_nvim)) $nvim_action_omni+w break
     () $action_tabs_close break
   ))
-  ;; omni + q
-  ;; see windows
-  action_omni+q (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_nvim)) $nvim_action_omni+q break
-    () $action_windows_close break
+
+  ;; omni + x
+  action_omni+x (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+x break
+    ((input virtual vk_nvim)) $nvim_action_omni+x break
+    ((input virtual vk_obsidian)) $obsidian_action_omni+x break
+    () C-x break
+  ))
+  
+  ;; omni + y
+  action_omni+y (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+y break
+    ((input virtual vk_foot)) $foot_action_omni+y break
+    ((input virtual vk_nvim)) $nvim_action_omni+y break
+    () XX break
   ))
 
-  ;; omni + m
-  ;; see modM
-  action_omni+m (t! unmod_all (switch ;;@autogen@
-    () $action_modM break
+  ;; omni + z
+  action_omni+z (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+z break
+    ((input virtual vk_nvim)) $nvim_action_omni+z break
+    () C-z break
   ))
+  ;; omni + lsft + z
+  action_omni+lsft+z (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+lsft+z break
+    ((input virtual vk_nvim)) $nvim_action_omni+lsft+z break
+    () C-S-z break
+  ))
+
+
+
+  action_omni+0 (t! unmod_all (switch ;;@autogen@
+    () C-0 break
+  ))
+  action_omni+1 (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+1 break
+    ((input virtual vk_nvim)) $nvim_action_omni+1 break
+    () C-1 break
+  ))
+  action_omni+2 (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+2 break
+    ((input virtual vk_nvim)) $nvim_action_omni+2 break
+    () C-2 break
+  ))
+  action_omni+3 (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+3 break
+    ((input virtual vk_nvim)) $nvim_action_omni+3 break
+    () C-3 break
+  ))
+  action_omni+4 (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+4 break
+    ((input virtual vk_nvim)) $nvim_action_omni+4 break
+    () C-4 break
+  ))
+  action_omni+5 (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+5 break
+    ((input virtual vk_nvim)) $nvim_action_omni+5 break
+    () C-5 break
+  ))
+  action_omni+6 (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+6 break
+    ((input virtual vk_nvim)) $nvim_action_omni+6 break
+    () C-6 break
+  ))
+  action_omni+7 (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+7 break
+    ((input virtual vk_nvim)) $nvim_action_omni+7 break
+    () C-7 break
+  ))
+  action_omni+8 (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+8 break
+    ((input virtual vk_nvim)) $nvim_action_omni+8 break
+    () C-8 break
+  ))
+  action_omni+9 (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+9 break
+    ((input virtual vk_nvim)) $nvim_action_omni+9 break
+    () C-9 break
+  ))
+
+  ;; omni + `
+  action_omni+` (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; omni + -
+  action_omni+- (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; omni + =
+  action_omni+= (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; omni + ] 
+  action_omni+] (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_chrome)) $chrome_action_omni+] break
+    ((input virtual vk_dolphin)) $dolphin_action_omni+] break
+    ((input virtual vk_nvim)) $nvim_action_omni+] break
+    ((input virtual vk_obsidian)) $obsidian_action_omni+] break
+    () XX break
+  )) ;;""
+  ;; omni + [ 
+  action_omni+[ (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_chrome)) $chrome_action_omni+[ break
+    ((input virtual vk_dolphin)) $dolphin_action_omni+[ break
+    ((input virtual vk_nvim)) $nvim_action_omni+[ break
+    ((input virtual vk_obsidian)) $obsidian_action_omni+[ break
+    () XX break
+  ))
+  ;; omni + \
+  action_omni+\ (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_foot)) $foot_action_omni+\ break
+    ((input virtual vk_nvim)) $nvim_action_omni+\ break
+    () XX break
+  )) ;;""
+
+  ;; omni + ;
+  action_omni+; (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_omni+; break
+    () XX break
+  ))
+  ;; omni + '
+  action_omni+' (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
   ;; omni + ,
   ;; see mod,
   action_omni+, (t! unmod_all (switch ;;@autogen@
@@ -311,17 +380,29 @@
     ((input virtual vk_nvim)) $nvim_action_omni+/ break
     () $action_mod/ break
   )) ;;""
-  ;; omni + =
-  action_omni+= (t! unmod_all (switch ;;@autogen@
+
+  ;; omni + !lmet
+  action_omni+!lmet (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; omni + '
-  action_omni+' (t! unmod_all (switch ;;@autogen@
+  ;; omni + !lalt
+  action_omni+!lalt (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
-  ;; omni + u
-  action_omni+u (t! unmod_all (switch ;;@autogen@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+u break
+  ;; omni + !lctl
+  action_omni+!lctl (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; omni + ralt 
+  action_omni+ralt (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; omni + prnt
+  action_omni+prnt (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+  ;; omni + rctl
+  action_omni+rctl (t! unmod_all (switch ;;@autogen@
     () XX break
   ))
 

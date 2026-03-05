@@ -622,7 +622,7 @@
 ;;   spc_action       - Action for space key in base layer (XX to skip)
 ;;   lsft+spc_action  - Action for space when left shift is held
 ;;   rsft+spc_action  - Action for space when right shift is held
-(deftemplate simple_domain_layer (layer_name spc_action lsft+spc_action rsft+spc_action)
+(deftemplate mod_key_layer (layer_name spc_action lsft+spc_action rsft+spc_action)
   (deflayermap ((concat $layer_name "_layer"))
     (t! map_layers _ $layer_name ($lsft $rsft lsft rsft))
     (if-not-equal $spc_action XX spc $spc_action)

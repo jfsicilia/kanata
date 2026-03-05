@@ -1,13 +1,17 @@
 (defvar
   ;; Apps layer
-  toggle_apps_layer                (t! toggle_layer             apps_layer)
-  toggle_apps+lsft_layer           (t! toggle_mod_layer   lsft  apps+lsft_layer)
-  toggle_apps+rsft_layer           (t! toggle_mod_layer   rsft  apps+rsft_layer)
+  toggle_apps_layer                  (t! toggle_layer             apps_layer)
+  toggle_apps+lsft_layer             (t! toggle_mod_layer   lsft  apps+lsft_layer)
+  toggle_apps+rsft_layer             (t! toggle_mod_layer   rsft  apps+rsft_layer)
 
   ;; Bookmarks layer
   toggle_bookmarks_layer             (t! toggle_layer             bookmarks_layer)
   toggle_bookmarks+lsft_layer        (t! toggle_mod_layer   lsft  bookmarks+lsft_layer)
   toggle_bookmarks+rsft_layer        (t! toggle_mod_layer   rsft  bookmarks+rsft_layer)
+
+  ;; Lang layer
+  toggle_lang_layer                  (t! toggle_layer             lang_layer)
+  toggle_lang_alt_layer              (t! toggle_layer             lang_alt_layer)
 
   ;; NumSym layer
   toggle_num/sym_layer               (t! toggle_layer             num/sym_layer)

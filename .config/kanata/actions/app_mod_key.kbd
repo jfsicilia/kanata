@@ -207,6 +207,42 @@
     () XX break
   ))
 
+  ;; == mod` =============================================================
+  ;; mod` + spc 
+  action_mod` (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == mod- =============================================================
+  ;; mod- + spc 
+  action_mod- (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == mod= ==========================================================
+  ;; mod= + spc 
+  action_mod= (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) ;;""
+
+  ;; == mod[ =============================================================
+  ;; mod[ + spc 
+  action_mod[ (t! unmod_all (switch ;;@autogen@ 
+    () XX break
+  )) ;;""
+
+  ;; == mod] =============================================================
+  ;; mod] + spc 
+  action_mod] (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) ;;""
+
+  ;; == mod\ =============================================================
+  ;; mod\ + spc 
+  action_mod\ (t! unmod_all (switch ;;@autogen@
+    () XX break
+  )) ;;""
+
   ;; == mod; ===========================================================
   ;; mod; + spc 
   action_mod; (t! unmod_all (switch ;;@autogen@
@@ -214,7 +250,7 @@
     ((input virtual vk_obsidian)) $obsidian_action_mod; break
     ((input virtual vk_tmux)) $tmux_action_mod; break
     () XX break
-  ))
+  )) ;;""
 
   ;; == mod' =============================================================
   ;; mod' + spc 
@@ -246,5 +282,65 @@
     ((input virtual vk_nvim)) $nvim_action_mod/ break
     () XX break
   )) ;;""
+
+  ;; == mod0 =============================================================
+  ;; mod0 + spc 
+  action_mod0 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == mod1 =============================================================
+  ;; mod1 + spc 
+  action_mod1 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == mod2 =============================================================
+  ;; mod2 + spc 
+  action_mod2 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == mod3 =============================================================
+  ;; mod3 + spc 
+  action_mod3 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == mod4 =============================================================
+  ;; mod4 + spc 
+  action_mod4 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == mod5 =============================================================
+  ;; mod5 + spc 
+  action_mod5 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == mod6 =============================================================
+  ;; mod6 + spc 
+  action_mod6 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == mod7 =============================================================
+  ;; mod7 + spc 
+  action_mod7 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == mod8 =============================================================
+  ;; mod8 + spc 
+  action_mod8 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
+
+  ;; == mod9 =============================================================
+  ;; mod9 + spc 
+  action_mod9 (t! unmod_all (switch ;;@autogen@
+    () XX break
+  ))
 
 )

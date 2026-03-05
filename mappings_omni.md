@@ -4,37 +4,72 @@
 | ---------- | ----------------- | ------------------- | --------------- | -------------- | ------------------ | -------------------------- |
 | A          | select All        | select All          |                 |                |                    |                            |
 | B          | pgup              | pgup                |                 |                |                    |                            |
-| C          | ~Copy             | Copy                |                 |                |                    |                            |
-| D          | Duplicate         | Duplicate           |                 |                |                    |                            |
-| E          |                   | Extract/compress    |                 |                |                    |                            |
+| C          | copy              | copy                | copy            |                |                    |                            |
+| D          | duplicate         | duplicate           |                 |                |                    |                            |
+| E          |                   | extract/compress    |                 |                |                    |                            |
 | F          | pgdn              | pgdn                |                 |                |                    |                            |
 | G          |                   | Go                  |                 |                |                    |                            |
 | H          | left              | left                |                 |                |                    |                            |
-| I          |                   | Info                |                 |                |                    |                            |
+| I          |                   | ~Info               |                 |                |                    |                            |
 | J          | down              | down                |                 |                |                    |                            |
 | K          | up                | up                  |                 |                |                    |                            |
 | L          | right             | right               |                 |                |                    |                            |
-| M          | Mem (clipboard)   | Mem (clipboard)     |                 |                |                    |                            |
-| N          | ~New file/folder  | New file/folder     |                 |                |                    |                            |
-| O          | Open              | Open                |                 |                |                    |                            |
-| P          | Parent            | Parent              |                 |                |                    |                            |
-| Q          | Quit              | Quit                |                 |                |                    |                            |
-| R          | Rename            | Rename              |                 |                |                    |                            |
-| S          |                   | Sort                |                 |                |                    |                            |
-| T          | new Tab/undo Tab  | new Tab/undo Tab    |                 |                |                    |                            |
-| U          |                   | UI                  |                 |                |                    |                            |
-| V          | ~paste            | paste               |                 |                |                    |                            |
+| M          | mem (clipboard)   | mem (clipboard)     |                 |                |                    |                            |
+| N          | new file/folder   | new file/folder     |                 |                |                    |                            |
+| O          | open              | open                |                 |                |                    |                            |
+| P          | parent            | parent              |                 |                |                    |                            |
+| Q          | quit              | quit                |                 |                |                    |                            |
+| R          | rename            | rename              |                 |                |                    |                            |
+| S          | sort              | sort                |                 |                |                    |                            |
+| T          | new tab/undo tab  | new tab/undo tab    |                 |                |                    |                            |
+| U          | unique            | UI                  |                 |                |                    |                            |
+| U          | paste             | paste               | paste           |                |                    |                            |
 | W          | close tab         | close tab           |                 |                |                    |                            |
-| X          | ~cut              | cut                 |                 |                |                    |                            |
-| Y          |                   | filter              |                 |                |                    |                            |
-| Z          | ~undo/redo        | undo/redo           |                 |                |                    |                            |
-| ,          | ~settings         | settings            |                 |                |                    |                            |
-| .          | ~tags             | tags                |                 |                |                    |                            |
-| /          | ~help             | help                |                 |                |                    |                            |
-| ;          | ~comment          | comment             |                 |                |                    |                            |
-| '          |                   |                     |                 |                |                    |                            |
+| X          | cut               | cut                 |                 |                |                    |                            |
+| Y          | history (cmds)    | ~history            | history         |                |                    |                            |
+| Z          | undo/redo         | undo/redo           |                 |                |                    |                            |
+| ,          | settings          | settings            |                 |                |                    |                            |
+| .          | tags              | tags                |                 |                |                    |                            |
+| /          | help              | help                |                 |                |                    |                            |
+| ;          | comment           |                     |                 |                |                    |                            |
+| '          | ~filter           | ~filter             |                 |                |                    |                            |
 | [          | back              | back                |                 |                |                    |                            |
 | ]          | forward           | forward             |                 |                |                    |                            |
-| \          |                   |                     |                 |                |                    |                            |
+| \          | compare           | compare             | compare         |                |                    |                            |
+| `          |                   |                     |                 |                |                    |                            |
 | -          |                   |                     |                 |                |                    |                            |
-| =          | ~compare          | ~compare            |                 |                |                    |                            |
+| =          | format            |                     |                 |                |                    |                            |
+| 1          | tab1              |                     |                 |                |                    |                            |
+| 2          | tab2              |                     |                 |                |                    |                            |
+| 3          | tab3              |                     |                 |                |                    |                            |
+| 4          | tab4              |                     |                 |                |                    |                            |
+| 5          | tab5              |                     |                 |                |                    |                            |
+| 6          | tab6              |                     |                 |                |                    |                            |
+| 7          | tab7              |                     |                 |                |                    |                            |
+| 8          | tab8              |                     |                 |                |                    |                            |
+| 9          | tab9              |                     |                 |                |                    |                            |
+| 0          |                   |                     |                 |                |                    |                            |
+| !lctl      |                   |                     |                 |                |                    |                            |
+| !lalt      |                   |                     |                 |                |                    |                            |
+| !lmet      |                   |                     |                 |                |                    |                            |
+| spc        |                   |                     |                 |                |                    |                            |
+| ralt       |                   |                     |                 |                |                    |                            |
+| prnt       |                   |                     |                 |                |                    |                            |
+| rctl       |                   |                     |                 |                |                    |                            |
+| tab        |                   |                     |                 |                |                    |                            |
+| esc        |                   |                     |                 |                |                    |                            |
+| bspc       |                   |                     |                 |                |                    |                            |
+| del        |                   |                     |                 |                |                    |                            |
+| F1         |                   |                     |                 |                |                    |                            |
+| F2         |                   |                     |                 |                |                    |                            |
+| F3         |                   |                     |                 |                |                    |                            |
+| F4         |                   |                     |                 |                |                    |                            |
+| F5         |                   |                     |                 |                |                    |                            |
+| F6         |                   |                     |                 |                |                    |                            |
+| F7         |                   |                     |                 |                |                    |                            |
+| F8         |                   |                     |                 |                |                    |                            |
+| F9         |                   |                     |                 |                |                    |                            |
+| F10        |                   |                     |                 |                |                    |                            |
+| F11        |                   |                     |                 |                |                    |                            |
+| F12        |                   |                     |                 |                |                    |                            |
+| F13        |                   |                     |                 |                |                    |                            |

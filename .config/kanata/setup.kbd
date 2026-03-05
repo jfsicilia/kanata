@@ -138,6 +138,21 @@
   hold_time 200
   fast_type_time 55
 
+  ;; Number row keys.
+    `|mod`                `           ;; Tap: `,   Hold: mod`_layer 
+    1|mod1                1           ;; Tap: 1,   Hold: mod1_layer 
+    2|mod2                2           ;; Tap: 2,   Hold: mod2_layer 
+    3|mod3                3           ;; Tap: 3,   Hold: mod3_layer 
+    4|mod4                4           ;; Tap: 4,   Hold: mod4_layer 
+    5|mod5                5           ;; Tap: 5,   Hold: mod5_layer 
+    6|mod6                6           ;; Tap: 6,   Hold: mod6_layer 
+    7|mod7                7           ;; Tap: 7,   Hold: mod7_layer 
+    8|mod8                8           ;; Tap: 8,   Hold: mod8_layer 
+    9|mod9                9           ;; Tap: 9,   Hold: mod9_layer 
+    0|mod0                0           ;; Tap: 0,   Hold: mod0_layer 
+    -|mod-                -           ;; Tap: -,   Hold: mod-_layer 
+    =|mod=                =           ;; Tap: =,   Hold: mod=_layer 
+
   ;; Upper row keys.
   tab|open                tab         ;; Tap: Tab, Hold: open_with_layer
     q|modQ                q           ;; Tap: q,   Hold: modQ_layer
@@ -150,6 +165,9 @@
     i|modI                i           ;; Tap: i,   Hold: modI_layer
     o|modO                o           ;; Tap: o,   Hold: modO_layer
     p|modP                p           ;; Tap: p,   Hold: modP_layer
+    [|mod[                [           ;; Tap: [,   Hold: mod[_layer ""
+    ]|mod]                ]           ;; Tap: ],   Hold: mod[_layer ""
+    \|mod\                \           ;; Tap: \,   Hold: mod\_layer ""
   
                                  
   ;; Medium row keys.
@@ -265,6 +283,21 @@
 ) ;;""
 
 (deftemplate default_layer ()
+  ;; Number row keys
+      $`|mod`              (t! fast_th `                                         $toggle_mod`_layer)
+      $0|mod0              (t! fast_th 0                                         $toggle_mod0_layer)
+      $1|mod1              (t! fast_th 1                                         $toggle_mod1_layer)
+      $2|mod2              (t! fast_th 2                                         $toggle_mod2_layer)
+      $3|mod3              (t! fast_th 3                                         $toggle_mod3_layer)
+      $4|mod4              (t! fast_th 4                                         $toggle_mod4_layer)
+      $5|mod5              (t! fast_th 5                                         $toggle_mod5_layer)
+      $6|mod6              (t! fast_th 6                                         $toggle_mod6_layer)
+      $7|mod7              (t! fast_th 7                                         $toggle_mod7_layer)
+      $8|mod8              (t! fast_th 8                                         $toggle_mod8_layer)
+      $9|mod9              (t! fast_th 9                                         $toggle_mod9_layer)
+      $-|mod-              (t! fast_th -                                         $toggle_mod-_layer)
+      $=|mod=              (t! fast_th =                                         $toggle_mod=_layer)
+
   ;; Upper row keys
     $tab|open              (t! fast_th tab                                       $toggle_open_layer)   
       $q|modQ              (t! fast_th q                                         $toggle_modQ_layer)
@@ -277,6 +310,9 @@
       $i|modI              (t! fast_th (t! char|alt_char i)                      $toggle_modI_layer)
       $o|modO              (t! fast_th (t! char|alt_char o)                      $toggle_modO_layer)
       $p|modP              (t! fast_th p                                         $toggle_modP_layer)   
+      $[|mod[              (t! fast_th [                                         $toggle_mod[_layer)
+      $]|mod]              (t! fast_th ]                                         $toggle_mod]_layer)
+      $\|mod\              (t! fast_th \                                         $toggle_mod\_layer)
 
   ;; Medium row keys (a, s, d, f, j, k, l, ; work as lmet, lalt, lsft/rsft and lctl)
     $esc|omni              (t! fast_th esc                                       $toggle_omni_layer)  

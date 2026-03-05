@@ -30,7 +30,8 @@
   rsft            (t! th _                    $toggle_tabs+rsft_layer)
 
   ;; == Gui Actions ========================
-  $move (t! th _ $toggle_tabs+move_layer)
+  $move   (t! th _ $toggle_tabs+move_layer)
+  $toggle $action_tabs_toggle
 )
 (deflayermap (tabs+move_layer)
   h     $action_tabs_move_left

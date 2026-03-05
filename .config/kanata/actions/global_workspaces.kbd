@@ -1,4 +1,14 @@
+(defvirtualkeys
+  vk_desktops_toggle XX
+)
 (defvar
+;; Toggles sort ordering A-Z / Z-A
+desktops_toggle (multi (on-press toggle-virtualkey vk_desktops_toggle) 
+  (switch 
+    ((input virtual vk_desktops_toggle))   M-C-left   break 
+    ()                                     M-C-right break 
+  )
+)
   ;; == workspaces =====================================================
   ;; workspaces + spc
   action_desktops       XX
@@ -13,7 +23,7 @@
   action_desktops_prev (t! unmod_all M-C-left)
 
   ;; workspaces + toggle
-  action_desktops_toggle XX
+  action_desktops_toggle $desktops_toggle
 
   ;; == workspaces + move ===============================================
   ;; workspaces + move + j 
