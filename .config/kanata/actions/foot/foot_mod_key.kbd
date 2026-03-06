@@ -143,7 +143,17 @@
 
 ;; == mod\ =============================================================
 ;; mod\ + spc
-;; ___TO_SET___ foot_action_mod\                   
+foot_action_mod\                  $foot_action_omni+\                  ;;""
+;; mod\ + j
+;; ___TO_SET___ foot_action_mod\+j                 
+;; mod\ + k
+;; ___TO_SET___ foot_action_mod\+k                 
+;; mod\ + o
+;; ___TO_SET___ foot_action_mod\+o                 
+;; mod\ + p
+;; ___TO_SET___ foot_action_mod\+p                 
+;; mod\ + ent
+;; ___TO_SET___ foot_action_mod\+ent               
 
 ;; == mod; ===========================================================
 ;; mod; + spc

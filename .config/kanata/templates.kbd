@@ -605,9 +605,9 @@
 
 ;; Generate a complete domain layer with shift variants.
 ;; Creates three layer definitions in one call:
-;; 1. Base layer (layer_name_layer) - all keys + modifier connections
-;; 2. Left shift variant (layer_name+lsft_layer) - overrides space action
-;; 3. Right shift variant (layer_name+rsft_layer) - overrides space action
+;; 1. Base layer (mod_key_layer) - all keys + modifier connections
+;; 2. Left shift variant (mod_key+lsft_layer) - overrides space action
+;; 3. Right shift variant (mod_key+rsft_layer) - overrides space action
 ;;
 ;; The base layer automatically:
 ;; - Maps all modifier connections using map_layers (f/j for lctl, s/l for lalt, etc.)
@@ -618,19 +618,23 @@
 ;; shift+space behaviors.
 ;;
 ;; Parameters:
-;;   layer_name       - Base name for the layer (e.g., "modA", "omni")
+;;   mod_key          - Base name for the layer (e.g., "modA", "mod;")
 ;;   spc_action       - Action for space key in base layer (XX to skip)
 ;;   lsft+spc_action  - Action for space when left shift is held
 ;;   rsft+spc_action  - Action for space when right shift is held
-(deftemplate mod_key_layer (layer_name spc_action lsft+spc_action rsft+spc_action)
-  (deflayermap ((concat $layer_name "_layer"))
-    (t! map_layers _ $layer_name ($lsft $rsft lsft rsft))
+(deftemplate mod_key_layer (mod_key spc_action lsft+spc_action rsft+spc_action)
+  (deflayermap ((concat $mod_key "_layer"))
+    (t! map_layers _ $mod_key ($lsft $rsft lsft rsft))
     (if-not-equal $spc_action XX spc $spc_action)
+    ;; "Transfer" the mod_key "hold" behavior to the omni key, so you
+    ;; can release the mod_key, and while the omni key keeps hold you get 
+    ;; the same mod_key "hold" behaviour (allows easy reaching of certain keys)
+    $omni (t! th _ (concat "$toggle_" $mod_key "_layer"))
   )
-  (deflayermap ((concat $layer_name "+lsft_layer"))
+  (deflayermap ((concat $mod_key "+lsft_layer"))
     (if-not-equal $spc_action XX spc $lsft+spc_action)
   )
-  (deflayermap ((concat $layer_name "+rsft_layer"))
+  (deflayermap ((concat $mod_key "+rsft_layer"))
     (if-not-equal $spc_action XX spc $rsft+spc_action)
   )
 )

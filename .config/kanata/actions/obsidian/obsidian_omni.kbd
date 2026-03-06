@@ -131,10 +131,17 @@ obsidian_action_omni+x                            C-A-x
 
 ;; omni + ]
 obsidian_action_omni+]                      C-A-right
+
+;; pmni + [
 ;; omni + [
 obsidian_action_omni+[                      C-A-left
+
 ;; omni + \
 ;; ___TO_SET___ obsidian_action_omni+\                 
+;; omni + lsft + \
+;; ___TO_SET___ obsidian_action_omni+lsft+\            
+;; omni + rsft + \
+;; ___TO_SET___ obsidian_action_omni+rsft+\            
 
 ;; omni + ;
 ;; ___TO_SET___ obsidian_action_omni+;                 

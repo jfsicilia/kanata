@@ -240,6 +240,32 @@
   ;; == mod\ =============================================================
   ;; mod\ + spc 
   action_mod\ (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_foot)) $foot_action_mod\ break
+    ((input virtual vk_nvim)) $nvim_action_mod\ break
+    () XX break
+  )) ;;""
+  ;; mod\ + j
+  action_mod\+j (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_mod\+j break
+    () XX break
+  )) ;;""
+  ;; mod\ + k
+  action_mod\+k (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_mod\+k break
+    () XX break
+  )) ;;""
+  ;; mod\ + o
+  action_mod\+o (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_mod\+o break
+    () XX break
+  )) ;;""
+  ;; mod\ + p
+  action_mod\+p (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_nvim)) $nvim_action_mod\+p break
+    () XX break
+  )) ;;""
+  ;; mod\ + ent
+  action_mod\+ent (t! unmod_all (switch ;;@autogen@
     () XX break
   )) ;;""
 

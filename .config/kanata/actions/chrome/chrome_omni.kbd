@@ -128,10 +128,17 @@ chrome_action_omni+n               C-n
 
 ;; omni + ]
 chrome_action_omni+]                      A-right
+
+;; pmni + [
 ;; omni + [
 chrome_action_omni+[                      A-left
+
 ;; omni + \
 ;; ___TO_SET___ chrome_action_omni+\                 
+;; omni + lsft + \
+;; ___TO_SET___ chrome_action_omni+lsft+\            
+;; omni + rsft + \
+;; ___TO_SET___ chrome_action_omni+rsft+\            
 
 ;; omni + ;
 ;; ___TO_SET___ chrome_action_omni+;                 

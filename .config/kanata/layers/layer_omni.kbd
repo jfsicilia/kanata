@@ -64,6 +64,8 @@
   z $action_omni+lsft+z
   s $action_omni+lsft+s
 
+  \ $action_omni+lsft+\
+
   t $action_omni+lsft+t
 )
 
@@ -73,6 +75,8 @@
   n $action_omni+rsft+n
   z $action_omni+lsft+z
   s $action_omni+lsft+s
+
+  \ $action_omni+rsft+\
 
   t $action_omni+lsft+t
 )

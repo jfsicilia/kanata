@@ -186,10 +186,17 @@ dolphin_action_omni+9                 A-9
 
 ;; omni + ]
 dolphin_action_omni+]         A-right
+
+;; pmni + [
 ;; omni + [
 dolphin_action_omni+[         A-left
+
 ;; omni + \
 ;; ___TO_SET___ dolphin_action_omni+\                 
+;; omni + lsft + \
+;; ___TO_SET___ dolphin_action_omni+lsft+\            
+;; omni + rsft + \
+;; ___TO_SET___ dolphin_action_omni+rsft+\            
 
 ;; omni + ;
 ;; ___TO_SET___ dolphin_action_omni+;                 

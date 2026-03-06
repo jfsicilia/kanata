@@ -46,9 +46,19 @@
 (t! mod_key_layer "mod9" $action_mod9 XX XX)
 
 
+;; "" mod\_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (mod\_layer)
-  (t! map_layers _ mod\ ($lsft $rsft lsft rsft))
+  (t! map_layers _ mod\ (lsft rsft))
+
   spc $action_mod\
+
+  j $action_mod\+j
+  k $action_mod\+k
+
+  o $action_mod\+o
+  p $action_mod\+p
+
+  ent $action_mod\+ent
 
   $omni (t! th _ $toggle_mod\_layer)
 )
@@ -63,6 +73,8 @@
   spc $action_modG
 
   l      $action_modG_modL
+
+  $omni (t! th _ $toggle_modG_layer)
 )
 
 (deflayermap (modG+lsft_layer)
@@ -78,6 +90,8 @@
 
   $mod;      $action_modY_mod;
   $search    $action_modY_search
+
+  $omni (t! th _ $toggle_modY_layer)
 )
 
 (deflayermap (modY+lsft_layer)

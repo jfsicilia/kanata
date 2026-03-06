@@ -162,7 +162,17 @@ nvim_action_modY_search         (macro esc S-; S-t e l e s c o p e spc s e a r c
 
 ;; == mod\ =============================================================
 ;; mod\ + spc
-;; ___TO_SET___ nvim_action_mod\                   
+nvim_action_mod\                   $nvim_compare_toggle 
+;; mod\ + j
+nvim_action_mod\+j                 (macro ] c)
+;; mod\ + k
+nvim_action_mod\+k                 (macro [ c)  ;;""
+;; mod\ + o
+nvim_action_mod\+o                 (macro d o)  ;; Obtain changes from the other file.
+;; mod\ + p
+nvim_action_mod\+p                 (macro d p)  ;; Push changes to the other file.
+;; mod\ + ent
+;; ___TO_SET___ nvim_action_mod\+ent               
 
 ;; == mod; ===========================================================
 ;; mod; + spc

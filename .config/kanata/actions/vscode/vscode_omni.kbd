@@ -126,10 +126,16 @@
 
 ;; omni + ]
 ;; ___TO_SET___ vscode_action_omni+]                 
-;; omni + [
+
+;; pmni + [
 ;; ___TO_SET___ vscode_action_omni+[                 
+
 ;; omni + \
 ;; ___TO_SET___ vscode_action_omni+\                 
+;; omni + lsft + \
+;; ___TO_SET___ vscode_action_omni+lsft+\            
+;; omni + rsft + \
+;; ___TO_SET___ vscode_action_omni+rsft+\            
 
 ;; omni + ;
 ;; ___TO_SET___ vscode_action_omni+;                 

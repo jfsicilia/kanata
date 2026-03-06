@@ -6,8 +6,8 @@
 nvim_compare_toggle (multi (on-press toggle-virtualkey vk_nvim_compare_toggle) 
   (switch 
     ;; `{esc}:diffthis{ent}{C-w}p:diffthis{ent}{C-w}p`
-    ((input virtual vk_nvim_compare_toggle)) (macro esc S-; d i f f t h i s ent C-w p S-; d i f f t h i s ent C-w p)  break 
-    ()                                       (macro esc S-; d i f f o f f ent C-w p S-; d i f f o f f ent C-w p)  break 
+    ((input virtual vk_nvim_compare_toggle)) (macro esc C-w h C-w l S-; d i f f t h i s ent C-w p S-; d i f f t h i s ent C-w p)  break 
+    ()                                       (macro esc C-w h C-w l S-; d i f f o f f ent C-w p S-; d i f f o f f ent C-w p)  break 
   )
 )
 
@@ -148,10 +148,17 @@ nvim_action_omni+9                 (macro esc S-; l u a spc r e q u i r e S-9 ' 
 
 ;; omni + ]
 nvim_action_omni+]                      C-i
+
+;; pmni + [
 ;; omni + [
 nvim_action_omni+[                      C-o
+
 ;; omni + \
 nvim_action_omni+\                 $nvim_compare_toggle  ;;""
+;; omni + lsft + \
+;; ___TO_SET___ nvim_action_omni+lsft+\            
+;; omni + rsft + \
+;; ___TO_SET___ nvim_action_omni+rsft+\            
 
 ;; omni + ;
 nvim_action_omni+;           (macro esc g c c)  ;; Comment block
