@@ -187,7 +187,6 @@ dolphin_action_omni+9                 A-9
 ;; omni + ]
 dolphin_action_omni+]         A-right
 
-;; pmni + [
 ;; omni + [
 dolphin_action_omni+[         A-left
 

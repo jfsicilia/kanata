@@ -130,7 +130,7 @@ tmux_action_omni+v                          (macro $tmux_prefix ]) ;; prefix + ]
 ;; omni + ]
 ;; ___TO_SET___ tmux_action_omni+]                 
 
-;; pmni + [
+;; omni + [
 ;; ___TO_SET___ tmux_action_omni+[                 
 
 ;; omni + \

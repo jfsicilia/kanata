@@ -31,7 +31,8 @@
 ;; modG + spc
 ;; ___TO_SET___ foot_action_modG                   
 ;; modG + modL
-;; ___TO_SET___ foot_action_modG_modL              
+;; foot_action_modG_modL              `{esc}ddilazygit{ent}`
+foot_action_modG_modL              (macro esc d d i l a z y g i t ent)
 
 ;; == modH =============================================================
 ;; modH + spc

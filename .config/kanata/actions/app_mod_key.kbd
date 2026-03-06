@@ -50,6 +50,7 @@
   ))
   ;; modG + modL
   action_modG_modL (t! unmod_all (switch ;;@autogen@
+    ((input virtual vk_foot)) $foot_action_modG_modL break
     ((input virtual vk_nvim)) $nvim_action_modG_modL break
     () XX break
   ))

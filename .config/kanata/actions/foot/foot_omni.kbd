@@ -130,7 +130,7 @@ foot_action_omni+y                 C-y   ;; shell history
 ;; omni + ]
 ;; ___TO_SET___ foot_action_omni+]                 
 
-;; pmni + [
+;; omni + [
 ;; ___TO_SET___ foot_action_omni+[                 
 
 ;; omni + \

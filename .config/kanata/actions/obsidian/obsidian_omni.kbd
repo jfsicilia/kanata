@@ -132,7 +132,6 @@ obsidian_action_omni+x                            C-A-x
 ;; omni + ]
 obsidian_action_omni+]                      C-A-right
 
-;; pmni + [
 ;; omni + [
 obsidian_action_omni+[                      C-A-left
 
