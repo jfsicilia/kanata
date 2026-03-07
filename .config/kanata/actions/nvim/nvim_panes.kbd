@@ -1,4 +1,17 @@
 (defvar
+nvim_pane_maximize       (macro esc S-; S-p a n e S-m a x S-t o g g l e ret)
+nvim_pane_left           A-h
+nvim_pane_right          A-l
+nvim_pane_above          A-k
+nvim_pane_below          A-j
+nvim_pane_h_split        (macro esc S-; s p ret)
+nvim_pane_v_split        (macro esc S-; v s ret)
+nvim_pane_toggle         (macro C-w p)
+nvim_pane_resize_left    (macro C-w S-,)
+nvim_pane_resize_right   (macro C-w S-.)
+nvim_pane_resize_above   (macro C-w -)
+nvim_pane_resize_below   (macro C-w S-=)
+nvim_file_explorer       (macro esc S-; S-n e o t r e e spc t o g g l e ent)
 
 ;; == panes =============================================================
 ;; panes + spc
@@ -6,28 +19,28 @@
 
 ;; panes + ent
 ;; nvim_action_panes+max               `{esc}:PaneMaxToggle{ret}`
-nvim_action_panes+max               (macro esc S-; S-p a n e S-m a x S-t o g g l e ret)
+nvim_action_panes+max               $nvim_pane_maximize
 
 ;; panes + h | panes + left
-nvim_action_panes+h                      A-h ;; Now has tmux integration (macro esc S-; w i n c m d spc h ret)  ;;""
+nvim_action_panes+h                      $nvim_pane_left ;; Now has tmux integration  ;;""
 ;; panes + l | panes + right
-nvim_action_panes+l                     A-l ;; Now has tmux integration (macro esc S-; w i n c m d spc l ret)  ;;""
+nvim_action_panes+l                     $nvim_pane_right ;; Now has tmux integration  ;;""
 ;; panes + k | panes + up
-nvim_action_panes+k                     A-k ;; Now has tmux integration (macro esc S-; w i n c m d spc k ret)  ;;""
+nvim_action_panes+k                     $nvim_pane_above ;; Now has tmux integration  ;;""
 ;; panes + j | panes + down
-nvim_action_panes+j                     A-j ;; Now has tmux integration (macro esc S-; w i n c m d spc j ret)  ;;""
+nvim_action_panes+j                     $nvim_pane_below ;; Now has tmux integration  ;;""
 
 ;; panes + -
-nvim_action_panes+-                   (macro esc S-; s p ret)  ;;""
+nvim_action_panes+-                   $nvim_pane_h_split  ;;""
 ;; panes + \
-nvim_action_panes+\                   (macro esc S-; v s ret)  ;;""
+nvim_action_panes+\                   $nvim_pane_v_split  ;;""
 
 ;; panes + w
 ;; ___TO_SET___ nvim_action_panes+w                
 
 ;; == panes + toggle ====================================================
 ;; panes + toggle | 2x !lalt
-nvim_action_panes+toggle           (macro C-w p)
+nvim_action_panes+toggle           $nvim_pane_toggle
 
 ;; == panes + float ====================================================
 ;; panes + float
@@ -45,13 +58,13 @@ nvim_action_panes+toggle           (macro C-w p)
 
 ;; == panes + resize ====================================================
 ;; panes + resize + h | panes + resize + left
-nvim_action_panes_resize_left       (macro C-w S-,)
+nvim_action_panes_resize_left       $nvim_pane_resize_left
 ;; panes + resize + l | panes + resize + right
-nvim_action_panes_resize_right      (macro C-w S-.)
+nvim_action_panes_resize_right      $nvim_pane_resize_right
 ;; panes + resize + k | panes + resize + up
-nvim_action_panes_resize_above      (macro C-w -)
+nvim_action_panes_resize_above      $nvim_pane_resize_above
 ;; panes + resize + j | panes + resize + down
-nvim_action_panes_resize_below      (macro C-w S-=)
+nvim_action_panes_resize_below      $nvim_pane_resize_below
 
 ;; == panes + swap ======================================================
 ;; panes + swap + h | panes + swap + left
@@ -89,7 +102,7 @@ nvim_action_panes_resize_below      (macro C-w S-=)
 ;; panes + w
 ;; see panes
 ;; panes + e
-nvim_action_panes+e                  (macro esc S-; S-n e o t r e e spc t o g g l e ent)  ;;""
+nvim_action_panes+e                  $nvim_file_explorer  ;;""
 ;; panes + lsft + e
 ;; ___TO_SET___ nvim_action_panes+lsft+e           
 ;; panes + r

@@ -1,5 +1,4 @@
 (defvar
-  ;; == 1.5 apps =========================================================
   ;; apps + spc
   action_apps (t! unmod_all (switch
     () RA-spc break

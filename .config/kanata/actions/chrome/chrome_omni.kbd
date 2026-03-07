@@ -1,4 +1,8 @@
 (defvar
+chrome_go                C-l
+chrome_new               C-n
+chrome_forward           A-right
+chrome_back              A-left
 
 ;; == omni ============================================================
 
@@ -32,7 +36,7 @@
 ;; omni + g
 ;; == omni nav ======================================================
 ;; == #omni nav ======================================================
-chrome_action_omni+g                             C-l
+chrome_action_omni+g                             $chrome_go
 
 ;; omni + h
 ;; ___TO_SET___ chrome_action_omni+h                 
@@ -54,7 +58,7 @@ chrome_action_omni+g                             C-l
 ;; ___TO_SET___ chrome_action_omni+m                 
 
 ;; omni + n
-chrome_action_omni+n               C-n
+chrome_action_omni+n               $chrome_new
 ;; omni + lsft + n
 ;; ___TO_SET___ chrome_action_omni+lsft+n            
 ;; omni + rsft + n
@@ -127,10 +131,10 @@ chrome_action_omni+n               C-n
 ;; ___TO_SET___ chrome_action_omni+=                 
 
 ;; omni + ]
-chrome_action_omni+]                      A-right
+chrome_action_omni+]                      $chrome_forward
 
 ;; omni + [
-chrome_action_omni+[                      A-left
+chrome_action_omni+[                      $chrome_back
 
 ;; omni + \
 ;; ___TO_SET___ chrome_action_omni+\                 

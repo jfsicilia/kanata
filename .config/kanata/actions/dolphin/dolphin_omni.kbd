@@ -52,130 +52,157 @@ dolphin_toggle_tab (multi (on-press toggle-virtualkey vk_dolphin_tab_toggle)
     ()                                        C-S-tab break 
   )
 )
+dolphin_select          spc
+dolphin_copy            C-c
+dolphin_duplicate       C-d
+dolphin_extract         (macro S-f10 10 up up up right down down ent)
+dolphin_compress        (macro S-f10 10 up up up right down down ent)
+dolphin_go              C-l
+dolphin_info            A-ret
+dolphin_new             A-n
+dolphin_new_folder      C-S-n
+dolphin_new_window      C-n
+dolphin_open            ent
+dolphin_parent          A-up
+dolphin_rename          f2
+dolphin_new_tab         C-t
+dolphin_undo_tab        C-S-t
+dolphin_paste           C-v
+dolphin_close_tab       C-w
+dolphin_cut             C-x
+dolphin_history         C-i
+dolphin_undo            C-z
+dolphin_redo            C-S-z
+dolphin_select_all      C-a
+dolphin_tab_1           A-1
+dolphin_tab_2           A-2
+dolphin_tab_3           A-3
+dolphin_tab_4           A-4
+dolphin_tab_5           A-5
+dolphin_tab_6           A-6
+dolphin_tab_7           A-7
+dolphin_tab_8           A-8
+dolphin_tab_9           A-9
+dolphin_forward         A-right
+dolphin_back            A-left
 
 ;; == omni ============================================================
 
 ;; omni + spc
-;; == omni file manager ===============================================""
-;; == omni file manager ===============================================
-dolphin_action_omni+spc            spc
+dolphin_action_omni+spc        $dolphin_select
 
 ;; omni + a
-dolphin_action_omni+a        C-a
+dolphin_action_omni+a          $dolphin_select_all
 ;; omni + lsft + a
 ;; ___TO_SET___ dolphin_action_omni+lsft+a            
 ;; omni + rsft + a
 ;; ___TO_SET___ dolphin_action_omni+rsft+a            
 
 ;; omni + b
-dolphin_action_omni+b           pgup
+dolphin_action_omni+b          pgup
 
 ;; omni + c
-;; == omni edit ======================================================""
-;; == omni edit ======================================================
-dolphin_action_omni+c              C-c
+dolphin_action_omni+c          $dolphin_copy
 
 ;; omni + d
-dolphin_action_omni+d         C-d
+dolphin_action_omni+d          $dolphin_duplicate
 
 ;; omni + e
-dolphin_action_omni+e           (macro S-f10 10 up up up right down down ent) 
+dolphin_action_omni+e          $dolphin_extract
 ;; omni + lsft + e
-dolphin_action_omni+lsft+e          (macro S-f10 10 up up up right down down ent)
+dolphin_action_omni+lsft+e     $dolphin_compress
 
 ;; omni + f
-dolphin_action_omni+f         pgdn
+dolphin_action_omni+f          pgdn
 
 ;; omni + g
-;; == omni nav ======================================================
-dolphin_action_omni+g                C-l
+dolphin_action_omni+g          $dolphin_go
 
 ;; omni + h
-dolphin_action_omni+h              left 
+dolphin_action_omni+h          left
 
 ;; omni + i
-dolphin_action_omni+i              A-ret
+dolphin_action_omni+i          $dolphin_info
 
 ;; omni + j
-dolphin_action_omni+j              down
+dolphin_action_omni+j          down
 
 ;; omni + k
-dolphin_action_omni+k                up
+dolphin_action_omni+k          up
 
 ;; omni + l
-dolphin_action_omni+l             right
+dolphin_action_omni+l          right
 
 ;; omni + m
 ;; see modM
 ;; ___TO_SET___ dolphin_action_omni+m                 
 
 ;; omni + n
-dolphin_action_omni+n               A-n   ;; CUSTOM
+dolphin_action_omni+n          $dolphin_new   
 ;; omni + lsft + n
-dolphin_action_omni+lsft+n          C-S-n
+dolphin_action_omni+lsft+n     $dolphin_new_folder
 ;; omni + rsft + n
-dolphin_action_omni+rsft+n          C-n
+dolphin_action_omni+rsft+n     $dolphin_new_window
 
 ;; omni + o
-dolphin_action_omni+o              ent
+dolphin_action_omni+o          $dolphin_open
 
 ;; omni + p
-dolphin_action_omni+p            A-up
+dolphin_action_omni+p          $dolphin_parent
 
 ;; omni + q
 ;; see windows
 ;; ___TO_SET___ dolphin_action_omni+q                 
 
 ;; omni + r
-dolphin_action_omni+r            f2
+dolphin_action_omni+r          $dolphin_rename
 
 ;; omni + s
-dolphin_action_omni+s              $dolphin_toggle_sort_by
+dolphin_action_omni+s          $dolphin_toggle_sort_by
 ;; omni + lsft + s | omni + rsft + s
-dolphin_action_omni+lsft+s      $dolphin_toggle_sort_toggle
+dolphin_action_omni+lsft+s     $dolphin_toggle_sort_toggle
 
 ;; omni + t
 ;; see tab
-;; == omni misc ===============================================
-dolphin_action_omni+t           C-t
+dolphin_action_omni+t          $dolphin_new_tab
 ;; omni + lsft + t
 ;; see tab
-dolphin_action_omni+lsft+t    C-S-t 
+dolphin_action_omni+lsft+t     $dolphin_undo_tab
 
 ;; omni + u
-dolphin_action_omni+u                 $dolphin_toggle_view
+dolphin_action_omni+u          $dolphin_toggle_view
 
 ;; omni + v
-dolphin_action_omni+v             C-v
+dolphin_action_omni+v          $dolphin_paste
 
 ;; omni + w
 ;; see tab
-dolphin_action_omni+w         C-w
+dolphin_action_omni+w          $dolphin_close_tab
 
 ;; omni + x
-dolphin_action_omni+x               C-x
+dolphin_action_omni+x          $dolphin_cut
 
 ;; omni + y
-dolphin_action_omni+y            C-i
+dolphin_action_omni+y          $dolphin_history
 
 ;; omni + z
-dolphin_action_omni+z              C-z
+dolphin_action_omni+z          $dolphin_undo
 ;; omni + lsft + z
-dolphin_action_omni+lsft+z              C-S-z
+dolphin_action_omni+lsft+z     $dolphin_redo
 
 
 
 ;; ___TO_SET___ dolphin_action_omni+0                 
 ;; == omni user interface ===============================================
-dolphin_action_omni+1                 A-1
-dolphin_action_omni+2                 A-2
-dolphin_action_omni+3                 A-3
-dolphin_action_omni+4                 A-4
-dolphin_action_omni+5                 A-5
-dolphin_action_omni+6                 A-6
-dolphin_action_omni+7                 A-7
-dolphin_action_omni+8                 A-8
-dolphin_action_omni+9                 A-9
+dolphin_action_omni+1          $dolphin_tab_1
+dolphin_action_omni+2          $dolphin_tab_2
+dolphin_action_omni+3          $dolphin_tab_3
+dolphin_action_omni+4          $dolphin_tab_4
+dolphin_action_omni+5          $dolphin_tab_5
+dolphin_action_omni+6          $dolphin_tab_6
+dolphin_action_omni+7          $dolphin_tab_7
+dolphin_action_omni+8          $dolphin_tab_8
+dolphin_action_omni+9          $dolphin_tab_9
 
 ;; omni + `
 ;; ___TO_SET___ dolphin_action_omni+`                 
@@ -185,10 +212,10 @@ dolphin_action_omni+9                 A-9
 ;; ___TO_SET___ dolphin_action_omni+=                 
 
 ;; omni + ]
-dolphin_action_omni+]         A-right
+dolphin_action_omni+]          $dolphin_forward
 
 ;; omni + [
-dolphin_action_omni+[         A-left
+dolphin_action_omni+[          $dolphin_back
 
 ;; omni + \
 ;; ___TO_SET___ dolphin_action_omni+\                 

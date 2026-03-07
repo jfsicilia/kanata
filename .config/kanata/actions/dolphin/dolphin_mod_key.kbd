@@ -1,4 +1,7 @@
 (defvar
+dolphin_keymaps            C-A-,  
+dolphin_settings           C-S-,   
+dolphin_help               f1      
 
 ;; === 2. Key Modifiers actions ========================================
 ;; =====================================================================
@@ -47,7 +50,7 @@
 
 ;; == modK =============================================================
 ;; modK + spc
-dolphin_action_modK                   C-A-,   ;; Dolphin's keymaps
+dolphin_action_modK                  $dolphin_keymaps 
 
 ;; == modL =============================================================
 ;; modL + spc
@@ -165,7 +168,7 @@ dolphin_action_modK                   C-A-,   ;; Dolphin's keymaps
 
 ;; == mod, ==========================================================
 ;; mod, + spc
-dolphin_action_mod,                   C-S-,   ;; Dolphin settings.
+dolphin_action_mod,                   $dolphin_settings 
 
 ;; == mod. =========================================================
 ;; mod. + spc
@@ -173,7 +176,7 @@ dolphin_action_mod,                   C-S-,   ;; Dolphin settings.
 
 ;; == mod/ ==========================================================
 ;; mod/ + spc
-dolphin_action_mod/                   f1      ;; Dolphin help
+dolphin_action_mod/                   $dolphin_help 
 
 ;; == mod0 =============================================================
 ;; mod0 + spc

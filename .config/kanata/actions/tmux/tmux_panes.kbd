@@ -1,5 +1,14 @@
 (defvar
 tmux_prefix A-b
+tmux_pane_maximize       (macro $tmux_prefix z)
+tmux_pane_left           (macro $tmux_prefix left)
+tmux_pane_right          (macro $tmux_prefix right)
+tmux_pane_above          (macro $tmux_prefix up)
+tmux_pane_below          (macro $tmux_prefix down)
+tmux_pane_h_split        (macro $tmux_prefix S-')
+tmux_pane_v_split        (macro $tmux_prefix S-5)
+tmux_pane_close          (macro $tmux_prefix x)
+tmux_pane_toggle         (macro $tmux_prefix ;)
 
 ;; == panes =============================================================
 ;; panes + spc
@@ -7,37 +16,37 @@ tmux_prefix A-b
 
 ;; panes + ent
 ;; #panes + ent
-tmux_action_panes+max                       (macro $tmux_prefix z) ;; prefix + z (zoom pane)
+tmux_action_panes+max                       $tmux_pane_maximize ;; prefix + z (zoom pane)
 
 ;; panes + h | panes + left
 ;; #panes + h | #panes + left
-tmux_action_panes+h                      (macro $tmux_prefix left)
+tmux_action_panes+h                      $tmux_pane_left
 ;; panes + l | panes + right
 ;; #panes + l | #panes + right
-tmux_action_panes+l                     (macro $tmux_prefix right)
+tmux_action_panes+l                     $tmux_pane_right
 ;; panes + k | panes + up
 ;; #panes + k | #panes + up
-tmux_action_panes+k                     (macro $tmux_prefix up)
+tmux_action_panes+k                     $tmux_pane_above
 ;; panes + j | panes + down
 ;; #panes + j | #panes + down
-tmux_action_panes+j                     (macro $tmux_prefix down) 
+tmux_action_panes+j                     $tmux_pane_below
 
 ;; panes + -
 ;; #panes + -
-tmux_action_panes+-                   (macro $tmux_prefix S-') 
+tmux_action_panes+-                   $tmux_pane_h_split
 ;; panes + \
 ;; #panes + \
-tmux_action_panes+\                   (macro $tmux_prefix S-5) 
+tmux_action_panes+\                   $tmux_pane_v_split
 
 ;; panes + w
 ;; #panes + w
-tmux_action_panes+w                     (macro $tmux_prefix x) ;; prefix + x (kill pane)
+tmux_action_panes+w                     $tmux_pane_close ;; prefix + x (kill pane)
 
 ;; == panes + toggle ====================================================
 ;; panes + toggle | 2x !lalt
 ;; == #panes + #toggle ====================================================
 ;; #panes + #toggle | 2x !lalt
-tmux_action_panes+toggle                    (macro $tmux_prefix ;) ;; prefix + ; (last pane)
+tmux_action_panes+toggle                    $tmux_pane_toggle ;; prefix + ; (last pane)
 
 ;; == panes + float ====================================================
 ;; panes + float

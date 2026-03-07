@@ -1,4 +1,30 @@
 (defvar
+nvim_autocommands          (macro esc S-; S-t e l e s c o p e spc a u t o c o m m a n d s ret)
+nvim_definitions           (macro esc S-; S-t e l e s c o p e spc l s p S-- d e f i n i t i o n s ret)
+nvim_git                   (macro esc S-; S-t e l e s c o p e spc g i t S-- f i l e s ret)
+nvim_lazygit               (macro 100 esc S-; 10 S-l a z 10 y 10 S-g 10 i t ret)
+nvim_jumps                 (macro esc S-; S-t e l e s c o p e spc j u m p l i s t ret)
+nvim_keymaps               (macro esc S-; S-t e l e s c o p e spc k e y m a p s ret)
+nvim_locations             (macro esc S-; S-t e l e s c o p e spc l o c l i s t ret)
+nvim_source                (macro esc S-; S-t e l e s c o p e spc l s p S-- i m p l e m e n t a t i o n s ret)
+nvim_quickfix              (macro esc S-; S-t e l e s c o p e spc d i a g n o s t i c s ret)
+nvim_references            (macro esc S-; S-t e l e s c o p e spc l s p S-- r e f e r e n c e s ret)
+nvim_references_incoming   (macro esc S-; S-t e l e s c o p e spc l s p S-- i n c o m i n g S-- c a l l s ret)
+nvim_references_outgoing   (macro esc S-; S-t e l e s c o p e spc l s p S-- o u t g o i n g S-- c a l l s ret)
+nvim_symbols               (macro esc S-; S-t e l e s c o p e spc l s p S-- d o c u m e n t S-- s y m b o l s ret)
+nvim_symbols_workspace     (macro esc S-; S-t e l e s c o p e spc l s p S-- w o r k s p a c e S-- s y m b o l s ret)
+nvim_history               (macro esc S-; S-t e l e s c o p e spc o l d f i l e s ret)
+nvim_history_commands      (macro esc S-; S-t e l e s c o p e spc c o m m a n d S-- h i s t o r y ret)
+nvim_history_search        (macro esc S-; S-t e l e s c o p e spc s e a r c h S-- h i s t o r y ret)
+nvim_compare_next          (macro ] c)
+nvim_compare_prev          (macro [ c)
+nvim_compare_obtain        (macro d o)
+nvim_compare_push          (macro d p)
+nvim_commands              (macro esc S-; S-t e l e s c o p e spc c o m m a n d s ret)
+nvim_registers             (macro esc S-; S-t e l e s c o p e spc r e g i s t e r s ret)
+nvim_settings              (macro esc S-; S-t e l e s c o p e spc v i m S-- o p t i o n s ret)
+nvim_tags                  (macro esc S-; S-t e l e s c o p e spc t a g s ret)
+nvim_help                  (macro esc S-; h e l p ret)
 
 ;; === 2. Key Modifiers actions ========================================
 ;; =====================================================================
@@ -6,7 +32,7 @@
 ;; == modA =========================================================
 ;; modA + spc
 ;; nvim_action_modA                `{esc}:Telescope autocommands{ret}`
-nvim_action_modA                (macro esc S-; S-t e l e s c o p e spc a u t o c o m m a n d s ret)
+nvim_action_modA                $nvim_autocommands
 
 ;; == modB =========================================================
 ;; modB + spc
@@ -19,7 +45,7 @@ nvim_action_modA                (macro esc S-; S-t e l e s c o p e spc a u t o c
 ;; == modD =============================================================
 ;; modD + spc
 ;; nvim_action_modD                   `{esc}:Telescope lsp_definitions{ret}`
-nvim_action_modD                   (macro esc S-; S-t e l e s c o p e spc l s p S-- d e f i n i t i o n s ret)
+nvim_action_modD                   $nvim_definitions
 
 ;; == modE ===========================================================
 ;; modE + spc
@@ -32,10 +58,10 @@ nvim_action_modD                   (macro esc S-; S-t e l e s c o p e spc l s p 
 ;; == modG =============================================================
 ;; modG + spc
 ;; nvim_action_modG                 `{esc}:Telescope git_files{ret}`
-nvim_action_modG                    (macro esc S-; S-t e l e s c o p e spc g i t S-- f i l e s ret)  ;;""
+nvim_action_modG                    $nvim_git  ;;""
 ;; modG + modL
 ;; nvim_action_modG_modL              `{esc}:LazyGit{ret}`
-nvim_action_modG_modL              (macro esc S-; S-l a z y S-g i t ret)
+nvim_action_modG_modL              $nvim_lazygit
 
 ;; == modH =============================================================
 ;; modH + spc
@@ -48,17 +74,17 @@ nvim_action_modG_modL              (macro esc S-; S-l a z y S-g i t ret)
 ;; == modJ =============================================================
 ;; modJ + spc
 ;; nvim_action_modJ                  `{esc}:Telescope jumplist{ret}`
-nvim_action_modJ                  (macro esc S-; S-t e l e s c o p e spc j u m p l i s t ret)
+nvim_action_modJ                  $nvim_jumps
 
 ;; == modK =============================================================
 ;; modK + spc
 ;; nvim_action_modK                `{esc}:Telescope keymaps{ret}`
-nvim_action_modK                (macro esc S-; S-t e l e s c o p e spc k e y m a p s ret)
+nvim_action_modK                $nvim_keymaps
 
 ;; == modL =============================================================
 ;; modL + spc
 ;; nvim_action_modL              `{esc}:Telescope loclist{ret}`
-nvim_action_modL              (macro esc S-; S-t e l e s c o p e spc l o c l i s t ret)
+nvim_action_modL              $nvim_locations
 
 ;; == modM  ==========================================================
 ;; modM + spc
@@ -71,7 +97,7 @@ nvim_action_modL              (macro esc S-; S-t e l e s c o p e spc l o c l i s
 ;; == modO =========================================================
 ;; modO + spc
 ;; nvim_action_modO                 `{esc}:Telescope lsp_implementations{ret}`
-nvim_action_modO                 (macro esc S-; S-t e l e s c o p e spc l s p S-- i m p l e m e n t a t i o n s ret)
+nvim_action_modO                 $nvim_source
 
 ;; == modP ===========================================================
 ;; modP + spc
@@ -82,26 +108,26 @@ nvim_action_modO                 (macro esc S-; S-t e l e s c o p e spc l s p S-
 ;; nvim_action_modQ               `{esc}:Telescope quickfix{ret}`
 ;; nvim_action_modQ               (macro esc S-; S-t e l e s c o p e spc q u i c k f i x ret)   ;;""
 ;; nvim_action_modQ               `{esc}:Telescope diagnostics{ret}`
-nvim_action_modQ               (macro esc S-; S-t e l e s c o p e spc d i a g n o s t i c s ret)
+nvim_action_modQ               $nvim_quickfix
 
 ;; == modR =========================================================
 ;; modR + spc
 ;; nvim_action_modR                   `{esc}:Telescope lsp_references{ret}`
-nvim_action_modR                   (macro esc S-; S-t e l e s c o p e spc l s p S-- r e f e r e n c e s ret)
+nvim_action_modR                   $nvim_references
 ;; modR + lsft + spc
 ;; nvim_action_modR+lsft                `{esc}:Telescope lsp_incoming_calls{ret}`
-nvim_action_modR+lsft                (macro esc S-; S-t e l e s c o p e spc l s p S-- i n c o m i n g S-- c a l l s ret)
+nvim_action_modR+lsft                $nvim_references_incoming
 ;; modR + rsft + spc
 ;; nvim_action_modR+rsft               `{esc}:Telescope lsp_outgoing_calls{ret}`
-nvim_action_modR+rsft               (macro esc S-; S-t e l e s c o p e spc l s p S-- o u t g o i n g S-- c a l l s ret)
+nvim_action_modR+rsft               $nvim_references_outgoing
 
 ;; == modS =============================================================
 ;; modS + spc
 ;; nvim_action_modS                 `{esc}:Telescope lsp_document_symbols{ret}`
-nvim_action_modS                 (macro esc S-; S-t e l e s c o p e spc l s p S-- d o c u m e n t S-- s y m b o l s ret)
+nvim_action_modS                 $nvim_symbols
 ;; modS + lsft + spc
 ;; nvim_action_modS+lsft            `{esc}:Telescope lsp_workspace_symbols{ret}`
-nvim_action_modS+lsft            (macro esc S-; S-t e l e s c o p e spc l s p S-- w o r k s p a c e S-- s y m b o l s ret)
+nvim_action_modS+lsft            $nvim_symbols_workspace
 
 ;; == modT =========================================================
 ;; modT + spc
@@ -128,13 +154,13 @@ nvim_action_modS+lsft            (macro esc S-; S-t e l e s c o p e spc l s p S-
 ;; == modY =========================================================
 ;; modY + spc
 ;; nvim_action_modY                `{esc}:Telescope oldfiles{ret}`
-nvim_action_modY                (macro esc S-; S-t e l e s c o p e spc o l d f i l e s ret)  ;;""
+nvim_action_modY                $nvim_history  ;;""
 ;; modY + mod; + spc
 ;; nvim_action_modY_mod;          `{esc}:Telescope command_history{ret}`
-nvim_action_modY_mod;          (macro esc S-; S-t e l e s c o p e spc c o m m a n d S-- h i s t o r y ret)  ;;""
+nvim_action_modY_mod;          $nvim_history_commands  ;;""
 ;; modY + search + spc
 ;; nvim_action_modY_search         `{esc}:Telescope search_history{ret}`
-nvim_action_modY_search         (macro esc S-; S-t e l e s c o p e spc s e a r c h S-- h i s t o r y ret)  ;;""
+nvim_action_modY_search         $nvim_history_search  ;;""
 
 ;; == modZ =========================================================
 ;; modZ + spc
@@ -164,40 +190,40 @@ nvim_action_modY_search         (macro esc S-; S-t e l e s c o p e spc s e a r c
 ;; mod\ + spc
 nvim_action_mod\                   $nvim_compare_toggle 
 ;; mod\ + j
-nvim_action_mod\+j                 (macro ] c)
+nvim_action_mod\+j                 $nvim_compare_next
 ;; mod\ + k
-nvim_action_mod\+k                 (macro [ c)  ;;""
+nvim_action_mod\+k                 $nvim_compare_prev  ;;""
 ;; mod\ + o
-nvim_action_mod\+o                 (macro d o)  ;; Obtain changes from the other file.
+nvim_action_mod\+o                 $nvim_compare_obtain  ;; Obtain changes from the other file.
 ;; mod\ + p
-nvim_action_mod\+p                 (macro d p)  ;; Push changes to the other file.
+nvim_action_mod\+p                 $nvim_compare_push  ;; Push changes to the other file.
 ;; mod\ + ent
 ;; ___TO_SET___ nvim_action_mod\+ent               
 
 ;; == mod; ===========================================================
 ;; mod; + spc
 ;; nvim_action_mod;               `{esc}:Telescope commands{ret}`
-nvim_action_mod;               (macro esc S-; S-t e l e s c o p e spc c o m m a n d s ret)   ;;""
+nvim_action_mod;               $nvim_commands   ;;""
 
 ;; == mod' =============================================================
 ;; mod' + spc
 ;; nvim_action_mod'             `{esc}:Telescope registers{ret}`
-nvim_action_mod'             (macro esc S-; S-t e l e s c o p e spc r e g i s t e r s ret)
+nvim_action_mod'             $nvim_registers
 
 ;; == mod, ==========================================================
 ;; mod, + spc
 ;; nvim_action_mod,                `{esc}:Telescope vim_options{ret}`
-nvim_action_mod,                (macro esc S-; S-t e l e s c o p e spc v i m S-- o p t i o n s ret)
+nvim_action_mod,                $nvim_settings
 
 ;; == mod. =========================================================
 ;; mod. + spc
 ;; nvim_action_mod.                   `{esc}:Telescope tags{ret}`
-nvim_action_mod.                   (macro esc S-; S-t e l e s c o p e spc t a g s ret)  ;;""
+nvim_action_mod.                   $nvim_tags  ;;""
 
 ;; == mod/ ==========================================================
 ;; mod/ + spc
 ;; nvim_action_mod/                   `{esc}:help{ret}`
-nvim_action_mod/                   (macro esc S-; h e l p ret)
+nvim_action_mod/                   $nvim_help
 
 ;; == mod0 =============================================================
 ;; mod0 + spc

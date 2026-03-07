@@ -1,4 +1,13 @@
 (defvar
+foot_pgup                S-pgup
+foot_copy                C-S-c
+foot_extract             (macro esc d d i t a r spc - x a f spc S-, f i l e S-. esc v S-f S-,)
+foot_compress            (macro esc d d i t a r spc - c z f spc S-, z i p f i l e S-. spc S-, f i l e s spc a n d / o r spc f o l d e r s S-. esc v S-f S-, ;)
+foot_pgdn                S-pgdn
+foot_paste               C-S-v
+foot_history             C-y
+foot_compare             (macro esc d d i n v i m spc - d spc S-, f i l e Digit1 S-. spc S-, f i l e Digit2 S-. esc v b b b b b)
+foot_compare_dirs        (macro esc d d i n v i m spc - c spc S-' S-d i r S-d i f f spc S-, d i r Digit1 S-. spc S-, d i r Digit2 S-. S-' esc h v S-f S-, ;)
 
 ;; == omni ============================================================
 
@@ -13,24 +22,24 @@
 ;; ___TO_SET___ foot_action_omni+rsft+a            
 
 ;; omni + b
-foot_action_omni+b                        S-pgup
+foot_action_omni+b                        $foot_pgup
 
 ;; omni + c
 ;; == omni edit ======================================================""
-foot_action_omni+c                 C-S-c
+foot_action_omni+c                 $foot_copy
 
 ;; omni + d
 ;; ___TO_SET___ foot_action_omni+d                 
 
 ;; omni + e
 ;; foot_action_omni+e                 `{esc}dditar -xaf <file>{esc}vF<`
-foot_action_omni+e                 (macro esc d d i t a r spc - x a f spc S-, f i l e S-. esc v S-f S-,)
+foot_action_omni+e                 $foot_extract
 ;; omni + lsft + e
 ;; foot_action_omni+lsft+e            `{esc}dditar -czf <zipfile> <files and/or folders>{esc}vF<;`
-foot_action_omni+lsft+e            (macro esc d d i t a r spc - c z f spc S-, z i p f i l e S-. spc S-, f i l e s spc a n d / o r spc f o l d e r s S-. esc v S-f S-, ;)
+foot_action_omni+lsft+e            $foot_compress
 
 ;; omni + f
-foot_action_omni+f                        S-pgdn
+foot_action_omni+f                        $foot_pgdn
 
 ;; omni + g
 ;; ___TO_SET___ foot_action_omni+g                 
@@ -90,7 +99,7 @@ foot_action_omni+f                        S-pgdn
 ;; ___TO_SET___ foot_action_omni+u                 
 
 ;; omni + v
-foot_action_omni+v                 C-S-v 
+foot_action_omni+v                 $foot_paste
 
 ;; omni + w
 ;; see tab
@@ -100,7 +109,7 @@ foot_action_omni+v                 C-S-v
 ;; ___TO_SET___ foot_action_omni+x                 
 
 ;; omni + y
-foot_action_omni+y                 C-y   ;; shell history
+foot_action_omni+y                 $foot_history   ;; shell history
 
 ;; omni + z
 ;; ___TO_SET___ foot_action_omni+z                 
@@ -135,10 +144,10 @@ foot_action_omni+y                 C-y   ;; shell history
 
 ;; omni + \
 ;; foot_action_omni+\                `{esc}ddinvim -d <file1> <file2>{esc}vF<;`
-foot_action_omni+\                (macro esc d d i n v i m spc - d spc S-, f i l e Digit1 S-. spc S-, f i l e Digit2 S-. esc v b b b b b)
+foot_action_omni+\                $foot_compare
 ;; omni + lsft + \
 ;; foot_action_omni+lsft+\           `{esc}ddinvim -c "DirDiff <dir1> <dir2>"{esc}hvF<;`
-foot_action_omni+lsft+\           (macro esc d d i n v i m spc - c spc S-' S-d i r S-d i f f spc S-, d i r Digit1 S-. spc S-, d i r Digit2 S-. S-' esc h v S-f S-, ;)
+foot_action_omni+lsft+\           $foot_compare_dirs
 ;; omni + rsft + \
 ;; ___TO_SET___ foot_action_omni+rsft+\            
 

@@ -1,4 +1,9 @@
 (defvar
+zellij_pane_maximize     (macro C-g p f ret)
+zellij_pane_left         (macro C-g p h ret)
+zellij_pane_right        (macro C-g p l ret)
+zellij_pane_above        (macro C-g p k ret)
+zellij_pane_below        (macro C-g p j ret)
 
 ;; == panes =============================================================
 ;; panes + spc
@@ -6,20 +11,20 @@
 
 ;; panes + ent
 ;; #panes + ent
-zellij_action_panes+max                       (macro C-g p f ret)
+zellij_action_panes+max                       $zellij_pane_maximize
 
 ;; panes + h | panes + left
 ;; #panes + h | #panes + left
-zellij_action_panes+h                      (macro C-g p h ret)
+zellij_action_panes+h                      $zellij_pane_left
 ;; panes + l | panes + right
 ;; #panes + l | #panes + right
-zellij_action_panes+l                     (macro C-g p l ret)
+zellij_action_panes+l                     $zellij_pane_right
 ;; panes + k | panes + up
 ;; #panes + k | #panes + up
-zellij_action_panes+k                     (macro C-g p k ret)
+zellij_action_panes+k                     $zellij_pane_above
 ;; panes + j | panes + down
 ;; #panes + j | #panes + down
-zellij_action_panes+j                     (macro C-g p j ret)
+zellij_action_panes+j                     $zellij_pane_below
 
 ;; panes + -
 ;; ___TO_SET___ zellij_action_panes+-                

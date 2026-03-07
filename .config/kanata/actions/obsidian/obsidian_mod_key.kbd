@@ -1,4 +1,7 @@
 (defvar
+obsidian_symbols         A-S-o
+obsidian_commands        C-A-p
+obsidian_settings        C-A-,
 
 ;; === 2. Key Modifiers actions ========================================
 ;; =====================================================================
@@ -83,7 +86,7 @@
 
 ;; == modS =============================================================
 ;; modS + spc
-obsidian_action_modS                  A-S-o
+obsidian_action_modS                  $obsidian_symbols
 ;; modS + lsft + spc
 ;; ___TO_SET___ obsidian_action_modS+lsft              
 
@@ -157,7 +160,7 @@ obsidian_action_modS                  A-S-o
 
 ;; == mod; ===========================================================
 ;; mod; + spc
-obsidian_action_mod;                 C-A-p
+obsidian_action_mod;                 $obsidian_commands
 
 ;; == mod' =============================================================
 ;; mod' + spc
@@ -165,7 +168,7 @@ obsidian_action_mod;                 C-A-p
 
 ;; == mod, ==========================================================
 ;; mod, + spc
-obsidian_action_mod,                       C-A-,
+obsidian_action_mod,                       $obsidian_settings
 
 ;; == mod. =========================================================
 ;; mod. + spc

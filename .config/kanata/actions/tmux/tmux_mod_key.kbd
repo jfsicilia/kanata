@@ -1,4 +1,5 @@
 (defvar
+tmux_commands              (macro $tmux_prefix S-;)
 
 ;; === 2. Key Modifiers actions ========================================
 ;; =====================================================================
@@ -159,7 +160,7 @@
 ;; mod; + spc
 ;; == #mod; ===========================================================
 ;; #mod; + spc
-tmux_action_mod;                 (macro $tmux_prefix S-;) ;; prefix + : (command prompt)
+tmux_action_mod;                 $tmux_commands ;; prefix + : (command prompt)
 
 ;; == mod' =============================================================
 ;; mod' + spc

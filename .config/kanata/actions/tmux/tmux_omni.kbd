@@ -1,4 +1,10 @@
 (defvar
+tmux_pgup                (macro $tmux_prefix pgup)
+tmux_copy                (macro $tmux_prefix [)
+tmux_pgdn                C-f
+tmux_new_window                 (macro $tmux_prefix c)
+tmux_rename              (macro $tmux_prefix ,)
+tmux_paste               (macro $tmux_prefix ])
 
 ;; == omni ============================================================
 
@@ -13,13 +19,10 @@
 ;; ___TO_SET___ tmux_action_omni+rsft+a            
 
 ;; omni + b
-tmux_action_omni+b                        (macro $tmux_prefix pgup) ;; prefix + PgUp (enter copy mode + page up)
+tmux_action_omni+b                    $tmux_pgup ;; prefix + PgUp (enter copy mode + page up)
 
 ;; omni + c
-;; == omni edit ======================================================""
-;; == omni edit ======================================================
-;; == #omni edit ======================================================
-tmux_action_omni+c                           (macro $tmux_prefix [) ;; prefix + [ (enter copy mode) ;;""
+tmux_action_omni+c                    $tmux_copy ;; prefix + [ (enter copy mode) ;;""
 
 ;; omni + d
 ;; ___TO_SET___ tmux_action_omni+d                 
@@ -30,7 +33,7 @@ tmux_action_omni+c                           (macro $tmux_prefix [) ;; prefix + 
 ;; ___TO_SET___ tmux_action_omni+lsft+e            
 
 ;; omni + f
-tmux_action_omni+f                      C-f ;; prefix + PgDn (page down, requires copy mode)
+tmux_action_omni+f                    $tmux_pgdn ;; prefix + PgDn (page down, requires copy mode)
 
 ;; omni + g
 ;; ___TO_SET___ tmux_action_omni+g                 
@@ -55,7 +58,7 @@ tmux_action_omni+f                      C-f ;; prefix + PgDn (page down, require
 ;; ___TO_SET___ tmux_action_omni+m                 
 
 ;; omni + n
-tmux_action_omni+n                            (macro $tmux_prefix c) ;; prefix + c (new window)
+tmux_action_omni+n                    $tmux_new_window ;; prefix + c (new window)
 ;; omni + lsft + n
 ;; ___TO_SET___ tmux_action_omni+lsft+n            
 ;; omni + rsft + n
@@ -72,7 +75,7 @@ tmux_action_omni+n                            (macro $tmux_prefix c) ;; prefix +
 ;; ___TO_SET___ tmux_action_omni+q                 
 
 ;; omni + r
-tmux_action_omni+r                         (macro $tmux_prefix ,) ;; prefix + , (rename window)
+tmux_action_omni+r                    $tmux_rename ;; prefix + , (rename window)
 
 ;; omni + s
 ;; ___TO_SET___ tmux_action_omni+s                 
@@ -90,7 +93,7 @@ tmux_action_omni+r                         (macro $tmux_prefix ,) ;; prefix + , 
 ;; ___TO_SET___ tmux_action_omni+u                 
 
 ;; omni + v
-tmux_action_omni+v                          (macro $tmux_prefix ]) ;; prefix + ] (paste buffer)  ;;""
+tmux_action_omni+v                    $tmux_paste ;; prefix + ] (paste buffer)  ;;""
 
 ;; omni + w
 ;; see tab
