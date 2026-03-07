@@ -23,7 +23,7 @@
 (include setup.kbd)
 
 ;; Layers =================================================================
-(include layers_toggle/toggles_combined.kbd)
+(include layers_toggle/toggles__combinations__.kbd)
 (include layers_toggle/toggles_mod_gui.kbd)
 (include layers_toggle/toggles_mod_key.kbd)
 (include layers_toggle/toggles_apps.kbd)
