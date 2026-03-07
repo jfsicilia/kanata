@@ -2,12 +2,12 @@
 
 ;; ~/Downloads
 
+;;folder_home             `~`
+folder_home               (S-grv 10)
 ;;folder_inbox            `~/inbox`
-folder_inbox (S-grv 10 / S-- / i n b o x)
-;;folder_downloads            `~/Downloads`
-folder_downloads (S-grv 10 / S-- / i n b o x / d o w n l o a d s)
-;;folder_workarea            `~/_/workarea`
-folder_workarea (S-grv 10 / S-- / w o r k a r e a)
-;;folder_underscore          `~/_`
-folder_underscore (S-grv 10 / S--)
+folder_inbox              (S-grv 10 / i n b o x)
+;;folder_downloads        `~/inbox/downloads`
+folder_downloads          (S-grv 10 / i n b o x / d o w n l o a d s)
+;;folder_workarea         `~/workarea`
+folder_workarea           (S-grv 10 / w o r k a r e a)
 )

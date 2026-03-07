@@ -31,6 +31,7 @@
     () XX break
   )) 
   action_bookmarks_h (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_bookmarks_h break
     () XX break
   )) 
   action_bookmarks_i (t! unmod_all (switch ;;@iface@
@@ -90,7 +91,6 @@
     () XX break
   )) 
   action_bookmarks_- (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_bookmarks_- break
     () XX break
   )) 
   action_bookmarks_a+lsft (t! unmod_all (switch ;;@iface@
