@@ -1,0 +1,5 @@
+(defvar
+  ;; Lang layer
+  toggle_lang_layer                  (t! toggle_layer             lang_layer)
+  toggle_lang_alt_layer              (t! toggle_layer             lang_alt_layer)
+)

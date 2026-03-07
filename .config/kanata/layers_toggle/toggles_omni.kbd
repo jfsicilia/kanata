@@ -1,0 +1,6 @@
+(defvar
+  ;; Omni layer
+  toggle_omni_layer                  (t! toggle_layer             omni_layer)
+  toggle_omni+lsft_layer             (t! toggle_mod_layer   lsft  omni+lsft_layer)
+  toggle_omni+rsft_layer             (t! toggle_mod_layer   rsft  omni+rsft_layer)
+)

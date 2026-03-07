@@ -1,0 +1,6 @@
+(defvar
+  ;; Opts layer
+  toggle_opts_layer                  (t! toggle_layer             opts_layer)
+  toggle_opts+lsft_layer             (t! toggle_mod_layer   lsft  opts+lsft_layer)
+  toggle_opts+rsft_layer             (t! toggle_mod_layer   rsft  opts+rsft_layer)
+)

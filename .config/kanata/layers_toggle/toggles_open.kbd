@@ -1,0 +1,6 @@
+(defvar
+  ;; Open layer
+  toggle_open_layer                  (t! toggle_layer             open_layer)
+  toggle_open+lsft_layer             (t! toggle_mod_layer   lsft  open+lsft_layer)
+  toggle_open+rsft_layer             (t! toggle_mod_layer   rsft  open+rsft_layer)
+)

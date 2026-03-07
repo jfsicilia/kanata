@@ -1,0 +1,6 @@
+(defvar
+  ;; Bookmarks layer
+  toggle_bookmarks_layer             (t! toggle_layer             bookmarks_layer)
+  toggle_bookmarks+lsft_layer        (t! toggle_mod_layer   lsft  bookmarks+lsft_layer)
+  toggle_bookmarks+rsft_layer        (t! toggle_mod_layer   rsft  bookmarks+rsft_layer)
+)
