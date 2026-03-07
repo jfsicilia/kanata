@@ -9,8 +9,13 @@ A kanata (keyboard remapper for Linux) configuration with an **app-polymorphic a
 ## Key Commands
 
 ```bash
-# Sync all per-app action files with their shared actions_*.iface.kbd definitions (after editing actions_*.iface.kbd):
-./scripts/kanata_sync_all_apps_interfaces.sh
+# Run both sync steps (kanata_sync_apps.py -f + kanata_sync_all_apps_interfaces.sh):
+./scripts/kanata_sync.sh          # incremental (only changed files)
+./scripts/kanata_sync.sh -f       # force full sync
+
+# Sync all per-app action files with their shared actions_*.iface.kbd definitions:
+./scripts/kanata_sync_all_apps_interfaces.sh      # incremental
+./scripts/kanata_sync_all_apps_interfaces.sh -f   # force full sync
 
 # Sync a single per-app action file (dry-run, prints to stdout):
 ./scripts/kanata_sync_interfaces.py actions/chrome/chrome_omni.kbd
@@ -20,7 +25,7 @@ A kanata (keyboard remapper for Linux) configuration with an **app-polymorphic a
 # Regenerate kanata.kbd virtual keys + switch conditions (after adding/removing app files):
 ./scripts/kanata_sync_apps.py -f
 
-# Reload kanata config, reload kwanata config, run kanata_sync_interfaces and kanata_sync_apps: RCtrl + k
+# Reload kanata config, reload kwanata config, run kanata_sync.sh: RCtrl + k
 
 # Restart kanata service:
 systemctl --user restart kanata.service
@@ -49,11 +54,20 @@ kanata.kbd  (entry point, includes everything)
   │   ├── layer_mod_physical.kbd  (modifier layers: physical keys)
   │   └── layer_*.kbd             (one per layer)
   ├── layers_toggle/
-  │   ├── toggles_combined.kbd    (combined toggle definitions)
+  │   ├── toggles__combinations__.kbd  (combined toggle definitions)
   │   ├── toggles_mod_gui.kbd
   │   ├── toggles_mod_key.kbd
   │   ├── toggles_mod_physical.kbd
-  │   └── toggles_mod_special.kbd
+  │   ├── toggles_apps.kbd
+  │   ├── toggles_bookmarks.kbd
+  │   ├── toggles_lang.kbd
+  │   ├── toggles_num_sym.kbd
+  │   ├── toggles_omni.kbd
+  │   ├── toggles_open.kbd
+  │   ├── toggles_opts.kbd
+  │   ├── toggles_seek_n_select.kbd
+  │   ├── toggles_replace.kbd
+  │   └── toggles_search.kbd
   └── actions/
       ├── actions_apps.kbd         (non-overridable: apps, apps_toggle, apps+0-9, apps+a-z)
       ├── actions_windows.kbd      (non-overridable: window_*)
