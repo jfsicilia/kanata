@@ -48,10 +48,10 @@ from pathlib import Path
 
 DEFAULT_ACTIONS_FOLDER = Path.home() / ".config" / "kanata" / "actions"
 
-# Matches an autogen-tagged action in actions.kbd, e.g.:
-#   action_lctl+a (t! unmod_all (switch ;;@autogen@
-#   ~action_tab_next (t! unmod_all (switch ;;@autogen@
-ACTION_RE = re.compile(r"^\s*(~?action_[^\s]+).*@autogen@")
+# Matches an @iface@-tagged action in actions.kbd, e.g.:
+#   action_lctl+a (t! unmod_all (switch ;;@iface@
+#   ~action_tab_next (t! unmod_all (switch ;;@iface@
+ACTION_RE = re.compile(r"^\s*(~?action_[^\s]+).*@iface@")
 
 ACTIONS_START_RE = re.compile(r"^\s*;;\s*@start@")
 
@@ -516,7 +516,7 @@ def process_actions(
     """Parse an interface file and generate app-specific output.
 
     Reads the interface file, skips everything before the @start@ marker,
-    then collects all @autogen@-tagged action names and their preceding
+    then collects all @iface@-tagged action names and their preceding
     comments. Delegates to gen_app_actions to produce the output.
 
     Args:

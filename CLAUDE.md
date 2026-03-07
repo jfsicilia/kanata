@@ -59,7 +59,7 @@ kanata.kbd  (entry point, includes everything)
       ├── actions_windows.kbd      (non-overridable: window_*)
       ├── actions_workspaces.kbd   (non-overridable: desktop_*, screen_*)
       ├── actions_misc.kbd         (non-overridable: emojis, opts_restart_kwanata)
-      ├── actions_omni.iface.kbd   (@autogen@ switch dispatch)
+      ├── actions_omni.iface.kbd   (@iface@ switch dispatch)
       ├── actions_tabs.iface.kbd
       ├── actions_panes.iface.kbd
       ├── actions_groups.iface.kbd (contains ~ reversed actions)
@@ -82,10 +82,10 @@ kanata.kbd  (entry point, includes everything)
 
 ### App-Polymorphism Pattern
 
-Each app has a virtual key (`vk_<app>`) toggled by external software when the app gains/loses focus. Shared action files (`actions_*.iface.kbd`) use `(switch ;;@autogen@` to dispatch based on which virtual key is pressed:
+Each app has a virtual key (`vk_<app>`) toggled by external software when the app gains/loses focus. Shared action files (`actions_*.iface.kbd`) use `(switch ;;@iface@` to dispatch based on which virtual key is pressed:
 
 ```lisp
-action_tab_next (t! unmod_all (switch ;;@autogen@
+action_tab_next (t! unmod_all (switch ;;@iface@
   ((input virtual vk_nvim)) $nvim_action_tab_next break
   ((input virtual vk_chrome)) $chrome_action_tab_next break
   () C-tab break   ;; default fallback
@@ -98,7 +98,7 @@ action_tab_next (t! unmod_all (switch ;;@autogen@
 
 ### Sync Workflow
 
-1. **Adding a new action**: Edit the relevant `actions_*.iface.kbd` file, add the action with `;;@autogen@` tag, then run `kanata_sync_all_apps_interfaces.sh` to propagate the placeholder to all per-app files.
+1. **Adding a new action**: Edit the relevant `actions_*.iface.kbd` file, add the action with `;;@iface@` tag, then run `kanata_sync_all_apps_interfaces.sh` to propagate the placeholder to all per-app files.
 2. **Adding a new app**: Create a subdirectory `actions/<app>/` with files `<app>_<name>.kbd` for each interface, then run `kanata_sync_apps.py -f` to register it in `kanata.kbd` and update switch conditions.
 3. **Implementing an app action**: Uncomment the placeholder line in the per-app file (e.g. change `;;  tmux_action_tab_new` to `tmux_action_tab_new (macro $tmux_prefix c)`), then run `kanata_sync_apps.py -f` to wire it into the switch conditions.
 
@@ -139,5 +139,5 @@ Key templates used throughout:
   - rsft variant: `action_rsft+new`
   - Example in combos: `action_lctl+t`, `action_lctl+lsft+t`, `action_lctl+rsft+t`
   - Variants are now distributed across layer variants (base_layer, base+lsft_layer, base+rsft_layer) instead of using sft_switch
-- **`;;@autogen@` tag**: Marks lines managed by sync scripts — don't manually edit the switch conditions.
+- **`;;@iface@` tag**: Marks lines managed by sync scripts — don't manually edit the switch conditions.
 - **`;; ""`**: Vim fold markers (used because `;;` gets dimmed in nvim after `[`).

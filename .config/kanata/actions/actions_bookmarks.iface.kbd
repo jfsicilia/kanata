@@ -3,256 +3,256 @@
 
   ;; == bookmarks =========================================================
   ;; bookmarks + spc
-  action_bookmarks (t! unmod_all (switch ;;@autogen@
+  action_bookmarks (t! unmod_all (switch ;;@iface@
     ((input virtual vk_nvim)) $nvim_action_bookmarks break
     ((input virtual vk_obsidian)) $obsidian_action_bookmarks break
     () XX break
   )) 
-  action_bookmarks_a (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_a (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_b (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_b (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_c (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_c (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_d (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_d (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_bookmarks_d break
     () XX break
   )) 
-  action_bookmarks_e (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_e (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_f (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_f (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_g (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_g (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_h (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_h (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_i (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_i (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_bookmarks_i break
     () XX break
   )) 
-  action_bookmarks_j (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_j (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_k (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_k (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_l (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_l (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_m (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_m (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_n (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_n (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_o (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_o (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_p (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_p (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_q (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_q (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_r (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_r (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_s (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_s (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_t (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_t (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_u (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_u (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_v (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_v (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_w (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_w (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_bookmarks_w break
     () XX break
   )) 
-  action_bookmarks_x (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_x (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_y (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_y (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_z (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_z (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_- (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_- (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_bookmarks_- break
     () XX break
   )) 
-  action_bookmarks_a+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_a+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_b+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_b+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_c+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_c+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_d+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_d+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_e+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_e+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_f+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_f+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_g+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_g+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_h+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_h+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_i+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_i+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_j+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_j+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_k+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_k+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_l+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_l+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_m+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_m+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_n+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_n+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_o+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_o+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_p+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_p+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_q+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_q+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_r+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_r+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_s+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_s+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_t+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_t+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_u+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_u+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_v+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_v+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_w+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_w+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_x+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_x+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_y+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_y+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_z+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_z+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_-+lsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_-+lsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_a+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_a+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_b+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_b+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_c+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_c+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_d+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_d+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_e+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_e+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_f+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_f+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_g+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_g+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_h+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_h+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_i+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_i+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_j+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_j+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_k+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_k+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_l+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_l+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_m+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_m+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_n+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_n+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_o+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_o+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_p+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_p+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_q+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_q+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_r+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_r+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_s+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_s+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_t+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_t+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_u+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_u+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_v+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_v+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_w+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_w+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_x+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_x+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_y+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_y+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_z+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_z+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
-  action_bookmarks_-+rsft (t! unmod_all (switch ;;@autogen@
+  action_bookmarks_-+rsft (t! unmod_all (switch ;;@iface@
     () XX break
   )) 
 

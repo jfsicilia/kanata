@@ -5,2545 +5,2545 @@
   ;; =====================================================================
 
   ;; == SFT actions ==========================================================
-  action_sft+ent (t! unmod_all (switch ;;@autogen@
+  action_sft+ent (t! unmod_all (switch ;;@iface@
     ((input virtual vk_foot)) $foot_action_sft+ent break
     () S-ent break
   ))
 
   ;; == LCTL actions ==========================================================
-  action_lctl+a (switch ;;@autogen@ 
+  action_lctl+a (switch ;;@iface@ 
     () C-a break
   )
-  action_lctl+b (switch ;;@autogen@ 
+  action_lctl+b (switch ;;@iface@ 
     ((input virtual vk_obsidian)) $obsidian_action_lctl+b break
     () C-b break
   )
-  action_lctl+c  (switch ;;@autogen@ 
+  action_lctl+c  (switch ;;@iface@ 
     () C-c  break
   )
-  action_lctl+d (switch ;;@autogen@ 
+  action_lctl+d (switch ;;@iface@ 
     () C-d break
   )
-  action_lctl+e  (switch ;;@autogen@ 
+  action_lctl+e  (switch ;;@iface@ 
     () C-e  break
   )
-  action_lctl+f  (switch ;;@autogen@ 
+  action_lctl+f  (switch ;;@iface@ 
     ((input virtual vk_obsidian)) $obsidian_action_lctl+f break
     () C-f  break
   )
-  action_lctl+g  (switch ;;@autogen@ 
+  action_lctl+g  (switch ;;@iface@ 
     () C-g  break
   )
-  action_lctl+h  (switch ;;@autogen@ 
+  action_lctl+h  (switch ;;@iface@ 
     () C-h  break
   )
-  action_lctl+i  (switch ;;@autogen@ 
+  action_lctl+i  (switch ;;@iface@ 
     () C-i  break
   )
-  action_lctl+j  (switch ;;@autogen@ 
+  action_lctl+j  (switch ;;@iface@ 
     () C-j  break
   )
-  action_lctl+k  (switch ;;@autogen@ 
+  action_lctl+k  (switch ;;@iface@ 
     () C-k  break
   )
-  action_lctl+l  (switch ;;@autogen@ 
+  action_lctl+l  (switch ;;@iface@ 
     () C-l  break
   )
-  action_lctl+m  (switch ;;@autogen@ 
+  action_lctl+m  (switch ;;@iface@ 
     () C-m  break
   )
-  action_lctl+n  (switch ;;@autogen@ 
+  action_lctl+n  (switch ;;@iface@ 
     () C-n  break
   )
-  action_lctl+o  (switch ;;@autogen@ 
+  action_lctl+o  (switch ;;@iface@ 
     () C-o  break
   )
-  action_lctl+p  (switch ;;@autogen@ 
+  action_lctl+p  (switch ;;@iface@ 
     () C-p  break
   )
-  action_lctl+q  (switch ;;@autogen@ 
+  action_lctl+q  (switch ;;@iface@ 
     () C-q  break
   )
-  action_lctl+r  (switch ;;@autogen@ 
+  action_lctl+r  (switch ;;@iface@ 
     () C-r  break
   )
-  action_lctl+s  (switch ;;@autogen@ 
+  action_lctl+s  (switch ;;@iface@ 
     () C-s  break
   )
-  action_lctl+t  (switch ;;@autogen@ 
+  action_lctl+t  (switch ;;@iface@ 
     ((input virtual vk_obsidian)) $obsidian_action_lctl+t break
     () C-t  break
   )
-  action_lctl+u  (switch ;;@autogen@ 
+  action_lctl+u  (switch ;;@iface@ 
     () C-u  break
   )
-  action_lctl+v  (switch ;;@autogen@ 
+  action_lctl+v  (switch ;;@iface@ 
     () C-v  break
   )
-  action_lctl+w  (switch ;;@autogen@ 
+  action_lctl+w  (switch ;;@iface@ 
     () C-w  break
   )
-  action_lctl+x  (switch ;;@autogen@ 
+  action_lctl+x  (switch ;;@iface@ 
     () C-x  break
   )
-  action_lctl+y  (switch ;;@autogen@ 
+  action_lctl+y  (switch ;;@iface@ 
     () C-y  break
   )
-  action_lctl+z  (switch ;;@autogen@ 
+  action_lctl+z  (switch ;;@iface@ 
     () C-z break
   )
-  action_lctl+,  (switch ;;@autogen@ 
+  action_lctl+,  (switch ;;@iface@ 
     ((input virtual vk_obsidian)) $obsidian_action_lctl+, break
     () C-, break
   )
-  action_lctl+.  (switch ;;@autogen@ 
+  action_lctl+.  (switch ;;@iface@ 
     () C-.  break
   )
-  action_lctl+/  (switch ;;@autogen@ 
+  action_lctl+/  (switch ;;@iface@ 
     () C-/  break
   )
-  action_lctl+;  (switch ;;@autogen@ 
+  action_lctl+;  (switch ;;@iface@ 
     ((input virtual vk_obsidian)) $obsidian_action_lctl+; break
     () C-;  break
   )
-  action_lctl+'  (switch ;;@autogen@ 
+  action_lctl+'  (switch ;;@iface@ 
     () C-'  break
   )
-  action_lctl+[  (switch ;;@autogen@ 
+  action_lctl+[  (switch ;;@iface@ 
     ((input virtual vk_obsidian)) $obsidian_action_lctl+[ break
     () C-[  break
   )
-  action_lctl+]  (switch ;;@autogen@ 
+  action_lctl+]  (switch ;;@iface@ 
     ((input virtual vk_obsidian)) $obsidian_action_lctl+] break
     () C-]  break
   )  ;; ""
-  action_lctl+\  (switch ;;@autogen@ 
+  action_lctl+\  (switch ;;@iface@ 
     () C-\  break
   )  ;; ""
-  action_lctl+-  (switch ;;@autogen@ 
+  action_lctl+-  (switch ;;@iface@ 
     () C--  break
   )
-  action_lctl+=  (switch ;;@autogen@ 
+  action_lctl+=  (switch ;;@iface@ 
     () C-=  break
   )
-  action_lctl+1  (switch ;;@autogen@ 
+  action_lctl+1  (switch ;;@iface@ 
     () C-1  break
   )
-  action_lctl+2  (switch ;;@autogen@ 
+  action_lctl+2  (switch ;;@iface@ 
     () C-2  break
   )
-  action_lctl+3  (switch ;;@autogen@ 
+  action_lctl+3  (switch ;;@iface@ 
     () C-3  break
   )
-  action_lctl+4  (switch ;;@autogen@ 
+  action_lctl+4  (switch ;;@iface@ 
     () C-4  break
   )
-  action_lctl+5  (switch ;;@autogen@ 
+  action_lctl+5  (switch ;;@iface@ 
     () C-5  break
   )
-  action_lctl+6  (switch ;;@autogen@ 
+  action_lctl+6  (switch ;;@iface@ 
     () C-6  break
   )
-  action_lctl+7  (switch ;;@autogen@ 
+  action_lctl+7  (switch ;;@iface@ 
     () C-7  break
   )
-  action_lctl+8  (switch ;;@autogen@ 
+  action_lctl+8  (switch ;;@iface@ 
     () C-8  break
   )
-  action_lctl+9  (switch ;;@autogen@ 
+  action_lctl+9  (switch ;;@iface@ 
     () C-9  break
   )
-  action_lctl+0  (switch ;;@autogen@ 
+  action_lctl+0  (switch ;;@iface@ 
     () C-0  break
   )
 
   ;; == LCTL+LSFT actions ==========================================================
-  action_lctl+lsft+a (switch ;;@autogen@ 
+  action_lctl+lsft+a (switch ;;@iface@ 
     () C-S-a break
   )
-  action_lctl+lsft+b (switch ;;@autogen@ 
+  action_lctl+lsft+b (switch ;;@iface@ 
     () C-S-b break
   )
-  action_lctl+lsft+c  (switch ;;@autogen@ 
+  action_lctl+lsft+c  (switch ;;@iface@ 
     () C-S-c  break
   )
-  action_lctl+lsft+d (switch ;;@autogen@ 
+  action_lctl+lsft+d (switch ;;@iface@ 
     () C-S-d break
   )
-  action_lctl+lsft+e  (switch ;;@autogen@ 
+  action_lctl+lsft+e  (switch ;;@iface@ 
     () C-S-e  break
   )
-  action_lctl+lsft+f  (switch ;;@autogen@ 
+  action_lctl+lsft+f  (switch ;;@iface@ 
     () C-S-f  break
   )
-  action_lctl+lsft+g  (switch ;;@autogen@ 
+  action_lctl+lsft+g  (switch ;;@iface@ 
     () C-S-g  break
   )
-  action_lctl+lsft+h  (switch ;;@autogen@ 
+  action_lctl+lsft+h  (switch ;;@iface@ 
     () C-S-h  break
   )
-  action_lctl+lsft+i  (switch ;;@autogen@ 
+  action_lctl+lsft+i  (switch ;;@iface@ 
     () C-S-i  break
   )
-  action_lctl+lsft+j  (switch ;;@autogen@ 
+  action_lctl+lsft+j  (switch ;;@iface@ 
     () C-S-j  break
   )
-  action_lctl+lsft+k  (switch ;;@autogen@ 
+  action_lctl+lsft+k  (switch ;;@iface@ 
     () C-S-k  break
   )
-  action_lctl+lsft+l  (switch ;;@autogen@ 
+  action_lctl+lsft+l  (switch ;;@iface@ 
     () C-S-l  break
   )
-  action_lctl+lsft+m  (switch ;;@autogen@ 
+  action_lctl+lsft+m  (switch ;;@iface@ 
     () C-S-m  break
   )
-  action_lctl+lsft+n  (switch ;;@autogen@ 
+  action_lctl+lsft+n  (switch ;;@iface@ 
     () C-S-n  break
   )
-  action_lctl+lsft+o  (switch ;;@autogen@ 
+  action_lctl+lsft+o  (switch ;;@iface@ 
     () C-S-o  break
   )
-  action_lctl+lsft+p  (switch ;;@autogen@ 
+  action_lctl+lsft+p  (switch ;;@iface@ 
     () C-S-p  break
   )
-  action_lctl+lsft+q  (switch ;;@autogen@ 
+  action_lctl+lsft+q  (switch ;;@iface@ 
     () C-S-q  break
   )
-  action_lctl+lsft+r  (switch ;;@autogen@ 
+  action_lctl+lsft+r  (switch ;;@iface@ 
     () C-S-r  break
   )
-  action_lctl+lsft+s  (switch ;;@autogen@ 
+  action_lctl+lsft+s  (switch ;;@iface@ 
     () C-S-s  break
   )
-  action_lctl+lsft+t  (switch ;;@autogen@ 
+  action_lctl+lsft+t  (switch ;;@iface@ 
     ((input virtual vk_obsidian)) $obsidian_action_lctl+lsft+t break
     () C-S-t  break
   )
-  action_lctl+lsft+u  (switch ;;@autogen@ 
+  action_lctl+lsft+u  (switch ;;@iface@ 
     () C-S-u  break
   )
-  action_lctl+lsft+v  (switch ;;@autogen@ 
+  action_lctl+lsft+v  (switch ;;@iface@ 
     () C-S-v  break
   )
-  action_lctl+lsft+w  (switch ;;@autogen@ 
+  action_lctl+lsft+w  (switch ;;@iface@ 
     () C-S-w  break
   )
-  action_lctl+lsft+x  (switch ;;@autogen@ 
+  action_lctl+lsft+x  (switch ;;@iface@ 
     () C-S-x  break
   )
-  action_lctl+lsft+y  (switch ;;@autogen@ 
+  action_lctl+lsft+y  (switch ;;@iface@ 
     () C-S-y  break
   )
-  action_lctl+lsft+z  (switch ;;@autogen@ 
+  action_lctl+lsft+z  (switch ;;@iface@ 
     () C-S-z break
   )
-  action_lctl+lsft+,  (switch ;;@autogen@ 
+  action_lctl+lsft+,  (switch ;;@iface@ 
     () C-S-, break
   )
-  action_lctl+lsft+.  (switch ;;@autogen@ 
+  action_lctl+lsft+.  (switch ;;@iface@ 
     () C-S-.  break
   )
-  action_lctl+lsft+/  (switch ;;@autogen@ 
+  action_lctl+lsft+/  (switch ;;@iface@ 
     () C-S-/  break
   )
-  action_lctl+lsft+;  (switch ;;@autogen@ 
+  action_lctl+lsft+;  (switch ;;@iface@ 
     () C-S-;  break
   )
-  action_lctl+lsft+'  (switch ;;@autogen@ 
+  action_lctl+lsft+'  (switch ;;@iface@ 
     () C-S-'  break
   )
-  action_lctl+lsft+[  (switch ;;@autogen@ 
+  action_lctl+lsft+[  (switch ;;@iface@ 
     () C-S-[  break
   )
-  action_lctl+lsft+]  (switch ;;@autogen@ 
+  action_lctl+lsft+]  (switch ;;@iface@ 
     () C-S-]  break
   )  ;; ""
-  action_lctl+lsft+\  (switch ;;@autogen@ 
+  action_lctl+lsft+\  (switch ;;@iface@ 
     () C-S-\  break
   )  ;; ""
-  action_lctl+lsft+-  (switch ;;@autogen@ 
+  action_lctl+lsft+-  (switch ;;@iface@ 
     () C-S--  break
   )
-  action_lctl+lsft+=  (switch ;;@autogen@ 
+  action_lctl+lsft+=  (switch ;;@iface@ 
     () C-S-=  break
   )
-  action_lctl+lsft+1  (switch ;;@autogen@ 
+  action_lctl+lsft+1  (switch ;;@iface@ 
     () C-S-1  break
   )
-  action_lctl+lsft+2  (switch ;;@autogen@ 
+  action_lctl+lsft+2  (switch ;;@iface@ 
     () C-S-2  break
   )
-  action_lctl+lsft+3  (switch ;;@autogen@ 
+  action_lctl+lsft+3  (switch ;;@iface@ 
     () C-S-3  break
   )
-  action_lctl+lsft+4  (switch ;;@autogen@ 
+  action_lctl+lsft+4  (switch ;;@iface@ 
     () C-S-4  break
   )
-  action_lctl+lsft+5  (switch ;;@autogen@ 
+  action_lctl+lsft+5  (switch ;;@iface@ 
     () C-S-5  break
   )
-  action_lctl+lsft+6  (switch ;;@autogen@ 
+  action_lctl+lsft+6  (switch ;;@iface@ 
     () C-S-6  break
   )
-  action_lctl+lsft+7  (switch ;;@autogen@ 
+  action_lctl+lsft+7  (switch ;;@iface@ 
     () C-S-7  break
   )
-  action_lctl+lsft+8  (switch ;;@autogen@ 
+  action_lctl+lsft+8  (switch ;;@iface@ 
     () C-S-8  break
   )
-  action_lctl+lsft+9  (switch ;;@autogen@ 
+  action_lctl+lsft+9  (switch ;;@iface@ 
     () C-S-9  break
   )
-  action_lctl+lsft+0  (switch ;;@autogen@ 
+  action_lctl+lsft+0  (switch ;;@iface@ 
     () C-S-0  break
   )
 
   ;; == LCTL+RSFT actions ==========================================================
-  action_lctl+rsft+a (switch ;;@autogen@ 
+  action_lctl+rsft+a (switch ;;@iface@ 
     () C-S-a break
   )
-  action_lctl+rsft+b (switch ;;@autogen@ 
+  action_lctl+rsft+b (switch ;;@iface@ 
     () C-S-b break
   )
-  action_lctl+rsft+c  (switch ;;@autogen@ 
+  action_lctl+rsft+c  (switch ;;@iface@ 
     () C-S-c  break
   )
-  action_lctl+rsft+d (switch ;;@autogen@ 
+  action_lctl+rsft+d (switch ;;@iface@ 
     () C-S-d break
   )
-  action_lctl+rsft+e  (switch ;;@autogen@ 
+  action_lctl+rsft+e  (switch ;;@iface@ 
     () C-S-e  break
   )
-  action_lctl+rsft+f  (switch ;;@autogen@ 
+  action_lctl+rsft+f  (switch ;;@iface@ 
     () C-S-f  break
   )
-  action_lctl+rsft+g  (switch ;;@autogen@ 
+  action_lctl+rsft+g  (switch ;;@iface@ 
     () C-S-g  break
   )
-  action_lctl+rsft+h  (switch ;;@autogen@ 
+  action_lctl+rsft+h  (switch ;;@iface@ 
     () C-S-h  break
   )
-  action_lctl+rsft+i  (switch ;;@autogen@ 
+  action_lctl+rsft+i  (switch ;;@iface@ 
     () C-S-i  break
   )
-  action_lctl+rsft+j  (switch ;;@autogen@ 
+  action_lctl+rsft+j  (switch ;;@iface@ 
     () C-S-j  break
   )
-  action_lctl+rsft+k  (switch ;;@autogen@ 
+  action_lctl+rsft+k  (switch ;;@iface@ 
     () C-S-k  break
   )
-  action_lctl+rsft+l  (switch ;;@autogen@ 
+  action_lctl+rsft+l  (switch ;;@iface@ 
     () C-S-l  break
   )
-  action_lctl+rsft+m  (switch ;;@autogen@ 
+  action_lctl+rsft+m  (switch ;;@iface@ 
     () C-S-m  break
   )
-  action_lctl+rsft+n  (switch ;;@autogen@ 
+  action_lctl+rsft+n  (switch ;;@iface@ 
     () C-S-n  break
   )
-  action_lctl+rsft+o  (switch ;;@autogen@ 
+  action_lctl+rsft+o  (switch ;;@iface@ 
     () C-S-o  break
   )
-  action_lctl+rsft+p  (switch ;;@autogen@ 
+  action_lctl+rsft+p  (switch ;;@iface@ 
     () C-S-p  break
   )
-  action_lctl+rsft+q  (switch ;;@autogen@ 
+  action_lctl+rsft+q  (switch ;;@iface@ 
     () C-S-q  break
   )
-  action_lctl+rsft+r  (switch ;;@autogen@ 
+  action_lctl+rsft+r  (switch ;;@iface@ 
     () C-S-r  break
   )
-  action_lctl+rsft+s  (switch ;;@autogen@ 
+  action_lctl+rsft+s  (switch ;;@iface@ 
     () C-S-s  break
   )
-  action_lctl+rsft+t  (switch ;;@autogen@ 
+  action_lctl+rsft+t  (switch ;;@iface@ 
     () C-S-t  break
   )
-  action_lctl+rsft+u  (switch ;;@autogen@ 
+  action_lctl+rsft+u  (switch ;;@iface@ 
     () C-S-u  break
   )
-  action_lctl+rsft+v  (switch ;;@autogen@ 
+  action_lctl+rsft+v  (switch ;;@iface@ 
     () C-S-v  break
   )
-  action_lctl+rsft+w  (switch ;;@autogen@ 
+  action_lctl+rsft+w  (switch ;;@iface@ 
     () C-S-w  break
   )
-  action_lctl+rsft+x  (switch ;;@autogen@ 
+  action_lctl+rsft+x  (switch ;;@iface@ 
     () C-S-x  break
   )
-  action_lctl+rsft+y  (switch ;;@autogen@ 
+  action_lctl+rsft+y  (switch ;;@iface@ 
     () C-S-y  break
   )
-  action_lctl+rsft+z  (switch ;;@autogen@ 
+  action_lctl+rsft+z  (switch ;;@iface@ 
     () C-S-z break
   )
-  action_lctl+rsft+,  (switch ;;@autogen@ 
+  action_lctl+rsft+,  (switch ;;@iface@ 
     () C-S-, break
   )
-  action_lctl+rsft+.  (switch ;;@autogen@ 
+  action_lctl+rsft+.  (switch ;;@iface@ 
     () C-S-.  break
   )
-  action_lctl+rsft+/  (switch ;;@autogen@ 
+  action_lctl+rsft+/  (switch ;;@iface@ 
     () C-S-/  break
   )
-  action_lctl+rsft+;  (switch ;;@autogen@ 
+  action_lctl+rsft+;  (switch ;;@iface@ 
     () C-S-;  break
   )
-  action_lctl+rsft+'  (switch ;;@autogen@ 
+  action_lctl+rsft+'  (switch ;;@iface@ 
     () C-S-'  break
   )
-  action_lctl+rsft+[  (switch ;;@autogen@ 
+  action_lctl+rsft+[  (switch ;;@iface@ 
     () C-S-[  break
   )
-  action_lctl+rsft+]  (switch ;;@autogen@ 
+  action_lctl+rsft+]  (switch ;;@iface@ 
     () C-S-]  break
   )  ;; ""
-  action_lctl+rsft+\  (switch ;;@autogen@ 
+  action_lctl+rsft+\  (switch ;;@iface@ 
     () C-S-\  break
   )  ;; ""
-  action_lctl+rsft+-  (switch ;;@autogen@ 
+  action_lctl+rsft+-  (switch ;;@iface@ 
     () C-S--  break
   )
-  action_lctl+rsft+=  (switch ;;@autogen@ 
+  action_lctl+rsft+=  (switch ;;@iface@ 
     () C-S-=  break
   )
-  action_lctl+rsft+1  (switch ;;@autogen@ 
+  action_lctl+rsft+1  (switch ;;@iface@ 
     () C-S-1  break
   )
-  action_lctl+rsft+2  (switch ;;@autogen@ 
+  action_lctl+rsft+2  (switch ;;@iface@ 
     () C-S-2  break
   )
-  action_lctl+rsft+3  (switch ;;@autogen@ 
+  action_lctl+rsft+3  (switch ;;@iface@ 
     () C-S-3  break
   )
-  action_lctl+rsft+4  (switch ;;@autogen@ 
+  action_lctl+rsft+4  (switch ;;@iface@ 
     () C-S-4  break
   )
-  action_lctl+rsft+5  (switch ;;@autogen@ 
+  action_lctl+rsft+5  (switch ;;@iface@ 
     () C-S-5  break
   )
-  action_lctl+rsft+6  (switch ;;@autogen@ 
+  action_lctl+rsft+6  (switch ;;@iface@ 
     () C-S-6  break
   )
-  action_lctl+rsft+7  (switch ;;@autogen@ 
+  action_lctl+rsft+7  (switch ;;@iface@ 
     () C-S-7  break
   )
-  action_lctl+rsft+8  (switch ;;@autogen@ 
+  action_lctl+rsft+8  (switch ;;@iface@ 
     () C-S-8  break
   )
-  action_lctl+rsft+9  (switch ;;@autogen@ 
+  action_lctl+rsft+9  (switch ;;@iface@ 
     () C-S-9  break
   )
-  action_lctl+rsft+0  (switch ;;@autogen@ 
+  action_lctl+rsft+0  (switch ;;@iface@ 
     () C-S-0  break
   )
 
   ;; == !LCTL actions ==========================================================
-  action_!lctl+a (switch ;;@autogen@ 
+  action_!lctl+a (switch ;;@iface@ 
     ((input virtual vk_nvim)) $nvim_action_!lctl+a break
     ((input virtual vk_obsidian)) $obsidian_action_!lctl+a break
     () C-a break
   )
-  action_!lctl+b (switch ;;@autogen@ 
+  action_!lctl+b (switch ;;@iface@ 
     ((input virtual vk_obsidian)) $obsidian_action_!lctl+b break
     () C-b break
   )
-  action_!lctl+c  (switch ;;@autogen@ 
+  action_!lctl+c  (switch ;;@iface@ 
     () C-c  break
   )
-  action_!lctl+d (switch ;;@autogen@ 
+  action_!lctl+d (switch ;;@iface@ 
     () C-d break
   )
-  action_!lctl+e  (switch ;;@autogen@ 
+  action_!lctl+e  (switch ;;@iface@ 
     ((input virtual vk_obsidian)) $obsidian_action_!lctl+e break
     () C-e  break
   )
-  action_!lctl+f  (switch ;;@autogen@ 
+  action_!lctl+f  (switch ;;@iface@ 
     () C-f  break
   )
-  action_!lctl+g  (switch ;;@autogen@ 
+  action_!lctl+g  (switch ;;@iface@ 
     () C-g  break
   )
-  action_!lctl+h  (switch ;;@autogen@ 
+  action_!lctl+h  (switch ;;@iface@ 
     () C-h  break
   )
-  action_!lctl+i  (switch ;;@autogen@ 
+  action_!lctl+i  (switch ;;@iface@ 
     () C-i  break
   )
-  action_!lctl+j  (switch ;;@autogen@ 
+  action_!lctl+j  (switch ;;@iface@ 
     () C-j  break
   )
-  action_!lctl+k  (switch ;;@autogen@ 
+  action_!lctl+k  (switch ;;@iface@ 
     () C-k  break
   )
-  action_!lctl+l  (switch ;;@autogen@ 
+  action_!lctl+l  (switch ;;@iface@ 
     () C-l  break
   )
-  action_!lctl+m  (switch ;;@autogen@ 
+  action_!lctl+m  (switch ;;@iface@ 
     () C-m  break
   )
-  action_!lctl+n  (switch ;;@autogen@ 
+  action_!lctl+n  (switch ;;@iface@ 
     () C-n  break
   )
-  action_!lctl+o  (switch ;;@autogen@ 
+  action_!lctl+o  (switch ;;@iface@ 
     () C-o  break
   )
-  action_!lctl+p  (switch ;;@autogen@ 
+  action_!lctl+p  (switch ;;@iface@ 
     ((input virtual vk_obsidian)) $obsidian_action_!lctl+p break
     () C-p  break
   )
-  action_!lctl+q  (switch ;;@autogen@ 
+  action_!lctl+q  (switch ;;@iface@ 
     () C-q  break
   )
-  action_!lctl+r  (switch ;;@autogen@ 
+  action_!lctl+r  (switch ;;@iface@ 
     ((input virtual vk_obsidian)) $obsidian_action_!lctl+r break
     () C-r  break
   )
-  action_!lctl+s  (switch ;;@autogen@ 
+  action_!lctl+s  (switch ;;@iface@ 
     () C-s  break
   )
-  action_!lctl+t  (switch ;;@autogen@ 
+  action_!lctl+t  (switch ;;@iface@ 
     () C-t  break
   )
-  action_!lctl+u  (switch ;;@autogen@ 
+  action_!lctl+u  (switch ;;@iface@ 
     () C-u  break
   )
-  action_!lctl+v  (switch ;;@autogen@ 
+  action_!lctl+v  (switch ;;@iface@ 
     () C-v  break
   )
-  action_!lctl+w  (switch ;;@autogen@ 
+  action_!lctl+w  (switch ;;@iface@ 
     () C-w  break
   )
-  action_!lctl+x  (switch ;;@autogen@ 
+  action_!lctl+x  (switch ;;@iface@ 
     () C-x  break
   )
-  action_!lctl+y  (switch ;;@autogen@ 
+  action_!lctl+y  (switch ;;@iface@ 
     () C-y  break
   )
-  action_!lctl+z  (switch ;;@autogen@ 
+  action_!lctl+z  (switch ;;@iface@ 
     () C-z  break
   )
-  action_!lctl+,  (switch ;;@autogen@ 
+  action_!lctl+,  (switch ;;@iface@ 
     ((input virtual vk_obsidian)) $obsidian_action_!lctl+, break
     () C-,  break
   )
-  action_!lctl+.  (switch ;;@autogen@ 
+  action_!lctl+.  (switch ;;@iface@ 
     () C-.  break
   )
-  action_!lctl+/  (switch ;;@autogen@ 
+  action_!lctl+/  (switch ;;@iface@ 
     () C-/  break
   )
-  action_!lctl+;  (switch ;;@autogen@ 
+  action_!lctl+;  (switch ;;@iface@ 
     () C-;  break
   )
-  action_!lctl+'  (switch ;;@autogen@ 
+  action_!lctl+'  (switch ;;@iface@ 
     () C-'  break
   )
-  action_!lctl+[  (switch ;;@autogen@ 
+  action_!lctl+[  (switch ;;@iface@ 
     () C-[  break
   )
-  action_!lctl+]  (switch ;;@autogen@ 
+  action_!lctl+]  (switch ;;@iface@ 
     () C-]  break
   )  
-  action_!lctl+\  (switch ;;@autogen@ 
+  action_!lctl+\  (switch ;;@iface@ 
     () C-\  break
   )
-  action_!lctl+-  (switch ;;@autogen@ 
+  action_!lctl+-  (switch ;;@iface@ 
     () C--  break
   )
-  action_!lctl+=  (switch ;;@autogen@ 
+  action_!lctl+=  (switch ;;@iface@ 
     () C-=  break
   )
-  action_!lctl+1  (switch ;;@autogen@ 
+  action_!lctl+1  (switch ;;@iface@ 
     () C-1  break
   )
-  action_!lctl+2  (switch ;;@autogen@ 
+  action_!lctl+2  (switch ;;@iface@ 
     () C-2  break
   )
-  action_!lctl+3  (switch ;;@autogen@ 
+  action_!lctl+3  (switch ;;@iface@ 
     () C-3  break
   )
-  action_!lctl+4  (switch ;;@autogen@ 
+  action_!lctl+4  (switch ;;@iface@ 
     () C-4  break
   )
-  action_!lctl+5  (switch ;;@autogen@ 
+  action_!lctl+5  (switch ;;@iface@ 
     () C-5  break
   )
-  action_!lctl+6  (switch ;;@autogen@ 
+  action_!lctl+6  (switch ;;@iface@ 
     () C-6  break
   )
-  action_!lctl+7  (switch ;;@autogen@ 
+  action_!lctl+7  (switch ;;@iface@ 
     () C-7  break
   )
-  action_!lctl+8  (switch ;;@autogen@ 
+  action_!lctl+8  (switch ;;@iface@ 
     () C-8  break
   )
-  action_!lctl+9  (switch ;;@autogen@ 
+  action_!lctl+9  (switch ;;@iface@ 
     () C-9  break
   )
-  action_!lctl+0  (switch ;;@autogen@ 
+  action_!lctl+0  (switch ;;@iface@ 
     () C-0  break
   ) ;; ""
 
   ;; == !LCTL+LSFT actions ======================================================
-  action_!lctl+lsft+a (switch ;;@autogen@ 
+  action_!lctl+lsft+a (switch ;;@iface@ 
     () C-S-a break
   )
-  action_!lctl+lsft+b (switch ;;@autogen@ 
+  action_!lctl+lsft+b (switch ;;@iface@ 
     () C-S-b break
   )
-  action_!lctl+lsft+c  (switch ;;@autogen@ 
+  action_!lctl+lsft+c  (switch ;;@iface@ 
     () C-S-c  break
   )
-  action_!lctl+lsft+d (switch ;;@autogen@ 
+  action_!lctl+lsft+d (switch ;;@iface@ 
     () C-S-d break
   )
-  action_!lctl+lsft+e  (switch ;;@autogen@ 
+  action_!lctl+lsft+e  (switch ;;@iface@ 
     () C-S-e  break
   )
-  action_!lctl+lsft+f  (switch ;;@autogen@ 
+  action_!lctl+lsft+f  (switch ;;@iface@ 
     () C-S-f  break
   )
-  action_!lctl+lsft+g  (switch ;;@autogen@ 
+  action_!lctl+lsft+g  (switch ;;@iface@ 
     () C-S-g  break
   )
-  action_!lctl+lsft+h  (switch ;;@autogen@ 
+  action_!lctl+lsft+h  (switch ;;@iface@ 
     () C-S-h  break
   )
-  action_!lctl+lsft+i  (switch ;;@autogen@ 
+  action_!lctl+lsft+i  (switch ;;@iface@ 
     () C-S-i  break
   )
-  action_!lctl+lsft+j  (switch ;;@autogen@ 
+  action_!lctl+lsft+j  (switch ;;@iface@ 
     () C-S-j  break
   )
-  action_!lctl+lsft+k  (switch ;;@autogen@ 
+  action_!lctl+lsft+k  (switch ;;@iface@ 
     () C-S-k  break
   )
-  action_!lctl+lsft+l  (switch ;;@autogen@ 
+  action_!lctl+lsft+l  (switch ;;@iface@ 
     () C-S-l  break
   )
-  action_!lctl+lsft+m  (switch ;;@autogen@ 
+  action_!lctl+lsft+m  (switch ;;@iface@ 
     () C-S-m  break
   )
-  action_!lctl+lsft+n  (switch ;;@autogen@ 
+  action_!lctl+lsft+n  (switch ;;@iface@ 
     () C-S-n  break
   )
-  action_!lctl+lsft+o  (switch ;;@autogen@ 
+  action_!lctl+lsft+o  (switch ;;@iface@ 
     () C-S-o  break
   )
-  action_!lctl+lsft+p  (switch ;;@autogen@ 
+  action_!lctl+lsft+p  (switch ;;@iface@ 
     ((input virtual vk_obsidian)) $obsidian_action_!lctl+lsft+p break
     () C-S-p  break
   )
-  action_!lctl+lsft+q  (switch ;;@autogen@ 
+  action_!lctl+lsft+q  (switch ;;@iface@ 
     () C-S-q  break
   )
-  action_!lctl+lsft+r  (switch ;;@autogen@ 
+  action_!lctl+lsft+r  (switch ;;@iface@ 
     () C-S-r  break
   )
-  action_!lctl+lsft+s  (switch ;;@autogen@ 
+  action_!lctl+lsft+s  (switch ;;@iface@ 
     () C-S-s  break
   )
-  action_!lctl+lsft+t  (switch ;;@autogen@ 
+  action_!lctl+lsft+t  (switch ;;@iface@ 
     () C-S-t  break
   )
-  action_!lctl+lsft+u  (switch ;;@autogen@ 
+  action_!lctl+lsft+u  (switch ;;@iface@ 
     () C-S-u  break
   )
-  action_!lctl+lsft+v  (switch ;;@autogen@ 
+  action_!lctl+lsft+v  (switch ;;@iface@ 
     () C-S-v  break
   )
-  action_!lctl+lsft+w  (switch ;;@autogen@ 
+  action_!lctl+lsft+w  (switch ;;@iface@ 
     () C-S-w  break
   )
-  action_!lctl+lsft+x  (switch ;;@autogen@ 
+  action_!lctl+lsft+x  (switch ;;@iface@ 
     () C-S-x  break
   )
-  action_!lctl+lsft+y  (switch ;;@autogen@ 
+  action_!lctl+lsft+y  (switch ;;@iface@ 
     () C-S-y  break
   )
-  action_!lctl+lsft+z  (switch ;;@autogen@ 
+  action_!lctl+lsft+z  (switch ;;@iface@ 
     () C-S-z  break
   )
-  action_!lctl+lsft+,  (switch ;;@autogen@ 
+  action_!lctl+lsft+,  (switch ;;@iface@ 
     () C-S-,  break
   )
-  action_!lctl+lsft+.  (switch ;;@autogen@ 
+  action_!lctl+lsft+.  (switch ;;@iface@ 
     () C-S-.  break
   )
-  action_!lctl+lsft+/  (switch ;;@autogen@ 
+  action_!lctl+lsft+/  (switch ;;@iface@ 
     () C-S-/  break
   )
-  action_!lctl+lsft+;  (switch ;;@autogen@ 
+  action_!lctl+lsft+;  (switch ;;@iface@ 
     () C-S-;  break
   )
-  action_!lctl+lsft+'  (switch ;;@autogen@ 
+  action_!lctl+lsft+'  (switch ;;@iface@ 
     () C-S-'  break
   )
-  action_!lctl+lsft+[  (switch ;;@autogen@ 
+  action_!lctl+lsft+[  (switch ;;@iface@ 
     () C-S-[  break
   )
-  action_!lctl+lsft+]  (switch ;;@autogen@ 
+  action_!lctl+lsft+]  (switch ;;@iface@ 
     () C-S-]  break
   )  
-  action_!lctl+lsft+\  (switch ;;@autogen@ 
+  action_!lctl+lsft+\  (switch ;;@iface@ 
     () C-S-\  break
   )
-  action_!lctl+lsft+-  (switch ;;@autogen@ 
+  action_!lctl+lsft+-  (switch ;;@iface@ 
     () C-S--  break
   )
-  action_!lctl+lsft+=  (switch ;;@autogen@ 
+  action_!lctl+lsft+=  (switch ;;@iface@ 
     () C-S-=  break
   )
-  action_!lctl+lsft+1  (switch ;;@autogen@ 
+  action_!lctl+lsft+1  (switch ;;@iface@ 
     () C-S-1  break
   )
-  action_!lctl+lsft+2  (switch ;;@autogen@ 
+  action_!lctl+lsft+2  (switch ;;@iface@ 
     () C-S-2  break
   )
-  action_!lctl+lsft+3  (switch ;;@autogen@ 
+  action_!lctl+lsft+3  (switch ;;@iface@ 
     () C-S-3  break
   )
-  action_!lctl+lsft+4  (switch ;;@autogen@ 
+  action_!lctl+lsft+4  (switch ;;@iface@ 
     () C-S-4  break
   )
-  action_!lctl+lsft+5  (switch ;;@autogen@ 
+  action_!lctl+lsft+5  (switch ;;@iface@ 
     () C-S-5  break
   )
-  action_!lctl+lsft+6  (switch ;;@autogen@ 
+  action_!lctl+lsft+6  (switch ;;@iface@ 
     () C-S-6  break
   )
-  action_!lctl+lsft+7  (switch ;;@autogen@ 
+  action_!lctl+lsft+7  (switch ;;@iface@ 
     () C-S-7  break
   )
-  action_!lctl+lsft+8  (switch ;;@autogen@ 
+  action_!lctl+lsft+8  (switch ;;@iface@ 
     () C-S-8  break
   )
-  action_!lctl+lsft+9  (switch ;;@autogen@ 
+  action_!lctl+lsft+9  (switch ;;@iface@ 
     () C-S-9  break
   )
-  action_!lctl+lsft+0  (switch ;;@autogen@ 
+  action_!lctl+lsft+0  (switch ;;@iface@ 
     () C-S-0  break
   ) ;; ""
 
 
   ;; == !LCTL+RSFT actions ==========================================================
-  action_!lctl+rsft+a (switch ;;@autogen@ 
+  action_!lctl+rsft+a (switch ;;@iface@ 
     () C-S-a break
   )
-  action_!lctl+rsft+b (switch ;;@autogen@ 
+  action_!lctl+rsft+b (switch ;;@iface@ 
     () C-S-b break
   )
-  action_!lctl+rsft+c  (switch ;;@autogen@ 
+  action_!lctl+rsft+c  (switch ;;@iface@ 
     () C-S-c  break
   )
-  action_!lctl+rsft+d (switch ;;@autogen@ 
+  action_!lctl+rsft+d (switch ;;@iface@ 
     () C-S-d break
   )
-  action_!lctl+rsft+e  (switch ;;@autogen@ 
+  action_!lctl+rsft+e  (switch ;;@iface@ 
     () C-S-e  break
   )
-  action_!lctl+rsft+f  (switch ;;@autogen@ 
+  action_!lctl+rsft+f  (switch ;;@iface@ 
     () C-S-f  break
   )
-  action_!lctl+rsft+g  (switch ;;@autogen@ 
+  action_!lctl+rsft+g  (switch ;;@iface@ 
     () C-S-g  break
   )
-  action_!lctl+rsft+h  (switch ;;@autogen@ 
+  action_!lctl+rsft+h  (switch ;;@iface@ 
     () C-S-h  break
   )
-  action_!lctl+rsft+i  (switch ;;@autogen@ 
+  action_!lctl+rsft+i  (switch ;;@iface@ 
     () C-S-i  break
   )
-  action_!lctl+rsft+j  (switch ;;@autogen@ 
+  action_!lctl+rsft+j  (switch ;;@iface@ 
     () C-S-j  break
   )
-  action_!lctl+rsft+k  (switch ;;@autogen@ 
+  action_!lctl+rsft+k  (switch ;;@iface@ 
     () C-S-k  break
   )
-  action_!lctl+rsft+l  (switch ;;@autogen@ 
+  action_!lctl+rsft+l  (switch ;;@iface@ 
     () C-S-l  break
   )
-  action_!lctl+rsft+m  (switch ;;@autogen@ 
+  action_!lctl+rsft+m  (switch ;;@iface@ 
     () C-S-m  break
   )
-  action_!lctl+rsft+n  (switch ;;@autogen@ 
+  action_!lctl+rsft+n  (switch ;;@iface@ 
     () C-S-n  break
   )
-  action_!lctl+rsft+o  (switch ;;@autogen@ 
+  action_!lctl+rsft+o  (switch ;;@iface@ 
     () C-S-o  break
   )
-  action_!lctl+rsft+p  (switch ;;@autogen@ 
+  action_!lctl+rsft+p  (switch ;;@iface@ 
     () C-S-p  break
   )
-  action_!lctl+rsft+q  (switch ;;@autogen@ 
+  action_!lctl+rsft+q  (switch ;;@iface@ 
     () C-S-q  break
   )
-  action_!lctl+rsft+r  (switch ;;@autogen@ 
+  action_!lctl+rsft+r  (switch ;;@iface@ 
     () C-S-r  break
   )
-  action_!lctl+rsft+s  (switch ;;@autogen@ 
+  action_!lctl+rsft+s  (switch ;;@iface@ 
     () C-S-s  break
   )
-  action_!lctl+rsft+t  (switch ;;@autogen@ 
+  action_!lctl+rsft+t  (switch ;;@iface@ 
     () C-S-t  break
   )
-  action_!lctl+rsft+u  (switch ;;@autogen@ 
+  action_!lctl+rsft+u  (switch ;;@iface@ 
     () C-S-u  break
   )
-  action_!lctl+rsft+v  (switch ;;@autogen@ 
+  action_!lctl+rsft+v  (switch ;;@iface@ 
     () C-S-v  break
   )
-  action_!lctl+rsft+w  (switch ;;@autogen@ 
+  action_!lctl+rsft+w  (switch ;;@iface@ 
     () C-S-w  break
   )
-  action_!lctl+rsft+x  (switch ;;@autogen@ 
+  action_!lctl+rsft+x  (switch ;;@iface@ 
     () C-S-x  break
   )
-  action_!lctl+rsft+y  (switch ;;@autogen@ 
+  action_!lctl+rsft+y  (switch ;;@iface@ 
     () C-S-y  break
   )
-  action_!lctl+rsft+z  (switch ;;@autogen@ 
+  action_!lctl+rsft+z  (switch ;;@iface@ 
     () C-S-z  break
   )
-  action_!lctl+rsft+,  (switch ;;@autogen@ 
+  action_!lctl+rsft+,  (switch ;;@iface@ 
     () C-S-,  break
   )
-  action_!lctl+rsft+.  (switch ;;@autogen@ 
+  action_!lctl+rsft+.  (switch ;;@iface@ 
     () C-S-.  break
   )
-  action_!lctl+rsft+/  (switch ;;@autogen@ 
+  action_!lctl+rsft+/  (switch ;;@iface@ 
     () C-S-/  break
   )
-  action_!lctl+rsft+;  (switch ;;@autogen@ 
+  action_!lctl+rsft+;  (switch ;;@iface@ 
     () C-S-;  break
   )
-  action_!lctl+rsft+'  (switch ;;@autogen@ 
+  action_!lctl+rsft+'  (switch ;;@iface@ 
     () C-S-'  break
   )
-  action_!lctl+rsft+[  (switch ;;@autogen@ 
+  action_!lctl+rsft+[  (switch ;;@iface@ 
     () C-S-[  break
   )
-  action_!lctl+rsft+]  (switch ;;@autogen@ 
+  action_!lctl+rsft+]  (switch ;;@iface@ 
     () C-S-]  break
   )  
-  action_!lctl+rsft+\  (switch ;;@autogen@ 
+  action_!lctl+rsft+\  (switch ;;@iface@ 
     () C-S-\  break
   )
-  action_!lctl+rsft+-  (switch ;;@autogen@ 
+  action_!lctl+rsft+-  (switch ;;@iface@ 
     () C-S--  break
   )
-  action_!lctl+rsft+=  (switch ;;@autogen@ 
+  action_!lctl+rsft+=  (switch ;;@iface@ 
     () C-S-=  break
   )
-  action_!lctl+rsft+1  (switch ;;@autogen@ 
+  action_!lctl+rsft+1  (switch ;;@iface@ 
     () C-S-1  break
   )
-  action_!lctl+rsft+2  (switch ;;@autogen@ 
+  action_!lctl+rsft+2  (switch ;;@iface@ 
     () C-S-2  break
   )
-  action_!lctl+rsft+3  (switch ;;@autogen@ 
+  action_!lctl+rsft+3  (switch ;;@iface@ 
     () C-S-3  break
   )
-  action_!lctl+rsft+4  (switch ;;@autogen@ 
+  action_!lctl+rsft+4  (switch ;;@iface@ 
     () C-S-4  break
   )
-  action_!lctl+rsft+5  (switch ;;@autogen@ 
+  action_!lctl+rsft+5  (switch ;;@iface@ 
     () C-S-5  break
   )
-  action_!lctl+rsft+6  (switch ;;@autogen@ 
+  action_!lctl+rsft+6  (switch ;;@iface@ 
     () C-S-6  break
   )
-  action_!lctl+rsft+7  (switch ;;@autogen@ 
+  action_!lctl+rsft+7  (switch ;;@iface@ 
     () C-S-7  break
   )
-  action_!lctl+rsft+8  (switch ;;@autogen@ 
+  action_!lctl+rsft+8  (switch ;;@iface@ 
     () C-S-8  break
   )
-  action_!lctl+rsft+9  (switch ;;@autogen@ 
+  action_!lctl+rsft+9  (switch ;;@iface@ 
     () C-S-9  break
   )
-  action_!lctl+rsft+0  (switch ;;@autogen@ 
+  action_!lctl+rsft+0  (switch ;;@iface@ 
     () C-S-0  break
   ) ;; ""
 
   ;; == LALT actions ==========================================================
-  action_lalt+a (switch ;;@autogen@ 
+  action_lalt+a (switch ;;@iface@ 
     () A-a break
   )
-  action_lalt+b (switch ;;@autogen@ 
+  action_lalt+b (switch ;;@iface@ 
     () A-b break
   )
-  action_lalt+c  (switch ;;@autogen@ 
+  action_lalt+c  (switch ;;@iface@ 
     () A-c  break
   )
-  action_lalt+d (switch ;;@autogen@ 
+  action_lalt+d (switch ;;@iface@ 
     () A-d break
   )
-  action_lalt+e  (switch ;;@autogen@ 
+  action_lalt+e  (switch ;;@iface@ 
     () A-e  break
   )
-  action_lalt+f  (switch ;;@autogen@ 
+  action_lalt+f  (switch ;;@iface@ 
     () A-f  break
   )
-  action_lalt+g  (switch ;;@autogen@ 
+  action_lalt+g  (switch ;;@iface@ 
     () A-g  break
   )
-  action_lalt+h  (switch ;;@autogen@ 
+  action_lalt+h  (switch ;;@iface@ 
     () A-h  break
   )
-  action_lalt+i  (switch ;;@autogen@ 
+  action_lalt+i  (switch ;;@iface@ 
     () A-i  break
   )
-  action_lalt+j  (switch ;;@autogen@ 
+  action_lalt+j  (switch ;;@iface@ 
     () A-j  break
   )
-  action_lalt+k  (switch ;;@autogen@ 
+  action_lalt+k  (switch ;;@iface@ 
     () A-k  break
   )
-  action_lalt+l  (switch ;;@autogen@ 
+  action_lalt+l  (switch ;;@iface@ 
     () A-l  break
   )
-  action_lalt+m  (switch ;;@autogen@ 
+  action_lalt+m  (switch ;;@iface@ 
     () A-m  break
   )
-  action_lalt+n  (switch ;;@autogen@ 
+  action_lalt+n  (switch ;;@iface@ 
     () A-n  break
   )
-  action_lalt+o  (switch ;;@autogen@ 
+  action_lalt+o  (switch ;;@iface@ 
     () A-o  break
   )
-  action_lalt+p  (switch ;;@autogen@ 
+  action_lalt+p  (switch ;;@iface@ 
     () A-p  break
   )
-  action_lalt+q  (switch ;;@autogen@ 
+  action_lalt+q  (switch ;;@iface@ 
     () A-q  break
   )
-  action_lalt+r  (switch ;;@autogen@ 
+  action_lalt+r  (switch ;;@iface@ 
     () A-r  break
   )
-  action_lalt+s  (switch ;;@autogen@ 
+  action_lalt+s  (switch ;;@iface@ 
     () A-s  break
   )
-  action_lalt+t  (switch ;;@autogen@ 
+  action_lalt+t  (switch ;;@iface@ 
     () A-t  break
   )
-  action_lalt+u  (switch ;;@autogen@ 
+  action_lalt+u  (switch ;;@iface@ 
     () A-u  break
   )
-  action_lalt+v  (switch ;;@autogen@ 
+  action_lalt+v  (switch ;;@iface@ 
     () A-v  break
   )
-  action_lalt+w  (switch ;;@autogen@ 
+  action_lalt+w  (switch ;;@iface@ 
     () A-w  break
   )
-  action_lalt+x  (switch ;;@autogen@ 
+  action_lalt+x  (switch ;;@iface@ 
     () A-x  break
   )
-  action_lalt+y  (switch ;;@autogen@ 
+  action_lalt+y  (switch ;;@iface@ 
     () A-y  break
   )
-  action_lalt+z  (switch ;;@autogen@ 
+  action_lalt+z  (switch ;;@iface@ 
     () A-z break
   )
-  action_lalt+,  (switch ;;@autogen@ 
+  action_lalt+,  (switch ;;@iface@ 
     () A-, break
   )
-  action_lalt+.  (switch ;;@autogen@ 
+  action_lalt+.  (switch ;;@iface@ 
     () A-.  break
   )
-  action_lalt+/  (switch ;;@autogen@ 
+  action_lalt+/  (switch ;;@iface@ 
     () A-/  break
   )
-  action_lalt+;  (switch ;;@autogen@ 
+  action_lalt+;  (switch ;;@iface@ 
     () A-;  break
   )
-  action_lalt+'  (switch ;;@autogen@ 
+  action_lalt+'  (switch ;;@iface@ 
     () A-'  break
   )
-  action_lalt+[  (switch ;;@autogen@ 
+  action_lalt+[  (switch ;;@iface@ 
     () A-[  break
   )
-  action_lalt+]  (switch ;;@autogen@ 
+  action_lalt+]  (switch ;;@iface@ 
     () A-]  break
   )  ;; ""
-  action_lalt+\  (switch ;;@autogen@ 
+  action_lalt+\  (switch ;;@iface@ 
     () A-\  break
   )  ;; ""
-  action_lalt+-  (switch ;;@autogen@ 
+  action_lalt+-  (switch ;;@iface@ 
     () A--  break
   )
-  action_lalt+=  (switch ;;@autogen@ 
+  action_lalt+=  (switch ;;@iface@ 
     () A-=  break
   )
-  action_lalt+1  (switch ;;@autogen@ 
+  action_lalt+1  (switch ;;@iface@ 
     () A-1  break
   )
-  action_lalt+2  (switch ;;@autogen@ 
+  action_lalt+2  (switch ;;@iface@ 
     () A-2  break
   )
-  action_lalt+3  (switch ;;@autogen@ 
+  action_lalt+3  (switch ;;@iface@ 
     () A-3  break
   )
-  action_lalt+4  (switch ;;@autogen@ 
+  action_lalt+4  (switch ;;@iface@ 
     () A-4  break
   )
-  action_lalt+5  (switch ;;@autogen@ 
+  action_lalt+5  (switch ;;@iface@ 
     () A-5  break
   )
-  action_lalt+6  (switch ;;@autogen@ 
+  action_lalt+6  (switch ;;@iface@ 
     () A-6  break
   )
-  action_lalt+7  (switch ;;@autogen@ 
+  action_lalt+7  (switch ;;@iface@ 
     () A-7  break
   )
-  action_lalt+8  (switch ;;@autogen@ 
+  action_lalt+8  (switch ;;@iface@ 
     () A-8  break
   )
-  action_lalt+9  (switch ;;@autogen@ 
+  action_lalt+9  (switch ;;@iface@ 
     () A-9  break
   )
-  action_lalt+0  (switch ;;@autogen@ 
+  action_lalt+0  (switch ;;@iface@ 
     () A-0  break
   )
 
   ;; == LALT+LSFT actions ==========================================================
-  action_lalt+lsft+a (switch ;;@autogen@ 
+  action_lalt+lsft+a (switch ;;@iface@ 
     () A-S-a break
   )
-  action_lalt+lsft+b (switch ;;@autogen@ 
+  action_lalt+lsft+b (switch ;;@iface@ 
     () A-S-b break
   )
-  action_lalt+lsft+c  (switch ;;@autogen@ 
+  action_lalt+lsft+c  (switch ;;@iface@ 
     () A-S-c  break
   )
-  action_lalt+lsft+d (switch ;;@autogen@ 
+  action_lalt+lsft+d (switch ;;@iface@ 
     () A-S-d break
   )
-  action_lalt+lsft+e  (switch ;;@autogen@ 
+  action_lalt+lsft+e  (switch ;;@iface@ 
     () A-S-e  break
   )
-  action_lalt+lsft+f  (switch ;;@autogen@ 
+  action_lalt+lsft+f  (switch ;;@iface@ 
     () A-S-f  break
   )
-  action_lalt+lsft+g  (switch ;;@autogen@ 
+  action_lalt+lsft+g  (switch ;;@iface@ 
     () A-S-g  break
   )
-  action_lalt+lsft+h  (switch ;;@autogen@ 
+  action_lalt+lsft+h  (switch ;;@iface@ 
     () A-S-h  break
   )
-  action_lalt+lsft+i  (switch ;;@autogen@ 
+  action_lalt+lsft+i  (switch ;;@iface@ 
     () A-S-i  break
   )
-  action_lalt+lsft+j  (switch ;;@autogen@ 
+  action_lalt+lsft+j  (switch ;;@iface@ 
     () A-S-j  break
   )
-  action_lalt+lsft+k  (switch ;;@autogen@ 
+  action_lalt+lsft+k  (switch ;;@iface@ 
     () A-S-k  break
   )
-  action_lalt+lsft+l  (switch ;;@autogen@ 
+  action_lalt+lsft+l  (switch ;;@iface@ 
     () A-S-l  break
   )
-  action_lalt+lsft+m  (switch ;;@autogen@ 
+  action_lalt+lsft+m  (switch ;;@iface@ 
     () A-S-m  break
   )
-  action_lalt+lsft+n  (switch ;;@autogen@ 
+  action_lalt+lsft+n  (switch ;;@iface@ 
     () A-S-n  break
   )
-  action_lalt+lsft+o  (switch ;;@autogen@ 
+  action_lalt+lsft+o  (switch ;;@iface@ 
     () A-S-o  break
   )
-  action_lalt+lsft+p  (switch ;;@autogen@ 
+  action_lalt+lsft+p  (switch ;;@iface@ 
     () A-S-p  break
   )
-  action_lalt+lsft+q  (switch ;;@autogen@ 
+  action_lalt+lsft+q  (switch ;;@iface@ 
     () A-S-q  break
   )
-  action_lalt+lsft+r  (switch ;;@autogen@ 
+  action_lalt+lsft+r  (switch ;;@iface@ 
     () A-S-r  break
   )
-  action_lalt+lsft+s  (switch ;;@autogen@ 
+  action_lalt+lsft+s  (switch ;;@iface@ 
     () A-S-s  break
   )
-  action_lalt+lsft+t  (switch ;;@autogen@ 
+  action_lalt+lsft+t  (switch ;;@iface@ 
     () A-S-t  break
   )
-  action_lalt+lsft+u  (switch ;;@autogen@ 
+  action_lalt+lsft+u  (switch ;;@iface@ 
     () A-S-u  break
   )
-  action_lalt+lsft+v  (switch ;;@autogen@ 
+  action_lalt+lsft+v  (switch ;;@iface@ 
     () A-S-v  break
   )
-  action_lalt+lsft+w  (switch ;;@autogen@ 
+  action_lalt+lsft+w  (switch ;;@iface@ 
     () A-S-w  break
   )
-  action_lalt+lsft+x  (switch ;;@autogen@ 
+  action_lalt+lsft+x  (switch ;;@iface@ 
     () A-S-x  break
   )
-  action_lalt+lsft+y  (switch ;;@autogen@ 
+  action_lalt+lsft+y  (switch ;;@iface@ 
     () A-S-y  break
   )
-  action_lalt+lsft+z  (switch ;;@autogen@ 
+  action_lalt+lsft+z  (switch ;;@iface@ 
     () A-S-z break
   )
-  action_lalt+lsft+,  (switch ;;@autogen@ 
+  action_lalt+lsft+,  (switch ;;@iface@ 
     () A-S-, break
   )
-  action_lalt+lsft+.  (switch ;;@autogen@ 
+  action_lalt+lsft+.  (switch ;;@iface@ 
     () A-S-.  break
   )
-  action_lalt+lsft+/  (switch ;;@autogen@ 
+  action_lalt+lsft+/  (switch ;;@iface@ 
     () A-S-/  break
   )
-  action_lalt+lsft+;  (switch ;;@autogen@ 
+  action_lalt+lsft+;  (switch ;;@iface@ 
     () A-S-;  break
   )
-  action_lalt+lsft+'  (switch ;;@autogen@ 
+  action_lalt+lsft+'  (switch ;;@iface@ 
     () A-S-'  break
   )
-  action_lalt+lsft+[  (switch ;;@autogen@ 
+  action_lalt+lsft+[  (switch ;;@iface@ 
     () A-S-[  break
   )
-  action_lalt+lsft+]  (switch ;;@autogen@ 
+  action_lalt+lsft+]  (switch ;;@iface@ 
     () A-S-]  break
   )  ;; ""
-  action_lalt+lsft+\  (switch ;;@autogen@ 
+  action_lalt+lsft+\  (switch ;;@iface@ 
     () A-S-\  break
   )  ;; ""
-  action_lalt+lsft+-  (switch ;;@autogen@ 
+  action_lalt+lsft+-  (switch ;;@iface@ 
     () A-S--  break
   )
-  action_lalt+lsft+=  (switch ;;@autogen@ 
+  action_lalt+lsft+=  (switch ;;@iface@ 
     () A-S-=  break
   )
-  action_lalt+lsft+1  (switch ;;@autogen@ 
+  action_lalt+lsft+1  (switch ;;@iface@ 
     () A-S-1  break
   )
-  action_lalt+lsft+2  (switch ;;@autogen@ 
+  action_lalt+lsft+2  (switch ;;@iface@ 
     () A-S-2  break
   )
-  action_lalt+lsft+3  (switch ;;@autogen@ 
+  action_lalt+lsft+3  (switch ;;@iface@ 
     () A-S-3  break
   )
-  action_lalt+lsft+4  (switch ;;@autogen@ 
+  action_lalt+lsft+4  (switch ;;@iface@ 
     () A-S-4  break
   )
-  action_lalt+lsft+5  (switch ;;@autogen@ 
+  action_lalt+lsft+5  (switch ;;@iface@ 
     () A-S-5  break
   )
-  action_lalt+lsft+6  (switch ;;@autogen@ 
+  action_lalt+lsft+6  (switch ;;@iface@ 
     () A-S-6  break
   )
-  action_lalt+lsft+7  (switch ;;@autogen@ 
+  action_lalt+lsft+7  (switch ;;@iface@ 
     () A-S-7  break
   )
-  action_lalt+lsft+8  (switch ;;@autogen@ 
+  action_lalt+lsft+8  (switch ;;@iface@ 
     () A-S-8  break
   )
-  action_lalt+lsft+9  (switch ;;@autogen@ 
+  action_lalt+lsft+9  (switch ;;@iface@ 
     () A-S-9  break
   )
-  action_lalt+lsft+0  (switch ;;@autogen@ 
+  action_lalt+lsft+0  (switch ;;@iface@ 
     () A-S-0  break
   )
 
   ;; == LALT+RSFT actions ==========================================================
-  action_lalt+rsft+a (switch ;;@autogen@ 
+  action_lalt+rsft+a (switch ;;@iface@ 
     () A-S-a break
   )
-  action_lalt+rsft+b (switch ;;@autogen@ 
+  action_lalt+rsft+b (switch ;;@iface@ 
     () A-S-b break
   )
-  action_lalt+rsft+c  (switch ;;@autogen@ 
+  action_lalt+rsft+c  (switch ;;@iface@ 
     () A-S-c  break
   )
-  action_lalt+rsft+d (switch ;;@autogen@ 
+  action_lalt+rsft+d (switch ;;@iface@ 
     () A-S-d break
   )
-  action_lalt+rsft+e  (switch ;;@autogen@ 
+  action_lalt+rsft+e  (switch ;;@iface@ 
     () A-S-e  break
   )
-  action_lalt+rsft+f  (switch ;;@autogen@ 
+  action_lalt+rsft+f  (switch ;;@iface@ 
     () A-S-f  break
   )
-  action_lalt+rsft+g  (switch ;;@autogen@ 
+  action_lalt+rsft+g  (switch ;;@iface@ 
     () A-S-g  break
   )
-  action_lalt+rsft+h  (switch ;;@autogen@ 
+  action_lalt+rsft+h  (switch ;;@iface@ 
     () A-S-h  break
   )
-  action_lalt+rsft+i  (switch ;;@autogen@ 
+  action_lalt+rsft+i  (switch ;;@iface@ 
     () A-S-i  break
   )
-  action_lalt+rsft+j  (switch ;;@autogen@ 
+  action_lalt+rsft+j  (switch ;;@iface@ 
     () A-S-j  break
   )
-  action_lalt+rsft+k  (switch ;;@autogen@ 
+  action_lalt+rsft+k  (switch ;;@iface@ 
     () A-S-k  break
   )
-  action_lalt+rsft+l  (switch ;;@autogen@ 
+  action_lalt+rsft+l  (switch ;;@iface@ 
     () A-S-l  break
   )
-  action_lalt+rsft+m  (switch ;;@autogen@ 
+  action_lalt+rsft+m  (switch ;;@iface@ 
     () A-S-m  break
   )
-  action_lalt+rsft+n  (switch ;;@autogen@ 
+  action_lalt+rsft+n  (switch ;;@iface@ 
     () A-S-n  break
   )
-  action_lalt+rsft+o  (switch ;;@autogen@ 
+  action_lalt+rsft+o  (switch ;;@iface@ 
     () A-S-o  break
   )
-  action_lalt+rsft+p  (switch ;;@autogen@ 
+  action_lalt+rsft+p  (switch ;;@iface@ 
     () A-S-p  break
   )
-  action_lalt+rsft+q  (switch ;;@autogen@ 
+  action_lalt+rsft+q  (switch ;;@iface@ 
     () A-S-q  break
   )
-  action_lalt+rsft+r  (switch ;;@autogen@ 
+  action_lalt+rsft+r  (switch ;;@iface@ 
     () A-S-r  break
   )
-  action_lalt+rsft+s  (switch ;;@autogen@ 
+  action_lalt+rsft+s  (switch ;;@iface@ 
     () A-S-s  break
   )
-  action_lalt+rsft+t  (switch ;;@autogen@ 
+  action_lalt+rsft+t  (switch ;;@iface@ 
     () A-S-t  break
   )
-  action_lalt+rsft+u  (switch ;;@autogen@ 
+  action_lalt+rsft+u  (switch ;;@iface@ 
     () A-S-u  break
   )
-  action_lalt+rsft+v  (switch ;;@autogen@ 
+  action_lalt+rsft+v  (switch ;;@iface@ 
     () A-S-v  break
   )
-  action_lalt+rsft+w  (switch ;;@autogen@ 
+  action_lalt+rsft+w  (switch ;;@iface@ 
     () A-S-w  break
   )
-  action_lalt+rsft+x  (switch ;;@autogen@ 
+  action_lalt+rsft+x  (switch ;;@iface@ 
     () A-S-x  break
   )
-  action_lalt+rsft+y  (switch ;;@autogen@ 
+  action_lalt+rsft+y  (switch ;;@iface@ 
     () A-S-y  break
   )
-  action_lalt+rsft+z  (switch ;;@autogen@ 
+  action_lalt+rsft+z  (switch ;;@iface@ 
     () A-S-z break
   )
-  action_lalt+rsft+,  (switch ;;@autogen@ 
+  action_lalt+rsft+,  (switch ;;@iface@ 
     () A-S-, break
   )
-  action_lalt+rsft+.  (switch ;;@autogen@ 
+  action_lalt+rsft+.  (switch ;;@iface@ 
     () A-S-.  break
   )
-  action_lalt+rsft+/  (switch ;;@autogen@ 
+  action_lalt+rsft+/  (switch ;;@iface@ 
     () A-S-/  break
   )
-  action_lalt+rsft+;  (switch ;;@autogen@ 
+  action_lalt+rsft+;  (switch ;;@iface@ 
     () A-S-;  break
   )
-  action_lalt+rsft+'  (switch ;;@autogen@ 
+  action_lalt+rsft+'  (switch ;;@iface@ 
     () A-S-'  break
   )
-  action_lalt+rsft+[  (switch ;;@autogen@ 
+  action_lalt+rsft+[  (switch ;;@iface@ 
     () A-S-[  break
   )
-  action_lalt+rsft+]  (switch ;;@autogen@ 
+  action_lalt+rsft+]  (switch ;;@iface@ 
     () A-S-]  break
   )  ;; ""
-  action_lalt+rsft+\  (switch ;;@autogen@ 
+  action_lalt+rsft+\  (switch ;;@iface@ 
     () A-S-\  break
   )  ;; ""
-  action_lalt+rsft+-  (switch ;;@autogen@ 
+  action_lalt+rsft+-  (switch ;;@iface@ 
     () A-S--  break
   )
-  action_lalt+rsft+=  (switch ;;@autogen@ 
+  action_lalt+rsft+=  (switch ;;@iface@ 
     () A-S-=  break
   )
-  action_lalt+rsft+1  (switch ;;@autogen@ 
+  action_lalt+rsft+1  (switch ;;@iface@ 
     () A-S-1  break
   )
-  action_lalt+rsft+2  (switch ;;@autogen@ 
+  action_lalt+rsft+2  (switch ;;@iface@ 
     () A-S-2  break
   )
-  action_lalt+rsft+3  (switch ;;@autogen@ 
+  action_lalt+rsft+3  (switch ;;@iface@ 
     () A-S-3  break
   )
-  action_lalt+rsft+4  (switch ;;@autogen@ 
+  action_lalt+rsft+4  (switch ;;@iface@ 
     () A-S-4  break
   )
-  action_lalt+rsft+5  (switch ;;@autogen@ 
+  action_lalt+rsft+5  (switch ;;@iface@ 
     () A-S-5  break
   )
-  action_lalt+rsft+6  (switch ;;@autogen@ 
+  action_lalt+rsft+6  (switch ;;@iface@ 
     () A-S-6  break
   )
-  action_lalt+rsft+7  (switch ;;@autogen@ 
+  action_lalt+rsft+7  (switch ;;@iface@ 
     () A-S-7  break
   )
-  action_lalt+rsft+8  (switch ;;@autogen@ 
+  action_lalt+rsft+8  (switch ;;@iface@ 
     () A-S-8  break
   )
-  action_lalt+rsft+9  (switch ;;@autogen@ 
+  action_lalt+rsft+9  (switch ;;@iface@ 
     () A-S-9  break
   )
-  action_lalt+rsft+0  (switch ;;@autogen@ 
+  action_lalt+rsft+0  (switch ;;@iface@ 
     () A-S-0  break
   )
 
   ;; == !LALT actions ==========================================================
-  action_!lalt+a (switch ;;@autogen@ 
+  action_!lalt+a (switch ;;@iface@ 
     () A-a break
   )
-  action_!lalt+b (switch ;;@autogen@ 
+  action_!lalt+b (switch ;;@iface@ 
     () A-b break
   )
-  action_!lalt+c  (switch ;;@autogen@ 
+  action_!lalt+c  (switch ;;@iface@ 
     () A-c  break
   )
-  action_!lalt+d (switch ;;@autogen@ 
+  action_!lalt+d (switch ;;@iface@ 
     () A-d break
   )
-  action_!lalt+e  (switch ;;@autogen@ 
+  action_!lalt+e  (switch ;;@iface@ 
     () A-e  break
   )
-  action_!lalt+f  (switch ;;@autogen@ 
+  action_!lalt+f  (switch ;;@iface@ 
     () A-f  break
   )
-  action_!lalt+g  (switch ;;@autogen@ 
+  action_!lalt+g  (switch ;;@iface@ 
     () A-g  break
   )
-  action_!lalt+h  (switch ;;@autogen@ 
+  action_!lalt+h  (switch ;;@iface@ 
     () A-h  break
   )
-  action_!lalt+i  (switch ;;@autogen@ 
+  action_!lalt+i  (switch ;;@iface@ 
     () A-i  break
   )
-  action_!lalt+j  (switch ;;@autogen@ 
+  action_!lalt+j  (switch ;;@iface@ 
     () A-j  break
   )
-  action_!lalt+k  (switch ;;@autogen@ 
+  action_!lalt+k  (switch ;;@iface@ 
     () A-k  break
   )
-  action_!lalt+l  (switch ;;@autogen@ 
+  action_!lalt+l  (switch ;;@iface@ 
     () A-l  break
   )
-  action_!lalt+m  (switch ;;@autogen@ 
+  action_!lalt+m  (switch ;;@iface@ 
     () A-m  break
   )
-  action_!lalt+n  (switch ;;@autogen@ 
+  action_!lalt+n  (switch ;;@iface@ 
     () A-n  break
   )
-  action_!lalt+o  (switch ;;@autogen@ 
+  action_!lalt+o  (switch ;;@iface@ 
     () A-o  break
   )
-  action_!lalt+p  (switch ;;@autogen@ 
+  action_!lalt+p  (switch ;;@iface@ 
     () A-p  break
   )
-  action_!lalt+q  (switch ;;@autogen@ 
+  action_!lalt+q  (switch ;;@iface@ 
     () A-q  break
   )
-  action_!lalt+r  (switch ;;@autogen@ 
+  action_!lalt+r  (switch ;;@iface@ 
     () A-r  break
   )
-  action_!lalt+s  (switch ;;@autogen@ 
+  action_!lalt+s  (switch ;;@iface@ 
     () A-s  break
   )
-  action_!lalt+t  (switch ;;@autogen@ 
+  action_!lalt+t  (switch ;;@iface@ 
     () A-t  break
   )
-  action_!lalt+u  (switch ;;@autogen@ 
+  action_!lalt+u  (switch ;;@iface@ 
     () A-u  break
   )
-  action_!lalt+v  (switch ;;@autogen@ 
+  action_!lalt+v  (switch ;;@iface@ 
     () A-v  break
   )
-  action_!lalt+w  (switch ;;@autogen@ 
+  action_!lalt+w  (switch ;;@iface@ 
     () A-w  break
   )
-  action_!lalt+x  (switch ;;@autogen@ 
+  action_!lalt+x  (switch ;;@iface@ 
     () A-x  break
   )
-  action_!lalt+y  (switch ;;@autogen@ 
+  action_!lalt+y  (switch ;;@iface@ 
     () A-y  break
   )
-  action_!lalt+z  (switch ;;@autogen@ 
+  action_!lalt+z  (switch ;;@iface@ 
     () A-z  break
   )
-  action_!lalt+,  (switch ;;@autogen@ 
+  action_!lalt+,  (switch ;;@iface@ 
     () A-,  break
   )
-  action_!lalt+.  (switch ;;@autogen@ 
+  action_!lalt+.  (switch ;;@iface@ 
     () A-.  break
   )
-  action_!lalt+/  (switch ;;@autogen@ 
+  action_!lalt+/  (switch ;;@iface@ 
     () A-/  break
   )
-  action_!lalt+;  (switch ;;@autogen@ 
+  action_!lalt+;  (switch ;;@iface@ 
     () A-;  break
   )
-  action_!lalt+'  (switch ;;@autogen@ 
+  action_!lalt+'  (switch ;;@iface@ 
     () A-'  break
   )
-  action_!lalt+[  (switch ;;@autogen@ 
+  action_!lalt+[  (switch ;;@iface@ 
     () A-[  break
   )
-  action_!lalt+]  (switch ;;@autogen@ 
+  action_!lalt+]  (switch ;;@iface@ 
     () A-]  break
   )  
-  action_!lalt+\  (switch ;;@autogen@ 
+  action_!lalt+\  (switch ;;@iface@ 
     () A-\  break
   )
-  action_!lalt+-  (switch ;;@autogen@ 
+  action_!lalt+-  (switch ;;@iface@ 
     () A--  break
   )
-  action_!lalt+=  (switch ;;@autogen@ 
+  action_!lalt+=  (switch ;;@iface@ 
     () A-=  break
   )
-  action_!lalt+1  (switch ;;@autogen@ 
+  action_!lalt+1  (switch ;;@iface@ 
     () A-1  break
   )
-  action_!lalt+2  (switch ;;@autogen@ 
+  action_!lalt+2  (switch ;;@iface@ 
     () A-2  break
   )
-  action_!lalt+3  (switch ;;@autogen@ 
+  action_!lalt+3  (switch ;;@iface@ 
     () A-3  break
   )
-  action_!lalt+4  (switch ;;@autogen@ 
+  action_!lalt+4  (switch ;;@iface@ 
     () A-4  break
   )
-  action_!lalt+5  (switch ;;@autogen@ 
+  action_!lalt+5  (switch ;;@iface@ 
     () A-5  break
   )
-  action_!lalt+6  (switch ;;@autogen@ 
+  action_!lalt+6  (switch ;;@iface@ 
     () A-6  break
   )
-  action_!lalt+7  (switch ;;@autogen@ 
+  action_!lalt+7  (switch ;;@iface@ 
     () A-7  break
   )
-  action_!lalt+8  (switch ;;@autogen@ 
+  action_!lalt+8  (switch ;;@iface@ 
     () A-8  break
   )
-  action_!lalt+9  (switch ;;@autogen@ 
+  action_!lalt+9  (switch ;;@iface@ 
     () A-9  break
   )
-  action_!lalt+0  (switch ;;@autogen@ 
+  action_!lalt+0  (switch ;;@iface@ 
     () A-0  break
   ) ;; ""
 
   ;; == !LALT+LSFT actions ==========================================================
-  action_!lalt+lsft+a (switch ;;@autogen@ 
+  action_!lalt+lsft+a (switch ;;@iface@ 
     () A-S-a break
   )
-  action_!lalt+lsft+b (switch ;;@autogen@ 
+  action_!lalt+lsft+b (switch ;;@iface@ 
     () A-S-b break
   )
-  action_!lalt+lsft+c  (switch ;;@autogen@ 
+  action_!lalt+lsft+c  (switch ;;@iface@ 
     () A-S-c  break
   )
-  action_!lalt+lsft+d (switch ;;@autogen@ 
+  action_!lalt+lsft+d (switch ;;@iface@ 
     () A-S-d break
   )
-  action_!lalt+lsft+e  (switch ;;@autogen@ 
+  action_!lalt+lsft+e  (switch ;;@iface@ 
     () A-S-e  break
   )
-  action_!lalt+lsft+f  (switch ;;@autogen@ 
+  action_!lalt+lsft+f  (switch ;;@iface@ 
     () A-S-f  break
   )
-  action_!lalt+lsft+g  (switch ;;@autogen@ 
+  action_!lalt+lsft+g  (switch ;;@iface@ 
     () A-S-g  break
   )
-  action_!lalt+lsft+h  (switch ;;@autogen@ 
+  action_!lalt+lsft+h  (switch ;;@iface@ 
     () A-S-h  break
   )
-  action_!lalt+lsft+i  (switch ;;@autogen@ 
+  action_!lalt+lsft+i  (switch ;;@iface@ 
     () A-S-i  break
   )
-  action_!lalt+lsft+j  (switch ;;@autogen@ 
+  action_!lalt+lsft+j  (switch ;;@iface@ 
     () A-S-j  break
   )
-  action_!lalt+lsft+k  (switch ;;@autogen@ 
+  action_!lalt+lsft+k  (switch ;;@iface@ 
     () A-S-k  break
   )
-  action_!lalt+lsft+l  (switch ;;@autogen@ 
+  action_!lalt+lsft+l  (switch ;;@iface@ 
     () A-S-l  break
   )
-  action_!lalt+lsft+m  (switch ;;@autogen@ 
+  action_!lalt+lsft+m  (switch ;;@iface@ 
     () A-S-m  break
   )
-  action_!lalt+lsft+n  (switch ;;@autogen@ 
+  action_!lalt+lsft+n  (switch ;;@iface@ 
     () A-S-n  break
   )
-  action_!lalt+lsft+o  (switch ;;@autogen@ 
+  action_!lalt+lsft+o  (switch ;;@iface@ 
     () A-S-o  break
   )
-  action_!lalt+lsft+p  (switch ;;@autogen@ 
+  action_!lalt+lsft+p  (switch ;;@iface@ 
     () A-S-p  break
   )
-  action_!lalt+lsft+q  (switch ;;@autogen@ 
+  action_!lalt+lsft+q  (switch ;;@iface@ 
     () A-S-q  break
   )
-  action_!lalt+lsft+r  (switch ;;@autogen@ 
+  action_!lalt+lsft+r  (switch ;;@iface@ 
     () A-S-r  break
   )
-  action_!lalt+lsft+s  (switch ;;@autogen@ 
+  action_!lalt+lsft+s  (switch ;;@iface@ 
     () A-S-s  break
   )
-  action_!lalt+lsft+t  (switch ;;@autogen@ 
+  action_!lalt+lsft+t  (switch ;;@iface@ 
     () A-S-t  break
   )
-  action_!lalt+lsft+u  (switch ;;@autogen@ 
+  action_!lalt+lsft+u  (switch ;;@iface@ 
     () A-S-u  break
   )
-  action_!lalt+lsft+v  (switch ;;@autogen@ 
+  action_!lalt+lsft+v  (switch ;;@iface@ 
     () A-S-v  break
   )
-  action_!lalt+lsft+w  (switch ;;@autogen@ 
+  action_!lalt+lsft+w  (switch ;;@iface@ 
     () A-S-w  break
   )
-  action_!lalt+lsft+x  (switch ;;@autogen@ 
+  action_!lalt+lsft+x  (switch ;;@iface@ 
     () A-S-x  break
   )
-  action_!lalt+lsft+y  (switch ;;@autogen@ 
+  action_!lalt+lsft+y  (switch ;;@iface@ 
     () A-S-y  break
   )
-  action_!lalt+lsft+z  (switch ;;@autogen@ 
+  action_!lalt+lsft+z  (switch ;;@iface@ 
     () A-S-z break
   )
-  action_!lalt+lsft+,  (switch ;;@autogen@ 
+  action_!lalt+lsft+,  (switch ;;@iface@ 
     () A-S-, break
   )
-  action_!lalt+lsft+.  (switch ;;@autogen@ 
+  action_!lalt+lsft+.  (switch ;;@iface@ 
     () A-S-.  break
   )
-  action_!lalt+lsft+/  (switch ;;@autogen@ 
+  action_!lalt+lsft+/  (switch ;;@iface@ 
     () A-S-/  break
   )
-  action_!lalt+lsft+;  (switch ;;@autogen@ 
+  action_!lalt+lsft+;  (switch ;;@iface@ 
     () A-S-;  break
   )
-  action_!lalt+lsft+'  (switch ;;@autogen@ 
+  action_!lalt+lsft+'  (switch ;;@iface@ 
     () A-S-'  break
   )
-  action_!lalt+lsft+[  (switch ;;@autogen@ 
+  action_!lalt+lsft+[  (switch ;;@iface@ 
     () A-S-[  break
   )
-  action_!lalt+lsft+]  (switch ;;@autogen@ 
+  action_!lalt+lsft+]  (switch ;;@iface@ 
     () A-S-]  break
   )  ;; ""
-  action_!lalt+lsft+\  (switch ;;@autogen@ 
+  action_!lalt+lsft+\  (switch ;;@iface@ 
     () A-S-\  break
   )  ;; ""
-  action_!lalt+lsft+-  (switch ;;@autogen@ 
+  action_!lalt+lsft+-  (switch ;;@iface@ 
     () A-S--  break
   )
-  action_!lalt+lsft+=  (switch ;;@autogen@ 
+  action_!lalt+lsft+=  (switch ;;@iface@ 
     () A-S-=  break
   )
-  action_!lalt+lsft+1  (switch ;;@autogen@ 
+  action_!lalt+lsft+1  (switch ;;@iface@ 
     () A-S-1  break
   )
-  action_!lalt+lsft+2  (switch ;;@autogen@ 
+  action_!lalt+lsft+2  (switch ;;@iface@ 
     () A-S-2  break
   )
-  action_!lalt+lsft+3  (switch ;;@autogen@ 
+  action_!lalt+lsft+3  (switch ;;@iface@ 
     () A-S-3  break
   )
-  action_!lalt+lsft+4  (switch ;;@autogen@ 
+  action_!lalt+lsft+4  (switch ;;@iface@ 
     () A-S-4  break
   )
-  action_!lalt+lsft+5  (switch ;;@autogen@ 
+  action_!lalt+lsft+5  (switch ;;@iface@ 
     () A-S-5  break
   )
-  action_!lalt+lsft+6  (switch ;;@autogen@ 
+  action_!lalt+lsft+6  (switch ;;@iface@ 
     () A-S-6  break
   )
-  action_!lalt+lsft+7  (switch ;;@autogen@ 
+  action_!lalt+lsft+7  (switch ;;@iface@ 
     () A-S-7  break
   )
-  action_!lalt+lsft+8  (switch ;;@autogen@ 
+  action_!lalt+lsft+8  (switch ;;@iface@ 
     () A-S-8  break
   )
-  action_!lalt+lsft+9  (switch ;;@autogen@ 
+  action_!lalt+lsft+9  (switch ;;@iface@ 
     () A-S-9  break
   )
-  action_!lalt+lsft+0  (switch ;;@autogen@ 
+  action_!lalt+lsft+0  (switch ;;@iface@ 
     () A-S-0  break
   )
 
   ;; == !LALT+RSFT actions ==========================================================
-  action_!lalt+rsft+a (switch ;;@autogen@ 
+  action_!lalt+rsft+a (switch ;;@iface@ 
     () A-S-a break
   )
-  action_!lalt+rsft+b (switch ;;@autogen@ 
+  action_!lalt+rsft+b (switch ;;@iface@ 
     () A-S-b break
   )
-  action_!lalt+rsft+c  (switch ;;@autogen@ 
+  action_!lalt+rsft+c  (switch ;;@iface@ 
     () A-S-c  break
   )
-  action_!lalt+rsft+d (switch ;;@autogen@ 
+  action_!lalt+rsft+d (switch ;;@iface@ 
     () A-S-d break
   )
-  action_!lalt+rsft+e  (switch ;;@autogen@ 
+  action_!lalt+rsft+e  (switch ;;@iface@ 
     () A-S-e  break
   )
-  action_!lalt+rsft+f  (switch ;;@autogen@ 
+  action_!lalt+rsft+f  (switch ;;@iface@ 
     () A-S-f  break
   )
-  action_!lalt+rsft+g  (switch ;;@autogen@ 
+  action_!lalt+rsft+g  (switch ;;@iface@ 
     () A-S-g  break
   )
-  action_!lalt+rsft+h  (switch ;;@autogen@ 
+  action_!lalt+rsft+h  (switch ;;@iface@ 
     () A-S-h  break
   )
-  action_!lalt+rsft+i  (switch ;;@autogen@ 
+  action_!lalt+rsft+i  (switch ;;@iface@ 
     () A-S-i  break
   )
-  action_!lalt+rsft+j  (switch ;;@autogen@ 
+  action_!lalt+rsft+j  (switch ;;@iface@ 
     () A-S-j  break
   )
-  action_!lalt+rsft+k  (switch ;;@autogen@ 
+  action_!lalt+rsft+k  (switch ;;@iface@ 
     () A-S-k  break
   )
-  action_!lalt+rsft+l  (switch ;;@autogen@ 
+  action_!lalt+rsft+l  (switch ;;@iface@ 
     () A-S-l  break
   )
-  action_!lalt+rsft+m  (switch ;;@autogen@ 
+  action_!lalt+rsft+m  (switch ;;@iface@ 
     () A-S-m  break
   )
-  action_!lalt+rsft+n  (switch ;;@autogen@ 
+  action_!lalt+rsft+n  (switch ;;@iface@ 
     () A-S-n  break
   )
-  action_!lalt+rsft+o  (switch ;;@autogen@ 
+  action_!lalt+rsft+o  (switch ;;@iface@ 
     () A-S-o  break
   )
-  action_!lalt+rsft+p  (switch ;;@autogen@ 
+  action_!lalt+rsft+p  (switch ;;@iface@ 
     () A-S-p  break
   )
-  action_!lalt+rsft+q  (switch ;;@autogen@ 
+  action_!lalt+rsft+q  (switch ;;@iface@ 
     () A-S-q  break
   )
-  action_!lalt+rsft+r  (switch ;;@autogen@ 
+  action_!lalt+rsft+r  (switch ;;@iface@ 
     () A-S-r  break
   )
-  action_!lalt+rsft+s  (switch ;;@autogen@ 
+  action_!lalt+rsft+s  (switch ;;@iface@ 
     () A-S-s  break
   )
-  action_!lalt+rsft+t  (switch ;;@autogen@ 
+  action_!lalt+rsft+t  (switch ;;@iface@ 
     () A-S-t  break
   )
-  action_!lalt+rsft+u  (switch ;;@autogen@ 
+  action_!lalt+rsft+u  (switch ;;@iface@ 
     () A-S-u  break
   )
-  action_!lalt+rsft+v  (switch ;;@autogen@ 
+  action_!lalt+rsft+v  (switch ;;@iface@ 
     () A-S-v  break
   )
-  action_!lalt+rsft+w  (switch ;;@autogen@ 
+  action_!lalt+rsft+w  (switch ;;@iface@ 
     () A-S-w  break
   )
-  action_!lalt+rsft+x  (switch ;;@autogen@ 
+  action_!lalt+rsft+x  (switch ;;@iface@ 
     () A-S-x  break
   )
-  action_!lalt+rsft+y  (switch ;;@autogen@ 
+  action_!lalt+rsft+y  (switch ;;@iface@ 
     () A-S-y  break
   )
-  action_!lalt+rsft+z  (switch ;;@autogen@ 
+  action_!lalt+rsft+z  (switch ;;@iface@ 
     () A-S-z break
   )
-  action_!lalt+rsft+,  (switch ;;@autogen@ 
+  action_!lalt+rsft+,  (switch ;;@iface@ 
     () A-S-, break
   )
-  action_!lalt+rsft+.  (switch ;;@autogen@ 
+  action_!lalt+rsft+.  (switch ;;@iface@ 
     () A-S-.  break
   )
-  action_!lalt+rsft+/  (switch ;;@autogen@ 
+  action_!lalt+rsft+/  (switch ;;@iface@ 
     () A-S-/  break
   )
-  action_!lalt+rsft+;  (switch ;;@autogen@ 
+  action_!lalt+rsft+;  (switch ;;@iface@ 
     () A-S-;  break
   )
-  action_!lalt+rsft+'  (switch ;;@autogen@ 
+  action_!lalt+rsft+'  (switch ;;@iface@ 
     () A-S-'  break
   )
-  action_!lalt+rsft+[  (switch ;;@autogen@ 
+  action_!lalt+rsft+[  (switch ;;@iface@ 
     () A-S-[  break
   )
-  action_!lalt+rsft+]  (switch ;;@autogen@ 
+  action_!lalt+rsft+]  (switch ;;@iface@ 
     () A-S-]  break
   )  ;; ""
-  action_!lalt+rsft+\  (switch ;;@autogen@ 
+  action_!lalt+rsft+\  (switch ;;@iface@ 
     () A-S-\  break
   )  ;; ""
-  action_!lalt+rsft+-  (switch ;;@autogen@ 
+  action_!lalt+rsft+-  (switch ;;@iface@ 
     () A-S--  break
   )
-  action_!lalt+rsft+=  (switch ;;@autogen@ 
+  action_!lalt+rsft+=  (switch ;;@iface@ 
     () A-S-=  break
   )
-  action_!lalt+rsft+1  (switch ;;@autogen@ 
+  action_!lalt+rsft+1  (switch ;;@iface@ 
     () A-S-1  break
   )
-  action_!lalt+rsft+2  (switch ;;@autogen@ 
+  action_!lalt+rsft+2  (switch ;;@iface@ 
     () A-S-2  break
   )
-  action_!lalt+rsft+3  (switch ;;@autogen@ 
+  action_!lalt+rsft+3  (switch ;;@iface@ 
     () A-S-3  break
   )
-  action_!lalt+rsft+4  (switch ;;@autogen@ 
+  action_!lalt+rsft+4  (switch ;;@iface@ 
     () A-S-4  break
   )
-  action_!lalt+rsft+5  (switch ;;@autogen@ 
+  action_!lalt+rsft+5  (switch ;;@iface@ 
     () A-S-5  break
   )
-  action_!lalt+rsft+6  (switch ;;@autogen@ 
+  action_!lalt+rsft+6  (switch ;;@iface@ 
     () A-S-6  break
   )
-  action_!lalt+rsft+7  (switch ;;@autogen@ 
+  action_!lalt+rsft+7  (switch ;;@iface@ 
     () A-S-7  break
   )
-  action_!lalt+rsft+8  (switch ;;@autogen@ 
+  action_!lalt+rsft+8  (switch ;;@iface@ 
     () A-S-8  break
   )
-  action_!lalt+rsft+9  (switch ;;@autogen@ 
+  action_!lalt+rsft+9  (switch ;;@iface@ 
     () A-S-9  break
   )
-  action_!lalt+rsft+0  (switch ;;@autogen@ 
+  action_!lalt+rsft+0  (switch ;;@iface@ 
     () A-S-0  break
   )
 
   ;; == LMET actions ==========================================================
-  action_lmet+a (switch ;;@autogen@ 
+  action_lmet+a (switch ;;@iface@ 
     () M-a break
   )
-  action_lmet+b (switch ;;@autogen@ 
+  action_lmet+b (switch ;;@iface@ 
     () M-b break
   )
-  action_lmet+c  (switch ;;@autogen@ 
+  action_lmet+c  (switch ;;@iface@ 
     () M-c  break
   )
-  action_lmet+d (switch ;;@autogen@ 
+  action_lmet+d (switch ;;@iface@ 
     () M-d break
   )
-  action_lmet+e  (switch ;;@autogen@ 
+  action_lmet+e  (switch ;;@iface@ 
     () M-e  break
   )
-  action_lmet+f  (switch ;;@autogen@ 
+  action_lmet+f  (switch ;;@iface@ 
     () M-f  break
   )
-  action_lmet+g  (switch ;;@autogen@ 
+  action_lmet+g  (switch ;;@iface@ 
     () M-g  break
   )
-  action_lmet+h  (switch ;;@autogen@ 
+  action_lmet+h  (switch ;;@iface@ 
     () M-h  break
   )
-  action_lmet+i  (switch ;;@autogen@ 
+  action_lmet+i  (switch ;;@iface@ 
     () M-i  break
   )
-  action_lmet+j  (switch ;;@autogen@ 
+  action_lmet+j  (switch ;;@iface@ 
     () M-j  break
   )
-  action_lmet+k  (switch ;;@autogen@ 
+  action_lmet+k  (switch ;;@iface@ 
     () M-k  break
   )
-  action_lmet+l  (switch ;;@autogen@ 
+  action_lmet+l  (switch ;;@iface@ 
     () M-l  break
   )
-  action_lmet+m  (switch ;;@autogen@ 
+  action_lmet+m  (switch ;;@iface@ 
     () M-m  break
   )
-  action_lmet+n  (switch ;;@autogen@ 
+  action_lmet+n  (switch ;;@iface@ 
     () M-n  break
   )
-  action_lmet+o  (switch ;;@autogen@ 
+  action_lmet+o  (switch ;;@iface@ 
     () M-o  break
   )
-  action_lmet+p  (switch ;;@autogen@ 
+  action_lmet+p  (switch ;;@iface@ 
     () M-p  break
   )
-  action_lmet+q  (switch ;;@autogen@ 
+  action_lmet+q  (switch ;;@iface@ 
     () M-q  break
   )
-  action_lmet+r  (switch ;;@autogen@ 
+  action_lmet+r  (switch ;;@iface@ 
     () M-r  break
   )
-  action_lmet+s  (switch ;;@autogen@ 
+  action_lmet+s  (switch ;;@iface@ 
     () M-s  break
   )
-  action_lmet+t  (switch ;;@autogen@ 
+  action_lmet+t  (switch ;;@iface@ 
     () M-t  break
   )
-  action_lmet+u  (switch ;;@autogen@ 
+  action_lmet+u  (switch ;;@iface@ 
     () M-u  break
   )
-  action_lmet+v  (switch ;;@autogen@ 
+  action_lmet+v  (switch ;;@iface@ 
     () M-v  break
   )
-  action_lmet+w  (switch ;;@autogen@ 
+  action_lmet+w  (switch ;;@iface@ 
     () M-w  break
   )
-  action_lmet+x  (switch ;;@autogen@ 
+  action_lmet+x  (switch ;;@iface@ 
     () M-x  break
   )
-  action_lmet+y  (switch ;;@autogen@ 
+  action_lmet+y  (switch ;;@iface@ 
     () M-y  break
   )
-  action_lmet+z  (switch ;;@autogen@ 
+  action_lmet+z  (switch ;;@iface@ 
     () M-z break
   )
-  action_lmet+,  (switch ;;@autogen@ 
+  action_lmet+,  (switch ;;@iface@ 
     () M-, break
   )
-  action_lmet+.  (switch ;;@autogen@ 
+  action_lmet+.  (switch ;;@iface@ 
     () M-.  break
   )
-  action_lmet+/  (switch ;;@autogen@ 
+  action_lmet+/  (switch ;;@iface@ 
     () M-/  break
   )
-  action_lmet+;  (switch ;;@autogen@ 
+  action_lmet+;  (switch ;;@iface@ 
     () M-;  break
   )
-  action_lmet+'  (switch ;;@autogen@ 
+  action_lmet+'  (switch ;;@iface@ 
     () M-'  break
   )
-  action_lmet+[  (switch ;;@autogen@ 
+  action_lmet+[  (switch ;;@iface@ 
     () M-[  break
   )
-  action_lmet+]  (switch ;;@autogen@ 
+  action_lmet+]  (switch ;;@iface@ 
     () M-]  break
   )  ;; ""
-  action_lmet+\  (switch ;;@autogen@ 
+  action_lmet+\  (switch ;;@iface@ 
     () M-\  break
   )  ;; ""
-  action_lmet+-  (switch ;;@autogen@ 
+  action_lmet+-  (switch ;;@iface@ 
     () M--  break
   )
-  action_lmet+=  (switch ;;@autogen@ 
+  action_lmet+=  (switch ;;@iface@ 
     () M-=  break
   )
-  action_lmet+1  (switch ;;@autogen@ 
+  action_lmet+1  (switch ;;@iface@ 
     () M-1  break
   )
-  action_lmet+2  (switch ;;@autogen@ 
+  action_lmet+2  (switch ;;@iface@ 
     () M-2  break
   )
-  action_lmet+3  (switch ;;@autogen@ 
+  action_lmet+3  (switch ;;@iface@ 
     () M-3  break
   )
-  action_lmet+4  (switch ;;@autogen@ 
+  action_lmet+4  (switch ;;@iface@ 
     () M-4  break
   )
-  action_lmet+5  (switch ;;@autogen@ 
+  action_lmet+5  (switch ;;@iface@ 
     () M-5  break
   )
-  action_lmet+6  (switch ;;@autogen@ 
+  action_lmet+6  (switch ;;@iface@ 
     () M-6  break
   )
-  action_lmet+7  (switch ;;@autogen@ 
+  action_lmet+7  (switch ;;@iface@ 
     () M-7  break
   )
-  action_lmet+8  (switch ;;@autogen@ 
+  action_lmet+8  (switch ;;@iface@ 
     () M-8  break
   )
-  action_lmet+9  (switch ;;@autogen@ 
+  action_lmet+9  (switch ;;@iface@ 
     () M-9  break
   )
-  action_lmet+0  (switch ;;@autogen@ 
+  action_lmet+0  (switch ;;@iface@ 
     () M-0  break
   )
 
   ;; == LMET+LSFT actions ==========================================================
-  action_lmet+lsft+a (switch ;;@autogen@ 
+  action_lmet+lsft+a (switch ;;@iface@ 
     () M-S-a break
   )
-  action_lmet+lsft+b (switch ;;@autogen@ 
+  action_lmet+lsft+b (switch ;;@iface@ 
     () M-S-b break
   )
-  action_lmet+lsft+c  (switch ;;@autogen@ 
+  action_lmet+lsft+c  (switch ;;@iface@ 
     () M-S-c  break
   )
-  action_lmet+lsft+d (switch ;;@autogen@ 
+  action_lmet+lsft+d (switch ;;@iface@ 
     () M-S-d break
   )
-  action_lmet+lsft+e  (switch ;;@autogen@ 
+  action_lmet+lsft+e  (switch ;;@iface@ 
     () M-S-e  break
   )
-  action_lmet+lsft+f  (switch ;;@autogen@ 
+  action_lmet+lsft+f  (switch ;;@iface@ 
     () M-S-f  break
   )
-  action_lmet+lsft+g  (switch ;;@autogen@ 
+  action_lmet+lsft+g  (switch ;;@iface@ 
     () M-S-g  break
   )
-  action_lmet+lsft+h  (switch ;;@autogen@ 
+  action_lmet+lsft+h  (switch ;;@iface@ 
     () M-S-h  break
   )
-  action_lmet+lsft+i  (switch ;;@autogen@ 
+  action_lmet+lsft+i  (switch ;;@iface@ 
     () M-S-i  break
   )
-  action_lmet+lsft+j  (switch ;;@autogen@ 
+  action_lmet+lsft+j  (switch ;;@iface@ 
     () M-S-j  break
   )
-  action_lmet+lsft+k  (switch ;;@autogen@ 
+  action_lmet+lsft+k  (switch ;;@iface@ 
     () M-S-k  break
   )
-  action_lmet+lsft+l  (switch ;;@autogen@ 
+  action_lmet+lsft+l  (switch ;;@iface@ 
     () M-S-l  break
   )
-  action_lmet+lsft+m  (switch ;;@autogen@ 
+  action_lmet+lsft+m  (switch ;;@iface@ 
     () M-S-m  break
   )
-  action_lmet+lsft+n  (switch ;;@autogen@ 
+  action_lmet+lsft+n  (switch ;;@iface@ 
     () M-S-n  break
   )
-  action_lmet+lsft+o  (switch ;;@autogen@ 
+  action_lmet+lsft+o  (switch ;;@iface@ 
     () M-S-o  break
   )
-  action_lmet+lsft+p  (switch ;;@autogen@ 
+  action_lmet+lsft+p  (switch ;;@iface@ 
     () M-S-p  break
   )
-  action_lmet+lsft+q  (switch ;;@autogen@ 
+  action_lmet+lsft+q  (switch ;;@iface@ 
     () M-S-q  break
   )
-  action_lmet+lsft+r  (switch ;;@autogen@ 
+  action_lmet+lsft+r  (switch ;;@iface@ 
     () M-S-r  break
   )
-  action_lmet+lsft+s  (switch ;;@autogen@ 
+  action_lmet+lsft+s  (switch ;;@iface@ 
     () M-S-s  break
   )
-  action_lmet+lsft+t  (switch ;;@autogen@ 
+  action_lmet+lsft+t  (switch ;;@iface@ 
     () M-S-t  break
   )
-  action_lmet+lsft+u  (switch ;;@autogen@ 
+  action_lmet+lsft+u  (switch ;;@iface@ 
     () M-S-u  break
   )
-  action_lmet+lsft+v  (switch ;;@autogen@ 
+  action_lmet+lsft+v  (switch ;;@iface@ 
     () M-S-v  break
   )
-  action_lmet+lsft+w  (switch ;;@autogen@ 
+  action_lmet+lsft+w  (switch ;;@iface@ 
     () M-S-w  break
   )
-  action_lmet+lsft+x  (switch ;;@autogen@ 
+  action_lmet+lsft+x  (switch ;;@iface@ 
     () M-S-x  break
   )
-  action_lmet+lsft+y  (switch ;;@autogen@ 
+  action_lmet+lsft+y  (switch ;;@iface@ 
     () M-S-y  break
   )
-  action_lmet+lsft+z  (switch ;;@autogen@ 
+  action_lmet+lsft+z  (switch ;;@iface@ 
     () M-S-z break
   )
-  action_lmet+lsft+,  (switch ;;@autogen@ 
+  action_lmet+lsft+,  (switch ;;@iface@ 
     () M-S-, break
   )
-  action_lmet+lsft+.  (switch ;;@autogen@ 
+  action_lmet+lsft+.  (switch ;;@iface@ 
     () M-S-.  break
   )
-  action_lmet+lsft+/  (switch ;;@autogen@ 
+  action_lmet+lsft+/  (switch ;;@iface@ 
     () M-S-/  break
   )
-  action_lmet+lsft+;  (switch ;;@autogen@ 
+  action_lmet+lsft+;  (switch ;;@iface@ 
     () M-S-;  break
   )
-  action_lmet+lsft+'  (switch ;;@autogen@ 
+  action_lmet+lsft+'  (switch ;;@iface@ 
     () M-S-'  break
   )
-  action_lmet+lsft+[  (switch ;;@autogen@ 
+  action_lmet+lsft+[  (switch ;;@iface@ 
     () M-S-[  break
   )
-  action_lmet+lsft+]  (switch ;;@autogen@ 
+  action_lmet+lsft+]  (switch ;;@iface@ 
     () M-S-]  break
   )  ;; ""
-  action_lmet+lsft+\  (switch ;;@autogen@ 
+  action_lmet+lsft+\  (switch ;;@iface@ 
     () M-S-\  break
   )  ;; ""
-  action_lmet+lsft+-  (switch ;;@autogen@ 
+  action_lmet+lsft+-  (switch ;;@iface@ 
     () M-S--  break
   )
-  action_lmet+lsft+=  (switch ;;@autogen@ 
+  action_lmet+lsft+=  (switch ;;@iface@ 
     () M-S-=  break
   )
-  action_lmet+lsft+1  (switch ;;@autogen@ 
+  action_lmet+lsft+1  (switch ;;@iface@ 
     () M-S-1  break
   )
-  action_lmet+lsft+2  (switch ;;@autogen@ 
+  action_lmet+lsft+2  (switch ;;@iface@ 
     () M-S-2  break
   )
-  action_lmet+lsft+3  (switch ;;@autogen@ 
+  action_lmet+lsft+3  (switch ;;@iface@ 
     () M-S-3  break
   )
-  action_lmet+lsft+4  (switch ;;@autogen@ 
+  action_lmet+lsft+4  (switch ;;@iface@ 
     () M-S-4  break
   )
-  action_lmet+lsft+5  (switch ;;@autogen@ 
+  action_lmet+lsft+5  (switch ;;@iface@ 
     () M-S-5  break
   )
-  action_lmet+lsft+6  (switch ;;@autogen@ 
+  action_lmet+lsft+6  (switch ;;@iface@ 
     () M-S-6  break
   )
-  action_lmet+lsft+7  (switch ;;@autogen@ 
+  action_lmet+lsft+7  (switch ;;@iface@ 
     () M-S-7  break
   )
-  action_lmet+lsft+8  (switch ;;@autogen@ 
+  action_lmet+lsft+8  (switch ;;@iface@ 
     () M-S-8  break
   )
-  action_lmet+lsft+9  (switch ;;@autogen@ 
+  action_lmet+lsft+9  (switch ;;@iface@ 
     () M-S-9  break
   )
-  action_lmet+lsft+0  (switch ;;@autogen@ 
+  action_lmet+lsft+0  (switch ;;@iface@ 
     () M-S-0  break
   )
 
   ;; == LMET+RSFT actions ==========================================================
-  action_lmet+rsft+a (switch ;;@autogen@ 
+  action_lmet+rsft+a (switch ;;@iface@ 
     () M-S-a break
   )
-  action_lmet+rsft+b (switch ;;@autogen@ 
+  action_lmet+rsft+b (switch ;;@iface@ 
     () M-S-b break
   )
-  action_lmet+rsft+c  (switch ;;@autogen@ 
+  action_lmet+rsft+c  (switch ;;@iface@ 
     () M-S-c  break
   )
-  action_lmet+rsft+d (switch ;;@autogen@ 
+  action_lmet+rsft+d (switch ;;@iface@ 
     () M-S-d break
   )
-  action_lmet+rsft+e  (switch ;;@autogen@ 
+  action_lmet+rsft+e  (switch ;;@iface@ 
     () M-S-e  break
   )
-  action_lmet+rsft+f  (switch ;;@autogen@ 
+  action_lmet+rsft+f  (switch ;;@iface@ 
     () M-S-f  break
   )
-  action_lmet+rsft+g  (switch ;;@autogen@ 
+  action_lmet+rsft+g  (switch ;;@iface@ 
     () M-S-g  break
   )
-  action_lmet+rsft+h  (switch ;;@autogen@ 
+  action_lmet+rsft+h  (switch ;;@iface@ 
     () M-S-h  break
   )
-  action_lmet+rsft+i  (switch ;;@autogen@ 
+  action_lmet+rsft+i  (switch ;;@iface@ 
     () M-S-i  break
   )
-  action_lmet+rsft+j  (switch ;;@autogen@ 
+  action_lmet+rsft+j  (switch ;;@iface@ 
     () M-S-j  break
   )
-  action_lmet+rsft+k  (switch ;;@autogen@ 
+  action_lmet+rsft+k  (switch ;;@iface@ 
     () M-S-k  break
   )
-  action_lmet+rsft+l  (switch ;;@autogen@ 
+  action_lmet+rsft+l  (switch ;;@iface@ 
     () M-S-l  break
   )
-  action_lmet+rsft+m  (switch ;;@autogen@ 
+  action_lmet+rsft+m  (switch ;;@iface@ 
     () M-S-m  break
   )
-  action_lmet+rsft+n  (switch ;;@autogen@ 
+  action_lmet+rsft+n  (switch ;;@iface@ 
     () M-S-n  break
   )
-  action_lmet+rsft+o  (switch ;;@autogen@ 
+  action_lmet+rsft+o  (switch ;;@iface@ 
     () M-S-o  break
   )
-  action_lmet+rsft+p  (switch ;;@autogen@ 
+  action_lmet+rsft+p  (switch ;;@iface@ 
     () M-S-p  break
   )
-  action_lmet+rsft+q  (switch ;;@autogen@ 
+  action_lmet+rsft+q  (switch ;;@iface@ 
     () M-S-q  break
   )
-  action_lmet+rsft+r  (switch ;;@autogen@ 
+  action_lmet+rsft+r  (switch ;;@iface@ 
     () M-S-r  break
   )
-  action_lmet+rsft+s  (switch ;;@autogen@ 
+  action_lmet+rsft+s  (switch ;;@iface@ 
     () M-S-s  break
   )
-  action_lmet+rsft+t  (switch ;;@autogen@ 
+  action_lmet+rsft+t  (switch ;;@iface@ 
     () M-S-t  break
   )
-  action_lmet+rsft+u  (switch ;;@autogen@ 
+  action_lmet+rsft+u  (switch ;;@iface@ 
     () M-S-u  break
   )
-  action_lmet+rsft+v  (switch ;;@autogen@ 
+  action_lmet+rsft+v  (switch ;;@iface@ 
     () M-S-v  break
   )
-  action_lmet+rsft+w  (switch ;;@autogen@ 
+  action_lmet+rsft+w  (switch ;;@iface@ 
     () M-S-w  break
   )
-  action_lmet+rsft+x  (switch ;;@autogen@ 
+  action_lmet+rsft+x  (switch ;;@iface@ 
     () M-S-x  break
   )
-  action_lmet+rsft+y  (switch ;;@autogen@ 
+  action_lmet+rsft+y  (switch ;;@iface@ 
     () M-S-y  break
   )
-  action_lmet+rsft+z  (switch ;;@autogen@ 
+  action_lmet+rsft+z  (switch ;;@iface@ 
     () M-S-z break
   )
-  action_lmet+rsft+,  (switch ;;@autogen@ 
+  action_lmet+rsft+,  (switch ;;@iface@ 
     () M-S-, break
   )
-  action_lmet+rsft+.  (switch ;;@autogen@ 
+  action_lmet+rsft+.  (switch ;;@iface@ 
     () M-S-.  break
   )
-  action_lmet+rsft+/  (switch ;;@autogen@ 
+  action_lmet+rsft+/  (switch ;;@iface@ 
     () M-S-/  break
   )
-  action_lmet+rsft+;  (switch ;;@autogen@ 
+  action_lmet+rsft+;  (switch ;;@iface@ 
     () M-S-;  break
   )
-  action_lmet+rsft+'  (switch ;;@autogen@ 
+  action_lmet+rsft+'  (switch ;;@iface@ 
     () M-S-'  break
   )
-  action_lmet+rsft+[  (switch ;;@autogen@ 
+  action_lmet+rsft+[  (switch ;;@iface@ 
     () M-S-[  break
   )
-  action_lmet+rsft+]  (switch ;;@autogen@ 
+  action_lmet+rsft+]  (switch ;;@iface@ 
     () M-S-]  break
   )  ;; ""
-  action_lmet+rsft+\  (switch ;;@autogen@ 
+  action_lmet+rsft+\  (switch ;;@iface@ 
     () M-S-\  break
   )  ;; ""
-  action_lmet+rsft+-  (switch ;;@autogen@ 
+  action_lmet+rsft+-  (switch ;;@iface@ 
     () M-S--  break
   )
-  action_lmet+rsft+=  (switch ;;@autogen@ 
+  action_lmet+rsft+=  (switch ;;@iface@ 
     () M-S-=  break
   )
-  action_lmet+rsft+1  (switch ;;@autogen@ 
+  action_lmet+rsft+1  (switch ;;@iface@ 
     () M-S-1  break
   )
-  action_lmet+rsft+2  (switch ;;@autogen@ 
+  action_lmet+rsft+2  (switch ;;@iface@ 
     () M-S-2  break
   )
-  action_lmet+rsft+3  (switch ;;@autogen@ 
+  action_lmet+rsft+3  (switch ;;@iface@ 
     () M-S-3  break
   )
-  action_lmet+rsft+4  (switch ;;@autogen@ 
+  action_lmet+rsft+4  (switch ;;@iface@ 
     () M-S-4  break
   )
-  action_lmet+rsft+5  (switch ;;@autogen@ 
+  action_lmet+rsft+5  (switch ;;@iface@ 
     () M-S-5  break
   )
-  action_lmet+rsft+6  (switch ;;@autogen@ 
+  action_lmet+rsft+6  (switch ;;@iface@ 
     () M-S-6  break
   )
-  action_lmet+rsft+7  (switch ;;@autogen@ 
+  action_lmet+rsft+7  (switch ;;@iface@ 
     () M-S-7  break
   )
-  action_lmet+rsft+8  (switch ;;@autogen@ 
+  action_lmet+rsft+8  (switch ;;@iface@ 
     () M-S-8  break
   )
-  action_lmet+rsft+9  (switch ;;@autogen@ 
+  action_lmet+rsft+9  (switch ;;@iface@ 
     () M-S-9  break
   )
-  action_lmet+rsft+0  (switch ;;@autogen@ 
+  action_lmet+rsft+0  (switch ;;@iface@ 
     () M-S-0  break
   )
 
   ;; == !LMET actions ==========================================================
-  action_!lmet+a (switch ;;@autogen@ 
+  action_!lmet+a (switch ;;@iface@ 
     () M-a break
   )
-  action_!lmet+b (switch ;;@autogen@ 
+  action_!lmet+b (switch ;;@iface@ 
     () M-b break
   )
-  action_!lmet+c  (switch ;;@autogen@ 
+  action_!lmet+c  (switch ;;@iface@ 
     () M-c  break
   )
-  action_!lmet+d (switch ;;@autogen@ 
+  action_!lmet+d (switch ;;@iface@ 
     () M-d break
   )
-  action_!lmet+e  (switch ;;@autogen@ 
+  action_!lmet+e  (switch ;;@iface@ 
     () M-e  break
   )
-  action_!lmet+f  (switch ;;@autogen@ 
+  action_!lmet+f  (switch ;;@iface@ 
     () M-f  break
   )
-  action_!lmet+g  (switch ;;@autogen@ 
+  action_!lmet+g  (switch ;;@iface@ 
     () M-g  break
   )
-  action_!lmet+h  (switch ;;@autogen@ 
+  action_!lmet+h  (switch ;;@iface@ 
     () M-h  break
   )
-  action_!lmet+i  (switch ;;@autogen@ 
+  action_!lmet+i  (switch ;;@iface@ 
     () M-i  break
   )
-  action_!lmet+j  (switch ;;@autogen@ 
+  action_!lmet+j  (switch ;;@iface@ 
     () M-j  break
   )
-  action_!lmet+k  (switch ;;@autogen@ 
+  action_!lmet+k  (switch ;;@iface@ 
     () M-k  break
   )
-  action_!lmet+l  (switch ;;@autogen@ 
+  action_!lmet+l  (switch ;;@iface@ 
     () M-l  break
   )
-  action_!lmet+m  (switch ;;@autogen@ 
+  action_!lmet+m  (switch ;;@iface@ 
     () M-m  break
   )
-  action_!lmet+n  (switch ;;@autogen@ 
+  action_!lmet+n  (switch ;;@iface@ 
     () M-n  break
   )
-  action_!lmet+o  (switch ;;@autogen@ 
+  action_!lmet+o  (switch ;;@iface@ 
     () M-o  break
   )
-  action_!lmet+p  (switch ;;@autogen@ 
+  action_!lmet+p  (switch ;;@iface@ 
     () M-p  break
   )
-  action_!lmet+q  (switch ;;@autogen@ 
+  action_!lmet+q  (switch ;;@iface@ 
     () M-q  break
   )
-  action_!lmet+r  (switch ;;@autogen@ 
+  action_!lmet+r  (switch ;;@iface@ 
     () M-r  break
   )
-  action_!lmet+s  (switch ;;@autogen@ 
+  action_!lmet+s  (switch ;;@iface@ 
     () M-s  break
   )
-  action_!lmet+t  (switch ;;@autogen@ 
+  action_!lmet+t  (switch ;;@iface@ 
     () M-t  break
   )
-  action_!lmet+u  (switch ;;@autogen@ 
+  action_!lmet+u  (switch ;;@iface@ 
     () M-u  break
   )
-  action_!lmet+v  (switch ;;@autogen@ 
+  action_!lmet+v  (switch ;;@iface@ 
     () M-v  break
   )
-  action_!lmet+w  (switch ;;@autogen@ 
+  action_!lmet+w  (switch ;;@iface@ 
     () M-w  break
   )
-  action_!lmet+x  (switch ;;@autogen@ 
+  action_!lmet+x  (switch ;;@iface@ 
     () M-x  break
   )
-  action_!lmet+y  (switch ;;@autogen@ 
+  action_!lmet+y  (switch ;;@iface@ 
     () M-y  break
   )
-  action_!lmet+z  (switch ;;@autogen@ 
+  action_!lmet+z  (switch ;;@iface@ 
     () M-z  break
   )
-  action_!lmet+,  (switch ;;@autogen@ 
+  action_!lmet+,  (switch ;;@iface@ 
     () M-,  break
   )
-  action_!lmet+.  (switch ;;@autogen@ 
+  action_!lmet+.  (switch ;;@iface@ 
     () M-.  break
   )
-  action_!lmet+/  (switch ;;@autogen@ 
+  action_!lmet+/  (switch ;;@iface@ 
     () M-/  break
   )
-  action_!lmet+;  (switch ;;@autogen@ 
+  action_!lmet+;  (switch ;;@iface@ 
     () M-;  break
   )
-  action_!lmet+'  (switch ;;@autogen@ 
+  action_!lmet+'  (switch ;;@iface@ 
     () M-'  break
   )
-  action_!lmet+[  (switch ;;@autogen@ 
+  action_!lmet+[  (switch ;;@iface@ 
     () M-[  break
   )
-  action_!lmet+]  (switch ;;@autogen@ 
+  action_!lmet+]  (switch ;;@iface@ 
     () M-]  break
   )  
-  action_!lmet+\  (switch ;;@autogen@ 
+  action_!lmet+\  (switch ;;@iface@ 
     () M-\  break
   )
-  action_!lmet+-  (switch ;;@autogen@ 
+  action_!lmet+-  (switch ;;@iface@ 
     () M--  break
   )
-  action_!lmet+=  (switch ;;@autogen@ 
+  action_!lmet+=  (switch ;;@iface@ 
     () M-=  break
   )
-  action_!lmet+1  (switch ;;@autogen@ 
+  action_!lmet+1  (switch ;;@iface@ 
     () M-1  break
   )
-  action_!lmet+2  (switch ;;@autogen@ 
+  action_!lmet+2  (switch ;;@iface@ 
     () M-2  break
   )
-  action_!lmet+3  (switch ;;@autogen@ 
+  action_!lmet+3  (switch ;;@iface@ 
     () M-3  break
   )
-  action_!lmet+4  (switch ;;@autogen@ 
+  action_!lmet+4  (switch ;;@iface@ 
     () M-4  break
   )
-  action_!lmet+5  (switch ;;@autogen@ 
+  action_!lmet+5  (switch ;;@iface@ 
     () M-5  break
   )
-  action_!lmet+6  (switch ;;@autogen@ 
+  action_!lmet+6  (switch ;;@iface@ 
     () M-6  break
   )
-  action_!lmet+7  (switch ;;@autogen@ 
+  action_!lmet+7  (switch ;;@iface@ 
     () M-7  break
   )
-  action_!lmet+8  (switch ;;@autogen@ 
+  action_!lmet+8  (switch ;;@iface@ 
     () M-8  break
   )
-  action_!lmet+9  (switch ;;@autogen@ 
+  action_!lmet+9  (switch ;;@iface@ 
     () M-9  break
   )
-  action_!lmet+0  (switch ;;@autogen@ 
+  action_!lmet+0  (switch ;;@iface@ 
     () M-0  break
   ) ;; ""
 
   ;; == !LMET+LSFT actions ==========================================================
-  action_!lmet+lsft+a (switch ;;@autogen@ 
+  action_!lmet+lsft+a (switch ;;@iface@ 
     () M-S-a break
   )
-  action_!lmet+lsft+b (switch ;;@autogen@ 
+  action_!lmet+lsft+b (switch ;;@iface@ 
     () M-S-b break
   )
-  action_!lmet+lsft+c  (switch ;;@autogen@ 
+  action_!lmet+lsft+c  (switch ;;@iface@ 
     () M-S-c  break
   )
-  action_!lmet+lsft+d (switch ;;@autogen@ 
+  action_!lmet+lsft+d (switch ;;@iface@ 
     () M-S-d break
   )
-  action_!lmet+lsft+e  (switch ;;@autogen@ 
+  action_!lmet+lsft+e  (switch ;;@iface@ 
     () M-S-e  break
   )
-  action_!lmet+lsft+f  (switch ;;@autogen@ 
+  action_!lmet+lsft+f  (switch ;;@iface@ 
     () M-S-f  break
   )
-  action_!lmet+lsft+g  (switch ;;@autogen@ 
+  action_!lmet+lsft+g  (switch ;;@iface@ 
     () M-S-g  break
   )
-  action_!lmet+lsft+h  (switch ;;@autogen@ 
+  action_!lmet+lsft+h  (switch ;;@iface@ 
     () M-S-h  break
   )
-  action_!lmet+lsft+i  (switch ;;@autogen@ 
+  action_!lmet+lsft+i  (switch ;;@iface@ 
     () M-S-i  break
   )
-  action_!lmet+lsft+j  (switch ;;@autogen@ 
+  action_!lmet+lsft+j  (switch ;;@iface@ 
     () M-S-j  break
   )
-  action_!lmet+lsft+k  (switch ;;@autogen@ 
+  action_!lmet+lsft+k  (switch ;;@iface@ 
     () M-S-k  break
   )
-  action_!lmet+lsft+l  (switch ;;@autogen@ 
+  action_!lmet+lsft+l  (switch ;;@iface@ 
     () M-S-l  break
   )
-  action_!lmet+lsft+m  (switch ;;@autogen@ 
+  action_!lmet+lsft+m  (switch ;;@iface@ 
     () M-S-m  break
   )
-  action_!lmet+lsft+n  (switch ;;@autogen@ 
+  action_!lmet+lsft+n  (switch ;;@iface@ 
     () M-S-n  break
   )
-  action_!lmet+lsft+o  (switch ;;@autogen@ 
+  action_!lmet+lsft+o  (switch ;;@iface@ 
     () M-S-o  break
   )
-  action_!lmet+lsft+p  (switch ;;@autogen@ 
+  action_!lmet+lsft+p  (switch ;;@iface@ 
     () M-S-p  break
   )
-  action_!lmet+lsft+q  (switch ;;@autogen@ 
+  action_!lmet+lsft+q  (switch ;;@iface@ 
     () M-S-q  break
   )
-  action_!lmet+lsft+r  (switch ;;@autogen@ 
+  action_!lmet+lsft+r  (switch ;;@iface@ 
     () M-S-r  break
   )
-  action_!lmet+lsft+s  (switch ;;@autogen@ 
+  action_!lmet+lsft+s  (switch ;;@iface@ 
     () M-S-s  break
   )
-  action_!lmet+lsft+t  (switch ;;@autogen@ 
+  action_!lmet+lsft+t  (switch ;;@iface@ 
     () M-S-t  break
   )
-  action_!lmet+lsft+u  (switch ;;@autogen@ 
+  action_!lmet+lsft+u  (switch ;;@iface@ 
     () M-S-u  break
   )
-  action_!lmet+lsft+v  (switch ;;@autogen@ 
+  action_!lmet+lsft+v  (switch ;;@iface@ 
     () M-S-v  break
   )
-  action_!lmet+lsft+w  (switch ;;@autogen@ 
+  action_!lmet+lsft+w  (switch ;;@iface@ 
     () M-S-w  break
   )
-  action_!lmet+lsft+x  (switch ;;@autogen@ 
+  action_!lmet+lsft+x  (switch ;;@iface@ 
     () M-S-x  break
   )
-  action_!lmet+lsft+y  (switch ;;@autogen@ 
+  action_!lmet+lsft+y  (switch ;;@iface@ 
     () M-S-y  break
   )
-  action_!lmet+lsft+z  (switch ;;@autogen@ 
+  action_!lmet+lsft+z  (switch ;;@iface@ 
     () M-S-z break
   )
-  action_!lmet+lsft+,  (switch ;;@autogen@ 
+  action_!lmet+lsft+,  (switch ;;@iface@ 
     () M-S-, break
   )
-  action_!lmet+lsft+.  (switch ;;@autogen@ 
+  action_!lmet+lsft+.  (switch ;;@iface@ 
     () M-S-.  break
   )
-  action_!lmet+lsft+/  (switch ;;@autogen@ 
+  action_!lmet+lsft+/  (switch ;;@iface@ 
     () M-S-/  break
   )
-  action_!lmet+lsft+;  (switch ;;@autogen@ 
+  action_!lmet+lsft+;  (switch ;;@iface@ 
     () M-S-;  break
   )
-  action_!lmet+lsft+'  (switch ;;@autogen@ 
+  action_!lmet+lsft+'  (switch ;;@iface@ 
     () M-S-'  break
   )
-  action_!lmet+lsft+[  (switch ;;@autogen@ 
+  action_!lmet+lsft+[  (switch ;;@iface@ 
     () M-S-[  break
   )
-  action_!lmet+lsft+]  (switch ;;@autogen@ 
+  action_!lmet+lsft+]  (switch ;;@iface@ 
     () M-S-]  break
   )  ;; ""
-  action_!lmet+lsft+\  (switch ;;@autogen@ 
+  action_!lmet+lsft+\  (switch ;;@iface@ 
     () M-S-\  break
   )  ;; ""
-  action_!lmet+lsft+-  (switch ;;@autogen@ 
+  action_!lmet+lsft+-  (switch ;;@iface@ 
     () M-S--  break
   )
-  action_!lmet+lsft+=  (switch ;;@autogen@ 
+  action_!lmet+lsft+=  (switch ;;@iface@ 
     () M-S-=  break
   )
-  action_!lmet+lsft+1  (switch ;;@autogen@ 
+  action_!lmet+lsft+1  (switch ;;@iface@ 
     () M-S-1  break
   )
-  action_!lmet+lsft+2  (switch ;;@autogen@ 
+  action_!lmet+lsft+2  (switch ;;@iface@ 
     () M-S-2  break
   )
-  action_!lmet+lsft+3  (switch ;;@autogen@ 
+  action_!lmet+lsft+3  (switch ;;@iface@ 
     () M-S-3  break
   )
-  action_!lmet+lsft+4  (switch ;;@autogen@ 
+  action_!lmet+lsft+4  (switch ;;@iface@ 
     () M-S-4  break
   )
-  action_!lmet+lsft+5  (switch ;;@autogen@ 
+  action_!lmet+lsft+5  (switch ;;@iface@ 
     () M-S-5  break
   )
-  action_!lmet+lsft+6  (switch ;;@autogen@ 
+  action_!lmet+lsft+6  (switch ;;@iface@ 
     () M-S-6  break
   )
-  action_!lmet+lsft+7  (switch ;;@autogen@ 
+  action_!lmet+lsft+7  (switch ;;@iface@ 
     () M-S-7  break
   )
-  action_!lmet+lsft+8  (switch ;;@autogen@ 
+  action_!lmet+lsft+8  (switch ;;@iface@ 
     () M-S-8  break
   )
-  action_!lmet+lsft+9  (switch ;;@autogen@ 
+  action_!lmet+lsft+9  (switch ;;@iface@ 
     () M-S-9  break
   )
-  action_!lmet+lsft+0  (switch ;;@autogen@ 
+  action_!lmet+lsft+0  (switch ;;@iface@ 
     () M-S-0  break
   )
 
   ;; == !LMET+RSFT actions ==========================================================
-  action_!lmet+rsft+a (switch ;;@autogen@ 
+  action_!lmet+rsft+a (switch ;;@iface@ 
     () M-S-a break
   )
-  action_!lmet+rsft+b (switch ;;@autogen@ 
+  action_!lmet+rsft+b (switch ;;@iface@ 
     () M-S-b break
   )
-  action_!lmet+rsft+c  (switch ;;@autogen@ 
+  action_!lmet+rsft+c  (switch ;;@iface@ 
     () M-S-c  break
   )
-  action_!lmet+rsft+d (switch ;;@autogen@ 
+  action_!lmet+rsft+d (switch ;;@iface@ 
     () M-S-d break
   )
-  action_!lmet+rsft+e  (switch ;;@autogen@ 
+  action_!lmet+rsft+e  (switch ;;@iface@ 
     () M-S-e  break
   )
-  action_!lmet+rsft+f  (switch ;;@autogen@ 
+  action_!lmet+rsft+f  (switch ;;@iface@ 
     () M-S-f  break
   )
-  action_!lmet+rsft+g  (switch ;;@autogen@ 
+  action_!lmet+rsft+g  (switch ;;@iface@ 
     () M-S-g  break
   )
-  action_!lmet+rsft+h  (switch ;;@autogen@ 
+  action_!lmet+rsft+h  (switch ;;@iface@ 
     () M-S-h  break
   )
-  action_!lmet+rsft+i  (switch ;;@autogen@ 
+  action_!lmet+rsft+i  (switch ;;@iface@ 
     () M-S-i  break
   )
-  action_!lmet+rsft+j  (switch ;;@autogen@ 
+  action_!lmet+rsft+j  (switch ;;@iface@ 
     () M-S-j  break
   )
-  action_!lmet+rsft+k  (switch ;;@autogen@ 
+  action_!lmet+rsft+k  (switch ;;@iface@ 
     () M-S-k  break
   )
-  action_!lmet+rsft+l  (switch ;;@autogen@ 
+  action_!lmet+rsft+l  (switch ;;@iface@ 
     () M-S-l  break
   )
-  action_!lmet+rsft+m  (switch ;;@autogen@ 
+  action_!lmet+rsft+m  (switch ;;@iface@ 
     () M-S-m  break
   )
-  action_!lmet+rsft+n  (switch ;;@autogen@ 
+  action_!lmet+rsft+n  (switch ;;@iface@ 
     () M-S-n  break
   )
-  action_!lmet+rsft+o  (switch ;;@autogen@ 
+  action_!lmet+rsft+o  (switch ;;@iface@ 
     () M-S-o  break
   )
-  action_!lmet+rsft+p  (switch ;;@autogen@ 
+  action_!lmet+rsft+p  (switch ;;@iface@ 
     () M-S-p  break
   )
-  action_!lmet+rsft+q  (switch ;;@autogen@ 
+  action_!lmet+rsft+q  (switch ;;@iface@ 
     () M-S-q  break
   )
-  action_!lmet+rsft+r  (switch ;;@autogen@ 
+  action_!lmet+rsft+r  (switch ;;@iface@ 
     () M-S-r  break
   )
-  action_!lmet+rsft+s  (switch ;;@autogen@ 
+  action_!lmet+rsft+s  (switch ;;@iface@ 
     () M-S-s  break
   )
-  action_!lmet+rsft+t  (switch ;;@autogen@ 
+  action_!lmet+rsft+t  (switch ;;@iface@ 
     () M-S-t  break
   )
-  action_!lmet+rsft+u  (switch ;;@autogen@ 
+  action_!lmet+rsft+u  (switch ;;@iface@ 
     () M-S-u  break
   )
-  action_!lmet+rsft+v  (switch ;;@autogen@ 
+  action_!lmet+rsft+v  (switch ;;@iface@ 
     () M-S-v  break
   )
-  action_!lmet+rsft+w  (switch ;;@autogen@ 
+  action_!lmet+rsft+w  (switch ;;@iface@ 
     () M-S-w  break
   )
-  action_!lmet+rsft+x  (switch ;;@autogen@ 
+  action_!lmet+rsft+x  (switch ;;@iface@ 
     () M-S-x  break
   )
-  action_!lmet+rsft+y  (switch ;;@autogen@ 
+  action_!lmet+rsft+y  (switch ;;@iface@ 
     () M-S-y  break
   )
-  action_!lmet+rsft+z  (switch ;;@autogen@ 
+  action_!lmet+rsft+z  (switch ;;@iface@ 
     () M-S-z break
   )
-  action_!lmet+rsft+,  (switch ;;@autogen@ 
+  action_!lmet+rsft+,  (switch ;;@iface@ 
     () M-S-, break
   )
-  action_!lmet+rsft+.  (switch ;;@autogen@ 
+  action_!lmet+rsft+.  (switch ;;@iface@ 
     () M-S-.  break
   )
-  action_!lmet+rsft+/  (switch ;;@autogen@ 
+  action_!lmet+rsft+/  (switch ;;@iface@ 
     () M-S-/  break
   )
-  action_!lmet+rsft+;  (switch ;;@autogen@ 
+  action_!lmet+rsft+;  (switch ;;@iface@ 
     () M-S-;  break
   )
-  action_!lmet+rsft+'  (switch ;;@autogen@ 
+  action_!lmet+rsft+'  (switch ;;@iface@ 
     () M-S-'  break
   )
-  action_!lmet+rsft+[  (switch ;;@autogen@ 
+  action_!lmet+rsft+[  (switch ;;@iface@ 
     () M-S-[  break
   )
-  action_!lmet+rsft+]  (switch ;;@autogen@ 
+  action_!lmet+rsft+]  (switch ;;@iface@ 
     () M-S-]  break
   )  ;; ""
-  action_!lmet+rsft+\  (switch ;;@autogen@ 
+  action_!lmet+rsft+\  (switch ;;@iface@ 
     () M-S-\  break
   )  ;; ""
-  action_!lmet+rsft+-  (switch ;;@autogen@ 
+  action_!lmet+rsft+-  (switch ;;@iface@ 
     () M-S--  break
   )
-  action_!lmet+rsft+=  (switch ;;@autogen@ 
+  action_!lmet+rsft+=  (switch ;;@iface@ 
     () M-S-=  break
   )
-  action_!lmet+rsft+1  (switch ;;@autogen@ 
+  action_!lmet+rsft+1  (switch ;;@iface@ 
     () M-S-1  break
   )
-  action_!lmet+rsft+2  (switch ;;@autogen@ 
+  action_!lmet+rsft+2  (switch ;;@iface@ 
     () M-S-2  break
   )
-  action_!lmet+rsft+3  (switch ;;@autogen@ 
+  action_!lmet+rsft+3  (switch ;;@iface@ 
     () M-S-3  break
   )
-  action_!lmet+rsft+4  (switch ;;@autogen@ 
+  action_!lmet+rsft+4  (switch ;;@iface@ 
     () M-S-4  break
   )
-  action_!lmet+rsft+5  (switch ;;@autogen@ 
+  action_!lmet+rsft+5  (switch ;;@iface@ 
     () M-S-5  break
   )
-  action_!lmet+rsft+6  (switch ;;@autogen@ 
+  action_!lmet+rsft+6  (switch ;;@iface@ 
     () M-S-6  break
   )
-  action_!lmet+rsft+7  (switch ;;@autogen@ 
+  action_!lmet+rsft+7  (switch ;;@iface@ 
     () M-S-7  break
   )
-  action_!lmet+rsft+8  (switch ;;@autogen@ 
+  action_!lmet+rsft+8  (switch ;;@iface@ 
     () M-S-8  break
   )
-  action_!lmet+rsft+9  (switch ;;@autogen@ 
+  action_!lmet+rsft+9  (switch ;;@iface@ 
     () M-S-9  break
   )
-  action_!lmet+rsft+0  (switch ;;@autogen@ 
+  action_!lmet+rsft+0  (switch ;;@iface@ 
     () M-S-0  break
   )
 )

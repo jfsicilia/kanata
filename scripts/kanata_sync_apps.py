@@ -6,12 +6,12 @@ This script scans per-app subdirectories under actions/ (e.g. actions/nvim/,
 actions/chrome/) for app-specific action files
 (<app>_<name>[.<priority>].kbd) and performs two operations:
 
-  1. Regenerates the bottom of kanata.kbd (below the @autogen@ marker):
+  1. Regenerates the bottom of kanata.kbd (below the @iface@ marker):
      - Defines a virtual key (vk_<app>) for each detected app.
      - Adds include statements for each per-app action file.
 
   2. Regenerates the per-app switch conditions inside each actions_*.iface.kbd:
-     - For each @autogen@-tagged action, inserts ((input virtual vk_<app>))
+     - For each @iface@-tagged action, inserts ((input virtual vk_<app>))
        conditions for apps that implement that action.
      - Actions prefixed with ~ get the app order reversed, enabling
        alternate priority when apps overlap (e.g. nvim inside tmux).
@@ -48,10 +48,10 @@ IFACE_PREFIX = "actions_"
 IFACE_SUFFIX = ".iface"
 ACTION_PREFIX = "action_"
 
-# Matches an @autogen@-tagged action definition in an interface file, e.g.:
-#   action_lctl+a (t! unmod_all (switch ;;@autogen@
-#   ~action_tab_next (t! unmod_all (switch ;;@autogen@
-AUTOGEN_ACTION_RE = re.compile(r"^\s*(~?action_[^\s]+)\s.*@autogen@.*")
+# Matches an @iface@-tagged action definition in an interface file, e.g.:
+#   action_lctl+a (t! unmod_all (switch ;;@iface@
+#   ~action_tab_next (t! unmod_all (switch ;;@iface@
+IFACE_ACTION_RE = re.compile(r"^\s*(~?action_[^\s]+)\s.*@iface@.*")
 
 REVERSE_ACTION_FLAG = "~"
 ACTION_END = ")"
@@ -61,8 +61,8 @@ ACTION_END = ")"
 # group(1) = app name, group(2) = action short name (e.g. "tab_next")
 APP_ACTION_RE = re.compile(r"^\s*(\w+)_action_(.+?)\s")
 
-# Matches the @autogen@ section marker in kanata.kbd.
-AUTOGEN_SECTION_RE = re.compile(r";;\s+@autogen@")
+# Matches the @iface@ section marker in kanata.kbd.
+IFACE_SECTION_RE = re.compile(r";;\s+@iface@")
 
 # Matches a virtual key input condition line, e.g.:
 #   ((input virtual vk_nvim)) $nvim_action_tab_next break
@@ -159,16 +159,16 @@ def find_apps(
     return (sorted(apps), iface2app)
 
 
-def autogen_kanata_file(
+def iface_kanata_file(
     lines: list[str],
     apps: list[str],
     iface2app: dict[str, list[tuple[str, str, int]]],
     actions_folder: Path,
     kanata_folder: Path,
 ) -> list[str]:
-    """Regenerate the autogen section of kanata.kbd.
+    """Regenerate the iface section of kanata.kbd.
 
-    Copies all lines up to and including the @autogen@ marker, then
+    Copies all lines up to and including the @iface@ marker, then
     appends:
       - Include statements for global_*.kbd files.
       - Include statements for actions_*.iface.kbd files.
@@ -191,7 +191,7 @@ def autogen_kanata_file(
     for line in lines:
         out.append(line)
 
-        if not AUTOGEN_SECTION_RE.match(line):
+        if not IFACE_SECTION_RE.match(line):
             continue
 
         # ---- Virtual keys ----
@@ -255,7 +255,7 @@ def sync_interface_actions(
 ) -> list[str]:
     """Regenerate switch conditions in a single shared action file.
 
-    For each @autogen@-tagged action, replaces the per-app virtual key
+    For each @iface@-tagged action, replaces the per-app virtual key
     conditions with freshly generated ones based on which apps actually
     implement each action in this interface.
 
@@ -288,13 +288,13 @@ def sync_interface_actions(
     while i < len(lines):
         line = lines[i]
 
-        m = AUTOGEN_ACTION_RE.match(line)
+        m = IFACE_ACTION_RE.match(line)
         if not m:
             out.append(line)
             i += 1
             continue
 
-        # ---- Process autogen of an action block ----
+        # ---- Process iface action block ----
         action_name = m.group(1)  # action_lctl+b or ~action_lctl+b
         if action_name.startswith(REVERSE_ACTION_FLAG):
             short_name = action_name[
@@ -378,7 +378,7 @@ def main(
     # ---- write kanata file ----
     kanata_folder = kanata_file.parent
     text = kanata_file.read_text().splitlines(keepends=True)
-    result = autogen_kanata_file(text, apps, iface2app, actions_folder, kanata_folder)
+    result = iface_kanata_file(text, apps, iface2app, actions_folder, kanata_folder)
     kanata_file.write_text("".join(result), encoding="utf-8")
 
     # ---- write actions/<app>/<app>_*.kbd files ----

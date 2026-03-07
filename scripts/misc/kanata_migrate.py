@@ -61,8 +61,8 @@ SECTION_MAP = [
     (1953, 4498, "interface_mod_physical.kbd"),  # SFT, LCTL...!LMET+RSFT
 ]
 
-# Regex to match @autogen@ tagged actions in actions.kbd
-AUTOGEN_RE = re.compile(r"^\s*(~?action_[^\s]+)\s.*@autogen@")
+# Regex to match @iface@ tagged actions in actions.kbd
+IFACE_RE = re.compile(r"^\s*(~?action_[^\s]+)\s.*@iface@")
 
 # Regex for app action filenames: actions_<app>[.<priority>].kbd
 APP_FILE_RE = re.compile(r"^actions_([^.]+)(?:\.(\d+))?\.kbd$")
@@ -146,7 +146,7 @@ def build_action_to_interface_map(sections: dict[str, list[str]]) -> dict[str, s
 
         for line in content_lines:
             # Check for autogen actions
-            m = AUTOGEN_RE.match(line)
+            m = IFACE_RE.match(line)
             if m:
                 action_name = m.group(1)  # e.g. action_tab_next or ~action_!tab_next
                 # Strip ~ prefix and action_ prefix
@@ -158,7 +158,7 @@ def build_action_to_interface_map(sections: dict[str, list[str]]) -> dict[str, s
 
             # Check for non-autogen actions (global-like in interface files)
             m2 = ACTION_NAME_RE.match(line)
-            if m2 and "@autogen@" not in line:
+            if m2 and "@iface@" not in line:
                 action_name = m2.group(1)
                 short = action_name.lstrip("~")
                 if short.startswith("action_"):

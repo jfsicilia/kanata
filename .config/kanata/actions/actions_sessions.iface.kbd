@@ -3,11 +3,11 @@
 
   ;; == sessions =====================================================
   ;; sessions + spc
-  action_sessions (t! unmod_all (switch ;;@autogen@
+  action_sessions (t! unmod_all (switch ;;@iface@
     () XX break
   ))
   ;; sessions + toggle
-  action_sessions_toggle  (t! unmod_all (switch ;;@autogen@
+  action_sessions_toggle  (t! unmod_all (switch ;;@iface@
     () XX break
   ))
 
