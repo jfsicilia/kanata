@@ -9,7 +9,7 @@ A kanata (keyboard remapper for Linux) configuration with an **app-polymorphic a
 ## Key Commands
 
 ```bash
-# Sync all per-app action files with their shared app_*.kbd definitions (after editing app_*.kbd):
+# Sync all per-app action files with their shared actions_*.iface.kbd definitions (after editing actions_*.iface.kbd):
 ./scripts/kanata_sync_all_apps_interfaces.sh
 
 # Sync a single per-app action file (dry-run, prints to stdout):
@@ -55,15 +55,15 @@ kanata.kbd  (entry point, includes everything)
   │   ├── toggles_mod_physical.kbd
   │   └── toggles_mod_special.kbd
   └── actions/
-      ├── global_apps.kbd         (non-overridable: apps, apps_toggle, apps+0-9, apps+a-z)
-      ├── global_windows.kbd      (non-overridable: window_*)
-      ├── global_workspaces.kbd   (non-overridable: desktop_*, screen_*)
-      ├── global_misc.kbd         (non-overridable: emojis, opts_restart_kwanata)
-      ├── app_omni.kbd            (@autogen@ switch dispatch)
-      ├── app_tabs.kbd
-      ├── app_panes.kbd
-      ├── app_groups.kbd          (contains ~ reversed actions)
-      ├── app_*.kbd               (one per interface)
+      ├── actions_apps.kbd         (non-overridable: apps, apps_toggle, apps+0-9, apps+a-z)
+      ├── actions_windows.kbd      (non-overridable: window_*)
+      ├── actions_workspaces.kbd   (non-overridable: desktop_*, screen_*)
+      ├── actions_misc.kbd         (non-overridable: emojis, opts_restart_kwanata)
+      ├── actions_omni.iface.kbd   (@autogen@ switch dispatch)
+      ├── actions_tabs.iface.kbd
+      ├── actions_panes.iface.kbd
+      ├── actions_groups.iface.kbd (contains ~ reversed actions)
+      ├── actions_*.iface.kbd      (one per interface)
       ├── chrome/
       │   ├── chrome_omni.kbd
       │   ├── chrome_tabs.kbd
@@ -82,7 +82,7 @@ kanata.kbd  (entry point, includes everything)
 
 ### App-Polymorphism Pattern
 
-Each app has a virtual key (`vk_<app>`) toggled by external software when the app gains/loses focus. Shared action files (`app_*.kbd`) use `(switch ;;@autogen@` to dispatch based on which virtual key is pressed:
+Each app has a virtual key (`vk_<app>`) toggled by external software when the app gains/loses focus. Shared action files (`actions_*.iface.kbd`) use `(switch ;;@autogen@` to dispatch based on which virtual key is pressed:
 
 ```lisp
 action_tab_next (t! unmod_all (switch ;;@autogen@
@@ -93,12 +93,12 @@ action_tab_next (t! unmod_all (switch ;;@autogen@
 ```
 
 - **Priority**: Per-interface, controlled by the optional index in the per-app filename. `nvim_groups.1.kbd` (priority 1) beats `chrome_groups.4.kbd` (priority 4).
-- **Reversed actions**: `~action_<name>` checks apps in reverse order, enabling alternate behavior when apps overlap (e.g. nvim inside tmux). The `~` prefix before `action_` reverses the app priority in switch conditions. Currently only in `app_groups.kbd`.
+- **Reversed actions**: `~action_<name>` checks apps in reverse order, enabling alternate behavior when apps overlap (e.g. nvim inside tmux). The `~` prefix before `action_` reverses the app priority in switch conditions. Currently only in `actions_groups.iface.kbd`.
 - App files can define **app variables** (e.g. `tmux_prefix A-b`) and **app-specific actions** not in the shared action file — both are preserved by the sync scripts. Extra vars go in the alphabetically-first per-app file.
 
 ### Sync Workflow
 
-1. **Adding a new action**: Edit the relevant `app_*.kbd` file, add the action with `;;@autogen@` tag, then run `kanata_sync_all_apps_interfaces.sh` to propagate the placeholder to all per-app files.
+1. **Adding a new action**: Edit the relevant `actions_*.iface.kbd` file, add the action with `;;@autogen@` tag, then run `kanata_sync_all_apps_interfaces.sh` to propagate the placeholder to all per-app files.
 2. **Adding a new app**: Create a subdirectory `actions/<app>/` with files `<app>_<name>.kbd` for each interface, then run `kanata_sync_apps.py -f` to register it in `kanata.kbd` and update switch conditions.
 3. **Implementing an app action**: Uncomment the placeholder line in the per-app file (e.g. change `;;  tmux_action_tab_new` to `tmux_action_tab_new (macro $tmux_prefix c)`), then run `kanata_sync_apps.py -f` to wire it into the switch conditions.
 
@@ -128,7 +128,7 @@ Key templates used throughout:
 
 ### Conventions
 
-- **Actions naming**: `action_<name>` in `app_*.kbd`, `<app>_action_<name>` in per-app files.
+- **Actions naming**: `action_<name>` in `actions_*.iface.kbd`, `<app>_action_<name>` in per-app files.
 - **`~` prefix** (tilde before `action_`): `~action_tab_next` reverses app priority in switch conditions — apps are checked in reverse order. Allows alternate behavior when apps overlap (e.g. nvim inside tmux).
 - **`!` prefix** has different meanings depending on context:
   - **Within action name** (`action_!lctl+a`): action triggered by physical lctl key (vs homerow mod)

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Sync action interfaces from a shared app_*.kbd file into a per-app
+Sync action interfaces from a shared actions_*.iface.kbd file into a per-app
 action file (e.g. actions/chrome/chrome_omni.kbd).
 
 When the target file already exists, the script preserves:
@@ -39,7 +39,7 @@ Usage:
   ./kanata_sync_interfaces.py -w actions/tmux/tmux_panes.19.kbd
 
   # Use a custom shared action file:
-  ./kanata_sync_interfaces.py -a /path/to/app_panes.kbd -w actions/tmux/tmux_panes.19.kbd
+  ./kanata_sync_interfaces.py -a /path/to/actions_panes.iface.kbd -w actions/tmux/tmux_panes.19.kbd
 """
 
 import argparse
@@ -575,7 +575,7 @@ def process_actions(
 def main() -> None:
     parser = argparse.ArgumentParser(
         description=(
-            "Sync action interfaces from a shared app_*.kbd file into a\n"
+            "Sync action interfaces from a shared actions_*.iface.kbd file into a\n"
             "per-app action file (e.g. actions/chrome/chrome_omni.kbd).\n\n"
             "When the target file exists, existing action implementations,\n"
             "non-action variables, and app-specific actions are preserved.\n"
@@ -606,7 +606,7 @@ def main() -> None:
         "--actions-file",
         type=Path,
         default=None,
-        help="Path to the shared app_*.kbd file (default: auto-inferred from filename).",
+        help="Path to the shared actions_*.iface.kbd file (default: auto-inferred from filename).",
     )
 
     args = parser.parse_args()
@@ -618,7 +618,7 @@ def main() -> None:
     if args.actions_file:
         interface_file: Path = args.actions_file
     else:
-        interface_file = output_path.parent.parent / f"app_{interface_name}.kbd"
+        interface_file = output_path.parent.parent / f"actions_{interface_name}.iface.kbd"
 
     print(f"Shared action file : {interface_file}")
     print(f"Output file        : {output_path}")

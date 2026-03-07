@@ -10,7 +10,7 @@ actions/chrome/) for app-specific action files
      - Defines a virtual key (vk_<app>) for each detected app.
      - Adds include statements for each per-app action file.
 
-  2. Regenerates the per-app switch conditions inside each app_*.kbd:
+  2. Regenerates the per-app switch conditions inside each actions_*.iface.kbd:
      - For each @autogen@-tagged action, inserts ((input virtual vk_<app>))
        conditions for apps that implement that action.
      - Actions prefixed with ~ get the app order reversed, enabling
@@ -43,8 +43,9 @@ DEFAULT_KANATA_FOLDER = Path.home() / ".config" / "kanata"
 DEFAULT_KANATA_FILE = DEFAULT_KANATA_FOLDER / "kanata.kbd"
 DEFAULT_ACTIONS_FOLDER = DEFAULT_KANATA_FOLDER / "actions"
 
-GLOBAL_PREFIX = "global_"
-APP_PREFIX = "app_"
+GLOBAL_PREFIX = "actions_"
+IFACE_PREFIX = "actions_"
+IFACE_SUFFIX = ".iface"
 ACTION_PREFIX = "action_"
 
 # Matches an @autogen@-tagged action definition in an interface file, e.g.:
@@ -170,7 +171,7 @@ def autogen_kanata_file(
     Copies all lines up to and including the @autogen@ marker, then
     appends:
       - Include statements for global_*.kbd files.
-      - Include statements for app_*.kbd files.
+      - Include statements for actions_*.iface.kbd files.
       - A defvirtualkeys block with one vk_<app> per detected app.
       - Include statements for each per-app action file.
 
@@ -261,7 +262,7 @@ def sync_interface_actions(
     Actions prefixed with ~ use reversed app order.
 
     Args:
-        interface_file: Path to the app_*.kbd file.
+        interface_file: Path to the actions_*.iface.kbd file.
         interface_name: Name of the interface (e.g. "omni", "panes").
         per_interface: Dict from find_apps with per-interface app lists.
         actions_folder: Path to the actions folder (parent of app subdirs).
@@ -342,7 +343,7 @@ def ask_confirmation(kanata_file: Path, actions_folder: Path) -> bool:
     """
     answer = (
         input(
-            f"This will overwrite {kanata_file} and app_*.kbd files in {actions_folder}. Continue? [y/N]: "
+            f"This will overwrite {kanata_file} and actions_*.iface.kbd files in {actions_folder}. Continue? [y/N]: "
         )
         .strip()
         .lower()
@@ -381,9 +382,9 @@ def main(
     kanata_file.write_text("".join(result), encoding="utf-8")
 
     # ---- write actions/<app>/<app>_*.kbd files ----
-    iface_files = actions_folder.glob(f"{APP_PREFIX}*.{KANATA_EXT}")
+    iface_files = actions_folder.glob(f"{IFACE_PREFIX}*{IFACE_SUFFIX}.{KANATA_EXT}")
     for iface_path in iface_files:
-        iface_name = iface_path.stem.removeprefix(APP_PREFIX)
+        iface_name = iface_path.stem.removeprefix(IFACE_PREFIX).removesuffix(IFACE_SUFFIX)
         result = sync_interface_actions(
             iface_path, iface_name, iface2app, actions_folder
         )
@@ -399,7 +400,7 @@ if __name__ == "__main__":
             "Scans per-app subdirectories of the actions folder for files named\n"
             "<app>_<name>[.<priority>].kbd. For each app found:\n"
             "  - A virtual key (vk_<app>) and includes are added to kanata.kbd.\n"
-            "  - Switch conditions are regenerated in each app_*.kbd file.\n\n"
+            "  - Switch conditions are regenerated in each actions_*.iface.kbd file.\n\n"
             "Usage:\n"
             "  ./kanata_sync_apps.py -f\n"
             "  ./kanata_sync_apps.py -f --actions-folder /path/to/actions"
