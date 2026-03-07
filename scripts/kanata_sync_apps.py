@@ -15,6 +15,8 @@ actions/chrome/) for app-specific action files
        conditions for apps that implement that action.
      - Actions prefixed with ~ get the app order reversed, enabling
        alternate priority when apps overlap (e.g. nvim inside tmux).
+  3. It add actions in actions_*.iface.kbd that are missing in the per-app
+     actions files.
 
 App priority per interface is controlled by the optional numeric index in
 the filename (e.g. nvim_groups.1.kbd = highest priority for groups
@@ -101,6 +103,13 @@ IFACE_PRIORITY_RE = re.compile(r"^(\w+)(?:\.(\d+))?\.kbd$")
 #     files_with_order.sort(key=lambda x: x[0] if x[0] is not None else 0)
 #
 #     return [(app_name, app_file) for _, app_name, app_file in files_with_order]
+
+
+def _write_if_changed(path: Path, content: str) -> None:
+    """Write content to a file only if it differs from the current content."""
+    if path.exists() and path.read_text(encoding="utf-8") == content:
+        return
+    path.write_text(content, encoding="utf-8")
 
 
 def find_apps(
@@ -379,16 +388,18 @@ def main(
     kanata_folder = kanata_file.parent
     text = kanata_file.read_text().splitlines(keepends=True)
     result = iface_kanata_file(text, apps, iface2app, actions_folder, kanata_folder)
-    kanata_file.write_text("".join(result), encoding="utf-8")
+    _write_if_changed(kanata_file, "".join(result))
 
     # ---- write actions/<app>/<app>_*.kbd files ----
     iface_files = actions_folder.glob(f"{IFACE_PREFIX}*{IFACE_SUFFIX}.{KANATA_EXT}")
     for iface_path in iface_files:
-        iface_name = iface_path.stem.removeprefix(IFACE_PREFIX).removesuffix(IFACE_SUFFIX)
+        iface_name = iface_path.stem.removeprefix(IFACE_PREFIX).removesuffix(
+            IFACE_SUFFIX
+        )
         result = sync_interface_actions(
             iface_path, iface_name, iface2app, actions_folder
         )
-        iface_path.write_text("".join(result), encoding="utf-8")
+        _write_if_changed(iface_path, "".join(result))
 
     print("Files updated successfully.")
 

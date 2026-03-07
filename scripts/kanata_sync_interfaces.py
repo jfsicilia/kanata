@@ -631,8 +631,12 @@ def main() -> None:
     output = "\n".join(result)
 
     if args.write:
-        output_path.write_text(output + "\n")
-        print(f"Wrote {output_path}")
+        new_content = output + "\n"
+        if output_path.exists() and output_path.read_text() == new_content:
+            print(f"No changes: {output_path}")
+        else:
+            output_path.write_text(new_content)
+            print(f"Wrote {output_path}")
     else:
         print(output)
 

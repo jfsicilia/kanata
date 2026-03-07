@@ -12,5 +12,5 @@
 )
 
 (deflayermap (opts+rsft_layer)
-  k (multi (cmd kanata_sync_apps.py -f) (cmd kanata_sync_all_apps_interfaces.sh) (push-msg "RELOAD:") lrld)
+  k (multi (cmd kanata_sync.sh) (push-msg "RELOAD:") lrld)
 )
