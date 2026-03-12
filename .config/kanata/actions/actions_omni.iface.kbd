@@ -140,6 +140,16 @@
   action_omni+rsft+c (t! unmod_all (switch ;;@iface@
     () C-S-c break
   ))
+  ;; omni + c + left
+  action_omni+c+left (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+c+left break
+    () XX break
+  ))
+  ;; omni + c + right
+  action_omni+c+right (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+c+right break
+    () XX break
+  ))
 
   ;; omni + d
   action_omni+d (t! unmod_all (switch ;;@iface@
@@ -334,6 +344,16 @@
     ((input virtual vk_nvim)) $nvim_action_omni+x break
     ((input virtual vk_obsidian)) $obsidian_action_omni+x break
     () C-x break
+  ))
+  ;; omni + x + left
+  action_omni+x+left (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+x+left break
+    () XX break
+  ))
+  ;; omni + x + right
+  action_omni+x+right (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+x+right break
+    () XX break
   ))
   
   ;; omni + y

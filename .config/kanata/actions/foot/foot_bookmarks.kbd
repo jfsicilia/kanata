@@ -1,31 +1,34 @@
+(deftemplate foot_goto_folder (folder)
+  (macro esc d d i c d spc $folder ent)
+)
 (defvar
 
 ;; == bookmarks =========================================================
 ;; bookmarks + spc
 ;; ___TO_SET___ foot_action_bookmarks              
 ;; ___TO_SET___ foot_action_bookmarks_a            
-;; ___TO_SET___ foot_action_bookmarks_b            
-;; ___TO_SET___ foot_action_bookmarks_c            
-;; ___TO_SET___ foot_action_bookmarks_d            
+foot_action_bookmarks_b            (t! foot_goto_folder $folder_bookcase)
+foot_action_bookmarks_c            (t! foot_goto_folder $folder_scans)
+foot_action_bookmarks_d            (t! foot_goto_folder $folder_downloads)
 ;; ___TO_SET___ foot_action_bookmarks_e            
-;; ___TO_SET___ foot_action_bookmarks_f            
-;; ___TO_SET___ foot_action_bookmarks_g            
-;; ___TO_SET___ foot_action_bookmarks_h            
-;; ___TO_SET___ foot_action_bookmarks_i            
+foot_action_bookmarks_f            (t! foot_goto_folder $folder_photo)
+foot_action_bookmarks_g            (t! foot_goto_folder $folder_guacimara)
+foot_action_bookmarks_h            (t! foot_goto_folder $folder_home)
+foot_action_bookmarks_i            (t! foot_goto_folder $folder_inbox)
 ;; ___TO_SET___ foot_action_bookmarks_j            
 ;; ___TO_SET___ foot_action_bookmarks_k            
 ;; ___TO_SET___ foot_action_bookmarks_l            
-;; ___TO_SET___ foot_action_bookmarks_m            
+foot_action_bookmarks_m            (t! foot_goto_folder $folder_medano)
 ;; ___TO_SET___ foot_action_bookmarks_n            
 ;; ___TO_SET___ foot_action_bookmarks_o            
-;; ___TO_SET___ foot_action_bookmarks_p            
+foot_action_bookmarks_p            (t! foot_goto_folder $folder_personal)
 ;; ___TO_SET___ foot_action_bookmarks_q            
 ;; ___TO_SET___ foot_action_bookmarks_r            
-;; ___TO_SET___ foot_action_bookmarks_s            
-;; ___TO_SET___ foot_action_bookmarks_t            
+foot_action_bookmarks_s            (t! foot_goto_folder $folder_settings)
+foot_action_bookmarks_t            (t! foot_goto_folder $folder_tmp)
 ;; ___TO_SET___ foot_action_bookmarks_u            
 ;; ___TO_SET___ foot_action_bookmarks_v            
-;; ___TO_SET___ foot_action_bookmarks_w            
+foot_action_bookmarks_w            (t! foot_goto_folder $folder_workarea)
 ;; ___TO_SET___ foot_action_bookmarks_x            
 ;; ___TO_SET___ foot_action_bookmarks_y            
 ;; ___TO_SET___ foot_action_bookmarks_z            

@@ -83,6 +83,8 @@ dolphin_tab_8            A-8
 dolphin_tab_9            A-9
 dolphin_forward          A-right
 dolphin_back             A-left
+dolphin_move_to_pane     S-f6
+dolphin_copy_to_pane     S-f5
 
 ;; == omni ============================================================
 
@@ -105,6 +107,10 @@ dolphin_action_omni+c          $dolphin_copy
 dolphin_action_omni+lsft+c     $dolphin_copy_path
 ;; omni + rsft + c
 ;; ___TO_SET___ dolphin_action_omni+rsft+c            
+;; omni + c + left
+dolphin_action_omni+c+left     $dolphin_copy_to_pane
+;; omni + c + right
+dolphin_action_omni+c+right    $dolphin_copy_to_pane
 
 ;; omni + d
 dolphin_action_omni+d          $dolphin_duplicate
@@ -183,6 +189,10 @@ dolphin_action_omni+w          $dolphin_close_tab
 
 ;; omni + x
 dolphin_action_omni+x          $dolphin_cut
+;; omni + x + left
+dolphin_action_omni+x+left     $dolphin_move_to_pane
+;; omni + x + right
+dolphin_action_omni+x+right    $dolphin_move_to_pane       
 
 ;; omni + y
 dolphin_action_omni+y          $dolphin_history

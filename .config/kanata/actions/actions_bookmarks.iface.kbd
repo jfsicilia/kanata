@@ -13,14 +13,17 @@
   )) 
   action_bookmarks_b (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_bookmarks_b break
+    ((input virtual vk_foot)) $foot_action_bookmarks_b break
     () XX break
   )) 
   action_bookmarks_c (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_bookmarks_c break
+    ((input virtual vk_foot)) $foot_action_bookmarks_c break
     () XX break
   )) 
   action_bookmarks_d (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_bookmarks_d break
+    ((input virtual vk_foot)) $foot_action_bookmarks_d break
     () XX break
   )) 
   action_bookmarks_e (t! unmod_all (switch ;;@iface@
@@ -28,18 +31,22 @@
   )) 
   action_bookmarks_f (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_bookmarks_f break
+    ((input virtual vk_foot)) $foot_action_bookmarks_f break
     () XX break
   )) 
   action_bookmarks_g (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_bookmarks_g break
+    ((input virtual vk_foot)) $foot_action_bookmarks_g break
     () XX break
   )) 
   action_bookmarks_h (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_bookmarks_h break
+    ((input virtual vk_foot)) $foot_action_bookmarks_h break
     () XX break
   )) 
   action_bookmarks_i (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_bookmarks_i break
+    ((input virtual vk_foot)) $foot_action_bookmarks_i break
     () XX break
   )) 
   action_bookmarks_j (t! unmod_all (switch ;;@iface@
@@ -53,6 +60,7 @@
   )) 
   action_bookmarks_m (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_bookmarks_m break
+    ((input virtual vk_foot)) $foot_action_bookmarks_m break
     () XX break
   )) 
   action_bookmarks_n (t! unmod_all (switch ;;@iface@
@@ -63,6 +71,7 @@
   )) 
   action_bookmarks_p (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_bookmarks_p break
+    ((input virtual vk_foot)) $foot_action_bookmarks_p break
     () XX break
   )) 
   action_bookmarks_q (t! unmod_all (switch ;;@iface@
@@ -73,9 +82,12 @@
   )) 
   action_bookmarks_s (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_bookmarks_s break
+    ((input virtual vk_foot)) $foot_action_bookmarks_s break
     () XX break
   )) 
   action_bookmarks_t (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_bookmarks_t break
+    ((input virtual vk_foot)) $foot_action_bookmarks_t break
     () XX break
   )) 
   action_bookmarks_u (t! unmod_all (switch ;;@iface@
@@ -86,6 +98,7 @@
   )) 
   action_bookmarks_w (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_bookmarks_w break
+    ((input virtual vk_foot)) $foot_action_bookmarks_w break
     () XX break
   )) 
   action_bookmarks_x (t! unmod_all (switch ;;@iface@

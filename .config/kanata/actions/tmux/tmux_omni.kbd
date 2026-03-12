@@ -27,6 +27,10 @@ tmux_action_omni+c                    $tmux_copy ;; prefix + [ (enter copy mode)
 ;; ___TO_SET___ tmux_action_omni+lsft+c            
 ;; omni + rsft + c
 ;; ___TO_SET___ tmux_action_omni+rsft+c            
+;; omni + c + left
+;; ___TO_SET___ tmux_action_omni+c+left            
+;; omni + c + right
+;; ___TO_SET___ tmux_action_omni+c+right           
 
 ;; omni + d
 ;; ___TO_SET___ tmux_action_omni+d                 
@@ -105,6 +109,10 @@ tmux_action_omni+v                    $tmux_paste ;; prefix + ] (paste buffer)  
 
 ;; omni + x
 ;; ___TO_SET___ tmux_action_omni+x                 
+;; omni + x + left
+;; ___TO_SET___ tmux_action_omni+x+left            
+;; omni + x + right
+;; ___TO_SET___ tmux_action_omni+x+right           
 
 ;; omni + y
 ;; ___TO_SET___ tmux_action_omni+y                 

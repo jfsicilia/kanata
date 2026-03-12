@@ -41,6 +41,10 @@ obsidian_action_omni+c                    $obsidian_copy
 ;; ___TO_SET___ obsidian_action_omni+lsft+c            
 ;; omni + rsft + c
 ;; ___TO_SET___ obsidian_action_omni+rsft+c            
+;; omni + c + left
+;; ___TO_SET___ obsidian_action_omni+c+left            
+;; omni + c + right
+;; ___TO_SET___ obsidian_action_omni+c+right           
 
 ;; omni + d
 obsidian_action_omni+d                    $obsidian_duplicate
@@ -120,6 +124,10 @@ obsidian_action_omni+v                    $obsidian_paste
 
 ;; omni + x
 obsidian_action_omni+x                    $obsidian_cut
+;; omni + x + left
+;; ___TO_SET___ obsidian_action_omni+x+left            
+;; omni + x + right
+;; ___TO_SET___ obsidian_action_omni+x+right           
 
 ;; omni + y
 ;; ___TO_SET___ obsidian_action_omni+y                 

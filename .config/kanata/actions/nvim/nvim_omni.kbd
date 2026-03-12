@@ -65,6 +65,10 @@ nvim_action_omni+c                 $nvim_copy
 ;; ___TO_SET___ nvim_action_omni+lsft+c            
 ;; omni + rsft + c
 ;; ___TO_SET___ nvim_action_omni+rsft+c            
+;; omni + c + left
+;; ___TO_SET___ nvim_action_omni+c+left            
+;; omni + c + right
+;; ___TO_SET___ nvim_action_omni+c+right           
 
 ;; omni + d
 ;; nvim_action_omni+d         `{esc}:saveas %:r_copy.%:e`
@@ -153,6 +157,10 @@ nvim_action_omni+w         $nvim_close_tab
 
 ;; omni + x
 nvim_action_omni+x                 $nvim_cut
+;; omni + x + left
+;; ___TO_SET___ nvim_action_omni+x+left            
+;; omni + x + right
+;; ___TO_SET___ nvim_action_omni+x+right           
 
 ;; omni + y
 nvim_action_omni+y                $nvim_action_modY_mod;           

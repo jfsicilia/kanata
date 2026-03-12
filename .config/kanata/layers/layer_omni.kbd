@@ -6,7 +6,7 @@
 
   a $action_omni+a
   b $action_omni+b
-  c $action_omni+c
+  c (t! th $action_omni+c (t! toggle_layer omni+c_layer))
   d $action_omni+d
   e $action_omni+e
   f $action_omni+f
@@ -27,7 +27,7 @@
   u $action_omni+u
   v $action_omni+v
   w $action_omni+w
-  x $action_omni+x
+  x (t! th $action_omni+x (t! toggle_layer omni+x_layer))
   y $action_omni+y
   z $action_omni+z
   ` $action_omni+`
@@ -79,4 +79,16 @@
   \ $action_omni+rsft+\
 
   t $action_omni+lsft+t
+)
+(deflayermap (omni+c_layer)
+  l      $action_omni+c+right
+  right  $action_omni+c+right
+  h      $action_omni+c+left
+  left   $action_omni+c+left
+)
+(deflayermap (omni+x_layer)
+  l      $action_omni+x+right
+  right  $action_omni+x+right
+  h      $action_omni+x+left
+  left   $action_omni+x+left
 )

@@ -26,4 +26,6 @@ folder_settings           (S-grv 10 / s e t t i n g s)
 folder_guacimara          (S-grv 10 / m n t / g u a c i m a r a)
 ;;folder_medano           `~/mnt/medano`
 folder_medano             (S-grv 10 / m n t / m e d a n o)
+;;folder_tmp              `~/tmp`
+folder_tmp                (S-grv 10 / t m p)
 )

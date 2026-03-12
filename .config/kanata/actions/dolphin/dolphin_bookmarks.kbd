@@ -25,7 +25,7 @@ dolphin_action_bookmarks_p            (t! dolphin_goto_folder $folder_personal)
 ;; ___TO_SET___ dolphin_action_bookmarks_q            
 ;; ___TO_SET___ dolphin_action_bookmarks_r            
 dolphin_action_bookmarks_s            (t! dolphin_goto_folder $folder_settings)
-;; ___TO_SET___ dolphin_action_bookmarks_t            
+dolphin_action_bookmarks_t            (t! dolphin_goto_folder $folder_tmp)
 ;; ___TO_SET___ dolphin_action_bookmarks_u            
 ;; ___TO_SET___ dolphin_action_bookmarks_v            
 dolphin_action_bookmarks_w            (t! dolphin_goto_folder $folder_workarea)
