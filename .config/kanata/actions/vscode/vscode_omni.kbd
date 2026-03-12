@@ -5,6 +5,9 @@
 ;; omni + spc
 ;; ___TO_SET___ vscode_action_omni+spc               
 
+;; omni + ent
+;; ___TO_SET___ vscode_action_omni+ent               
+
 ;; omni + a
 ;; ___TO_SET___ vscode_action_omni+a                 
 ;; omni + lsft + a
@@ -164,16 +167,16 @@
 ;; see mod/
 ;; ___TO_SET___ vscode_action_omni+/                 
 
-;; omni + !lmet
+;; omni + !lmet|desktops
 ;; ___TO_SET___ vscode_action_omni+!lmet             
-;; omni + !lalt
+;; omni + !lalt|panes
 ;; ___TO_SET___ vscode_action_omni+!lalt             
-;; omni + !lctl
+;; omni + !lctl|tabs
 ;; ___TO_SET___ vscode_action_omni+!lctl             
-;; omni + ralt
+;; omni + ralt|apps
 ;; ___TO_SET___ vscode_action_omni+ralt              
-;; omni + prnt
+;; omni + prnt|groups
 ;; ___TO_SET___ vscode_action_omni+prnt              
-;; omni + rctl
+;; omni + rctl|sessions
 ;; ___TO_SET___ vscode_action_omni+rctl              
 )

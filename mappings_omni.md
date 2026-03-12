@@ -8,9 +8,9 @@
 | D          | duplicate         | duplicate           |                 |                |                    |                            |
 | E          |                   | extract/compress    |                 |                |                    |                            |
 | F          | pgdn              | pgdn                |                 |                |                    |                            |
-| G          |                   | Go                  |                 |                |                    |                            |
+| G          |                   | go                  |                 |                |                    |                            |
 | H          | left              | left                |                 |                |                    |                            |
-| I          |                   | ~Info               |                 |                |                    |                            |
+| I          |                   | info                |                 |                |                    |                            |
 | J          | down              | down                |                 |                |                    |                            |
 | K          | up                | up                  |                 |                |                    |                            |
 | L          | right             | right               |                 |                |                    |                            |
@@ -32,27 +32,28 @@
 | .          | tags              | tags                |                 |                |                    |                            |
 | /          | help              | help                |                 |                |                    |                            |
 | ;          | comment           |                     |                 |                |                    |                            |
-| '          | ~filter           | ~filter             |                 |                |                    |                            |
+| '          | ~filter           | filter              |                 |                |                    |                            |
 | [          | back              | back                |                 |                |                    |                            |
 | ]          | forward           | forward             |                 |                |                    |                            |
 | \          | compare           | compare             | compare         |                |                    |                            |
 | `          |                   |                     |                 |                |                    |                            |
 | -          |                   |                     |                 |                |                    |                            |
 | =          | format            |                     |                 |                |                    |                            |
-| 1          | tab1              |                     |                 |                |                    |                            |
-| 2          | tab2              |                     |                 |                |                    |                            |
-| 3          | tab3              |                     |                 |                |                    |                            |
-| 4          | tab4              |                     |                 |                |                    |                            |
-| 5          | tab5              |                     |                 |                |                    |                            |
-| 6          | tab6              |                     |                 |                |                    |                            |
-| 7          | tab7              |                     |                 |                |                    |                            |
-| 8          | tab8              |                     |                 |                |                    |                            |
-| 9          | tab9              |                     |                 |                |                    |                            |
+| 1          | tab1              | tab1                |                 |                |                    |                            |
+| 2          | tab2              | tab2                |                 |                |                    |                            |
+| 3          | tab3              | tab3                |                 |                |                    |                            |
+| 4          | tab4              | tab4                |                 |                |                    |                            |
+| 5          | tab5              | tab5                |                 |                |                    |                            |
+| 6          | tab6              | tab6                |                 |                |                    |                            |
+| 7          | tab7              | tab7                |                 |                |                    |                            |
+| 8          | tab8              | tab8                |                 |                |                    |                            |
+| 9          | tab9              | tab9                |                 |                |                    |                            |
 | 0          |                   |                     |                 |                |                    |                            |
 | !lctl      |                   |                     |                 |                |                    |                            |
 | !lalt      |                   |                     |                 |                |                    |                            |
 | !lmet      |                   |                     |                 |                |                    |                            |
 | spc        |                   |                     |                 |                |                    |                            |
+| ent        |                   |                     |                 |                |                    |                            |
 | ralt       |                   |                     |                 |                |                    |                            |
 | prnt       |                   |                     |                 |                |                    |                            |
 | rctl       |                   |                     |                 |                |                    |                            |

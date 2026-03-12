@@ -11,7 +11,7 @@ desktops_toggle (multi (on-press toggle-virtualkey vk_desktops_toggle)
 )
   ;; == workspaces =====================================================
   ;; workspaces + spc
-  action_desktops       XX
+  action_desktops+spc  XX
 
   ;; workspaces + j 
   action_screens_next  (t! unmod_all M-S-down)
@@ -23,7 +23,7 @@ desktops_toggle (multi (on-press toggle-virtualkey vk_desktops_toggle)
   action_desktops_prev (t! unmod_all M-C-left)
 
   ;; workspaces + toggle
-  action_desktops_toggle $desktops_toggle
+  action_desktops+toggle $desktops_toggle
 
   ;; == workspaces + move ===============================================
   ;; workspaces + move + j 

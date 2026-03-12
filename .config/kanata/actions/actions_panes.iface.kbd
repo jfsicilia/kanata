@@ -3,7 +3,7 @@
 
   ;; == panes =============================================================
   ;; panes + spc
-  action_panes         (t! unmod_all (switch ;;@iface@ 
+  action_panes+spc         (t! unmod_all (switch ;;@iface@ 
     () XX break
   ))
 

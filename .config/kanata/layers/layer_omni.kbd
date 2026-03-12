@@ -3,6 +3,7 @@
   (t! map_layers _ "omni" (lsft rsft))
 
   spc  $action_omni+spc
+  ent  $action_omni+ent
 
   a $action_omni+a
   b $action_omni+b
@@ -54,7 +55,12 @@
   9 $action_omni+9
   0 $action_omni+0
 
-
+  $!lmet|desktops $action_omni+!lmet 
+  $!lalt|panes    $action_omni+!lalt
+  $!lctl|tabs     $action_omni+!lctl
+   $ralt|apps     $action_omni+ralt
+   $prnt|groups   $action_omni+prnt
+   $rctl|sessions $action_omni+rctl
 )
 
 (deflayermap (omni+lsft_layer)

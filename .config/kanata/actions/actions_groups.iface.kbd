@@ -1,19 +1,19 @@
 (defvar
   ;; @start@ ====== DON'T REMOVE THIS LINE =================================
 
-  ;; == !tab/groups =====================================================
+  ;; == !tabs/groups =====================================================
 
-  ;; !tab + spc
-  action_!tabs (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_nvim)) $nvim_action_!tabs break
-    ((input virtual vk_chrome)) $chrome_action_!tabs break
-    ((input virtual vk_obsidian)) $obsidian_action_!tabs break
-    ((input virtual vk_tmux)) $tmux_action_!tabs break
-    ((input virtual vk_zellij)) $zellij_action_!tabs break
+  ;; !tabs + spc
+  action_!tabs+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_nvim)) $nvim_action_!tabs+spc break
+    ((input virtual vk_chrome)) $chrome_action_!tabs+spc break
+    ((input virtual vk_obsidian)) $obsidian_action_!tabs+spc break
+    ((input virtual vk_tmux)) $tmux_action_!tabs+spc break
+    ((input virtual vk_zellij)) $zellij_action_!tabs+spc break
     () XX break
   ))
 
-  ;; !tab + l | !tab + right  
+  ;; !tabs + l | !tabs + right  
   ~action_!tabs_next (t! unmod_all (switch ;;@iface@
     ((input virtual vk_zellij)) $zellij_action_!tabs_next break
     ((input virtual vk_tmux)) $tmux_action_!tabs_next break
@@ -22,7 +22,7 @@
     ((input virtual vk_nvim)) $nvim_action_!tabs_next break
     () C-tab break
   )) 
-  ;; !tab + h | !tab + left  
+  ;; !tabs + h | !tabs + left  
   ~action_!tabs_prev (t! unmod_all (switch ;;@iface@
     ((input virtual vk_zellij)) $zellij_action_!tabs_prev break
     ((input virtual vk_tmux)) $tmux_action_!tabs_prev break
@@ -31,23 +31,23 @@
     ((input virtual vk_nvim)) $nvim_action_!tabs_prev break
     () C-S-tab break
   ))
-  ;; !tab + j | !tab + down
+  ;; !tabs + j | !tabs + down
   ~action_!tabs_first  (t! unmod_all (switch ;;@iface@
     () XX break
   ))
-  ;; !tab + k | !tab + up
+  ;; !tabs + k | !tabs + up
   ~action_!tabs_last  (t! unmod_all (switch ;;@iface@
     () XX break
   ))
 
-  ;; !tab + t 
+  ;; !tabs + t 
   ~action_!tabs_new (t! unmod_all (switch ;;@iface@
     ((input virtual vk_tmux)) $tmux_action_!tabs_new break
     ((input virtual vk_obsidian)) $obsidian_action_!tabs_new break
     ((input virtual vk_chrome)) $chrome_action_!tabs_new break
     () XX break
   ))
-  ;; !tab + w
+  ;; !tabs + w
   ~action_!tabs_close (t! unmod_all (switch ;;@iface@
     ((input virtual vk_tmux)) $tmux_action_!tabs_close break
     ((input virtual vk_obsidian)) $obsidian_action_!tabs_close break
@@ -55,15 +55,15 @@
     ((input virtual vk_nvim)) $nvim_action_!tabs_close break
     () XX break
   ))
-  ;; !tab + lsft + t 
+  ;; !tabs + lsft + t 
   ~action_!tabs_undo_close (t! unmod_all (switch ;;@iface@
     ((input virtual vk_obsidian)) $obsidian_action_!tabs_undo_close break
     ((input virtual vk_chrome)) $chrome_action_!tabs_undo_close break
     () XX break
   ))
 
-  ;; == !tab go by number ==================================================
-  ;; !tab + 1
+  ;; == !tabs go by number ==================================================
+  ;; !tabs + 1
   ~action_!tabs_goto_1 (t! unmod_all (switch ;;@iface@
     ((input virtual vk_tmux)) $tmux_action_!tabs_goto_1 break
     ((input virtual vk_obsidian)) $obsidian_action_!tabs_goto_1 break
@@ -71,7 +71,7 @@
     ((input virtual vk_nvim)) $nvim_action_!tabs_goto_1 break
     () XX break
   ))
-  ;; !tab + 2
+  ;; !tabs + 2
   ~action_!tabs_goto_2 (t! unmod_all (switch ;;@iface@
     ((input virtual vk_tmux)) $tmux_action_!tabs_goto_2 break
     ((input virtual vk_obsidian)) $obsidian_action_!tabs_goto_2 break
@@ -79,7 +79,7 @@
     ((input virtual vk_nvim)) $nvim_action_!tabs_goto_2 break
     () XX break
   ))
-  ;; !tab + 3
+  ;; !tabs + 3
   ~action_!tabs_goto_3 (t! unmod_all (switch ;;@iface@
     ((input virtual vk_tmux)) $tmux_action_!tabs_goto_3 break
     ((input virtual vk_obsidian)) $obsidian_action_!tabs_goto_3 break
@@ -87,7 +87,7 @@
     ((input virtual vk_nvim)) $nvim_action_!tabs_goto_3 break
     () XX break
   ))
-  ;; !tab + 4
+  ;; !tabs + 4
   ~action_!tabs_goto_4 (t! unmod_all (switch ;;@iface@
     ((input virtual vk_tmux)) $tmux_action_!tabs_goto_4 break
     ((input virtual vk_obsidian)) $obsidian_action_!tabs_goto_4 break
@@ -95,7 +95,7 @@
     ((input virtual vk_nvim)) $nvim_action_!tabs_goto_4 break
     () XX break
   ))
-  ;; !tab + 5
+  ;; !tabs + 5
   ~action_!tabs_goto_5 (t! unmod_all (switch ;;@iface@
     ((input virtual vk_tmux)) $tmux_action_!tabs_goto_5 break
     ((input virtual vk_obsidian)) $obsidian_action_!tabs_goto_5 break
@@ -103,7 +103,7 @@
     ((input virtual vk_nvim)) $nvim_action_!tabs_goto_5 break
     () XX break
   ))
-  ;; !tab + 6
+  ;; !tabs + 6
   ~action_!tabs_goto_6 (t! unmod_all (switch ;;@iface@
     ((input virtual vk_tmux)) $tmux_action_!tabs_goto_6 break
     ((input virtual vk_obsidian)) $obsidian_action_!tabs_goto_6 break
@@ -111,7 +111,7 @@
     ((input virtual vk_nvim)) $nvim_action_!tabs_goto_6 break
     () XX break
   ))
-  ;; !tab + 7
+  ;; !tabs + 7
   ~action_!tabs_goto_7 (t! unmod_all (switch ;;@iface@
     ((input virtual vk_tmux)) $tmux_action_!tabs_goto_7 break
     ((input virtual vk_obsidian)) $obsidian_action_!tabs_goto_7 break
@@ -119,7 +119,7 @@
     ((input virtual vk_nvim)) $nvim_action_!tabs_goto_7 break
     () XX break
   ))
-  ;; !tab + 8
+  ;; !tabs + 8
   ~action_!tabs_goto_8 (t! unmod_all (switch ;;@iface@
     ((input virtual vk_tmux)) $tmux_action_!tabs_goto_8 break
     ((input virtual vk_obsidian)) $obsidian_action_!tabs_goto_8 break
@@ -127,7 +127,7 @@
     ((input virtual vk_nvim)) $nvim_action_!tabs_goto_8 break
     () XX break
   ))
-  ;; !tab + 9
+  ;; !tabs + 9
   ~action_!tabs_goto_last (t! unmod_all (switch ;;@iface@
     ((input virtual vk_tmux)) $tmux_action_!tabs_goto_last break
     ((input virtual vk_obsidian)) $obsidian_action_!tabs_goto_last break
@@ -136,33 +136,33 @@
     () XX break
   ))
 
-  ;; == !tab + toggle =====================================================
-  ;; !tab + toggle
-  ~action_!tabs_toggle (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_zellij)) $zellij_action_!tabs_toggle break
-    ((input virtual vk_tmux)) $tmux_action_!tabs_toggle break
-    ((input virtual vk_obsidian)) $obsidian_action_!tabs_toggle break
-    ((input virtual vk_chrome)) $chrome_action_!tabs_toggle break
-    ((input virtual vk_nvim)) $nvim_action_!tabs_toggle break
+  ;; == !tabs + toggle =====================================================
+  ;; !tabs + toggle
+  ~action_!tabs+toggle (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_zellij)) $zellij_action_!tabs+toggle break
+    ((input virtual vk_tmux)) $tmux_action_!tabs+toggle break
+    ((input virtual vk_obsidian)) $obsidian_action_!tabs+toggle break
+    ((input virtual vk_chrome)) $chrome_action_!tabs+toggle break
+    ((input virtual vk_nvim)) $nvim_action_!tabs+toggle break
     () XX break
   ))
 
-  ;; == !tab + move =====================================================
-  ;; !tab + move + h | !tab + move + left
+  ;; == !tabs + move =====================================================
+  ;; !tabs + move + h | !tabs + move + left
   ~action_!tabs_move_left (t! unmod_all (switch ;;@iface@
     ((input virtual vk_tmux)) $tmux_action_!tabs_move_left break
     () XX break
   ))
-  ;; !tab + move + l | !tab + move + right
+  ;; !tabs + move + l | !tabs + move + right
   ~action_!tabs_move_right (t! unmod_all (switch ;;@iface@
     ((input virtual vk_tmux)) $tmux_action_!tabs_move_right break
     () XX break
   ))
-  ;; !tab + move + k | !tab + move + up
+  ;; !tabs + move + k | !tabs + move + up
   ~action_!tabs_move_first (t! unmod_all (switch ;;@iface@
     () XX break
   ))
-  ;; !tab + move + j | !tab + move + down
+  ;; !tabs + move + j | !tabs + move + down
   ~action_!tabs_move_last (t! unmod_all (switch ;;@iface@
     () XX break
   ))

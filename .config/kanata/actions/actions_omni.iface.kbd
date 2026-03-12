@@ -93,6 +93,12 @@
     () spc break
   ))
 
+  ;; omni + ent
+  action_omni+ent (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+ent break
+    () XX break
+  ))
+
   ;; omni + a
   action_omni+a (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+a break
@@ -358,7 +364,6 @@
   
   ;; omni + y
   action_omni+y (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+y break
     ((input virtual vk_foot)) $foot_action_omni+y break
     ((input virtual vk_nvim)) $nvim_action_omni+y break
     () XX break
@@ -485,6 +490,7 @@
   ))
   ;; omni + '
   action_omni+' (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+' break
     () XX break
   ))
 
@@ -497,6 +503,7 @@
   ;; omni + .
   ;; see mod.
   action_omni+. (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+. break
     ((input virtual vk_nvim)) $nvim_action_omni+. break
     () $action_mod. break
   ))
@@ -507,29 +514,29 @@
     () $action_mod/ break
   )) ;;""
 
-  ;; omni + !lmet
+  ;; omni + !lmet|desktops
   action_omni+!lmet (t! unmod_all (switch ;;@iface@
-    () XX break
+    () $action_desktops+toggle break
   ))
-  ;; omni + !lalt
+  ;; omni + !lalt|panes
   action_omni+!lalt (t! unmod_all (switch ;;@iface@
-    () XX break
+    () $action_panes+toggle break
   ))
-  ;; omni + !lctl
+  ;; omni + !lctl|tabs
   action_omni+!lctl (t! unmod_all (switch ;;@iface@
-    () XX break
+    () $action_tabs+toggle break
   ))
-  ;; omni + ralt 
+  ;; omni + ralt|apps
   action_omni+ralt (t! unmod_all (switch ;;@iface@
-    () XX break
+    () $action_apps+toggle break
   ))
-  ;; omni + prnt
+  ;; omni + prnt|groups
   action_omni+prnt (t! unmod_all (switch ;;@iface@
-    () XX break
+    () $~action_!tabs+toggle break
   ))
-  ;; omni + rctl
+  ;; omni + rctl|sessions
   action_omni+rctl (t! unmod_all (switch ;;@iface@
-    () XX break
+    () $action_sessions+toggle break
   ))
 
 )

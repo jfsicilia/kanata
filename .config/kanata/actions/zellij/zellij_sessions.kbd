@@ -2,7 +2,7 @@
 
 ;; == sessions =====================================================
 ;; sessions + spc
-;; ___TO_SET___ zellij_action_sessions               
+;; ___TO_SET___ zellij_action_sessions+spc           
 ;; sessions + toggle
-;; ___TO_SET___ zellij_action_sessions_toggle        
+;; ___TO_SET___ zellij_action_sessions+toggle        
 )

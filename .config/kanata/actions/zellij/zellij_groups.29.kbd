@@ -1,62 +1,57 @@
 (defvar
 
-;; == !tab/groups =====================================================
+;; == !tabs/groups =====================================================
 
-;; !tab + spc
-;; #!tab + spc
-zellij_action_!tabs                  $zellij_action_tabs                  
+;; !tabs + spc
+zellij_action_!tabs+spc                  $zellij_action_tabs+spc
 
-;; !tab + l | !tab + right
-;; #!tab + l | #!tab + right
+;; !tabs + l | !tabs + right
 zellij_action_!tabs_next             $zellij_action_tabs_next             
-;; !tab + h | !tab + left
-;; #!tab + h | #!tab + left
+;; !tabs + h | !tabs + left
 zellij_action_!tabs_prev             $zellij_action_tabs_prev             
-;; !tab + j | !tab + down
+;; !tabs + j | !tabs + down
 ;; ___TO_SET___ zellij_action_!tabs_first            
-;; !tab + k | !tab + up
+;; !tabs + k | !tabs + up
 ;; ___TO_SET___ zellij_action_!tabs_last             
 
-;; !tab + t
+;; !tabs + t
 ;; ___TO_SET___ zellij_action_!tabs_new              
-;; !tab + w
+;; !tabs + w
 ;; ___TO_SET___ zellij_action_!tabs_close            
-;; !tab + lsft + t
+;; !tabs + lsft + t
 ;; ___TO_SET___ zellij_action_!tabs_undo_close       
 
-;; == !tab go by number ==================================================
-;; !tab + 1
+;; == !tabs go by number ==================================================
+;; !tabs + 1
 ;; ___TO_SET___ zellij_action_!tabs_goto_1           
-;; !tab + 2
+;; !tabs + 2
 ;; ___TO_SET___ zellij_action_!tabs_goto_2           
-;; !tab + 3
+;; !tabs + 3
 ;; ___TO_SET___ zellij_action_!tabs_goto_3           
-;; !tab + 4
+;; !tabs + 4
 ;; ___TO_SET___ zellij_action_!tabs_goto_4           
-;; !tab + 5
+;; !tabs + 5
 ;; ___TO_SET___ zellij_action_!tabs_goto_5           
-;; !tab + 6
+;; !tabs + 6
 ;; ___TO_SET___ zellij_action_!tabs_goto_6           
-;; !tab + 7
+;; !tabs + 7
 ;; ___TO_SET___ zellij_action_!tabs_goto_7           
-;; !tab + 8
+;; !tabs + 8
 ;; ___TO_SET___ zellij_action_!tabs_goto_8           
-;; !tab + 9
+;; !tabs + 9
 ;; ___TO_SET___ zellij_action_!tabs_goto_last        
 
-;; == !tab + toggle =====================================================
-;; !tab + toggle
-;; == #!tab + #toggle =====================================================
-;; #!tab + #toggle
-zellij_action_!tabs_toggle           $zellij_action_tabs_toggle           
+;; == !tabs + toggle =====================================================
+;; !tabs + toggle
+zellij_action_!tabs+toggle           $zellij_action_tabs+toggle           
 
-;; == !tab + move =====================================================
-;; !tab + move + h | !tab + move + left
+;; == !tabs + move =====================================================
+;; !tabs + move + h | !tabs + move + left
 ;; ___TO_SET___ zellij_action_!tabs_move_left        
-;; !tab + move + l | !tab + move + right
+;; !tabs + move + l | !tabs + move + right
 ;; ___TO_SET___ zellij_action_!tabs_move_right       
-;; !tab + move + k | !tab + move + up
+;; !tabs + move + k | !tabs + move + up
 ;; ___TO_SET___ zellij_action_!tabs_move_first       
-;; !tab + move + j | !tab + move + down
+;; !tabs + move + j | !tabs + move + down
 ;; ___TO_SET___ zellij_action_!tabs_move_last        
 )

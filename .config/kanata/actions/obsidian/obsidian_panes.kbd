@@ -5,7 +5,7 @@ obsidian_pane_right      A-right
 obsidian_pane_above      A-up
 obsidian_pane_below      A-down
 obsidian_pane_h_split    A--
-obsidian_pane_v_split    A-\
+obsidian_pane_v_split    A-\  
 obsidian_pane_close      A-w
 obsidian_pane_toggle     A-q
 obsidian_file_explorer   A-e
@@ -25,11 +25,11 @@ obsidian_daily           A-d
 obsidian_daily_shift     A-S-d
 obsidian_vertical_tabs   (macro A-v m)
 obsidian_bookmarks       A-b
-obsidian_main            A-m
+obsidian_main            A-m   ;;""
 
 ;; == panes =============================================================
 ;; panes + spc
-;; ___TO_SET___ obsidian_action_panes                  
+;; ___TO_SET___ obsidian_action_panes+spc              
 
 ;; panes + ent
 obsidian_action_panes+max                       $obsidian_pane_maximize

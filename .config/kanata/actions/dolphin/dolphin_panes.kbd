@@ -5,7 +5,7 @@ dolphin_pane_toggle                    tab
 
 ;; == panes =============================================================
 ;; panes + spc
-;; ___TO_SET___ dolphin_action_panes                  
+;; ___TO_SET___ dolphin_action_panes+spc              
 
 ;; panes + ent
 dolphin_action_panes+max               $dolphin_pane_split

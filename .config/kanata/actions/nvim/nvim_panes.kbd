@@ -15,7 +15,7 @@ nvim_file_explorer       (macro esc S-; S-n e o t r e e spc t o g g l e ent)
 
 ;; == panes =============================================================
 ;; panes + spc
-;; ___TO_SET___ nvim_action_panes                  
+;; ___TO_SET___ nvim_action_panes+spc              
 
 ;; panes + ent
 ;; nvim_action_panes+max               `{esc}:PaneMaxToggle{ret}`

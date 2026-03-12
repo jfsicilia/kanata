@@ -6,7 +6,7 @@
 
   ;; == GUI ======================
   $move   (t! th _ $toggle_workspaces+move_layer)
-  $toggle $action_desktops_toggle
+  $toggle $action_desktops+toggle
 
   ;; == SFT ======================
   $d|modD_&_lsft     (t! th _                    $toggle_workspaces+lsft_layer)

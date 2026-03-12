@@ -14,6 +14,9 @@ foot_compare_dirs        (macro esc d d i n v i m spc - c spc S-' S-d i r S-d i 
 ;; omni + spc
 ;; ___TO_SET___ foot_action_omni+spc               
 
+;; omni + ent
+;; ___TO_SET___ foot_action_omni+ent               
+
 ;; omni + a
 ;; ___TO_SET___ foot_action_omni+a                 
 ;; omni + lsft + a
@@ -178,16 +181,16 @@ foot_action_omni+lsft+\           $foot_compare_dirs
 ;; see mod/
 ;; ___TO_SET___ foot_action_omni+/                 
 
-;; omni + !lmet
+;; omni + !lmet|desktops
 ;; ___TO_SET___ foot_action_omni+!lmet             
-;; omni + !lalt
+;; omni + !lalt|panes
 ;; ___TO_SET___ foot_action_omni+!lalt             
-;; omni + !lctl
+;; omni + !lctl|tabs
 ;; ___TO_SET___ foot_action_omni+!lctl             
-;; omni + ralt
+;; omni + ralt|apps
 ;; ___TO_SET___ foot_action_omni+ralt              
-;; omni + prnt
+;; omni + prnt|groups
 ;; ___TO_SET___ foot_action_omni+prnt              
-;; omni + rctl
+;; omni + rctl|sessions
 ;; ___TO_SET___ foot_action_omni+rctl              
 )

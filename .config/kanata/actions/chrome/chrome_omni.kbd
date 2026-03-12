@@ -9,6 +9,9 @@ chrome_back              A-left
 ;; omni + spc
 ;; ___TO_SET___ chrome_action_omni+spc               
 
+;; omni + ent
+;; ___TO_SET___ chrome_action_omni+ent               
+
 ;; omni + a
 ;; ___TO_SET___ chrome_action_omni+a                 
 ;; omni + lsft + a
@@ -170,16 +173,16 @@ chrome_action_omni+[                      $chrome_back
 ;; see mod/
 ;; ___TO_SET___ chrome_action_omni+/                 
 
-;; omni + !lmet
+;; omni + !lmet|desktops
 ;; ___TO_SET___ chrome_action_omni+!lmet             
-;; omni + !lalt
+;; omni + !lalt|panes
 ;; ___TO_SET___ chrome_action_omni+!lalt             
-;; omni + !lctl
+;; omni + !lctl|tabs
 ;; ___TO_SET___ chrome_action_omni+!lctl             
-;; omni + ralt
+;; omni + ralt|apps
 ;; ___TO_SET___ chrome_action_omni+ralt              
-;; omni + prnt
+;; omni + prnt|groups
 ;; ___TO_SET___ chrome_action_omni+prnt              
-;; omni + rctl
+;; omni + rctl|sessions
 ;; ___TO_SET___ chrome_action_omni+rctl              
 )

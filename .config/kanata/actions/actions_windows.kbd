@@ -1,7 +1,7 @@
 (defvar
   ;; == windows ===========================================================
   ;; windows + spc
-  action_windows         (t! unmod_all M-m)
+  action_windows+spc    (t! unmod_all M-m)
   ;; windows + ent
   action_windows_max    (t! unmod_all M-m)
   ;; windows + lsft + ent | windows + rsft + ent

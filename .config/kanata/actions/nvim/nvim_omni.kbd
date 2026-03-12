@@ -49,6 +49,9 @@ nvim_tab_9               (macro esc S-; l u a spc r e q u i r e S-9 ' b u f f e 
 ;; omni + spc
 nvim_action_omni+spc            $nvim_action_seek_and_select
 
+;; omni + ent
+;; ___TO_SET___ nvim_action_omni+ent               
+
 ;; omni + a
 nvim_action_omni+a                     $nvim_select_all
 ;; omni + lsft + a
@@ -219,16 +222,16 @@ nvim_action_omni+.               $nvim_action_mod.
 ;; see mod/
 nvim_action_omni+/              $nvim_action_mod/
 
-;; omni + !lmet
+;; omni + !lmet|desktops
 ;; ___TO_SET___ nvim_action_omni+!lmet             
-;; omni + !lalt
+;; omni + !lalt|panes
 ;; ___TO_SET___ nvim_action_omni+!lalt             
-;; omni + !lctl
+;; omni + !lctl|tabs
 ;; ___TO_SET___ nvim_action_omni+!lctl             
-;; omni + ralt
+;; omni + ralt|apps
 ;; ___TO_SET___ nvim_action_omni+ralt              
-;; omni + prnt
+;; omni + prnt|groups
 ;; ___TO_SET___ nvim_action_omni+prnt              
-;; omni + rctl
+;; omni + rctl|sessions
 ;; ___TO_SET___ nvim_action_omni+rctl              
 )

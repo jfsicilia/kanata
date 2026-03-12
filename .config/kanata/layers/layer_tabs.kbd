@@ -1,6 +1,6 @@
 ;; "" TAB LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (tabs_layer)
-  spc   $action_tabs
+  spc   $action_tabs+spc
 
   h     $action_tabs_prev
   left  $action_tabs_prev
@@ -31,7 +31,7 @@
 
   ;; == Gui Actions ========================
   $move   (t! th _ $toggle_tabs+move_layer)
-  $toggle $action_tabs_toggle
+  $toggle $action_tabs+toggle
 )
 (deflayermap (tabs+move_layer)
   h     $action_tabs_move_left

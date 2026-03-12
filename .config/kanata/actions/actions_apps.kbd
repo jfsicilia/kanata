@@ -8,7 +8,7 @@
     () (cmd recent_files.sh) break
   ))
 
-  action_apps_toggle (t! unmod_all (switch
+  action_apps+toggle (t! unmod_all (switch
     () M-tab break
   ))
 

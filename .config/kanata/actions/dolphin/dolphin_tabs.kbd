@@ -1,57 +1,57 @@
 (defvar
 
-;; == tab ===============================================================
+;; == tabs ===============================================================
 
-;; tab + spc
-;; ___TO_SET___ dolphin_action_tabs                   
+;; tabs + spc
+;; ___TO_SET___ dolphin_action_tabs+spc               
 
-;; tab + l | tab + right | lsft + rsft | 2x rsft | !lmet + tab
+;; tabs + l | tabs + right | lsft + rsft | 2x rsft | !lmet + tab
 ;; ___TO_SET___ dolphin_action_tabs_next              
-;; tab + h | tab + left | rsft + lsft | 2x lsft | !lmet + sft + tab
+;; tabs + h | tabs + left | rsft + lsft | 2x lsft | !lmet + sft + tab
 ;; ___TO_SET___ dolphin_action_tabs_prev              
-;; tab + j | tab + down
+;; tabs + j | tabs + down
 ;; ___TO_SET___ dolphin_action_tabs_first             
-;; tab + k | tab + up
+;; tabs + k | tabs + up
 ;; ___TO_SET___ dolphin_action_tabs_last              
 
-;; tab + t
+;; tabs + t
 ;; ___TO_SET___ dolphin_action_tabs_new               
-;; tab + w
+;; tabs + w
 ;; ___TO_SET___ dolphin_action_tabs_close             
-;; tab + lsft + t
+;; tabs + lsft + t
 ;; ___TO_SET___ dolphin_action_tabs_undo_close        
 
-;; == tab go by number ==================================================
-;; tab + 1
+;; == tabs go by number ==================================================
+;; tabs + 1
 dolphin_action_tabs_goto_1             A-1
-;; tab + 2
+;; tabs + 2
 dolphin_action_tabs_goto_2             A-2
-;; tab + 3
+;; tabs + 3
 dolphin_action_tabs_goto_3             A-3
-;; tab + 4
+;; tabs + 4
 dolphin_action_tabs_goto_4             A-4
-;; tab + 5
+;; tabs + 5
 dolphin_action_tabs_goto_5             A-5
-;; tab + 6
+;; tabs + 6
 dolphin_action_tabs_goto_6             A-6
-;; tab + 7
+;; tabs + 7
 dolphin_action_tabs_goto_7             A-7
-;; tab + 8
+;; tabs + 8
 dolphin_action_tabs_goto_8             A-8
-;; tab + 9
+;; tabs + 9
 dolphin_action_tabs_goto_last          A-9
 
-;; == tab + toggle =====================================================
-;; tab + toggle | 2x !lctl
-dolphin_action_tabs_toggle             $dolphin_toggle_tab
+;; == tabs + toggle =====================================================
+;; tabs + toggle | 2x !lctl
+dolphin_action_tabs+toggle             $dolphin_toggle_tab
 
-;; == tab + move =====================================================
-;; tab + move + h | tab + move + left
+;; == tabs + move =====================================================
+;; tabs + move + h | tabs + move + left
 ;; ___TO_SET___ dolphin_action_tabs_move_left         
-;; tab + move + l | tab + move + right
+;; tabs + move + l | tabs + move + right
 ;; ___TO_SET___ dolphin_action_tabs_move_right        
-;; tab + move + k | tab + move + up
+;; tabs + move + k | tabs + move + up
 ;; ___TO_SET___ dolphin_action_tabs_move_first        
-;; tab + move + j | tab + move + down
+;; tabs + move + j | tabs + move + down
 ;; ___TO_SET___ dolphin_action_tabs_move_last         
 )

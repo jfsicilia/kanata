@@ -206,6 +206,14 @@
    prnt|bookm        prnt       ;; Physical prnt key will be used for bookmark layer when hold.
    rctl|opts         rctl       ;; Physical rctl key will be used for option layer when hold.    
 
+  ;; Omni + modifiers row
+  !lmet|desktops     $!lmet
+  !lalt|panes        $!lalt
+  !lctl|tabs         $!lctl
+ ;;ralt|apps         ralt
+   prnt|groups       prnt
+   rctl|sessions     rctl
+
   ;; Standard modifiers
   <lctl              f          
   >lctl              j         
@@ -344,13 +352,13 @@
   rsft                     (t!      th (t! 2x $action_tabs_next)                 $toggle_rsft_layer)
 
   ;; Modifiers row.
-  $!lmet|replace           (t!      th (t! 2x $action_desktops_toggle)           $toggle_replace_&_!lmet_layer)
+  $!lmet|replace           (t!      th (t! 2x $action_desktops+toggle)           $toggle_replace_&_!lmet_layer)
   $!lalt|search            (t!      th (t! 2x $action_panes+toggle)              $toggle_search_&_!lalt_layer)
-  $!lctl|seek_sel   (multi (t!      th (t! 2x $action_tabs_toggle)               $toggle_seek_n_select_&_!lctl_layer) (on-release release-vkey vk_lalt))
+  $!lctl|seek_sel   (multi (t!      th (t! 2x $action_tabs+toggle)               $toggle_seek_n_select_&_!lctl_layer) (on-release release-vkey vk_lalt))
     $spc|num/sym           (t! fast_th spc                                       $toggle_num/sym_layer)
-   $ralt|apps              (t!      th (t! 2x $action_apps_toggle)               $toggle_apps_layer)
-   $prnt|bookm             (t!      th (t! 2x $action_sessions_toggle)           $toggle_bookmarks_layer)
-   $rctl|opts              (t!      th (t! 2x $~action_!tabs_toggle)             $toggle_opts_layer)   
+   $ralt|apps              (t!      th (t! 2x $action_apps+toggle)               $toggle_apps_layer)
+   $prnt|bookm             (t!      th (t! 2x $action_sessions+toggle)           $toggle_bookmarks_layer)
+   $rctl|opts              (t!      th (t! 2x $~action_!tabs+toggle)             $toggle_opts_layer)   
 )
 
 (deflayermap (default)

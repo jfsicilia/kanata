@@ -12,7 +12,7 @@ tmux_pane_toggle         (macro $tmux_prefix ;)
 
 ;; == panes =============================================================
 ;; panes + spc
-;; ___TO_SET___ tmux_action_panes                  
+;; ___TO_SET___ tmux_action_panes+spc              
 
 ;; panes + ent
 ;; #panes + ent
