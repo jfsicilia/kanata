@@ -461,17 +461,20 @@
 
   ;; omni + \
   action_omni+\ (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+\ break
     ((input virtual vk_foot)) $foot_action_omni+\ break
     ((input virtual vk_nvim)) $nvim_action_omni+\ break
     () XX break
   )) ;;""
   ;; omni + lsft + \
   action_omni+lsft+\ (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+lsft+\ break
     ((input virtual vk_foot)) $foot_action_omni+lsft+\ break
     () XX break
   )) ;;""
   ;; omni + rsft + \
   action_omni+rsft+\ (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+rsft+\ break
     () XX break
   )) ;;""
 
