@@ -6,8 +6,24 @@
 folder_home               (S-grv 10)
 ;;folder_inbox            `~/inbox`
 folder_inbox              (S-grv 10 / i n b o x)
+;;folder_scans            `~/inbox/scans`
+folder_scans              (S-grv 10 / i n b o x / s c a n s)
+;;folder_screenshots      `~/inbox/screenshots`
+folder_screenshots        (S-grv 10 / i n b o x / s c r e e n s h o t s)
 ;;folder_downloads        `~/inbox/downloads`
 folder_downloads          (S-grv 10 / i n b o x / d o w n l o a d s)
+;;folder_photo            `~/media/image/photo`
+folder_photo              (S-grv 10 / m e d i a / i m a g e / p h o t o)
+;;folder_bookcase         `~/media/bookcase/`
+folder_bookcase           (S-grv 10 / m e d i a / b o o k c a s e)
+;;folder_personal         `~/personal`
+folder_personal           (S-grv 10 / p e r s o n a l)
 ;;folder_workarea         `~/workarea`
 folder_workarea           (S-grv 10 / w o r k a r e a)
+;;folder_settings         `~/settings`
+folder_settings           (S-grv 10 / s e t t i n g s)
+;;folder_guacimara        `~/mnt/guacimara`
+folder_guacimara          (S-grv 10 / m n t / g u a c i m a r a)
+;;folder_medano           `~/mnt/medano`
+folder_medano             (S-grv 10 / m n t / m e d a n o)
 )

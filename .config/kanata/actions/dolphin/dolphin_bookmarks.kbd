@@ -1,31 +1,34 @@
+(deftemplate dolphin_goto_folder (folder)
+  (macro C-l $folder ent)
+)
 (defvar
 
 ;; == bookmarks =========================================================
 ;; bookmarks + spc
 ;; ___TO_SET___ dolphin_action_bookmarks              
 ;; ___TO_SET___ dolphin_action_bookmarks_a            
-;; ___TO_SET___ dolphin_action_bookmarks_b            
-;; ___TO_SET___ dolphin_action_bookmarks_c            
-dolphin_action_bookmarks_d            (t! goto_folder $folder_downloads)
+dolphin_action_bookmarks_b            (t! dolphin_goto_folder $folder_bookcase)
+dolphin_action_bookmarks_c            (t! dolphin_goto_folder $folder_scans)
+dolphin_action_bookmarks_d            (t! dolphin_goto_folder $folder_downloads)
 ;; ___TO_SET___ dolphin_action_bookmarks_e            
-;; ___TO_SET___ dolphin_action_bookmarks_f            
-;; ___TO_SET___ dolphin_action_bookmarks_g            
-dolphin_action_bookmarks_h            (t! goto_folder $folder_home)
-dolphin_action_bookmarks_i            (t! goto_folder $folder_inbox)
+dolphin_action_bookmarks_f            (t! dolphin_goto_folder $folder_photo)
+dolphin_action_bookmarks_g            (t! dolphin_goto_folder $folder_guacimara)
+dolphin_action_bookmarks_h            (t! dolphin_goto_folder $folder_home)
+dolphin_action_bookmarks_i            (t! dolphin_goto_folder $folder_inbox)
 ;; ___TO_SET___ dolphin_action_bookmarks_j            
 ;; ___TO_SET___ dolphin_action_bookmarks_k            
 ;; ___TO_SET___ dolphin_action_bookmarks_l            
-;; ___TO_SET___ dolphin_action_bookmarks_m            
+dolphin_action_bookmarks_m            (t! dolphin_goto_folder $folder_medano)
 ;; ___TO_SET___ dolphin_action_bookmarks_n            
 ;; ___TO_SET___ dolphin_action_bookmarks_o            
-;; ___TO_SET___ dolphin_action_bookmarks_p            
+dolphin_action_bookmarks_p            (t! dolphin_goto_folder $folder_personal)
 ;; ___TO_SET___ dolphin_action_bookmarks_q            
 ;; ___TO_SET___ dolphin_action_bookmarks_r            
-;; ___TO_SET___ dolphin_action_bookmarks_s            
+dolphin_action_bookmarks_s            (t! dolphin_goto_folder $folder_settings)
 ;; ___TO_SET___ dolphin_action_bookmarks_t            
 ;; ___TO_SET___ dolphin_action_bookmarks_u            
 ;; ___TO_SET___ dolphin_action_bookmarks_v            
-dolphin_action_bookmarks_w            (t! goto_folder $folder_workarea)
+dolphin_action_bookmarks_w            (t! dolphin_goto_folder $folder_workarea)
 ;; ___TO_SET___ dolphin_action_bookmarks_x            
 ;; ___TO_SET___ dolphin_action_bookmarks_y            
 ;; ___TO_SET___ dolphin_action_bookmarks_z            

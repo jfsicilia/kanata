@@ -61,6 +61,10 @@ nvim_action_omni+b                      $nvim_pgup
 
 ;; omni + c
 nvim_action_omni+c                 $nvim_copy
+;; omni + lsft + c
+;; ___TO_SET___ nvim_action_omni+lsft+c            
+;; omni + rsft + c
+;; ___TO_SET___ nvim_action_omni+rsft+c            
 
 ;; omni + d
 ;; nvim_action_omni+d         `{esc}:saveas %:r_copy.%:e`

@@ -21,6 +21,10 @@ chrome_back              A-left
 
 ;; omni + c
 ;; ___TO_SET___ chrome_action_omni+c                 
+;; omni + lsft + c
+;; ___TO_SET___ chrome_action_omni+lsft+c            
+;; omni + rsft + c
+;; ___TO_SET___ chrome_action_omni+rsft+c            
 
 ;; omni + d
 ;; ___TO_SET___ chrome_action_omni+d                 

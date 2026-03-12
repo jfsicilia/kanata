@@ -23,6 +23,10 @@ tmux_action_omni+b                    $tmux_pgup ;; prefix + PgUp (enter copy mo
 
 ;; omni + c
 tmux_action_omni+c                    $tmux_copy ;; prefix + [ (enter copy mode) ;;""
+;; omni + lsft + c
+;; ___TO_SET___ tmux_action_omni+lsft+c            
+;; omni + rsft + c
+;; ___TO_SET___ tmux_action_omni+rsft+c            
 
 ;; omni + d
 ;; ___TO_SET___ tmux_action_omni+d                 

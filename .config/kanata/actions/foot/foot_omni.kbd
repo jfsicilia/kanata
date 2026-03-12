@@ -27,6 +27,10 @@ foot_action_omni+b                        $foot_pgup
 ;; omni + c
 ;; == omni edit ======================================================""
 foot_action_omni+c                 $foot_copy
+;; omni + lsft + c
+;; ___TO_SET___ foot_action_omni+lsft+c            
+;; omni + rsft + c
+;; ___TO_SET___ foot_action_omni+rsft+c            
 
 ;; omni + d
 ;; ___TO_SET___ foot_action_omni+d                 

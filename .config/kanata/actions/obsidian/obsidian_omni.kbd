@@ -37,6 +37,10 @@ obsidian_action_omni+b                    $obsidian_action_page_up
 ;; == omni edit ======================================================""
 ;; == omni edit ======================================================
 obsidian_action_omni+c                    $obsidian_copy
+;; omni + lsft + c
+;; ___TO_SET___ obsidian_action_omni+lsft+c            
+;; omni + rsft + c
+;; ___TO_SET___ obsidian_action_omni+rsft+c            
 
 ;; omni + d
 obsidian_action_omni+d                    $obsidian_duplicate

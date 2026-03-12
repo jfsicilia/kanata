@@ -1,7 +1,11 @@
 (defvar
   ;; apps + spc
-  action_apps (t! unmod_all (switch
+  action_apps+spc (t! unmod_all (switch
     () RA-spc break
+  ))
+
+  action_apps+!lctl (t! unmod_all (switch
+    () (cmd recent_files.sh) break
   ))
 
   action_apps_toggle (t! unmod_all (switch

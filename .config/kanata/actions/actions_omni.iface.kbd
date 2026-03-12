@@ -90,7 +90,7 @@
     ((input virtual vk_dolphin)) $dolphin_action_omni+spc break
     ((input virtual vk_nvim)) $nvim_action_omni+spc break
     ((input virtual vk_obsidian)) $obsidian_action_omni+spc break
-    () XX break
+    () spc break
   ))
 
   ;; omni + a
@@ -102,6 +102,7 @@
   ))
   ;; omni + lsft + a
   action_omni+lsft+a (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+lsft+a break
     ((input virtual vk_obsidian)) $obsidian_action_omni+lsft+a break
     () XX break
   ))
@@ -129,6 +130,15 @@
     ((input virtual vk_obsidian)) $obsidian_action_omni+c break
     ((input virtual vk_tmux)) $tmux_action_omni+c break
     () C-c break
+  ))
+  ;; omni + lsft + c
+  action_omni+lsft+c (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+lsft+c break
+    () C-S-c break
+  ))
+  ;; omni + rsft + c
+  action_omni+rsft+c (t! unmod_all (switch ;;@iface@
+    () C-S-c break
   ))
 
   ;; omni + d
