@@ -1,5 +1,7 @@
 ;; "" WORKSPACES LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (workspaces_layer)
+  spc $action_desktops+spc
+
   j $action_screens_next
   l $action_desktops_next
   h $action_desktops_prev

@@ -1,4 +1,5 @@
 (deflayermap (panes_layer)
+  spc   $action_panes+spc
   ent   $action_panes+max
 
   h     $action_panes+h
