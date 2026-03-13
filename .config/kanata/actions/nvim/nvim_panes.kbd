@@ -145,7 +145,7 @@ nvim_action_panes+e                  $nvim_file_explorer  ;;""
 ;; panes + ;
 ;; ___TO_SET___ nvim_action_panes+;                
 ;; panes + '
-;; not yet used.
+;; ___TO_SET___ nvim_action_panes+'                
 
 ;; panes + z
 ;; ___TO_SET___ nvim_action_panes+z                

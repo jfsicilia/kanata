@@ -158,7 +158,7 @@ obsidian_action_panes+g                        $obsidian_action_select_files
 ;; panes + ;
 obsidian_action_panes+;                     $obsidian_graph
 ;; panes + '
-;; not yet used.
+;; ___TO_SET___ obsidian_action_panes+'                
 
 ;; panes + z
 ;; ___TO_SET___ obsidian_action_panes+z                

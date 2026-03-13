@@ -136,7 +136,7 @@ zellij_action_panes+j                     $zellij_pane_below
 ;; panes + ;
 ;; ___TO_SET___ zellij_action_panes+;                
 ;; panes + '
-;; not yet used.
+;; ___TO_SET___ zellij_action_panes+'                
 
 ;; panes + z
 ;; ___TO_SET___ zellij_action_panes+z                

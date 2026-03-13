@@ -151,7 +151,7 @@ tmux_action_panes+toggle                    $tmux_pane_toggle ;; prefix + ; (las
 ;; panes + ;
 ;; ___TO_SET___ tmux_action_panes+;                
 ;; panes + '
-;; not yet used.
+;; ___TO_SET___ tmux_action_panes+'                
 
 ;; panes + z
 ;; ___TO_SET___ tmux_action_panes+z                
