@@ -42,11 +42,12 @@ nvim_tab_5               (macro esc S-; l u a spc r e q u i r e S-9 ' b u f f e 
 nvim_tab_6               (macro esc S-; l u a spc r e q u i r e S-9 ' b u f f e r l i n e ' S-0 . g o S-- t o S-- b u f f e r S-9 Digit6 , t r u e S-0 ent)
 nvim_tab_7               (macro esc S-; l u a spc r e q u i r e S-9 ' b u f f e r l i n e ' S-0 . g o S-- t o S-- b u f f e r S-9 Digit7 , t r u e S-0 ent)
 nvim_tab_8               (macro esc S-; l u a spc r e q u i r e S-9 ' b u f f e r l i n e ' S-0 . g o S-- t o S-- b u f f e r S-9 Digit8 , t r u e S-0 ent)
-nvim_tab_9               (macro esc S-; l u a spc r e q u i r e S-9 ' b u f f e r l i n e ' S-0 . g o S-- t o S-- b u f f e r S-9 Digit9 , t r u e S-0 ent)
+nvim_tab_9               (macro esc S-; l u a spc r e q u i r e S-9 ' b u f f e r l i n e ' S-0 . g o S-- t o S-- b u f f e r S-9 Digit0 , t r u e S-0 ent)
 
 ;; == omni ============================================================
 
 ;; omni + spc
+;; If not implemented, defaults to: spc
 nvim_action_omni+spc            $nvim_action_seek_and_select
 
 ;; omni + ent
@@ -60,13 +61,17 @@ nvim_action_omni+a                     $nvim_select_all
 ;; ___TO_SET___ nvim_action_omni+rsft+a            
 
 ;; omni + b
+;; If not implemented, defaults to: pgup
 nvim_action_omni+b                      $nvim_pgup
 
 ;; omni + c
+;; If not implemented, defaults to: C-c
 nvim_action_omni+c                 $nvim_copy
 ;; omni + lsft + c
+;; If not implemented, defaults to: C-S-c
 ;; ___TO_SET___ nvim_action_omni+lsft+c            
 ;; omni + rsft + c
+;; If not implemented, defaults to: C-S-c
 ;; ___TO_SET___ nvim_action_omni+rsft+c            
 ;; omni + c + left
 ;; ___TO_SET___ nvim_action_omni+c+left            
@@ -83,28 +88,33 @@ nvim_action_omni+d         $nvim_duplicate
 ;; ___TO_SET___ nvim_action_omni+lsft+e            
 
 ;; omni + f
+;; If not implemented, defaults to: pgdn
 nvim_action_omni+f                      $nvim_pgdn
 
 ;; omni + g
 ;; ___TO_SET___ nvim_action_omni+g                 
 
 ;; omni + h
+;; If not implemented, defaults to: left
 nvim_action_omni+h                      left
 
 ;; omni + i
 ;; ___TO_SET___ nvim_action_omni+i                 
 
 ;; omni + j
+;; If not implemented, defaults to: down
 nvim_action_omni+j                      down
 
 ;; omni + k
+;; If not implemented, defaults to: up
 nvim_action_omni+k                      up
 
 ;; omni + l
+;; If not implemented, defaults to: right
 nvim_action_omni+l                      right
 
 ;; omni + m
-;; see modM
+;; If not implemented, defaults to: action_modM
 ;; ___TO_SET___ nvim_action_omni+m                 
 
 ;; omni + n
@@ -117,12 +127,15 @@ nvim_action_omni+lsft+n           $nvim_new_folder
 ;; ___TO_SET___ nvim_action_omni+rsft+n            
 
 ;; omni + o
+;; If not implemented, defaults to: right
 nvim_action_omni+o                          $nvim_open ;; Follow tag in help ""
 
 ;; omni + p
+;; If not implemented, defaults to: left
 nvim_action_omni+p                        $nvim_parent ;; Go back to preceding tag
 
 ;; omni + q
+;; If not implemented, defaults to: action_windows_close
 ;; see windows
 ;; nvim_action_omni+q      `{esc}:qa{ent}`
 nvim_action_omni+q      $nvim_quit
@@ -139,10 +152,12 @@ nvim_action_omni+s                 $nvim_sort
 nvim_action_omni+lsft+s            $nvim_sort_reverse
 
 ;; omni + t
+;; If not implemented, defaults to: action_tabs_new
 ;; see tab
 ;; nvim_action_omni+t           `{esc}:tabnew{ent}`
 nvim_action_omni+t           $nvim_new_tab
 ;; omni + lsft + t
+;; If not implemented, defaults to: action_tabs_undo_close
 ;; see tab
 nvim_action_omni+lsft+t    $nvim_undo_tab
 
@@ -151,14 +166,17 @@ nvim_action_omni+lsft+t    $nvim_undo_tab
 nvim_action_omni+u                 $nvim_unique
 
 ;; omni + v
+;; If not implemented, defaults to: C-v
 nvim_action_omni+v                 $nvim_paste
 
 ;; omni + w
+;; If not implemented, defaults to: action_tabs_close
 ;; see tab
 ;; nvim_action_omni+w         `{esc}:bdelete{ent}`
 nvim_action_omni+w         $nvim_close_tab
 
 ;; omni + x
+;; If not implemented, defaults to: C-x
 nvim_action_omni+x                 $nvim_cut
 ;; omni + x + left
 ;; ___TO_SET___ nvim_action_omni+x+left            
@@ -169,22 +187,43 @@ nvim_action_omni+x                 $nvim_cut
 nvim_action_omni+y                $nvim_action_modY_mod;           
 
 ;; omni + z
+;; If not implemented, defaults to: C-z
 nvim_action_omni+z                 $nvim_undo
 ;; omni + lsft + z
+;; If not implemented, defaults to: C-S-z
 nvim_action_omni+lsft+z            $nvim_redo
 
 
-
+;; omni + 0
+;; If not implemented, defaults to: C-0
 ;; ___TO_SET___ nvim_action_omni+0                 
+;; omni + 1
+;; If not implemented, defaults to: C-1
 ;; nvim_action_omni+1                 `{esc}:lua require('bufferline').go_to_buffer(1,true){ent}`
 nvim_action_omni+1                 $nvim_tab_1
+;; omni + 2
+;; If not implemented, defaults to: C-2
 nvim_action_omni+2                 $nvim_tab_2
+;; omni + 3
+;; If not implemented, defaults to: C-3
 nvim_action_omni+3                 $nvim_tab_3
+;; omni + 4
+;; If not implemented, defaults to: C-4
 nvim_action_omni+4                 $nvim_tab_4
+;; omni + 5
+;; If not implemented, defaults to: C-5
 nvim_action_omni+5                 $nvim_tab_5
+;; omni + 6
+;; If not implemented, defaults to: C-6
 nvim_action_omni+6                 $nvim_tab_6
+;; omni + 7
+;; If not implemented, defaults to: C-7
 nvim_action_omni+7                 $nvim_tab_7
+;; omni + 8
+;; If not implemented, defaults to: C-8
 nvim_action_omni+8                 $nvim_tab_8
+;; omni + 9
+;; If not implemented, defaults to: C-9
 nvim_action_omni+9                 $nvim_tab_9
 
 ;; omni + `
@@ -213,25 +252,34 @@ nvim_action_omni+;           $nvim_comment  ;; Comment block
 ;; ___TO_SET___ nvim_action_omni+'                 
 
 ;; omni + ,
+;; If not implemented, defaults to: action_mod,
 ;; see mod,
 nvim_action_omni+,           $nvim_action_mod,
 ;; omni + .
+;; If not implemented, defaults to: action_mod.
 ;; see mod.
 nvim_action_omni+.               $nvim_action_mod.
 ;; omni + /
+;; If not implemented, defaults to: action_mod/
 ;; see mod/
 nvim_action_omni+/              $nvim_action_mod/
 
 ;; omni + !lmet|desktops
+;; If not implemented, defaults to: action_desktops+toggle
 ;; ___TO_SET___ nvim_action_omni+!lmet             
 ;; omni + !lalt|panes
+;; If not implemented, defaults to: action_panes+toggle
 ;; ___TO_SET___ nvim_action_omni+!lalt             
 ;; omni + !lctl|tabs
+;; If not implemented, defaults to: action_tabs+toggle
 ;; ___TO_SET___ nvim_action_omni+!lctl             
 ;; omni + ralt|apps
+;; If not implemented, defaults to: action_apps+toggle
 ;; ___TO_SET___ nvim_action_omni+ralt              
 ;; omni + prnt|groups
+;; If not implemented, defaults to: action_!tabs+toggle
 ;; ___TO_SET___ nvim_action_omni+prnt              
 ;; omni + rctl|sessions
+;; If not implemented, defaults to: action_sessions+toggle
 ;; ___TO_SET___ nvim_action_omni+rctl              
 )

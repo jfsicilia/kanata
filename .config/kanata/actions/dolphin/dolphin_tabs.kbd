@@ -3,16 +3,16 @@
 ;; == tabs ===============================================================
 
 ;; tabs + spc
-;; ___TO_SET___ dolphin_action_tabs+spc               
+dolphin_action_tabs+spc               (push-msg "NOTIFY:Select tab not implemented!")
 
 ;; tabs + l | tabs + right | lsft + rsft | 2x rsft | !lmet + tab
 ;; ___TO_SET___ dolphin_action_tabs_next              
 ;; tabs + h | tabs + left | rsft + lsft | 2x lsft | !lmet + sft + tab
 ;; ___TO_SET___ dolphin_action_tabs_prev              
 ;; tabs + j | tabs + down
-;; ___TO_SET___ dolphin_action_tabs_first             
+dolphin_action_tabs_first             (push-msg "NOTIFY:Select first tab not implemented!")
 ;; tabs + k | tabs + up
-;; ___TO_SET___ dolphin_action_tabs_last              
+dolphin_action_tabs_last              (push-msg "NOTIFY:Select last tab not implemented!")
 
 ;; tabs + t
 ;; ___TO_SET___ dolphin_action_tabs_new               

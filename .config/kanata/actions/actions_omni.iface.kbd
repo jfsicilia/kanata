@@ -86,6 +86,7 @@
   ;; == omni ============================================================
 
   ;; omni + spc
+  ;; If not implemented, defaults to: spc
   action_omni+spc (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+spc break
     ((input virtual vk_nvim)) $nvim_action_omni+spc break
@@ -114,13 +115,14 @@
   ))
   ;; omni + rsft + a
   action_omni+rsft+a (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+rsft+a break
     ((input virtual vk_obsidian)) $obsidian_action_omni+rsft+a break
     () XX break
   ))
 
   ;; omni + b
+  ;; If not implemented, defaults to: pgup
   action_omni+b (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+b break
     ((input virtual vk_foot)) $foot_action_omni+b break
     ((input virtual vk_nvim)) $nvim_action_omni+b break
     ((input virtual vk_obsidian)) $obsidian_action_omni+b break
@@ -129,6 +131,7 @@
   ))
 
   ;; omni + c
+  ;; If not implemented, defaults to: C-c
   action_omni+c (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+c break
     ((input virtual vk_foot)) $foot_action_omni+c break
@@ -138,12 +141,15 @@
     () C-c break
   ))
   ;; omni + lsft + c
+  ;; If not implemented, defaults to: C-S-c
   action_omni+lsft+c (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+lsft+c break
     () C-S-c break
   ))
   ;; omni + rsft + c
+  ;; If not implemented, defaults to: C-S-c
   action_omni+rsft+c (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+rsft+c break
     () C-S-c break
   ))
   ;; omni + c + left
@@ -179,8 +185,8 @@
   ))
 
   ;; omni + f
+  ;; If not implemented, defaults to: pgdn
   action_omni+f (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+f break
     ((input virtual vk_foot)) $foot_action_omni+f break
     ((input virtual vk_nvim)) $nvim_action_omni+f break
     ((input virtual vk_obsidian)) $obsidian_action_omni+f break
@@ -197,8 +203,8 @@
   ))
 
   ;; omni + h
+  ;; If not implemented, defaults to: left
   action_omni+h (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+h break
     ((input virtual vk_nvim)) $nvim_action_omni+h break
     () left break
   )
@@ -210,28 +216,28 @@
   ))
 
   ;; omni + j
+  ;; If not implemented, defaults to: down
   action_omni+j (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+j break
     ((input virtual vk_nvim)) $nvim_action_omni+j break
     () down break
   )
 
   ;; omni + k
+  ;; If not implemented, defaults to: up
   action_omni+k (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+k break
     ((input virtual vk_nvim)) $nvim_action_omni+k break
     () up break
   )
 
   ;; omni + l
+  ;; If not implemented, defaults to: right
   action_omni+l (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_omni+l break
     ((input virtual vk_nvim)) $nvim_action_omni+l break
     () right break
   )
 
   ;; omni + m
-  ;; see modM
+  ;; If not implemented, defaults to: action_modM
   action_omni+m (t! unmod_all (switch ;;@iface@
     () $action_modM break
   ))
@@ -260,6 +266,7 @@
   ))
 
   ;; omni + o
+  ;; If not implemented, defaults to: right
   action_omni+o (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+o break
     ((input virtual vk_nvim)) $nvim_action_omni+o break
@@ -268,6 +275,7 @@
   ))
 
   ;; omni + p
+  ;; If not implemented, defaults to: left
   action_omni+p (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+p break
     ((input virtual vk_nvim)) $nvim_action_omni+p break
@@ -276,7 +284,7 @@
   ))
 
   ;; omni + q
-  ;; see windows
+  ;; If not implemented, defaults to: action_windows_close
   action_omni+q (t! unmod_all (switch ;;@iface@
     ((input virtual vk_nvim)) $nvim_action_omni+q break
     () $action_windows_close break
@@ -305,14 +313,14 @@
   ))
 
   ;; omni + t
-  ;; see tab
+  ;; If not implemented, defaults to: action_tabs_new
   action_omni+t (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+t break
     ((input virtual vk_nvim)) $nvim_action_omni+t break
     () $action_tabs_new break
   ))
   ;; omni + lsft + t
-  ;; see tab
+  ;; If not implemented, defaults to: action_tabs_undo_close
   action_omni+lsft+t (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+lsft+t break
     ((input virtual vk_nvim)) $nvim_action_omni+lsft+t break
@@ -327,6 +335,7 @@
   ))
 
   ;; omni + v
+  ;; If not implemented, defaults to: C-v
   action_omni+v (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+v break
     ((input virtual vk_foot)) $foot_action_omni+v break
@@ -337,7 +346,7 @@
   ))
 
   ;; omni + w
-  ;; see tab
+  ;; If not implemented, defaults to: action_tabs_close
   action_omni+w (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+w break
     ((input virtual vk_nvim)) $nvim_action_omni+w break
@@ -345,6 +354,7 @@
   ))
 
   ;; omni + x
+  ;; If not implemented, defaults to: C-x
   action_omni+x (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+x break
     ((input virtual vk_nvim)) $nvim_action_omni+x break
@@ -364,18 +374,21 @@
   
   ;; omni + y
   action_omni+y (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+y break
     ((input virtual vk_foot)) $foot_action_omni+y break
     ((input virtual vk_nvim)) $nvim_action_omni+y break
     () XX break
   ))
 
   ;; omni + z
+  ;; If not implemented, defaults to: C-z
   action_omni+z (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+z break
     ((input virtual vk_nvim)) $nvim_action_omni+z break
     () C-z break
   ))
   ;; omni + lsft + z
+  ;; If not implemented, defaults to: C-S-z
   action_omni+lsft+z (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+lsft+z break
     ((input virtual vk_nvim)) $nvim_action_omni+lsft+z break
@@ -383,50 +396,70 @@
   ))
 
 
-
+  ;; omni + 0
+  ;; If not implemented, defaults to: C-0
   action_omni+0 (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+0 break
     () C-0 break
   ))
+  ;; omni + 1
+  ;; If not implemented, defaults to: C-1
   action_omni+1 (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+1 break
     ((input virtual vk_nvim)) $nvim_action_omni+1 break
     () C-1 break
   ))
+  ;; omni + 2
+  ;; If not implemented, defaults to: C-2
   action_omni+2 (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+2 break
     ((input virtual vk_nvim)) $nvim_action_omni+2 break
     () C-2 break
   ))
+  ;; omni + 3
+  ;; If not implemented, defaults to: C-3
   action_omni+3 (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+3 break
     ((input virtual vk_nvim)) $nvim_action_omni+3 break
     () C-3 break
   ))
+  ;; omni + 4
+  ;; If not implemented, defaults to: C-4
   action_omni+4 (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+4 break
     ((input virtual vk_nvim)) $nvim_action_omni+4 break
     () C-4 break
   ))
+  ;; omni + 5
+  ;; If not implemented, defaults to: C-5
   action_omni+5 (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+5 break
     ((input virtual vk_nvim)) $nvim_action_omni+5 break
     () C-5 break
   ))
+  ;; omni + 6
+  ;; If not implemented, defaults to: C-6
   action_omni+6 (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+6 break
     ((input virtual vk_nvim)) $nvim_action_omni+6 break
     () C-6 break
   ))
+  ;; omni + 7
+  ;; If not implemented, defaults to: C-7
   action_omni+7 (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+7 break
     ((input virtual vk_nvim)) $nvim_action_omni+7 break
     () C-7 break
   ))
+  ;; omni + 8
+  ;; If not implemented, defaults to: C-8
   action_omni+8 (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+8 break
     ((input virtual vk_nvim)) $nvim_action_omni+8 break
     () C-8 break
   ))
+  ;; omni + 9
+  ;; If not implemented, defaults to: C-9
   action_omni+9 (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+9 break
     ((input virtual vk_nvim)) $nvim_action_omni+9 break
@@ -435,14 +468,17 @@
 
   ;; omni + `
   action_omni+` (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+` break
     () XX break
   ))
   ;; omni + -
   action_omni+- (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+- break
     () XX break
   ))
   ;; omni + =
   action_omni+= (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+= break
     () XX break
   ))
 
@@ -485,56 +521,63 @@
 
   ;; omni + ;
   action_omni+; (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+; break
     ((input virtual vk_nvim)) $nvim_action_omni+; break
     () XX break
   ))
-  ;; omni + '
+  ;; omni + ' 
   action_omni+' (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+' break
     () XX break
-  ))
+  )) ;;""
 
   ;; omni + ,
-  ;; see mod,
+  ;; If not implemented, defaults to: action_mod,
   action_omni+, (t! unmod_all (switch ;;@iface@
     ((input virtual vk_nvim)) $nvim_action_omni+, break
     () $action_mod, break
   ))
   ;; omni + .
-  ;; see mod.
+  ;; If not implemented, defaults to: action_mod.
   action_omni+. (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_omni+. break
     ((input virtual vk_nvim)) $nvim_action_omni+. break
     () $action_mod. break
   ))
   ;; omni + /
-  ;; see mod/
+  ;; If not implemented, defaults to: action_mod/
   action_omni+/ (t! unmod_all (switch ;;@iface@
     ((input virtual vk_nvim)) $nvim_action_omni+/ break
     () $action_mod/ break
   )) ;;""
 
   ;; omni + !lmet|desktops
+  ;; If not implemented, defaults to: action_desktops+toggle
   action_omni+!lmet (t! unmod_all (switch ;;@iface@
     () $action_desktops+toggle break
   ))
   ;; omni + !lalt|panes
+  ;; If not implemented, defaults to: action_panes+toggle
   action_omni+!lalt (t! unmod_all (switch ;;@iface@
     () $action_panes+toggle break
   ))
   ;; omni + !lctl|tabs
+  ;; If not implemented, defaults to: action_tabs+toggle
   action_omni+!lctl (t! unmod_all (switch ;;@iface@
     () $action_tabs+toggle break
   ))
   ;; omni + ralt|apps
+  ;; If not implemented, defaults to: action_apps+toggle
   action_omni+ralt (t! unmod_all (switch ;;@iface@
     () $action_apps+toggle break
   ))
   ;; omni + prnt|groups
+  ;; If not implemented, defaults to: action_!tabs+toggle
   action_omni+prnt (t! unmod_all (switch ;;@iface@
     () $~action_!tabs+toggle break
   ))
   ;; omni + rctl|sessions
+  ;; If not implemented, defaults to: action_sessions+toggle
   action_omni+rctl (t! unmod_all (switch ;;@iface@
     () $action_sessions+toggle break
   ))

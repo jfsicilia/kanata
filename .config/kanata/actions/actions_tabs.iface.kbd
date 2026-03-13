@@ -6,6 +6,7 @@
   ;; tabs + spc 
   action_tabs+spc         (t! unmod_all (switch ;;@iface@ 
     ((input virtual vk_chrome)) $chrome_action_tabs+spc break
+    ((input virtual vk_dolphin)) $dolphin_action_tabs+spc break
     ((input virtual vk_nvim)) $nvim_action_tabs+spc break
     ((input virtual vk_obsidian)) $obsidian_action_tabs+spc break
     ((input virtual vk_tmux)) $tmux_action_tabs+spc break
@@ -32,10 +33,12 @@
   ))
   ;; tabs + j | tabs + down
   action_tabs_first  (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_tabs_first break
     () XX break
   ))
   ;; tabs + k | tabs + up
   action_tabs_last  (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_tabs_last break
     () XX break
   ))
   
@@ -44,7 +47,7 @@
     ((input virtual vk_chrome)) $chrome_action_tabs_new break
     ((input virtual vk_obsidian)) $obsidian_action_tabs_new break
     ((input virtual vk_tmux)) $tmux_action_tabs_new break
-    () XX break
+    () C-t break
   ))
   ;; tabs + w 
   action_tabs_close (t! unmod_all (switch ;;@iface@
@@ -52,13 +55,13 @@
     ((input virtual vk_nvim)) $nvim_action_tabs_close break
     ((input virtual vk_obsidian)) $obsidian_action_tabs_close break
     ((input virtual vk_tmux)) $tmux_action_tabs_close break
-    () XX break
+    () C-w break
   ))
   ;; tabs + lsft + t 
   action_tabs_undo_close (t! unmod_all (switch ;;@iface@
     ((input virtual vk_chrome)) $chrome_action_tabs_undo_close break
     ((input virtual vk_obsidian)) $obsidian_action_tabs_undo_close break
-    () XX break
+    () C-S-t break
   ))
 
   ;; == tabs go by number ==================================================
