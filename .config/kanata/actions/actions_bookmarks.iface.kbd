@@ -27,6 +27,7 @@
     () XX break
   )) 
   action_bookmarks_e (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_bookmarks_e break
     () XX break
   )) 
   action_bookmarks_f (t! unmod_all (switch ;;@iface@
@@ -50,12 +51,15 @@
     () XX break
   )) 
   action_bookmarks_j (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_bookmarks_j break
     () XX break
   )) 
   action_bookmarks_k (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_bookmarks_k break
     () XX break
   )) 
   action_bookmarks_l (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_bookmarks_l break
     () XX break
   )) 
   action_bookmarks_m (t! unmod_all (switch ;;@iface@
@@ -67,6 +71,7 @@
     () XX break
   )) 
   action_bookmarks_o (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_bookmarks_o break
     () XX break
   )) 
   action_bookmarks_p (t! unmod_all (switch ;;@iface@
@@ -78,6 +83,7 @@
     () XX break
   )) 
   action_bookmarks_r (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_bookmarks_r break
     () XX break
   )) 
   action_bookmarks_s (t! unmod_all (switch ;;@iface@

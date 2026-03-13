@@ -10,20 +10,20 @@
 dolphin_action_bookmarks_b            (t! dolphin_goto_folder $folder_bookcase)
 dolphin_action_bookmarks_c            (t! dolphin_goto_folder $folder_scans)
 dolphin_action_bookmarks_d            (t! dolphin_goto_folder $folder_downloads)
-;; ___TO_SET___ dolphin_action_bookmarks_e            
+dolphin_action_bookmarks_e            (t! dolphin_goto_folder $folder_enaire)
 dolphin_action_bookmarks_f            (t! dolphin_goto_folder $folder_photo)
 dolphin_action_bookmarks_g            (t! dolphin_goto_folder $folder_guacimara)
 dolphin_action_bookmarks_h            (t! dolphin_goto_folder $folder_home)
 dolphin_action_bookmarks_i            (t! dolphin_goto_folder $folder_inbox)
-;; ___TO_SET___ dolphin_action_bookmarks_j            
-;; ___TO_SET___ dolphin_action_bookmarks_k            
-;; ___TO_SET___ dolphin_action_bookmarks_l            
+dolphin_action_bookmarks_j            (t! dolphin_goto_folder $folder_projects)
+dolphin_action_bookmarks_k            (t! dolphin_goto_folder $folder_kanata)
+dolphin_action_bookmarks_l            (t! dolphin_goto_folder $folder_lab)
 dolphin_action_bookmarks_m            (t! dolphin_goto_folder $folder_medano)
 ;; ___TO_SET___ dolphin_action_bookmarks_n            
-;; ___TO_SET___ dolphin_action_bookmarks_o            
+dolphin_action_bookmarks_o            (t! dolphin_goto_folder $folder_screenshots)
 dolphin_action_bookmarks_p            (t! dolphin_goto_folder $folder_personal)
 ;; ___TO_SET___ dolphin_action_bookmarks_q            
-;; ___TO_SET___ dolphin_action_bookmarks_r            
+dolphin_action_bookmarks_r            (t! dolphin_goto_folder $folder_resources)
 dolphin_action_bookmarks_s            (t! dolphin_goto_folder $folder_settings)
 dolphin_action_bookmarks_t            (t! dolphin_goto_folder $folder_tmp)
 ;; ___TO_SET___ dolphin_action_bookmarks_u            

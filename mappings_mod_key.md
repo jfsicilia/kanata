@@ -2,26 +2,26 @@
 
 | Mod<key> | TextEditor Domain   | FileExplorer Domain | Terminal Domain  | Browser Domain   | SecondBrain Domain | TerminalMultiplexor Domain |
 | -------- | ------------------- | ------------------- | ---------------- | ---------------- | ------------------ | -------------------------- |
-| A        | Autocommands        |                     |                  |                  |                    |                            |
+| A        | autocommands        |                     |                  |                  |                    |                            |
 | B        | editor_groups (GUI) |                     |                  |                  |                    |                            |
 | C        | panes (GUI)         | !panes (GUI)        | panes (GUI)      | panes (GUI)      | panes (GUI)        | panes (GUI)                |
-| D        | Definitions         |                     |                  |                  |                    |                            |
+| D        | definitions         |                     |                  |                  |                    |                            |
 | E        |                     |                     |                  |                  |                    |                            |
-| F        | autoFill            |                     |                  |                  |                    |                            |
-| G        | Git                 |                     |                  |                  |                    |                            |
-| H        | Hyperlinks          |                     |                  |                  |                    |                            |
-| I        | Info                |                     |                  |                  |                    |                            |
-| J        | Jumps               |                     |                  |                  |                    |                            |
-| K        | Keymaps             | Keymaps             |                  |                  |                    |                            |
-| L        | Locations           |                     |                  |                  |                    |                            |
-| M        | Mem (clipboard)     |                     |                  |                  |                    |                            |
-| N        | sessions (GUI)      |                     | sessions (GUI)   | sessions (GUI)   |                    | sessions (GUI)             |
-| O        | sOurce              |                     |                  |                  |                    |                            |
+| F        | autofill            |                     |                  |                  |                    |                            |
+| G        | git                 |                     |                  |                  |                    |                            |
+| H        | hyperlinks          |                     |                  |                  |                    |                            |
+| I        | info                | info                |                  |                  |                    |                            |
+| J        | jumps               |                     |                  |                  |                    |                            |
+| K        | keymaps             | keymaps             |                  |                  |                    |                            |
+| L        | locations           |                     |                  |                  |                    |                            |
+| M        | mem (clipboard)     | mem (clipboard)     |                  |                  |                    |                            |
+| N        | sessions (GUI)      | !sessions (GUI)     | sessions (GUI)   | sessions (GUI)   |                    | sessions (GUI)             |
+| O        | source              |                     |                  |                  |                    |                            |
 | P        |                     |                     |                  |                  |                    |                            |
-| Q        | Quickfix            |                     |                  |                  |                    |                            |
-| R        | References          |                     |                  |                  |                    |                            |
-| S        | Symbols             |                     |                  |                  | Symbols            |                            |
-| T        | Terminal            |                     |                  |                  |                    |                            |
+| Q        | quickfix            |                     |                  |                  |                    |                            |
+| R        | references          |                     |                  |                  |                    |                            |
+| S        | symbols             |                     |                  |                  | Symbols            |                            |
+| T        | terminal            | terminal            |                  |                  |                    |                            |
 | U        | debUg               |                     |                  |                  |                    |                            |
 | V        | tabs (GUI)          | !tabs (GUI)         | tabs (GUI)       | tabs (GUI)       | tabs (GUI)         | tabs (GUI)                 |
 | W        |                     |                     |                  |                  |                    |                            |
@@ -29,16 +29,16 @@
 | Y        | historY             |                     |                  |                  |                    |                            |
 | Z        | windows (GUI)       | windows (GUI)       | windows (GUI)    | windows (GUI)    | windows (GUI)      | windows (GUI)              |
 | ,        | settings            | settings            |                  |                  | settings           |                            |
-| .        | tags                |                     |                  |                  |                    |                            |
+| .        | tags                | tags                |                  |                  |                    |                            |
 | /        | help                | help                |                  |                  |                    |                            |
 | ;        | commands            |                     |                  |                  | commands           |                            |
 | '        | registries          |                     |                  |                  |                    |                            |
 | [        |                     |                     |                  |                  |                    |                            |
 | ]        |                     |                     |                  |                  |                    |                            |
-| \        | ~compare            | ~compare            | ~compare         |                  |                    |                            |
-| `        |                     |                     |                  |                  |                    |                            |
+| \        | ~compare            | compare             | ~compare         |                  |                    |                            |
+| `        | ~format             | !format             |                  |                  |                    |                            |
 | -        |                     |                     |                  |                  |                    |                            |
-| =        | ~format             | ~format             | ~format          |                  |                    |                            |
+| =        |                     |                     |                  |                  |                    |                            |
 | 1        |                     |                     |                  |                  |                    |                            |
 | 2        |                     |                     |                  |                  |                    |                            |
 | 3        |                     |                     |                  |                  |                    |                            |

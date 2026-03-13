@@ -2,30 +2,77 @@
 
 ;; ~/Downloads
 
-;;folder_home             `~`
-folder_home               (S-grv 10)
-;;folder_inbox            `~/inbox`
-folder_inbox              (S-grv 10 / i n b o x)
-;;folder_scans            `~/inbox/scans`
-folder_scans              (S-grv 10 / i n b o x / s c a n s)
-;;folder_screenshots      `~/inbox/screenshots`
-folder_screenshots        (S-grv 10 / i n b o x / s c r e e n s h o t s)
-;;folder_downloads        `~/inbox/downloads`
-folder_downloads          (S-grv 10 / i n b o x / d o w n l o a d s)
-;;folder_photo            `~/media/image/photo`
-folder_photo              (S-grv 10 / m e d i a / i m a g e / p h o t o)
+;; b
 ;;folder_bookcase         `~/media/bookcase/`
 folder_bookcase           (S-grv 10 / m e d i a / b o o k c a s e)
-;;folder_personal         `~/personal`
-folder_personal           (S-grv 10 / p e r s o n a l)
-;;folder_workarea         `~/workarea`
-folder_workarea           (S-grv 10 / w o r k a r e a)
-;;folder_settings         `~/settings`
-folder_settings           (S-grv 10 / s e t t i n g s)
+;; c
+;;folder_scans            `~/inbox/scans`
+folder_scans              (S-grv 10 / i n b o x / s c a n s)
+;; d
+;;folder_downloads        `~/inbox/downloads`
+folder_downloads          (S-grv 10 / i n b o x / d o w n l o a d s)
+;; e
+;;folder_enaire           `~/personal/professional/enaire`
+folder_enaire             (S-grv 10 / p e r s o n a l / p r o f e s s i o n a l / e n a i r e)
+;; f
+;;folder_photo            `~/media/image/photo`
+folder_photo              (S-grv 10 / m e d i a / i m a g e / p h o t o)
+;; g
 ;;folder_guacimara        `~/mnt/guacimara`
 folder_guacimara          (S-grv 10 / m n t / g u a c i m a r a)
+;; h
+;;folder_home             `~`
+folder_home               (S-grv 10)
+;; i
+;;folder_inbox            `~/inbox`
+folder_inbox              (S-grv 10 / i n b o x)
+;; j
+;;folder_projects         `~/workarea/projects`
+folder_projects           (S-grv 10 / w o r k a r e a / p r o j e c t s)
+;; k
+;;folder_kanata           `~/settings/linux/dotfiles/kanata`
+folder_kanata             (S-grv 10 / s e t t i n g s / l i n u x / d o t f i l e s / k a n a t a)
+;; l
+;;folder_lab              `~/workarea/lab`
+folder_lab                (S-grv 10 / w o r k a r e a / l a b)
+;; l
 ;;folder_medano           `~/mnt/medano`
 folder_medano             (S-grv 10 / m n t / m e d a n o)
+;; n
+
+
+;; o
+;;folder_screenshots      `~/inbox/screenshots`
+folder_screenshots        (S-grv 10 / i n b o x / s c r e e n s h o t s)
+;; p
+;;folder_personal         `~/personal`
+folder_personal           (S-grv 10 / p e r s o n a l)
+;; q
+
+
+;; r
+;;folder_resources        `~/archive/resources`
+folder_resources          (S-grv 10 / a r c h i v e / r e s o u r c e s)
+;; s
+;;folder_settings         `~/settings`
+folder_settings           (S-grv 10 / s e t t i n g s)
+;; t
 ;;folder_tmp              `~/tmp`
 folder_tmp                (S-grv 10 / t m p)
+;; u
+
+
+;; v
+
+
+;; w
+;;folder_workarea         `~/workarea`
+folder_workarea           (S-grv 10 / w o r k a r e a)
+;; x
+
+
+;; y
+
+
+;; z
 )
