@@ -574,11 +574,13 @@
   ;; omni + prnt|groups
   ;; If not implemented, defaults to: action_!tabs+toggle
   action_omni+prnt (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+prnt break
     () $~action_!tabs+toggle break
   ))
   ;; omni + rctl|sessions
   ;; If not implemented, defaults to: action_sessions+toggle
   action_omni+rctl (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+rctl break
     () $action_sessions+toggle break
   ))
 

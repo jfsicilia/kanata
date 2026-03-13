@@ -55,8 +55,8 @@
 | !lalt      | toggle_panes      | toggle_panes        | toggle_panes    | toggle_panes    | toggle_panes       | toggle_panes               |
 | !lmet      | toggle_desktops   | toggle_desktops     | toggle_desktops | toggle_desktops | toggle_desktops    | toggle_desktops            |
 | ralt       | toggle_apps       | toggle_apps         | toggle_apps     | toggle_apps     | toggle_apps        | toggle_apps                |
-| prnt       | toggle_groups     |                     |                 | toggle_groups   |                    | toggle_groups              |
-| rctl       |                   |                     |                 |                 |                    | toggle_sessions            |
+| prnt       | toggle_groups     | !toggle_groups      |                 | toggle_groups   |                    | toggle_groups              |
+| rctl       |                   | !toogle_sessions    |                 |                 |                    | toggle_sessions            |
 | tab        |                   |                     |                 |                 |                    |                            |
 | esc        |                   |                     |                 |                 |                    |                            |
 | bspc       |                   | delete              |                 |                 |                    |                            |

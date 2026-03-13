@@ -6,8 +6,10 @@
 chrome_action_tabs+spc            XX
 
 ;; tabs + l | tabs + right | lsft + rsft | 2x rsft | !lmet + tab
+;; If not implemented, defaults to: C-tab
 chrome_action_tabs_next                       C-tab
 ;; tabs + h | tabs + left | rsft + lsft | 2x lsft | !lmet + sft + tab
+;; If not implemented, defaults to: C-S-tab
 chrome_action_tabs_prev                       C-S-tab
 ;; tabs + j | tabs + down
 ;; ___TO_SET___ chrome_action_tabs_first             
@@ -15,30 +17,42 @@ chrome_action_tabs_prev                       C-S-tab
 ;; ___TO_SET___ chrome_action_tabs_last              
 
 ;; tabs + t
+;; If not implemented, defaults to: C-t
 chrome_action_tabs_new                        C-t
 ;; tabs + w
+;; If not implemented, defaults to: C-w
 chrome_action_tabs_close                      C-w
 ;; tabs + lsft + t
+;; If not implemented, defaults to: C-S-t
 chrome_action_tabs_undo_close                 C-S-t
 
 ;; == tabs go by number ==================================================
 ;; tabs + 1
+;; If not implemented, defaults to: C-1
 chrome_action_tabs_goto_1                     C-1
 ;; tabs + 2
+;; If not implemented, defaults to: C-2
 chrome_action_tabs_goto_2                     C-2
 ;; tabs + 3
+;; If not implemented, defaults to: C-3
 chrome_action_tabs_goto_3                     C-3
 ;; tabs + 4
+;; If not implemented, defaults to: C-4
 chrome_action_tabs_goto_4                     C-4
 ;; tabs + 5
+;; If not implemented, defaults to: C-5
 chrome_action_tabs_goto_5                     C-5
 ;; tabs + 6
+;; If not implemented, defaults to: C-6
 chrome_action_tabs_goto_6                     C-6
 ;; tabs + 7
+;; If not implemented, defaults to: C-7
 chrome_action_tabs_goto_7                     C-7
 ;; tabs + 8
+;; If not implemented, defaults to: C-8
 chrome_action_tabs_goto_8                     C-8
 ;; tabs + 9
+;; If not implemented, defaults to: C-9
 chrome_action_tabs_goto_last                  C-9
 
 ;; == tabs + toggle =====================================================

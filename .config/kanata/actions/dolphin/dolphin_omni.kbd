@@ -316,8 +316,8 @@ dolphin_action_omni+.          $dolphin_tags
 ;; ___TO_SET___ dolphin_action_omni+ralt              
 ;; omni + prnt|groups
 ;; If not implemented, defaults to: action_!tabs+toggle
-;; ___TO_SET___ dolphin_action_omni+prnt              
+dolphin_action_omni+prnt        (push-msg "NOTIFY:No groups toggle behaviour implemented!")       
 ;; omni + rctl|sessions
 ;; If not implemented, defaults to: action_sessions+toggle
-;; ___TO_SET___ dolphin_action_omni+rctl              
+dolphin_action_omni+rctl        (push-msg "NOTIFY:No sessions toggle behaviour implemented!")            
 )

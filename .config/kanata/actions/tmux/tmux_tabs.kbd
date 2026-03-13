@@ -6,8 +6,10 @@
 tmux_action_tabs+spc            (macro $tmux_prefix w) ;; prefix + w (choose window)
 
 ;; tabs + l | tabs + right | lsft + rsft | 2x rsft | !lmet + tab
+;; If not implemented, defaults to: C-tab
 tmux_action_tabs_next                       (macro $tmux_prefix n)
 ;; tabs + h | tabs + left | rsft + lsft | 2x lsft | !lmet + sft + tab
+;; If not implemented, defaults to: C-S-tab
 tmux_action_tabs_prev                       (macro $tmux_prefix p)
 ;; tabs + j | tabs + down
 ;; ___TO_SET___ tmux_action_tabs_first             
@@ -15,30 +17,42 @@ tmux_action_tabs_prev                       (macro $tmux_prefix p)
 ;; ___TO_SET___ tmux_action_tabs_last              
 
 ;; tabs + t
+;; If not implemented, defaults to: C-t
 tmux_action_tabs_new                        (macro $tmux_prefix c)
 ;; tabs + w
+;; If not implemented, defaults to: C-w
 tmux_action_tabs_close                      (macro $tmux_prefix S-7) ;; prefix + & (kill window)
 ;; tabs + lsft + t
+;; If not implemented, defaults to: C-S-t
 ;; ___TO_SET___ tmux_action_tabs_undo_close        
 
 ;; == tabs go by number ==================================================
 ;; tabs + 1
+;; If not implemented, defaults to: C-1
 tmux_action_tabs_goto_1                     (macro $tmux_prefix Digit1)
 ;; tabs + 2
+;; If not implemented, defaults to: C-2
 tmux_action_tabs_goto_2                     (macro $tmux_prefix Digit2)
 ;; tabs + 3
+;; If not implemented, defaults to: C-3
 tmux_action_tabs_goto_3                     (macro $tmux_prefix Digit3)
 ;; tabs + 4
+;; If not implemented, defaults to: C-4
 tmux_action_tabs_goto_4                     (macro $tmux_prefix Digit4)
 ;; tabs + 5
+;; If not implemented, defaults to: C-5
 tmux_action_tabs_goto_5                     (macro $tmux_prefix Digit5)
 ;; tabs + 6
+;; If not implemented, defaults to: C-6
 tmux_action_tabs_goto_6                     (macro $tmux_prefix Digit6)
 ;; tabs + 7
+;; If not implemented, defaults to: C-7
 tmux_action_tabs_goto_7                     (macro $tmux_prefix Digit7)
 ;; tabs + 8
+;; If not implemented, defaults to: C-8
 tmux_action_tabs_goto_8                     (macro $tmux_prefix Digit8)
 ;; tabs + 9
+;; If not implemented, defaults to: C-9
 tmux_action_tabs_goto_last                  (macro $tmux_prefix Digit9)
 
 ;; == tabs + toggle =====================================================

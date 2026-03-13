@@ -6,8 +6,10 @@
 nvim_action_tabs+spc          (macro esc S-; S-t e l e s c o p e spc b u f f e r s ret)  ;;""
 
 ;; tabs + l | tabs + right | lsft + rsft | 2x rsft | !lmet + tab
+;; If not implemented, defaults to: C-tab
 nvim_action_tabs_next                       (macro esc S-; b n e x t ret)
 ;; tabs + h | tabs + left | rsft + lsft | 2x lsft | !lmet + sft + tab
+;; If not implemented, defaults to: C-S-tab
 nvim_action_tabs_prev                       (macro esc S-; b p r e v i o u s ret)  ;;""
 ;; tabs + j | tabs + down
 ;; ___TO_SET___ nvim_action_tabs_first             
@@ -15,30 +17,42 @@ nvim_action_tabs_prev                       (macro esc S-; b p r e v i o u s ret
 ;; ___TO_SET___ nvim_action_tabs_last              
 
 ;; tabs + t
+;; If not implemented, defaults to: C-t
 ;; ___TO_SET___ nvim_action_tabs_new               
 ;; tabs + w
+;; If not implemented, defaults to: C-w
 nvim_action_tabs_close                      C-w
 ;; tabs + lsft + t
+;; If not implemented, defaults to: C-S-t
 ;; ___TO_SET___ nvim_action_tabs_undo_close        
 
 ;; == tabs go by number ==================================================
 ;; tabs + 1
+;; If not implemented, defaults to: C-1
 nvim_action_tabs_goto_1                     (macro esc , Digit1)
 ;; tabs + 2
+;; If not implemented, defaults to: C-2
 nvim_action_tabs_goto_2                     (macro esc , Digit2)
 ;; tabs + 3
+;; If not implemented, defaults to: C-3
 nvim_action_tabs_goto_3                     (macro esc , Digit3)
 ;; tabs + 4
+;; If not implemented, defaults to: C-4
 nvim_action_tabs_goto_4                     (macro esc , Digit4)
 ;; tabs + 5
+;; If not implemented, defaults to: C-5
 nvim_action_tabs_goto_5                     (macro esc , Digit5)
 ;; tabs + 6
+;; If not implemented, defaults to: C-6
 nvim_action_tabs_goto_6                     (macro esc , Digit6)
 ;; tabs + 7
+;; If not implemented, defaults to: C-7
 nvim_action_tabs_goto_7                     (macro esc , Digit7)
 ;; tabs + 8
+;; If not implemented, defaults to: C-8
 nvim_action_tabs_goto_8                     (macro esc , Digit8)
 ;; tabs + 9
+;; If not implemented, defaults to: C-9
 ;; nvim_action_tabs_goto_last                  `{esc}:blast{ent}`
 nvim_action_tabs_goto_last                  (macro esc S-; b l a s t ent)
 
