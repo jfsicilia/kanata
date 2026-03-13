@@ -280,11 +280,19 @@ dolphin_action_omni+]          $dolphin_forward
 dolphin_action_omni+[          $dolphin_back   ;;""
 
 ;; omni + \
-dolphin_action_omni+\          (macro C-c 80 (cmd foot --maximized -e nvim none) 500 $vim_diff_files) ;;""
+;;dolphin_action_omni+\          (macro C-c 80 (cmd foot --maximized -e nvim none) 500 $vim_diff_files) ;;""
+;;dolphin_action_omni+\          (macro C-c (cmd foot --maximized bash -c "nvim -d $(wl-paste | tr -d '\r' | tr '\n' ' ' | sed 's|file://||g')"))
+;;dolphin_action_omni+\          (macro C-c (cmd foot --maximized bash -c "filediff.sh $(wl-paste | tr -d '\r' | tr '\n' ' ' | sed 's|file://||g')"))
+dolphin_action_omni+\          (macro C-c (cmd foot --maximized bash -c "vimdiff.sh $(wl-paste | tr -d '\r' | tr '\n' ' ' | sed 's|file://||g')"))
 ;; omni + lsft + \
-dolphin_action_omni+lsft+\     (macro C-c 80 (cmd foot --maximized -e nvim none) 500 $vim_diff_dirs)  ;;""
-;; omni + rsft + \
-dolphin_action_omni+rsft+\     (macro C-c 80 (cmd foot --maximized -e nvim none) 500 $vim_diff_dirs) ;;""
+;;dolphin_action_omni+lsft+\     (macro C-c 80 (cmd foot --maximized -e nvim none) 500 $vim_diff_dirs)  ;;""
+;;dolphin_action_omni+lsft+\     (macro C-c (cmd foot --maximized bash -c "wl-paste | tr -d '\r' | sed 's|file://||g' | xargs nvim -c DirDiff"))
+;;dolphin_action_omni+lsft+\     (macro C-c (cmd foot --maximized bash -c "folders=$(wl-paste | tr -d '\r' | tr '\n' ' ' | sed 's|file://||g'); nvim -c 'DirDiff ${folders}'"))
+;;dolphin_action_omni+lsft+\     (macro C-c (cmd foot --maximized bash -c "dirdiff.sh $(wl-paste | tr -d '\r' | tr '\n' ' ' | sed 's|file://||g')"))
+dolphin_action_omni+lsft+\     (macro C-c (cmd foot --maximized bash -c "vimdiff.sh $(wl-paste | tr -d '\r' | tr '\n' ' ' | sed 's|file://||g')"))
+;; omni + rsft + \ 
+;;dolphin_action_omni+rsft+\     (macro C-c 80 (cmd foot --maximized -e nvim none) 500 $vim_diff_dirs) ;;""
+dolphin_action_omni+rsft+\     (macro C-c (cmd foot --maximized bash -c "vimdiff.sh $(wl-paste | tr -d '\r' | tr '\n' ' ' | sed 's|file://||g')"))
 
 ;; omni + ;
 dolphin_action_omni+;          (push-msg "NOTIFY:No comments behaviour implemented!") 

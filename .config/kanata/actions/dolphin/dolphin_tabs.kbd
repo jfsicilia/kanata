@@ -61,11 +61,11 @@ dolphin_action_tabs+toggle             $dolphin_toggle_tab
 
 ;; == tabs + move =====================================================
 ;; tabs + move + h | tabs + move + left
-;; ___TO_SET___ dolphin_action_tabs_move_left         
+dolphin_action_tabs_move_left         (push-msg "NOTIFY:Move tab left not implemented!")
 ;; tabs + move + l | tabs + move + right
-;; ___TO_SET___ dolphin_action_tabs_move_right        
+dolphin_action_tabs_move_right        (push-msg "NOTIFY:Move tab right not implemented!")
 ;; tabs + move + k | tabs + move + up
-;; ___TO_SET___ dolphin_action_tabs_move_first        
+dolphin_action_tabs_move_first        (push-msg "NOTIFY:Move tab first not implemented!")
 ;; tabs + move + j | tabs + move + down
-;; ___TO_SET___ dolphin_action_tabs_move_last         
+dolphin_action_tabs_move_last         (push-msg "NOTIFY:Move tab last not implemented!")
 )

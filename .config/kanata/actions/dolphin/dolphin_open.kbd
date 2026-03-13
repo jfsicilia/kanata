@@ -4,7 +4,7 @@
 ;; open + spc
 ;; ___TO_SET___ dolphin_action_open_with              
 ;; open + m
-;; ___TO_SET___ dolphin_action_open_with_chrome       
+dolphin_action_open_with_chrome       (macro C-c 80 (cmd bash -c "google-chrome-stable --new-window $(wl-paste)"))
 ;; open + t
 dolphin_action_open_with_terminal     A-S-f4
 ;; open + v

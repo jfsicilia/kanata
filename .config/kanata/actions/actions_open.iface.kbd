@@ -8,6 +8,7 @@
   ))
   ;; open + m
   action_open_with_chrome (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_open_with_chrome break
     ((input virtual vk_obsidian)) $obsidian_action_open_with_chrome break
     () XX break
   ))
