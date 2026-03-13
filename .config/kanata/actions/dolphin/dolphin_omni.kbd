@@ -90,10 +90,7 @@ dolphin_forward          A-right
 dolphin_back             A-left
 dolphin_move_to_pane     S-f6
 dolphin_copy_to_pane     S-f5
-;; vim_diff_files        `:lua local f=vim.split('{C-S-v}',' '); vim.cmd('e '..f[1]); vim.cmd('vert diffs '..f[2]){ent}`
-vim_diff_files           (S-; l u a spc l o c a l spc f = v i m . s p l i t S-9 ' C-S-v ' , ' spc ' S-0 ; spc v i m . c m d S-9 ' e spc ' . . f [ Digit1 ] S-0 ; spc v i m . c m d S-9 ' v e r t spc d i f f s spc ' . . f [ Digit2 ] S-0 ent)
-;; vim_diff_dirs         `:DirDiff {C-S-v}{ent}`
-vim_diff_dirs            (S-; S-d i r S-d i f f spc C-S-v ent)
+dolphin_vimdiff          (macro C-c (cmd foot --maximized bash -c "vimdiff.sh $(wl-paste | tr -d '\r' | tr '\n' ' ' | sed 's|file://||g')"))
 
 ;; == omni ============================================================
 
@@ -280,19 +277,11 @@ dolphin_action_omni+]          $dolphin_forward
 dolphin_action_omni+[          $dolphin_back   ;;""
 
 ;; omni + \
-;;dolphin_action_omni+\          (macro C-c 80 (cmd foot --maximized -e nvim none) 500 $vim_diff_files) ;;""
-;;dolphin_action_omni+\          (macro C-c (cmd foot --maximized bash -c "nvim -d $(wl-paste | tr -d '\r' | tr '\n' ' ' | sed 's|file://||g')"))
-;;dolphin_action_omni+\          (macro C-c (cmd foot --maximized bash -c "filediff.sh $(wl-paste | tr -d '\r' | tr '\n' ' ' | sed 's|file://||g')"))
-dolphin_action_omni+\          (macro C-c (cmd foot --maximized bash -c "vimdiff.sh $(wl-paste | tr -d '\r' | tr '\n' ' ' | sed 's|file://||g')"))
+dolphin_action_omni+\          $dolphin_vimdiff 
 ;; omni + lsft + \
-;;dolphin_action_omni+lsft+\     (macro C-c 80 (cmd foot --maximized -e nvim none) 500 $vim_diff_dirs)  ;;""
-;;dolphin_action_omni+lsft+\     (macro C-c (cmd foot --maximized bash -c "wl-paste | tr -d '\r' | sed 's|file://||g' | xargs nvim -c DirDiff"))
-;;dolphin_action_omni+lsft+\     (macro C-c (cmd foot --maximized bash -c "folders=$(wl-paste | tr -d '\r' | tr '\n' ' ' | sed 's|file://||g'); nvim -c 'DirDiff ${folders}'"))
-;;dolphin_action_omni+lsft+\     (macro C-c (cmd foot --maximized bash -c "dirdiff.sh $(wl-paste | tr -d '\r' | tr '\n' ' ' | sed 's|file://||g')"))
-dolphin_action_omni+lsft+\     (macro C-c (cmd foot --maximized bash -c "vimdiff.sh $(wl-paste | tr -d '\r' | tr '\n' ' ' | sed 's|file://||g')"))
-;; omni + rsft + \ 
-;;dolphin_action_omni+rsft+\     (macro C-c 80 (cmd foot --maximized -e nvim none) 500 $vim_diff_dirs) ;;""
-dolphin_action_omni+rsft+\     (macro C-c (cmd foot --maximized bash -c "vimdiff.sh $(wl-paste | tr -d '\r' | tr '\n' ' ' | sed 's|file://||g')"))
+dolphin_action_omni+lsft+\     $dolphin_vimdiff
+;; omni + rsft + \
+dolphin_action_omni+rsft+\     $dolphin_vimdiff 
 
 ;; omni + ;
 dolphin_action_omni+;          (push-msg "NOTIFY:No comments behaviour implemented!") 

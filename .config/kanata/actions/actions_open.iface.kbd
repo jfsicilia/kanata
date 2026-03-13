@@ -4,6 +4,7 @@
   ;; == open =============================================================
   ;; open + spc
   action_open_with (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_open_with break
     () XX break
   ))
   ;; open + m
@@ -20,6 +21,7 @@
   ))
   ;; open + v
   action_open_with_nvim (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_open_with_nvim break
     ((input virtual vk_obsidian)) $obsidian_action_open_with_nvim break
     () XX break
   ))
