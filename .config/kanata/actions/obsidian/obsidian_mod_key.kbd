@@ -3,80 +3,59 @@ obsidian_symbols         A-S-o
 obsidian_commands        C-A-p
 obsidian_settings        C-A-,
 
-;; === 2. Key Modifiers actions ========================================
-;; =====================================================================
-
-;; == modA =========================================================
 ;; modA + spc
 ;; ___TO_SET___ obsidian_action_modA                   
 
-;; == modB =========================================================
 ;; modB + spc
 ;; ___TO_SET___ obsidian_action_modB                   
 
-;; == modC =========================================================
 ;; modC + spc
 ;; ___TO_SET___ obsidian_action_modC                   
 
-;; == modD =============================================================
 ;; modD + spc
 ;; ___TO_SET___ obsidian_action_modD                   
 
-;; == modE ===========================================================
 ;; modE + spc
 ;; ___TO_SET___ obsidian_action_modE                   
 
-;; == modF =============================================================
 ;; modF + spc
 ;; ___TO_SET___ obsidian_action_modF                   
 
-;; == modG =============================================================
 ;; modG + spc
 ;; ___TO_SET___ obsidian_action_modG                   
 ;; modG + modL
 ;; ___TO_SET___ obsidian_action_modG_modL              
 
-;; == modH =============================================================
 ;; modH + spc
 ;; ___TO_SET___ obsidian_action_modH                   
 
-;; == modI =========================================================
 ;; modI + spc
 ;; ___TO_SET___ obsidian_action_modI                   
 
-;; == modJ =============================================================
 ;; modJ + spc
 ;; ___TO_SET___ obsidian_action_modJ                   
 
-;; == modK =============================================================
 ;; modK + spc
 ;; ___TO_SET___ obsidian_action_modK                   
 
-;; == modL =============================================================
 ;; modL + spc
 ;; ___TO_SET___ obsidian_action_modL                   
 
-;; == modM  ==========================================================
 ;; modM + spc
 ;; ___TO_SET___ obsidian_action_modM                   
 
-;; == modN  ==========================================================
 ;; modN + spc
 ;; ___TO_SET___ obsidian_action_modN                   
 
-;; == modO =========================================================
 ;; modO + spc
 ;; ___TO_SET___ obsidian_action_modO                   
 
-;; == modP ===========================================================
 ;; modP + spc
 ;; ___TO_SET___ obsidian_action_modP                   
 
-;; == modQ =========================================================
 ;; modQ + spc
 ;; ___TO_SET___ obsidian_action_modQ                   
 
-;; == modR =========================================================
 ;; modR + spc
 ;; ___TO_SET___ obsidian_action_modR                   
 ;; modR + lsft + spc
@@ -84,35 +63,29 @@ obsidian_settings        C-A-,
 ;; modR + rsft + spc
 ;; ___TO_SET___ obsidian_action_modR+rsft              
 
-;; == modS =============================================================
 ;; modS + spc
+;; == modS =============================================================
 obsidian_action_modS                  $obsidian_symbols
 ;; modS + lsft + spc
 ;; ___TO_SET___ obsidian_action_modS+lsft              
 
-;; == modT =========================================================
 ;; modT + spc
 ;; ___TO_SET___ obsidian_action_modT                   
 ;; modT + n
 ;; ___TO_SET___ obsidian_action_modT+lsft              
 
-;; == modU =========================================================
 ;; modU + spc
 ;; ___TO_SET___ obsidian_action_modU                   
 
-;; == modV =========================================================
 ;; modV + spc
 ;; ___TO_SET___ obsidian_action_modV                   
 
-;; == modW ===========================================================
 ;; modW + spc
 ;; ___TO_SET___ obsidian_action_modW                   
 
-;; == modX =========================================================
 ;; modX + spc
 ;; ___TO_SET___ obsidian_action_modX                   
 
-;; == modY =========================================================
 ;; modY + spc
 ;; ___TO_SET___ obsidian_action_modY                   
 ;; modY + mod; + spc
@@ -120,31 +93,24 @@ obsidian_action_modS                  $obsidian_symbols
 ;; modY + search + spc
 ;; ___TO_SET___ obsidian_action_modY_search            
 
-;; == modZ =========================================================
 ;; modZ + spc
 ;; ___TO_SET___ obsidian_action_modZ                   
 
-;; == mod` =============================================================
 ;; mod` + spc
 ;; ___TO_SET___ obsidian_action_mod`                   
 
-;; == mod- =============================================================
 ;; mod- + spc
 ;; ___TO_SET___ obsidian_action_mod-                   
 
-;; == mod= ==========================================================
 ;; mod= + spc
 ;; ___TO_SET___ obsidian_action_mod=                   
 
-;; == mod[ =============================================================
 ;; mod[ + spc
 ;; ___TO_SET___ obsidian_action_mod[                   
 
-;; == mod] =============================================================
 ;; mod] + spc
 ;; ___TO_SET___ obsidian_action_mod]                   
 
-;; == mod\ =============================================================
 ;; mod\ + spc
 ;; ___TO_SET___ obsidian_action_mod\                   
 ;; mod\ + j
@@ -158,63 +124,50 @@ obsidian_action_modS                  $obsidian_symbols
 ;; mod\ + ent
 ;; ___TO_SET___ obsidian_action_mod\+ent               
 
-;; == mod; ===========================================================
 ;; mod; + spc
+;; == mod; ===========================================================
 obsidian_action_mod;                 $obsidian_commands
 
-;; == mod' =============================================================
 ;; mod' + spc
 ;; ___TO_SET___ obsidian_action_mod'                   
 
-;; == mod, ==========================================================
 ;; mod, + spc
+;; == mod, ==========================================================
 obsidian_action_mod,                       $obsidian_settings
 
-;; == mod. =========================================================
 ;; mod. + spc
 ;; ___TO_SET___ obsidian_action_mod.                   
 
-;; == mod/ ==========================================================
 ;; mod/ + spc
 ;; ___TO_SET___ obsidian_action_mod/                   
 
-;; == mod0 =============================================================
 ;; mod0 + spc
 ;; ___TO_SET___ obsidian_action_mod0                   
 
-;; == mod1 =============================================================
 ;; mod1 + spc
 ;; ___TO_SET___ obsidian_action_mod1                   
 
-;; == mod2 =============================================================
 ;; mod2 + spc
 ;; ___TO_SET___ obsidian_action_mod2                   
 
-;; == mod3 =============================================================
 ;; mod3 + spc
 ;; ___TO_SET___ obsidian_action_mod3                   
 
-;; == mod4 =============================================================
 ;; mod4 + spc
 ;; ___TO_SET___ obsidian_action_mod4                   
 
-;; == mod5 =============================================================
 ;; mod5 + spc
 ;; ___TO_SET___ obsidian_action_mod5                   
 
-;; == mod6 =============================================================
 ;; mod6 + spc
 ;; ___TO_SET___ obsidian_action_mod6                   
 
-;; == mod7 =============================================================
 ;; mod7 + spc
 ;; ___TO_SET___ obsidian_action_mod7                   
 
-;; == mod8 =============================================================
 ;; mod8 + spc
 ;; ___TO_SET___ obsidian_action_mod8                   
 
-;; == mod9 =============================================================
 ;; mod9 + spc
 ;; ___TO_SET___ obsidian_action_mod9                   
 )

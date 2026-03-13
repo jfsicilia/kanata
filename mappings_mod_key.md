@@ -4,7 +4,7 @@
 | -------- | ------------------- | ------------------- | ---------------- | ---------------- | ------------------ | -------------------------- |
 | A        | Autocommands        |                     |                  |                  |                    |                            |
 | B        | editor_groups (GUI) |                     |                  |                  |                    |                            |
-| C        | panes (GUI)         | panes (GUI)         | panes (GUI)      | panes (GUI)      | panes (GUI)        | panes (GUI)                |
+| C        | panes (GUI)         | !panes (GUI)        | panes (GUI)      | panes (GUI)      | panes (GUI)        | panes (GUI)                |
 | D        | Definitions         |                     |                  |                  |                    |                            |
 | E        |                     |                     |                  |                  |                    |                            |
 | F        | autoFill            |                     |                  |                  |                    |                            |
@@ -23,7 +23,7 @@
 | S        | Symbols             |                     |                  |                  | Symbols            |                            |
 | T        | Terminal            |                     |                  |                  |                    |                            |
 | U        | debUg               |                     |                  |                  |                    |                            |
-| V        | tabs (GUI)          | tabs (GUI)          | tabs (GUI)       | tabs (GUI)       | tabs (GUI)         | tabs (GUI)                 |
+| V        | tabs (GUI)          | !tabs (GUI)         | tabs (GUI)       | tabs (GUI)       | tabs (GUI)         | tabs (GUI)                 |
 | W        |                     |                     |                  |                  |                    |                            |
 | X        | workspaces (GUI)    | workspaces (GUI)    | workspaces (GUI) | workspaces (GUI) | workspaces (GUI)   | workspaces (GUI)           |
 | Y        | historY             |                     |                  |                  |                    |                            |

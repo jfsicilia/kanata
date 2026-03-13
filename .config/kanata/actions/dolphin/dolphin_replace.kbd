@@ -2,9 +2,9 @@
 
 ;; == replace ==========================================================
 ;; replace + spc
-;; ___TO_SET___ dolphin_action_replace                
+dolphin_action_replace               (push-msg "NOTIFY:Replace text in file not implemented!")
 ;; replace + lsft + spc
-;; ___TO_SET___ dolphin_action_replace+lsft           
+dolphin_action_replace+lsft          (push-msg "NOTIFY:Replace text in files not implemented!") 
 ;; replace + rsft + spc
-;; ___TO_SET___ dolphin_action_replace+rsft           
+dolphin_action_replace+rsft          (push-msg "NOTIFY:Replace text in files not implemented!") 
 )

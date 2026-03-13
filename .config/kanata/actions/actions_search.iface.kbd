@@ -18,6 +18,7 @@
   ))
   ;; search + rsft + spc 
   action_search+rsft (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_search+rsft break
     () XX break
   ))
 )
