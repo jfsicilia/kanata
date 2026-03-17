@@ -2,6 +2,9 @@
 dolphin_terminal                       f4
 dolphin_pane_split                     f3
 dolphin_pane_toggle                    tab
+dolphin_focus_main                     (macro C-l C-p C-p)
+dolphin_focus_address_bar              (macro C-p C-l)
+dolphin_focus_sidebar                  (macro C-l C-p)
 
 ;; == panes =============================================================
 ;; panes + spc
@@ -122,7 +125,7 @@ dolphin_action_panes+lsft+.           (push-msg "NOTIFY:Show pane not implemente
 ;; panes + a
 dolphin_action_panes+a                (push-msg "NOTIFY:Show pane not implemented!")
 ;; panes + s
-dolphin_action_panes+s                (push-msg "NOTIFY:Show pane not implemented!")
+dolphin_action_panes+s                $dolphin_focus_sidebar
 ;; panes + lsft + s
 dolphin_action_panes+lsft+s           (push-msg "NOTIFY:Show pane not implemented!")
 ;; panes + d
@@ -130,7 +133,7 @@ dolphin_action_panes+d                (push-msg "NOTIFY:Show pane not implemente
 ;; panes + f
 dolphin_action_panes+f                (push-msg "NOTIFY:Show pane not implemented!")
 ;; panes + g
-dolphin_action_panes+g                (push-msg "NOTIFY:Show pane not implemented!")
+dolphin_action_panes+g                $dolphin_focus_address_bar
 ;; panes + ;
 dolphin_action_panes+;                (push-msg "NOTIFY:Show pane not implemented!")
 ;; panes + '
@@ -153,7 +156,7 @@ dolphin_action_panes+b                (push-msg "NOTIFY:Show pane not implemente
 ;; panes + n
 dolphin_action_panes+n                (push-msg "NOTIFY:Show pane not implemented!")
 ;; panes + m
-dolphin_action_panes+m                (push-msg "NOTIFY:Show pane not implemented!")
+dolphin_action_panes+m                $dolphin_focus_main
 ;; panes + ,
 dolphin_action_panes+,                (push-msg "NOTIFY:Show pane not implemented!")
 ;; panes + .

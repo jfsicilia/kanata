@@ -6,7 +6,7 @@
 | B        | editor_groups (GUI) |                     |                  |                  |                    |                            |
 | C        | panes (GUI)         | !panes (GUI)        | panes (GUI)      | panes (GUI)      | panes (GUI)        | panes (GUI)                |
 | D        | definitions         |                     |                  |                  |                    |                            |
-| E        |                     |                     |                  |                  |                    |                            |
+| E        | edit                |                     |                  |                  |                    |                            |
 | F        | autofill            |                     |                  |                  |                    |                            |
 | G        | git                 |                     |                  |                  |                    |                            |
 | H        | hyperlinks          |                     |                  |                  |                    |                            |

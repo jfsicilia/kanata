@@ -8,19 +8,19 @@
 | D          | ~Docker            |                     |                   |                   |                    |                            |
 | E          | file_Explorer      |                     |                   |                   | file_Explorer      |                            |
 | F          | ~Filename          |                     |                   |                   |                    |                            |
-| G          | ~Go                |                     |                   |                   | Go                 |                            |
+| G          | ~Go                | Go                  |                   |                   | Go                 |                            |
 | H          | \*pane_left        | pane_left           | \*pane_left       | \*pane_left       | \*pane_left        | \*pane_left                |
 | I          | ~Info              |                     |                   |                   | ~Info              |                            |
 | J          | \*pane_below       | pane_below          | \*pane_below      | \*pane_below      | \*pane_below       | \*pane_below               |
 | K          | \*pane_above       | pane_above          | \*pane_above      | \*pane_above      | \*pane_above       | \*pane_above               |
 | L          | \*pane_right       | pane_right          | \*pane_right      | \*pane_right      | \*pane_right       | \*pane_right               |
-| M          | ~Main              |                     |                   |                   | Main               |                            |
+| M          | ~Main              | main                |                   |                   | Main               |                            |
 | N          |                    |                     |                   |                   | ~Notebooks         |                            |
 | O          | ~Outline/Output    |                     |                   |                   | Outline            |                            |
 | P          | ~Properties        |                     |                   |                   | Properties         |                            |
 | Q          | ~Quickfix          |                     |                   |                   |                    |                            |
 | R          | ~Recent            |                     |                   |                   | Recent             |                            |
-| S          | ~Sidebar           |                     |                   |                   | Sidebar            |                            |
+| S          | ~Sidebar           | sidebar             |                   |                   | Sidebar            |                            |
 | T          | ~Terminal          |                     |                   |                   |                    |                            |
 | U          | ~debUg             |                     |                   |                   |                    |                            |
 | V          |                    |                     |                   |                   | Vertical tabs      |                            |
