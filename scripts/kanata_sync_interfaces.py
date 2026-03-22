@@ -45,6 +45,7 @@ Usage:
 import argparse
 import re
 from pathlib import Path
+from typing import Optional
 
 DEFAULT_ACTIONS_FOLDER = Path.home() / ".config" / "kanata" / "actions"
 
@@ -512,7 +513,7 @@ def process_actions(
     app_actions: dict[str, tuple[list[str], str]],
     extra_vars: list[tuple[list[str], str]],
     prelude: list[str],
-) -> list[str]:
+) -> Optional[list[str]]:
     """Parse an interface file and generate app-specific output.
 
     Reads the interface file, skips everything before the @start@ marker,
@@ -530,6 +531,8 @@ def process_actions(
     Returns:
         List of output lines forming the complete app file content.
     """
+    if not interface_file.exists():
+        return None
     lines = interface_file.read_text().splitlines()
     i = 0
     comments: list[str] = []
@@ -618,7 +621,9 @@ def main() -> None:
     if args.actions_file:
         interface_file: Path = args.actions_file
     else:
-        interface_file = output_path.parent.parent / f"actions_{interface_name}.iface.kbd"
+        interface_file = (
+            output_path.parent.parent / f"actions_{interface_name}.iface.kbd"
+        )
 
     print(f"Shared action file : {interface_file}")
     print(f"Output file        : {output_path}")
@@ -628,6 +633,10 @@ def main() -> None:
 
     prelude, app_actions, extra_vars = read_existing_app_file(output_path)
     result = process_actions(interface_file, app, app_actions, extra_vars, prelude)
+    if not result:
+        print("Interface file doesn't exist. Nothing to do.")
+        return
+
     output = "\n".join(result)
 
     if args.write:

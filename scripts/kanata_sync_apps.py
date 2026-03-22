@@ -76,34 +76,6 @@ VK_LINE_RE = re.compile(r"\(\(input virtual vk_")
 #   "groups.1.kbd"   -> iface="groups", priority="1"
 IFACE_PRIORITY_RE = re.compile(r"^(\w+)(?:\.(\d+))?\.kbd$")
 
-# def find_apps(actions_folder: Path) -> list[tuple[str, str]]:
-#     """Discover app action files and return them sorted by priority.
-#
-#     Scans the actions folder for files matching the pattern
-#     actions_<app>[.<priority>].kbd. Files are sorted by priority index
-#     (lower numbers first; files without an index default to 0).
-#
-#     Args:
-#         actions_folder: Path to the folder containing action files.
-#
-#     Returns:
-#         List of (app_name, filename) tuples sorted by priority.
-#         Example: [("nvim", "actions_nvim.1.kbd"), ("chrome", "actions_chrome.4.kbd")]
-#     """
-#     files_with_order: list[tuple[int | None, str, str]] = []
-#
-#     for p in actions_folder.glob(f"{ACTIONS_PREFIX}*.{KANATA_EXT}"):
-#         m = FILENAME_RE.match(p.name)
-#         if m:
-#             app_name: str = m.group(1)
-#             order_str: str = m.group(2)
-#             order: int | None = int(order_str) if order_str else None
-#             files_with_order.append((order, app_name, p.name))
-#
-#     files_with_order.sort(key=lambda x: x[0] if x[0] is not None else 0)
-#
-#     return [(app_name, app_file) for _, app_name, app_file in files_with_order]
-
 
 def _write_if_changed(path: Path, content: str) -> None:
     """Write content to a file only if it differs from the current content."""
