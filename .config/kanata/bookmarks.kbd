@@ -33,8 +33,8 @@ folder_projects           (S-grv 10 / w o r k a r e a / p r o j e c t s)
 ;;folder_kanata           `~/settings/linux/dotfiles/kanata`
 folder_kanata             (S-grv 10 / s e t t i n g s / l i n u x / d o t f i l e s / k a n a t a)
 ;; l
-;;folder_lab              `~/workarea/lab`
-folder_lab                (S-grv 10 / w o r k a r e a / l a b)
+
+
 ;; l
 ;;folder_medano           `~/mnt/medano`
 folder_medano             (S-grv 10 / m n t / m e d a n o)
@@ -63,6 +63,8 @@ folder_tmp                (S-grv 10 / t m p)
 
 
 ;; v
+;;folder_dev              `~/workarea/dev`
+folder_dev                (S-grv 10 / w o r k a r e a / d e v)
 
 
 ;; w
