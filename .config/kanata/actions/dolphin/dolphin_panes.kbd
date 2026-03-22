@@ -1,17 +1,11 @@
 (defvar
-dolphin_terminal                       f4
-dolphin_pane_split                     f3
-dolphin_pane_toggle                    tab
-dolphin_focus_main                     (macro C-l C-p C-p)
-dolphin_focus_address_bar              (macro C-p C-l)
-dolphin_focus_sidebar                  (macro C-l C-p)
 
 ;; == panes =============================================================
 ;; panes + spc
 dolphin_action_panes+spc              (push-msg "NOTIFY:Select panes not implemented!")
 
 ;; panes + ent
-dolphin_action_panes+max               $dolphin_pane_split
+dolphin_action_panes+max               $dolphin_pane_max
 
 ;; panes + h | panes + left
 dolphin_action_panes+h                 $dolphin_pane_toggle
@@ -94,13 +88,13 @@ dolphin_action_panes+q                (push-msg "NOTIFY:Show pane not implemente
 ;; panes + w
 ;; see panes
 ;; panes + e
-dolphin_action_panes+e                (push-msg "NOTIFY:Show pane not implemented!")
+dolphin_action_panes+e                $dolphin_toggle_left_sidebar            
 ;; panes + lsft + e
 dolphin_action_panes+lsft+e           (push-msg "NOTIFY:Show pane not implemented!")
 ;; panes + r
 dolphin_action_panes+r                (push-msg "NOTIFY:Show pane not implemented!")
 ;; panes + t
-dolphin_action_panes+t          $dolphin_terminal
+dolphin_action_panes+t                $dolphin_terminal
 ;; panes + u
 dolphin_action_panes+u                (push-msg "NOTIFY:Show pane not implemented!")
 ;; panes + y
@@ -125,9 +119,9 @@ dolphin_action_panes+lsft+.           (push-msg "NOTIFY:Show pane not implemente
 ;; panes + a
 dolphin_action_panes+a                (push-msg "NOTIFY:Show pane not implemented!")
 ;; panes + s
-dolphin_action_panes+s                $dolphin_focus_sidebar
+dolphin_action_panes+s                $dolphin_toggle_left_sidebar
 ;; panes + lsft + s
-dolphin_action_panes+lsft+s           (push-msg "NOTIFY:Show pane not implemented!")
+dolphin_action_panes+lsft+s           $dolphin_toggle_right_sidebar
 ;; panes + d
 dolphin_action_panes+d                (push-msg "NOTIFY:Show pane not implemented!")
 ;; panes + f

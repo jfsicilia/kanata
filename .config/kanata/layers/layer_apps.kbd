@@ -42,7 +42,9 @@
 )
 
 (deflayermap (apps+lsft_layer)
+  t      $action_apps+lsft+t
 )
 
 (deflayermap (apps+rsft_layer)
+  t      $action_apps+rsft+t
 )

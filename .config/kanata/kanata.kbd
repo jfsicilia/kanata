@@ -93,6 +93,7 @@
   vk_obsidian     XX
   vk_tmux         XX
   vk_vscode       XX
+  vk_zapzap       XX
   vk_zellij       XX
 )
 
@@ -103,6 +104,7 @@
 (include actions/chrome/chrome_seek_n_select.kbd)
 (include actions/chrome/chrome_tabs.kbd)
 (include actions/dolphin/dolphin_bookmarks.kbd)
+(include actions/dolphin/dolphin_defs.kbd)
 (include actions/dolphin/dolphin_mod_key.kbd)
 (include actions/dolphin/dolphin_mod_physical.kbd)
 (include actions/dolphin/dolphin_omni.kbd)
@@ -115,7 +117,7 @@
 (include actions/foot/foot_bookmarks.kbd)
 (include actions/foot/foot_mod_key.kbd)
 (include actions/foot/foot_mod_physical.kbd)
-(include actions/foot/foot_omni.kbd)
+(include actions/foot/foot_omni.59.kbd)
 (include actions/foot/foot_replace.kbd)
 (include actions/foot/foot_search.kbd)
 (include actions/foot/foot_seek_n_select.kbd)
@@ -152,6 +154,7 @@
 (include actions/tmux/tmux_sessions.kbd)
 (include actions/tmux/tmux_tabs.kbd)
 (include actions/vscode/vscode_omni.kbd)
+(include actions/zapzap/zapzap_seek_n_select.kbd)
 (include actions/zellij/zellij_groups.29.kbd)
 (include actions/zellij/zellij_mod_key.kbd)
 (include actions/zellij/zellij_mod_physical.kbd)

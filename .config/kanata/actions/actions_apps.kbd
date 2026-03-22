@@ -106,6 +106,12 @@
   action_apps+t (t! unmod_all (switch
     () (push-msg "APP:terminal") break
   ))
+  action_apps+lsft+t (t! unmod_all (switch
+    () (push-msg "APP:telegram") break
+  ))
+  action_apps+rsft+t (t! unmod_all (switch
+    () (push-msg "APP:telegram") break
+  ))
   action_apps+u (t! unmod_all (switch
     () (push-msg "APP:") break
   ))
@@ -113,7 +119,7 @@
     () (push-msg "APP:nvim") break
   ))
   action_apps+w (t! unmod_all (switch 
-    () (push-msg "APP:") break
+    () (push-msg "APP:zapzap") break
   ))
   action_apps+x (t! unmod_all (switch
     () (push-msg "APP:") break

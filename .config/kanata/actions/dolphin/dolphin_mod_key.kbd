@@ -1,7 +1,4 @@
 (defvar
-dolphin_keymaps            C-A-,  
-dolphin_settings           C-S-,   
-dolphin_help               f1      
 
 ;; modA + spc
 dolphin_action_modA                    (push-msg "NOTIFY:ModKey+spc not implemented!")

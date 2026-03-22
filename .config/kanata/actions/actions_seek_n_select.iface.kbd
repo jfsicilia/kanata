@@ -10,6 +10,7 @@
     ((input virtual vk_nvim)) $nvim_action_seek_and_select break
     ((input virtual vk_obsidian)) $obsidian_action_seek_and_select break
     ((input virtual vk_tmux)) $tmux_action_seek_and_select break
+    ((input virtual vk_zapzap)) $zapzap_action_seek_and_select break
     () XX break
   ))
   ;; seek_sel + lsft + spc 
