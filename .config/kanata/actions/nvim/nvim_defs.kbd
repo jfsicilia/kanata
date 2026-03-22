@@ -1,0 +1,3 @@
+(defvar
+nvim_action_bookmarks+spc             (macro esc S-; S-t e l e s c o p e spc m a r k s ret)   ;;""
+)

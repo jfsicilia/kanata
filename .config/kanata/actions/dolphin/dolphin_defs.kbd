@@ -1,3 +1,6 @@
+(deftemplate dolphin_goto_folder (folder)
+  (macro C-l $folder ent)
+)
 (defvirtualkeys
   ;; This virtual keys allow to iterate over the sort options of dolphin.
   vk_dolphin_sort1  XX

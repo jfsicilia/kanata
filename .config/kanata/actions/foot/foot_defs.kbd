@@ -1,0 +1,3 @@
+(deftemplate foot_goto_folder (folder)
+  (macro esc d d i c d spc $folder ent)
+)

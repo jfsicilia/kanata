@@ -62,13 +62,13 @@
 
 ;; Global Actions =======================================================
 (include actions/actions_apps.kbd)
+(include actions/actions_bookmarks.kbd)
 (include actions/actions_lang.kbd)
 (include actions/actions_opts.kbd)
 (include actions/actions_windows.kbd)
 (include actions/actions_workspaces.kbd)
 
 ;; Apps Interface Actions =====================================================
-(include actions/actions_bookmarks.iface.kbd)
 (include actions/actions_seek_n_select.iface.kbd)
 (include actions/actions_groups.iface.kbd)
 (include actions/actions_mod_key.iface.kbd)
@@ -98,12 +98,10 @@
 )
 
 ;; Apps' Actions ========================================================
-(include actions/chrome/chrome_bookmarks.kbd)
 (include actions/chrome/chrome_groups.4.kbd)
 (include actions/chrome/chrome_omni.kbd)
 (include actions/chrome/chrome_seek_n_select.kbd)
 (include actions/chrome/chrome_tabs.kbd)
-(include actions/dolphin/dolphin_bookmarks.kbd)
 (include actions/dolphin/dolphin_defs.kbd)
 (include actions/dolphin/dolphin_mod_key.kbd)
 (include actions/dolphin/dolphin_mod_physical.kbd)
@@ -114,14 +112,14 @@
 (include actions/dolphin/dolphin_search.kbd)
 (include actions/dolphin/dolphin_seek_n_select.kbd)
 (include actions/dolphin/dolphin_tabs.kbd)
-(include actions/foot/foot_bookmarks.kbd)
+(include actions/foot/foot_defs.kbd)
 (include actions/foot/foot_mod_key.kbd)
 (include actions/foot/foot_mod_physical.kbd)
 (include actions/foot/foot_omni.59.kbd)
 (include actions/foot/foot_replace.kbd)
 (include actions/foot/foot_search.kbd)
 (include actions/foot/foot_seek_n_select.kbd)
-(include actions/nvim/nvim_bookmarks.kbd)
+(include actions/nvim/nvim_defs.kbd)
 (include actions/nvim/nvim_groups.1.kbd)
 (include actions/nvim/nvim_mod_key.kbd)
 (include actions/nvim/nvim_mod_physical.kbd)
@@ -132,7 +130,7 @@
 (include actions/nvim/nvim_search.kbd)
 (include actions/nvim/nvim_seek_n_select.kbd)
 (include actions/nvim/nvim_tabs.kbd)
-(include actions/obsidian/obsidian_bookmarks.kbd)
+(include actions/obsidian/obsidian_defs.kbd)
 (include actions/obsidian/obsidian_groups.4.kbd)
 (include actions/obsidian/obsidian_mod_key.kbd)
 (include actions/obsidian/obsidian_mod_physical.kbd)
