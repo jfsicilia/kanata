@@ -2,11 +2,11 @@
 
 ;; == open =============================================================
 ;; open + spc
-dolphin_action_open_with              (macro C-c 80 (cmd bash -c "open_with.sh $(wl-paste|tr -d '\r'|tr '\n' ' '|sed 's|file://||g')"))
+dolphin_action_open_with              $dolphin_open_with
 ;; open + m
-dolphin_action_open_with_chrome       (macro C-c 80 (cmd bash -c "google-chrome-stable --new-window $(wl-paste)"))
+dolphin_action_open_with_chrome       $dolphin_open_with_chrome
 ;; open + t
-dolphin_action_open_with_terminal     A-S-f4
+dolphin_action_open_with_terminal     $dolphin_open_with_terminal
 ;; open + v
-dolphin_action_open_with_nvim         (macro C-c 80 (cmd foot --maximized bash -c "nvim $(wl-paste|tr -d '\r'|tr '\n' ' '|sed 's|file://||g')"))
+dolphin_action_open_with_nvim         $dolphin_open_with_nvim
 )

@@ -29,31 +29,31 @@ dolphin_action_tabs_last              (push-msg "NOTIFY:Select last tab not impl
 ;; == tabs go by number ==================================================
 ;; tabs + 1
 ;; If not implemented, defaults to: C-1
-dolphin_action_tabs_goto_1             A-1
+dolphin_action_tabs_goto_1             $dolphin_tab_1 
 ;; tabs + 2
 ;; If not implemented, defaults to: C-2
-dolphin_action_tabs_goto_2             A-2
+dolphin_action_tabs_goto_2             $dolphin_tab_2 
 ;; tabs + 3
 ;; If not implemented, defaults to: C-3
-dolphin_action_tabs_goto_3             A-3
+dolphin_action_tabs_goto_3             $dolphin_tab_3 
 ;; tabs + 4
 ;; If not implemented, defaults to: C-4
-dolphin_action_tabs_goto_4             A-4
+dolphin_action_tabs_goto_4             $dolphin_tab_4 
 ;; tabs + 5
 ;; If not implemented, defaults to: C-5
-dolphin_action_tabs_goto_5             A-5
+dolphin_action_tabs_goto_5             $dolphin_tab_5 
 ;; tabs + 6
 ;; If not implemented, defaults to: C-6
-dolphin_action_tabs_goto_6             A-6
+dolphin_action_tabs_goto_6             $dolphin_tab_6 
 ;; tabs + 7
 ;; If not implemented, defaults to: C-7
-dolphin_action_tabs_goto_7             A-7
+dolphin_action_tabs_goto_7             $dolphin_tab_7 
 ;; tabs + 8
 ;; If not implemented, defaults to: C-8
-dolphin_action_tabs_goto_8             A-8
+dolphin_action_tabs_goto_8             $dolphin_tab_8 
 ;; tabs + 9
 ;; If not implemented, defaults to: C-9
-dolphin_action_tabs_goto_last          A-9
+dolphin_action_tabs_goto_last          $dolphin_tab_9 
 
 ;; == tabs + toggle =====================================================
 ;; tabs + toggle | 2x !lctl

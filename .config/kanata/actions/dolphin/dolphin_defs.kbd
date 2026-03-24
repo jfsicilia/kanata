@@ -107,4 +107,10 @@
   dolphin_focus_main                     (macro C-l C-p C-p)
   dolphin_focus_address_bar              (macro C-p C-l)
   dolphin_focus_sidebar                  (macro C-l C-p)
+  dolphin_open_with                      (macro C-c 80 (cmd bash -c "open_with.sh $(wl-paste|tr -d '\r'|tr '\n' ' '|sed 's|file://||g')"))
+  dolphin_open_with_chrome               (macro C-c 80 (cmd bash -c "google-chrome-stable --new-window $(wl-paste)"))
+  dolphin_open_with_terminal             A-S-f4
+  dolphin_open_with_nvim                 (macro C-c 80 (cmd foot --maximized bash -c "nvim $(wl-paste|tr -d '\r'|tr '\n' ' '|sed 's|file://||g')"))
+  dolphin_search                         C-f
+  dolphin_omni_search                    C-S-f
 )
