@@ -222,6 +222,7 @@
     ((input virtual vk_nvim)) $nvim_action_omni+g break
     ((input virtual vk_obsidian)) $obsidian_action_omni+g break
     ((input virtual vk_tmux)) $tmux_action_omni+g break
+    ((input virtual vk_zapzap)) $zapzap_action_omni+g break
     () XX break
   ))
 
@@ -275,6 +276,7 @@
     ((input virtual vk_nvim)) $nvim_action_omni+n break
     ((input virtual vk_obsidian)) $obsidian_action_omni+n break
     ((input virtual vk_tmux)) $tmux_action_omni+n break
+    ((input virtual vk_zapzap)) $zapzap_action_omni+n break
     () XX break
   ))
   ;; omni + lsft + n
@@ -283,6 +285,7 @@
     ((input virtual vk_nvim)) $nvim_action_omni+lsft+n break
     ((input virtual vk_obsidian)) $obsidian_action_omni+lsft+n break
     ((input virtual vk_tmux)) $tmux_action_omni+lsft+n break
+    ((input virtual vk_zapzap)) $zapzap_action_omni+lsft+n break
     () XX break
   ))
   ;; omni + rsft + n
@@ -291,6 +294,7 @@
     ((input virtual vk_nvim)) $nvim_action_omni+rsft+n break
     ((input virtual vk_obsidian)) $obsidian_action_omni+rsft+n break
     ((input virtual vk_tmux)) $tmux_action_omni+rsft+n break
+    ((input virtual vk_zapzap)) $zapzap_action_omni+rsft+n break
     () XX break
   ))
 
@@ -455,6 +459,7 @@
     ((input virtual vk_dolphin)) $dolphin_action_omni+1 break
     ((input virtual vk_nvim)) $nvim_action_omni+1 break
     ((input virtual vk_tmux)) $tmux_action_omni+1 break
+    ((input virtual vk_zapzap)) $zapzap_action_omni+1 break
     () C-1 break
   ))
   ;; omni + 2
@@ -463,6 +468,7 @@
     ((input virtual vk_dolphin)) $dolphin_action_omni+2 break
     ((input virtual vk_nvim)) $nvim_action_omni+2 break
     ((input virtual vk_tmux)) $tmux_action_omni+2 break
+    ((input virtual vk_zapzap)) $zapzap_action_omni+2 break
     () C-2 break
   ))
   ;; omni + 3
@@ -471,6 +477,7 @@
     ((input virtual vk_dolphin)) $dolphin_action_omni+3 break
     ((input virtual vk_nvim)) $nvim_action_omni+3 break
     ((input virtual vk_tmux)) $tmux_action_omni+3 break
+    ((input virtual vk_zapzap)) $zapzap_action_omni+3 break
     () C-3 break
   ))
   ;; omni + 4
@@ -479,6 +486,7 @@
     ((input virtual vk_dolphin)) $dolphin_action_omni+4 break
     ((input virtual vk_nvim)) $nvim_action_omni+4 break
     ((input virtual vk_tmux)) $tmux_action_omni+4 break
+    ((input virtual vk_zapzap)) $zapzap_action_omni+4 break
     () C-4 break
   ))
   ;; omni + 5
@@ -487,6 +495,7 @@
     ((input virtual vk_dolphin)) $dolphin_action_omni+5 break
     ((input virtual vk_nvim)) $nvim_action_omni+5 break
     ((input virtual vk_tmux)) $tmux_action_omni+5 break
+    ((input virtual vk_zapzap)) $zapzap_action_omni+5 break
     () C-5 break
   ))
   ;; omni + 6
@@ -495,6 +504,7 @@
     ((input virtual vk_dolphin)) $dolphin_action_omni+6 break
     ((input virtual vk_nvim)) $nvim_action_omni+6 break
     ((input virtual vk_tmux)) $tmux_action_omni+6 break
+    ((input virtual vk_zapzap)) $zapzap_action_omni+6 break
     () C-6 break
   ))
   ;; omni + 7
@@ -503,6 +513,7 @@
     ((input virtual vk_dolphin)) $dolphin_action_omni+7 break
     ((input virtual vk_nvim)) $nvim_action_omni+7 break
     ((input virtual vk_tmux)) $tmux_action_omni+7 break
+    ((input virtual vk_zapzap)) $zapzap_action_omni+7 break
     () C-7 break
   ))
   ;; omni + 8
@@ -511,6 +522,7 @@
     ((input virtual vk_dolphin)) $dolphin_action_omni+8 break
     ((input virtual vk_nvim)) $nvim_action_omni+8 break
     ((input virtual vk_tmux)) $tmux_action_omni+8 break
+    ((input virtual vk_zapzap)) $zapzap_action_omni+8 break
     () C-8 break
   ))
   ;; omni + 9
@@ -519,6 +531,7 @@
     ((input virtual vk_dolphin)) $dolphin_action_omni+9 break
     ((input virtual vk_nvim)) $nvim_action_omni+9 break
     ((input virtual vk_tmux)) $tmux_action_omni+9 break
+    ((input virtual vk_zapzap)) $zapzap_action_omni+9 break
     () C-9 break
   ))
 
@@ -608,6 +621,7 @@
   action_omni+, (t! unmod_all (switch ;;@iface@
     ((input virtual vk_nvim)) $nvim_action_omni+, break
     ((input virtual vk_tmux)) $tmux_action_omni+, break
+    ((input virtual vk_zapzap)) $zapzap_action_omni+, break
     () $action_mod, break
   ))
   ;; omni + .

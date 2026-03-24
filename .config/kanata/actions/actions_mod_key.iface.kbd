@@ -299,6 +299,7 @@
     ((input virtual vk_dolphin)) $dolphin_action_mod, break
     ((input virtual vk_nvim)) $nvim_action_mod, break
     ((input virtual vk_obsidian)) $obsidian_action_mod, break
+    ((input virtual vk_zapzap)) $zapzap_action_mod, break
     () XX break
   ))
 
