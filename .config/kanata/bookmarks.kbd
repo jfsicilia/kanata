@@ -4,7 +4,7 @@
 
 ;; b
 ;;folder_bookcase         `~/media/bookcase/`
-folder_bookcase           (S-grv 10 / m e d i a / b o o k c a s e)
+folder_bookcase           (S-grv 10 / m e d i a / t e x t)
 ;; c
 ;;folder_scans            `~/inbox/scans`
 folder_scans              (S-grv 10 / i n b o x / s c a n s)
