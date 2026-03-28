@@ -61,11 +61,11 @@ chrome_action_tabs+toggle                     A-w
 
 ;; == tabs + move =====================================================
 ;; tabs + move + h | tabs + move + left
-;; ___TO_SET___ chrome_action_tabs_move_left         
+chrome_action_tabs_move_left                  $chrome_tabs_move_left      
 ;; tabs + move + l | tabs + move + right
-;; ___TO_SET___ chrome_action_tabs_move_right        
+chrome_action_tabs_move_right                 $chrome_tabs_move_right       
 ;; tabs + move + k | tabs + move + up
-;; ___TO_SET___ chrome_action_tabs_move_first        
+chrome_action_tabs_move_first                 $chrome_tabs_move_first
 ;; tabs + move + j | tabs + move + down
-;; ___TO_SET___ chrome_action_tabs_move_last         
+chrome_action_tabs_move_last                  $chrome_tabs_move_last      
 )

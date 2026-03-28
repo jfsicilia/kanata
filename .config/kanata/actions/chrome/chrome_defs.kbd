@@ -1,0 +1,8 @@
+(defvar
+chrome_tabs_move_left      A-S-left
+chrome_tabs_move_right     A-S-right
+chrome_tabs_move_first     A-S-down
+chrome_tabs_move_last      A-S-up
+chrome_keybindings         (macro C-t 10 c h r o m e S-; / / e x t e n s i o n s / s h o r t c u t s ent)
+chrome_settings            (macro C-t 10 c h r o m e S-; / / s e t t i n g s ent)
+)

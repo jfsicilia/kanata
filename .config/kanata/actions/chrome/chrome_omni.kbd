@@ -6,12 +6,19 @@ chrome_back              A-left
 
 ;; == omni ============================================================
 
+;; omni
+;; If not implemented, defaults to: esc
+;; ___TO_SET___ chrome_action_omni                   
+
 ;; omni + spc
 ;; If not implemented, defaults to: spc
 ;; ___TO_SET___ chrome_action_omni+spc               
 
 ;; omni + ent
 ;; ___TO_SET___ chrome_action_omni+ent               
+
+;; omni + bcsp
+;; ___TO_SET___ chrome_action_omni+bcsp              
 
 ;; omni + a
 ;; ___TO_SET___ chrome_action_omni+a                 
@@ -200,7 +207,7 @@ chrome_action_omni+[                      $chrome_back
 
 ;; omni + ,
 ;; If not implemented, defaults to: action_mod,
-;; ___TO_SET___ chrome_action_omni+,                 
+chrome_action_omni+,                 $chrome_settings
 ;; omni + .
 ;; If not implemented, defaults to: action_mod.
 ;; ___TO_SET___ chrome_action_omni+.                 
