@@ -14,4 +14,5 @@ zapzap_search_in_chat C-S-f
 zapzap_search_chat    C-A-/
 zapzap_omni_search    A-k
 zapzap_settings       C-A-,
+zapzap_quit           C-q
 )

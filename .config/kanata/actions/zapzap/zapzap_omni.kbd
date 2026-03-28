@@ -2,12 +2,19 @@
 
 ;; == omni ============================================================
 
+;; omni
+;; If not implemented, defaults to: esc
+;; ___TO_SET___ zapzap_action_omni                   
+
 ;; omni + spc
 ;; If not implemented, defaults to: spc
 ;; ___TO_SET___ zapzap_action_omni+spc               
 
 ;; omni + ent
 ;; ___TO_SET___ zapzap_action_omni+ent               
+
+;; omni + bcsp
+;; ___TO_SET___ zapzap_action_omni+bcsp              
 
 ;; omni + a
 ;; ___TO_SET___ zapzap_action_omni+a                 
@@ -89,7 +96,7 @@ zapzap_action_omni+rsft+n            $zapzap_new_group
 
 ;; omni + q
 ;; If not implemented, defaults to: action_windows_close
-;; ___TO_SET___ zapzap_action_omni+q                 
+zapzap_action_omni+q                 $zapzap_quit
 
 ;; omni + r
 ;; ___TO_SET___ zapzap_action_omni+r                 
