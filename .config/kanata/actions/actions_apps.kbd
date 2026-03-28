@@ -44,7 +44,7 @@
     () (push-msg "APP:") break
   ))
   action_apps+9 (t! unmod_all (switch 
-    () (push-msg "APP:") break
+    () (push-msg "APP:chromeColab") break
   ))
   action_apps+a (t! unmod_all (switch 
     () (push-msg "APP:") break

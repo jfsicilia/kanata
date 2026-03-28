@@ -25,6 +25,7 @@
     ((input virtual vk_obsidian)) $obsidian_action_panes+h break
     ((input virtual vk_tmux)) $tmux_action_panes+h break
     ((input virtual vk_zellij)) $zellij_action_panes+h break
+    ((input virtual vk_colab)) $colab_action_panes+h break
     () XX break
   ))
   ;; panes + l | panes + right 
@@ -34,6 +35,7 @@
     ((input virtual vk_obsidian)) $obsidian_action_panes+l break
     ((input virtual vk_tmux)) $tmux_action_panes+l break
     ((input virtual vk_zellij)) $zellij_action_panes+l break
+    ((input virtual vk_colab)) $colab_action_panes+l break
     () XX break
   ))
   ;; panes + k | panes + up 
@@ -43,6 +45,7 @@
     ((input virtual vk_obsidian)) $obsidian_action_panes+k break
     ((input virtual vk_tmux)) $tmux_action_panes+k break
     ((input virtual vk_zellij)) $zellij_action_panes+k break
+    ((input virtual vk_colab)) $colab_action_panes+k break
     () XX break
   ))
   ;; panes + j | panes + down 
@@ -52,6 +55,7 @@
     ((input virtual vk_obsidian)) $obsidian_action_panes+j break
     ((input virtual vk_tmux)) $tmux_action_panes+j break
     ((input virtual vk_zellij)) $zellij_action_panes+j break
+    ((input virtual vk_colab)) $colab_action_panes+j break
     () XX break
   ))
 
@@ -101,21 +105,25 @@
   ;; panes + move + h | panes + move + left
   action_panes_move_left (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_panes_move_left break
+    ((input virtual vk_colab)) $colab_action_panes_move_left break
     () XX break
   ))
   ;; panes + move + l | panes + move + right
   action_panes_move_right (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_panes_move_right break
+    ((input virtual vk_colab)) $colab_action_panes_move_right break
     () XX break
   ))
   ;; panes + move + k | panes + move + up
   action_panes_move_above (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_panes_move_above break
+    ((input virtual vk_colab)) $colab_action_panes_move_above break
     () XX break
   ))
   ;; panes + move + j | panes + move + down
   action_panes_move_below (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_panes_move_below break
+    ((input virtual vk_colab)) $colab_action_panes_move_below break
     () XX break
   ))
 

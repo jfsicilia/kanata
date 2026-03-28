@@ -87,6 +87,7 @@
 ;; Apps Virtual Keys =====================================================
 (defvirtualkeys
   vk_chrome       XX
+  vk_colab        XX
   vk_dolphin      XX
   vk_foot         XX
   vk_nvim         XX
@@ -98,10 +99,16 @@
 )
 
 ;; Apps' Actions ========================================================
+(include actions/chrome/chrome_defs.kbd)
 (include actions/chrome/chrome_groups.4.kbd)
+(include actions/chrome/chrome_mod_key.kbd)
 (include actions/chrome/chrome_omni.kbd)
 (include actions/chrome/chrome_seek_n_select.kbd)
 (include actions/chrome/chrome_tabs.kbd)
+(include actions/colab/colab_defs.kbd)
+(include actions/colab/colab_mod_key.kbd)
+(include actions/colab/colab_omni.kbd)
+(include actions/colab/colab_panes.kbd)
 (include actions/dolphin/dolphin_defs.kbd)
 (include actions/dolphin/dolphin_mod_key.kbd)
 (include actions/dolphin/dolphin_mod_physical.kbd)

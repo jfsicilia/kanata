@@ -323,7 +323,7 @@
       $\|mod\              (t! fast_th \                                         $toggle_mod\_layer)
 
   ;; Medium row keys (a, s, d, f, j, k, l, ; work as lmet, lalt, lsft/rsft and lctl)
-    $esc|omni              (t! fast_th esc                                       $toggle_omni_layer)  
+    $esc|omni              (t! fast_th $action_omni                              $toggle_omni_layer)  
       $a|modA_&_lmet       (t! fast_th (t! char|alt_char a)                      $toggle_modA_&_lmet_layer)
       $s|modS_&_lalt       (t! fast_th s                                         $toggle_modS_&_lalt_layer)
       $d|modD_&_lsft       (t! fast_th d                                         $toggle_modD_&_lsft_layer)

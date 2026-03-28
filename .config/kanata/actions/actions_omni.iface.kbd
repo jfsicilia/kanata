@@ -85,6 +85,13 @@
 
   ;; == omni ============================================================
 
+  ;; omni
+  ;; If not implemented, defaults to: esc
+  action_omni (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_colab)) $colab_action_omni break
+    () esc break
+  ))
+
   ;; omni + spc
   ;; If not implemented, defaults to: spc
   action_omni+spc (t! unmod_all (switch ;;@iface@
@@ -101,6 +108,13 @@
     ((input virtual vk_nvim)) $nvim_action_omni+ent break
     ((input virtual vk_tmux)) $tmux_action_omni+ent break
     () XX break
+  ))
+
+  ;; omni + bcsp
+  action_omni+bcsp (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_omni+bcsp break
+    ((input virtual vk_colab)) $colab_action_omni+bcsp break
+    () del break
   ))
 
   ;; omni + a
@@ -277,6 +291,7 @@
     ((input virtual vk_obsidian)) $obsidian_action_omni+n break
     ((input virtual vk_tmux)) $tmux_action_omni+n break
     ((input virtual vk_zapzap)) $zapzap_action_omni+n break
+    ((input virtual vk_colab)) $colab_action_omni+n break
     () XX break
   ))
   ;; omni + lsft + n
@@ -286,6 +301,7 @@
     ((input virtual vk_obsidian)) $obsidian_action_omni+lsft+n break
     ((input virtual vk_tmux)) $tmux_action_omni+lsft+n break
     ((input virtual vk_zapzap)) $zapzap_action_omni+lsft+n break
+    ((input virtual vk_colab)) $colab_action_omni+lsft+n break
     () XX break
   ))
   ;; omni + rsft + n
@@ -295,6 +311,7 @@
     ((input virtual vk_obsidian)) $obsidian_action_omni+rsft+n break
     ((input virtual vk_tmux)) $tmux_action_omni+rsft+n break
     ((input virtual vk_zapzap)) $zapzap_action_omni+rsft+n break
+    ((input virtual vk_colab)) $colab_action_omni+rsft+n break
     () XX break
   ))
 
@@ -322,6 +339,7 @@
   ;; If not implemented, defaults to: action_windows_close
   action_omni+q (t! unmod_all (switch ;;@iface@
     ((input virtual vk_nvim)) $nvim_action_omni+q break
+    ((input virtual vk_zapzap)) $zapzap_action_omni+q break
     () $action_windows_close break
   ))
 
@@ -619,6 +637,7 @@
   ;; omni + ,
   ;; If not implemented, defaults to: action_mod,
   action_omni+, (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_chrome)) $chrome_action_omni+, break
     ((input virtual vk_nvim)) $nvim_action_omni+, break
     ((input virtual vk_tmux)) $tmux_action_omni+, break
     ((input virtual vk_zapzap)) $zapzap_action_omni+, break
