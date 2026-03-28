@@ -11,12 +11,19 @@ foot_compare_dirs        (macro esc d d i n v i m spc - c spc S-' S-d i r S-d i 
 
 ;; == omni ============================================================
 
+;; omni
+;; If not implemented, defaults to: esc
+;; ___TO_SET___ foot_action_omni                   
+
 ;; omni + spc
 ;; If not implemented, defaults to: spc
 ;; ___TO_SET___ foot_action_omni+spc               
 
 ;; omni + ent
 ;; ___TO_SET___ foot_action_omni+ent               
+
+;; omni + bcsp
+;; ___TO_SET___ foot_action_omni+bcsp              
 
 ;; omni + a
 ;; ___TO_SET___ foot_action_omni+a                 

@@ -1,7 +1,8 @@
 (defvar
 
-;; ~/Downloads
-
+;; a
+;;folder_trash            `~/.local/share/Trash/files`
+folder_trash              (S-grv 10 / . l o c a l / s h a r e / S-t r a s h / f i l e s)
 ;; b
 ;;folder_bookcase         `~/media/bookcase/`
 folder_bookcase           (S-grv 10 / m e d i a / t e x t)
@@ -35,7 +36,7 @@ folder_kanata             (S-grv 10 / s e t t i n g s / l i n u x / d o t f i l 
 ;; l
 
 
-;; l
+;; m
 ;;folder_medano           `~/mnt/medano`
 folder_medano             (S-grv 10 / m n t / m e d a n o)
 ;; n
@@ -65,8 +66,6 @@ folder_tmp                (S-grv 10 / t m p)
 ;; v
 ;;folder_dev              `~/workarea/dev`
 folder_dev                (S-grv 10 / w o r k a r e a / d e v)
-
-
 ;; w
 ;;folder_workarea         `~/workarea`
 folder_workarea           (S-grv 10 / w o r k a r e a)

@@ -46,12 +46,19 @@ nvim_tab_9                         (macro esc S-; l u a spc r e q u i r e S-9 ' 
 
 ;; == omni ============================================================
 
+;; omni
+;; If not implemented, defaults to: esc
+;; ___TO_SET___ nvim_action_omni                   
+
 ;; omni + spc
 ;; If not implemented, defaults to: spc
 nvim_action_omni+spc               $nvim_action_seek_and_select
 
 ;; omni + ent
 nvim_action_omni+ent               (push-msg "NOTIFY:Omni combo not implemented!")
+
+;; omni + bcsp
+;; ___TO_SET___ nvim_action_omni+bcsp              
 
 ;; omni + a
 nvim_action_omni+a                 $nvim_select_all

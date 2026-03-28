@@ -7,7 +7,9 @@
     () XX break
   )) 
   action_bookmarks+a (t! unmod_all (switch 
-    () (push-msg "NOTIFY:'a' bookmark not yet implemented") break
+    ((input virtual vk_dolphin)) (t! dolphin_goto_folder $dolphin_trash) break
+    ((input virtual vk_foot))    (t! foot_goto_folder $folder_trash) break
+    () XX break
   )) 
   action_bookmarks+b (t! unmod_all (switch 
     ((input virtual vk_dolphin)) (t! dolphin_goto_folder $folder_bookcase) break

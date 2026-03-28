@@ -2,12 +2,19 @@
 
 ;; == omni ============================================================
 
+;; omni
+;; If not implemented, defaults to: esc
+;; ___TO_SET___ zellij_action_omni                   
+
 ;; omni + spc
 ;; If not implemented, defaults to: spc
 ;; ___TO_SET___ zellij_action_omni+spc               
 
 ;; omni + ent
 ;; ___TO_SET___ zellij_action_omni+ent               
+
+;; omni + bcsp
+;; ___TO_SET___ zellij_action_omni+bcsp              
 
 ;; omni + a
 ;; ___TO_SET___ zellij_action_omni+a                 

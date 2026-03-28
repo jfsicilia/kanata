@@ -8,12 +8,19 @@ tmux_paste               (macro $tmux_prefix ])
 
 ;; == omni ============================================================
 
+;; omni
+;; If not implemented, defaults to: esc
+;; ___TO_SET___ tmux_action_omni                   
+
 ;; omni + spc
 ;; If not implemented, defaults to: spc
 tmux_action_omni+spc               (push-msg "NOTIFY:Tmux_Omni not implemented!")
 
 ;; omni + ent
 tmux_action_omni+ent               (push-msg "NOTIFY:Tmux_Omni not implemented!")
+
+;; omni + bcsp
+;; ___TO_SET___ tmux_action_omni+bcsp              
 
 ;; omni + a
 tmux_action_omni+a                 (push-msg "NOTIFY:Tmux_Omni not implemented!")

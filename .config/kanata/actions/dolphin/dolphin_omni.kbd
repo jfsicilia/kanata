@@ -2,12 +2,19 @@
 
 ;; == omni ============================================================
 
+;; omni
+;; If not implemented, defaults to: esc
+;; ___TO_SET___ dolphin_action_omni                   
+
 ;; omni + spc
 ;; If not implemented, defaults to: spc
 dolphin_action_omni+spc        $dolphin_select
 
 ;; omni + ent
 dolphin_action_omni+ent        $dolphin_preview
+
+;; omni + bcsp
+dolphin_action_omni+bcsp       (macro del 50 spc 50 ent 50 esc)
 
 ;; omni + a
 dolphin_action_omni+a          $dolphin_select_all

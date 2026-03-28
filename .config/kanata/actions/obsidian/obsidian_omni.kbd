@@ -18,6 +18,10 @@ obsidian_command_palette  C-spc
 
 ;; == omni ============================================================
 
+;; omni
+;; If not implemented, defaults to: esc
+;; ___TO_SET___ obsidian_action_omni                   
+
 ;; omni + spc
 ;; If not implemented, defaults to: spc
 ;; == omni file manager ===============================================""
@@ -26,6 +30,9 @@ obsidian_action_omni+spc                  $obsidian_command_palette
 
 ;; omni + ent
 ;; ___TO_SET___ obsidian_action_omni+ent               
+
+;; omni + bcsp
+;; ___TO_SET___ obsidian_action_omni+bcsp              
 
 ;; omni + a
 obsidian_action_omni+a                    $obsidian_select_all
