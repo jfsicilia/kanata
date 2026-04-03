@@ -58,7 +58,7 @@
   dolphin_copy                           C-c
   dolphin_copy_path                      C-A-c
   dolphin_duplicate                      C-d
-  dolphin_extract                        (macro S-f10 10 up up up right down down ent)
+  dolphin_extract                        (macro S-f10 10 up up right down down ent)
   dolphin_compress                       (macro S-f10 10 up up up right down down ent)
   dolphin_go                             C-l
   dolphin_info                           A-ret
