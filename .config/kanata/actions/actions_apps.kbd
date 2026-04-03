@@ -46,6 +46,7 @@
   action_apps+9 (t! unmod_all (switch 
     () (push-msg "APP:chromeColab") break
   ))
+
   action_apps+a (t! unmod_all (switch 
     () (push-msg "APP:") break
   ))
@@ -106,12 +107,6 @@
   action_apps+t (t! unmod_all (switch
     () (push-msg "APP:terminal") break
   ))
-  action_apps+lsft+t (t! unmod_all (switch
-    () (push-msg "APP:telegram") break
-  ))
-  action_apps+rsft+t (t! unmod_all (switch
-    () (push-msg "APP:telegram") break
-  ))
   action_apps+u (t! unmod_all (switch
     () (push-msg "APP:") break
   ))
@@ -122,12 +117,183 @@
     () (push-msg "APP:zapzap") break
   ))
   action_apps+x (t! unmod_all (switch
-    () (push-msg "APP:") break
+    () (push-msg "APP:calc") break
   ))
   action_apps+y (t! unmod_all (switch
     () (push-msg "APP:") break
   ))
   action_apps+z (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+
+  action_apps+lsft+a (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+b (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+c (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+d (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+e (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+f (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+g (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+h (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+i (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+j (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+k (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+l (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+m (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+n (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+o (t! unmod_all (switch 
+    () (push-msg "APP:okular") break
+  ))
+  action_apps+lsft+p (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+q (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+r (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+s (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+t (t! unmod_all (switch
+    () (push-msg "APP:telegram") break
+  ))
+  action_apps+lsft+lsft+t (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+rsft+t (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+u (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+v (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+w (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+x (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+y (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+z (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+
+
+  action_apps+rsft+a (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+b (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+c (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+d (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+e (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+f (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+g (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+h (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+i (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+j (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+k (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+l (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+m (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+n (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+o (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+p (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+q (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+r (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+s (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+t (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+lsft+t (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+rsft+t (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+u (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+v (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+w (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+x (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+y (t! unmod_all (switch
+    () (push-msg "APP:") break
+  ))
+  action_apps+rsft+z (t! unmod_all (switch
     () (push-msg "APP:") break
   ))
 )

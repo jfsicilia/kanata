@@ -13,6 +13,7 @@
   7      $action_apps+7
   8      $action_apps+8
   9      $action_apps+9
+
   a      $action_apps+a
   b      $action_apps+b
   c      $action_apps+c
@@ -42,9 +43,59 @@
 )
 
 (deflayermap (apps+lsft_layer)
+  a      $action_apps+lsft+a
+  b      $action_apps+lsft+b
+  c      $action_apps+lsft+c
+  d      $action_apps+lsft+d
+  e      $action_apps+lsft+e
+  f      $action_apps+lsft+f
+  g      $action_apps+lsft+g
+  h      $action_apps+lsft+h
+  i      $action_apps+lsft+i
+  j      $action_apps+lsft+j
+  k      $action_apps+lsft+k
+  l      $action_apps+lsft+l
+  m      $action_apps+lsft+m
+  n      $action_apps+lsft+n
+  o      $action_apps+lsft+o
+  p      $action_apps+lsft+p
+  q      $action_apps+lsft+q
+  r      $action_apps+lsft+r
+  s      $action_apps+lsft+s
   t      $action_apps+lsft+t
+  u      $action_apps+lsft+u
+  v      $action_apps+lsft+v
+  w      $action_apps+lsft+w
+  x      $action_apps+lsft+x
+  y      $action_apps+lsft+y
+  z      $action_apps+lsft+z
 )
 
 (deflayermap (apps+rsft_layer)
+  a      $action_apps+rsft+a
+  b      $action_apps+rsft+b
+  c      $action_apps+rsft+c
+  d      $action_apps+rsft+d
+  e      $action_apps+rsft+e
+  f      $action_apps+rsft+f
+  g      $action_apps+rsft+g
+  h      $action_apps+rsft+h
+  i      $action_apps+rsft+i
+  j      $action_apps+rsft+j
+  k      $action_apps+rsft+k
+  l      $action_apps+rsft+l
+  m      $action_apps+rsft+m
+  n      $action_apps+rsft+n
+  o      $action_apps+rsft+o
+  p      $action_apps+rsft+p
+  q      $action_apps+rsft+q
+  r      $action_apps+rsft+r
+  s      $action_apps+rsft+s
   t      $action_apps+rsft+t
+  u      $action_apps+rsft+u
+  v      $action_apps+rsft+v
+  w      $action_apps+rsft+w
+  x      $action_apps+rsft+x
+  y      $action_apps+rsft+y
+  z      $action_apps+rsft+z
 )
