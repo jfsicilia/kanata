@@ -37,8 +37,8 @@ folder_kanata             (S-grv 10 / s e t t i n g s / l i n u x / d o t f i l 
 
 
 ;; m
-;;folder_medano           `~/mnt/medano`
-folder_medano             (S-grv 10 / m n t / m e d a n o)
+;;folder_main             `~/vaults/main`
+folder_main               (S-grv 10 / v a u l t s / m a i n)
 ;; n
 
 

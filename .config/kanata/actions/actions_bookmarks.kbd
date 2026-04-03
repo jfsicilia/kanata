@@ -65,8 +65,8 @@
     () (push-msg "NOTIFY:'l' bookmark not yet implemented") break
   )) 
   action_bookmarks+m (t! unmod_all (switch 
-    ((input virtual vk_dolphin)) (t! dolphin_goto_folder $folder_medano) break
-    ((input virtual vk_foot)) (t! foot_goto_folder $folder_medano) break
+    ((input virtual vk_dolphin)) (t! dolphin_goto_folder $folder_main) break
+    ((input virtual vk_foot)) (t! foot_goto_folder $folder_main) break
     () XX break
   )) 
   action_bookmarks+n (t! unmod_all (switch 
