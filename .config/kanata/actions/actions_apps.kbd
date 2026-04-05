@@ -63,7 +63,7 @@
     () (push-msg "APP:fileexplorer") break
   ))
   action_apps+f (t! unmod_all (switch
-    () (push-msg "APP:") break
+    () (push-msg "APP:fusion360") break
   ))
   action_apps+g (t! unmod_all (switch 
     () (push-msg "APP:") break
@@ -102,7 +102,7 @@
     () (push-msg "APP:") break
   ))
   action_apps+s (t! unmod_all (switch
-    () (push-msg "APP:") break
+    () (push-msg "APP:sketchup") break
   ))
   action_apps+t (t! unmod_all (switch
     () (push-msg "APP:terminal") break
