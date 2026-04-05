@@ -5,4 +5,20 @@ chrome_tabs_move_first     A-S-down
 chrome_tabs_move_last      A-S-up
 chrome_keybindings         (macro C-t 10 c h r o m e S-; / / e x t e n s i o n s / s h o r t c u t s ent)
 chrome_settings            (macro C-t 10 c h r o m e S-; / / s e t t i n g s ent)
+chrome_tabs_next           C-tab
+chrome_tabs_prev           C-S-tab
+chrome_tabs_new            C-t
+chrome_tabs_close          C-w
+chrome_tabs_undo_close     C-S-t
+chrome_tabs+toggle         A-w
+chrome_tabs_goto_1         C-1
+chrome_tabs_goto_2         C-2
+chrome_tabs_goto_3         C-3
+chrome_tabs_goto_4         C-4
+chrome_tabs_goto_5         C-5
+chrome_tabs_goto_6         C-6
+chrome_tabs_goto_7         C-7
+chrome_tabs_goto_8         C-8
+chrome_tabs_goto_9         C-9
+chrome_panes_vsplit        A-S-n
 )

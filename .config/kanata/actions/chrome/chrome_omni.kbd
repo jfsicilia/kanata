@@ -58,8 +58,6 @@ chrome_back              A-left
 ;; ___TO_SET___ chrome_action_omni+f                 
 
 ;; omni + g
-;; == omni nav ======================================================
-;; == #omni nav ======================================================
 chrome_action_omni+g                             $chrome_go
 
 ;; omni + h

@@ -69,6 +69,7 @@
   ))
   ;; panes + \
   action_panes+\ (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_chrome)) $chrome_action_panes+\ break
     ((input virtual vk_dolphin)) $dolphin_action_panes+\ break
     ((input virtual vk_nvim)) $nvim_action_panes+\ break
     ((input virtual vk_obsidian)) $obsidian_action_panes+\ break

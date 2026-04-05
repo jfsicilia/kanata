@@ -103,6 +103,7 @@
 (include actions/chrome/chrome_groups.4.kbd)
 (include actions/chrome/chrome_mod_key.kbd)
 (include actions/chrome/chrome_omni.kbd)
+(include actions/chrome/chrome_panes.kbd)
 (include actions/chrome/chrome_seek_n_select.kbd)
 (include actions/chrome/chrome_tabs.kbd)
 (include actions/colab/colab_defs.kbd)
