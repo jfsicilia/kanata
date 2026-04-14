@@ -1,0 +1,167 @@
+(defvar
+
+;; modA + spc
+;; ___TO_SET___ firefox_action_modA                   
+
+;; modB + spc
+;; ___TO_SET___ firefox_action_modB                   
+
+;; modC + spc
+;; ___TO_SET___ firefox_action_modC                   
+
+;; modD + spc
+;; ___TO_SET___ firefox_action_modD                   
+
+;; modE + spc
+;; ___TO_SET___ firefox_action_modE                   
+
+;; modF + spc
+;; ___TO_SET___ firefox_action_modF                   
+
+;; modG + spc
+;; ___TO_SET___ firefox_action_modG                   
+;; modG + modL
+;; ___TO_SET___ firefox_action_modG_modL              
+
+;; modH + spc
+;; ___TO_SET___ firefox_action_modH                   
+
+;; modI + spc
+;; ___TO_SET___ firefox_action_modI                   
+
+;; modJ + spc
+;; ___TO_SET___ firefox_action_modJ                   
+
+;; modK + spc
+firefox_action_modK                   $firefox_keybindings
+
+;; modL + spc
+;; ___TO_SET___ firefox_action_modL                   
+
+;; modM + spc
+;; ___TO_SET___ firefox_action_modM                   
+
+;; modN + spc
+;; ___TO_SET___ firefox_action_modN                   
+
+;; modO + spc
+;; ___TO_SET___ firefox_action_modO                   
+
+;; modP + spc
+;; ___TO_SET___ firefox_action_modP                   
+
+;; modQ + spc
+;; ___TO_SET___ firefox_action_modQ                   
+
+;; modR + spc
+;; ___TO_SET___ firefox_action_modR                   
+;; modR + lsft + spc
+;; ___TO_SET___ firefox_action_modR+lsft              
+;; modR + rsft + spc
+;; ___TO_SET___ firefox_action_modR+rsft              
+
+;; modS + spc
+;; ___TO_SET___ firefox_action_modS                   
+;; modS + lsft + spc
+;; ___TO_SET___ firefox_action_modS+lsft              
+
+;; modT + spc
+;; ___TO_SET___ firefox_action_modT                   
+;; modT + n
+;; ___TO_SET___ firefox_action_modT+lsft              
+
+;; modU + spc
+;; ___TO_SET___ firefox_action_modU                   
+
+;; modV + spc
+;; ___TO_SET___ firefox_action_modV                   
+
+;; modW + spc
+;; ___TO_SET___ firefox_action_modW                   
+
+;; modX + spc
+;; ___TO_SET___ firefox_action_modX                   
+
+;; modY + spc
+;; ___TO_SET___ firefox_action_modY                   
+;; modY + mod; + spc
+;; ___TO_SET___ firefox_action_modY_mod;              
+;; modY + search + spc
+;; ___TO_SET___ firefox_action_modY_search            
+
+;; modZ + spc
+;; ___TO_SET___ firefox_action_modZ                   
+
+;; mod` + spc
+;; ___TO_SET___ firefox_action_mod`                   
+
+;; mod- + spc
+;; ___TO_SET___ firefox_action_mod-                   
+
+;; mod= + spc
+;; ___TO_SET___ firefox_action_mod=                   
+
+;; mod[ + spc
+;; ___TO_SET___ firefox_action_mod[                   
+
+;; mod] + spc
+;; ___TO_SET___ firefox_action_mod]                   
+
+;; mod\ + spc
+;; ___TO_SET___ firefox_action_mod\                   
+;; mod\ + j
+;; ___TO_SET___ firefox_action_mod\+j                 
+;; mod\ + k
+;; ___TO_SET___ firefox_action_mod\+k                 
+;; mod\ + o
+;; ___TO_SET___ firefox_action_mod\+o                 
+;; mod\ + p
+;; ___TO_SET___ firefox_action_mod\+p                 
+;; mod\ + ent
+;; ___TO_SET___ firefox_action_mod\+ent               
+
+;; mod; + spc
+;; ___TO_SET___ firefox_action_mod;                   
+
+;; mod' + spc
+;; ___TO_SET___ firefox_action_mod'                   
+
+;; mod, + spc
+firefox_action_mod,                   $firefox_settings
+
+;; mod. + spc
+;; ___TO_SET___ firefox_action_mod.                   
+
+;; mod/ + spc
+;; ___TO_SET___ firefox_action_mod/                   
+
+;; mod0 + spc
+;; ___TO_SET___ firefox_action_mod0                   
+
+;; mod1 + spc
+;; ___TO_SET___ firefox_action_mod1                   
+
+;; mod2 + spc
+;; ___TO_SET___ firefox_action_mod2                   
+
+;; mod3 + spc
+;; ___TO_SET___ firefox_action_mod3                   
+
+;; mod4 + spc
+;; ___TO_SET___ firefox_action_mod4                   
+
+;; mod5 + spc
+;; ___TO_SET___ firefox_action_mod5                   
+
+;; mod6 + spc
+;; ___TO_SET___ firefox_action_mod6                   
+
+;; mod7 + spc
+;; ___TO_SET___ firefox_action_mod7                   
+
+;; mod8 + spc
+;; ___TO_SET___ firefox_action_mod8                   
+
+;; mod9 + spc
+;; ___TO_SET___ firefox_action_mod9                   
+)

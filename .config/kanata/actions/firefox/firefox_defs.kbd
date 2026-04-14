@@ -1,0 +1,29 @@
+(defvar
+firefox_tabs_move_left      A-S-left
+firefox_tabs_move_right     A-S-right
+firefox_tabs_move_first     A-S-0
+firefox_tabs_move_last      A-S-9
+firefox_keybindings         (macro C-t 10 a b o u t S-; k e y b o a r d ent)
+firefox_settings            (macro C-t 10 a b o u t S-; p r e f e r e n c e s ent)
+firefox_extensions          (macro C-t 10 a b o u t S-; a d d o n s ent)
+firefox_tabs_next           C-tab
+firefox_tabs_prev           C-S-tab
+firefox_tabs_new            C-t
+firefox_tabs_close          C-w
+firefox_tabs_undo_close     C-S-t
+firefox_tabs+toggle         A-w
+firefox_tabs_goto_1         A-1
+firefox_tabs_goto_2         A-2
+firefox_tabs_goto_3         A-3
+firefox_tabs_goto_4         A-4
+firefox_tabs_goto_5         A-5
+firefox_tabs_goto_6         A-6
+firefox_tabs_goto_7         A-7
+firefox_tabs_goto_8         A-8
+firefox_tabs_goto_9         A-9
+firefox_tabs_goto_0         C-0
+firefox_panes_vsplit        A-S-n
+firefox_seek_and_select     C-S-spc
+firefox_bookmarks+spc       A-S-spc
+)
+

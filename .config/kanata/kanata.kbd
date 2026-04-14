@@ -89,6 +89,7 @@
   vk_chrome       XX
   vk_colab        XX
   vk_dolphin      XX
+  vk_firefox      XX
   vk_foot         XX
   vk_nvim         XX
   vk_obsidian     XX
@@ -120,6 +121,14 @@
 (include actions/dolphin/dolphin_search.kbd)
 (include actions/dolphin/dolphin_seek_n_select.kbd)
 (include actions/dolphin/dolphin_tabs.kbd)
+(include actions/firefox/firefox_defs.kbd)
+(include actions/firefox/firefox_groups.4.kbd)
+(include actions/firefox/firefox_mod_key.kbd)
+(include actions/firefox/firefox_mod_physical.kbd)
+(include actions/firefox/firefox_omni.kbd)
+(include actions/firefox/firefox_panes.kbd)
+(include actions/firefox/firefox_seek_n_select.kbd)
+(include actions/firefox/firefox_tabs.kbd)
 (include actions/foot/foot_defs.kbd)
 (include actions/foot/foot_mod_key.kbd)
 (include actions/foot/foot_mod_physical.kbd)

@@ -32,16 +32,16 @@
     () (push-msg "APP:chromeBanks") break
   ))
   action_apps+5 (t! unmod_all (switch 
-    () (push-msg "APP:chromeMisc") break
+    () (push-msg "APP:chromeMisc1") break
   ))
   action_apps+6 (t! unmod_all (switch 
-    () (push-msg "APP:") break
+    () (push-msg "APP:chromeMisc2") break
   ))
   action_apps+7 (t! unmod_all (switch 
-    () (push-msg "APP:") break
+    () (push-msg "APP:chromeMisc3") break
   ))
   action_apps+8 (t! unmod_all (switch 
-    () (push-msg "APP:") break
+    () (push-msg "APP:chromeMisc4") break
   ))
   action_apps+9 (t! unmod_all (switch 
     () (push-msg "APP:chromeColab") break
@@ -63,7 +63,7 @@
     () (push-msg "APP:fileexplorer") break
   ))
   action_apps+f (t! unmod_all (switch
-    () (push-msg "APP:fusion360") break
+    () (push-msg "APP:firefox") break
   ))
   action_apps+g (t! unmod_all (switch 
     () (push-msg "APP:") break
@@ -126,6 +126,37 @@
     () (push-msg "APP:") break
   ))
 
+  action_apps+lsft+0 (t! unmod_all (switch 
+    () (push-msg "APP:firefoxMisc") break
+  ))
+  action_apps+lsft+1 (t! unmod_all (switch 
+    () (push-msg "APP:firefoxMgmt") break
+  ))
+  action_apps+lsft+2 (t! unmod_all (switch 
+    () (push-msg "APP:firefoxCloud") break
+  ))
+  action_apps+lsft+3 (t! unmod_all (switch 
+    () (push-msg "APP:firefoxAI") break
+  ))
+  action_apps+lsft+4 (t! unmod_all (switch 
+    () (push-msg "APP:firefoxBanks") break
+  ))
+  action_apps+lsft+5 (t! unmod_all (switch 
+    () (push-msg "APP:firefoxMisc") break
+  ))
+  action_apps+lsft+6 (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+7 (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+8 (t! unmod_all (switch 
+    () (push-msg "APP:") break
+  ))
+  action_apps+lsft+9 (t! unmod_all (switch 
+    () (push-msg "APP:firefoxColab") break
+  ))
+
   action_apps+lsft+a (t! unmod_all (switch 
     () (push-msg "APP:") break
   ))
@@ -142,7 +173,7 @@
     () (push-msg "APP:") break
   ))
   action_apps+lsft+f (t! unmod_all (switch
-    () (push-msg "APP:") break
+    () (push-msg "APP:fusion360") break
   ))
   action_apps+lsft+g (t! unmod_all (switch 
     () (push-msg "APP:") break

@@ -237,6 +237,7 @@
     ((input virtual vk_obsidian)) $obsidian_action_omni+g break
     ((input virtual vk_tmux)) $tmux_action_omni+g break
     ((input virtual vk_zapzap)) $zapzap_action_omni+g break
+    ((input virtual vk_firefox)) $firefox_action_omni+g break
     () XX break
   ))
 
@@ -292,6 +293,7 @@
     ((input virtual vk_tmux)) $tmux_action_omni+n break
     ((input virtual vk_zapzap)) $zapzap_action_omni+n break
     ((input virtual vk_colab)) $colab_action_omni+n break
+    ((input virtual vk_firefox)) $firefox_action_omni+n break
     () XX break
   ))
   ;; omni + lsft + n
@@ -582,6 +584,7 @@
     ((input virtual vk_nvim)) $nvim_action_omni+] break
     ((input virtual vk_obsidian)) $obsidian_action_omni+] break
     ((input virtual vk_tmux)) $tmux_action_omni+] break
+    ((input virtual vk_firefox)) $firefox_action_omni+] break
     () XX break
   )) ;;""
 
@@ -592,6 +595,7 @@
     ((input virtual vk_nvim)) $nvim_action_omni+[ break
     ((input virtual vk_obsidian)) $obsidian_action_omni+[ break
     ((input virtual vk_tmux)) $tmux_action_omni+[ break
+    ((input virtual vk_firefox)) $firefox_action_omni+[ break
     () XX break
   ))
 
@@ -641,6 +645,7 @@
     ((input virtual vk_nvim)) $nvim_action_omni+, break
     ((input virtual vk_tmux)) $tmux_action_omni+, break
     ((input virtual vk_zapzap)) $zapzap_action_omni+, break
+    ((input virtual vk_firefox)) $firefox_action_omni+, break
     () $action_mod, break
   ))
   ;; omni + .

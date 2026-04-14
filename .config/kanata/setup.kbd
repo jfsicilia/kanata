@@ -254,31 +254,33 @@
   mod.               . 
 
   ;; Fixed modifiers.
-  omni               caps
-  open               tab
-  num/sym            spc
-  apps               ralt       ;; 
+  omni               caps       ;; Physical caps key will be used for omni layer when hold.
+  open               tab        ;; Physical tab key will be used for open with layer when hold.
+  num/sym            spc        ;; Physical spc key will be used for num/sym layer when hold.
+  apps               ralt       ;; Physical ralt key will be used for apps layer when hold.
   bookm              prnt       ;; Physical prnt key will be used for bookmark layer when hold.
   opts               rctl       ;; Physical rctl key will be used for option layer when hold.    
-  replace            $!lmet
-  search             $!lalt
-  seek_sel               $!lctl
+  replace            $!lmet     ;; Physical lctl key will be used for replace layer when hold.
+  search             $!lalt     ;; Physical lwin key will be used for search layer when hold.
+  seek_sel           $!lctl     ;; Physical lalt key will be used for seek_sel layer when hold.
 
   ;; GUI objects
-  window             z
-  workspace          x
-  pane               c
-  tabs               v
+  window             z          ;; Also /
+  workspace          x          ;; Also ;
+  pane               c          ;; Also ,
+  tabs               v          ;; Also m
   !tabs              b
-  groups              b
+  groups             b
   session            n
+
 
   ;; GUI objects modifiers (used for move/resize/snap/swap sublayers).
   move              $!lctl
   resize            $!lalt
   toggle            ralt       
   float_&_snap      prnt      
-  swap              rctl     
+  swap              rctl        
+  !swap             $!lmet
 )
 
 (defsrc

@@ -11,6 +11,7 @@
     ((input virtual vk_obsidian)) $obsidian_action_seek_and_select break
     ((input virtual vk_tmux)) $tmux_action_seek_and_select break
     ((input virtual vk_zapzap)) $zapzap_action_seek_and_select break
+    ((input virtual vk_firefox)) $firefox_action_seek_and_select break
     () XX break
   ))
   ;; seek_sel + lsft + spc 
@@ -19,6 +20,7 @@
     ((input virtual vk_dolphin)) $dolphin_action_seek_and_select+lsft break
     ((input virtual vk_nvim)) $nvim_action_seek_and_select+lsft break
     ((input virtual vk_obsidian)) $obsidian_action_seek_and_select+lsft break
+    ((input virtual vk_firefox)) $firefox_action_seek_and_select+lsft break
     () XX break
   ))
   ;; seek_sel + rsft + spc 

@@ -74,6 +74,7 @@
     ((input virtual vk_nvim)) $nvim_action_panes+\ break
     ((input virtual vk_obsidian)) $obsidian_action_panes+\ break
     ((input virtual vk_tmux)) $tmux_action_panes+\ break
+    ((input virtual vk_firefox)) $firefox_action_panes+\ break
     () XX break
   ))
 
@@ -365,6 +366,7 @@
   ;; panes + x
   action_panes+x (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_panes+x break
+    ((input virtual vk_firefox)) $firefox_action_panes+x break
     () XX break
   ))
   ;; panes + c
