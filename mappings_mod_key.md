@@ -35,7 +35,7 @@
 | '        | registries          |                     |                  |                  |                    |                            |          |
 | [        |                     |                     |                  |                  |                    |                            |          |
 | ]        |                     |                     |                  |                  |                    |                            |          |
-| \        | ~compare            | compare             | ~compare         |                  |                    |                            |          |
+| \        | compare             | compare             | ~compare         |                  |                    |                            |          |
 | `        | ~format             | !format             |                  |                  |                    |                            |          |
 | -        |                     |                     |                  |                  |                    |                            |          |
 | =        |                     |                     |                  |                  |                    |                            |          |

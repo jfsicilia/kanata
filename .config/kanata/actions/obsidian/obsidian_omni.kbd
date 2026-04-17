@@ -97,7 +97,7 @@ obsidian_action_omni+g                    $obsidian_action_seek_and_select
 ;; ___TO_SET___ obsidian_action_omni+l                 
 
 ;; omni + m
-;; If not implemented, defaults to: action_modM
+;; If not implemented, defaults to: action_modM+spc
 ;; ___TO_SET___ obsidian_action_omni+m                 
 
 ;; omni + n
@@ -221,13 +221,13 @@ obsidian_action_omni+[                    $obsidian_back
 ;; ___TO_SET___ obsidian_action_omni+'                 
 
 ;; omni + ,
-;; If not implemented, defaults to: action_mod,
+;; If not implemented, defaults to: action_mod,+spc
 ;; ___TO_SET___ obsidian_action_omni+,                 
 ;; omni + .
-;; If not implemented, defaults to: action_mod.
+;; If not implemented, defaults to: action_mod.+spc
 ;; ___TO_SET___ obsidian_action_omni+.                 
 ;; omni + /
-;; If not implemented, defaults to: action_mod/
+;; If not implemented, defaults to: action_mod/+spc
 ;; ___TO_SET___ obsidian_action_omni+/                 
 
 ;; omni + !lmet|desktops

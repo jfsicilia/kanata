@@ -80,7 +80,7 @@ chrome_action_omni+g                             $chrome_go
 ;; ___TO_SET___ chrome_action_omni+l                 
 
 ;; omni + m
-;; If not implemented, defaults to: action_modM
+;; If not implemented, defaults to: action_modM+spc
 ;; ___TO_SET___ chrome_action_omni+m                 
 
 ;; omni + n
@@ -204,13 +204,13 @@ chrome_action_omni+[                      $chrome_back
 ;; ___TO_SET___ chrome_action_omni+'                 
 
 ;; omni + ,
-;; If not implemented, defaults to: action_mod,
+;; If not implemented, defaults to: action_mod,+spc
 chrome_action_omni+,                 $chrome_settings
 ;; omni + .
-;; If not implemented, defaults to: action_mod.
+;; If not implemented, defaults to: action_mod.+spc
 ;; ___TO_SET___ chrome_action_omni+.                 
 ;; omni + /
-;; If not implemented, defaults to: action_mod/
+;; If not implemented, defaults to: action_mod/+spc
 ;; ___TO_SET___ chrome_action_omni+/                 
 
 ;; omni + !lmet|desktops

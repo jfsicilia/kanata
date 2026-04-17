@@ -10,10 +10,10 @@ zellij_pane_below        (macro C-g p j ret)
 ;; ___TO_SET___ zellij_action_panes+spc              
 
 ;; panes + ent
-zellij_action_panes+max                       $zellij_pane_maximize
+zellij_action_panes+max                   $zellij_pane_maximize
 
 ;; panes + h | panes + left
-zellij_action_panes+h                      $zellij_pane_left
+zellij_action_panes+h                     $zellij_pane_left
 ;; panes + l | panes + right
 zellij_action_panes+l                     $zellij_pane_right
 ;; panes + k | panes + up

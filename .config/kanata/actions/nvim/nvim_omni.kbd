@@ -121,7 +121,7 @@ nvim_action_omni+k                 up
 nvim_action_omni+l                 right
 
 ;; omni + m
-;; If not implemented, defaults to: action_modM
+;; If not implemented, defaults to: action_modM+spc
 nvim_action_omni+m                 (push-msg "NOTIFY:Omni combo not implemented!")
 
 ;; omni + n
@@ -259,17 +259,17 @@ nvim_action_omni+;                 $nvim_comment  ;; Comment block
 nvim_action_omni+'                 (push-msg "NOTIFY:Omni combo not implemented!")
 
 ;; omni + ,
-;; If not implemented, defaults to: action_mod,
+;; If not implemented, defaults to: action_mod,+spc
 ;; see mod,
-nvim_action_omni+,                 $nvim_action_mod,
+nvim_action_omni+,                 $nvim_action_mod,+spc
 ;; omni + .
-;; If not implemented, defaults to: action_mod.
+;; If not implemented, defaults to: action_mod.+spc
 ;; see mod.
-nvim_action_omni+.                 $nvim_action_mod.
+nvim_action_omni+.                 $nvim_action_mod.+spc
 ;; omni + /
-;; If not implemented, defaults to: action_mod/
+;; If not implemented, defaults to: action_mod/+spc
 ;; see mod/
-nvim_action_omni+/                 $nvim_action_mod/
+nvim_action_omni+/                 $nvim_action_mod/+spc
 
 ;; omni + !lmet|desktops
 ;; If not implemented, defaults to: action_desktops+toggle

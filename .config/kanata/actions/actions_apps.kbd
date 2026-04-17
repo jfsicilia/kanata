@@ -188,7 +188,7 @@
     () (push-msg "APP:") break
   ))
   action_apps+lsft+k (t! unmod_all (switch
-    () (push-msg "APP:") break
+    () (push-msg "APP:okular") break
   ))
   action_apps+lsft+l (t! unmod_all (switch
     () (push-msg "APP:") break
@@ -200,7 +200,7 @@
     () (push-msg "APP:") break
   ))
   action_apps+lsft+o (t! unmod_all (switch 
-    () (push-msg "APP:okular") break
+    () (push-msg "APP:onlyoffice") break
   ))
   action_apps+lsft+p (t! unmod_all (switch
     () (push-msg "APP:") break
@@ -286,7 +286,7 @@
     () (push-msg "APP:") break
   ))
   action_apps+rsft+o (t! unmod_all (switch 
-    () (push-msg "APP:") break
+    () (push-msg "APP:orcaslicer") break
   ))
   action_apps+rsft+p (t! unmod_all (switch
     () (push-msg "APP:") break

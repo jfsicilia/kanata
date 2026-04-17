@@ -2,47 +2,47 @@
   ;; @start@ ====== DON'T REMOVE THIS LINE =================================
 
   ;; modA + spc
-  action_modA (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modA break
-    ((input virtual vk_nvim)) $nvim_action_modA break
+  action_modA+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modA+spc break
+    ((input virtual vk_nvim)) $nvim_action_modA+spc break
     () XX break
   ))
 
   ;; modB + spc
-  action_modB (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modB break
+  action_modB+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modB+spc break
     () XX break
   ))
 
   ;; modC + spc
-  action_modC (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modC break
+  action_modC+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modC+spc break
     () XX break
   ))
 
   ;; modD + spc 
-  action_modD (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modD break
-    ((input virtual vk_nvim)) $nvim_action_modD break
+  action_modD+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modD+spc break
+    ((input virtual vk_nvim)) $nvim_action_modD+spc break
     () XX break
   ))
 
   ;; modE + spc 
-  action_modE (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modE break
+  action_modE+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modE+spc break
     () XX break
   ))
 
   ;; modF + spc 
-  action_modF (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modF break
+  action_modF+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modF+spc break
     ()                              C-spc break  ;; Autofill
   ))
 
   ;; modG + spc 
-  action_modG (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modG break
-    ((input virtual vk_nvim)) $nvim_action_modG break
+  action_modG+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modG+spc break
+    ((input virtual vk_nvim)) $nvim_action_modG+spc break
     () XX break
   ))
   ;; modG + modL
@@ -54,154 +54,159 @@
   ))
 
   ;; modH + spc 
-  action_modH (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modH break
+  action_modH+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modH+spc break
     () XX break
   ))
 
   ;; modI + spc
-  action_modI (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modI break
+  action_modI+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modI+spc break
     () XX break
   ))
 
   ;; modJ + spc 
-  action_modJ (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modJ break
-    ((input virtual vk_nvim)) $nvim_action_modJ break
+  action_modJ+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modJ+spc break
+    ((input virtual vk_nvim)) $nvim_action_modJ+spc break
     ()                        C-spc break  ;; Autofill
   ))
 
   ;; modK + spc 
-  action_modK (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_chrome)) $chrome_action_modK break
-    ((input virtual vk_dolphin)) $dolphin_action_modK break
-    ((input virtual vk_nvim)) $nvim_action_modK break
-    ((input virtual vk_colab)) $colab_action_modK break
-    ((input virtual vk_firefox)) $firefox_action_modK break
+  action_modK+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_chrome)) $chrome_action_modK+spc break
+    ((input virtual vk_dolphin)) $dolphin_action_modK+spc break
+    ((input virtual vk_nvim)) $nvim_action_modK+spc break
+    ((input virtual vk_colab)) $colab_action_modK+spc break
+    ((input virtual vk_firefox)) $firefox_action_modK+spc break
     () XX break
   ))
 
   ;; modL + spc 
-  action_modL (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modL break
-    ((input virtual vk_nvim)) $nvim_action_modL break
+  action_modL+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modL+spc break
+    ((input virtual vk_nvim)) $nvim_action_modL+spc break
     () XX break
   ))
 
   ;; modM + spc 
-  action_modM (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modM break
+  action_modM+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modM+spc break
     ()                      M-v break  ;; Clipboard history
   ))
 
   ;; modN + spc 
-  action_modN (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modN break
+  action_modN+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modN+spc break
     () XX break
   ))
 
   ;; modO + spc
-  action_modO (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modO break
-    ((input virtual vk_nvim)) $nvim_action_modO break
+  action_modO+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modO+spc break
+    ((input virtual vk_nvim)) $nvim_action_modO+spc break
     () XX break
   ))
 
   ;; modP + spc 
-  action_modP (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modP break
+  action_modP+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modP+spc break
     () XX break
   ))
   
   ;; modQ + spc
-  action_modQ (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modQ break
-    ((input virtual vk_nvim)) $nvim_action_modQ break
+  action_modQ+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modQ+spc break
+    ((input virtual vk_nvim)) $nvim_action_modQ+spc break
     () XX break
   ))
 
   ;; modR + spc
-  action_modR (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modR break
-    ((input virtual vk_nvim)) $nvim_action_modR break
+  action_modR+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modR+spc break
+    ((input virtual vk_nvim)) $nvim_action_modR+spc break
     () XX break
   ))
   ;; modR + lsft + spc
-  action_modR+lsft (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modR+lsft break
-    ((input virtual vk_nvim)) $nvim_action_modR+lsft break
+  action_modR+lsft+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modR+lsft+spc break
+    ((input virtual vk_nvim)) $nvim_action_modR+lsft+spc break
     () XX break
   ))
   ;; modR + rsft + spc
-  action_modR+rsft (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modR+rsft break
-    ((input virtual vk_nvim)) $nvim_action_modR+rsft break
+  action_modR+rsft+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modR+rsft+spc break
+    ((input virtual vk_nvim)) $nvim_action_modR+rsft+spc break
     () XX break
   ))
 
   ;; modS + spc 
-  action_modS (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modS break
-    ((input virtual vk_nvim)) $nvim_action_modS break
-    ((input virtual vk_obsidian)) $obsidian_action_modS break
+  action_modS+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modS+spc break
+    ((input virtual vk_nvim)) $nvim_action_modS+spc break
+    ((input virtual vk_obsidian)) $obsidian_action_modS+spc break
     () XX break
   ))
   ;; modS + lsft + spc 
-  action_modS+lsft (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modS+lsft break
-    ((input virtual vk_nvim)) $nvim_action_modS+lsft break
+  action_modS+lsft+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modS+lsft+spc break
+    ((input virtual vk_nvim)) $nvim_action_modS+lsft+spc break
     () XX break
   ))
 
   ;; modT + spc
-  action_modT (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modT break
+  action_modT+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modT+spc break
     () XX break
   ))
-  ;; modT + n
-  action_modT+lsft (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modT+lsft break
+  ;; modT + lsft + spc
+  action_modT+lsft+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modT+lsft+spc break
+    () XX break
+  ))
+  ;; modT + toggle
+  action_modT+toggle (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_nvim)) $nvim_action_modT+toggle break
     () XX break
   ))
 
   ;; modU + spc
-  action_modU (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modU break
+  action_modU+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modU+spc break
     () XX break
   ))
 
   ;; modV + spc
-  action_modV (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modV break
+  action_modV+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modV+spc break
     () XX break
   ))
 
   ;; modW + spc 
-  action_modW (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modW break
+  action_modW+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modW+spc break
     () XX break
   ))
 
   ;; modX + spc
-  action_modX (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modX break
+  action_modX+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modX+spc break
     () XX break
   ))
 
   ;; modY + spc
-  action_modY (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modY break
-    ((input virtual vk_nvim)) $nvim_action_modY break
+  action_modY+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modY+spc break
+    ((input virtual vk_nvim)) $nvim_action_modY+spc break
     () XX break
   ))
-  ;; modY + mod; + spc  
+  ;; modY + mod;
   action_modY_mod; (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_modY_mod; break
     ((input virtual vk_nvim)) $nvim_action_modY_mod; break
     () XX break
   )) ;;""
-  ;; modY + search + spc 
+  ;; modY + search 
   action_modY_search (t! unmod_all (switch ;;@iface@
     ((input virtual vk_dolphin)) $dolphin_action_modY_search break
     ((input virtual vk_nvim)) $nvim_action_modY_search break
@@ -209,46 +214,46 @@
   ))
 
   ;; modZ + spc
-  action_modZ (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_modZ break
+  action_modZ+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_modZ+spc break
     () XX break
   ))
 
   ;; mod` + spc 
-  action_mod` (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_mod` break
+  action_mod`+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_mod`+spc break
     () XX break
   ))
 
   ;; mod- + spc 
-  action_mod- (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_mod- break
+  action_mod-+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_mod-+spc break
     () XX break
   ))
 
   ;; mod= + spc 
-  action_mod= (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_mod= break
+  action_mod=+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_mod=+spc break
     () XX break
   )) ;;""
 
   ;; mod[ + spc 
-  action_mod[ (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_dolphin)) $dolphin_action_mod[ break
+  action_mod[+spc (t! unmod_all (switch ;;@iface@ 
+    ((input virtual vk_dolphin)) $dolphin_action_mod[+spc break
     () XX break
   )) ;;""
 
   ;; mod] + spc 
-  action_mod] (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_mod] break
+  action_mod]+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_mod]+spc break
     () XX break
   )) ;;""
 
   ;; mod\ + spc 
-  action_mod\ (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_mod\ break
-    ((input virtual vk_foot)) $foot_action_mod\ break
-    ((input virtual vk_nvim)) $nvim_action_mod\ break
+  action_mod\+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_mod\+spc break
+    ((input virtual vk_foot)) $foot_action_mod\+spc break
+    ((input virtual vk_nvim)) $nvim_action_mod\+spc break
     () XX break
   )) ;;""
   ;; mod\ + j
@@ -282,104 +287,104 @@
   )) ;;""
 
   ;; mod; + spc 
-  action_mod; (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_mod; break
-    ((input virtual vk_nvim)) $nvim_action_mod; break
-    ((input virtual vk_obsidian)) $obsidian_action_mod; break
-    ((input virtual vk_tmux)) $tmux_action_mod; break
-    ((input virtual vk_colab)) $colab_action_mod; break
+  action_mod;+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_mod;+spc break
+    ((input virtual vk_nvim)) $nvim_action_mod;+spc break
+    ((input virtual vk_obsidian)) $obsidian_action_mod;+spc break
+    ((input virtual vk_tmux)) $tmux_action_mod;+spc break
+    ((input virtual vk_colab)) $colab_action_mod;+spc break
     () XX break
   )) ;;""
 
   ;; mod' + spc 
-  action_mod' (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_mod' break
-    ((input virtual vk_nvim)) $nvim_action_mod' break
+  action_mod'+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_mod'+spc break
+    ((input virtual vk_nvim)) $nvim_action_mod'+spc break
     () XX break
   ))
 
   ;; mod, + spc 
-  action_mod, (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_chrome)) $chrome_action_mod, break
-    ((input virtual vk_dolphin)) $dolphin_action_mod, break
-    ((input virtual vk_nvim)) $nvim_action_mod, break
-    ((input virtual vk_obsidian)) $obsidian_action_mod, break
-    ((input virtual vk_zapzap)) $zapzap_action_mod, break
-    ((input virtual vk_firefox)) $firefox_action_mod, break
+  action_mod,+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_chrome)) $chrome_action_mod,+spc break
+    ((input virtual vk_dolphin)) $dolphin_action_mod,+spc break
+    ((input virtual vk_nvim)) $nvim_action_mod,+spc break
+    ((input virtual vk_obsidian)) $obsidian_action_mod,+spc break
+    ((input virtual vk_zapzap)) $zapzap_action_mod,+spc break
+    ((input virtual vk_firefox)) $firefox_action_mod,+spc break
     () XX break
   ))
 
   ;; mod. + spc
-  action_mod. (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_mod. break
-    ((input virtual vk_nvim)) $nvim_action_mod. break
+  action_mod.+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_mod.+spc break
+    ((input virtual vk_nvim)) $nvim_action_mod.+spc break
     () XX break
   ))
 
   ;; mod/ + spc 
-  action_mod/ (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_mod/ break
-    ((input virtual vk_nvim)) $nvim_action_mod/ break
+  action_mod/+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_mod/+spc break
+    ((input virtual vk_nvim)) $nvim_action_mod/+spc break
     () XX break
   )) ;;""
 
   ;; mod0 + spc 
-  action_mod0 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_mod0 break
+  action_mod0+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_mod0+spc break
     () XX break
   ))
 
   ;; mod1 + spc 
-  action_mod1 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_mod1 break
+  action_mod1+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_mod1+spc break
     () XX break
   ))
 
   ;; mod2 + spc 
-  action_mod2 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_mod2 break
+  action_mod2+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_mod2+spc break
     () XX break
   ))
 
   ;; mod3 + spc 
-  action_mod3 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_mod3 break
+  action_mod3+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_mod3+spc break
     () XX break
   ))
 
   ;; mod4 + spc 
-  action_mod4 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_mod4 break
+  action_mod4+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_mod4+spc break
     () XX break
   ))
 
   ;; mod5 + spc 
-  action_mod5 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_mod5 break
+  action_mod5+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_mod5+spc break
     () XX break
   ))
 
   ;; mod6 + spc 
-  action_mod6 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_mod6 break
+  action_mod6+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_mod6+spc break
     () XX break
   ))
 
   ;; mod7 + spc 
-  action_mod7 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_mod7 break
+  action_mod7+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_mod7+spc break
     () XX break
   ))
 
   ;; mod8 + spc 
-  action_mod8 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_mod8 break
+  action_mod8+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_mod8+spc break
     () XX break
   ))
 
   ;; mod9 + spc 
-  action_mod9 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_dolphin)) $dolphin_action_mod9 break
+  action_mod9+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_dolphin)) $dolphin_action_mod9+spc break
     () XX break
   ))
 

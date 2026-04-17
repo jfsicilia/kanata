@@ -82,7 +82,7 @@ tmux_action_omni+i                 (push-msg "NOTIFY:Tmux_Omni not implemented!"
 ;; ___TO_SET___ tmux_action_omni+l                 
 
 ;; omni + m
-;; If not implemented, defaults to: action_modM
+;; If not implemented, defaults to: action_modM+spc
 ;; ___TO_SET___ tmux_action_omni+m                 
 
 ;; omni + n
@@ -206,13 +206,13 @@ tmux_action_omni+;                 (push-msg "NOTIFY:Tmux_Omni not implemented!"
 tmux_action_omni+'                 (push-msg "NOTIFY:Tmux_Omni not implemented!")
 
 ;; omni + ,
-;; If not implemented, defaults to: action_mod,
+;; If not implemented, defaults to: action_mod,+spc
 tmux_action_omni+,                 (push-msg "NOTIFY:Tmux_Omni not implemented!")
 ;; omni + .
-;; If not implemented, defaults to: action_mod.
+;; If not implemented, defaults to: action_mod.+spc
 tmux_action_omni+.                 (push-msg "NOTIFY:Tmux_Omni not implemented!")
 ;; omni + /
-;; If not implemented, defaults to: action_mod/
+;; If not implemented, defaults to: action_mod/+spc
 tmux_action_omni+/                 (push-msg "NOTIFY:Tmux_Omni not implemented!")
 
 ;; omni + !lmet|desktops

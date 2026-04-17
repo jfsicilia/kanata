@@ -1,114 +1,116 @@
 (defvar
 
 ;; modA + spc
-;; ___TO_SET___ chrome_action_modA                   
+;; ___TO_SET___ chrome_action_modA+spc               
 
 ;; modB + spc
-;; ___TO_SET___ chrome_action_modB                   
+;; ___TO_SET___ chrome_action_modB+spc               
 
 ;; modC + spc
-;; ___TO_SET___ chrome_action_modC                   
+;; ___TO_SET___ chrome_action_modC+spc               
 
 ;; modD + spc
-;; ___TO_SET___ chrome_action_modD                   
+;; ___TO_SET___ chrome_action_modD+spc               
 
 ;; modE + spc
-;; ___TO_SET___ chrome_action_modE                   
+;; ___TO_SET___ chrome_action_modE+spc               
 
 ;; modF + spc
-;; ___TO_SET___ chrome_action_modF                   
+;; ___TO_SET___ chrome_action_modF+spc               
 
 ;; modG + spc
-;; ___TO_SET___ chrome_action_modG                   
+;; ___TO_SET___ chrome_action_modG+spc               
 ;; modG + modL
 ;; ___TO_SET___ chrome_action_modG_modL              
 
 ;; modH + spc
-;; ___TO_SET___ chrome_action_modH                   
+;; ___TO_SET___ chrome_action_modH+spc               
 
 ;; modI + spc
-;; ___TO_SET___ chrome_action_modI                   
+;; ___TO_SET___ chrome_action_modI+spc               
 
 ;; modJ + spc
-;; ___TO_SET___ chrome_action_modJ                   
+;; ___TO_SET___ chrome_action_modJ+spc               
 
 ;; modK + spc
-chrome_action_modK                   $chrome_keybindings
+chrome_action_modK+spc                   $chrome_keybindings
 
 ;; modL + spc
-;; ___TO_SET___ chrome_action_modL                   
+;; ___TO_SET___ chrome_action_modL+spc               
 
 ;; modM + spc
-;; ___TO_SET___ chrome_action_modM                   
+;; ___TO_SET___ chrome_action_modM+spc               
 
 ;; modN + spc
-;; ___TO_SET___ chrome_action_modN                   
+;; ___TO_SET___ chrome_action_modN+spc               
 
 ;; modO + spc
-;; ___TO_SET___ chrome_action_modO                   
+;; ___TO_SET___ chrome_action_modO+spc               
 
 ;; modP + spc
-;; ___TO_SET___ chrome_action_modP                   
+;; ___TO_SET___ chrome_action_modP+spc               
 
 ;; modQ + spc
-;; ___TO_SET___ chrome_action_modQ                   
+;; ___TO_SET___ chrome_action_modQ+spc               
 
 ;; modR + spc
-;; ___TO_SET___ chrome_action_modR                   
+;; ___TO_SET___ chrome_action_modR+spc               
 ;; modR + lsft + spc
-;; ___TO_SET___ chrome_action_modR+lsft              
+;; ___TO_SET___ chrome_action_modR+lsft+spc          
 ;; modR + rsft + spc
-;; ___TO_SET___ chrome_action_modR+rsft              
+;; ___TO_SET___ chrome_action_modR+rsft+spc          
 
 ;; modS + spc
-;; ___TO_SET___ chrome_action_modS                   
+;; ___TO_SET___ chrome_action_modS+spc               
 ;; modS + lsft + spc
-;; ___TO_SET___ chrome_action_modS+lsft              
+;; ___TO_SET___ chrome_action_modS+lsft+spc          
 
 ;; modT + spc
-;; ___TO_SET___ chrome_action_modT                   
-;; modT + n
-;; ___TO_SET___ chrome_action_modT+lsft              
+;; ___TO_SET___ chrome_action_modT+spc               
+;; modT + lsft + spc
+;; ___TO_SET___ chrome_action_modT+lsft+spc          
+;; modT + toggle
+;; ___TO_SET___ chrome_action_modT+toggle            
 
 ;; modU + spc
-;; ___TO_SET___ chrome_action_modU                   
+;; ___TO_SET___ chrome_action_modU+spc               
 
 ;; modV + spc
-;; ___TO_SET___ chrome_action_modV                   
+;; ___TO_SET___ chrome_action_modV+spc               
 
 ;; modW + spc
-;; ___TO_SET___ chrome_action_modW                   
+;; ___TO_SET___ chrome_action_modW+spc               
 
 ;; modX + spc
-;; ___TO_SET___ chrome_action_modX                   
+;; ___TO_SET___ chrome_action_modX+spc               
 
 ;; modY + spc
-;; ___TO_SET___ chrome_action_modY                   
-;; modY + mod; + spc
+;; ___TO_SET___ chrome_action_modY+spc               
+;; modY + mod;
 ;; ___TO_SET___ chrome_action_modY_mod;              
-;; modY + search + spc
+;; modY + search
 ;; ___TO_SET___ chrome_action_modY_search            
 
 ;; modZ + spc
-;; ___TO_SET___ chrome_action_modZ                   
+;; ___TO_SET___ chrome_action_modZ+spc               
 
 ;; mod` + spc
-;; ___TO_SET___ chrome_action_mod`                   
+;; ___TO_SET___ chrome_action_mod`+spc               
 
 ;; mod- + spc
-;; ___TO_SET___ chrome_action_mod-                   
+;; ___TO_SET___ chrome_action_mod-+spc               
 
 ;; mod= + spc
-;; ___TO_SET___ chrome_action_mod=                   
+;; ___TO_SET___ chrome_action_mod=+spc               
 
 ;; mod[ + spc
-;; ___TO_SET___ chrome_action_mod[                   
+;; ___TO_SET___ chrome_action_mod[+spc               
 
 ;; mod] + spc
-;; ___TO_SET___ chrome_action_mod]                   
+;; ___TO_SET___ chrome_action_mod]+spc               
 
 ;; mod\ + spc
-;; ___TO_SET___ chrome_action_mod\                   
+;; ___TO_SET___ chrome_action_mod\+spc               
 ;; mod\ + j
 ;; ___TO_SET___ chrome_action_mod\+j                 
 ;; mod\ + k
@@ -121,47 +123,47 @@ chrome_action_modK                   $chrome_keybindings
 ;; ___TO_SET___ chrome_action_mod\+ent               
 
 ;; mod; + spc
-;; ___TO_SET___ chrome_action_mod;                   
+;; ___TO_SET___ chrome_action_mod;+spc               
 
 ;; mod' + spc
-;; ___TO_SET___ chrome_action_mod'                   
+;; ___TO_SET___ chrome_action_mod'+spc               
 
 ;; mod, + spc
-chrome_action_mod,                   $chrome_settings
+chrome_action_mod,+spc                   $chrome_settings
 
 ;; mod. + spc
-;; ___TO_SET___ chrome_action_mod.                   
+;; ___TO_SET___ chrome_action_mod.+spc               
 
 ;; mod/ + spc
-;; ___TO_SET___ chrome_action_mod/                   
+;; ___TO_SET___ chrome_action_mod/+spc               
 
 ;; mod0 + spc
-;; ___TO_SET___ chrome_action_mod0                   
+;; ___TO_SET___ chrome_action_mod0+spc               
 
 ;; mod1 + spc
-;; ___TO_SET___ chrome_action_mod1                   
+;; ___TO_SET___ chrome_action_mod1+spc               
 
 ;; mod2 + spc
-;; ___TO_SET___ chrome_action_mod2                   
+;; ___TO_SET___ chrome_action_mod2+spc               
 
 ;; mod3 + spc
-;; ___TO_SET___ chrome_action_mod3                   
+;; ___TO_SET___ chrome_action_mod3+spc               
 
 ;; mod4 + spc
-;; ___TO_SET___ chrome_action_mod4                   
+;; ___TO_SET___ chrome_action_mod4+spc               
 
 ;; mod5 + spc
-;; ___TO_SET___ chrome_action_mod5                   
+;; ___TO_SET___ chrome_action_mod5+spc               
 
 ;; mod6 + spc
-;; ___TO_SET___ chrome_action_mod6                   
+;; ___TO_SET___ chrome_action_mod6+spc               
 
 ;; mod7 + spc
-;; ___TO_SET___ chrome_action_mod7                   
+;; ___TO_SET___ chrome_action_mod7+spc               
 
 ;; mod8 + spc
-;; ___TO_SET___ chrome_action_mod8                   
+;; ___TO_SET___ chrome_action_mod8+spc               
 
 ;; mod9 + spc
-;; ___TO_SET___ chrome_action_mod9                   
+;; ___TO_SET___ chrome_action_mod9+spc               
 )

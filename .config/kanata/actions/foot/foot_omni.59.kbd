@@ -88,7 +88,7 @@ foot_action_omni+f                        $foot_pgdn
 ;; ___TO_SET___ foot_action_omni+l                 
 
 ;; omni + m
-;; If not implemented, defaults to: action_modM
+;; If not implemented, defaults to: action_modM+spc
 ;; ___TO_SET___ foot_action_omni+m                 
 
 ;; omni + n
@@ -214,13 +214,13 @@ foot_action_omni+lsft+\           $foot_compare_dirs
 ;; ___TO_SET___ foot_action_omni+'                 
 
 ;; omni + ,
-;; If not implemented, defaults to: action_mod,
+;; If not implemented, defaults to: action_mod,+spc
 ;; ___TO_SET___ foot_action_omni+,                 
 ;; omni + .
-;; If not implemented, defaults to: action_mod.
+;; If not implemented, defaults to: action_mod.+spc
 ;; ___TO_SET___ foot_action_omni+.                 
 ;; omni + /
-;; If not implemented, defaults to: action_mod/
+;; If not implemented, defaults to: action_mod/+spc
 ;; ___TO_SET___ foot_action_omni+/                 
 
 ;; omni + !lmet|desktops
