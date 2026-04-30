@@ -204,6 +204,7 @@
     spc|num/sym      spc        ;; Spacebar is used as space and as num/sym layer when hold.
    ralt|apps         ralt       ;; Physical ralt key will be used for app launching/focusing.
    prnt|bookm        prnt       ;; Physical prnt key will be used for bookmark layer when hold.
+copilot|bookm        $copilot   ;; Physical copilot key will be used for bookmark layer when hold.
    rctl|opts         rctl       ;; Physical rctl key will be used for option layer when hold.    
     esc|opts         esc        ;; Physical esc key will be used for option layer when hold.    
 
@@ -284,6 +285,7 @@
   resize            $!lalt
   toggle            ralt       
   float_&_snap      prnt      
+  !float_&_snap     $copilot
   swap              rctl        
   !swap             $!lmet
 )
@@ -365,6 +367,7 @@
     $spc|num/sym           (t! fast_th spc                                       $toggle_num/sym_layer)
    $ralt|apps              (t!      th (t! 2x $action_apps+toggle)               $toggle_apps_layer)
    $prnt|bookm             (t!      th (t! 2x $action_sessions+toggle)           $toggle_bookmarks_layer)
+$copilot|bookm             (t!      th (t! 2x $action_sessions+toggle)           $toggle_bookmarks_layer)
    $rctl|opts              (t!      th (t! 2x $~action_!tabs+toggle)             $toggle_opts_layer)   
    $esc|opts               (t!      th esc                                       $toggle_opts_layer)   
 )

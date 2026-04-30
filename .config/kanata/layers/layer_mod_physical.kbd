@@ -68,16 +68,10 @@
 (deflayermap (!lalt+lsft_layer)
   (t! map_layers "$action_!lalt+lsft" "!lalt+lsft" ($<lctl $>lctl $<lmet $>lmet $!lctl $!lmet))
   (t! map_keys   "$action_!lalt+lsft"              ($<lctl $>lctl $<lmet $>lmet))
-
-  ;; Copilot Key translates to LAlt+LSft+F23
-  $copilot (t! th _ $toggle_bookmarks_layer)
 )
 (deflayermap (!lalt+rsft_layer)
   (t! map_layers "$action_!lalt+lsft" "!lalt+lsft" ($<lctl $>lctl $<lmet $>lmet $!lctl $!lmet))
   (t! map_keys   "$action_!lalt+lsft"              ($<lctl $>lctl $<lmet $>lmet))
-
-  ;; Copilot Key translates to LAlt+LSft+F23
-  $copilot (t! th _ $toggle_bookmarks_layer)
 )
 
 ;; "" LMET_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""

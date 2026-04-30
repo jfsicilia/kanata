@@ -55,14 +55,15 @@
   ;; == SFT ======================
   $d|modD_&_lsft  (t! th $action_panes+d       $toggle_panes+lsft_layer)
   $k|modK_&_rsft  (t! th $action_panes+k       $toggle_panes+rsft_layer)
-  lsft            (t! th _                    $toggle_panes+lsft_layer)
-  rsft            (t! th _                    $toggle_panes+rsft_layer)
+  lsft            (t! th _                     $toggle_panes+lsft_layer)
+  rsft            (t! th _                     $toggle_panes+rsft_layer)
 
   ;; == Gui Actions ========================
   $toggle        $action_panes+toggle
   $move          (t! th _                        $toggle_panes+move_layer)
   $resize        (t! th _                        $toggle_panes+resize_layer)
-  $float_&_snap  (t! th $action_panes+float  $toggle_panes+snap_layer)
+  $!float_&_snap (t! th $action_panes+float      $toggle_panes+snap_layer)
+  $float_&_snap  (t! th $action_panes+float      $toggle_panes+snap_layer)
   $swap          (t! th _                        $toggle_panes+swap_layer)
 )
 (deflayermap (panes+lsft_layer)
