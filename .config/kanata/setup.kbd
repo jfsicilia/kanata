@@ -260,6 +260,10 @@
   num/sym            spc        ;; Physical spc key will be used for num/sym layer when hold.
   apps               ralt       ;; Physical ralt key will be used for apps layer when hold.
   bookm              prnt       ;; Physical prnt key will be used for bookmark layer when hold.
+  ;; Copilot key issues alt+sft+f23 when pressed. If present will be used as bookm key.
+  ;; See (deflayermap (!lalt+lsft_layer)...) in layer_mod_physical.kbd to see how this key
+  ;; is captured.
+  copilot            f23
   opts               rctl       ;; Physical rctl key will be used for option layer when hold.    
   replace            $!lmet     ;; Physical lctl key will be used for replace layer when hold.
   search             $!lalt     ;; Physical lwin key will be used for search layer when hold.
