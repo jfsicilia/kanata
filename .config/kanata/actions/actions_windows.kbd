@@ -3,7 +3,7 @@
   ;; windows + spc
   action_windows+spc    (t! unmod_all C-f10)
   ;; windows + ent
-  action_windows_max    (t! unmod_all M-m)
+  action_windows_max    (t! unmod_all M-pgup)
   ;; windows + lsft + ent | windows + rsft + ent
   action_windows_full   (t! unmod_all M-S-m)
 
