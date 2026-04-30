@@ -14,6 +14,7 @@
 (defcfg
   process-unmapped-keys yes
   danger-enable-cmd yes
+  concurrent-tap-hold yes
 )
 
 ;; Templates =============================================================
@@ -91,6 +92,7 @@
   vk_dolphin      XX
   vk_firefox      XX
   vk_foot         XX
+  vk_kiwix        XX
   vk_nvim         XX
   vk_obsidian     XX
   vk_tmux         XX
@@ -136,6 +138,8 @@
 (include actions/foot/foot_replace.kbd)
 (include actions/foot/foot_search.kbd)
 (include actions/foot/foot_seek_n_select.kbd)
+(include actions/kiwix/kiwix_defs.kbd)
+(include actions/kiwix/kiwix_omni.kbd)
 (include actions/nvim/nvim_defs.kbd)
 (include actions/nvim/nvim_groups.1.kbd)
 (include actions/nvim/nvim_mod_key.kbd)

@@ -1,0 +1,5 @@
+
+(defvar
+  kiwix_back      A-left
+  kiwix_forward   A-right
+)
