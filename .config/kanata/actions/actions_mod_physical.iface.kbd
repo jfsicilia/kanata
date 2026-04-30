@@ -450,8 +450,8 @@
 
   ;; == !LCTL actions ==========================================================
   action_!lctl+a (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_nvim)) $nvim_action_!lctl+a break
     ((input virtual vk_obsidian)) $obsidian_action_!lctl+a break
+    ((input virtual vk_nvim)) $nvim_action_!lctl+a break
     () C-a break
   ))
   action_!lctl+b (t! unmod_all (switch ;;@iface@ 
@@ -745,7 +745,6 @@
   action_!lctl+lsft+0  (t! unmod_all (switch ;;@iface@ 
     () C-S-0  break
   )) ;; ""
-
 
   ;; == !LCTL+RSFT actions ==========================================================
   action_!lctl+rsft+a (t! unmod_all (switch ;;@iface@ 

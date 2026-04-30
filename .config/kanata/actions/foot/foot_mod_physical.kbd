@@ -246,7 +246,6 @@ foot_action_sft+ent                 (macro \ ent)  ;;""
 ;; ___TO_SET___ foot_action_!lctl+lsft+9           
 ;; ___TO_SET___ foot_action_!lctl+lsft+0           
 
-
 ;; == !LCTL+RSFT actions ==========================================================
 ;; ___TO_SET___ foot_action_!lctl+rsft+a           
 ;; ___TO_SET___ foot_action_!lctl+rsft+b           

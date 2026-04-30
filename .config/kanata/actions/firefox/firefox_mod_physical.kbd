@@ -246,7 +246,6 @@ firefox_action_!lctl+0                 $firefox_tabs_goto_0
 ;; ___TO_SET___ firefox_action_!lctl+lsft+9           
 ;; ___TO_SET___ firefox_action_!lctl+lsft+0           
 
-
 ;; == !LCTL+RSFT actions ==========================================================
 ;; ___TO_SET___ firefox_action_!lctl+rsft+a           
 ;; ___TO_SET___ firefox_action_!lctl+rsft+b           

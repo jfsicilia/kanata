@@ -257,7 +257,6 @@ obsidian_action_!lctl+lsft+p                   $obsidian_action_mod;+spc
 ;; ___TO_SET___ obsidian_action_!lctl+lsft+9           
 ;; ___TO_SET___ obsidian_action_!lctl+lsft+0           
 
-
 ;; == !LCTL+RSFT actions ==========================================================
 ;; ___TO_SET___ obsidian_action_!lctl+rsft+a           
 ;; ___TO_SET___ obsidian_action_!lctl+rsft+b           
