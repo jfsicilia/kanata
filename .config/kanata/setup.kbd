@@ -205,6 +205,7 @@
    ralt|apps         ralt       ;; Physical ralt key will be used for app launching/focusing.
    prnt|bookm        prnt       ;; Physical prnt key will be used for bookmark layer when hold.
    rctl|opts         rctl       ;; Physical rctl key will be used for option layer when hold.    
+    esc|opts         esc        ;; Physical esc key will be used for option layer when hold.    
 
   ;; Omni + modifiers row
   !lmet|desktops     $!lmet
@@ -361,8 +362,8 @@
    $ralt|apps              (t!      th (t! 2x $action_apps+toggle)               $toggle_apps_layer)
    $prnt|bookm             (t!      th (t! 2x $action_sessions+toggle)           $toggle_bookmarks_layer)
    $rctl|opts              (t!      th (t! 2x $~action_!tabs+toggle)             $toggle_opts_layer)   
+   $esc|opts               (t!      th esc                                       $toggle_opts_layer)   
 )
-
 (deflayermap (default)
   (t! default_layer)
 )

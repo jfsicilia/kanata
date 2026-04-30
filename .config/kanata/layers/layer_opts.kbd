@@ -8,9 +8,9 @@
 )
 
 (deflayermap (opts+lsft_layer)
-  k $action_opts_restart_kwanata
+  k (multi (cmd kanata_sync.sh) (push-msg "RELOAD:") lrld)
 )
 
 (deflayermap (opts+rsft_layer)
-  k (multi (cmd kanata_sync.sh) (push-msg "RELOAD:") lrld)
+  k $action_opts_restart_kwanata
 )
