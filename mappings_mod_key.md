@@ -36,9 +36,9 @@
 | [        |                     |                     |                  |                  |                    |                            |          |
 | ]        |                     |                     |                  |                  |                    |                            |          |
 | \        | compare             | compare             | ~compare         |                  |                    |                            |          |
-| `        | ~format             | !format             |                  |                  |                    |                            |          |
+| `        | espanso             | espanso             | espanso          | espanso          | espanso            | espanso                    | espanso  |
 | -        |                     |                     |                  |                  |                    |                            |          |
-| =        |                     |                     |                  |                  |                    |                            |          |
+| =        | ~format             | !format             |                  |                  |                    |                            |          |
 | 1        |                     |                     |                  |                  |                    |                            |          |
 | 2        |                     |                     |                  |                  |                    |                            |          |
 | 3        |                     |                     |                  |                  |                    |                            |          |
