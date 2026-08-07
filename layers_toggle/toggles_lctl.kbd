@@ -1,7 +1,8 @@
 ;; "" LCTL_TOGGLES """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (defvar
-  toggle_lctl_layer           (multi (t! toggle_mod_layer  lctl  lctl_layer  )
+  toggle_lctl_layer           (multi 
                                      (on-release release-vkey vk_lalt)
+                                     (t! toggle_mod_layer  lctl  lctl_layer  )
                               )
 
   toggle_lctl+lsft_layer             (t! toggle_2mod_layer lctl lsft  lctl+lsft_layer)
