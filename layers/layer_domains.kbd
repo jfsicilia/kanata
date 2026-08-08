@@ -305,9 +305,15 @@
   _ XX
 )
 
-;; 
+;; AI (Sidekick)
 (deflayermap (domains+omni_layer)
   $omni $action_domains+omni+omni
+  a     $action_domains+omni+a
+  c     $action_domains+omni+c
+  s     $action_domains+omni+s
+  f     $action_domains+omni+f
+  p     $action_domains+omni+p
+  d     $action_domains+omni+d
   _ XX
 )
 

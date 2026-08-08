@@ -1,8 +1,21 @@
 (defvar
+nvim_action_domains+omni+omni          $nvim_AI_panel
+;; domains+omni + a
+nvim_action_domains+omni+a             $nvim_sidekick_select
+;; domains+omni + c
+nvim_action_domains+omni+c             $nvim_sidekick_toggle_claude
+;; domains+omni + s
+nvim_action_domains+omni+s             $nvim_sidekick_send_selection
+;; domains+omni + f
+nvim_action_domains+omni+f             $nvim_sidekick_send_file
+;; domains+omni + p
+nvim_action_domains+omni+p             $nvim_sidekick_prompt
+;; domains+omni + d
+nvim_action_domains+omni+d             $nvim_sidekick_close
 ;; domains+d + s
 nvim_action_domains+d+s                $nvim_source
 ;; domains+r + s
-nvim_action_domains+r+s                 $nvim_source
+nvim_action_domains+r+s                $nvim_source
 ;; domains+a + a
 nvim_action_domains+a+a                $nvim_autocommands
 ;; domains+b + b

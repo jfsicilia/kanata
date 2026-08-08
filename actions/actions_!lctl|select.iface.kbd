@@ -4,7 +4,6 @@
   ;; !lctl|select + spc 
   action_!lctl|select+spc (t! unmod_all (switch ;;@iface@ 
     ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_tmux)) $tmux_action_!lctl|select+spc break
       ((input virtual vk_nvim)) $nvim_action_!lctl|select+spc break
       ((input virtual vk_foot)) $foot_action_!lctl|select+spc break
       ((input virtual vk_firefox)) $firefox_action_!lctl|select+spc break
@@ -24,7 +23,6 @@
       ((input virtual vk_firefox)) $firefox_action_!lctl|select+spc break
       ((input virtual vk_foot)) $foot_action_!lctl|select+spc break
       ((input virtual vk_nvim)) $nvim_action_!lctl|select+spc break
-      ((input virtual vk_tmux)) $tmux_action_!lctl|select+spc break
       () XX break
     ) break
   ))

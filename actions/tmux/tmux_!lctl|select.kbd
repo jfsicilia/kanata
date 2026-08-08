@@ -1,7 +1,5 @@
 (defvar
 ;; == select ========================================================
-;; select + spc
-tmux_action_!lctl|select+spc                   $tmux_select_tab
 ;; !lctl|select + 1
 ;; If not implemented, defaults to: C-1
 tmux_action_!lctl|select+1             $tmux_go_tab_1

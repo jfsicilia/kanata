@@ -37,7 +37,9 @@
       "Bash(echo \"idempotent-exit:$?\")",
       "Bash(echo \"no-other-changes-exit:$?\")",
       "Bash(echo \"grep-exit:$?\")",
-      "Bash(echo \"exit=$?\")"
+      "Bash(echo \"exit=$?\")",
+      "Bash(grep -n '\\\\$omni\\\\b' /home/juan/settings/linux/dotfiles/kanata-cfg/setup.kbd)",
+      "WebFetch(domain:raw.githubusercontent.com)"
     ]
   }
 }

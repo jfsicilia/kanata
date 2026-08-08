@@ -104,4 +104,15 @@ nvim_cursor_left         left
 nvim_cursor_right        right
 nvim_cursor_up           up
 nvim_cursor_down         down
+
+nvim_AI_panel             (macro esc S-; S-c o p i l o t spc p a n e l ret) ;;""
+
+;; Sidekick.nvim (`:Sidekick cli ...`)
+nvim_sidekick_select          (macro esc S-; S-s i d e k i c k spc c l i spc s e l e c t spc f i l t e r = S-[ i n s t a l l e d = t r u e S-] ret)
+nvim_sidekick_toggle_claude   (macro esc S-; S-s i d e k i c k spc c l i spc t o g g l e spc n a m e = c l a u d e spc f o c u s = t r u e ret)
+;; No `esc` first: must stay in visual mode so `:` auto-prefixes the '<,'> range.
+nvim_sidekick_send_selection  (macro S-; S-s i d e k i c k spc c l i spc s e n d spc m s g = S-' S-[ s e l e c t i o n S-] S-' ret)
+nvim_sidekick_send_file       (macro esc S-; S-s i d e k i c k spc c l i spc s e n d spc m s g = S-' S-r e v i e w spc t h i s spc f i l e S-; spc S-[ f i l e S-] S-' ret)
+nvim_sidekick_prompt          (macro esc S-; S-s i d e k i c k spc c l i spc p r o m p t ret)
+nvim_sidekick_close           (macro esc S-; S-s i d e k i c k spc c l i spc c l o s e ret)
 )

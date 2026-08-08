@@ -898,12 +898,85 @@
   ;; omni + omni
   action_domains+omni+omni (t! unmod_all (switch ;;@iface@
     ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_nvim)) $nvim_action_domains+omni+omni break
       () $ai break
     ) break
     () (switch 
+      ((input virtual vk_nvim)) $nvim_action_domains+omni+omni break
       () $ai break
     ) break
   ))
- 
+
+  ;; omni + a
+  action_domains+omni+a (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_nvim)) $nvim_action_domains+omni+a break
+      () (push-msg "NOTIFY: Sidekick select agent not implemented") break
+    ) break
+    () (switch 
+      ((input virtual vk_nvim)) $nvim_action_domains+omni+a break
+      () (push-msg "NOTIFY: Sidekick select agent not implemented") break
+    ) break
+  ))
+
+  ;; omni + c
+  action_domains+omni+c (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_nvim)) $nvim_action_domains+omni+c break
+      () (push-msg "NOTIFY: Sidekick toggle Claude not implemented") break
+    ) break
+    () (switch 
+      ((input virtual vk_nvim)) $nvim_action_domains+omni+c break
+      () (push-msg "NOTIFY: Sidekick toggle Claude not implemented") break
+    ) break
+  ))
+
+  ;; omni + s
+  action_domains+omni+s (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_nvim)) $nvim_action_domains+omni+s break
+      () (push-msg "NOTIFY: Sidekick send selection not implemented") break
+    ) break
+    () (switch 
+      ((input virtual vk_nvim)) $nvim_action_domains+omni+s break
+      () (push-msg "NOTIFY: Sidekick send selection not implemented") break
+    ) break
+  ))
+
+  ;; omni + f
+  action_domains+omni+f (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_nvim)) $nvim_action_domains+omni+f break
+      () (push-msg "NOTIFY: Sidekick send file not implemented") break
+    ) break
+    () (switch 
+      ((input virtual vk_nvim)) $nvim_action_domains+omni+f break
+      () (push-msg "NOTIFY: Sidekick send file not implemented") break
+    ) break
+  ))
+
+  ;; omni + p
+  action_domains+omni+p (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_nvim)) $nvim_action_domains+omni+p break
+      () (push-msg "NOTIFY: Sidekick prompt not implemented") break
+    ) break
+    () (switch 
+      ((input virtual vk_nvim)) $nvim_action_domains+omni+p break
+      () (push-msg "NOTIFY: Sidekick prompt not implemented") break
+    ) break
+  ))
+
+  ;; omni + d
+  action_domains+omni+d (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_nvim)) $nvim_action_domains+omni+d break
+      () (push-msg "NOTIFY: Sidekick close CLI session not implemented") break
+    ) break
+    () (switch 
+      ((input virtual vk_nvim)) $nvim_action_domains+omni+d break
+      () (push-msg "NOTIFY: Sidekick close CLI session not implemented") break
+    ) break
+  ))
 
 )
