@@ -168,6 +168,8 @@
 (include actions/foot/foot_bookmarks.kbd)
 (include actions/foot/foot_defs.kbd)
 (include actions/foot/foot_domains.kbd)
+(include actions/foot/foot_help.kbd)
+(include actions/foot/foot_lctl.kbd)
 (include actions/foot/foot_omni.59.kbd)
 (include actions/foot/foot_sft.kbd)
 (include actions/kiwix/kiwix_defs.kbd)

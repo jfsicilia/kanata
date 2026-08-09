@@ -14,12 +14,12 @@ foot_action_omni+e                 $foot_extract
 foot_action_omni+lsft+e            $foot_compress
 ;; omni + f
 ;; If not implemented, defaults to: pgdn
-foot_action_omni+f                        $foot_pgdn
+foot_action_omni+f                 $foot_pgdn
 ;; omni + v
 ;; If not implemented, defaults to: C-v
 foot_action_omni+v                 $foot_paste
 ;; omni + y
-foot_action_omni+y                 $foot_history   ;; shell history
+foot_action_omni+y                 $foot_select_history   ;; shell history
 ;; omni + \
 ;; foot_action_omni+\                `{esc}ddinvim -d <file1> <file2>{esc}vF<;`
 foot_action_omni+\                $foot_compare

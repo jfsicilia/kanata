@@ -1,0 +1,19 @@
+(defvar
+foot_action_lctl+e        $foot_edit_command
+foot_action_lctl+i        $foot_fuzzy_complete
+foot_action_lctl+h        $foot_delete_char
+foot_action_lctl+w        $foot_delete_word
+foot_action_lctl+u        $foot_delete_whole_prompt
+foot_action_lctl+l        $foot_clear_terminal
+foot_action_lctl+d        $foot_close_terminal
+foot_action_lctl+j        $foot_run_command
+foot_action_lctl+m        $foot_run_command
+foot_action_lctl+lsft+c   $foot_copy_terminal_text
+foot_action_lctl+lsft+v   $foot_paste_terminal_text
+foot_action_lctl+f        $foot_select_file
+foot_action_lctl+r        $foot_select_history
+foot_action_lctl+y        $foot_select_history
+foot_action_lctl+p        $foot_previous_command
+foot_action_lctl+n        $foot_next_command
+foot_action_lctl+spc      $foot_autocomplete
+)

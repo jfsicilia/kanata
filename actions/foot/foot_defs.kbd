@@ -1,35 +1,49 @@
 (defvar
-  foot_pgup                S-pgup
-  foot_copy                C-S-c
-  foot_extract             (macro esc d d i t a r spc - x a f spc S-, f i l e S-. esc v S-f S-,)
-  foot_compress            (macro esc d d i t a r spc - c z f spc S-, z i p f i l e S-. spc S-, f i l e s spc a n d / o r spc f o l d e r s S-. esc v S-f S-, ;)
-  foot_pgdn                S-pgdn
-  foot_paste               C-S-v
-  foot_history             C-y
-  foot_compare             (macro esc d d i n v i m spc - d spc S-, f i l e Digit1 S-. spc S-, f i l e Digit2 S-. esc v b b b b b)
-  foot_compare_dirs        (macro esc d d i n v i m spc - c spc S-' S-d i r S-d i f f spc S-, d i r Digit1 S-. spc S-, d i r Digit2 S-. S-' esc h v S-f S-, ;)
-  foot_lazygit             (macro esc d d i l a z y g i t ent)
-  foot_git_status          (macro esc d d i g i t spc s t a t u s ent)
-  foot_force_new_line      (macro \ ent)
-  foot_select              C-f
+  foot_pgup                 S-pgup
+  foot_copy                 C-S-c
+  foot_extract              (macro esc d d i t a r spc - x a f spc S-, f i l e S-. esc v S-f S-,)
+  foot_compress             (macro esc d d i t a r spc - c z f spc S-, z i p f i l e S-. spc S-, f i l e s spc a n d / o r spc f o l d e r s S-. esc v S-f S-, ;)
+  foot_pgdn                 S-pgdn
+  foot_paste                C-S-v
+  foot_select_history       C-y
+  foot_compare              (macro esc d d i n v i m spc - d spc S-, f i l e Digit1 S-. spc S-, f i l e Digit2 S-. esc v b b b b b)
+  foot_compare_dirs         (macro esc d d i n v i m spc - c spc S-' S-d i r S-d i f f spc S-, d i r Digit1 S-. spc S-, d i r Digit2 S-. S-' esc h v S-f S-, ;)
+  foot_lazygit              (macro esc d d i l a z y g i t ent)
+  foot_git_status           (macro esc d d i g i t spc s t a t u s ent)
+  foot_force_new_line       (macro \ ent)
+  foot_select_file          C-f
 
-  foot_goto_trash        (macro esc d d i c d spc $folder_trash ent)
-  foot_goto_bookcase     (macro esc d d i c d spc $folder_bookcase ent)
-  foot_goto_scans        (macro esc d d i c d spc $folder_scans ent)
-  foot_goto_downloads    (macro esc d d i c d spc $folder_downloads ent)
-  foot_goto_enaire       (macro esc d d i c d spc $folder_enaire ent)
-  foot_goto_photos       (macro esc d d i c d spc $folder_photos ent)
-  foot_goto_guacimara    (macro esc d d i c d spc $folder_guacimara ent)
-  foot_goto_home         (macro esc d d i c d spc $folder_home ent)
-  foot_goto_inbox        (macro esc d d i c d spc $folder_inbox ent)
-  foot_goto_projects     (macro esc d d i c d spc $folder_projects ent)
-  foot_goto_kanata       (macro esc d d i c d spc $folder_kanata ent)
-  foot_goto_main         (macro esc d d i c d spc $folder_main ent)
-  foot_goto_screenshots  (macro esc d d i c d spc $folder_screenshots ent)
-  foot_goto_personal     (macro esc d d i c d spc $folder_personal ent)
-  foot_goto_resources    (macro esc d d i c d spc $folder_resources ent)
-  foot_goto_settings     (macro esc d d i c d spc $folder_settings ent)
-  foot_goto_tmp          (macro esc d d i c d spc $folder_tmp ent)
-  foot_goto_dev          (macro esc d d i c d spc $folder_dev ent)
-  foot_goto_workarea     (macro esc d d i c d spc $folder_workarea ent)
+  foot_goto_trash           (macro esc d d i c d spc $folder_trash ent)
+  foot_goto_bookcase        (macro esc d d i c d spc $folder_bookcase ent)
+  foot_goto_scans           (macro esc d d i c d spc $folder_scans ent)
+  foot_goto_downloads       (macro esc d d i c d spc $folder_downloads ent)
+  foot_goto_enaire          (macro esc d d i c d spc $folder_enaire ent)
+  foot_goto_photos          (macro esc d d i c d spc $folder_photos ent)
+  foot_goto_guacimara       (macro esc d d i c d spc $folder_guacimara ent)
+  foot_goto_home            (macro esc d d i c d spc $folder_home ent)
+  foot_goto_inbox           (macro esc d d i c d spc $folder_inbox ent)
+  foot_goto_projects        (macro esc d d i c d spc $folder_projects ent)
+  foot_goto_kanata          (macro esc d d i c d spc $folder_kanata ent)
+  foot_goto_main            (macro esc d d i c d spc $folder_main ent)
+  foot_goto_screenshots     (macro esc d d i c d spc $folder_screenshots ent)
+  foot_goto_personal        (macro esc d d i c d spc $folder_personal ent)
+  foot_goto_resources       (macro esc d d i c d spc $folder_resources ent)
+  foot_goto_settings        (macro esc d d i c d spc $folder_settings ent)
+  foot_goto_tmp             (macro esc d d i c d spc $folder_tmp ent)
+  foot_goto_dev             (macro esc d d i c d spc $folder_dev ent)
+  foot_goto_workarea        (macro esc d d i c d spc $folder_workarea ent)
+
+  foot_autocomplete         C-spc
+  foot_edit_command         C-e
+  foot_previous_command     C-p
+  foot_next_command         C-n
+  foot_fuzzy_complete       C-i
+  foot_delete_char          C-h
+  foot_delete_word          C-w
+  foot_delete_whole_prompt  C-u
+  foot_clear_terminal       C-l
+  foot_close_terminal       C-d
+  foot_run_command          C-m
+  foot_copy_terminal_text   C-S-c
+  foot_paste_terminal_text  C-S-v
 )

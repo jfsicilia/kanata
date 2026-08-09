@@ -1,0 +1,19 @@
+(defvar
+  foot_[insert|normal]_prefix_sudo_to_command          (macro x)
+  foot_[normal]_beginning_of_prompt                    (macro x)
+  foot_[normal]_end_of_prompt                          (macro x)
+  foot_[insert|visual]_normal_mode                     (macro x)
+  foot_[normal]_insert_mode                            (macro x)
+  foot_[normal]_visual_mode                            (macro x)
+  foot_[visual]_copy                                   (macro x)
+  foot_[normal]_paste                                  (macro x)
+  foot_action_help+esc+esc   $foot_[insert|normal]_prefix_sudo_to_command
+  foot_action_help+H         $foot_[normal]_beginning_of_prompt
+  foot_action_help+L         $foot_[normal]_end_of_prompt
+  foot_action_help+esc       $foot_[insert|visual]_normal_mode
+  foot_action_help+i         $foot_[normal]_insert_mode
+  foot_action_help+v         $foot_[normal]_visual_mode
+  foot_action_help+y         $foot_[visual]_copy
+  foot_action_help+p         $foot_[normal]_paste
+  foot_action_help+tab       $foot_fuzzy_complete
+)

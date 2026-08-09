@@ -67,4 +67,6 @@
       $spc|domains    (push-msg "OPEN_HELP:domains")
      $ralt|apps       (push-msg "OPEN_HELP:apps")
   $copilot|bookm      (push-msg "OPEN_HELP:bookmarks")
+
+  enter               (push-msg "OPEN_HELP:help")
 )

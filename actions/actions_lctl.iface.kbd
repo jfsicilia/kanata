@@ -15,6 +15,16 @@
   ;; == LCTL actions ==========================================================
   action_lctl+tab    $walk_through_apps
   action_lctl+`      $walk_through_same_app
+  action_lctl+spc (t! unmod_all (switch ;;@iface@ 
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+spc break
+      () C-spc break
+    ) break
+    () (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+spc break
+      () C-spc break
+    ) break
+  ))
   action_lctl+a (t! unmod_all (switch ;;@iface@ 
     ((input virtual vk_apps_sort_desc)) (switch 
       () C-a break
@@ -43,27 +53,33 @@
   ))
   action_lctl+d (t! unmod_all (switch ;;@iface@ 
     ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+d break
       () C-d break
     ) break
     () (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+d break
       () C-d break
     ) break
   ))
   action_lctl+e  (t! unmod_all (switch ;;@iface@ 
     ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+e break
       () C-e break
     ) break
     () (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+e break
       () C-e break
     ) break
   ))
   action_lctl+f  (t! unmod_all (switch ;;@iface@ 
     ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+f break
       ((input virtual vk_obsidian)) $obsidian_action_lctl+f break
       () C-f break
     ) break
     () (switch 
       ((input virtual vk_obsidian)) $obsidian_action_lctl+f break
+      ((input virtual vk_foot)) $foot_action_lctl+f break
       () C-f break
     ) break
   ))
@@ -77,25 +93,31 @@
   ))
   action_lctl+h  (t! unmod_all (switch ;;@iface@ 
     ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+h break
       () C-h break
     ) break
     () (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+h break
       () C-h break
     ) break
   ))
   action_lctl+i  (t! unmod_all (switch ;;@iface@ 
     ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+i break
       () C-i break
     ) break
     () (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+i break
       () C-i break
     ) break
   ))
   action_lctl+j  (t! unmod_all (switch ;;@iface@ 
     ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+j break
       () C-j break
     ) break
     () (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+j break
       () C-j break
     ) break
   ))
@@ -109,25 +131,31 @@
   ))
   action_lctl+l  (t! unmod_all (switch ;;@iface@ 
     ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+l break
       () C-l break
     ) break
     () (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+l break
       () C-l break
     ) break
   ))
   action_lctl+m  (t! unmod_all (switch ;;@iface@ 
     ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+m break
       () C-m break
     ) break
     () (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+m break
       () C-m break
     ) break
   ))
   action_lctl+n  (t! unmod_all (switch ;;@iface@ 
     ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+n break
       () C-n break
     ) break
     () (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+n break
       () C-n break
     ) break
   ))
@@ -141,9 +169,11 @@
   ))
   action_lctl+p  (t! unmod_all (switch ;;@iface@ 
     ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+p break
       () C-p break
     ) break
     () (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+p break
       () C-p break
     ) break
   ))
@@ -157,9 +187,11 @@
   ))
   action_lctl+r  (t! unmod_all (switch ;;@iface@ 
     ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+r break
       () C-r break
     ) break
     () (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+r break
       () C-r break
     ) break
   ))
@@ -183,9 +215,11 @@
   ))
   action_lctl+u  (t! unmod_all (switch ;;@iface@ 
     ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+u break
       () C-u break
     ) break
     () (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+u break
       () C-u break
     ) break
   ))
@@ -199,9 +233,11 @@
   ))
   action_lctl+w  (t! unmod_all (switch ;;@iface@ 
     ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+w break
       () C-w break
     ) break
     () (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+w break
       () C-w break
     ) break
   ))
@@ -215,9 +251,11 @@
   ))
   action_lctl+y  (t! unmod_all (switch ;;@iface@ 
     ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+y break
       () C-y break
     ) break
     () (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+y break
       () C-y break
     ) break
   ))
@@ -472,9 +510,11 @@
   ))
   action_lctl+lsft+c  (t! unmod_all (switch ;;@iface@ 
     ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+lsft+c break
       () C-S-c break
     ) break
     () (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+lsft+c break
       () C-S-c break
     ) break
   ))
@@ -626,9 +666,11 @@
   ))
   action_lctl+lsft+v  (t! unmod_all (switch ;;@iface@ 
     ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+lsft+v break
       () C-S-v break
     ) break
     () (switch 
+      ((input virtual vk_foot)) $foot_action_lctl+lsft+v break
       () C-S-v break
     ) break
   ))
