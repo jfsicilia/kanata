@@ -1,0 +1,132 @@
+;; This file is a placeholder interface, not a real one: the actions below
+;; (esc+esc, d, i, spc, ...) are not routed from any layer in layers/*.kbd
+;; and are never actually run. They exist only so kanata_gen_help.py picks
+;; them up as root actions (action_bare+...) and generates a "bare" help
+;; entry for the combo — pure documentation for combos that are handled
+;; elsewhere (or informally), not live bindings. Adding an entry here has
+;; no effect on what your keyboard does; it only affects what shows up in
+;; the generated help overlay.
+(defvar
+  action_bare+spc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_nvim)) $nvim_action_bare+spc break
+      () XX break
+    ) break
+    () (switch 
+      ((input virtual vk_nvim)) $nvim_action_bare+spc break
+      () XX break
+    ) break
+  ))
+
+  action_bare+tab (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_bare+tab break
+      () XX break
+    ) break
+    () (switch 
+      ((input virtual vk_foot)) $foot_action_bare+tab break
+      () XX break
+    ) break
+  ))
+  
+  action_bare+esc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_bare+esc break
+      () XX break
+    ) break
+    () (switch 
+      ((input virtual vk_foot)) $foot_action_bare+esc break
+      () XX break
+    ) break
+  ))
+
+  action_bare+esc+esc (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_bare+esc+esc break
+      () XX break
+    ) break
+    () (switch 
+      ((input virtual vk_foot)) $foot_action_bare+esc+esc break
+      () XX break
+    ) break
+  ))
+
+  action_bare+H (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_bare+H break
+      () XX break
+    ) break
+    () (switch 
+      ((input virtual vk_foot)) $foot_action_bare+H break
+      () XX break
+    ) break
+  ))
+
+  action_bare+L (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_bare+L break
+      () XX break
+    ) break
+    () (switch 
+      ((input virtual vk_foot)) $foot_action_bare+L break
+      () XX break
+    ) break
+  ))
+
+  action_bare+d (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_nvim)) $nvim_action_bare+d break
+      () XX break
+    ) break
+    () (switch 
+      ((input virtual vk_nvim)) $nvim_action_bare+d break
+      () XX break
+    ) break
+  ))
+
+  action_bare+i (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_nvim)) $nvim_action_bare+i break
+      ((input virtual vk_foot)) $foot_action_bare+i break
+      () XX break
+    ) break
+    () (switch 
+      ((input virtual vk_foot)) $foot_action_bare+i break
+      ((input virtual vk_nvim)) $nvim_action_bare+i break
+      () XX break
+    ) break
+  ))
+
+  action_bare+p (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_bare+p break
+      () XX break
+    ) break
+    () (switch 
+      ((input virtual vk_foot)) $foot_action_bare+p break
+      () XX break
+    ) break
+  ))
+
+  action_bare+v (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_bare+v break
+      () XX break
+    ) break
+    () (switch 
+      ((input virtual vk_foot)) $foot_action_bare+v break
+      () XX break
+    ) break
+  ))
+
+  action_bare+y (t! unmod_all (switch ;;@iface@
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_bare+y break
+      () XX break
+    ) break
+    () (switch 
+      ((input virtual vk_foot)) $foot_action_bare+y break
+      () XX break
+    ) break
+  ))
+)

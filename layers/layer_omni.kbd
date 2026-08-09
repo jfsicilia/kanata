@@ -44,7 +44,7 @@
   '                $action_omni+'
   ,                $action_omni+,
   .                $action_omni+.
-  /                (t! 1x|2x $action_omni+/ $toggle_help_layer)
+  /                (t! 1x|2x $action_omni+/ $toggle_bare_layer)
 
   1                $action_omni+1
   2                $action_omni+2

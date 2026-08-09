@@ -1,7 +1,7 @@
 (defvar
   clipboard_history             M-v
   ai                            (push-msg "NOTIFY: AI")
-  action_toggle_help_layer      (multi (push-msg "OPEN_HELP:help") (layer-switch help_layer))  
+  action_toggle_bare_layer      (multi (push-msg "OPEN_HELP:bare") (layer-switch bare_layer))  
 
   activate_domain_actions       (multi (on-press press-vkey vk_domains+a)    $POPUP_HELP)
   activate_domain_bookmarks     (multi (on-press press-vkey vk_domains+b)    $POPUP_HELP)
@@ -793,7 +793,7 @@
     ) break
   )) ;;""
   ;; domains+/ + k 
-  action_domains+/+k $action_toggle_help_layer 
+  action_domains+/+k $action_toggle_bare_layer 
 
   ;; domains+0 + 0
   action_domains+0+0 (t! unmod_all (switch ;;@iface@

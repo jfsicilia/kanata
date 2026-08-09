@@ -1,0 +1,8 @@
+(defvar
+  nvim_[normal]_delete (macro x)
+  nvim_[normal]_insert (macro x )
+  nvim_[normal]_fast_jump (macro x)
+  nvim_action_bare+d   $nvim_[normal]_delete   
+  nvim_action_bare+i   $nvim_[normal]_insert 
+  nvim_action_bare+spc $nvim_[normal]_fast_jump
+)

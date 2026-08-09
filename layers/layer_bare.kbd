@@ -1,4 +1,4 @@
-(deflayermap (help_layer)
+(deflayermap (bare_layer)
       $esc|opts      (t! 1x|2x (push-msg "OPEN_HELP:opts") (layer-switch default))
 
       $`|mod`        (push-msg "OPEN_HELP:mod`")
@@ -68,5 +68,5 @@
      $ralt|apps       (push-msg "OPEN_HELP:apps")
   $copilot|bookm      (push-msg "OPEN_HELP:bookmarks")
 
-  enter               (push-msg "OPEN_HELP:help")
+  enter               (push-msg "OPEN_HELP:bare")
 )
