@@ -11,7 +11,8 @@
   foot_lazygit              (macro esc d d i l a z y g i t ent)
   foot_git_status           (macro esc d d i g i t spc s t a t u s ent)
   foot_force_new_line       (macro \ ent)
-  foot_select_file          C-f
+  foot_select_file          C-f   ;; ver .zshrc
+  foot_select_folder        A-c   ;; ver .zshrc
 
   foot_goto_trash           (macro esc d d i c d spc $folder_trash ent)
   foot_goto_bookcase        (macro esc d d i c d spc $folder_bookcase ent)

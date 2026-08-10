@@ -1,0 +1,3 @@
+(defvar
+foot_action_lalt+c        $foot_select_folder
+)

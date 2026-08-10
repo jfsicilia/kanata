@@ -12,50 +12,67 @@ nvim_action_domains+omni+f             $nvim_sidekick_send_file
 nvim_action_domains+omni+p             $nvim_sidekick_prompt
 ;; domains+omni + d
 nvim_action_domains+omni+d             $nvim_sidekick_close
-;; domains+d + s
-nvim_action_domains+d+s                $nvim_source
-;; domains+r + s
-nvim_action_domains+r+s                $nvim_source
+;;
 ;; domains+a + a
 nvim_action_domains+a+a                $nvim_autocommands
+;;
 ;; domains+b + b
 nvim_action_domains+b+b                $nvim_bookmarks
+;;
 ;; domains+d + d
 nvim_action_domains+d+d                $nvim_definitions
+;; domains+d + s
+nvim_action_domains+d+s                $nvim_source
+;;
 ;; domains+e + e
 nvim_action_domains+e+e                $nvim_file_explorer  
+;;
 ;; domains+g + g
 nvim_action_domains+g+g                $nvim_git  ;;""
 ;; domains+g + l
 nvim_action_domains+g+l                $nvim_lazygit
+;;
+;; domains+h + o
+nvim_action_domains+h+o                $nvim_outline
+;;
 ;; domains+j + j
 nvim_action_domains+j+j                $nvim_jumps
+;;
 ;; domains+k + k
 nvim_action_domains+k+k                $nvim_keymaps
+;;
 ;; domains+l + l
 nvim_action_domains+l+l                $nvim_locations
+;;
 ;; domains+q + q
 nvim_action_domains+q+q                 $nvim_quickfix
+;;
 ;; domains+r + r
 nvim_action_domains+r+r                 $nvim_references
+;; domains+r + s
+nvim_action_domains+r+s                $nvim_source
 ;; domains+r + i
 nvim_action_domains+r+i                 $nvim_references_incoming
 ;; domains+r + o
 nvim_action_domains+r+o                 $nvim_references_outgoing
+;;
 ;; domains+s + s
 nvim_action_domains+s+s                 $nvim_symbols
 ;; domains+s + w
 nvim_action_domains+s+w                 $nvim_symbols_workspace
+;;
 ;; domains+t + t
 nvim_action_domains+t+t                 $nvim_terminal 
 ;; domains+t + toggle
 nvim_action_domains+t+toggle               $nvim_terminal
+;;
 ;; domains+y + y
 nvim_action_domains+y+y                $nvim_history  ;;""
 ;; domains+y + ;
 nvim_action_domains+y+;          $nvim_history_commands  ;;""
 ;; domains+y + search
 nvim_action_domains+y+search         $nvim_history_search  ;;""
+;;
 ;; domains+\ + \
 nvim_action_domains+\+\                   $nvim_compare_toggle 
 ;; domains+\ + j
@@ -66,14 +83,19 @@ nvim_action_domains+\+k                 $nvim_compare_prev  ;;""
 nvim_action_domains+\+o                 $nvim_compare_obtain  ;; Obtain changes from the other file.
 ;; domains+\ + p
 nvim_action_domains+\+p                 $nvim_compare_push  ;; Push changes to the other file.""
+;;
 ;; domains+; + ;
 nvim_action_domains+;+;              $nvim_commands   ;;""
+;;
 ;; domains+' + '
 nvim_action_domains+'+'              $nvim_registers
+;;
 ;; domains+, + ,
 nvim_action_domains+,+,              $nvim_settings
+;;
 ;; domains+. + .
 nvim_action_domains+.+.              $nvim_tags  ;;""
+;;
 ;; domains+/ + /
 nvim_action_domains+/+/              $nvim_help
 )

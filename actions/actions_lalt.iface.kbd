@@ -26,9 +26,11 @@
   ))
   action_lalt+c  (t! unmod_all (switch ;;@iface@ 
     ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_lalt+c break
       () A-c break
     ) break
     () (switch 
+      ((input virtual vk_foot)) $foot_action_lalt+c break
       () A-c break
     ) break
   ))

@@ -266,11 +266,13 @@
   ;; domains+h + o
   action_domains+h+o (t! unmod_all (switch ;;@iface@
     ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_nvim)) $nvim_action_domains+h+o break
       ((input virtual vk_obsidian)) $obsidian_action_domains+h+o break
       () (push-msg "NOTIFY: OutLine not implemented") break
     ) break
     () (switch 
       ((input virtual vk_obsidian)) $obsidian_action_domains+h+o break
+      ((input virtual vk_nvim)) $nvim_action_domains+h+o break
       () (push-msg "NOTIFY: OutLine not implemented") break
     ) break
   ))

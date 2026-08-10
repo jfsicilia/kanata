@@ -30,6 +30,7 @@
   action_!lctl|select+lsft+spc (t! unmod_all (switch ;;@iface@ 
     ((input virtual vk_apps_sort_desc)) (switch 
       ((input virtual vk_nvim)) $nvim_action_!lctl|select+lsft+spc break
+      ((input virtual vk_foot)) $foot_action_!lctl|select+lsft+spc break
       ((input virtual vk_firefox)) $firefox_action_!lctl|select+lsft+spc break
       ((input virtual vk_dolphin)) $dolphin_action_!lctl|select+lsft+spc break
       ((input virtual vk_obsidian)) $obsidian_action_!lctl|select+lsft+spc break
@@ -41,6 +42,7 @@
       ((input virtual vk_obsidian)) $obsidian_action_!lctl|select+lsft+spc break
       ((input virtual vk_dolphin)) $dolphin_action_!lctl|select+lsft+spc break
       ((input virtual vk_firefox)) $firefox_action_!lctl|select+lsft+spc break
+      ((input virtual vk_foot)) $foot_action_!lctl|select+lsft+spc break
       ((input virtual vk_nvim)) $nvim_action_!lctl|select+lsft+spc break
       () XX break
     ) break
@@ -48,11 +50,13 @@
   ;; !lctl|select + rsft + spc 
   action_!lctl|select+rsft+spc (t! unmod_all (switch ;;@iface@ 
     ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual vk_foot)) $foot_action_!lctl|select+rsft+spc break
       ((input virtual vk_dolphin)) $dolphin_action_!lctl|select+rsft+spc break
       () XX break
     ) break
     () (switch 
       ((input virtual vk_dolphin)) $dolphin_action_!lctl|select+rsft+spc break
+      ((input virtual vk_foot)) $foot_action_!lctl|select+rsft+spc break
       () XX break
     ) break
   ))
