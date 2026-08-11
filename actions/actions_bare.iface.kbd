@@ -7,126 +7,25 @@
 ;; no effect on what your keyboard does; it only affects what shows up in
 ;; the generated help overlay.
 (defvar
-  action_bare+spc (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_bare+spc break
-      () XX break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_bare+spc break
-      () XX break
-    ) break
-  ))
+  (t! 1app_action action_bare+spc XX nvim)
 
-  action_bare+tab (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_foot)) $foot_action_bare+tab break
-      () XX break
-    ) break
-    () (switch 
-      ((input virtual vk_foot)) $foot_action_bare+tab break
-      () XX break
-    ) break
-  ))
+  (t! 1app_action action_bare+tab XX foot)
   
-  action_bare+esc (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_foot)) $foot_action_bare+esc break
-      () XX break
-    ) break
-    () (switch 
-      ((input virtual vk_foot)) $foot_action_bare+esc break
-      () XX break
-    ) break
-  ))
+  (t! 1app_action action_bare+esc XX foot)
 
-  action_bare+esc+esc (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_foot)) $foot_action_bare+esc+esc break
-      () XX break
-    ) break
-    () (switch 
-      ((input virtual vk_foot)) $foot_action_bare+esc+esc break
-      () XX break
-    ) break
-  ))
+  (t! 1app_action action_bare+esc+esc XX foot)
 
-  action_bare+H (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_foot)) $foot_action_bare+H break
-      () XX break
-    ) break
-    () (switch 
-      ((input virtual vk_foot)) $foot_action_bare+H break
-      () XX break
-    ) break
-  ))
+  (t! 1app_action action_bare+H XX foot)
 
-  action_bare+L (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_foot)) $foot_action_bare+L break
-      () XX break
-    ) break
-    () (switch 
-      ((input virtual vk_foot)) $foot_action_bare+L break
-      () XX break
-    ) break
-  ))
+  (t! 1app_action action_bare+L XX foot)
 
-  action_bare+d (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_bare+d break
-      () XX break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_bare+d break
-      () XX break
-    ) break
-  ))
+  (t! 1app_action action_bare+d XX nvim)
 
-  action_bare+i (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_bare+i break
-      ((input virtual vk_foot)) $foot_action_bare+i break
-      () XX break
-    ) break
-    () (switch 
-      ((input virtual vk_foot)) $foot_action_bare+i break
-      ((input virtual vk_nvim)) $nvim_action_bare+i break
-      () XX break
-    ) break
-  ))
+  (t! 2app_action action_bare+i XX foot nvim)
 
-  action_bare+p (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_foot)) $foot_action_bare+p break
-      () XX break
-    ) break
-    () (switch 
-      ((input virtual vk_foot)) $foot_action_bare+p break
-      () XX break
-    ) break
-  ))
+  (t! 1app_action action_bare+p XX foot)
 
-  action_bare+v (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_foot)) $foot_action_bare+v break
-      () XX break
-    ) break
-    () (switch 
-      ((input virtual vk_foot)) $foot_action_bare+v break
-      () XX break
-    ) break
-  ))
+  (t! 1app_action action_bare+v XX foot)
 
-  action_bare+y (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_foot)) $foot_action_bare+y break
-      () XX break
-    ) break
-    () (switch 
-      ((input virtual vk_foot)) $foot_action_bare+y break
-      () XX break
-    ) break
-  ))
+  (t! 1app_action action_bare+y XX foot)
 )

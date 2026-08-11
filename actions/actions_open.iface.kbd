@@ -2,53 +2,11 @@
 
   ;; == open =============================================================
   ;; open + spc
-  action_open+spc (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_dolphin)) $dolphin_action_open+spc break
-      () XX break
-    ) break
-    () (switch 
-      ((input virtual vk_dolphin)) $dolphin_action_open+spc break
-      () XX break
-    ) break
-  ))
+  (t! 1app_action action_open+spc XX dolphin)
   ;; open + m
-  action_open+m (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_dolphin)) $dolphin_action_open+m break
-      ((input virtual vk_obsidian)) $obsidian_action_open+m break
-      () XX break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_open+m break
-      ((input virtual vk_dolphin)) $dolphin_action_open+m break
-      () XX break
-    ) break
-  ))
+  (t! 2app_action action_open+m XX obsidian dolphin)
   ;; open + t
-  action_open+t (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_dolphin)) $dolphin_action_open+t break
-      ((input virtual vk_obsidian)) $obsidian_action_open+t break
-      () XX break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_open+t break
-      ((input virtual vk_dolphin)) $dolphin_action_open+t break
-      () XX break
-    ) break
-  ))
+  (t! 2app_action action_open+t XX obsidian dolphin)
   ;; open + v
-  action_open+v (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_dolphin)) $dolphin_action_open+v break
-      ((input virtual vk_obsidian)) $obsidian_action_open+v break
-      () XX break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_open+v break
-      ((input virtual vk_dolphin)) $dolphin_action_open+v break
-      () XX break
-    ) break
-  ))
+  (t! 2app_action action_open+v XX obsidian dolphin)
 )

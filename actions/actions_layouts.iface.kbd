@@ -1,13 +1,4 @@
 (defvar
-  action_layouts+spc         (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_tmux)) $tmux_action_layouts+spc break
-      () (push-msg "NOTIFY: Select layout not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_tmux)) $tmux_action_layouts+spc break
-      () (push-msg "NOTIFY: Select layout not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_layouts+spc (push-msg "NOTIFY: Select layout not implemented") tmux)
 
 )

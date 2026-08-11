@@ -1,21 +1,7 @@
 (defvar
   ;; == workflow ============================================================
   ;; workflow + spc
-  action_workflow+spc (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Workflow not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Workflow not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_workflow+spc (push-msg "NOTIFY: Workflow not implemented"))
   ;; workflow + toggle
-  action_workflow+toggle (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Workflow not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Workflow not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_workflow+toggle (push-msg "NOTIFY: Workflow not implemented"))
 )

@@ -3,35 +3,13 @@
 )
 (defvar
   ;; == SFT actions ==========================================================
-  action_lsft+ent (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_foot)) $foot_action_lsft+ent break
-      () S-ent break
-    ) break
-    () (switch 
-      ((input virtual vk_foot)) $foot_action_lsft+ent break
-      () S-ent break
-    ) break
-  ))
-  action_rsft+ent (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_foot)) $foot_action_rsft+ent break
-      () S-ent break
-    ) break
-    () (switch 
-      ((input virtual vk_foot)) $foot_action_rsft+ent break
-      () S-ent break
-    ) break
-  ))
+  (t! 1app_action action_lsft+ent S-ent foot)
+  (t! 1app_action action_rsft+ent S-ent foot)
 
   action_lsft+rsft  $action_tabs+l 
 
   action_rsft+lsft  $action_tabs+h 
 
-  action_lsft+keyb (t! unmod_all (switch
-    () $action_toggle_alt_keyboard        break
-  ))
-  action_rsft+keyb (t! unmod_all (switch
-    () $action_toggle_alt_keyboard        break
-  ))
+  action_lsft+keyb (t! unmod_all $action_toggle_alt_keyboard) 
+  action_rsft+keyb (t! unmod_all $action_toggle_alt_keyboard)
 )

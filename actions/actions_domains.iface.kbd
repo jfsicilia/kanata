@@ -104,881 +104,211 @@
   action_domains+omni $activate_domain_AI
 
   ;; domains+a + a
-  action_domains+a+a (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+a+a break
-      () (push-msg "NOTIFY: Actions not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+a+a break
-      () (push-msg "NOTIFY: Actions not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+a+a (push-msg "NOTIFY: Actions not implemented") nvim)
 
   ;; domains+b + b
-  action_domains+b+b (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+b+b break
-      ((input virtual vk_obsidian)) $obsidian_action_domains+b+b break
-      () (push-msg "NOTIFY: Bookmarks not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+b+b break
-      ((input virtual vk_nvim)) $nvim_action_domains+b+b break
-      () (push-msg "NOTIFY: Bookmarks not implemented") break
-    ) break
-  ))
+  (t! 2app_action action_domains+b+b (push-msg "NOTIFY: Bookmarks not implemented") obsidian nvim)
 
   ;; domains+c + c
-  action_domains+c+c (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+c+c break
-      () (push-msg "NOTIFY: Calendar not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+c+c break
-      () (push-msg "NOTIFY: Calendar not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+c+c (push-msg "NOTIFY: Calendar not implemented") obsidian)
   ;; domains+c + d
-  action_domains+c+d (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+c+d break
-      () (push-msg "NOTIFY: Calendar (Day) not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+c+d break
-      () (push-msg "NOTIFY: Calendar (Day) not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+c+d (push-msg "NOTIFY: Calendar (Day) not implemented") obsidian)
   ;; domains+c + y
-  action_domains+c+y (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+c+y break
-      () (push-msg "NOTIFY: Calendar (Daily) not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+c+y break
-      () (push-msg "NOTIFY: Calendar (Daily) not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+c+y (push-msg "NOTIFY: Calendar (Daily) not implemented") obsidian)
 
   ;; domains+d + d
-  action_domains+d+d (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+d+d break
-      () (push-msg "NOTIFY: Definitions not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+d+d break
-      () (push-msg "NOTIFY: Definitions not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+d+d (push-msg "NOTIFY: Definitions not implemented") nvim)
   ;; domains+d + s
-  action_domains+d+s (t! unmod_all (switch ;;@ifaceS
-    () (push-msg "NOTIFY: Definition (Source) not implemented") break
-  ))
+  (t! 1app_action action_domains+d+s (push-msg "NOTIFY: Definition (Source) not implemented") nvim)
  
   ;; domains+e + e
-  action_domains+e+e (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+e+e break
-      ((input virtual vk_dolphin)) $dolphin_action_domains+e+e break
-      ((input virtual vk_obsidian)) $obsidian_action_domains+e+e break
-      () (push-msg "NOTIFY: Explorer not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+e+e break
-      ((input virtual vk_dolphin)) $dolphin_action_domains+e+e break
-      ((input virtual vk_nvim)) $nvim_action_domains+e+e break
-      () (push-msg "NOTIFY: Explorer not implemented") break
-    ) break
-  ))
+  (t! 3app_action action_domains+e+e (push-msg "NOTIFY: Explorer not implemented") obsidian dolphin nvim)
   ;; domains+e + r
-  action_domains+e+r (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+e+r break
-      () (push-msg "NOTIFY: Explorer (Recents) not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+e+r break
-      () (push-msg "NOTIFY: Explorer (Recents) not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+e+r (push-msg "NOTIFY: Explorer (Recents) not implemented") obsidian)
   ;; domains+e + f
-  action_domains+e+f (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+e+f break
-      () (push-msg "NOTIFY: Explorer (Find/Focus) not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+e+f break
-      () (push-msg "NOTIFY: Explorer (Find/Focus) not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+e+f (push-msg "NOTIFY: Explorer (Find/Focus) not implemented") obsidian)
 
   ;; domains+f + f
-  action_domains+f+f (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Filters not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Filters not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_domains+f+f (push-msg "NOTIFY: Filters not implemented"))
 
   ;; domains+g + g
-  action_domains+g+g (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+g+g break
-      ((input virtual vk_foot)) $foot_action_domains+g+g break
-      () (push-msg "NOTIFY: Git not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_foot)) $foot_action_domains+g+g break
-      ((input virtual vk_nvim)) $nvim_action_domains+g+g break
-      () (push-msg "NOTIFY: Git not implemented") break
-    ) break
-  ))
+  (t! 2app_action action_domains+g+g (push-msg "NOTIFY: Git not implemented") foot nvim)
   ;; domains+g + l
-  action_domains+g+l (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+g+l break
-      ((input virtual vk_foot)) $foot_action_domains+g+l break
-      () (push-msg "NOTIFY: Git (Lazygit) not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_foot)) $foot_action_domains+g+l break
-      ((input virtual vk_nvim)) $nvim_action_domains+g+l break
-      () (push-msg "NOTIFY: Git (Lazygit) not implemented") break
-    ) break
-  ))
+  (t! 2app_action action_domains+g+l (push-msg "NOTIFY: Git (Lazygit) not implemented") foot nvim)
 
   ;; domains+h + h
-  action_domains+h+h (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Hyperlinks not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Hyperlinks not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_domains+h+h (push-msg "NOTIFY: Hyperlinks not implemented"))
   ;; domains+h + o
-  action_domains+h+o (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+h+o break
-      ((input virtual vk_obsidian)) $obsidian_action_domains+h+o break
-      () (push-msg "NOTIFY: OutLine not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+h+o break
-      ((input virtual vk_nvim)) $nvim_action_domains+h+o break
-      () (push-msg "NOTIFY: OutLine not implemented") break
-    ) break
-  ))
+  (t! 2app_action action_domains+h+o (push-msg "NOTIFY: OutLine not implemented") obsidian nvim)
 
   ;; domains+i + i
-  action_domains+i+i (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_dolphin)) $dolphin_action_domains+i+i break
-      () (push-msg "NOTIFY: Info not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_dolphin)) $dolphin_action_domains+i+i break
-      () (push-msg "NOTIFY: Info not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+i+i (push-msg "NOTIFY: Info not implemented") dolphin)
 
   ;; domains+j + j
-  action_domains+j+j (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+j+j break
-      () (push-msg "NOTIFY: Jumps not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+j+j break
-      () (push-msg "NOTIFY: Jumps not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+j+j (push-msg "NOTIFY: Jumps not implemented") nvim)
 
   ;; domains+k + k
-  action_domains+k+k (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+k+k break
-      ((input virtual vk_firefox)) $firefox_action_domains+k+k break
-      ((input virtual vk_dolphin)) $dolphin_action_domains+k+k break
-      ((input virtual vk_chrome)) $chrome_action_domains+k+k break
-      () (push-msg "NOTIFY: Keymaps not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_chrome)) $chrome_action_domains+k+k break
-      ((input virtual vk_dolphin)) $dolphin_action_domains+k+k break
-      ((input virtual vk_firefox)) $firefox_action_domains+k+k break
-      ((input virtual vk_nvim)) $nvim_action_domains+k+k break
-      () (push-msg "NOTIFY: Keymaps not implemented") break
-    ) break
-  ))
+  (t! 4app_action action_domains+k+k (push-msg "NOTIFY: Keymaps not implemented") chrome dolphin firefox nvim)
 
   ;; domains+l + l
-  action_domains+l+l (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+l+l break
-      () (push-msg "NOTIFY: Locations not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+l+l break
-      () (push-msg "NOTIFY: Locations not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+l+l (push-msg "NOTIFY: Locations not implemented") nvim)
 
   ;; domains+m + m
-  action_domains+m+m (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () $clipboard_history break  ;; Clipboard history
-    ) break
-    () (switch 
-      () $clipboard_history break  ;; Clipboard history
-    ) break
-  ))
+  (t! 0app_action action_domains+m+m $clipboard_history)
 
   ;; domains+n + n
-  action_domains+n+n (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: notebooks not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: notebooks not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_domains+n+n (push-msg "NOTIFY: notebooks not implemented"))
 
   ;; domains+o + o
-  action_domains+o+o (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Output not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Output not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_domains+o+o (push-msg "NOTIFY: Output not implemented"))
 
   ;; domains+p + p
-  action_domains+p+p (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+p+p break
-      () (push-msg "NOTIFY: Properties not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+p+p break
-      () (push-msg "NOTIFY: Properties not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+p+p (push-msg "NOTIFY: Properties not implemented") obsidian)
   ;; domains+p + a
-  action_domains+p+a (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+p+a break
-      () (push-msg "NOTIFY: Properties All not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+p+a break
-      () (push-msg "NOTIFY: Properties All not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+p+a (push-msg "NOTIFY: Properties All not implemented") obsidian)
   
   ;; domains+q + q
-  action_domains+q+q (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+q+q break
-      () (push-msg "NOTIFY: Quickfix not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+q+q break
-      () (push-msg "NOTIFY: Quickfix not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+q+q (push-msg "NOTIFY: Quickfix not implemented") nvim)
 
   ;; domains+r + r
-  action_domains+r+r (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+r+r break
-      () (push-msg "NOTIFY: References not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+r+r break
-      () (push-msg "NOTIFY: References not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+r+r (push-msg "NOTIFY: References not implemented") nvim)
   ;; domains+r + i
-  action_domains+r+i (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+r+i break
-      () (push-msg "NOTIFY: References (Incoming) not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+r+i break
-      () (push-msg "NOTIFY: References (Incoming) not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+r+i (push-msg "NOTIFY: References (Incoming) not implemented") nvim)
   ;; domains+r + o
-  action_domains+r+o (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+r+o break
-      () (push-msg "NOTIFY: References (Outgoing) not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+r+o break
-      () (push-msg "NOTIFY: References (Outgoing) not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+r+o (push-msg "NOTIFY: References (Outgoing) not implemented") nvim)
   ;; domains+r + s
-  action_domains+r+s (t! unmod_all (switch ;;@ifaceS
-    () (push-msg "NOTIFY: Source not implemented") break
-  ))
+  (t! 1app_action action_domains+r+s (push-msg "NOTIFY: Source not implemented") nvim)
 
   ;; domains+s + s
-  action_domains+s+s (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+s+s break
-      ((input virtual vk_obsidian)) $obsidian_action_domains+s+s break
-      () (push-msg "NOTIFY: Symbols not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+s+s break
-      ((input virtual vk_nvim)) $nvim_action_domains+s+s break
-      () (push-msg "NOTIFY: Symbols not implemented") break
-    ) break
-  ))
+  (t! 2app_action action_domains+s+s (push-msg "NOTIFY: Symbols not implemented") obsidian nvim)
   ;; domains+s + w
-  action_domains+s+w (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+s+w break
-      () (push-msg "NOTIFY: Symbols (Workspace) not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+s+w break
-      () (push-msg "NOTIFY: Symbols (Workspace) not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+s+w (push-msg "NOTIFY: Symbols (Workspace) not implemented") nvim)
 
   ;; domains+t + t
-  action_domains+t+t (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+t+t break
-      ((input virtual vk_dolphin)) $dolphin_action_domains+t+t break
-      () (push-msg "NOTIFY: Terminal not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_dolphin)) $dolphin_action_domains+t+t break
-      ((input virtual vk_nvim)) $nvim_action_domains+t+t break
-      () (push-msg "NOTIFY: Terminal not implemented") break
-    ) break
-  ))
+  (t! 2app_action action_domains+t+t (push-msg "NOTIFY: Terminal not implemented") dolphin nvim)
   ;; domains+t + toggle
-  action_domains+t+toggle (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+t+toggle break
-      () (push-msg "NOTIFY: Toggle Terminal not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+t+toggle break
-      () (push-msg "NOTIFY: Toggle Terminal not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+t+toggle (push-msg "NOTIFY: Toggle Terminal not implemented") nvim)
 
   ;; domains+u + u
-  action_domains+u+u (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: UI not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: UI not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_domains+u+u (push-msg "NOTIFY: UI not implemented"))
   ;; domains+u + g
-  action_domains+u+g (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+u+g break
-      () (push-msg "NOTIFY: UI Graph not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+u+g break
-      () (push-msg "NOTIFY: UI Graph not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+u+g (push-msg "NOTIFY: UI Graph not implemented") obsidian)
 
   ;; domains+v + v
-  action_domains+v+v (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Virtualization not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Virtualization not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_domains+v+v (push-msg "NOTIFY: Virtualization not implemented"))
 
   ;; domains+w + w
-  action_domains+w+w (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Warnings not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Warnings not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_domains+w+w (push-msg "NOTIFY: Warnings not implemented"))
 
   ;; domains+x + x
-  action_domains+x+x (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Extensions not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Extensions not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_domains+x+x (push-msg "NOTIFY: Extensions not implemented"))
 
   ;; domains+y + y
-  action_domains+y+y (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+y+y break
-      () (push-msg "NOTIFY: History not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+y+y break
-      () (push-msg "NOTIFY: History not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+y+y (push-msg "NOTIFY: History not implemented") nvim)
   ;; domains+y + ;
-  action_domains+y+; (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+y+; break
-      () (push-msg "NOTIFY: History (commands) not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+y+; break
-      () (push-msg "NOTIFY: History (commands) not implemented") break
-    ) break
-  )) ;;""
+  (t! 1app_action action_domains+y+; (push-msg "NOTIFY: History (commands) not implemented") nvim)
   ;; domains+y + search 
-  action_domains+y+search (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+y+search break
-      () (push-msg "NOTIFY: History search not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+y+search break
-      () (push-msg "NOTIFY: History search not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+y+search (push-msg "NOTIFY: History search not implemented") nvim)
 
   ;; domains+z + z
-  action_domains+z+z (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Tests not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Tests not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_domains+z+z (push-msg "NOTIFY: Tests not implemented"))
 
   ;; domains+` + `
-  action_domains+`+` (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: mod` not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: mod` not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_domains+`+` (push-msg "NOTIFY: mod` not implemented"))
 
   ;; domains+- + -
-  action_domains+-+- (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: mod- not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: mod- not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_domains+-+- (push-msg "NOTIFY: mod- not implemented"))
 
   ;; domains+= + =
-  action_domains+=+= (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Format not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Format not implemented") break
-    ) break
-  )) ;;""
+  (t! 0app_action action_domains+=+= (push-msg "NOTIFY: Format not implemented"))
 
   ;; domains+[ + [
-  action_domains+[+[ (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+[+[ break
-      () (push-msg "NOTIFY: Backlinks not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+[+[ break
-      () (push-msg "NOTIFY: Backlinks not implemented") break
-    ) break
-  )) ;;""
+  (t! 1app_action action_domains+[+[ (push-msg "NOTIFY: Backlinks not implemented") obsidian)
 
   ;; domains+] + ]
-  action_domains+]+] (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+]+] break
-      () (push-msg "NOTIFY: Outlinks not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+]+] break
-      () (push-msg "NOTIFY: Outlinks not implemented") break
-    ) break
-  )) ;;""
+  (t! 1app_action action_domains+]+] (push-msg "NOTIFY: Outlinks not implemented") obsidian)
   ;; domains+] + a
-  action_domains+]+a (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+]+a break
-      () (push-msg "NOTIFY: Outlinks All not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+]+a break
-      () (push-msg "NOTIFY: Outlinks All not implemented") break
-    ) break
-  )) ;;""
+  (t! 1app_action action_domains+]+a (push-msg "NOTIFY: Outlinks All not implemented") obsidian)
 
   ;; domains+\ + \
-  action_domains+\+\ (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+\+\ break
-      ((input virtual vk_foot)) $foot_action_domains+\+\ break
-      () (push-msg "NOTIFY: Toggle compare files not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_foot)) $foot_action_domains+\+\ break
-      ((input virtual vk_nvim)) $nvim_action_domains+\+\ break
-      () (push-msg "NOTIFY: Toggle compare files not implemented") break
-    ) break
-  )) ;;""
+  (t! 2app_action action_domains+\+\ (push-msg "NOTIFY: Toggle compare files not implemented") foot nvim)
   ;; domains+\ + lsft + \
-  action_domains+\+lsft+\ (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_foot)) $foot_action_domains+\+lsft+\ break
-      () (push-msg "NOTIFY: Toggle compare folders not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_foot)) $foot_action_domains+\+lsft+\ break
-      () (push-msg "NOTIFY: Toggle compare folders not implemented") break
-    ) break
-  )) ;;""
+  (t! 1app_action action_domains+\+lsft+\ (push-msg "NOTIFY: Toggle compare folders not implemented") foot)
   ;; domains+\ + j
-  action_domains+\+j (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+\+j break
-      () (push-msg "NOTIFY: Compare next not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+\+j break
-      () (push-msg "NOTIFY: Compare next not implemented") break
-    ) break
-  )) ;;""
+  (t! 1app_action action_domains+\+j (push-msg "NOTIFY: Compare next not implemented") nvim)
   ;; domains+\ + k
-  action_domains+\+k (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+\+k break
-      () (push-msg "NOTIFY: Compare before not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+\+k break
-      () (push-msg "NOTIFY: Compare before not implemented") break
-    ) break
-  )) ;;""
+  (t! 1app_action action_domains+\+k (push-msg "NOTIFY: Compare before not implemented") nvim)
   ;; domains+\ + o
-  action_domains+\+o (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+\+o break
-      () (push-msg "NOTIFY: Compare obtain not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+\+o break
-      () (push-msg "NOTIFY: Compare obtain not implemented") break
-    ) break
-  )) ;;""
+  (t! 1app_action action_domains+\+o (push-msg "NOTIFY: Compare obtain not implemented") nvim)
   ;; domains+\ + p
-  action_domains+\+p (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+\+p break
-      () (push-msg "NOTIFY: Compare push not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+\+p break
-      () (push-msg "NOTIFY: Compare push not implemented") break
-    ) break
-  )) ;;""
+  (t! 1app_action action_domains+\+p (push-msg "NOTIFY: Compare push not implemented") nvim)
 
   ;; domains+; + ;
-  action_domains+;+; (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_tmux)) $tmux_action_domains+;+; break
-      ((input virtual vk_nvim)) $nvim_action_domains+;+; break
-      ((input virtual vk_colab)) $colab_action_domains+;+; break
-      ((input virtual vk_obsidian)) $obsidian_action_domains+;+; break
-      () (push-msg "NOTIFY: Commands not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_domains+;+; break
-      ((input virtual vk_colab)) $colab_action_domains+;+; break
-      ((input virtual vk_nvim)) $nvim_action_domains+;+; break
-      ((input virtual vk_tmux)) $tmux_action_domains+;+; break
-      () (push-msg "NOTIFY: Commands not implemented") break
-    ) break
-  )) ;;""
+  (t! 4app_action action_domains+;+; (push-msg "NOTIFY: Commands not implemented") obsidian colab nvim tmux)
 
   ;; domains+' + '
-  action_domains+'+' (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+'+' break
-      () (push-msg "NOTIFY: Registries not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+'+' break
-      () (push-msg "NOTIFY: Registries not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+'+' (push-msg "NOTIFY: Registries not implemented") nvim)
 
   ;; domains+, + ,
-  action_domains+,+, (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+,+, break
-      ((input virtual vk_firefox)) $firefox_action_domains+,+, break
-      ((input virtual vk_dolphin)) $dolphin_action_domains+,+, break
-      ((input virtual vk_obsidian)) $obsidian_action_domains+,+, break
-      ((input virtual vk_zapzap)) $zapzap_action_domains+,+, break
-      ((input virtual vk_chrome)) $chrome_action_domains+,+, break
-      ((input virtual vk_whatsapp)) $whatsapp_action_domains+,+, break
-      () (push-msg "NOTIFY: Settings not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_whatsapp)) $whatsapp_action_domains+,+, break
-      ((input virtual vk_chrome)) $chrome_action_domains+,+, break
-      ((input virtual vk_zapzap)) $zapzap_action_domains+,+, break
-      ((input virtual vk_obsidian)) $obsidian_action_domains+,+, break
-      ((input virtual vk_dolphin)) $dolphin_action_domains+,+, break
-      ((input virtual vk_firefox)) $firefox_action_domains+,+, break
-      ((input virtual vk_nvim)) $nvim_action_domains+,+, break
-      () (push-msg "NOTIFY: Settings not implemented") break
-    ) break
-  ))
+  (t! 7app_action action_domains+,+, (push-msg "NOTIFY: Settings not implemented") whatsapp chrome zapzap obsidian dolphin firefox nvim)
 
   ;; domains+. + .
-  action_domains+.+. (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+.+. break
-      ((input virtual vk_dolphin)) $dolphin_action_domains+.+. break
-      () (push-msg "NOTIFY: Tags not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_dolphin)) $dolphin_action_domains+.+. break
-      ((input virtual vk_nvim)) $nvim_action_domains+.+. break
-      () (push-msg "NOTIFY: Tags not implemented") break
-    ) break
-  ))
+  (t! 2app_action action_domains+.+. (push-msg "NOTIFY: Tags not implemented") dolphin nvim)
 
   ;; domains+/ + / 
-  action_domains+/+/ (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+/+/ break
-      ((input virtual vk_dolphin)) $dolphin_action_domains+/+/ break
-      () (push-msg "NOTIFY: Help not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_dolphin)) $dolphin_action_domains+/+/ break
-      ((input virtual vk_nvim)) $nvim_action_domains+/+/ break
-      () (push-msg "NOTIFY: Help not implemented") break
-    ) break
-  )) ;;""
+  (t! 2app_action action_domains+/+/ (push-msg "NOTIFY: Help not implemented") dolphin nvim)
   ;; domains+/ + k 
   action_domains+/+k $action_toggle_bare_layer 
 
   ;; domains+0 + 0
-  action_domains+0+0 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: mod0 not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: mod0 not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_domains+0+0 (push-msg "NOTIFY: mod0 not implemented"))
 
   ;; domains+1 + 1
-  action_domains+1+1 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: mod1 not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: mod1 not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_domains+1+1 (push-msg "NOTIFY: mod1 not implemented"))
 
   ;; domains+2 + 2
-  action_domains+2+2 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: mod2 not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: mod2 not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_domains+2+2 (push-msg "NOTIFY: mod2 not implemented"))
 
   ;; domains+3 + 3
-  action_domains+3+3 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: mod3 not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: mod3 not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_domains+3+3 (push-msg "NOTIFY: mod3 not implemented"))
 
   ;; domains+4 + 4
-  action_domains+4+4 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: mod4 not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: mod4 not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_domains+4+4 (push-msg "NOTIFY: mod4 not implemented"))
 
   ;; domains+5 + 5
-  action_domains+5+5 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: mod5 not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: mod5 not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_domains+5+5 (push-msg "NOTIFY: mod5 not implemented"))
 
   ;; domains+6 + 6
-  action_domains+6+6 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: mod6 not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: mod6 not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_domains+6+6 (push-msg "NOTIFY: mod6 not implemented"))
 
   ;; domains+7 + 7
-  action_domains+7+7 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: mod7 not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: mod7 not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_domains+7+7 (push-msg "NOTIFY: mod7 not implemented"))
 
   ;; domains+8 + 8
-  action_domains+8+8 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: mod8 not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: mod8 not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_domains+8+8 (push-msg "NOTIFY: mod8 not implemented"))
 
   ;; domains+9 + 9
-  action_domains+9+9 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: mod9 not implemented") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: mod9 not implemented") break
-    ) break
-  ))
+  (t! 0app_action action_domains+9+9 (push-msg "NOTIFY: mod9 not implemented"))
 
   ;; omni + omni
-  action_domains+omni+omni (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+omni+omni break
-      () $ai break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+omni+omni break
-      () $ai break
-    ) break
-  ))
+  (t! 1app_action action_domains+omni+omni $ai nvim)
 
   ;; omni + a
-  action_domains+omni+a (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+omni+a break
-      () (push-msg "NOTIFY: Sidekick select agent not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+omni+a break
-      () (push-msg "NOTIFY: Sidekick select agent not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+omni+a (push-msg "NOTIFY: Sidekick select agent not implemented") nvim)
 
   ;; omni + c
-  action_domains+omni+c (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+omni+c break
-      () (push-msg "NOTIFY: Sidekick toggle Claude not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+omni+c break
-      () (push-msg "NOTIFY: Sidekick toggle Claude not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+omni+c (push-msg "NOTIFY: Sidekick toggle Claude not implemented") nvim)
 
   ;; omni + s
-  action_domains+omni+s (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+omni+s break
-      () (push-msg "NOTIFY: Sidekick send selection not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+omni+s break
-      () (push-msg "NOTIFY: Sidekick send selection not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+omni+s (push-msg "NOTIFY: Sidekick send selection not implemented") nvim)
 
   ;; omni + f
-  action_domains+omni+f (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+omni+f break
-      () (push-msg "NOTIFY: Sidekick send file not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+omni+f break
-      () (push-msg "NOTIFY: Sidekick send file not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+omni+f (push-msg "NOTIFY: Sidekick send file not implemented") nvim)
 
   ;; omni + p
-  action_domains+omni+p (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+omni+p break
-      () (push-msg "NOTIFY: Sidekick prompt not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+omni+p break
-      () (push-msg "NOTIFY: Sidekick prompt not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+omni+p (push-msg "NOTIFY: Sidekick prompt not implemented") nvim)
 
   ;; omni + d
-  action_domains+omni+d (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+omni+d break
-      () (push-msg "NOTIFY: Sidekick close CLI session not implemented") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_domains+omni+d break
-      () (push-msg "NOTIFY: Sidekick close CLI session not implemented") break
-    ) break
-  ))
+  (t! 1app_action action_domains+omni+d (push-msg "NOTIFY: Sidekick close CLI session not implemented") nvim)
 
 )

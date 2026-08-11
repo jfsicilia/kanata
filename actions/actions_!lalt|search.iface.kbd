@@ -1,1167 +1,151 @@
 (defvar
-  ;; == !lalt|search actions ==========================================================
+  ;; == !LALT|SEARCH actions ==========================================================
 
-  ;; !lalt|search + spc 
-  action_!lalt|search+spc (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_!lalt|search+spc break
-      ((input virtual vk_dolphin)) $dolphin_action_!lalt|search+spc break
-      ((input virtual vk_obsidian)) $obsidian_action_!lalt|search+spc break
-      ((input virtual vk_zapzap)) $zapzap_action_!lalt|search+spc break
-      ((input virtual vk_chrome)) $chrome_action_!lalt|search+spc break
-      ((input virtual vk_whatsapp)) $whatsapp_action_!lalt|search+spc break
-      () XX break
-    ) break
-    () (switch 
-      ((input virtual vk_whatsapp)) $whatsapp_action_!lalt|search+spc break
-      ((input virtual vk_chrome)) $chrome_action_!lalt|search+spc break
-      ((input virtual vk_zapzap)) $zapzap_action_!lalt|search+spc break
-      ((input virtual vk_obsidian)) $obsidian_action_!lalt|search+spc break
-      ((input virtual vk_dolphin)) $dolphin_action_!lalt|search+spc break
-      ((input virtual vk_nvim)) $nvim_action_!lalt|search+spc break
-      () XX break
-    ) break
-  ))
-  ;; !lalt|search + lsft + spc 
-  action_!lalt|search+lsft+spc (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_nvim)) $nvim_action_!lalt|search+lsft+spc break
-      ((input virtual vk_dolphin)) $dolphin_action_!lalt|search+lsft+spc break
-      ((input virtual vk_obsidian)) $obsidian_action_!lalt|search+lsft+spc break
-      ((input virtual vk_zapzap)) $zapzap_action_!lalt|search+lsft+spc break
-      ((input virtual vk_whatsapp)) $whatsapp_action_!lalt|search+lsft+spc break
-      () XX break
-    ) break
-    () (switch 
-      ((input virtual vk_whatsapp)) $whatsapp_action_!lalt|search+lsft+spc break
-      ((input virtual vk_zapzap)) $zapzap_action_!lalt|search+lsft+spc break
-      ((input virtual vk_obsidian)) $obsidian_action_!lalt|search+lsft+spc break
-      ((input virtual vk_dolphin)) $dolphin_action_!lalt|search+lsft+spc break
-      ((input virtual vk_nvim)) $nvim_action_!lalt|search+lsft+spc break
-      () XX break
-    ) break
-  ))
-  ;; !lalt|search + rsft + spc 
-  action_!lalt|search+rsft+spc (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_dolphin)) $dolphin_action_!lalt|search+rsft+spc break
-      ((input virtual vk_zapzap)) $zapzap_action_!lalt|search+rsft+spc break
-      ((input virtual vk_whatsapp)) $whatsapp_action_!lalt|search+rsft+spc break
-      () XX break
-    ) break
-    () (switch 
-      ((input virtual vk_whatsapp)) $whatsapp_action_!lalt|search+rsft+spc break
-      ((input virtual vk_zapzap)) $zapzap_action_!lalt|search+rsft+spc break
-      ((input virtual vk_dolphin)) $dolphin_action_!lalt|search+rsft+spc break
-      () XX break
-    ) break
-  ))
+  (t! 6app_action action_!lalt|search+spc XX whatsapp chrome zapzap obsidian dolphin nvim)
+  (t! 5app_action action_!lalt|search+lsft+spc XX whatsapp zapzap obsidian dolphin nvim)
+  (t! 3app_action action_!lalt|search+rsft+spc XX whatsapp zapzap dolphin)
 
-  action_!lalt|search+a (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-a break
-    ) break
-    () (switch 
-      () A-a break
-    ) break
-  ))
-  action_!lalt|search+b (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-b break
-    ) break
-    () (switch 
-      () A-b break
-    ) break
-  ))
-  action_!lalt|search+c  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-c break
-    ) break
-    () (switch 
-      () A-c break
-    ) break
-  ))
-  action_!lalt|search+d (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-d break
-    ) break
-    () (switch 
-      () A-d break
-    ) break
-  ))
-  action_!lalt|search+e  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-e break
-    ) break
-    () (switch 
-      () A-e break
-    ) break
-  ))
-  action_!lalt|search+f  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-f break
-    ) break
-    () (switch 
-      () A-f break
-    ) break
-  ))
-  action_!lalt|search+g  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-g break
-    ) break
-    () (switch 
-      () A-g break
-    ) break
-  ))
-  action_!lalt|search+h  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-h break
-    ) break
-    () (switch 
-      () A-h break
-    ) break
-  ))
-  action_!lalt|search+i  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-i break
-    ) break
-    () (switch 
-      () A-i break
-    ) break
-  ))
-  action_!lalt|search+j  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-j break
-    ) break
-    () (switch 
-      () A-j break
-    ) break
-  ))
-  action_!lalt|search+k  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-k break
-    ) break
-    () (switch 
-      () A-k break
-    ) break
-  ))
-  action_!lalt|search+l  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-l break
-    ) break
-    () (switch 
-      () A-l break
-    ) break
-  ))
-  action_!lalt|search+m  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-m break
-    ) break
-    () (switch 
-      () A-m break
-    ) break
-  ))
-  action_!lalt|search+n  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-n break
-    ) break
-    () (switch 
-      () A-n break
-    ) break
-  ))
-  action_!lalt|search+o  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-o break
-    ) break
-    () (switch 
-      () A-o break
-    ) break
-  ))
-  action_!lalt|search+p  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-p break
-    ) break
-    () (switch 
-      () A-p break
-    ) break
-  ))
-  action_!lalt|search+q  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-q break
-    ) break
-    () (switch 
-      () A-q break
-    ) break
-  ))
-  action_!lalt|search+r  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-r break
-    ) break
-    () (switch 
-      () A-r break
-    ) break
-  ))
-  action_!lalt|search+s  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-s break
-    ) break
-    () (switch 
-      () A-s break
-    ) break
-  ))
-  action_!lalt|search+t  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-t break
-    ) break
-    () (switch 
-      () A-t break
-    ) break
-  ))
-  action_!lalt|search+u  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-u break
-    ) break
-    () (switch 
-      () A-u break
-    ) break
-  ))
-  action_!lalt|search+v  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-v break
-    ) break
-    () (switch 
-      () A-v break
-    ) break
-  ))
-  action_!lalt|search+w  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-w break
-    ) break
-    () (switch 
-      () A-w break
-    ) break
-  ))
-  action_!lalt|search+x  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-x break
-    ) break
-    () (switch 
-      () A-x break
-    ) break
-  ))
-  action_!lalt|search+y  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-y break
-    ) break
-    () (switch 
-      () A-y break
-    ) break
-  ))
-  action_!lalt|search+z  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-z break
-    ) break
-    () (switch 
-      () A-z break
-    ) break
-  ))
-  action_!lalt|search+,  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-, break
-    ) break
-    () (switch 
-      () A-, break
-    ) break
-  ))
-  action_!lalt|search+.  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-. break
-    ) break
-    () (switch 
-      () A-. break
-    ) break
-  ))
-  action_!lalt|search+/  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-/ break
-    ) break
-    () (switch 
-      () A-/ break
-    ) break
-  ))
-  action_!lalt|search+;  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-; break
-    ) break
-    () (switch 
-      () A-; break
-    ) break
-  ))
-  action_!lalt|search+'  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-' break
-    ) break
-    () (switch 
-      () A-' break
-    ) break
-  ))
-  action_!lalt|search+[  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-[ break
-    ) break
-    () (switch 
-      () A-[ break
-    ) break
-  ))
-  action_!lalt|search+]  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-] break
-    ) break
-    () (switch 
-      () A-] break
-    ) break
-  ))  
-  action_!lalt|search+\  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-\ break
-    ) break
-    () (switch 
-      () A-\ break
-    ) break
-  ))
-  action_!lalt|search+-  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-- break
-    ) break
-    () (switch 
-      () A-- break
-    ) break
-  ))
-  action_!lalt|search+=  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-= break
-    ) break
-    () (switch 
-      () A-= break
-    ) break
-  ))
-  action_!lalt|search+1  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-1 break
-    ) break
-    () (switch 
-      () A-1 break
-    ) break
-  ))
-  action_!lalt|search+2  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-2 break
-    ) break
-    () (switch 
-      () A-2 break
-    ) break
-  ))
-  action_!lalt|search+3  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-3 break
-    ) break
-    () (switch 
-      () A-3 break
-    ) break
-  ))
-  action_!lalt|search+4  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-4 break
-    ) break
-    () (switch 
-      () A-4 break
-    ) break
-  ))
-  action_!lalt|search+5  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-5 break
-    ) break
-    () (switch 
-      () A-5 break
-    ) break
-  ))
-  action_!lalt|search+6  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-6 break
-    ) break
-    () (switch 
-      () A-6 break
-    ) break
-  ))
-  action_!lalt|search+7  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-7 break
-    ) break
-    () (switch 
-      () A-7 break
-    ) break
-  ))
-  action_!lalt|search+8  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-8 break
-    ) break
-    () (switch 
-      () A-8 break
-    ) break
-  ))
-  action_!lalt|search+9  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-9 break
-    ) break
-    () (switch 
-      () A-9 break
-    ) break
-  ))
-  action_!lalt|search+0  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-0 break
-    ) break
-    () (switch 
-      () A-0 break
-    ) break
-  )) ;; ""
+  (t! 0app_action action_!lalt|search+a A-a)
+  (t! 0app_action action_!lalt|search+b A-b)
+  (t! 0app_action action_!lalt|search+c A-c)
+  (t! 0app_action action_!lalt|search+d A-d)
+  (t! 0app_action action_!lalt|search+e A-e)
+  (t! 0app_action action_!lalt|search+f A-f)
+  (t! 0app_action action_!lalt|search+g A-g)
+  (t! 0app_action action_!lalt|search+h A-h)
+  (t! 0app_action action_!lalt|search+i A-i)
+  (t! 0app_action action_!lalt|search+j A-j)
+  (t! 0app_action action_!lalt|search+k A-k)
+  (t! 0app_action action_!lalt|search+l A-l)
+  (t! 0app_action action_!lalt|search+m A-m)
+  (t! 0app_action action_!lalt|search+n A-n)
+  (t! 0app_action action_!lalt|search+o A-o)
+  (t! 0app_action action_!lalt|search+p A-p)
+  (t! 0app_action action_!lalt|search+q A-q)
+  (t! 0app_action action_!lalt|search+r A-r)
+  (t! 0app_action action_!lalt|search+s A-s)
+  (t! 0app_action action_!lalt|search+t A-t)
+  (t! 0app_action action_!lalt|search+u A-u)
+  (t! 0app_action action_!lalt|search+v A-v)
+  (t! 0app_action action_!lalt|search+w A-w)
+  (t! 0app_action action_!lalt|search+x A-x)
+  (t! 0app_action action_!lalt|search+y A-y)
+  (t! 0app_action action_!lalt|search+z A-z)
+  (t! 0app_action action_!lalt|search+, A-,)
+  (t! 0app_action action_!lalt|search+. A-.)
+  (t! 0app_action action_!lalt|search+/ A-/)
+  (t! 0app_action action_!lalt|search+; A-;)
+  (t! 0app_action action_!lalt|search+' A-')
+  (t! 0app_action action_!lalt|search+[ A-[)
+  (t! 0app_action action_!lalt|search+] A-])
+  (t! 0app_action action_!lalt|search+\ A-\)
+  (t! 0app_action action_!lalt|search+- A--)
+  (t! 0app_action action_!lalt|search+= A-=)
+  (t! 0app_action action_!lalt|search+1 A-1)
+  (t! 0app_action action_!lalt|search+2 A-2)
+  (t! 0app_action action_!lalt|search+3 A-3)
+  (t! 0app_action action_!lalt|search+4 A-4)
+  (t! 0app_action action_!lalt|search+5 A-5)
+  (t! 0app_action action_!lalt|search+6 A-6)
+  (t! 0app_action action_!lalt|search+7 A-7)
+  (t! 0app_action action_!lalt|search+8 A-8)
+  (t! 0app_action action_!lalt|search+9 A-9)
+  (t! 0app_action action_!lalt|search+0 A-0)
+  ;;
   ;; == !lalt|search+LSFT actions ==========================================================
-  action_!lalt|search+lsft+a (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-a break
-    ) break
-    () (switch 
-      () A-S-a break
-    ) break
-  ))
-  action_!lalt|search+lsft+b (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-b break
-    ) break
-    () (switch 
-      () A-S-b break
-    ) break
-  ))
-  action_!lalt|search+lsft+c  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-c break
-    ) break
-    () (switch 
-      () A-S-c break
-    ) break
-  ))
-  action_!lalt|search+lsft+d (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-d break
-    ) break
-    () (switch 
-      () A-S-d break
-    ) break
-  ))
-  action_!lalt|search+lsft+e  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-e break
-    ) break
-    () (switch 
-      () A-S-e break
-    ) break
-  ))
-  action_!lalt|search+lsft+f  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-f break
-    ) break
-    () (switch 
-      () A-S-f break
-    ) break
-  ))
-  action_!lalt|search+lsft+g  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-g break
-    ) break
-    () (switch 
-      () A-S-g break
-    ) break
-  ))
-  action_!lalt|search+lsft+h  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-h break
-    ) break
-    () (switch 
-      () A-S-h break
-    ) break
-  ))
-  action_!lalt|search+lsft+i  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-i break
-    ) break
-    () (switch 
-      () A-S-i break
-    ) break
-  ))
-  action_!lalt|search+lsft+j  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-j break
-    ) break
-    () (switch 
-      () A-S-j break
-    ) break
-  ))
-  action_!lalt|search+lsft+k  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-k break
-    ) break
-    () (switch 
-      () A-S-k break
-    ) break
-  ))
-  action_!lalt|search+lsft+l  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-l break
-    ) break
-    () (switch 
-      () A-S-l break
-    ) break
-  ))
-  action_!lalt|search+lsft+m  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-m break
-    ) break
-    () (switch 
-      () A-S-m break
-    ) break
-  ))
-  action_!lalt|search+lsft+n  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-n break
-    ) break
-    () (switch 
-      () A-S-n break
-    ) break
-  ))
-  action_!lalt|search+lsft+o  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-o break
-    ) break
-    () (switch 
-      () A-S-o break
-    ) break
-  ))
-  action_!lalt|search+lsft+p  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-p break
-    ) break
-    () (switch 
-      () A-S-p break
-    ) break
-  ))
-  action_!lalt|search+lsft+q  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-q break
-    ) break
-    () (switch 
-      () A-S-q break
-    ) break
-  ))
-  action_!lalt|search+lsft+r  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-r break
-    ) break
-    () (switch 
-      () A-S-r break
-    ) break
-  ))
-  action_!lalt|search+lsft+s  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-s break
-    ) break
-    () (switch 
-      () A-S-s break
-    ) break
-  ))
-  action_!lalt|search+lsft+t  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-t break
-    ) break
-    () (switch 
-      () A-S-t break
-    ) break
-  ))
-  action_!lalt|search+lsft+u  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-u break
-    ) break
-    () (switch 
-      () A-S-u break
-    ) break
-  ))
-  action_!lalt|search+lsft+v  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-v break
-    ) break
-    () (switch 
-      () A-S-v break
-    ) break
-  ))
-  action_!lalt|search+lsft+w  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-w break
-    ) break
-    () (switch 
-      () A-S-w break
-    ) break
-  ))
-  action_!lalt|search+lsft+x  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-x break
-    ) break
-    () (switch 
-      () A-S-x break
-    ) break
-  ))
-  action_!lalt|search+lsft+y  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-y break
-    ) break
-    () (switch 
-      () A-S-y break
-    ) break
-  ))
-  action_!lalt|search+lsft+z  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-z break
-    ) break
-    () (switch 
-      () A-S-z break
-    ) break
-  ))
-  action_!lalt|search+lsft+,  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-, break
-    ) break
-    () (switch 
-      () A-S-, break
-    ) break
-  ))
-  action_!lalt|search+lsft+.  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-. break
-    ) break
-    () (switch 
-      () A-S-. break
-    ) break
-  ))
-  action_!lalt|search+lsft+/  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-/ break
-    ) break
-    () (switch 
-      () A-S-/ break
-    ) break
-  ))
-  action_!lalt|search+lsft+;  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-; break
-    ) break
-    () (switch 
-      () A-S-; break
-    ) break
-  ))
-  action_!lalt|search+lsft+'  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-' break
-    ) break
-    () (switch 
-      () A-S-' break
-    ) break
-  ))
-  action_!lalt|search+lsft+[  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-[ break
-    ) break
-    () (switch 
-      () A-S-[ break
-    ) break
-  ))
-  action_!lalt|search+lsft+]  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-] break
-    ) break
-    () (switch 
-      () A-S-] break
-    ) break
-  ))  ;; ""
-  action_!lalt|search+lsft+\  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-\ break
-    ) break
-    () (switch 
-      () A-S-\ break
-    ) break
-  ))  ;; ""
-  action_!lalt|search+lsft+-  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-- break
-    ) break
-    () (switch 
-      () A-S-- break
-    ) break
-  ))
-  action_!lalt|search+lsft+=  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-= break
-    ) break
-    () (switch 
-      () A-S-= break
-    ) break
-  ))
-  action_!lalt|search+lsft+1  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-1 break
-    ) break
-    () (switch 
-      () A-S-1 break
-    ) break
-  ))
-  action_!lalt|search+lsft+2  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-2 break
-    ) break
-    () (switch 
-      () A-S-2 break
-    ) break
-  ))
-  action_!lalt|search+lsft+3  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-3 break
-    ) break
-    () (switch 
-      () A-S-3 break
-    ) break
-  ))
-  action_!lalt|search+lsft+4  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-4 break
-    ) break
-    () (switch 
-      () A-S-4 break
-    ) break
-  ))
-  action_!lalt|search+lsft+5  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-5 break
-    ) break
-    () (switch 
-      () A-S-5 break
-    ) break
-  ))
-  action_!lalt|search+lsft+6  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-6 break
-    ) break
-    () (switch 
-      () A-S-6 break
-    ) break
-  ))
-  action_!lalt|search+lsft+7  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-7 break
-    ) break
-    () (switch 
-      () A-S-7 break
-    ) break
-  ))
-  action_!lalt|search+lsft+8  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-8 break
-    ) break
-    () (switch 
-      () A-S-8 break
-    ) break
-  ))
-  action_!lalt|search+lsft+9  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-9 break
-    ) break
-    () (switch 
-      () A-S-9 break
-    ) break
-  ))
-  action_!lalt|search+lsft+0  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-0 break
-    ) break
-    () (switch 
-      () A-S-0 break
-    ) break
-  ))
+  (t! 0app_action action_!lalt|search+lsft+a A-S-a)
+  (t! 0app_action action_!lalt|search+lsft+b A-S-b)
+  (t! 0app_action action_!lalt|search+lsft+c A-S-c)
+  (t! 0app_action action_!lalt|search+lsft+d A-S-d)
+  (t! 0app_action action_!lalt|search+lsft+e A-S-e)
+  (t! 0app_action action_!lalt|search+lsft+f A-S-f)
+  (t! 0app_action action_!lalt|search+lsft+g A-S-g)
+  (t! 0app_action action_!lalt|search+lsft+h A-S-h)
+  (t! 0app_action action_!lalt|search+lsft+i A-S-i)
+  (t! 0app_action action_!lalt|search+lsft+j A-S-j)
+  (t! 0app_action action_!lalt|search+lsft+k A-S-k)
+  (t! 0app_action action_!lalt|search+lsft+l A-S-l)
+  (t! 0app_action action_!lalt|search+lsft+m A-S-m)
+  (t! 0app_action action_!lalt|search+lsft+n A-S-n)
+  (t! 0app_action action_!lalt|search+lsft+o A-S-o)
+  (t! 0app_action action_!lalt|search+lsft+p A-S-p)
+  (t! 0app_action action_!lalt|search+lsft+q A-S-q)
+  (t! 0app_action action_!lalt|search+lsft+r A-S-r)
+  (t! 0app_action action_!lalt|search+lsft+s A-S-s)
+  (t! 0app_action action_!lalt|search+lsft+t A-S-t)
+  (t! 0app_action action_!lalt|search+lsft+u A-S-u)
+  (t! 0app_action action_!lalt|search+lsft+v A-S-v)
+  (t! 0app_action action_!lalt|search+lsft+w A-S-w)
+  (t! 0app_action action_!lalt|search+lsft+x A-S-x)
+  (t! 0app_action action_!lalt|search+lsft+y A-S-y)
+  (t! 0app_action action_!lalt|search+lsft+z A-S-z)
+  (t! 0app_action action_!lalt|search+lsft+, A-S-,)
+  (t! 0app_action action_!lalt|search+lsft+. A-S-.)
+  (t! 0app_action action_!lalt|search+lsft+/ A-S-/)
+  (t! 0app_action action_!lalt|search+lsft+; A-S-;)
+  (t! 0app_action action_!lalt|search+lsft+' A-S-')
+  (t! 0app_action action_!lalt|search+lsft+[ A-S-[)
+  (t! 0app_action action_!lalt|search+lsft+] A-S-])
+  (t! 0app_action action_!lalt|search+lsft+\ A-S-\)
+  (t! 0app_action action_!lalt|search+lsft+- A-S--)
+  (t! 0app_action action_!lalt|search+lsft+= A-S-=)
+  (t! 0app_action action_!lalt|search+lsft+1 A-S-1)
+  (t! 0app_action action_!lalt|search+lsft+2 A-S-2)
+  (t! 0app_action action_!lalt|search+lsft+3 A-S-3)
+  (t! 0app_action action_!lalt|search+lsft+4 A-S-4)
+  (t! 0app_action action_!lalt|search+lsft+5 A-S-5)
+  (t! 0app_action action_!lalt|search+lsft+6 A-S-6)
+  (t! 0app_action action_!lalt|search+lsft+7 A-S-7)
+  (t! 0app_action action_!lalt|search+lsft+8 A-S-8)
+  (t! 0app_action action_!lalt|search+lsft+9 A-S-9)
+  (t! 0app_action action_!lalt|search+lsft+0 A-S-0)
+  ;;
   ;; == !lalt|search+RSFT actions ==========================================================
-  action_!lalt|search+rsft+a (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-a break
-    ) break
-    () (switch 
-      () A-S-a break
-    ) break
-  ))
-  action_!lalt|search+rsft+b (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-b break
-    ) break
-    () (switch 
-      () A-S-b break
-    ) break
-  ))
-  action_!lalt|search+rsft+c  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-c break
-    ) break
-    () (switch 
-      () A-S-c break
-    ) break
-  ))
-  action_!lalt|search+rsft+d (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-d break
-    ) break
-    () (switch 
-      () A-S-d break
-    ) break
-  ))
-  action_!lalt|search+rsft+e  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-e break
-    ) break
-    () (switch 
-      () A-S-e break
-    ) break
-  ))
-  action_!lalt|search+rsft+f  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-f break
-    ) break
-    () (switch 
-      () A-S-f break
-    ) break
-  ))
-  action_!lalt|search+rsft+g  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-g break
-    ) break
-    () (switch 
-      () A-S-g break
-    ) break
-  ))
-  action_!lalt|search+rsft+h  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-h break
-    ) break
-    () (switch 
-      () A-S-h break
-    ) break
-  ))
-  action_!lalt|search+rsft+i  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-i break
-    ) break
-    () (switch 
-      () A-S-i break
-    ) break
-  ))
-  action_!lalt|search+rsft+j  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-j break
-    ) break
-    () (switch 
-      () A-S-j break
-    ) break
-  ))
-  action_!lalt|search+rsft+k  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-k break
-    ) break
-    () (switch 
-      () A-S-k break
-    ) break
-  ))
-  action_!lalt|search+rsft+l  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-l break
-    ) break
-    () (switch 
-      () A-S-l break
-    ) break
-  ))
-  action_!lalt|search+rsft+m  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-m break
-    ) break
-    () (switch 
-      () A-S-m break
-    ) break
-  ))
-  action_!lalt|search+rsft+n  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-n break
-    ) break
-    () (switch 
-      () A-S-n break
-    ) break
-  ))
-  action_!lalt|search+rsft+o  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-o break
-    ) break
-    () (switch 
-      () A-S-o break
-    ) break
-  ))
-  action_!lalt|search+rsft+p  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-p break
-    ) break
-    () (switch 
-      () A-S-p break
-    ) break
-  ))
-  action_!lalt|search+rsft+q  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-q break
-    ) break
-    () (switch 
-      () A-S-q break
-    ) break
-  ))
-  action_!lalt|search+rsft+r  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-r break
-    ) break
-    () (switch 
-      () A-S-r break
-    ) break
-  ))
-  action_!lalt|search+rsft+s  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-s break
-    ) break
-    () (switch 
-      () A-S-s break
-    ) break
-  ))
-  action_!lalt|search+rsft+t  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-t break
-    ) break
-    () (switch 
-      () A-S-t break
-    ) break
-  ))
-  action_!lalt|search+rsft+u  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-u break
-    ) break
-    () (switch 
-      () A-S-u break
-    ) break
-  ))
-  action_!lalt|search+rsft+v  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-v break
-    ) break
-    () (switch 
-      () A-S-v break
-    ) break
-  ))
-  action_!lalt|search+rsft+w  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-w break
-    ) break
-    () (switch 
-      () A-S-w break
-    ) break
-  ))
-  action_!lalt|search+rsft+x  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-x break
-    ) break
-    () (switch 
-      () A-S-x break
-    ) break
-  ))
-  action_!lalt|search+rsft+y  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-y break
-    ) break
-    () (switch 
-      () A-S-y break
-    ) break
-  ))
-  action_!lalt|search+rsft+z  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-z break
-    ) break
-    () (switch 
-      () A-S-z break
-    ) break
-  ))
-  action_!lalt|search+rsft+,  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-, break
-    ) break
-    () (switch 
-      () A-S-, break
-    ) break
-  ))
-  action_!lalt|search+rsft+.  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-. break
-    ) break
-    () (switch 
-      () A-S-. break
-    ) break
-  ))
-  action_!lalt|search+rsft+/  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-/ break
-    ) break
-    () (switch 
-      () A-S-/ break
-    ) break
-  ))
-  action_!lalt|search+rsft+;  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-; break
-    ) break
-    () (switch 
-      () A-S-; break
-    ) break
-  ))
-  action_!lalt|search+rsft+'  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-' break
-    ) break
-    () (switch 
-      () A-S-' break
-    ) break
-  ))
-  action_!lalt|search+rsft+[  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-[ break
-    ) break
-    () (switch 
-      () A-S-[ break
-    ) break
-  ))
-  action_!lalt|search+rsft+]  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-] break
-    ) break
-    () (switch 
-      () A-S-] break
-    ) break
-  ))  ;; ""
-  action_!lalt|search+rsft+\  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-\ break
-    ) break
-    () (switch 
-      () A-S-\ break
-    ) break
-  ))  ;; ""
-  action_!lalt|search+rsft+-  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-- break
-    ) break
-    () (switch 
-      () A-S-- break
-    ) break
-  ))
-  action_!lalt|search+rsft+=  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-= break
-    ) break
-    () (switch 
-      () A-S-= break
-    ) break
-  ))
-  action_!lalt|search+rsft+1  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-1 break
-    ) break
-    () (switch 
-      () A-S-1 break
-    ) break
-  ))
-  action_!lalt|search+rsft+2  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-2 break
-    ) break
-    () (switch 
-      () A-S-2 break
-    ) break
-  ))
-  action_!lalt|search+rsft+3  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-3 break
-    ) break
-    () (switch 
-      () A-S-3 break
-    ) break
-  ))
-  action_!lalt|search+rsft+4  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-4 break
-    ) break
-    () (switch 
-      () A-S-4 break
-    ) break
-  ))
-  action_!lalt|search+rsft+5  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-5 break
-    ) break
-    () (switch 
-      () A-S-5 break
-    ) break
-  ))
-  action_!lalt|search+rsft+6  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-6 break
-    ) break
-    () (switch 
-      () A-S-6 break
-    ) break
-  ))
-  action_!lalt|search+rsft+7  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-7 break
-    ) break
-    () (switch 
-      () A-S-7 break
-    ) break
-  ))
-  action_!lalt|search+rsft+8  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-8 break
-    ) break
-    () (switch 
-      () A-S-8 break
-    ) break
-  ))
-  action_!lalt|search+rsft+9  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-9 break
-    ) break
-    () (switch 
-      () A-S-9 break
-    ) break
-  ))
-  action_!lalt|search+rsft+0  (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () A-S-0 break
-    ) break
-    () (switch 
-      () A-S-0 break
-    ) break
-  ))
+  (t! 0app_action action_!lalt|search+rsft+a A-S-a)
+  (t! 0app_action action_!lalt|search+rsft+b A-S-b)
+  (t! 0app_action action_!lalt|search+rsft+c A-S-c)
+  (t! 0app_action action_!lalt|search+rsft+d A-S-d)
+  (t! 0app_action action_!lalt|search+rsft+e A-S-e)
+  (t! 0app_action action_!lalt|search+rsft+f A-S-f)
+  (t! 0app_action action_!lalt|search+rsft+g A-S-g)
+  (t! 0app_action action_!lalt|search+rsft+h A-S-h)
+  (t! 0app_action action_!lalt|search+rsft+i A-S-i)
+  (t! 0app_action action_!lalt|search+rsft+j A-S-j)
+  (t! 0app_action action_!lalt|search+rsft+k A-S-k)
+  (t! 0app_action action_!lalt|search+rsft+l A-S-l)
+  (t! 0app_action action_!lalt|search+rsft+m A-S-m)
+  (t! 0app_action action_!lalt|search+rsft+n A-S-n)
+  (t! 0app_action action_!lalt|search+rsft+o A-S-o)
+  (t! 0app_action action_!lalt|search+rsft+p A-S-p)
+  (t! 0app_action action_!lalt|search+rsft+q A-S-q)
+  (t! 0app_action action_!lalt|search+rsft+r A-S-r)
+  (t! 0app_action action_!lalt|search+rsft+s A-S-s)
+  (t! 0app_action action_!lalt|search+rsft+t A-S-t)
+  (t! 0app_action action_!lalt|search+rsft+u A-S-u)
+  (t! 0app_action action_!lalt|search+rsft+v A-S-v)
+  (t! 0app_action action_!lalt|search+rsft+w A-S-w)
+  (t! 0app_action action_!lalt|search+rsft+x A-S-x)
+  (t! 0app_action action_!lalt|search+rsft+y A-S-y)
+  (t! 0app_action action_!lalt|search+rsft+z A-S-z)
+  (t! 0app_action action_!lalt|search+rsft+, A-S-,)
+  (t! 0app_action action_!lalt|search+rsft+. A-S-.)
+  (t! 0app_action action_!lalt|search+rsft+/ A-S-/)
+  (t! 0app_action action_!lalt|search+rsft+; A-S-;)
+  (t! 0app_action action_!lalt|search+rsft+' A-S-')
+  (t! 0app_action action_!lalt|search+rsft+[ A-S-[)
+  (t! 0app_action action_!lalt|search+rsft+] A-S-])
+  (t! 0app_action action_!lalt|search+rsft+\ A-S-\)
+  (t! 0app_action action_!lalt|search+rsft+- A-S--)
+  (t! 0app_action action_!lalt|search+rsft+= A-S-=)
+  (t! 0app_action action_!lalt|search+rsft+1 A-S-1)
+  (t! 0app_action action_!lalt|search+rsft+2 A-S-2)
+  (t! 0app_action action_!lalt|search+rsft+3 A-S-3)
+  (t! 0app_action action_!lalt|search+rsft+4 A-S-4)
+  (t! 0app_action action_!lalt|search+rsft+5 A-S-5)
+  (t! 0app_action action_!lalt|search+rsft+6 A-S-6)
+  (t! 0app_action action_!lalt|search+rsft+7 A-S-7)
+  (t! 0app_action action_!lalt|search+rsft+8 A-S-8)
+  (t! 0app_action action_!lalt|search+rsft+9 A-S-9)
+  (t! 0app_action action_!lalt|search+rsft+0 A-S-0)
 
 )

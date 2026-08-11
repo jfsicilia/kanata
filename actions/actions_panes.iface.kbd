@@ -1,773 +1,160 @@
 (defvar
   ;; == panes =============================================================
   ;; panes + spc
-  action_panes+spc         (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY:Show panes not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY:Show panes not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+spc (push-msg "NOTIFY:Show panes not implemented!"))
 
   ;; panes + ent
-  action_panes+ent (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_zellij)) $zellij_action_panes+ent break
-      ((input virtual vk_tmux)) $tmux_action_panes+ent break
-      ((input virtual vk_nvim)) $nvim_action_panes+ent break
-      ((input virtual vk_dolphin)) $dolphin_action_panes+ent break
-      ((input virtual vk_obsidian)) $obsidian_action_panes+ent break
-      () (push-msg "NOTIFY:Maximize pane not implemented!") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_panes+ent break
-      ((input virtual vk_dolphin)) $dolphin_action_panes+ent break
-      ((input virtual vk_nvim)) $nvim_action_panes+ent break
-      ((input virtual vk_tmux)) $tmux_action_panes+ent break
-      ((input virtual vk_zellij)) $zellij_action_panes+ent break
-      () (push-msg "NOTIFY:Maximize pane not implemented!") break
-    ) break
-  ))
+  (t! 5app_action action_panes+ent (push-msg "NOTIFY:Maximize pane not implemented!") obsidian dolphin nvim tmux zellij)
 
   ;; panes + h | panes + left 
-  action_panes+h (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_zellij)) $zellij_action_panes+h break
-      ((input virtual vk_tmux)) $tmux_action_panes+h break
-      ((input virtual vk_nvim)) $nvim_action_panes+h break
-      ((input virtual vk_colab)) $colab_action_panes+h break
-      ((input virtual vk_dolphin)) $dolphin_action_panes+h break
-      ((input virtual vk_obsidian)) $obsidian_action_panes+h break
-      () (push-msg "NOTIFY:Select left pane not implemented!") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_panes+h break
-      ((input virtual vk_dolphin)) $dolphin_action_panes+h break
-      ((input virtual vk_colab)) $colab_action_panes+h break
-      ((input virtual vk_nvim)) $nvim_action_panes+h break
-      ((input virtual vk_tmux)) $tmux_action_panes+h break
-      ((input virtual vk_zellij)) $zellij_action_panes+h break
-      () (push-msg "NOTIFY:Select left pane not implemented!") break
-    ) break
-  ))
+  (t! 6app_action action_panes+h (push-msg "NOTIFY:Select left pane not implemented!") obsidian dolphin colab nvim tmux zellij)
   ;; panes + l | panes + right 
-  action_panes+l (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_zellij)) $zellij_action_panes+l break
-      ((input virtual vk_tmux)) $tmux_action_panes+l break
-      ((input virtual vk_nvim)) $nvim_action_panes+l break
-      ((input virtual vk_colab)) $colab_action_panes+l break
-      ((input virtual vk_dolphin)) $dolphin_action_panes+l break
-      ((input virtual vk_obsidian)) $obsidian_action_panes+l break
-      () (push-msg "NOTIFY:Select right pane not implemented!") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_panes+l break
-      ((input virtual vk_dolphin)) $dolphin_action_panes+l break
-      ((input virtual vk_colab)) $colab_action_panes+l break
-      ((input virtual vk_nvim)) $nvim_action_panes+l break
-      ((input virtual vk_tmux)) $tmux_action_panes+l break
-      ((input virtual vk_zellij)) $zellij_action_panes+l break
-      () (push-msg "NOTIFY:Select right pane not implemented!") break
-    ) break
-  ))
+  (t! 6app_action action_panes+l (push-msg "NOTIFY:Select right pane not implemented!") obsidian dolphin colab nvim tmux zellij)
   ;; panes + k | panes + up 
-  action_panes+k (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_zellij)) $zellij_action_panes+k break
-      ((input virtual vk_tmux)) $tmux_action_panes+k break
-      ((input virtual vk_nvim)) $nvim_action_panes+k break
-      ((input virtual vk_colab)) $colab_action_panes+k break
-      ((input virtual vk_dolphin)) $dolphin_action_panes+k break
-      ((input virtual vk_obsidian)) $obsidian_action_panes+k break
-      () (push-msg "NOTIFY:Select above pane not implemented!") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_panes+k break
-      ((input virtual vk_dolphin)) $dolphin_action_panes+k break
-      ((input virtual vk_colab)) $colab_action_panes+k break
-      ((input virtual vk_nvim)) $nvim_action_panes+k break
-      ((input virtual vk_tmux)) $tmux_action_panes+k break
-      ((input virtual vk_zellij)) $zellij_action_panes+k break
-      () (push-msg "NOTIFY:Select above pane not implemented!") break
-    ) break
-  ))
+  (t! 6app_action action_panes+k (push-msg "NOTIFY:Select above pane not implemented!") obsidian dolphin colab nvim tmux zellij)
   ;; panes + j | panes + down 
-  action_panes+j (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_zellij)) $zellij_action_panes+j break
-      ((input virtual vk_tmux)) $tmux_action_panes+j break
-      ((input virtual vk_nvim)) $nvim_action_panes+j break
-      ((input virtual vk_colab)) $colab_action_panes+j break
-      ((input virtual vk_dolphin)) $dolphin_action_panes+j break
-      ((input virtual vk_obsidian)) $obsidian_action_panes+j break
-      () (push-msg "NOTIFY:Select below pane not implemented!") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_panes+j break
-      ((input virtual vk_dolphin)) $dolphin_action_panes+j break
-      ((input virtual vk_colab)) $colab_action_panes+j break
-      ((input virtual vk_nvim)) $nvim_action_panes+j break
-      ((input virtual vk_tmux)) $tmux_action_panes+j break
-      ((input virtual vk_zellij)) $zellij_action_panes+j break
-      () (push-msg "NOTIFY:Select below pane not implemented!") break
-    ) break
-  ))
+  (t! 6app_action action_panes+j (push-msg "NOTIFY:Select below pane not implemented!") obsidian dolphin colab nvim tmux zellij)
 
   ;; panes + -
-  action_panes+- (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_tmux)) $tmux_action_panes+- break
-      ((input virtual vk_nvim)) $nvim_action_panes+- break
-      ((input virtual vk_dolphin)) $dolphin_action_panes+- break
-      ((input virtual vk_obsidian)) $obsidian_action_panes+- break
-      () (push-msg "NOTIFY: Horizontal split pane not implemented!") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_panes+- break
-      ((input virtual vk_dolphin)) $dolphin_action_panes+- break
-      ((input virtual vk_nvim)) $nvim_action_panes+- break
-      ((input virtual vk_tmux)) $tmux_action_panes+- break
-      () (push-msg "NOTIFY: Horizontal split pane not implemented!") break
-    ) break
-  ))
+  (t! 4app_action action_panes+- (push-msg "NOTIFY: Horizontal split pane not implemented!") obsidian dolphin nvim tmux)
   ;; panes + \
-  action_panes+\ (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_tmux)) $tmux_action_panes+\ break
-      ((input virtual vk_nvim)) $nvim_action_panes+\ break
-      ((input virtual vk_firefox)) $firefox_action_panes+\ break
-      ((input virtual vk_dolphin)) $dolphin_action_panes+\ break
-      ((input virtual vk_obsidian)) $obsidian_action_panes+\ break
-      ((input virtual vk_chrome)) $chrome_action_panes+\ break
-      () (push-msg "NOTIFY: Vertical split pane not implemented!") break
-    ) break
-    () (switch 
-      ((input virtual vk_chrome)) $chrome_action_panes+\ break
-      ((input virtual vk_obsidian)) $obsidian_action_panes+\ break
-      ((input virtual vk_dolphin)) $dolphin_action_panes+\ break
-      ((input virtual vk_firefox)) $firefox_action_panes+\ break
-      ((input virtual vk_nvim)) $nvim_action_panes+\ break
-      ((input virtual vk_tmux)) $tmux_action_panes+\ break
-      () (push-msg "NOTIFY: Vertical split pane not implemented!") break
-    ) break
-  ))
+  (t! 6app_action action_panes+\ (push-msg "NOTIFY: Vertical split pane not implemented!") chrome obsidian dolphin firefox nvim tmux)
 
   ;; panes + w
-  action_panes+w (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_tmux)) $tmux_action_panes+w break
-      ((input virtual vk_nvim)) $nvim_action_panes+w break
-      ((input virtual vk_dolphin)) $dolphin_action_panes+w break
-      ((input virtual vk_obsidian)) $obsidian_action_panes+w break
-      () (push-msg "NOTIFY: Close pane not implemented!") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_panes+w break
-      ((input virtual vk_dolphin)) $dolphin_action_panes+w break
-      ((input virtual vk_nvim)) $nvim_action_panes+w break
-      ((input virtual vk_tmux)) $tmux_action_panes+w break
-      () (push-msg "NOTIFY: Close pane not implemented!") break
-    ) break
-  ))
+  (t! 4app_action action_panes+w (push-msg "NOTIFY: Close pane not implemented!") obsidian dolphin nvim tmux)
 
   ;; == panes + toggle ====================================================
   ;; panes + toggle | 2x !lalt
-  action_panes+toggle (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_tmux)) $tmux_action_panes+toggle break
-      ((input virtual vk_nvim)) $nvim_action_panes+toggle break
-      ((input virtual vk_dolphin)) $dolphin_action_panes+toggle break
-      ((input virtual vk_obsidian)) $obsidian_action_panes+toggle break
-      () (push-msg "NOTIFY: Toggle pane not implemented!") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_panes+toggle break
-      ((input virtual vk_dolphin)) $dolphin_action_panes+toggle break
-      ((input virtual vk_nvim)) $nvim_action_panes+toggle break
-      ((input virtual vk_tmux)) $tmux_action_panes+toggle break
-      () (push-msg "NOTIFY: Toggle pane not implemented!") break
-    ) break
-  ))
+  (t! 4app_action action_panes+toggle (push-msg "NOTIFY: Toggle pane not implemented!") obsidian dolphin nvim tmux)
   
   ;; == panes + float ====================================================
   ;; panes + float
-  action_panes+float (t! unmod_all (switch ;;@iface@ 
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Float pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Float pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+float (push-msg "NOTIFY: Float pane not implemented!"))
 
   ;; == panes + move ======================================================
   ;; panes + move + h | panes + move + left
-  action_panes+move+h (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_tmux)) $tmux_action_panes+move+h break
-      ((input virtual vk_colab)) $colab_action_panes+move+h break
-      () (push-msg "NOTIFY: Move pane left not implemented!") break
-    ) break
-    () (switch 
-      ((input virtual vk_colab)) $colab_action_panes+move+h break
-      ((input virtual vk_tmux)) $tmux_action_panes+move+h break
-      () (push-msg "NOTIFY: Move pane left not implemented!") break
-    ) break
-  ))
+  (t! 2app_action action_panes+move+h (push-msg "NOTIFY: Move pane left not implemented!") colab tmux)
   ;; panes + move + l | panes + move + right
-  action_panes+move+l (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_tmux)) $tmux_action_panes+move+l break
-      ((input virtual vk_colab)) $colab_action_panes+move+l break
-      () (push-msg "NOTIFY: Move pane right not implemented!") break
-    ) break
-    () (switch 
-      ((input virtual vk_colab)) $colab_action_panes+move+l break
-      ((input virtual vk_tmux)) $tmux_action_panes+move+l break
-      () (push-msg "NOTIFY: Move pane right not implemented!") break
-    ) break
-  ))
+  (t! 2app_action action_panes+move+l (push-msg "NOTIFY: Move pane right not implemented!") colab tmux)
   ;; panes + move + k | panes + move + up
-  action_panes+move+k (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_tmux)) $tmux_action_panes+move+k break
-      ((input virtual vk_colab)) $colab_action_panes+move+k break
-      () (push-msg "NOTIFY: Move pane up not implemented!") break
-    ) break
-    () (switch 
-      ((input virtual vk_colab)) $colab_action_panes+move+k break
-      ((input virtual vk_tmux)) $tmux_action_panes+move+k break
-      () (push-msg "NOTIFY: Move pane up not implemented!") break
-    ) break
-  ))
+  (t! 2app_action action_panes+move+k (push-msg "NOTIFY: Move pane up not implemented!") colab tmux)
   ;; panes + move + j | panes + move + down
-  action_panes+move+j (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_tmux)) $tmux_action_panes+move+j break
-      ((input virtual vk_colab)) $colab_action_panes+move+j break
-      () (push-msg "NOTIFY: Move pane down not implemented!") break
-    ) break
-    () (switch 
-      ((input virtual vk_colab)) $colab_action_panes+move+j break
-      ((input virtual vk_tmux)) $tmux_action_panes+move+j break
-      () (push-msg "NOTIFY: Move pane down not implemented!") break
-    ) break
-  ))
+  (t! 2app_action action_panes+move+j (push-msg "NOTIFY: Move pane down not implemented!") colab tmux)
 
   ;; == panes + resize ====================================================
   ;; panes + resize + h | panes + resize + left
-  action_panes+resize+h (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_tmux)) $tmux_action_panes+resize+h break
-      ((input virtual vk_nvim)) $nvim_action_panes+resize+h break
-      () (push-msg "NOTIFY: Resize pane left not implemented!") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_panes+resize+h break
-      ((input virtual vk_tmux)) $tmux_action_panes+resize+h break
-      () (push-msg "NOTIFY: Resize pane left not implemented!") break
-    ) break
-  ))
+  (t! 2app_action action_panes+resize+h (push-msg "NOTIFY: Resize pane left not implemented!") nvim tmux)
   ;; panes + resize + l | panes + resize + right
-  action_panes+resize+l (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_tmux)) $tmux_action_panes+resize+l break
-      ((input virtual vk_nvim)) $nvim_action_panes+resize+l break
-      () (push-msg "NOTIFY: Resize pane right not implemented!") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_panes+resize+l break
-      ((input virtual vk_tmux)) $tmux_action_panes+resize+l break
-      () (push-msg "NOTIFY: Resize pane right not implemented!") break
-    ) break
-  ))
+  (t! 2app_action action_panes+resize+l (push-msg "NOTIFY: Resize pane right not implemented!") nvim tmux)
   ;; panes + resize + k | panes + resize + up
-  action_panes+resize+k (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_tmux)) $tmux_action_panes+resize+k break
-      ((input virtual vk_nvim)) $nvim_action_panes+resize+k break
-      () (push-msg "NOTIFY: Resize pane up not implemented!") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_panes+resize+k break
-      ((input virtual vk_tmux)) $tmux_action_panes+resize+k break
-      () (push-msg "NOTIFY: Resize pane up not implemented!") break
-    ) break
-  ))
+  (t! 2app_action action_panes+resize+k (push-msg "NOTIFY: Resize pane up not implemented!") nvim tmux)
   ;; panes + resize + j | panes + resize + down
-  action_panes+resize+j (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_tmux)) $tmux_action_panes+resize+j break
-      ((input virtual vk_nvim)) $nvim_action_panes+resize+j break
-      () (push-msg "NOTIFY: Resize pane down not implemented!") break
-    ) break
-    () (switch 
-      ((input virtual vk_nvim)) $nvim_action_panes+resize+j break
-      ((input virtual vk_tmux)) $tmux_action_panes+resize+j break
-      () (push-msg "NOTIFY: Resize pane down not implemented!") break
-    ) break
-  ))
+  (t! 2app_action action_panes+resize+j (push-msg "NOTIFY: Resize pane down not implemented!") nvim tmux)
 
   ;; == panes + swap ======================================================
   ;; panes + swap + h | panes + swap + left
-  action_panes+swap+h (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Swap pane left not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Swap pane left not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+swap+h (push-msg "NOTIFY: Swap pane left not implemented!"))
   ;; panes + swap + l | panes + swap + right
-  action_panes+swap+l (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Swap pane right not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Swap pane right not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+swap+l (push-msg "NOTIFY: Swap pane right not implemented!"))
   ;; panes + swap + k | panes + swap + up
-  action_panes+swap+k (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Swap pane up not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Swap pane up not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+swap+k (push-msg "NOTIFY: Swap pane up not implemented!"))
   ;; panes + swap + j | panes + swap + down
-  action_panes+swap+j (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Swap pane down not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Swap pane down not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+swap+j (push-msg "NOTIFY: Swap pane down not implemented!"))
 
   ;; == panes go by number ============================================
   ;; panes + 1
-  action_panes+1 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Select pane 1 not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Select pane 1 not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+1 (push-msg "NOTIFY: Select pane 1 not implemented!"))
   ;; panes + 2
-  action_panes+2 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Select pane 2 not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Select pane 2 not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+2 (push-msg "NOTIFY: Select pane 2 not implemented!"))
   ;; panes + 3
-  action_panes+3 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Select pane 3 not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Select pane 3 not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+3 (push-msg "NOTIFY: Select pane 3 not implemented!"))
   ;; panes + 4
-  action_panes+4 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Select pane 4 not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Select pane 4 not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+4 (push-msg "NOTIFY: Select pane 4 not implemented!"))
   ;; panes + 5
-  action_panes+5 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Select pane 5 not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Select pane 5 not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+5 (push-msg "NOTIFY: Select pane 5 not implemented!"))
   ;; panes + 6
-  action_panes+6 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Select pane 6 not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Select pane 6 not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+6 (push-msg "NOTIFY: Select pane 6 not implemented!"))
   ;; panes + 7
-  action_panes+7 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Select pane 7 not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Select pane 7 not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+7 (push-msg "NOTIFY: Select pane 7 not implemented!"))
   ;; panes + 8
-  action_panes+8 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Select pane 8 not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Select pane 8 not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+8 (push-msg "NOTIFY: Select pane 8 not implemented!"))
   ;; panes + 9
-  action_panes+9 (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Select pane 9 not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Select pane 9 not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+9 (push-msg "NOTIFY: Select pane 9 not implemented!"))
 
   ;; == Misc panes  ====================================================
   ;; panes + q
-  action_panes+q (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Quit pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Quit pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+q (push-msg "NOTIFY: Quit pane not implemented!"))
   ;; panes + w 
   ;; see panes 
   ;; panes + e
-  action_panes+e (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Focus explorer pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Focus explorer pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+e (push-msg "NOTIFY: Focus explorer pane not implemented!"))
   ;; panes + lsft + e
-  action_panes+lsft+e (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+lsft+e (push-msg "NOTIFY: ... pane not implemented!"))
   ;; panes + r
-  action_panes+r (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Rename pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Rename pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+r (push-msg "NOTIFY: Rename pane not implemented!"))
   ;; panes + t
-  action_panes+t (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Focus title pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Focus title pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+t (push-msg "NOTIFY: Focus title pane not implemented!"))
   ;; panes + u
-  action_panes+u (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+u (push-msg "NOTIFY: ... pane not implemented!"))
   ;; panes + y
-  action_panes+y (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+y (push-msg "NOTIFY: ... pane not implemented!"))
   ;; panes + i
-  action_panes+i (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+i (push-msg "NOTIFY: ... pane not implemented!"))
   ;; panes + o
-  action_panes+o (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+o (push-msg "NOTIFY: ... pane not implemented!"))
   ;; panes + lsft + o
-  action_panes+lsft+o (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+lsft+o (push-msg "NOTIFY: ... pane not implemented!"))
   ;; panes + p
-  action_panes+p (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+p (push-msg "NOTIFY: ... pane not implemented!"))
   ;; panes + lsft + p
-  action_panes+lsft+p (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+lsft+p (push-msg "NOTIFY: ... pane not implemented!"))
   ;; panes + [
-  action_panes+[ (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+[ (push-msg "NOTIFY: ... pane not implemented!"))
   ;; panes + ]
-  action_panes+] (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+] (push-msg "NOTIFY: ... pane not implemented!"))
   ;; panes + lsft + ]
-  action_panes+lsft+. (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+lsft+. (push-msg "NOTIFY: ... pane not implemented!"))
 
   ;; panes + a
-  action_panes+a (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+a (push-msg "NOTIFY: ... pane not implemented!"))
   ;; panes + s
-  action_panes+s (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_dolphin)) $dolphin_action_panes+s break
-      ((input virtual vk_obsidian)) $obsidian_action_panes+s break
-      () (push-msg "NOTIFY: Toggle left sidebar pane not implemented!") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_panes+s break
-      ((input virtual vk_dolphin)) $dolphin_action_panes+s break
-      () (push-msg "NOTIFY: Toggle left sidebar pane not implemented!") break
-    ) break
-  ))
+  (t! 2app_action action_panes+s (push-msg "NOTIFY: Toggle left sidebar pane not implemented!") obsidian dolphin)
   ;; panes + lsft + s
-  action_panes+lsft+s (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_dolphin)) $dolphin_action_panes+lsft+s break
-      ((input virtual vk_obsidian)) $obsidian_action_panes+lsft+s break
-      () (push-msg "NOTIFY: Toggle right sidebar pane not implemented!") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_panes+lsft+s break
-      ((input virtual vk_dolphin)) $dolphin_action_panes+lsft+s break
-      () (push-msg "NOTIFY: Toggle right sidebar pane not implemented!") break
-    ) break
-  ))
+  (t! 2app_action action_panes+lsft+s (push-msg "NOTIFY: Toggle right sidebar pane not implemented!") obsidian dolphin)
   ;; panes + d
-  action_panes+d (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Duplicate pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Duplicate pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+d (push-msg "NOTIFY: Duplicate pane not implemented!"))
   ;; panes + f
-  action_panes+f (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: Focus find pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: Focus find pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+f (push-msg "NOTIFY: Focus find pane not implemented!"))
   ;; panes + g
-  action_panes+g (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_dolphin)) $dolphin_action_panes+g break
-      ((input virtual vk_obsidian)) $obsidian_action_panes+g break
-      () (push-msg "NOTIFY: Focus Go pane not implemented!") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_panes+g break
-      ((input virtual vk_dolphin)) $dolphin_action_panes+g break
-      () (push-msg "NOTIFY: Focus Go pane not implemented!") break
-    ) break
-  ))
+  (t! 2app_action action_panes+g (push-msg "NOTIFY: Focus Go pane not implemented!") obsidian dolphin)
   ;; panes + ;
-  action_panes+; (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+; (push-msg "NOTIFY: ... pane not implemented!"))
   ;; panes + '
-  action_panes+' (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+' (push-msg "NOTIFY: ... pane not implemented!"))
 
   ;; panes + z
-  action_panes+z (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+z (push-msg "NOTIFY: ... pane not implemented!"))
   ;; panes + x
-  action_panes+x (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_firefox)) $firefox_action_panes+x break
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      ((input virtual vk_firefox)) $firefox_action_panes+x break
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 1app_action action_panes+x (push-msg "NOTIFY: ... pane not implemented!") firefox)
   ;; panes + c
-  action_panes+c (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+c (push-msg "NOTIFY: ... pane not implemented!"))
   ;; panes + lsft + c
-  action_panes+lsft+c (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+lsft+c (push-msg "NOTIFY: ... pane not implemented!"))
   ;; panes + rsft + c
-  action_panes+!day (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+!day (push-msg "NOTIFY: ... pane not implemented!"))
   ;; panes + v
-  action_panes+v (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+v (push-msg "NOTIFY: ... pane not implemented!"))
   ;; panes + b
-  action_panes+b (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+b (push-msg "NOTIFY: ... pane not implemented!"))
   ;; panes + n
-  action_panes+n (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: New pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: New pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+n (push-msg "NOTIFY: New pane not implemented!"))
   ;; panes + m
-  action_panes+m (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      ((input virtual vk_dolphin)) $dolphin_action_panes+m break
-      ((input virtual vk_obsidian)) $obsidian_action_panes+m break
-      () (push-msg "NOTIFY: Focus main pane not implemented!") break
-    ) break
-    () (switch 
-      ((input virtual vk_obsidian)) $obsidian_action_panes+m break
-      ((input virtual vk_dolphin)) $dolphin_action_panes+m break
-      () (push-msg "NOTIFY: Focus main pane not implemented!") break
-    ) break
-  ))
+  (t! 2app_action action_panes+m (push-msg "NOTIFY: Focus main pane not implemented!") obsidian dolphin)
   ;; panes + ,
-  action_panes+, (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+, (push-msg "NOTIFY: ... pane not implemented!"))
   ;; panes + .
-  action_panes+. (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+. (push-msg "NOTIFY: ... pane not implemented!"))
   ;; panes + /
-  action_panes+/ (t! unmod_all (switch ;;@iface@
-    ((input virtual vk_apps_sort_desc)) (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-    () (switch 
-      () (push-msg "NOTIFY: ... pane not implemented!") break
-    ) break
-  ))
+  (t! 0app_action action_panes+/ (push-msg "NOTIFY: ... pane not implemented!"))
 
 )
