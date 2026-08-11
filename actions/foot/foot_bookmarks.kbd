@@ -1,6 +1,5 @@
 (defvar
 ;; == bookmarks =========================================================
-;; bookmarks + spc
 ;; ___TO_SET___ foot_action_bookmarks+spc          
   foot_action_bookmarks+a  $foot_goto_trash
   foot_action_bookmarks+b  $foot_goto_bookcase

@@ -1,6 +1,5 @@
 (defvar
 ;; == bookmarks =========================================================
-;; bookmarks + spc
 ;; ___TO_SET___ dolphin_action_bookmarks+spc          
   dolphin_action_bookmarks+a  $dolphin_goto_trash
   dolphin_action_bookmarks+b  $dolphin_goto_bookcase

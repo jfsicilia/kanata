@@ -2,13 +2,13 @@
   show_emojis  M-.
 
   toggle_alt_chars         (multi (on-press toggle-virtualkey vk_alt_chars) (switch
-                             ((input virtual vk_alt_chars)) (push-msg "NOTIFY:US keyboard")  break
-                             ()                             (push-msg "NOTIFY:ESP keyboard") break
+                             ((input virtual vk_alt_chars)) (multi (push-msg "NOTIFY:US keyboard")    (push-msg "SET:lang=US"))  break
+                             ()                             (multi (push-msg "NOTIFY:ESP keyboard")   (push-msg "SET:lang=ESP")) break
                            ))
 
   toggle_alt_keyboard      (multi (on-press toggle-virtualkey vk_numpad) (switch
-                             ((input virtual vk_numpad)) (push-msg "NOTIFY:Normal keyboard") break
-                             ()                          (push-msg "NOTIFY:Numpad keyboard") break
+                             ((input virtual vk_numpad)) (multi (push-msg "NOTIFY:Normal keyboard") (push-msg "SET:keyboard=STD"))    break
+                             ()                          (multi (push-msg "NOTIFY:Numpad keyboard") (push-msg "SET:keyboard=NUM")) break
                            ))
 )
 

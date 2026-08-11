@@ -5,7 +5,7 @@
 
   (t! 3app_action action_!lmet|replace+spc XX obsidian dolphin nvim)
   (t! 3app_action action_!lmet|replace+lsft+spc XX obsidian dolphin nvim)
-  (t! 1app_action action_!lmet|replace+rsft+spc XX dolphin)
+  (t! 2app_action action_!lmet|replace+rsft+spc XX dolphin nvim)
 
   (t! 0app_action action_!lmet|replace+a M-a)
   (t! 0app_action action_!lmet|replace+b M-b)

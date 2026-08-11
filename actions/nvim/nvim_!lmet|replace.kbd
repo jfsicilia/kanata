@@ -5,6 +5,7 @@
 ;; == replace ==========================================================
 nvim_action_!lmet|replace+spc      $nvim_replace_in_buffer 
 nvim_action_!lmet|replace+lsft+spc $nvim_replace_in_workspace 
+nvim_action_!lmet|replace+rsft+spc $nvim_replace_in_workspace 
 
 ;; ___TO_SET___ nvim_action_!lmet|replace+a        
 ;; ___TO_SET___ nvim_action_!lmet|replace+b        
