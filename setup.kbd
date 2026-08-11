@@ -491,16 +491,16 @@ copilot|bookm               $copilot   ;; Physical copilot key will be used for 
   rsft                     (t!      th (t! 2x $action_tabs+l)                 $toggle_rsft_layer)
 
   ;; Modifiers row.
-  $!lmet|replace           (t!      th  (t! 2x $action_workspaces+toggle)     $toggle_!lmet|replace_layer)
-  $!lalt|search            (t!      th  (t! 2x $action_panes+toggle)          $toggle_!lalt|search_layer)
-  $!lctl|select            (t!      th  (t! 2x $action_tabs+toggle)           $toggle_!lctl|select_layer)
-    $spc|domains           (t! fast_th  spc                                   $toggle_domains_layer) 
-   $ralt|apps              (t!      th  (t! 2x $windows_toggle)               $toggle_apps_layer)
-   $prnt|bookm             (t!      th  (t! 2x $action_sessions+toggle)       $toggle_bookmarks_layer)
-$copilot|bookm             (t!      th  (t! 2x $action_sessions+toggle)       $toggle_bookmarks_layer)
-   $rctl|opts              (t!      th  (t! 2x $action_groups+toggle)         $toggle_opts_layer)
+  $!lmet|replace           (t!      th (t! 2x $action_workspaces+toggle)      $toggle_!lmet|replace_layer)
+  $!lalt|search            (t!      th (t! 2x $action_panes+toggle)           $toggle_!lalt|search_layer)
+  $!lctl|select            (t!      th (t! 2x $action_tabs+toggle)            $toggle_!lctl|select_layer)
+    $spc|domains           (t! fast_th spc                                    $toggle_domains_layer) 
+   $ralt|apps              (t!      th (t! 2x $windows_toggle)                $toggle_apps_layer)
+   $prnt|bookm             (t!      th (t! 2x $action_sessions+toggle)        $toggle_bookmarks_layer)
+$copilot|bookm             (t!      th (t! 2x $action_sessions+toggle)        $toggle_bookmarks_layer)
+   $rctl|opts              (t!      th (t! 2x $action_groups+toggle)          $toggle_opts_layer)
 
-     enter                 (t!      th  enter                                 (t! toggle_layer bare_layer) )
+     enter                 (t!      th enter                                  (t! toggle_layer bare_layer) )
 )
 
 (deflayermap (default)
