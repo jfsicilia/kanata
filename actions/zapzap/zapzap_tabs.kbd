@@ -1,10 +1,25 @@
 (defvar
+;; tabs + 9
+;; If not implemented, defaults to: C-9
+zapzap_action_tabs_goto_9            $zapzap_tabs_goto_9
+;; == tabs ===============================================================
+
+;; ___TO_SET___ zapzap_action_tabs+spc               
+
 ;; tabs + l | tabs + right | lsft + rsft | 2x rsft | !lmet + tab
 ;; If not implemented, defaults to: C-tab
 zapzap_action_tabs+l            $zapzap_tabs_next              
 ;; tabs + h | tabs + left | rsft + lsft | 2x lsft | !lmet + sft + tab
 ;; If not implemented, defaults to: C-S-tab
 zapzap_action_tabs+h            $zapzap_tabs_prev             
+;; ___TO_SET___ zapzap_action_tabs+j                 
+;; ___TO_SET___ zapzap_action_tabs+k                 
+;; ___TO_SET___ zapzap_action_tabs+r                 
+;; ___TO_SET___ zapzap_action_tabs+t                 
+;; ___TO_SET___ zapzap_action_tabs+v                 
+;; ___TO_SET___ zapzap_action_tabs+w                 
+;; ___TO_SET___ zapzap_action_tabs+lsft+t            
+
 ;; == tabs go by number ==================================================
 ;; tabs + 1
 ;; If not implemented, defaults to: C-1
@@ -30,7 +45,14 @@ zapzap_action_tabs+7            $zapzap_tabs_goto_7
 ;; tabs + 8
 ;; If not implemented, defaults to: C-8
 zapzap_action_tabs+8            $zapzap_tabs_goto_8
-;; tabs + 9
-;; If not implemented, defaults to: C-9
-zapzap_action_tabs_goto_9            $zapzap_tabs_goto_9
+;; ___TO_SET___ zapzap_action_tabs+9                 
+
+;; == tabs + toggle =====================================================
+;; ___TO_SET___ zapzap_action_tabs+toggle            
+
+;; == tabs + move =====================================================
+;; ___TO_SET___ zapzap_action_tabs+move+h            
+;; ___TO_SET___ zapzap_action_tabs+move+l            
+;; ___TO_SET___ zapzap_action_tabs+move+j            
+;; ___TO_SET___ zapzap_action_tabs+move+k            
 )

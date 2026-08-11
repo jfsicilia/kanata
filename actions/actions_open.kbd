@@ -1,12 +1,8 @@
 (defvar
 
   ;; == open =============================================================
-  ;; open + spc
   (t! 1app_action action_open+spc XX dolphin)
-  ;; open + m
   (t! 2app_action action_open+m XX obsidian dolphin)
-  ;; open + t
   (t! 2app_action action_open+t XX obsidian dolphin)
-  ;; open + v
   (t! 2app_action action_open+v XX obsidian dolphin)
 )

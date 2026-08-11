@@ -1,10 +1,21 @@
 (defvar
+;; == tabs ===============================================================
+
 ;; tabs + spc
 dolphin_action_tabs+spc               (push-msg "NOTIFY:Select tab not implemented!")
+
+;; ___TO_SET___ dolphin_action_tabs+l                 
+;; ___TO_SET___ dolphin_action_tabs+h                 
 ;; tabs + j | tabs + down
 dolphin_action_tabs+j             (push-msg "NOTIFY:Select first tab not implemented!")
 ;; tabs + k | tabs + up
 dolphin_action_tabs+k              (push-msg "NOTIFY:Select last tab not implemented!")
+;; ___TO_SET___ dolphin_action_tabs+r                 
+;; ___TO_SET___ dolphin_action_tabs+t                 
+;; ___TO_SET___ dolphin_action_tabs+v                 
+;; ___TO_SET___ dolphin_action_tabs+w                 
+;; ___TO_SET___ dolphin_action_tabs+lsft+t            
+
 ;; == tabs go by number ==================================================
 ;; tabs + 1
 ;; If not implemented, defaults to: C-1
@@ -33,9 +44,11 @@ dolphin_action_tabs+8             $dolphin_tab_8
 ;; tabs + 9
 ;; If not implemented, defaults to: C-9
 dolphin_action_tabs+9          $dolphin_tab_9 
+
 ;; == tabs + toggle =====================================================
 ;; tabs + toggle | 2x !lctl
 dolphin_action_tabs+toggle             $dolphin_toggle_tab
+
 ;; == tabs + move =====================================================
 ;; tabs + move + h | tabs + move + left
 dolphin_action_tabs+move+h         (push-msg "NOTIFY:Move tab left not implemented!")

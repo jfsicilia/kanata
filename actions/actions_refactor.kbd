@@ -1,7 +1,5 @@
 (defvar
   ;; == refactor ============================================================
-  ;; refactor + spc
   (t! 0app_action action_refactor+spc (push-msg "NOTIFY: Refactor not implemented"))
-  ;; refactor + toggle
   (t! 0app_action action_refactor+toggle (push-msg "NOTIFY: Refactor not implemented"))
 )

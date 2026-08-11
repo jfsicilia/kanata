@@ -22,28 +22,18 @@ desktops_toggle (multi (on-press toggle-virtualkey vk_desktops_toggle)
   )
 )
   ;; == workspaces =====================================================
-  ;; workspaces + spc
   action_workspaces+spc  $show_desktops
 
-  ;; workspaces + toggle
   action_workspaces+toggle $desktops_toggle
 
-  ;; workspaces + j 
   action_workspaces+j  $next_screen    
-  ;; workspaces + k
   action_workspaces+k  $prev_screen
-  ;; workspaces + l
   action_workspaces+l $next_desktop
-  ;; workspaces + j
   action_workspaces+h $prev_desktop
 
   ;; == workspaces + move ===============================================
-  ;; workspaces + move + j 
   action_workspaces+move+j  $move_window_to_next_screen
-  ;; workspaces + move + k 
   action_workspaces+move+k  $move_window_to_prev_screen
-  ;; workspaces + move + l 
   action_workspaces+move+l $move_window_to_next_desktop
-  ;; workspaces + move + h 
   action_workspaces+move+h $move_window_to_prev_desktop
 )

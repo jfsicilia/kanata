@@ -1,6 +1,5 @@
 (defvar
   ;; == bookmarks =========================================================
-  ;; bookmarks + spc
   (t! 2app_action action_bookmarks+spc XX chrome firefox)
   (t! 2app_action action_bookmarks+a XX dolphin foot)
   (t! 2app_action action_bookmarks+b XX dolphin foot)

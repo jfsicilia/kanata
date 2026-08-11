@@ -1,2 +1,8 @@
 (defvar
+
+;; == open =============================================================
+;; ___TO_SET___ nvim_action_open+spc               
+;; ___TO_SET___ nvim_action_open+m                 
+;; ___TO_SET___ nvim_action_open+t                 
+;; ___TO_SET___ nvim_action_open+v                 
 )

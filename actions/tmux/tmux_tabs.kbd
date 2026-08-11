@@ -1,20 +1,30 @@
 (defvar
-tmux_action_tabs+r             $tmux_rename_tab
+;; == tabs ===============================================================
+
 ;; tabs + spc
 tmux_action_tabs+spc           $tmux_select_tab 
+
 ;; tabs + l | tabs + right | lsft + rsft | 2x rsft | !lmet + tab
 ;; If not implemented, defaults to: C-tab
 tmux_action_tabs+l             $tmux_right_tab          
 ;; tabs + h | tabs + left | rsft + lsft | 2x lsft | !lmet + sft + tab
 ;; If not implemented, defaults to: C-S-tab
 tmux_action_tabs+h             $tmux_left_tab          
+;; ___TO_SET___ tmux_action_tabs+j                 
+;; ___TO_SET___ tmux_action_tabs+k                 
+;; tabs + r
+;; If not implemented, defaults to: XX
+tmux_action_tabs+r             $tmux_rename_tab
 ;; tabs + t
 ;; If not implemented, defaults to: C-t
 tmux_action_tabs+t             $tmux_new_tab 
+;; ___TO_SET___ tmux_action_tabs+v                 
 ;; tabs + w
 ;; If not implemented, defaults to: C-w
 ;; tabs + v
 tmux_action_tabs+w             $tmux_close_tab         
+;; ___TO_SET___ tmux_action_tabs+lsft+t            
+
 ;; == tabs go by number ==================================================
 ;; tabs + 1
 ;; If not implemented, defaults to: C-1
@@ -43,12 +53,16 @@ tmux_action_tabs+8             $tmux_go_tab_8
 ;; tabs + 9
 ;; If not implemented, defaults to: C-9
 tmux_action_tabs+9             $tmux_go_tab_9 
+
 ;; == tabs + toggle =====================================================
 ;; tabs + toggle | 2x !lctl
 tmux_action_tabs+toggle        $tmux_toggle_tab  
+
 ;; == tabs + move =====================================================
 ;; tabs + move + h | tabs + move + left
 tmux_action_tabs+move+h        $tmux_move_tab_left
 ;; tabs + move + l | tabs + move + right
 tmux_action_tabs+move+l        $tmux_move_tab_right
+;; ___TO_SET___ tmux_action_tabs+move+j            
+;; ___TO_SET___ tmux_action_tabs+move+k            
 )

@@ -1,7 +1,5 @@
 (defvar
   ;; == system =============================================================
-  ;; system + spc
   (t! 0app_action action_system+spc (push-msg "NOTIFY: System not implemented"))
-  ;; system + toggle
   (t! 0app_action action_system+toggle (push-msg "NOTIFY: System not implemented"))
 )

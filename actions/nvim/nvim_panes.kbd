@@ -1,6 +1,10 @@
 (defvar
+;; == panes =============================================================
+;; ___TO_SET___ nvim_action_panes+spc              
+
 ;; panes + ent
 nvim_action_panes+ent               $nvim_pane_maximize
+
 ;; panes + h | panes + left
 nvim_action_panes+h                 $nvim_pane_left ;; Now has tmux integration  ;;""
 ;; panes + l | panes + right
@@ -9,15 +13,28 @@ nvim_action_panes+l                 $nvim_pane_right ;; Now has tmux integration
 nvim_action_panes+k                 $nvim_pane_above ;; Now has tmux integration  ;;""
 ;; panes + j | panes + down
 nvim_action_panes+j                 $nvim_pane_below ;; Now has tmux integration  ;;""
+
 ;; panes + -
 nvim_action_panes+-                 $nvim_pane_horizontal_split  ;;""
 ;; panes + \
 nvim_action_panes+\                 $nvim_pane_vertical_split    ;;""
+
 ;; panes + w
 nvim_action_panes+w                 $nvim_close_pane
+
 ;; == panes + toggle ====================================================
 ;; panes + toggle | 2x !lalt
 nvim_action_panes+toggle           $nvim_pane_toggle
+
+;; == panes + float ====================================================
+;; ___TO_SET___ nvim_action_panes+float            
+
+;; == panes + move ======================================================
+;; ___TO_SET___ nvim_action_panes+move+h           
+;; ___TO_SET___ nvim_action_panes+move+l           
+;; ___TO_SET___ nvim_action_panes+move+k           
+;; ___TO_SET___ nvim_action_panes+move+j           
+
 ;; == panes + resize ====================================================
 ;; panes + resize + h | panes + resize + left
 nvim_action_panes+resize+h       $nvim_pane_resize_left
@@ -27,4 +44,60 @@ nvim_action_panes+resize+l      $nvim_pane_resize_right
 nvim_action_panes+resize+k      $nvim_pane_resize_above
 ;; panes + resize + j | panes + resize + down
 nvim_action_panes+resize+j      $nvim_pane_resize_below
+
+;; == panes + swap ======================================================
+;; ___TO_SET___ nvim_action_panes+swap+h           
+;; ___TO_SET___ nvim_action_panes+swap+l           
+;; ___TO_SET___ nvim_action_panes+swap+k           
+;; ___TO_SET___ nvim_action_panes+swap+j           
+
+;; == panes go by number ============================================
+;; ___TO_SET___ nvim_action_panes+1                
+;; ___TO_SET___ nvim_action_panes+2                
+;; ___TO_SET___ nvim_action_panes+3                
+;; ___TO_SET___ nvim_action_panes+4                
+;; ___TO_SET___ nvim_action_panes+5                
+;; ___TO_SET___ nvim_action_panes+6                
+;; ___TO_SET___ nvim_action_panes+7                
+;; ___TO_SET___ nvim_action_panes+8                
+;; ___TO_SET___ nvim_action_panes+9                
+
+;; == Misc panes  ====================================================
+;; ___TO_SET___ nvim_action_panes+q                
+;; ___TO_SET___ nvim_action_panes+e                
+;; ___TO_SET___ nvim_action_panes+lsft+e           
+;; ___TO_SET___ nvim_action_panes+r                
+;; ___TO_SET___ nvim_action_panes+t                
+;; ___TO_SET___ nvim_action_panes+u                
+;; ___TO_SET___ nvim_action_panes+y                
+;; ___TO_SET___ nvim_action_panes+i                
+;; ___TO_SET___ nvim_action_panes+o                
+;; ___TO_SET___ nvim_action_panes+lsft+o           
+;; ___TO_SET___ nvim_action_panes+p                
+;; ___TO_SET___ nvim_action_panes+lsft+p           
+;; ___TO_SET___ nvim_action_panes+[                
+;; ___TO_SET___ nvim_action_panes+]                
+;; ___TO_SET___ nvim_action_panes+lsft+.           
+
+;; ___TO_SET___ nvim_action_panes+a                
+;; ___TO_SET___ nvim_action_panes+s                
+;; ___TO_SET___ nvim_action_panes+lsft+s           
+;; ___TO_SET___ nvim_action_panes+d                
+;; ___TO_SET___ nvim_action_panes+f                
+;; ___TO_SET___ nvim_action_panes+g                
+;; ___TO_SET___ nvim_action_panes+;                
+;; ___TO_SET___ nvim_action_panes+'                
+
+;; ___TO_SET___ nvim_action_panes+z                
+;; ___TO_SET___ nvim_action_panes+x                
+;; ___TO_SET___ nvim_action_panes+c                
+;; ___TO_SET___ nvim_action_panes+lsft+c           
+;; ___TO_SET___ nvim_action_panes+!day             
+;; ___TO_SET___ nvim_action_panes+v                
+;; ___TO_SET___ nvim_action_panes+b                
+;; ___TO_SET___ nvim_action_panes+n                
+;; ___TO_SET___ nvim_action_panes+m                
+;; ___TO_SET___ nvim_action_panes+,                
+;; ___TO_SET___ nvim_action_panes+.                
+;; ___TO_SET___ nvim_action_panes+/                
 )

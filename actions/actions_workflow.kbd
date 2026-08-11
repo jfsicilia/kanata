@@ -1,7 +1,5 @@
 (defvar
   ;; == workflow ============================================================
-  ;; workflow + spc
   (t! 0app_action action_workflow+spc (push-msg "NOTIFY: Workflow not implemented"))
-  ;; workflow + toggle
   (t! 0app_action action_workflow+toggle (push-msg "NOTIFY: Workflow not implemented"))
 )

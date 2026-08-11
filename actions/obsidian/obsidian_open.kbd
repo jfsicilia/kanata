@@ -1,4 +1,7 @@
 (defvar
+
+;; == open =============================================================
+;; ___TO_SET___ obsidian_action_open+spc               
 ;; open + m
 obsidian_action_open+m               $obsidian_open_with_chrome
 ;; open + t

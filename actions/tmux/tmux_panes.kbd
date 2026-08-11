@@ -1,7 +1,11 @@
 (defvar
+;; == panes =============================================================
+;; ___TO_SET___ tmux_action_panes+spc              
+
 ;; panes + ent
 ;; #panes + ent
 tmux_action_panes+ent                    $tmux_pane_maximize ;; prefix + z (zoom pane)
+
 ;; panes + h | panes + left
 ;; #panes + h | #panes + left
 tmux_action_panes+h                      $tmux_pane_left
@@ -14,36 +18,102 @@ tmux_action_panes+k                      $tmux_pane_above
 ;; panes + j | panes + down
 ;; #panes + j | #panes + down
 tmux_action_panes+j                      $tmux_pane_below
+
 ;; panes + -
 ;; #panes + -
 tmux_action_panes+-                      $tmux_pane_h_split
 ;; panes + \
 ;; #panes + \
 tmux_action_panes+\                      $tmux_pane_v_split
+
 ;; panes + w
 ;; #panes + w
 tmux_action_panes+w                      $tmux_pane_close ;; prefix + x (kill pane)
+
 ;; == panes + toggle ====================================================
 ;; panes + toggle | 2x !lalt
 ;; == #panes + #toggle ====================================================
 ;; #panes + #toggle | 2x !lalt
 tmux_action_panes+toggle                 $tmux_pane_toggle ;; prefix + ; (last pane)
-;; == panes + move =====================================================
+
+;; == panes + float ====================================================
+;; ___TO_SET___ tmux_action_panes+float            
+
+;; == panes + move ======================================================
 ;; panes + move + h | panes + move + left
+;; == panes + move =====================================================
 tmux_action_panes+move+h        $tmux_move_pane_left
 ;; panes + move + l | panes + move + right
 tmux_action_panes+move+l        $tmux_move_pane_right
-;; panes + move + j | panes + move + down
-tmux_action_panes+move+j        $tmux_move_pane_down
 ;; panes + move + k | panes + move + up
 tmux_action_panes+move+k        $tmux_move_pane_up
-;; == panes + resize =====================================================
+;; panes + move + j | panes + move + down
+tmux_action_panes+move+j        $tmux_move_pane_down
+
+;; == panes + resize ====================================================
 ;; panes + resize + h | panes + resize + left
+;; == panes + resize =====================================================
 tmux_action_panes+resize+h        $tmux_resize_pane_left
 ;; panes + resize + l | panes + resize + right
 tmux_action_panes+resize+l        $tmux_resize_pane_right
-;; panes + resize + j | panes + resize + down
-tmux_action_panes+resize+j        $tmux_resize_pane_down
 ;; panes + resize + k | panes + resize + up
 tmux_action_panes+resize+k        $tmux_resize_pane_up
+;; panes + resize + j | panes + resize + down
+tmux_action_panes+resize+j        $tmux_resize_pane_down
+
+;; == panes + swap ======================================================
+;; ___TO_SET___ tmux_action_panes+swap+h           
+;; ___TO_SET___ tmux_action_panes+swap+l           
+;; ___TO_SET___ tmux_action_panes+swap+k           
+;; ___TO_SET___ tmux_action_panes+swap+j           
+
+;; == panes go by number ============================================
+;; ___TO_SET___ tmux_action_panes+1                
+;; ___TO_SET___ tmux_action_panes+2                
+;; ___TO_SET___ tmux_action_panes+3                
+;; ___TO_SET___ tmux_action_panes+4                
+;; ___TO_SET___ tmux_action_panes+5                
+;; ___TO_SET___ tmux_action_panes+6                
+;; ___TO_SET___ tmux_action_panes+7                
+;; ___TO_SET___ tmux_action_panes+8                
+;; ___TO_SET___ tmux_action_panes+9                
+
+;; == Misc panes  ====================================================
+;; ___TO_SET___ tmux_action_panes+q                
+;; ___TO_SET___ tmux_action_panes+e                
+;; ___TO_SET___ tmux_action_panes+lsft+e           
+;; ___TO_SET___ tmux_action_panes+r                
+;; ___TO_SET___ tmux_action_panes+t                
+;; ___TO_SET___ tmux_action_panes+u                
+;; ___TO_SET___ tmux_action_panes+y                
+;; ___TO_SET___ tmux_action_panes+i                
+;; ___TO_SET___ tmux_action_panes+o                
+;; ___TO_SET___ tmux_action_panes+lsft+o           
+;; ___TO_SET___ tmux_action_panes+p                
+;; ___TO_SET___ tmux_action_panes+lsft+p           
+;; ___TO_SET___ tmux_action_panes+[                
+;; ___TO_SET___ tmux_action_panes+]                
+;; ___TO_SET___ tmux_action_panes+lsft+.           
+
+;; ___TO_SET___ tmux_action_panes+a                
+;; ___TO_SET___ tmux_action_panes+s                
+;; ___TO_SET___ tmux_action_panes+lsft+s           
+;; ___TO_SET___ tmux_action_panes+d                
+;; ___TO_SET___ tmux_action_panes+f                
+;; ___TO_SET___ tmux_action_panes+g                
+;; ___TO_SET___ tmux_action_panes+;                
+;; ___TO_SET___ tmux_action_panes+'                
+
+;; ___TO_SET___ tmux_action_panes+z                
+;; ___TO_SET___ tmux_action_panes+x                
+;; ___TO_SET___ tmux_action_panes+c                
+;; ___TO_SET___ tmux_action_panes+lsft+c           
+;; ___TO_SET___ tmux_action_panes+!day             
+;; ___TO_SET___ tmux_action_panes+v                
+;; ___TO_SET___ tmux_action_panes+b                
+;; ___TO_SET___ tmux_action_panes+n                
+;; ___TO_SET___ tmux_action_panes+m                
+;; ___TO_SET___ tmux_action_panes+,                
+;; ___TO_SET___ tmux_action_panes+.                
+;; ___TO_SET___ tmux_action_panes+/                
 )

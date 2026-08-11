@@ -1,4 +1,3 @@
 (defvar
   (t! 1app_action action_layouts+spc (push-msg "NOTIFY: Select layout not implemented") tmux)
-
 )

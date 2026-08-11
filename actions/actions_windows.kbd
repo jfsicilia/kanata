@@ -13,26 +13,17 @@
 
 (defvar
   ;; == windows ===========================================================
-  ;; windows + spc
   action_windows+spc        $windows_show_all
-  ;; windows + ent
   action_windows+ent        $windows_maximize
-  ;; windows + lsft + ent | windows + rsft + ent
   action_windows+lsft+ent   $windows_fullscreen
   action_windows+rsft+ent   $windows_fullscreen
 
-  ;; windows + k
   action_windows+k          $windows_half_up
-  ;; windows + j
   action_windows+j          $windows_half_down
-  ;; windows + h
   action_windows+h          $windows_half_left
-  ;; windows + l
   action_windows+l          $windows_half_right
 
-  ;; windows
   action_windows_close      $windows_close
 
-  ;; 2x apps
   action_windows_toggle     $windows_toggle
 )

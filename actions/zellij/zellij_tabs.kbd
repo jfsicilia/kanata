@@ -1,11 +1,40 @@
 (defvar
+;; == tabs ===============================================================
+
+;; ___TO_SET___ zellij_action_tabs+spc               
+
 ;; tabs + l | tabs + right | lsft + rsft | 2x rsft | !lmet + tab
 ;; If not implemented, defaults to: C-tab
 zellij_action_tabs+l             $zellij_tabs_next
 ;; tabs + h | tabs + left | rsft + lsft | 2x lsft | !lmet + sft + tab
 ;; If not implemented, defaults to: C-S-tab
 zellij_action_tabs+h             $zellij_tabs_prev          
+;; ___TO_SET___ zellij_action_tabs+j                 
+;; ___TO_SET___ zellij_action_tabs+k                 
+;; ___TO_SET___ zellij_action_tabs+r                 
+;; ___TO_SET___ zellij_action_tabs+t                 
+;; ___TO_SET___ zellij_action_tabs+v                 
+;; ___TO_SET___ zellij_action_tabs+w                 
+;; ___TO_SET___ zellij_action_tabs+lsft+t            
+
+;; == tabs go by number ==================================================
+;; ___TO_SET___ zellij_action_tabs+1                 
+;; ___TO_SET___ zellij_action_tabs+2                 
+;; ___TO_SET___ zellij_action_tabs+3                 
+;; ___TO_SET___ zellij_action_tabs+4                 
+;; ___TO_SET___ zellij_action_tabs+5                 
+;; ___TO_SET___ zellij_action_tabs+6                 
+;; ___TO_SET___ zellij_action_tabs+7                 
+;; ___TO_SET___ zellij_action_tabs+8                 
+;; ___TO_SET___ zellij_action_tabs+9                 
+
 ;; == tabs + toggle =====================================================
 ;; tabs + toggle | 2x !lctl
 zellij_action_tabs+toggle        $zellij_tabs_toggle             
+
+;; == tabs + move =====================================================
+;; ___TO_SET___ zellij_action_tabs+move+h            
+;; ___TO_SET___ zellij_action_tabs+move+l            
+;; ___TO_SET___ zellij_action_tabs+move+j            
+;; ___TO_SET___ zellij_action_tabs+move+k            
 )

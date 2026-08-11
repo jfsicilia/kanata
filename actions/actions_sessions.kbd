@@ -1,8 +1,6 @@
 (defvar
   ;; == sessions =====================================================
-  ;; sessions + spc
   (t! 1app_action action_sessions+spc XX tmux)
-  ;; sessions + toggle
   (t! 0app_action action_sessions+toggle XX)
   (t! 1app_action action_sessions+d XX tmux)
   (t! 1app_action action_sessions+h XX tmux)

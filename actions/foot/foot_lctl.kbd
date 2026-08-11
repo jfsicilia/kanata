@@ -1,19 +1,143 @@
 (defvar
-foot_action_lctl+e        $foot_edit_command
-foot_action_lctl+i        $foot_fuzzy_complete
-foot_action_lctl+h        $foot_delete_char
-foot_action_lctl+w        $foot_delete_word
-foot_action_lctl+u        $foot_delete_whole_prompt
-foot_action_lctl+l        $foot_clear_terminal
-foot_action_lctl+d        $foot_close_terminal
-foot_action_lctl+j        $foot_run_command
-foot_action_lctl+m        $foot_run_command
-foot_action_lctl+lsft+c   $foot_copy_terminal_text
-foot_action_lctl+lsft+v   $foot_paste_terminal_text
-foot_action_lctl+f        $foot_select_file
-foot_action_lctl+r        $foot_select_history
-foot_action_lctl+y        $foot_select_history
-foot_action_lctl+p        $foot_previous_command
-foot_action_lctl+n        $foot_next_command
 foot_action_lctl+spc      $foot_autocomplete
+;; ___TO_SET___ foot_action_lctl+a                 
+;; ___TO_SET___ foot_action_lctl+b                 
+;; ___TO_SET___ foot_action_lctl+c                 
+foot_action_lctl+d        $foot_close_terminal
+foot_action_lctl+e        $foot_edit_command
+foot_action_lctl+f        $foot_select_file
+;; ___TO_SET___ foot_action_lctl+g                 
+foot_action_lctl+h        $foot_delete_char
+foot_action_lctl+i        $foot_fuzzy_complete
+foot_action_lctl+j        $foot_run_command
+;; ___TO_SET___ foot_action_lctl+k                 
+foot_action_lctl+l        $foot_clear_terminal
+foot_action_lctl+m        $foot_run_command
+foot_action_lctl+n        $foot_next_command
+;; ___TO_SET___ foot_action_lctl+o                 
+foot_action_lctl+p        $foot_previous_command
+;; ___TO_SET___ foot_action_lctl+q                 
+foot_action_lctl+r        $foot_select_history
+;; ___TO_SET___ foot_action_lctl+s                 
+;; ___TO_SET___ foot_action_lctl+t                 
+foot_action_lctl+u        $foot_delete_whole_prompt
+;; ___TO_SET___ foot_action_lctl+v                 
+foot_action_lctl+w        $foot_delete_word
+;; ___TO_SET___ foot_action_lctl+x                 
+foot_action_lctl+y        $foot_select_history
+;; ___TO_SET___ foot_action_lctl+z                 
+;; ___TO_SET___ foot_action_lctl+,                 
+;; ___TO_SET___ foot_action_lctl+.                 
+;; ___TO_SET___ foot_action_lctl+/                 
+;; ___TO_SET___ foot_action_lctl+;                 
+;; ___TO_SET___ foot_action_lctl+'                 
+;; ___TO_SET___ foot_action_lctl+[                 
+;; ___TO_SET___ foot_action_lctl+]                 
+;; ___TO_SET___ foot_action_lctl+\                 
+;; ___TO_SET___ foot_action_lctl+-                 
+;; ___TO_SET___ foot_action_lctl+=                 
+;; ___TO_SET___ foot_action_lctl+1                 
+;; ___TO_SET___ foot_action_lctl+2                 
+;; ___TO_SET___ foot_action_lctl+3                 
+;; ___TO_SET___ foot_action_lctl+4                 
+;; ___TO_SET___ foot_action_lctl+5                 
+;; ___TO_SET___ foot_action_lctl+6                 
+;; ___TO_SET___ foot_action_lctl+7                 
+;; ___TO_SET___ foot_action_lctl+8                 
+;; ___TO_SET___ foot_action_lctl+9                 
+;; ___TO_SET___ foot_action_lctl+0                 
+;; == LCTL+LSFT actions ==========================================================
+;; ___TO_SET___ foot_action_lctl+lsft+a            
+;; ___TO_SET___ foot_action_lctl+lsft+b            
+foot_action_lctl+lsft+c   $foot_copy_terminal_text
+;; ___TO_SET___ foot_action_lctl+lsft+d            
+;; ___TO_SET___ foot_action_lctl+lsft+e            
+;; ___TO_SET___ foot_action_lctl+lsft+f            
+;; ___TO_SET___ foot_action_lctl+lsft+g            
+;; ___TO_SET___ foot_action_lctl+lsft+h            
+;; ___TO_SET___ foot_action_lctl+lsft+i            
+;; ___TO_SET___ foot_action_lctl+lsft+j            
+;; ___TO_SET___ foot_action_lctl+lsft+k            
+;; ___TO_SET___ foot_action_lctl+lsft+l            
+;; ___TO_SET___ foot_action_lctl+lsft+m            
+;; ___TO_SET___ foot_action_lctl+lsft+n            
+;; ___TO_SET___ foot_action_lctl+lsft+o            
+;; ___TO_SET___ foot_action_lctl+lsft+p            
+;; ___TO_SET___ foot_action_lctl+lsft+q            
+;; ___TO_SET___ foot_action_lctl+lsft+r            
+;; ___TO_SET___ foot_action_lctl+lsft+s            
+;; ___TO_SET___ foot_action_lctl+lsft+t            
+;; ___TO_SET___ foot_action_lctl+lsft+u            
+foot_action_lctl+lsft+v   $foot_paste_terminal_text
+;; ___TO_SET___ foot_action_lctl+lsft+w            
+;; ___TO_SET___ foot_action_lctl+lsft+x            
+;; ___TO_SET___ foot_action_lctl+lsft+y            
+;; ___TO_SET___ foot_action_lctl+lsft+z            
+;; ___TO_SET___ foot_action_lctl+lsft+,            
+;; ___TO_SET___ foot_action_lctl+lsft+.            
+;; ___TO_SET___ foot_action_lctl+lsft+/            
+;; ___TO_SET___ foot_action_lctl+lsft+;            
+;; ___TO_SET___ foot_action_lctl+lsft+'            
+;; ___TO_SET___ foot_action_lctl+lsft+[            
+;; ___TO_SET___ foot_action_lctl+lsft+]            
+;; ___TO_SET___ foot_action_lctl+lsft+\            
+;; ___TO_SET___ foot_action_lctl+lsft+-            
+;; ___TO_SET___ foot_action_lctl+lsft+=            
+;; ___TO_SET___ foot_action_lctl+lsft+1            
+;; ___TO_SET___ foot_action_lctl+lsft+2            
+;; ___TO_SET___ foot_action_lctl+lsft+3            
+;; ___TO_SET___ foot_action_lctl+lsft+4            
+;; ___TO_SET___ foot_action_lctl+lsft+5            
+;; ___TO_SET___ foot_action_lctl+lsft+6            
+;; ___TO_SET___ foot_action_lctl+lsft+7            
+;; ___TO_SET___ foot_action_lctl+lsft+8            
+;; ___TO_SET___ foot_action_lctl+lsft+9            
+;; ___TO_SET___ foot_action_lctl+lsft+0            
+;; == LCTL+RSFT actions ==========================================================
+;; ___TO_SET___ foot_action_lctl+rsft+a            
+;; ___TO_SET___ foot_action_lctl+rsft+b            
+;; ___TO_SET___ foot_action_lctl+rsft+c            
+;; ___TO_SET___ foot_action_lctl+rsft+d            
+;; ___TO_SET___ foot_action_lctl+rsft+e            
+;; ___TO_SET___ foot_action_lctl+rsft+f            
+;; ___TO_SET___ foot_action_lctl+rsft+g            
+;; ___TO_SET___ foot_action_lctl+rsft+h            
+;; ___TO_SET___ foot_action_lctl+rsft+i            
+;; ___TO_SET___ foot_action_lctl+rsft+j            
+;; ___TO_SET___ foot_action_lctl+rsft+k            
+;; ___TO_SET___ foot_action_lctl+rsft+l            
+;; ___TO_SET___ foot_action_lctl+rsft+m            
+;; ___TO_SET___ foot_action_lctl+rsft+n            
+;; ___TO_SET___ foot_action_lctl+rsft+o            
+;; ___TO_SET___ foot_action_lctl+rsft+p            
+;; ___TO_SET___ foot_action_lctl+rsft+q            
+;; ___TO_SET___ foot_action_lctl+rsft+r            
+;; ___TO_SET___ foot_action_lctl+rsft+s            
+;; ___TO_SET___ foot_action_lctl+rsft+t            
+;; ___TO_SET___ foot_action_lctl+rsft+u            
+;; ___TO_SET___ foot_action_lctl+rsft+v            
+;; ___TO_SET___ foot_action_lctl+rsft+w            
+;; ___TO_SET___ foot_action_lctl+rsft+x            
+;; ___TO_SET___ foot_action_lctl+rsft+y            
+;; ___TO_SET___ foot_action_lctl+rsft+z            
+;; ___TO_SET___ foot_action_lctl+rsft+,            
+;; ___TO_SET___ foot_action_lctl+rsft+.            
+;; ___TO_SET___ foot_action_lctl+rsft+/            
+;; ___TO_SET___ foot_action_lctl+rsft+;            
+;; ___TO_SET___ foot_action_lctl+rsft+'            
+;; ___TO_SET___ foot_action_lctl+rsft+[            
+;; ___TO_SET___ foot_action_lctl+rsft+]            
+;; ___TO_SET___ foot_action_lctl+rsft+\            
+;; ___TO_SET___ foot_action_lctl+rsft+-            
+;; ___TO_SET___ foot_action_lctl+rsft+=            
+;; ___TO_SET___ foot_action_lctl+rsft+1            
+;; ___TO_SET___ foot_action_lctl+rsft+2            
+;; ___TO_SET___ foot_action_lctl+rsft+3            
+;; ___TO_SET___ foot_action_lctl+rsft+4            
+;; ___TO_SET___ foot_action_lctl+rsft+5            
+;; ___TO_SET___ foot_action_lctl+rsft+6            
+;; ___TO_SET___ foot_action_lctl+rsft+7            
+;; ___TO_SET___ foot_action_lctl+rsft+8            
+;; ___TO_SET___ foot_action_lctl+rsft+9            
+;; ___TO_SET___ foot_action_lctl+rsft+0            
 )

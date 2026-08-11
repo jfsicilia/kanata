@@ -1,12 +1,22 @@
 (defvar
+
+;; == groups =============================================================
+
 ;; groups + spc
 nvim_action_groups+spc         $nvim_action_tabs+spc
+
 ;; groups + l | groups + right
 nvim_action_groups+l           $nvim_action_tabs+l             
 ;; groups + h | groups + left
 nvim_action_groups+h           $nvim_action_tabs+h             
+;; ___TO_SET___ nvim_action_groups+j               
+;; ___TO_SET___ nvim_action_groups+k               
+
+;; ___TO_SET___ nvim_action_groups+t               
 ;; groups + w
 nvim_action_groups+w           $nvim_action_tabs+w            
+;; ___TO_SET___ nvim_action_groups+lsft+t          
+
 ;; == groups go by number ==================================================
 ;; groups + 1
 nvim_action_groups+1           $nvim_action_tabs+1           
@@ -26,7 +36,14 @@ nvim_action_groups+7           $nvim_action_tabs+7
 nvim_action_groups+8           $nvim_action_tabs+8           
 ;; groups + 9
 nvim_action_groups+9        $nvim_action_tabs+9        
+
 ;; == groups + toggle =====================================================
 ;; groups + toggle
 nvim_action_groups+toggle           $nvim_action_tabs+toggle           
+
+;; == groups + move =====================================================
+;; ___TO_SET___ nvim_action_groups+move+h          
+;; ___TO_SET___ nvim_action_groups+move+l          
+;; ___TO_SET___ nvim_action_groups+move+j          
+;; ___TO_SET___ nvim_action_groups+move+k          
 )

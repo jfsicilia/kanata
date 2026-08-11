@@ -2,57 +2,34 @@
 
   ;; == groups =============================================================
 
-  ;; groups + spc
   (t! 6app_action action_groups+spc XX nvim chrome obsidian firefox tmux zellij)
 
-  ;; groups + l | groups + right  
   (t! 6app_action action_groups+l C-tab nvim chrome obsidian firefox tmux zellij)
-  ;; groups + h | groups + left  
   (t! 6app_action action_groups+h C-S-tab nvim chrome obsidian firefox tmux zellij)
-  ;; groups + j | groups + down
   (t! 0app_action action_groups+j XX)
-  ;; groups + k | groups + up
   (t! 0app_action action_groups+k XX)
 
-  ;; groups + t 
   (t! 4app_action action_groups+t XX chrome obsidian firefox tmux)
-  ;; groups + w
   (t! 5app_action action_groups+w XX nvim chrome obsidian firefox tmux)
-  ;; groups + lsft + t 
   (t! 3app_action action_groups+lsft+t XX chrome obsidian firefox)
 
   ;; == groups go by number ==================================================
-  ;; groups + 1
   (t! 5app_action action_groups+1 XX nvim chrome obsidian firefox tmux)
-  ;; groups + 2
   (t! 5app_action action_groups+2 XX nvim chrome obsidian firefox tmux)
-  ;; groups + 3
   (t! 5app_action action_groups+3 XX nvim chrome obsidian firefox tmux)
-  ;; groups + 4
   (t! 5app_action action_groups+4 XX nvim chrome obsidian firefox tmux)
-  ;; groups + 5
   (t! 5app_action action_groups+5 XX nvim chrome obsidian firefox tmux)
-  ;; groups + 6
   (t! 5app_action action_groups+6 XX nvim chrome obsidian firefox tmux)
-  ;; groups + 7
   (t! 5app_action action_groups+7 XX nvim chrome obsidian firefox tmux)
-  ;; groups + 8
   (t! 5app_action action_groups+8 XX nvim chrome obsidian firefox tmux)
-  ;; groups + 9
   (t! 5app_action action_groups+9 XX nvim chrome obsidian firefox tmux)
 
   ;; == groups + toggle =====================================================
-  ;; groups + toggle
   (t! 6app_action action_groups+toggle XX nvim chrome obsidian firefox tmux zellij)
 
   ;; == groups + move =====================================================
-  ;; groups + move + h | groups + move + left
   (t! 1app_action action_groups+move+h XX tmux)
-  ;; groups + move + l | groups + move + right
   (t! 1app_action action_groups+move+l XX tmux)
-  ;; groups + move + k | groups + move + up
   (t! 0app_action action_groups+move+j XX)
-  ;; groups + move + j | groups + move + down
   (t! 0app_action action_groups+move+k XX)
-
 )

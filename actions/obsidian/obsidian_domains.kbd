@@ -1,6 +1,11 @@
 (defvar
+
+;; domains+a + a
+;; ___TO_SET___ obsidian_action_domains+a+a            
+
 ;; domains+b + b
 obsidian_action_domains+b+b              $obsidian_bookmarks
+
 ;; domains+c + c
 obsidian_action_domains+c+c              $obsidian_calendar
 ;; domains+c + d
@@ -8,30 +13,133 @@ obsidian_action_domains+c+c              $obsidian_calendar
 obsidian_action_domains+c+d              $obsidian_daily_shift
 ;; domains+c + y
 obsidian_action_domains+c+y              $obsidian_daily
+
+;; ___TO_SET___ obsidian_action_domains+d+d            
+;; ___TO_SET___ obsidian_action_domains+d+s            
+
 ;; domains+e + e
 obsidian_action_domains+e+e              $obsidian_file_explorer
 ;; domains+e + r
 obsidian_action_domains+e+r              $obsidian_recent
 ;; domains+e + f
 obsidian_action_domains+e+f              $obsidian_file_explorer_reveal
+
+;; ___TO_SET___ obsidian_action_domains+f+f            
+
+;; ___TO_SET___ obsidian_action_domains+g+g            
+;; ___TO_SET___ obsidian_action_domains+g+l            
+
+;; ___TO_SET___ obsidian_action_domains+h+h            
 ;; domains+h + o
 obsidian_action_domains+h+o             $obsidian_outline 
+
+;; ___TO_SET___ obsidian_action_domains+i+i            
+
+;; ___TO_SET___ obsidian_action_domains+j+j            
+
+;; ___TO_SET___ obsidian_action_domains+k+k            
+
+;; ___TO_SET___ obsidian_action_domains+l+l            
+
+;; ___TO_SET___ obsidian_action_domains+m+m            
+
+;; ___TO_SET___ obsidian_action_domains+n+n            
+
+;; ___TO_SET___ obsidian_action_domains+o+o            
+
 ;; domains+p + p
 obsidian_action_domains+p+p             $obsidian_properties
 ;; domains+p + a
 obsidian_action_domains+p+a             $obsidian_properties_all
+
+;; ___TO_SET___ obsidian_action_domains+q+q            
+
+;; ___TO_SET___ obsidian_action_domains+r+r            
+;; ___TO_SET___ obsidian_action_domains+r+i            
+;; ___TO_SET___ obsidian_action_domains+r+o            
+;; ___TO_SET___ obsidian_action_domains+r+s            
+
 ;; domains+s + s
 obsidian_action_domains+s+s             $obsidian_symbols
+;; ___TO_SET___ obsidian_action_domains+s+w            
+
+;; ___TO_SET___ obsidian_action_domains+t+t            
+;; ___TO_SET___ obsidian_action_domains+t+toggle       
+
+;; ___TO_SET___ obsidian_action_domains+u+u            
 ;; domains+u + g
 obsidian_action_domains+u+g             $obsidian_graph
+
+;; ___TO_SET___ obsidian_action_domains+v+v            
+
+;; ___TO_SET___ obsidian_action_domains+w+w            
+
+;; ___TO_SET___ obsidian_action_domains+x+x            
+
+;; ___TO_SET___ obsidian_action_domains+y+y            
+;; ___TO_SET___ obsidian_action_domains+y+;            
+;; ___TO_SET___ obsidian_action_domains+y+search       
+
+;; ___TO_SET___ obsidian_action_domains+z+z            
+
+;; ___TO_SET___ obsidian_action_domains+`+`            
+
+;; ___TO_SET___ obsidian_action_domains+-+-            
+
+;; ___TO_SET___ obsidian_action_domains+=+=            
+
 ;; domains+[ + [
 obsidian_action_domains+[+[             $obsidian_backlinks
+
 ;; domains+] + ]
 obsidian_action_domains+]+]             $obsidian_outlinks ;;""
 ;; domains+] + a
 obsidian_action_domains+]+a             $obsidian_outlinks_all ;;""
+
+;; ___TO_SET___ obsidian_action_domains+\+\            
+;; ___TO_SET___ obsidian_action_domains+\+lsft+\       
+;; ___TO_SET___ obsidian_action_domains+\+j            
+;; ___TO_SET___ obsidian_action_domains+\+k            
+;; ___TO_SET___ obsidian_action_domains+\+o            
+;; ___TO_SET___ obsidian_action_domains+\+p            
+
 ;; domains+; + ;
 obsidian_action_domains+;+;             $obsidian_commands
+
+;; ___TO_SET___ obsidian_action_domains+'+'            
+
 ;; domains+, + ,
 obsidian_action_domains+,+,             $obsidian_settings
+
+;; ___TO_SET___ obsidian_action_domains+.+.            
+
+;; ___TO_SET___ obsidian_action_domains+/+/            
+
+;; ___TO_SET___ obsidian_action_domains+0+0            
+
+;; ___TO_SET___ obsidian_action_domains+1+1            
+
+;; ___TO_SET___ obsidian_action_domains+2+2            
+
+;; ___TO_SET___ obsidian_action_domains+3+3            
+
+;; ___TO_SET___ obsidian_action_domains+4+4            
+
+;; ___TO_SET___ obsidian_action_domains+5+5            
+
+;; ___TO_SET___ obsidian_action_domains+6+6            
+
+;; ___TO_SET___ obsidian_action_domains+7+7            
+
+;; ___TO_SET___ obsidian_action_domains+8+8            
+
+;; ___TO_SET___ obsidian_action_domains+9+9            
+
+;; ___TO_SET___ obsidian_action_domains+omni+omni      
+;; ___TO_SET___ obsidian_action_domains+omni+a         
+;; ___TO_SET___ obsidian_action_domains+omni+c         
+;; ___TO_SET___ obsidian_action_domains+omni+s         
+;; ___TO_SET___ obsidian_action_domains+omni+f         
+;; ___TO_SET___ obsidian_action_domains+omni+p         
+;; ___TO_SET___ obsidian_action_domains+omni+d         
 )

@@ -2,7 +2,25 @@
   nvim_[normal]_delete (macro x)
   nvim_[normal]_insert (macro x )
   nvim_[normal]_fast_jump (macro x)
-  nvim_action_bare+d   $nvim_[normal]_delete   
-  nvim_action_bare+i   $nvim_[normal]_insert 
   nvim_action_bare+spc $nvim_[normal]_fast_jump
+
+;; ___TO_SET___ nvim_action_bare+tab               
+
+;; ___TO_SET___ nvim_action_bare+esc               
+
+;; ___TO_SET___ nvim_action_bare+esc+esc           
+
+;; ___TO_SET___ nvim_action_bare+H                 
+
+;; ___TO_SET___ nvim_action_bare+L                 
+
+  nvim_action_bare+d   $nvim_[normal]_delete   
+
+  nvim_action_bare+i   $nvim_[normal]_insert 
+
+;; ___TO_SET___ nvim_action_bare+p                 
+
+;; ___TO_SET___ nvim_action_bare+v                 
+
+;; ___TO_SET___ nvim_action_bare+y                 
 )

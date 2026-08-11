@@ -106,209 +106,126 @@
   ;; domains+a + a
   (t! 1app_action action_domains+a+a (push-msg "NOTIFY: Actions not implemented") nvim)
 
-  ;; domains+b + b
   (t! 2app_action action_domains+b+b (push-msg "NOTIFY: Bookmarks not implemented") obsidian nvim)
 
-  ;; domains+c + c
   (t! 1app_action action_domains+c+c (push-msg "NOTIFY: Calendar not implemented") obsidian)
-  ;; domains+c + d
   (t! 1app_action action_domains+c+d (push-msg "NOTIFY: Calendar (Day) not implemented") obsidian)
-  ;; domains+c + y
   (t! 1app_action action_domains+c+y (push-msg "NOTIFY: Calendar (Daily) not implemented") obsidian)
 
-  ;; domains+d + d
   (t! 1app_action action_domains+d+d (push-msg "NOTIFY: Definitions not implemented") nvim)
-  ;; domains+d + s
   (t! 1app_action action_domains+d+s (push-msg "NOTIFY: Definition (Source) not implemented") nvim)
  
-  ;; domains+e + e
   (t! 3app_action action_domains+e+e (push-msg "NOTIFY: Explorer not implemented") obsidian dolphin nvim)
-  ;; domains+e + r
   (t! 1app_action action_domains+e+r (push-msg "NOTIFY: Explorer (Recents) not implemented") obsidian)
-  ;; domains+e + f
   (t! 1app_action action_domains+e+f (push-msg "NOTIFY: Explorer (Find/Focus) not implemented") obsidian)
 
-  ;; domains+f + f
   (t! 0app_action action_domains+f+f (push-msg "NOTIFY: Filters not implemented"))
 
-  ;; domains+g + g
   (t! 2app_action action_domains+g+g (push-msg "NOTIFY: Git not implemented") foot nvim)
-  ;; domains+g + l
   (t! 2app_action action_domains+g+l (push-msg "NOTIFY: Git (Lazygit) not implemented") foot nvim)
 
-  ;; domains+h + h
   (t! 0app_action action_domains+h+h (push-msg "NOTIFY: Hyperlinks not implemented"))
-  ;; domains+h + o
   (t! 2app_action action_domains+h+o (push-msg "NOTIFY: OutLine not implemented") obsidian nvim)
 
-  ;; domains+i + i
   (t! 1app_action action_domains+i+i (push-msg "NOTIFY: Info not implemented") dolphin)
 
-  ;; domains+j + j
   (t! 1app_action action_domains+j+j (push-msg "NOTIFY: Jumps not implemented") nvim)
 
-  ;; domains+k + k
   (t! 4app_action action_domains+k+k (push-msg "NOTIFY: Keymaps not implemented") chrome dolphin firefox nvim)
 
-  ;; domains+l + l
   (t! 1app_action action_domains+l+l (push-msg "NOTIFY: Locations not implemented") nvim)
 
-  ;; domains+m + m
   (t! 0app_action action_domains+m+m $clipboard_history)
 
-  ;; domains+n + n
   (t! 0app_action action_domains+n+n (push-msg "NOTIFY: notebooks not implemented"))
 
-  ;; domains+o + o
   (t! 0app_action action_domains+o+o (push-msg "NOTIFY: Output not implemented"))
 
-  ;; domains+p + p
   (t! 1app_action action_domains+p+p (push-msg "NOTIFY: Properties not implemented") obsidian)
-  ;; domains+p + a
   (t! 1app_action action_domains+p+a (push-msg "NOTIFY: Properties All not implemented") obsidian)
   
-  ;; domains+q + q
   (t! 1app_action action_domains+q+q (push-msg "NOTIFY: Quickfix not implemented") nvim)
 
-  ;; domains+r + r
   (t! 1app_action action_domains+r+r (push-msg "NOTIFY: References not implemented") nvim)
-  ;; domains+r + i
   (t! 1app_action action_domains+r+i (push-msg "NOTIFY: References (Incoming) not implemented") nvim)
-  ;; domains+r + o
   (t! 1app_action action_domains+r+o (push-msg "NOTIFY: References (Outgoing) not implemented") nvim)
-  ;; domains+r + s
   (t! 1app_action action_domains+r+s (push-msg "NOTIFY: Source not implemented") nvim)
 
-  ;; domains+s + s
   (t! 2app_action action_domains+s+s (push-msg "NOTIFY: Symbols not implemented") obsidian nvim)
-  ;; domains+s + w
   (t! 1app_action action_domains+s+w (push-msg "NOTIFY: Symbols (Workspace) not implemented") nvim)
 
-  ;; domains+t + t
   (t! 2app_action action_domains+t+t (push-msg "NOTIFY: Terminal not implemented") dolphin nvim)
-  ;; domains+t + toggle
   (t! 1app_action action_domains+t+toggle (push-msg "NOTIFY: Toggle Terminal not implemented") nvim)
 
-  ;; domains+u + u
   (t! 0app_action action_domains+u+u (push-msg "NOTIFY: UI not implemented"))
-  ;; domains+u + g
   (t! 1app_action action_domains+u+g (push-msg "NOTIFY: UI Graph not implemented") obsidian)
 
-  ;; domains+v + v
   (t! 0app_action action_domains+v+v (push-msg "NOTIFY: Virtualization not implemented"))
 
-  ;; domains+w + w
   (t! 0app_action action_domains+w+w (push-msg "NOTIFY: Warnings not implemented"))
 
-  ;; domains+x + x
   (t! 0app_action action_domains+x+x (push-msg "NOTIFY: Extensions not implemented"))
 
-  ;; domains+y + y
   (t! 1app_action action_domains+y+y (push-msg "NOTIFY: History not implemented") nvim)
-  ;; domains+y + ;
   (t! 1app_action action_domains+y+; (push-msg "NOTIFY: History (commands) not implemented") nvim)
-  ;; domains+y + search 
   (t! 1app_action action_domains+y+search (push-msg "NOTIFY: History search not implemented") nvim)
 
-  ;; domains+z + z
   (t! 0app_action action_domains+z+z (push-msg "NOTIFY: Tests not implemented"))
 
-  ;; domains+` + `
   (t! 0app_action action_domains+`+` (push-msg "NOTIFY: mod` not implemented"))
 
-  ;; domains+- + -
   (t! 0app_action action_domains+-+- (push-msg "NOTIFY: mod- not implemented"))
 
-  ;; domains+= + =
   (t! 0app_action action_domains+=+= (push-msg "NOTIFY: Format not implemented"))
 
-  ;; domains+[ + [
   (t! 1app_action action_domains+[+[ (push-msg "NOTIFY: Backlinks not implemented") obsidian)
 
-  ;; domains+] + ]
   (t! 1app_action action_domains+]+] (push-msg "NOTIFY: Outlinks not implemented") obsidian)
-  ;; domains+] + a
   (t! 1app_action action_domains+]+a (push-msg "NOTIFY: Outlinks All not implemented") obsidian)
 
-  ;; domains+\ + \
   (t! 2app_action action_domains+\+\ (push-msg "NOTIFY: Toggle compare files not implemented") foot nvim)
-  ;; domains+\ + lsft + \
   (t! 1app_action action_domains+\+lsft+\ (push-msg "NOTIFY: Toggle compare folders not implemented") foot)
-  ;; domains+\ + j
   (t! 1app_action action_domains+\+j (push-msg "NOTIFY: Compare next not implemented") nvim)
-  ;; domains+\ + k
   (t! 1app_action action_domains+\+k (push-msg "NOTIFY: Compare before not implemented") nvim)
-  ;; domains+\ + o
   (t! 1app_action action_domains+\+o (push-msg "NOTIFY: Compare obtain not implemented") nvim)
-  ;; domains+\ + p
   (t! 1app_action action_domains+\+p (push-msg "NOTIFY: Compare push not implemented") nvim)
 
-  ;; domains+; + ;
   (t! 4app_action action_domains+;+; (push-msg "NOTIFY: Commands not implemented") obsidian colab nvim tmux)
 
-  ;; domains+' + '
   (t! 1app_action action_domains+'+' (push-msg "NOTIFY: Registries not implemented") nvim)
 
-  ;; domains+, + ,
   (t! 7app_action action_domains+,+, (push-msg "NOTIFY: Settings not implemented") whatsapp chrome zapzap obsidian dolphin firefox nvim)
 
-  ;; domains+. + .
   (t! 2app_action action_domains+.+. (push-msg "NOTIFY: Tags not implemented") dolphin nvim)
 
-  ;; domains+/ + / 
   (t! 2app_action action_domains+/+/ (push-msg "NOTIFY: Help not implemented") dolphin nvim)
-  ;; domains+/ + k 
   action_domains+/+k $action_toggle_bare_layer 
 
-  ;; domains+0 + 0
   (t! 0app_action action_domains+0+0 (push-msg "NOTIFY: mod0 not implemented"))
 
-  ;; domains+1 + 1
   (t! 0app_action action_domains+1+1 (push-msg "NOTIFY: mod1 not implemented"))
 
-  ;; domains+2 + 2
   (t! 0app_action action_domains+2+2 (push-msg "NOTIFY: mod2 not implemented"))
 
-  ;; domains+3 + 3
   (t! 0app_action action_domains+3+3 (push-msg "NOTIFY: mod3 not implemented"))
 
-  ;; domains+4 + 4
   (t! 0app_action action_domains+4+4 (push-msg "NOTIFY: mod4 not implemented"))
 
-  ;; domains+5 + 5
   (t! 0app_action action_domains+5+5 (push-msg "NOTIFY: mod5 not implemented"))
 
-  ;; domains+6 + 6
   (t! 0app_action action_domains+6+6 (push-msg "NOTIFY: mod6 not implemented"))
 
-  ;; domains+7 + 7
   (t! 0app_action action_domains+7+7 (push-msg "NOTIFY: mod7 not implemented"))
 
-  ;; domains+8 + 8
   (t! 0app_action action_domains+8+8 (push-msg "NOTIFY: mod8 not implemented"))
 
-  ;; domains+9 + 9
   (t! 0app_action action_domains+9+9 (push-msg "NOTIFY: mod9 not implemented"))
 
-  ;; omni + omni
   (t! 1app_action action_domains+omni+omni $ai nvim)
-
-  ;; omni + a
   (t! 1app_action action_domains+omni+a (push-msg "NOTIFY: Sidekick select agent not implemented") nvim)
-
-  ;; omni + c
   (t! 1app_action action_domains+omni+c (push-msg "NOTIFY: Sidekick toggle Claude not implemented") nvim)
-
-  ;; omni + s
   (t! 1app_action action_domains+omni+s (push-msg "NOTIFY: Sidekick send selection not implemented") nvim)
-
-  ;; omni + f
   (t! 1app_action action_domains+omni+f (push-msg "NOTIFY: Sidekick send file not implemented") nvim)
-
-  ;; omni + p
   (t! 1app_action action_domains+omni+p (push-msg "NOTIFY: Sidekick prompt not implemented") nvim)
-
-  ;; omni + d
   (t! 1app_action action_domains+omni+d (push-msg "NOTIFY: Sidekick close CLI session not implemented") nvim)
-
 )

@@ -1,7 +1,5 @@
 (defvar
   ;; == run =================================================================
-  ;; run + spc
   (t! 0app_action action_run+spc (push-msg "NOTIFY: Run not implemented"))
-  ;; run + toggle
   (t! 0app_action action_run+toggle (push-msg "NOTIFY: Run not implemented"))
 )
