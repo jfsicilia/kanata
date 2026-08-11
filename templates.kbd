@@ -705,3 +705,449 @@
   )
 )
 
+(deftemplate 0app_action (action default)
+  $action $default
+)
+
+(deftemplate 1app_action (action default app1)
+  $action (t! unmod_all (switch 
+    ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+    () $default break
+  ))
+)
+
+(deftemplate 2app_action (action default app1 app2)
+  $action (t! unmod_all (switch
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      () $default break
+    ) break
+    () (switch 
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      () $default break
+    ) break
+  ))
+)
+
+(deftemplate 3app_action (action default app1 app2 app3)
+  $action (t! unmod_all (switch
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      () $default break
+    ) break
+    () (switch 
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      () $default break
+    ) break
+  ))
+)
+
+(deftemplate 4app_action (action default app1 app2 app3 app4)
+  $action (t! unmod_all (switch
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      () $default break
+    ) break
+    () (switch 
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      () $default break
+    ) break
+  ))
+)
+
+
+(deftemplate 5app_action (action default app1 app2 app3 app4 app5)
+  $action (t! unmod_all (switch
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      () $default break
+    ) break
+    () (switch 
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      () $default break
+    ) break
+  ))
+)
+
+
+(deftemplate 6app_action (action default app1 app2 app3 app4 app5 app6)
+  $action (t! unmod_all (switch
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual (concat "vk_" $app6))) (concat "$" $app6 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      () $default break
+    ) break
+    () (switch 
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app6))) (concat "$" $app6 "_" $action) break
+      () $default break
+    ) break
+  ))
+)
+(deftemplate 7app_action (action default app1 app2 app3 app4 app5 app6 app7)
+  $action (t! unmod_all (switch
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual (concat "vk_" $app7))) (concat "$" $app7 "_" $action) break
+      ((input virtual (concat "vk_" $app6))) (concat "$" $app6 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      () $default break
+    ) break
+    () (switch 
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app6))) (concat "$" $app6 "_" $action) break
+      ((input virtual (concat "vk_" $app7))) (concat "$" $app7 "_" $action) break
+      () $default break
+    ) break
+  ))
+)
+
+(deftemplate 8app_action (action default app1 app2 app3 app4 app5 app6 app7 app8)
+  $action (t! unmod_all (switch
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual (concat "vk_" $app8))) (concat "$" $app8 "_" $action) break
+      ((input virtual (concat "vk_" $app7))) (concat "$" $app7 "_" $action) break
+      ((input virtual (concat "vk_" $app6))) (concat "$" $app6 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      () $default break
+    ) break
+    () (switch 
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app6))) (concat "$" $app6 "_" $action) break
+      ((input virtual (concat "vk_" $app7))) (concat "$" $app7 "_" $action) break
+      ((input virtual (concat "vk_" $app8))) (concat "$" $app8 "_" $action) break
+      () $default break
+    ) break
+  ))
+)
+
+(deftemplate 9app_action (action default app1 app2 app3 app4 app5 app6 app7 app8 app9)
+  $action (t! unmod_all (switch
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual (concat "vk_" $app9))) (concat "$" $app9 "_" $action) break
+      ((input virtual (concat "vk_" $app8))) (concat "$" $app8 "_" $action) break
+      ((input virtual (concat "vk_" $app7))) (concat "$" $app7 "_" $action) break
+      ((input virtual (concat "vk_" $app6))) (concat "$" $app6 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      () $default break
+    ) break
+    () (switch 
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app6))) (concat "$" $app6 "_" $action) break
+      ((input virtual (concat "vk_" $app7))) (concat "$" $app7 "_" $action) break
+      ((input virtual (concat "vk_" $app8))) (concat "$" $app8 "_" $action) break
+      ((input virtual (concat "vk_" $app9))) (concat "$" $app9 "_" $action) break
+      () $default break
+    ) break
+  ))
+)
+
+(deftemplate 10app_action (action default app1 app2 app3 app4 app5 app6 app7 app8 app9 app10)
+  $action (t! unmod_all (switch
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual (concat "vk_" $app10))) (concat "$" $app10 "_" $action) break
+      ((input virtual (concat "vk_" $app9))) (concat "$" $app9 "_" $action) break
+      ((input virtual (concat "vk_" $app8))) (concat "$" $app8 "_" $action) break
+      ((input virtual (concat "vk_" $app7))) (concat "$" $app7 "_" $action) break
+      ((input virtual (concat "vk_" $app6))) (concat "$" $app6 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      () $default break
+    ) break
+    () (switch 
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app6))) (concat "$" $app6 "_" $action) break
+      ((input virtual (concat "vk_" $app7))) (concat "$" $app7 "_" $action) break
+      ((input virtual (concat "vk_" $app8))) (concat "$" $app8 "_" $action) break
+      ((input virtual (concat "vk_" $app9))) (concat "$" $app9 "_" $action) break
+      ((input virtual (concat "vk_" $app10))) (concat "$" $app10 "_" $action) break
+      () $default break
+    ) break
+  ))
+)
+
+(deftemplate 11app_action (action default app1 app2 app3 app4 app5 app6 app7 app8 app9 app10 app11)
+   $action (t! unmod_all (switch
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual (concat "vk_" $app11))) (concat "$" $app11 "_" $action) break
+      ((input virtual (concat "vk_" $app10))) (concat "$" $app10 "_" $action) break
+      ((input virtual (concat "vk_" $app9))) (concat "$" $app9 "_" $action) break
+      ((input virtual (concat "vk_" $app8))) (concat "$" $app8 "_" $action) break
+      ((input virtual (concat "vk_" $app7))) (concat "$" $app7 "_" $action) break
+      ((input virtual (concat "vk_" $app6))) (concat "$" $app6 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      () $default break
+    ) break
+    () (switch 
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app6))) (concat "$" $app6 "_" $action) break
+      ((input virtual (concat "vk_" $app7))) (concat "$" $app7 "_" $action) break
+      ((input virtual (concat "vk_" $app8))) (concat "$" $app8 "_" $action) break
+      ((input virtual (concat "vk_" $app9))) (concat "$" $app9 "_" $action) break
+      ((input virtual (concat "vk_" $app10))) (concat "$" $app10 "_" $action) break
+      ((input virtual (concat "vk_" $app11))) (concat "$" $app11 "_" $action) break
+      () $default break
+    ) break
+  ))
+)
+
+(deftemplate 12app_action (action default app1 app2 app3 app4 app5 app6 app7 app8 app9 app10 app11 app12)
+  $action (t! unmod_all (switch
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual (concat "vk_" $app12))) (concat "$" $app12 "_" $action) break
+      ((input virtual (concat "vk_" $app11))) (concat "$" $app11 "_" $action) break
+      ((input virtual (concat "vk_" $app10))) (concat "$" $app10 "_" $action) break
+      ((input virtual (concat "vk_" $app9))) (concat "$" $app9 "_" $action) break
+      ((input virtual (concat "vk_" $app8))) (concat "$" $app8 "_" $action) break
+      ((input virtual (concat "vk_" $app7))) (concat "$" $app7 "_" $action) break
+      ((input virtual (concat "vk_" $app6))) (concat "$" $app6 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      () $default break
+    ) break
+    () (switch 
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app6))) (concat "$" $app6 "_" $action) break
+      ((input virtual (concat "vk_" $app7))) (concat "$" $app7 "_" $action) break
+      ((input virtual (concat "vk_" $app8))) (concat "$" $app8 "_" $action) break
+      ((input virtual (concat "vk_" $app9))) (concat "$" $app9 "_" $action) break
+      ((input virtual (concat "vk_" $app10))) (concat "$" $app10 "_" $action) break
+      ((input virtual (concat "vk_" $app11))) (concat "$" $app11 "_" $action) break
+      ((input virtual (concat "vk_" $app12))) (concat "$" $app12 "_" $action) break
+      () $default break
+    ) break
+  ))
+)
+
+(deftemplate 13app_action (action default app1 app2 app3 app4 app5 app6 app7 app8 app9 app10 app11 app12 app13)
+  $action (t! unmod_all (switch
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual (concat "vk_" $app13))) (concat "$" $app13 "_" $action) break
+      ((input virtual (concat "vk_" $app12))) (concat "$" $app12 "_" $action) break
+      ((input virtual (concat "vk_" $app11))) (concat "$" $app11 "_" $action) break
+      ((input virtual (concat "vk_" $app10))) (concat "$" $app10 "_" $action) break
+      ((input virtual (concat "vk_" $app9))) (concat "$" $app9 "_" $action) break
+      ((input virtual (concat "vk_" $app8))) (concat "$" $app8 "_" $action) break
+      ((input virtual (concat "vk_" $app7))) (concat "$" $app7 "_" $action) break
+      ((input virtual (concat "vk_" $app6))) (concat "$" $app6 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      () $default break
+    ) break
+    () (switch 
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app6))) (concat "$" $app6 "_" $action) break
+      ((input virtual (concat "vk_" $app7))) (concat "$" $app7 "_" $action) break
+      ((input virtual (concat "vk_" $app8))) (concat "$" $app8 "_" $action) break
+      ((input virtual (concat "vk_" $app9))) (concat "$" $app9 "_" $action) break
+      ((input virtual (concat "vk_" $app10))) (concat "$" $app10 "_" $action) break
+      ((input virtual (concat "vk_" $app11))) (concat "$" $app11 "_" $action) break
+      ((input virtual (concat "vk_" $app12))) (concat "$" $app12 "_" $action) break
+      ((input virtual (concat "vk_" $app13))) (concat "$" $app13 "_" $action) break
+      () $default break
+    ) break
+  ))
+)
+
+(deftemplate 14app_action (action default app1 app2 app3 app4 app5 app6 app7 app8 app9 app10 app11 app12 app13 app14)
+  $action (t! unmod_all (switch
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual (concat "vk_" $app14))) (concat "$" $app14 "_" $action) break
+      ((input virtual (concat "vk_" $app13))) (concat "$" $app13 "_" $action) break
+      ((input virtual (concat "vk_" $app12))) (concat "$" $app12 "_" $action) break
+      ((input virtual (concat "vk_" $app11))) (concat "$" $app11 "_" $action) break
+      ((input virtual (concat "vk_" $app10))) (concat "$" $app10 "_" $action) break
+      ((input virtual (concat "vk_" $app9))) (concat "$" $app9 "_" $action) break
+      ((input virtual (concat "vk_" $app8))) (concat "$" $app8 "_" $action) break
+      ((input virtual (concat "vk_" $app7))) (concat "$" $app7 "_" $action) break
+      ((input virtual (concat "vk_" $app6))) (concat "$" $app6 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      () $default break
+    ) break
+    () (switch 
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app6))) (concat "$" $app6 "_" $action) break
+      ((input virtual (concat "vk_" $app7))) (concat "$" $app7 "_" $action) break
+      ((input virtual (concat "vk_" $app8))) (concat "$" $app8 "_" $action) break
+      ((input virtual (concat "vk_" $app9))) (concat "$" $app9 "_" $action) break
+      ((input virtual (concat "vk_" $app10))) (concat "$" $app10 "_" $action) break
+      ((input virtual (concat "vk_" $app11))) (concat "$" $app11 "_" $action) break
+      ((input virtual (concat "vk_" $app12))) (concat "$" $app12 "_" $action) break
+      ((input virtual (concat "vk_" $app13))) (concat "$" $app13 "_" $action) break
+      ((input virtual (concat "vk_" $app14))) (concat "$" $app14 "_" $action) break
+      () $default break
+    ) break
+  ))
+)
+
+(deftemplate 15app_action (action default app1 app2 app3 app4 app5 app6 app7 app8 app9 app10 app11 app12 app13 app14 app15)
+  $action (t! unmod_all (switch
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual (concat "vk_" $app15))) (concat "$" $app15 "_" $action) break
+      ((input virtual (concat "vk_" $app14))) (concat "$" $app14 "_" $action) break
+      ((input virtual (concat "vk_" $app13))) (concat "$" $app13 "_" $action) break
+      ((input virtual (concat "vk_" $app12))) (concat "$" $app12 "_" $action) break
+      ((input virtual (concat "vk_" $app11))) (concat "$" $app11 "_" $action) break
+      ((input virtual (concat "vk_" $app10))) (concat "$" $app10 "_" $action) break
+      ((input virtual (concat "vk_" $app9))) (concat "$" $app9 "_" $action) break
+      ((input virtual (concat "vk_" $app8))) (concat "$" $app8 "_" $action) break
+      ((input virtual (concat "vk_" $app7))) (concat "$" $app7 "_" $action) break
+      ((input virtual (concat "vk_" $app6))) (concat "$" $app6 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      () $default break
+    ) break
+    () (switch 
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app6))) (concat "$" $app6 "_" $action) break
+      ((input virtual (concat "vk_" $app7))) (concat "$" $app7 "_" $action) break
+      ((input virtual (concat "vk_" $app8))) (concat "$" $app8 "_" $action) break
+      ((input virtual (concat "vk_" $app9))) (concat "$" $app9 "_" $action) break
+      ((input virtual (concat "vk_" $app10))) (concat "$" $app10 "_" $action) break
+      ((input virtual (concat "vk_" $app11))) (concat "$" $app11 "_" $action) break
+      ((input virtual (concat "vk_" $app12))) (concat "$" $app12 "_" $action) break
+      ((input virtual (concat "vk_" $app13))) (concat "$" $app13 "_" $action) break
+      ((input virtual (concat "vk_" $app14))) (concat "$" $app14 "_" $action) break
+      ((input virtual (concat "vk_" $app15))) (concat "$" $app15 "_" $action) break
+      () $default break
+    ) break
+  ))
+)
+
+(deftemplate 16app_action (action default app1 app2 app3 app4 app5 app6 app7 app8 app9 app10 app11 app12 app13 app14 app15 app16)
+  $action (t! unmod_all (switch
+    ((input virtual vk_apps_sort_desc)) (switch 
+      ((input virtual (concat "vk_" $app16))) (concat "$" $app16 "_" $action) break
+      ((input virtual (concat "vk_" $app15))) (concat "$" $app15 "_" $action) break
+      ((input virtual (concat "vk_" $app14))) (concat "$" $app14 "_" $action) break
+      ((input virtual (concat "vk_" $app13))) (concat "$" $app13 "_" $action) break
+      ((input virtual (concat "vk_" $app12))) (concat "$" $app12 "_" $action) break
+      ((input virtual (concat "vk_" $app11))) (concat "$" $app11 "_" $action) break
+      ((input virtual (concat "vk_" $app10))) (concat "$" $app10 "_" $action) break
+      ((input virtual (concat "vk_" $app9))) (concat "$" $app9 "_" $action) break
+      ((input virtual (concat "vk_" $app8))) (concat "$" $app8 "_" $action) break
+      ((input virtual (concat "vk_" $app7))) (concat "$" $app7 "_" $action) break
+      ((input virtual (concat "vk_" $app6))) (concat "$" $app6 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      () $default break
+    ) break
+    () (switch 
+      ((input virtual (concat "vk_" $app1))) (concat "$" $app1 "_" $action) break
+      ((input virtual (concat "vk_" $app2))) (concat "$" $app2 "_" $action) break
+      ((input virtual (concat "vk_" $app3))) (concat "$" $app3 "_" $action) break
+      ((input virtual (concat "vk_" $app4))) (concat "$" $app4 "_" $action) break
+      ((input virtual (concat "vk_" $app5))) (concat "$" $app5 "_" $action) break
+      ((input virtual (concat "vk_" $app6))) (concat "$" $app6 "_" $action) break
+      ((input virtual (concat "vk_" $app7))) (concat "$" $app7 "_" $action) break
+      ((input virtual (concat "vk_" $app8))) (concat "$" $app8 "_" $action) break
+      ((input virtual (concat "vk_" $app9))) (concat "$" $app9 "_" $action) break
+      ((input virtual (concat "vk_" $app10))) (concat "$" $app10 "_" $action) break
+      ((input virtual (concat "vk_" $app11))) (concat "$" $app11 "_" $action) break
+      ((input virtual (concat "vk_" $app12))) (concat "$" $app12 "_" $action) break
+      ((input virtual (concat "vk_" $app13))) (concat "$" $app13 "_" $action) break
+      ((input virtual (concat "vk_" $app14))) (concat "$" $app14 "_" $action) break
+      ((input virtual (concat "vk_" $app15))) (concat "$" $app15 "_" $action) break
+      ((input virtual (concat "vk_" $app16))) (concat "$" $app16 "_" $action) break
+      () $default break
+    ) break
+  ))
+)
