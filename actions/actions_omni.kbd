@@ -1,33 +1,41 @@
 (defvar
   ;; Navigation / Edit
-  cancel          esc
-  space           spc
-  delete          del
-  page_up         pgup
-  page_down       pgdn
-  nav_left        left
-  nav_down        down
-  nav_up          up
-  nav_right       right
-  nav_next        right
-  nav_prev        left
-  undo            C-z
-  redo            C-S-z
+  cancel            esc
+  space             spc
+  delete            del
+
+  page_up           pgup
+  page_down         pgdn
+
+  nav_left          left
+  nav_down          down
+  nav_up            up
+  nav_right         right
+
+  shift+nav_left    S-left
+  shift+nav_down    S-down
+  shift+nav_up      S-up
+  shift+nav_right   S-right
+
+  nav_next          right
+  nav_prev          left
+  undo              C-z
+  redo              C-S-z
   ;; Clipboard
-  copy            C-c
-  copy_path       C-S-c
-  paste           C-v
-  cut             C-x
+  copy              C-c
+  copy_path         C-S-c
+  paste             C-v
+  cut               C-x
   ;; Other operations
-  window_close    $windows_close
-  settings        $action_domains+,+,
-  tags            $action_domains+.+.
-  help            $action_domains+/+/
-  panes_toggle    $action_panes+toggle
-  tabs_toggle     $action_tabs+toggle
-  apps_toggle     $windows_toggle 
-  groups_toggle   $action_groups+toggle
-  sessions_toggle $action_sessions+toggle
+  window_close      $windows_close
+  settings          $action_domains+,+,
+  tags              $action_domains+.+.
+  help              $action_domains+/+/
+  panes_toggle      $action_panes+toggle
+  tabs_toggle       $action_tabs+toggle
+  apps_toggle       $windows_toggle 
+  groups_toggle     $action_groups+toggle
+  sessions_toggle   $action_sessions+toggle
 )
 
 (defvar
@@ -90,14 +98,22 @@
   (t! 8app_action action_omni+g XX whatsapp nvim tmux chrome zapzap obsidian dolphin firefox)
 
   (t! 1app_action action_omni+h $nav_left nvim)
+  (t! 0app_action action_omni+lsft+h $shift+nav_left)
+  (t! 0app_action action_omni+rsft+h $shift+nav_left)
 
   (t! 3app_action action_omni+i XX nvim tmux dolphin)
 
   (t! 1app_action action_omni+j $nav_down nvim)
+  (t! 0app_action action_omni+lsft+j $shift+nav_down)
+  (t! 0app_action action_omni+rsft+j $shift+nav_down)
 
   (t! 1app_action action_omni+k $nav_up nvim)
+  (t! 0app_action action_omni+lsft+k $shift+nav_up)
+  (t! 0app_action action_omni+rsft+k $shift+nav_up)
 
   (t! 1app_action action_omni+l $nav_right nvim)
+  (t! 0app_action action_omni+lsft+l $shift+nav_right)
+  (t! 0app_action action_omni+rsft+l $shift+nav_right)
 
   (t! 1app_action action_omni+m $clipboard_history nvim)
 

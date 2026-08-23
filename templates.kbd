@@ -706,7 +706,7 @@
 )
 
 (deftemplate 0app_action (action default)
-  $action $default
+  $action (t! unmod_all $default)
 )
 
 (deftemplate 1app_action (action default app1)

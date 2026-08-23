@@ -77,15 +77,23 @@ dolphin_action_omni+lsft+e     $dolphin_compress
 dolphin_action_omni+g          $dolphin_go
 
 ;; ___TO_SET___ dolphin_action_omni+h                 
+;; ___TO_SET___ dolphin_action_omni+lsft+h            
+;; ___TO_SET___ dolphin_action_omni+rsft+h            
 
 ;; omni + i
 dolphin_action_omni+i          $dolphin_info
 
 ;; ___TO_SET___ dolphin_action_omni+j                 
+;; ___TO_SET___ dolphin_action_omni+lsft+j            
+;; ___TO_SET___ dolphin_action_omni+rsft+j            
 
 ;; ___TO_SET___ dolphin_action_omni+k                 
+;; ___TO_SET___ dolphin_action_omni+lsft+k            
+;; ___TO_SET___ dolphin_action_omni+rsft+k            
 
 ;; ___TO_SET___ dolphin_action_omni+l                 
+;; ___TO_SET___ dolphin_action_omni+lsft+l            
+;; ___TO_SET___ dolphin_action_omni+rsft+l            
 
 ;; ___TO_SET___ dolphin_action_omni+m                 
 

@@ -58,14 +58,22 @@
 ;; ___TO_SET___ zellij_action_omni+g                 
 
 ;; ___TO_SET___ zellij_action_omni+h                 
+;; ___TO_SET___ zellij_action_omni+lsft+h            
+;; ___TO_SET___ zellij_action_omni+rsft+h            
 
 ;; ___TO_SET___ zellij_action_omni+i                 
 
 ;; ___TO_SET___ zellij_action_omni+j                 
+;; ___TO_SET___ zellij_action_omni+lsft+j            
+;; ___TO_SET___ zellij_action_omni+rsft+j            
 
 ;; ___TO_SET___ zellij_action_omni+k                 
+;; ___TO_SET___ zellij_action_omni+lsft+k            
+;; ___TO_SET___ zellij_action_omni+rsft+k            
 
 ;; ___TO_SET___ zellij_action_omni+l                 
+;; ___TO_SET___ zellij_action_omni+lsft+l            
+;; ___TO_SET___ zellij_action_omni+rsft+l            
 
 ;; ___TO_SET___ zellij_action_omni+m                 
 

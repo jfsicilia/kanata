@@ -71,6 +71,11 @@
   z $action_omni+lsft+z
   s $action_omni+lsft+s
 
+  h $action_omni+lsft+h
+  j $action_omni+lsft+j
+  k $action_omni+lsft+k
+  l $action_omni+lsft+l
+
   \ $action_omni+lsft+\
 
   t $action_omni+lsft+t
@@ -82,6 +87,11 @@
   n $action_omni+rsft+n
   z $action_omni+lsft+z
   s $action_omni+lsft+s
+
+  h $action_omni+rsft+h
+  j $action_omni+rsft+j
+  k $action_omni+rsft+k
+  l $action_omni+rsft+l
 
   \ $action_omni+rsft+\
 
