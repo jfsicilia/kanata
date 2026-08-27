@@ -4,7 +4,6 @@
   rsft              $action_lsft+rsft
 
   ent               $action_lsft+ent
-  $keyb             $action_lsft+keyb
 
   $apps             (t! th _ $toggle_apps+lsft_layer)
   $open             (t! th _ $toggle_open+lsft_layer)
@@ -30,7 +29,6 @@
   lsft              $action_rsft+lsft
 
   ent               $action_rsft+ent
-  $keyb             $action_rsft+keyb 
 
   $apps             (t! th _ $toggle_apps+rsft_layer)
   $open             (t! th _ $toggle_open+rsft_layer)

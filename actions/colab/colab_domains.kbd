@@ -2,7 +2,6 @@
 ;; domains+k + k
 colab_action_domains+k+K                   $colab_keybindings
 
-;; domains+a + a
 ;; ___TO_SET___ colab_action_domains+a+a            
 
 ;; ___TO_SET___ colab_action_domains+b+b            
@@ -95,6 +94,7 @@ colab_action_domains+;+;                   $colab_command_palette
 ;; ___TO_SET___ colab_action_domains+'+'            
 
 ;; ___TO_SET___ colab_action_domains+,+,            
+;; ___TO_SET___ colab_action_domains+,+r            
 
 ;; ___TO_SET___ colab_action_domains+.+.            
 

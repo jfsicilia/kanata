@@ -1,6 +1,5 @@
 (defvar
 
-;; domains+a + a
 ;; ___TO_SET___ tmux_action_domains+a+a            
 
 ;; ___TO_SET___ tmux_action_domains+b+b            
@@ -28,7 +27,7 @@
 
 ;; ___TO_SET___ tmux_action_domains+j+j            
 
-;; ___TO_SET___ tmux_action_domains+k+k            
+tmux_action_domains+k+k            $tmux_keybindings 
 
 ;; ___TO_SET___ tmux_action_domains+l+l            
 
@@ -93,6 +92,7 @@ tmux_action_domains+;+;                 $tmux_commands ;; prefix + : (command pr
 ;; ___TO_SET___ tmux_action_domains+'+'            
 
 ;; ___TO_SET___ tmux_action_domains+,+,            
+tmux_action_domains+,+r                 $tmux_reload_config
 
 ;; ___TO_SET___ tmux_action_domains+.+.            
 

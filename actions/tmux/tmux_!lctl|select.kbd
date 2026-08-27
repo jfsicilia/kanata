@@ -1,7 +1,7 @@
 (defvar
 ;; == !LCTL|SELECT actions ==========================================================
-;; ___TO_SET___ tmux_action_!lctl|select+spc       
-;; ___TO_SET___ tmux_action_!lctl|select+lsft+spc  
+tmux_action_!lctl|select+spc             $tmux_file_picker
+tmux_action_!lctl|select+lsft+spc        $tmux_folder_picker
 ;; ___TO_SET___ tmux_action_!lctl|select+rsft+spc  
 
 ;; ___TO_SET___ tmux_action_!lctl|select+a         

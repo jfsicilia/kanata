@@ -1,0 +1,119 @@
+(defvar
+;; == panes =============================================================
+;; ___TO_SET___ herdr_action_panes+spc              
+
+;; panes + ent
+;; #panes + ent
+herdr_action_panes+ent                    $herdr_pane_maximize ;; prefix + z (zoom pane)
+
+;; panes + h | panes + left
+;; #panes + h | #panes + left
+herdr_action_panes+h                      $herdr_pane_left
+;; panes + l | panes + right
+;; #panes + l | #panes + right
+herdr_action_panes+l                      $herdr_pane_right
+;; panes + k | panes + up
+;; #panes + k | #panes + up
+herdr_action_panes+k                      $herdr_pane_above
+;; panes + j | panes + down
+;; #panes + j | #panes + down
+herdr_action_panes+j                      $herdr_pane_below
+
+;; panes + -
+;; #panes + -
+herdr_action_panes+-                      $herdr_pane_h_split
+;; panes + \
+;; #panes + \
+herdr_action_panes+\                      $herdr_pane_v_split
+
+;; panes + w
+;; #panes + w
+herdr_action_panes+w                      $herdr_pane_close ;; prefix + x (kill pane)
+
+;; == panes + toggle ====================================================
+;; panes + toggle | 2x !lalt
+;; == #panes + #toggle ====================================================
+;; #panes + #toggle | 2x !lalt
+herdr_action_panes+toggle                 $herdr_pane_toggle ;; prefix + ; (last pane)
+
+;; == panes + float ====================================================
+;; ___TO_SET___ herdr_action_panes+float            
+
+;; == panes + move ======================================================
+;; panes + move + h | panes + move + left
+;; == panes + move =====================================================
+herdr_action_panes+move+h        $herdr_move_pane_left
+;; panes + move + l | panes + move + right
+herdr_action_panes+move+l        $herdr_move_pane_right
+;; panes + move + k | panes + move + up
+herdr_action_panes+move+k        $herdr_move_pane_up
+;; panes + move + j | panes + move + down
+herdr_action_panes+move+j        $herdr_move_pane_down
+
+;; == panes + resize ====================================================
+;; panes + resize + h | panes + resize + left
+;; == panes + resize =====================================================
+herdr_action_panes+resize+h        $herdr_resize_pane_left
+;; panes + resize + l | panes + resize + right
+herdr_action_panes+resize+l        $herdr_resize_pane_right
+;; panes + resize + k | panes + resize + up
+herdr_action_panes+resize+k        $herdr_resize_pane_up
+;; panes + resize + j | panes + resize + down
+herdr_action_panes+resize+j        $herdr_resize_pane_down
+
+;; == panes + swap ======================================================
+;; ___TO_SET___ herdr_action_panes+swap+h           
+;; ___TO_SET___ herdr_action_panes+swap+l           
+;; ___TO_SET___ herdr_action_panes+swap+k           
+;; ___TO_SET___ herdr_action_panes+swap+j           
+
+;; == panes go by number ============================================
+;; ___TO_SET___ herdr_action_panes+1                
+;; ___TO_SET___ herdr_action_panes+2                
+;; ___TO_SET___ herdr_action_panes+3                
+;; ___TO_SET___ herdr_action_panes+4                
+;; ___TO_SET___ herdr_action_panes+5                
+;; ___TO_SET___ herdr_action_panes+6                
+;; ___TO_SET___ herdr_action_panes+7                
+;; ___TO_SET___ herdr_action_panes+8                
+;; ___TO_SET___ herdr_action_panes+9                
+
+;; == Misc panes  ====================================================
+;; ___TO_SET___ herdr_action_panes+q                
+;; ___TO_SET___ herdr_action_panes+e                
+;; ___TO_SET___ herdr_action_panes+lsft+e           
+;; ___TO_SET___ herdr_action_panes+r                
+;; ___TO_SET___ herdr_action_panes+t                
+;; ___TO_SET___ herdr_action_panes+u                
+;; ___TO_SET___ herdr_action_panes+y                
+;; ___TO_SET___ herdr_action_panes+i                
+;; ___TO_SET___ herdr_action_panes+o                
+;; ___TO_SET___ herdr_action_panes+lsft+o           
+;; ___TO_SET___ herdr_action_panes+p                
+;; ___TO_SET___ herdr_action_panes+lsft+p           
+;; ___TO_SET___ herdr_action_panes+[                
+;; ___TO_SET___ herdr_action_panes+]                
+;; ___TO_SET___ herdr_action_panes+lsft+.           
+
+;; ___TO_SET___ herdr_action_panes+a                
+;; ___TO_SET___ herdr_action_panes+s                
+;; ___TO_SET___ herdr_action_panes+lsft+s           
+;; ___TO_SET___ herdr_action_panes+d                
+;; ___TO_SET___ herdr_action_panes+f                
+;; ___TO_SET___ herdr_action_panes+g                
+;; ___TO_SET___ herdr_action_panes+;                
+;; ___TO_SET___ herdr_action_panes+'                
+
+;; ___TO_SET___ herdr_action_panes+z                
+;; ___TO_SET___ herdr_action_panes+x                
+;; ___TO_SET___ herdr_action_panes+c                
+;; ___TO_SET___ herdr_action_panes+lsft+c           
+;; ___TO_SET___ herdr_action_panes+!day             
+;; ___TO_SET___ herdr_action_panes+v                
+;; ___TO_SET___ herdr_action_panes+b                
+;; ___TO_SET___ herdr_action_panes+n                
+;; ___TO_SET___ herdr_action_panes+m                
+;; ___TO_SET___ herdr_action_panes+,                
+;; ___TO_SET___ herdr_action_panes+.                
+;; ___TO_SET___ herdr_action_panes+/                
+)

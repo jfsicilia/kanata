@@ -157,9 +157,9 @@
 
 ;; History
 (deflayermap (domains+y_layer)
-  y $action_domains+y+y
+  y          $action_domains+y+y
 
-  $mod;      $action_domains+y+;
+  ;          $action_domains+y+;
   $search    $action_domains+y+search
   _ XX
 )
@@ -185,6 +185,7 @@
 ;; Settings
 (deflayermap (domains+,_layer)
   , $action_domains+,+,
+  r $action_domains+,+r
   _ XX
 )
 

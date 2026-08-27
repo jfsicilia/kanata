@@ -23,6 +23,7 @@
   apps_terminal        (t! unmod_all (push-msg "APP:terminal"))
   apps_nvim            (t! unmod_all (push-msg "APP:nvim"))
   apps_zapzap          (t! unmod_all (push-msg "APP:zapzap"))
+  apps_herdr           (t! unmod_all (push-msg "APP:herdr"))
   apps_tmux            (t! unmod_all (push-msg "APP:tmux"))
   apps_firefox_misc    (t! unmod_all (push-msg "APP:firefoxMisc"))
   apps_firefox_mgmt    (t! unmod_all (push-msg "APP:firefoxMgmt"))
@@ -61,7 +62,7 @@
   action_apps+e            $apps_fileexplorer
   action_apps+f            $apps_firefox
   action_apps+g            $apps_not_bound
-  action_apps+h            $apps_not_bound
+  action_apps+h            $apps_herdr
   action_apps+i            $apps_not_bound
   action_apps+j            $apps_not_bound
   action_apps+k            $apps_keepassxc

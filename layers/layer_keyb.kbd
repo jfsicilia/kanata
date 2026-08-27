@@ -1,16 +1,14 @@
 ;; "" LANG_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (keyb_layer)
-  a  (t! tilde a)
-  e  (t! tilde e)
-  i  (t! tilde i)
-  o  (t! tilde o)
-  u  (t! tilde u)
-  n  (t! birgulilla n)
-  h  left
-  j  down
-  k  up
-  l  right
+  a  $action_keyb+a
+  e  $action_keyb+e
+  i  $action_keyb+i
+  o  $action_keyb+o
+  u  $action_keyb+u
+  n  $action_keyb+n
+
+  k  $action_keyb+k 
+  l  $action_keyb+l 
 
   spc $action_keyb+spc
 )
-

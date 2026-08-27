@@ -10,8 +10,25 @@
                              ((input virtual vk_numpad)) (multi (push-msg "NOTIFY:Normal keyboard") (push-msg "SET:keyboard=STD"))    break
                              ()                          (multi (push-msg "NOTIFY:Numpad keyboard") (push-msg "SET:keyboard=NUM")) break
                            ))
+
+  write_tilde_a (t! tilde a)
+  write_tilde_e (t! tilde e)
+  write_tilde_i (t! tilde i)
+  write_tilde_o (t! tilde o)
+  write_tilde_u (t! tilde u)
+  write_tilde_n (t! birgulilla n)
 )
 
 (defvar
+  action_keyb+a  $write_tilde_a 
+  action_keyb+e  $write_tilde_e 
+  action_keyb+i  $write_tilde_i 
+  action_keyb+o  $write_tilde_o 
+  action_keyb+u  $write_tilde_u 
+  action_keyb+n  $write_tilde_n 
+
+  action_keyb+k  $toggle_alt_keyboard     
+  action_keyb+l  $toggle_alt_chars 
+
   action_keyb+spc  $show_emojis
 )

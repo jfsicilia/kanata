@@ -1,6 +1,5 @@
 (defvar
 
-;; domains+a + a
 ;; ___TO_SET___ dolphin_action_domains+a+a            
 
 ;; ___TO_SET___ dolphin_action_domains+b+b            
@@ -97,6 +96,7 @@ dolphin_action_domains+t+t                    $dolphin_terminal
 
 ;; domains+, + ,
 dolphin_action_domains+,+,                    $dolphin_settings 
+;; ___TO_SET___ dolphin_action_domains+,+r            
 
 ;; domains+. + .
 dolphin_action_domains+.+.                    $dolphin_tags

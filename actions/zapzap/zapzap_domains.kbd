@@ -1,6 +1,5 @@
 (defvar
 
-;; domains+a + a
 ;; ___TO_SET___ zapzap_action_domains+a+a            
 
 ;; ___TO_SET___ zapzap_action_domains+b+b            
@@ -93,6 +92,7 @@
 
 ;; domains+, + ,
 zapzap_action_domains+,+,                   $zapzap_settings
+;; ___TO_SET___ zapzap_action_domains+,+r            
 
 ;; ___TO_SET___ zapzap_action_domains+.+.            
 

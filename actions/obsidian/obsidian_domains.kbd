@@ -1,6 +1,5 @@
 (defvar
 
-;; domains+a + a
 ;; ___TO_SET___ obsidian_action_domains+a+a            
 
 ;; domains+b + b
@@ -110,6 +109,7 @@ obsidian_action_domains+;+;             $obsidian_commands
 
 ;; domains+, + ,
 obsidian_action_domains+,+,             $obsidian_settings
+;; ___TO_SET___ obsidian_action_domains+,+r            
 
 ;; ___TO_SET___ obsidian_action_domains+.+.            
 

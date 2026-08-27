@@ -140,6 +140,7 @@ nvim_action_domains+'+'              $nvim_registers
 ;; domains+, + ,
 ;;
 nvim_action_domains+,+,              $nvim_settings
+;; ___TO_SET___ nvim_action_domains+,+r            
 
 ;; domains+. + .
 ;;

@@ -3,6 +3,10 @@
 tmux_prefix                  A-b
 
 tmux_commands                (macro $tmux_prefix S-;)
+tmux_keybindings             (macro $tmux_prefix S-/)
+tmux_reload_config           (macro $tmux_prefix S-; s o u r c e - f i l e spc S-` / . c o n f i g / t m u x / t m u x . c o n f ent) 
+tmux_file_picker             (macro $tmux_prefix S-; d i s p l a y - p o p u p spc - S-e spc t m u x - f i l e - p i c k e r ent)
+tmux_folder_picker           (macro $tmux_prefix S-; d i s p l a y - p o p u p spc - S-e spc t m u x - f i l e - p i c k e r spc - d ent)
 
 ;; omni
 tmux_pgup                    (macro $tmux_prefix pgup)

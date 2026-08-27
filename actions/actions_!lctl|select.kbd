@@ -1,7 +1,7 @@
 (defvar
   ;; == !LCTL|SELECT actions ==========================================================
-  (t! 8app_action action_!lctl|select+spc XX whatsapp chrome zapzap obsidian dolphin firefox foot nvim)
-  (t! 6app_action action_!lctl|select+lsft+spc XX chrome obsidian dolphin firefox foot nvim)
+  (t! 9app_action action_!lctl|select+spc XX whatsapp chrome zapzap obsidian dolphin firefox foot nvim tmux)
+  (t! 7app_action action_!lctl|select+lsft+spc XX chrome obsidian dolphin firefox foot nvim tmux)
   (t! 2app_action action_!lctl|select+rsft+spc XX dolphin foot)
 
   (t! 2app_action action_!lctl|select+a C-a obsidian nvim)

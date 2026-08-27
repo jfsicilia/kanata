@@ -1,0 +1,64 @@
+(defvar
+
+herdr_prefix                  A-b
+
+herdr_commands                (macro $herdr_prefix S-;)
+
+;; omni
+herdr_pgup                    (macro $herdr_prefix pgup)
+herdr_copy                    (macro $herdr_prefix [)
+herdr_pgdn                    C-f
+herdr_new_window              (macro $herdr_prefix c)
+herdr_rename                  (macro $herdr_prefix ,)
+herdr_paste                   (macro $herdr_prefix ])
+herdr_change_layout           (macro $herdr_prefix spc)
+herdr_session_save            (macro $herdr_prefix A-s)
+
+;; panes
+herdr_pane_maximize           (macro $herdr_prefix z)
+herdr_pane_left               (macro $herdr_prefix left)
+herdr_pane_right              (macro $herdr_prefix right)
+herdr_pane_above              (macro $herdr_prefix up)
+herdr_pane_below              (macro $herdr_prefix down)
+herdr_pane_h_split            (macro $herdr_prefix S-')
+herdr_pane_v_split            (macro $herdr_prefix S-5)
+herdr_pane_close              (macro $herdr_prefix x)
+herdr_pane_toggle             (macro $herdr_prefix ;)
+herdr_move_pane_right         (macro $herdr_prefix S-]) 
+herdr_move_pane_left          (macro $herdr_prefix S-[) 
+herdr_move_pane_up            (macro $herdr_prefix S-; s e l e c t - p a n e spc - S-u spc ; spc s w a p - p a n e spc - S-u ent) 
+herdr_move_pane_down          (macro $herdr_prefix S-; s e l e c t - p a n e spc - S-d spc ; spc s w a p - p a n e spc - S-d ent)
+herdr_resize_pane_right       (macro $herdr_prefix C-right) 
+herdr_resize_pane_left        (macro $herdr_prefix C-left) 
+herdr_resize_pane_up          (macro $herdr_prefix C-up)
+herdr_resize_pane_down        (macro $herdr_prefix C-down)
+
+;; tabs
+herdr_rename_tab              (macro $herdr_prefix ,)
+herdr_select_tab              (macro $herdr_prefix w) ;; prefix + w (choose window) 
+herdr_right_tab               (macro $herdr_prefix n) 
+herdr_left_tab                (macro $herdr_prefix p) 
+herdr_new_tab                 (macro $herdr_prefix c) 
+herdr_close_tab               (macro $herdr_prefix S-7) ;; prefix + & (kill window) 
+herdr_go_tab_1                (macro $herdr_prefix Digit1) 
+herdr_go_tab_2                (macro $herdr_prefix Digit2)  
+herdr_go_tab_3                (macro $herdr_prefix Digit3)  
+herdr_go_tab_4                (macro $herdr_prefix Digit4)  
+herdr_go_tab_5                (macro $herdr_prefix Digit5)  
+herdr_go_tab_6                (macro $herdr_prefix Digit6)  
+herdr_go_tab_7                (macro $herdr_prefix Digit7)  
+herdr_go_tab_8                (macro $herdr_prefix Digit8)  
+herdr_go_tab_9                (macro $herdr_prefix Digit9)  
+herdr_toggle_tab              (macro $herdr_prefix l)        
+herdr_move_tab_right          (macro $herdr_prefix S-; s w a p - w i n d o w spc - t spc - Digit1 ; s e l e c t - w i n d o w spc - t spc - Digit1 ent) 
+herdr_move_tab_left           (macro $herdr_prefix S-; s w a p - w i n d o w spc - t spc S-= Digit1 ; s e l e c t - w i n d o w spc - t spc S-= Digit1 ent) 
+
+;; sessions
+herdr_session_select          (macro $herdr_prefix s)
+herdr_session_rename          (macro $herdr_prefix S-4)
+herdr_session_detach          (macro $herdr_prefix d)
+herdr_session_save_and_detach (macro $herdr_prefix A-s $herdr_prefix d)
+herdr_session_kill            (macro $herdr_prefix S-; c o n f i r m - b e f o r e spc - p S-' S-k i l l spc s e s s i o n spc S-3 S-s S-/ spc S-9 y / n S-0 S-' spc k i l l - s e s s i o n ent) 
+herdr_session_next            (macro $herdr_prefix S-9)
+herdr_session_prev            (macro $herdr_prefix S-0)
+)

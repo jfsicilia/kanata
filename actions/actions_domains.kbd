@@ -103,7 +103,6 @@
   action_domains+9    $activate_domain_9
   action_domains+omni $activate_domain_AI
 
-  ;; domains+a + a
   (t! 1app_action action_domains+a+a (push-msg "NOTIFY: Actions not implemented") nvim)
 
   (t! 2app_action action_domains+b+b (push-msg "NOTIFY: Bookmarks not implemented") obsidian nvim)
@@ -131,7 +130,7 @@
 
   (t! 1app_action action_domains+j+j (push-msg "NOTIFY: Jumps not implemented") nvim)
 
-  (t! 4app_action action_domains+k+k (push-msg "NOTIFY: Keymaps not implemented") chrome dolphin firefox nvim)
+  (t! 5app_action action_domains+k+k (push-msg "NOTIFY: Keymaps not implemented") chrome dolphin firefox nvim tmux)
 
   (t! 1app_action action_domains+l+l (push-msg "NOTIFY: Locations not implemented") nvim)
 
@@ -195,6 +194,7 @@
   (t! 1app_action action_domains+'+' (push-msg "NOTIFY: Registries not implemented") nvim)
 
   (t! 7app_action action_domains+,+, (push-msg "NOTIFY: Settings not implemented") whatsapp chrome zapzap obsidian dolphin firefox nvim)
+  (t! 1app_action action_domains+,+r (push-msg "NOTIFY: Reload Settings not implemented") tmux)
 
   (t! 2app_action action_domains+.+. (push-msg "NOTIFY: Tags not implemented") dolphin nvim)
 
