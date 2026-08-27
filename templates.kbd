@@ -23,27 +23,10 @@
 
 ;; == Tap and hold ============================================
 
-;; Tap-hold with default global timings. 
-;; Shorthand for tap-hold-press-timeout using $RETAP_TIME and $HOLD_TIME.
-;; Uses press behavior (hold triggers as soon as another key is pressed,
-;; rather than waiting for release). If instead the key is simply held past
-;; $HOLD_TIME with no other key pressed, the timeout action fires: it runs
-;; $hold. 
-;; SIDE EFFECTS: When hold, activates popup help and restores apps sort as
-;; ascending (if not sort inversions was launch it does nothing). 
-;;
-;; Parameters:
-;;   tap  - Action to perform on tap (e.g., a key or macro)
-;;   hold - Action to perform on hold (e.g., layer toggle or modifier)
-(deftemplate th (tap hold)
-    (tap-hold $RETAP_TIME $HOLD_TIME $tap (multi $hold $POPUP_HELP))
-)
-
 ;; Fast-typing aware tap-hold with default timings.
 ;; Prefers tap action during fast typing sequences. 
 ;; SEE: th template.
-;; SIDE EFFECTS: When hold, activates popup help and restores apps sort as
-;; ascending (if not sort inversions was launch it does nothing). 
+;; SIDE EFFECTS: When hold, activates popup help.
 ;;
 ;; Parameters:
 ;;   tap  - Action to perform on tap (e.g., a letter key)
@@ -51,10 +34,27 @@
 (deftemplate fast_th (tap hold)
   (switch
     ((input virtual vk_fast_typing)) (t! type $tap) break
-    () (t! th $tap $hold) break
+    () (tap-hold $RETAP_TIME $HOLD_TIME (t! type $tap) 
+         (multi $hold $POPUP_HELP)) break
   )
 )
 
+
+;; Tap-hold with default global timings. 
+;; Shorthand for tap-hold-press-timeout using $RETAP_TIME and $HOLD_TIME.
+;; Uses press behavior (hold triggers as soon as another key is pressed,
+;; rather than waiting for release). If instead the key is simply held past
+;; $HOLD_TIME with no other key pressed, the timeout action fires: it runs
+;; $hold. 
+;; SIDE EFFECTS: When hold, activates popup help.
+;;
+;; Parameters:
+;;   tap  - Action to perform on tap (e.g., a key or macro)
+;;   hold - Action to perform on hold (e.g., layer toggle or modifier)
+(deftemplate th (tap hold)
+  (tap-hold-press-timeout $RETAP_TIME $HOLD_TIME $tap $hold 
+    (multi $POPUP_HELP $hold))
+)
 
 ;; Temporarily invert app-priority order while held.
 ;; Tap toggles vk_apps_sort_desc persistently (stays inverted until toggled
