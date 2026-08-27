@@ -1,6 +1,6 @@
 ;; "" SESSION_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (sessions_layer)
-
+  $invert|keyb (t! invert_apps_sort $toggle_sessions_layer)
   spc             $action_sessions+spc
   w               $action_sessions+w
   r               $action_sessions+r 
@@ -15,6 +15,8 @@
   rsft            (t! th _                    $toggle_sessions+rsft_layer)
 )
 (deflayermap (sessions+lsft_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_sessions+lsft_layer)
 )
 (deflayermap (sessions+rsft_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_sessions+rsft_layer)
 )

@@ -2,6 +2,7 @@
 (deflayermap (open_layer)
   (t! map_layers _ "opts" (lsft rsft))
 
+  $invert|keyb (t! invert_apps_sort $toggle_open_layer)
   spc $action_open+spc
 
   m $action_open+m
@@ -10,7 +11,9 @@
 )
 
 (deflayermap (open+lsft_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_open+lsft_layer)
 )
 
 (deflayermap (open+rsft_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_open+rsft_layer)
 )

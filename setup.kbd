@@ -147,7 +147,9 @@
                        ;; languages.
   vk_numpad         XX ;; Used to toggle alternative keyboard: normal vs numpad.
 
-  vk_apps_sort_desc  XX ;; Used to invert apps order when true in actions.
+  vk_apps_sort_desc  XX  ;; Used to toggle apps sort order (asc/desc) in the apps layer.
+  vk_apps_show_sort $APPS_SHOW_SORT      ;; Triggers trayicon update to show current sort order (asc/desc).
+  vk_apps_sort_toggle $APPS_SORT_TOGGLE  ;; Toggles apps sort order (asc/desc) and triggers trayicon update to show current sort order (asc/desc).
 
   vk_fast_typing    XX ;; Used to allow fast typing without triggering modifier
                        ;; combos with homerowmod.
@@ -265,84 +267,93 @@
 
   POPUP_HELP  (push-msg "POPUP_HELP")  ;; Send message to open help.
 
+  ;; Show current apps sort order in trayicon (asc/desc)
+  APPS_SHOW_SORT 
+    (switch 
+      ((input virtual vk_apps_sort_desc)) (push-msg "SET:invert")   break 
+      ()                                  (push-msg "UNSET:invert") break 
+    )
+  ;; Toggle apps sort order (asc/desc) and show current sort order in trayicon.
+  APPS_SORT_TOGGLE (macro (on-press toggle-vkey vk_apps_sort_desc) 100 (on-press tap-vkey vk_apps_show_sort))
+  ;; Set apps sort order to ascending and show current sort order in trayicon.
+  APPS_SORT_ASC (macro (on-release release-vkey vk_apps_sort_desc) 100 (on-release tap-vkey vk_apps_show_sort))  
+
   ;; Number row keys.
-      `|mod`                `           ;; Tap: `,   
-      1|mod1                1           ;; Tap: 1,   
-      2|mod2                2           ;; Tap: 2,   
-      3|mod3                3           ;; Tap: 3,   
-      4|mod4                4           ;; Tap: 4,   
-      5|mod5                5           ;; Tap: 5,   
-      6|mod6                6           ;; Tap: 6,   
-      7|mod7                7           ;; Tap: 7,   
-      8|mod8                8           ;; Tap: 8,   
-      9|mod9                9           ;; Tap: 9,   
-      0|mod0                0           ;; Tap: 0,   
-      -|mod-                -           ;; Tap: -,   
-      =|mod=                =           ;; Tap: =,   
+      `|mod`                `          ;; Tap: `,                Hold:
+      1|mod1                1          ;; Tap: 1,                Hold:
+      2|mod2                2          ;; Tap: 2,                Hold:
+      3|mod3                3          ;; Tap: 3,                Hold:
+      4|mod4                4          ;; Tap: 4,                Hold:
+      5|mod5                5          ;; Tap: 5,                Hold:
+      6|mod6                6          ;; Tap: 6,                Hold:
+      7|mod7                7          ;; Tap: 7,                Hold:
+      8|mod8                8          ;; Tap: 8,                Hold:
+      9|mod9                9          ;; Tap: 9,                Hold:
+      0|mod0                0          ;; Tap: 0,                Hold:
+      -|mod-                -          ;; Tap: -,                Hold:
+      =|mod=                =          ;; Tap: =,                Hold:
 
   ;; Upper row keys.
-    tab|open                tab         ;; Tap: Tab, Hold: open_with_layer
-      q|system              q           ;; Tap: q,   Hold: system_layer
-      w|workflow            w           ;; Tap: w,   Hold: workflow_layer 
-      e|refactor            e           ;; Tap: e,   Hold: refactor_layer 
-      r|run                 r           ;; Tap: r,   Hold: run_layer 
-      t|layouts             t           ;; Tap: t,   Hold: layouts_layer 
-      y|layouts             y           ;; Tap: y,   Hold: layouts_layer
-      u|run                 u           ;; Tap: u,   Hold: run_layer 
-      i|refactor            i           ;; Tap: i,   Hold: refactor_layer 
-      o|workflow            o           ;; Tap: o,   Hold: workflow_layer 
-      p|system              p           ;; Tap: p,   Hold: system_layer 
-      [|mod[                [           ;; Tap: [,   Hold: 
-      ]|mod]                ]           ;; Tap: ],   Hold:
-      \|mod\                \           ;; Tap: \,   Hold: ""
+    tab|open                tab        ;; Tap: Tab,              Hold: open_with_layer
+      q|system              q          ;; Tap: q,                Hold: system_layer
+      w|workflow            w          ;; Tap: w,                Hold: workflow_layer 
+      e|refactor            e          ;; Tap: e,                Hold: refactor_layer 
+      r|run                 r          ;; Tap: r,                Hold: run_layer 
+      t|layouts             t          ;; Tap: t,                Hold: layouts_layer 
+      y|layouts             y          ;; Tap: y,                Hold: layouts_layer
+      u|run                 u          ;; Tap: u,                Hold: run_layer 
+      i|refactor            i          ;; Tap: i,                Hold: refactor_layer 
+      o|workflow            o          ;; Tap: o,                Hold: workflow_layer 
+      p|system              p          ;; Tap: p,                Hold: system_layer 
+      [|mod[                [          ;; Tap: [,                Hold: 
+      ]|mod]                ]          ;; Tap: ],                Hold:
+      \|mod\                \          ;; Tap: \,                Hold: ""
   
                                  
   ;; Medium row keys.
-    esc|omni                caps       ;; Tap:=esc,  Hold: omni_layer
-      a|lmet                a          ;; Tap: a,    Hold: lmet_layer 
-      s|lalt                s          ;; Tap: s,    Hold: lalt_layer 
-      d|lsft                d          ;; Tap: d,    Hold: lsft_layer 
-      f|lctl                f          ;; Tap: f,    Hold: lctl_layer 
-      g|windows             g          ;; Tap: g,    Hold: windows_layer
-      h|windows             h          ;; Tap: h,    Hold: windows_layer
-      j|lctl                j          ;; Tap: j,    Hold: lctl_layer 
-      k|rsft                k          ;; Tap: k,    Hold: rsft_layer 
-      l|lalt                l          ;; Tap: l,    Hold: lalt_layer 
-      ;|lmet                ;          ;; Tap: ;,    Hold: lmet_layer 
-      '|mod'                '          ;; Tap: ',    spc+: spc+mod'_layer  |
+    esc|omni                caps       ;; Tap: esc,              Hold: omni_layer
+      a|lmet                a          ;; Tap: a,                Hold: lmet_layer 
+      s|lalt                s          ;; Tap: s,                Hold: lalt_layer 
+      d|lsft                d          ;; Tap: d,                Hold: lsft_layer 
+      f|lctl                f          ;; Tap: f,                Hold: lctl_layer 
+      g|windows             g          ;; Tap: g,                Hold: windows_layer
+      h|windows             h          ;; Tap: h,                Hold: windows_layer
+      j|lctl                j          ;; Tap: j,                Hold: lctl_layer 
+      k|rsft                k          ;; Tap: k,                Hold: rsft_layer 
+      l|lalt                l          ;; Tap: l,                Hold: lalt_layer 
+      ;|lmet                ;          ;; Tap: ;,                Hold: lmet_layer 
+      '|mod'                '          ;; Tap: ',                Hold:
 
   ;; Low row keys. 
-                         ;; <> Key (Spanish keyboard) - 
-  keyb                      lsgt       ;; Tap: ES/US Hold: alt_chars_layer
-      z|workspaces          z          ;; Tap: z,    Hold: workspaces_layer
-      x|groups              x          ;; Tap: x,    Hold: groups_layer 
-      c|panes               c          ;; Tap: c,    Hold: panes_layer 
-      v|tabs                v          ;; Tap: v,    Hold: tabs_layer 
-      b|sessions            b          ;; Tap: b,    Hold: sessions_layer 
-      n|sessions            n          ;; Tap: n,    Hold: sessions_layer 
-      m|tabs                m          ;; Tap: m,    Hold: tabs_layer 
-      ,|panes               ,          ;; Tap: ,,    Hold: panes_layer 
-      .|groups              .          ;; Tap: .,    Hold: groups_layer
-      /|workspaces          /          ;; Tap: /,    Hold: workspaces_layer
+ invert|keyb                lsgt       ;; Tap: Invert apps sort, Hold: keyb_layer
+      z|workspaces          z          ;; Tap: z,                Hold: workspaces_layer
+      x|groups              x          ;; Tap: x,                Hold: groups_layer 
+      c|panes               c          ;; Tap: c,                Hold: panes_layer 
+      v|tabs                v          ;; Tap: v,                Hold: tabs_layer 
+      b|sessions            b          ;; Tap: b,                Hold: sessions_layer 
+      n|sessions            n          ;; Tap: n,                Hold: sessions_layer 
+      m|tabs                m          ;; Tap: m,                Hold: tabs_layer 
+      ,|panes               ,          ;; Tap: ,,                Hold: panes_layer 
+      .|groups              .          ;; Tap: .,                Hold: groups_layer
+      /|workspaces          /          ;; Tap: /,                Hold: workspaces_layer
   
   ;; Modifiers row
-  !lmet|replace             $!lmet     ;; Physical lctl is used as lmet, in combo with space works as replace mod. 
-  !lalt|search              $!lalt     ;; Physical lmet is used as lalt, in combo with space works as search mod.
-  !lctl|select              $!lctl     ;; Physical lalt is used as lctl, in combo with space works as select mod.
-    spc|domains             spc        ;; Spacebar is used as space and as domains layer when hold.
-   ralt|apps                ralt       ;; Physical ralt key will be used for app launching/focusing.
-   prnt|bookm               prnt       ;; Physical prnt key will be used for bookmark layer when hold.
-copilot|bookm               $copilot   ;; Physical copilot key will be used for bookmark layer when hold.
-   rctl|opts                rctl       ;; Physical rctl key will be used for option layer when hold.    
-    esc|opts                esc        ;; Physical esc key will be used for option layer when hold.    
+  !lmet|replace             $!lmet     ;; 2xTap: Last desktop,   Hold: !lmet_layer     Hold+spc: replace_layer 
+  !lalt|search              $!lalt     ;; 2xTap: Last pane,      Hold: !lalt_layer     Hold+spc: search_layer
+  !lctl|select              $!lctl     ;; 2xTap: Last tab,       Hold: !lclt_layer     Hold+spc: select_layer  
+    spc|domains             spc        ;; Tap: spacebar,         Hold: domains_layer 
+   ralt|apps                ralt       ;; 2xTap: Last app,       Hold: apps_layer
+   prnt|bookm               prnt       ;; 2xTab: Last session,   Hold: bookmarks_layer
+copilot|bookm               $copilot   ;; 2xTab: Last session,   Hold: bookmarks_layer
+   rctl|opts                rctl       ;; 2xTab: Last group,     Hold: opts_layer
+    esc|opts                esc        ;; Tap: esc,              Hold: opts_layer
 
   ;; Omni + modifiers row
-  !lmet|desktops     $!lmet
-  !lalt|panes        $!lalt
-  !lctl|tabs         $!lctl
- ;;ralt|apps         ralt
-   prnt|groups       prnt
-   rctl|sessions     rctl
+  !lmet|desktops     $!lmet            ;; Omni+: Last desktop
+  !lalt|panes        $!lalt            ;; Omni+: Last pane
+  !lctl|tabs         $!lctl            ;; Omni+: Last tab
+   prnt|groups       prnt              ;; Omni+: Last group
+   rctl|sessions     rctl              ;; Omni+: Last session
 
   ;; Standard modifiers
   <lctl              f          
@@ -356,32 +367,6 @@ copilot|bookm               $copilot   ;; Physical copilot key will be used for 
   !lmet              lctl       ;; Physical lctl is used as lmet
   !lalt              lmet       ;; Physical lmet is used as lalt
   !lctl              lalt       ;; Physical lalt is used as lctl
-
-  ;; Key custom modifiers
-  modQ               q
-  modW               w
-  modE               e
-  modR               r
-  modT               t
-  modY               y
-  modU               u
-  modI               i
-  modO               o
-  modP               p
-  modA               a
-  modS               s
-  modD               d
-  modF               f
-  modG               g
-  modH               h
-  modJ               j
-  modK               k
-  modL               l
-  mod;               ;
-  mod'               ' 
-  modM               m
-  mod,               ,
-  mod.               . 
 
   ;; Fixed modifiers.
   omni               caps       ;; Physical caps key will be used for omni layer when hold.
@@ -398,24 +383,16 @@ copilot|bookm               $copilot   ;; Physical copilot key will be used for 
   search             $!lalt     ;; Physical lwin key will be used for search layer when hold.
   select             $!lctl     ;; Physical lalt key will be used for select layer when hold.
 
-  ;; GUI objects
-  window             z          ;; Also /
-  workspace          x          ;; Also ;
-  pane               c          ;; Also ,
-  tabs               v          ;; Also m
-  !tabs              b
-  groups             b
-  session            n
-
 
   ;; GUI objects modifiers (used for move/resize/snap/swap sublayers).
-  move              $!lctl
+  swap              $!lmet
   resize            $!lalt
+  move              $!lctl
   toggle            ralt       
-  float_&_snap      prnt      
-  !float_&_snap     $copilot
-  swap              rctl        
-  !swap             $!lmet
+  float_&_snap      $copilot
+  ;; Depending on the physical keyboard, the following keys can be used to trigger GUI object layers:
+  ;; float_&_snap    prnt      
+  ;; swap            rctl        
 )
 
 (defsrc
@@ -477,7 +454,7 @@ copilot|bookm               $copilot   ;; Physical copilot key will be used for 
                      
   ;; Lower row keys (z, x, c, v, b, n, m, work as window, workspace, pane, tab, groups and session.
   lsft                     (t!      th (t! 2x $action_tabs+h)                 $toggle_lsft_layer)
-  $keyb                    (t!      th $toggle_alt_chars                      $toggle_keyb_layer)
+ $invert|keyb              (t!      th $APPS_SORT_TOGGLE                      $toggle_keyb_layer)
       $z|workspaces        (t! fast_th (t! char z)                            $toggle_workspaces_layer)
       $x|groups            (t! fast_th (t! char x)                            $toggle_groups_layer)
       $c|panes             (t! fast_th (t! char c)                            $toggle_panes_layer)

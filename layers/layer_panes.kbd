@@ -1,4 +1,5 @@
 (deflayermap (panes_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_panes_layer)
   spc   $action_panes+spc
   ent   $action_panes+ent
 
@@ -62,11 +63,11 @@
   $toggle        $action_panes+toggle
   $move          (t! th _                        $toggle_panes+move_layer)
   $resize        (t! th _                        $toggle_panes+resize_layer)
-  $!float_&_snap (t! th $action_panes+float      $toggle_panes+snap_layer)
   $float_&_snap  (t! th $action_panes+float      $toggle_panes+snap_layer)
   $swap          (t! th _                        $toggle_panes+swap_layer)
 )
 (deflayermap (panes+lsft_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_panes+lsft_layer)
   c $action_panes+lsft+c
   e $action_panes+lsft+e
   p $action_panes+lsft+p
@@ -74,6 +75,7 @@
   . $action_panes+lsft+.
 )
 (deflayermap (panes+rsft_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_panes+rsft_layer)
   c $action_panes+lsft+c
   e $action_panes+lsft+e
   p $action_panes+lsft+p
@@ -81,6 +83,7 @@
   . $action_panes+lsft+.
 )
 (deflayermap (panes+move_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_panes+move_layer)
   h     $action_panes+move+h
   left  $action_panes+move+h
   j     $action_panes+move+j
@@ -91,6 +94,7 @@
   right $action_panes+move+l
 )
 (deflayermap (panes+snap_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_panes+snap_layer)
 ;;  h     $action_panes+snap+h
 ;;  left  $action_panes+snap+h
 ;;  j     $action_panes+snap+j
@@ -101,6 +105,7 @@
 ;;  right $action_panes+snap+l
 )
 (deflayermap (panes+resize_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_panes+resize_layer)
   h     $action_panes+resize+h
   l     $action_panes+resize+l
   k     $action_panes+resize+k
@@ -111,6 +116,7 @@
   down  $action_panes+resize+j
 )
 (deflayermap (panes+swap_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_panes+swap_layer)
   h     $action_panes+swap+h
   l     $action_panes+swap+l
   k     $action_panes+swap+k

@@ -3,6 +3,7 @@
   (t! map_layers "$action_lmet" "lmet" ($<lctl $>lctl $<lalt $>lalt $lsft $rsft $!lctl $!lalt lsft rsft))
   (t! map_keys   "$action_lmet"        ($<lctl $>lctl $<lalt $>lalt $lsft $rsft tab))
 
+  $invert|keyb (t! invert_apps_sort $toggle_lmet_layer)
   ;; lmet+tab mimics original lctl+tab functionality (typically next tab in 
   ;; browsers and editors).
   tab $action_tabs+l
@@ -12,6 +13,7 @@
   (t! map_layers "$action_lmet+lsft" "lmet+lsft" ($<lctl $>lctl $<lalt $>lalt $!lctl $!lalt))
   (t! map_keys   "$action_lmet+lsft"             ($<lctl $>lctl $<lalt $>lalt tab))
 
+  $invert|keyb (t! invert_apps_sort $toggle_lmet+lsft_layer)
   tab $action_tabs+h
 )
 
@@ -19,5 +21,6 @@
   (t! map_layers "$action_lmet+rsft" "lmet+rsft" ($<lctl $>lctl $<lalt $>lalt $!lctl $!lalt))
   (t! map_keys   "$action_lmet+rsft"             ($<lctl $>lctl $<lalt $>lalt tab))
 
+  $invert|keyb (t! invert_apps_sort $toggle_lmet+rsft_layer)
   tab $action_tabs+h
 )

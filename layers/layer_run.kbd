@@ -1,4 +1,5 @@
 ;; "" RUN_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (run_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_run_layer)
   _ XX
 )

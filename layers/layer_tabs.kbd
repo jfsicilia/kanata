@@ -1,5 +1,6 @@
 ;; "" TAB LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (tabs_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_tabs_layer)
   spc   $action_tabs+spc
 
   h     $action_tabs+h
@@ -35,6 +36,7 @@
   $toggle $action_tabs+toggle
 )
 (deflayermap (tabs+move_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_tabs+move_layer)
   h     $action_tabs+move+h
   left  $action_tabs+move+h
   l     $action_tabs+move+l
@@ -45,8 +47,10 @@
   up    $action_tabs+move+k
 )
 (deflayermap (tabs+lsft_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_tabs+lsft_layer)
   t $action_tabs+lsft+t
 )
 (deflayermap (tabs+rsft_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_tabs+rsft_layer)
   t $action_tabs+lsft+t
 )

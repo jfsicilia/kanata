@@ -1,6 +1,7 @@
 ;; "" BOOKMARKS_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (bookmarks_layer)
   (t! map_layers _ "bookmarks" (lsft rsft))
+  $invert|keyb (t! invert_apps_sort $toggle_bookmarks_layer)
   spc $action_bookmarks+spc
 
   a $action_bookmarks+a
@@ -33,6 +34,7 @@
 )
 
 (deflayermap (bookmarks+lsft_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_bookmarks+lsft_layer)
   a $action_bookmarks+a+lsft
   b $action_bookmarks+b+lsft
   c $action_bookmarks+c+lsft
@@ -63,6 +65,7 @@
 )
 
 (deflayermap (bookmarks+rsft_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_bookmarks+rsft_layer)
   a $action_bookmarks+a+rsft
   b $action_bookmarks+b+rsft
   c $action_bookmarks+c+rsft

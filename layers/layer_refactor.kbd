@@ -1,4 +1,5 @@
 ;; "" REFACTOR_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (refactor_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_refactor_layer)
   _ XX
 )

@@ -23,9 +23,27 @@
 
 ;; == Tap and hold ============================================
 
+;; Tap-hold with default global timings. 
+;; Shorthand for tap-hold-press-timeout using $retap_time and $hold_time.
+;; Uses press behavior (hold triggers as soon as another key is pressed,
+;; rather than waiting for release). If instead the key is simply held past
+;; $hold_time with no other key pressed, the timeout action fires: it runs
+;; $hold. 
+;; SIDE EFFECTS: When hold, activates popup help and restores apps sort as
+;; ascending (if not sort inversions was launch it does nothing). 
+;;
+;; Parameters:
+;;   tap  - Action to perform on tap (e.g., a key or macro)
+;;   hold - Action to perform on hold (e.g., layer toggle or modifier)
+(deftemplate th (tap hold)
+    (tap-hold $retap_time $hold_time $tap (multi $hold $POPUP_HELP))
+)
+
 ;; Fast-typing aware tap-hold with default timings.
-;; Similar to homerowmod but uses global $retap_time and $hold_time variables.
 ;; Prefers tap action during fast typing sequences. 
+;; SEE: th template.
+;; SIDE EFFECTS: When hold, activates popup help and restores apps sort as
+;; ascending (if not sort inversions was launch it does nothing). 
 ;;
 ;; Parameters:
 ;;   tap  - Action to perform on tap (e.g., a letter key)
@@ -33,31 +51,30 @@
 (deftemplate fast_th (tap hold)
   (switch
     ((input virtual vk_fast_typing)) (t! type $tap) break
-    ;; NOTE: (on-press tap-vkey vk_help_open) was substited by $POPUP_HELP.
-    ;; Don't know the reason but now the keyboard is more usable. Must be 
-    ;; related with internal timings.
-    () (tap-hold $retap_time $hold_time (t! type $tap) 
-         (multi $hold $POPUP_HELP)) break
+    () (t! th $tap $hold) break
   )
 )
 
 
-;; Tap-hold with default global timings. 
-;; Shorthand for tap-hold-press-timeout using $retap_time and $hold_time.
-;; Uses press behavior (hold triggers as soon as another key is pressed,
-;; rather than waiting for release). If instead the key is simply held past
-;; $hold_time with no other key pressed, the timeout action fires: it runs
-;; $hold. 
+;; Temporarily invert app-priority order while held.
+;; Tap toggles vk_apps_sort_desc persistently (stays inverted until toggled
+;; again). Hold inverts it only for the duration of the hold, runs $action,
+;; then restores the previous order on release. $action is typically the
+;; current layer's own toggle (re-entered with this key held), so its
+;; Napp_action calls re-resolve using the flipped priority. Bound to
+;; $invert|keyb inside mod layers.
+;; SEE: Napp_action templates below for how the priority order is consumed.
 ;;
 ;; Parameters:
-;;   tap  - Action to perform on tap (e.g., a key or macro)
-;;   hold - Action to perform on hold (e.g., layer toggle or modifier)
-(deftemplate th (tap hold)
-  (tap-hold-press-timeout $retap_time $hold_time $tap $hold 
-    ;; NOTE: (on-press tap-vkey vk_help_open) was substited by $POPUP_HELP.
-    ;; Don't know the reason but now the keyboard is more usable. Must be 
-    ;; related with internal timings.
-    (multi $POPUP_HELP $hold))
+;;   action - Action to run while the priority order is inverted
+(deftemplate invert_apps_sort (action)
+  (t! th (on-press toggle-vkey vk_apps_sort_toggle)
+    (multi 
+      (on-press tap-vkey vk_apps_sort_toggle) 
+      (on-release tap-vkey vk_apps_sort_toggle)
+      $action
+    )
+  )
 )
 
 ;; == Spanish letters templates ============================================
@@ -232,6 +249,15 @@
 (deftemplate 2x (action)
   (tap-dance-eager 300 (XX $action))
 )
+;; Single/double-tap dispatcher.
+;; Distinguishes a single tap from a double tap within 300ms, running the
+;; matching action for either. Unlike 2x/3x (which use tap-dance-eager and a
+;; no-op for lower tap counts), this always waits out the full window before
+;; firing, since a single tap has its own real action here rather than XX.
+;;
+;; Parameters:
+;;   1x_action - Action to perform on a single tap
+;;   2x_action - Action to perform on a double tap
 (deftemplate 1x|2x (1x_action 2x_action)
   (tap-dance 300 ($1x_action $2x_action))
 )
@@ -705,6 +731,30 @@
   )
 )
 
+
+;; == App action dispatch ==================================================
+
+;; Napp_action family (0..16 apps): app-focus dispatcher for per-app actions.
+;; Implements the `(t! Napp_action name default app1 ... appN)` call
+;; documented in CLAUDE.md's "Interface / app dispatch system". Each
+;; invocation expands to `$name (t! unmod_all (switch ...))`
+;; that checks, in priority order, which of app1..appN currently has focus
+;; (via its `vk_<app>` virtual key) and dispatches to that app's own
+;; `$<app>_<name>` action, falling back to $default if none match.
+;;
+;; app1..appN are checked app1-first (highest priority) by default. When
+;; vk_apps_sort_desc is toggled on (see invert_apps_sort above), the check
+;; order flips to appN-first instead, with no change needed at the call
+;; site. unmod_all wraps the result so held modifiers don't leak into
+;; whichever action is dispatched.
+;;
+;; kanata_sync_apps.py keeps app1..appN, and which NNapp_action tier is
+;; used, in sync with which apps actually implement `<app>_action_<name>`.
+;;
+;; Parameters:
+;;   action     - The action's own variable name (e.g., "action_lctl+a")
+;;   default    - Fallback action when no listed app has focus
+;;   app1..appN - Apps that override default, in priority order
 (deftemplate 0app_action (action default)
   $action (t! unmod_all $default)
 )

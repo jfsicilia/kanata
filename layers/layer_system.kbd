@@ -1,5 +1,6 @@
 ;; "" SYSTEM_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ;; Quality of service / system-wide settings (QoS).
 (deflayermap (system_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_system_layer)
   _ XX
 )

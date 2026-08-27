@@ -1,4 +1,5 @@
 ;; "" WORKFLOW_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (workflow_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_workflow_layer)
   _ XX
 )

@@ -47,7 +47,7 @@
 
   ;; Lower row keys 
   lsft                (push-msg "OPEN_HELP:lsft")
-  $keyb               (push-msg "OPEN_HELP:keyb")
+  $invert|keyb        (push-msg "OPEN_HELP:keyb")
       $z|workspaces   (push-msg "OPEN_HELP:workspaces")   
       $x|groups       (push-msg "OPEN_HELP:groups")
       $c|panes        (push-msg "OPEN_HELP:panes")

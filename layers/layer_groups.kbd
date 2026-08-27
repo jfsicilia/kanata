@@ -1,5 +1,6 @@
 ;; "" GROUPS LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (groups_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_groups_layer)
   h     $action_groups+h
   left  $action_groups+h
   l     $action_groups+l
@@ -16,8 +17,12 @@
 )
 
 (deflayermap (groups+lsft_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_groups+lsft_layer)
+  _ XX
 )
 
 (deflayermap (groups+rsft_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_groups+rsft_layer)
+  _ XX
 )
 

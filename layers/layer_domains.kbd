@@ -320,6 +320,7 @@
 
 ;; Activates corresponding layer.
 (deflayermap (domains_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_domains_layer)
   a     $action_domains+a     
   b     $action_domains+b     
   c     $action_domains+c     

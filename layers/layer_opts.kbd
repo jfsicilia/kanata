@@ -2,6 +2,7 @@
 (deflayermap (opts_layer)
   (t! map_layers _ "opts" (lsft rsft))
 
+  $invert|keyb (t! invert_apps_sort $toggle_opts_layer)
   1 $action_opts+1
   2 $action_opts+2
   3 $action_opts+3
@@ -14,12 +15,14 @@
 )
 
 (deflayermap (opts+lsft_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_opts+lsft_layer)
   k $action_opts+lsft+k
   p $action_opts+lsft+p
   q $action_opts+lsft+q 
 )
 
 (deflayermap (opts+rsft_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_opts+rsft_layer)
   k $action_opts+rsft+k
   q $action_opts+rsft+q 
 )
