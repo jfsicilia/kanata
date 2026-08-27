@@ -261,18 +261,15 @@
 ;; Variables ===============================================================
 (defvar
   ;; Time config
-  retap_time  200
-  hold_time 160
-  fast_type_time 55
+  RETAP_TIME  200
+  HOLD_TIME 160
+  FAST_TYPE_TIME 55
 
   POPUP_HELP  (push-msg "POPUP_HELP")  ;; Send message to open help.
 
   ;; Show current apps sort order in trayicon (asc/desc)
-  APPS_SHOW_SORT 
-    (switch 
-      ((input virtual vk_apps_sort_desc)) (push-msg "SET:invert")   break 
-      ()                                  (push-msg "UNSET:invert") break 
-    )
+  APPS_SHOW_SORT (switch ((input virtual vk_apps_sort_desc)) (push-msg "SET:invert")   break 
+                         ()                                  (push-msg "UNSET:invert") break)
   ;; Toggle apps sort order (asc/desc) and show current sort order in trayicon.
   APPS_SORT_TOGGLE (macro (on-press toggle-vkey vk_apps_sort_desc) 100 (on-press tap-vkey vk_apps_show_sort))
   ;; Set apps sort order to ascending and show current sort order in trayicon.

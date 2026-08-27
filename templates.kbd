@@ -3,7 +3,7 @@
 ;; == Fasttyping ==============================================
 
 ;; Fast-typing aware typing action.
-;; Temporarily activates vk_fast_typing virtual key for $fast_type_time
+;; Temporarily activates vk_fast_typing virtual key for $FAST_TYPE_TIME
 ;; milliseconds when typing without modifiers pressed. This signals other
 ;; templates to prefer letter output over modifier activation during fast
 ;; typing sequences.
@@ -13,7 +13,7 @@
 (deftemplate type (action)
   (multi
     (fork
-      (hold-for-duration $fast_type_time vk_fast_typing)
+      (hold-for-duration $FAST_TYPE_TIME vk_fast_typing)
       XX
       (lctl rctl lalt ralt lmet rmet)
     )
@@ -24,10 +24,10 @@
 ;; == Tap and hold ============================================
 
 ;; Tap-hold with default global timings. 
-;; Shorthand for tap-hold-press-timeout using $retap_time and $hold_time.
+;; Shorthand for tap-hold-press-timeout using $RETAP_TIME and $HOLD_TIME.
 ;; Uses press behavior (hold triggers as soon as another key is pressed,
 ;; rather than waiting for release). If instead the key is simply held past
-;; $hold_time with no other key pressed, the timeout action fires: it runs
+;; $HOLD_TIME with no other key pressed, the timeout action fires: it runs
 ;; $hold. 
 ;; SIDE EFFECTS: When hold, activates popup help and restores apps sort as
 ;; ascending (if not sort inversions was launch it does nothing). 
@@ -36,7 +36,7 @@
 ;;   tap  - Action to perform on tap (e.g., a key or macro)
 ;;   hold - Action to perform on hold (e.g., layer toggle or modifier)
 (deftemplate th (tap hold)
-    (tap-hold $retap_time $hold_time $tap (multi $hold $POPUP_HELP))
+    (tap-hold $RETAP_TIME $HOLD_TIME $tap (multi $hold $POPUP_HELP))
 )
 
 ;; Fast-typing aware tap-hold with default timings.
