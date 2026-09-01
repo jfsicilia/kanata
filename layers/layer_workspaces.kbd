@@ -6,6 +6,16 @@
   l $action_workspaces+l
   h $action_workspaces+h
 
+  1 $action_workspaces+1
+  2 $action_workspaces+2
+  3 $action_workspaces+3
+  4 $action_workspaces+4
+  5 $action_workspaces+5
+  6 $action_workspaces+6
+  7 $action_workspaces+7
+  8 $action_workspaces+8
+  9 $action_workspaces+9
+
   ;; == GUI ======================
   $move   (t! th _ $toggle_workspaces+move_layer)
   $toggle $action_workspaces+toggle

@@ -11,6 +11,16 @@
   move_window_to_prev_screen  (t! unmod_all M-S-left)
   move_window_to_next_desktop (t! unmod_all M-C-S-right)
   move_window_to_prev_desktop (t! unmod_all M-C-S-left)
+
+  go_to_desktop_1  M-f1
+  go_to_desktop_2  M-f2
+  go_to_desktop_3  M-f3
+  go_to_desktop_4  M-f4
+  go_to_desktop_5  M-f5
+  go_to_desktop_6  M-f6
+  go_to_desktop_7  M-f7
+  go_to_desktop_8  M-f8
+  go_to_desktop_9  M-f9
 )
 
 (defvar
@@ -30,6 +40,17 @@ desktops_toggle (multi (on-press toggle-virtualkey vk_desktops_toggle)
   action_workspaces+k  $prev_screen
   action_workspaces+l $next_desktop
   action_workspaces+h $prev_desktop
+
+  action_workspaces+1 $go_to_desktop_1
+  action_workspaces+2 $go_to_desktop_2
+  action_workspaces+3 $go_to_desktop_3
+  action_workspaces+4 $go_to_desktop_4
+  action_workspaces+5 $go_to_desktop_5
+  action_workspaces+6 $go_to_desktop_6
+  action_workspaces+7 $go_to_desktop_7
+  action_workspaces+8 $go_to_desktop_8
+  action_workspaces+9 $go_to_desktop_9
+
 
   ;; == workspaces + move ===============================================
   action_workspaces+move+j  $move_window_to_next_screen
