@@ -11,4 +11,10 @@
   l  $action_keyb+l 
 
   spc $action_keyb+spc
+  
+  v  (t! invert_apps_sort $toggle_tabs_layer)
+  m  (t! invert_apps_sort $toggle_tabs_layer)
+  c  (t! invert_apps_sort $toggle_panes_layer)
+  ,  (t! invert_apps_sort $toggle_panes_layer)
 )
+
