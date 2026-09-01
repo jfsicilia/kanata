@@ -474,7 +474,7 @@ copilot|bookm               $copilot   ;; 2xTab: Last session,   Hold: bookmarks
 $copilot|bookm             (t!      th (t! 2x $action_sessions+toggle)        $toggle_bookmarks_layer)
    $rctl|opts              (t!      th (t! 2x $action_groups+toggle)          $toggle_opts_layer)
 
-     enter                 (t!      th enter                                  (t! toggle_layer bare_layer) )
+     enter                 (t!      th enter                                  (layer-toggle void_layer))
 )
 
 (deflayermap (default)
