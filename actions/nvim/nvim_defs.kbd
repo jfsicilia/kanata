@@ -10,7 +10,8 @@ nvim_compare_toggle (multi (on-press toggle-virtualkey vk_nvim_compare_toggle)
     ()                                       (macro esc C-w h C-w l S-; d i f f o f f ent C-w p S-; d i f f o f f ent C-w p)  break 
   )
 )
-nvim_esc                           (macro esc esc)
+nvim_esc                           esc
+
 nvim_select_all                    (macro esc g g S-v S-g)
 nvim_copy                          y
 nvim_duplicate                     (macro esc S-; s a v e a s spc S-5 S-; r S-- c o p y . S-5 S-; e)
