@@ -28,7 +28,7 @@
 
 ;; == omni ============================================================
 
-;; ___TO_SET___ nvim_action_omni                   
+nvim_action_omni                   $nvim_esc
 
 nvim_action_omni+spc               $nvim_action_!lctl|select+spc
 

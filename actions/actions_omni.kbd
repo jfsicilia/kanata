@@ -68,7 +68,7 @@
 
   ;; == omni ============================================================
 
-  (t! 1app_action action_omni $cancel colab)
+  (t! 2app_action action_omni $cancel nvim colab)
 
   (t! 4app_action action_omni+spc $space nvim tmux obsidian dolphin)
 
