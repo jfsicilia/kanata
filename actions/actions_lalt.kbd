@@ -1,5 +1,7 @@
 (defvar
   ;; == LALT actions ==========================================================
+  (t! 0app_action action_lalt+` A-`)
+  (t! 0app_action action_lalt+spc A-spc)
   (t! 0app_action action_lalt+tab A-tab)
   (t! 0app_action action_lalt+a A-a)
   (t! 0app_action action_lalt+b A-b)
@@ -47,7 +49,10 @@
   (t! 0app_action action_lalt+8 A-8)
   (t! 0app_action action_lalt+9 A-9)
   (t! 0app_action action_lalt+0 A-0)
+
   ;; == LALT+LSFT actions ==========================================================
+  (t! 0app_action action_lalt+lsft+` A-`)
+  (t! 0app_action action_lalt+lsft+spc A-spc)
   (t! 0app_action action_lalt+lsft+a A-S-a)
   (t! 0app_action action_lalt+lsft+b A-S-b)
   (t! 0app_action action_lalt+lsft+c A-S-c)
@@ -94,7 +99,10 @@
   (t! 0app_action action_lalt+lsft+8 A-S-8)
   (t! 0app_action action_lalt+lsft+9 A-S-9)
   (t! 0app_action action_lalt+lsft+0 A-S-0)
+  
   ;; == LALT+RSFT actions ==========================================================
+  (t! 0app_action action_lalt+rsft+` A-`)
+  (t! 0app_action action_lalt+rsft+spc A-spc)
   (t! 0app_action action_lalt+rsft+a A-S-a)
   (t! 0app_action action_lalt+rsft+b A-S-b)
   (t! 0app_action action_lalt+rsft+c A-S-c)

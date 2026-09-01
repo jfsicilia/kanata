@@ -2,10 +2,9 @@
 
 ;; == !LMET|REPLACE actions ==========================================================
 
+;; ___TO_SET___ nvim_action_!lmet|replace+`        
 ;; == replace ==========================================================
 nvim_action_!lmet|replace+spc      $nvim_replace_in_buffer 
-nvim_action_!lmet|replace+lsft+spc $nvim_replace_in_workspace 
-nvim_action_!lmet|replace+rsft+spc $nvim_replace_in_workspace 
 
 ;; ___TO_SET___ nvim_action_!lmet|replace+a        
 ;; ___TO_SET___ nvim_action_!lmet|replace+b        
@@ -53,7 +52,10 @@ nvim_action_!lmet|replace+rsft+spc $nvim_replace_in_workspace
 ;; ___TO_SET___ nvim_action_!lmet|replace+8        
 ;; ___TO_SET___ nvim_action_!lmet|replace+9        
 ;; ___TO_SET___ nvim_action_!lmet|replace+0        
+
 ;; == !LMET|REPLACE+LSFT actions ==========================================================
+;; ___TO_SET___ nvim_action_!lmet|replace+lsft+`   
+nvim_action_!lmet|replace+lsft+spc $nvim_replace_in_workspace 
 ;; ___TO_SET___ nvim_action_!lmet|replace+lsft+a   
 ;; ___TO_SET___ nvim_action_!lmet|replace+lsft+b   
 ;; ___TO_SET___ nvim_action_!lmet|replace+lsft+c   
@@ -100,7 +102,10 @@ nvim_action_!lmet|replace+rsft+spc $nvim_replace_in_workspace
 ;; ___TO_SET___ nvim_action_!lmet|replace+lsft+8   
 ;; ___TO_SET___ nvim_action_!lmet|replace+lsft+9   
 ;; ___TO_SET___ nvim_action_!lmet|replace+lsft+0   
+
 ;; == !LMET|REPLACE+RSFT actions ==========================================================
+;; ___TO_SET___ nvim_action_!lmet|replace+rsft+`   
+nvim_action_!lmet|replace+rsft+spc $nvim_replace_in_workspace 
 ;; ___TO_SET___ nvim_action_!lmet|replace+rsft+a   
 ;; ___TO_SET___ nvim_action_!lmet|replace+rsft+b   
 ;; ___TO_SET___ nvim_action_!lmet|replace+rsft+c   

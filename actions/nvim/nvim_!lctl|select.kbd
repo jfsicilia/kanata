@@ -1,8 +1,8 @@
 (defvar
 ;; == !LCTL|SELECT actions ==========================================================
+;; ___TO_SET___ nvim_action_!lctl|select+`         
+;; == !LCTL|SELECT actions ==========================================================
 nvim_action_!lctl|select+spc                 $nvim_select    
-nvim_action_!lctl|select+lsft+spc            XX
-;; ___TO_SET___ nvim_action_!lctl|select+rsft+spc  
 
 ;; == !LCTL actions ==========================================================
 nvim_action_!lctl|select+a  $nvim_select_all                   
@@ -52,6 +52,9 @@ nvim_action_!lctl|select+8             $nvim_tab_8
 nvim_action_!lctl|select+9             $nvim_tab_9 
 ;; ___TO_SET___ nvim_action_!lctl|select+0         
 ;; == !lctl|select+LSFT actions ======================================================
+;; ___TO_SET___ nvim_action_!lctl|select+lsft+`    
+;; ___TO_SET___ nvim_action_!lctl|select+lsft+spc  
+
 ;; ___TO_SET___ nvim_action_!lctl|select+lsft+a    
 ;; ___TO_SET___ nvim_action_!lctl|select+lsft+b    
 ;; ___TO_SET___ nvim_action_!lctl|select+lsft+c    
@@ -99,6 +102,9 @@ nvim_action_!lctl|select+9             $nvim_tab_9
 ;; ___TO_SET___ nvim_action_!lctl|select+lsft+9    
 ;; ___TO_SET___ nvim_action_!lctl|select+lsft+0    
 ;; == !lctl|select+RSFT actions ==========================================================
+;; ___TO_SET___ nvim_action_!lctl|select+rsft+`    
+;; ___TO_SET___ nvim_action_!lctl|select+rsft+spc  
+
 ;; ___TO_SET___ nvim_action_!lctl|select+rsft+a    
 ;; ___TO_SET___ nvim_action_!lctl|select+rsft+b    
 ;; ___TO_SET___ nvim_action_!lctl|select+rsft+c    

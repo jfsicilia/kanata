@@ -1,5 +1,10 @@
 (defvar
+
+;; == LCTL actions ==========================================================
+;; ___TO_SET___ firefox_action_lctl+tab               
+;; ___TO_SET___ firefox_action_lctl+`                 
 ;; ___TO_SET___ firefox_action_lctl+spc               
+
 ;; ___TO_SET___ firefox_action_lctl+a                 
 ;; ___TO_SET___ firefox_action_lctl+b                 
 ;; ___TO_SET___ firefox_action_lctl+c                 
@@ -46,7 +51,12 @@ firefox_action_lctl+7                 $firefox_tabs_goto_7
 firefox_action_lctl+8                 $firefox_tabs_goto_8        
 firefox_action_lctl+9                 $firefox_tabs_goto_9        
 firefox_action_lctl+0                 $firefox_tabs_goto_0        
+
 ;; == LCTL+LSFT actions ==========================================================
+;; ___TO_SET___ firefox_action_lctl+lsft+tab          
+;; ___TO_SET___ firefox_action_lctl+lsft+`            
+;; ___TO_SET___ firefox_action_lctl+lsft+spc          
+
 ;; ___TO_SET___ firefox_action_lctl+lsft+a            
 ;; ___TO_SET___ firefox_action_lctl+lsft+b            
 ;; ___TO_SET___ firefox_action_lctl+lsft+c            
@@ -93,7 +103,12 @@ firefox_action_lctl+0                 $firefox_tabs_goto_0
 ;; ___TO_SET___ firefox_action_lctl+lsft+8            
 ;; ___TO_SET___ firefox_action_lctl+lsft+9            
 ;; ___TO_SET___ firefox_action_lctl+lsft+0            
+
 ;; == LCTL+RSFT actions ==========================================================
+;; ___TO_SET___ firefox_action_lctl+rsft+tab          
+;; ___TO_SET___ firefox_action_lctl+rsft+`            
+;; ___TO_SET___ firefox_action_lctl+rsft+spc          
+
 ;; ___TO_SET___ firefox_action_lctl+rsft+a            
 ;; ___TO_SET___ firefox_action_lctl+rsft+b            
 ;; ___TO_SET___ firefox_action_lctl+rsft+c            

@@ -2,13 +2,10 @@
 
 ;; == !LMET|REPLACE actions ==========================================================
 
+;; ___TO_SET___ dolphin_action_!lmet|replace+`        
 ;; == replace ==========================================================
 ;; replace + spc
 dolphin_action_!lmet|replace+spc               (push-msg "NOTIFY:Replace text in file not implemented!")
-;; replace + lsft + spc
-dolphin_action_!lmet|replace+lsft+spc          (push-msg "NOTIFY:Replace text in files not implemented!") 
-;; replace + rsft + spc
-dolphin_action_!lmet|replace+rsft+spc          (push-msg "NOTIFY:Replace text in files not implemented!") 
 
 ;; ___TO_SET___ dolphin_action_!lmet|replace+a        
 ;; ___TO_SET___ dolphin_action_!lmet|replace+b        
@@ -56,7 +53,11 @@ dolphin_action_!lmet|replace+rsft+spc          (push-msg "NOTIFY:Replace text in
 ;; ___TO_SET___ dolphin_action_!lmet|replace+8        
 ;; ___TO_SET___ dolphin_action_!lmet|replace+9        
 ;; ___TO_SET___ dolphin_action_!lmet|replace+0        
+
 ;; == !LMET|REPLACE+LSFT actions ==========================================================
+;; ___TO_SET___ dolphin_action_!lmet|replace+lsft+`   
+;; replace + lsft + spc
+dolphin_action_!lmet|replace+lsft+spc          (push-msg "NOTIFY:Replace text in files not implemented!") 
 ;; ___TO_SET___ dolphin_action_!lmet|replace+lsft+a   
 ;; ___TO_SET___ dolphin_action_!lmet|replace+lsft+b   
 ;; ___TO_SET___ dolphin_action_!lmet|replace+lsft+c   
@@ -103,7 +104,11 @@ dolphin_action_!lmet|replace+rsft+spc          (push-msg "NOTIFY:Replace text in
 ;; ___TO_SET___ dolphin_action_!lmet|replace+lsft+8   
 ;; ___TO_SET___ dolphin_action_!lmet|replace+lsft+9   
 ;; ___TO_SET___ dolphin_action_!lmet|replace+lsft+0   
+
 ;; == !LMET|REPLACE+RSFT actions ==========================================================
+;; ___TO_SET___ dolphin_action_!lmet|replace+rsft+`   
+;; replace + rsft + spc
+dolphin_action_!lmet|replace+rsft+spc          (push-msg "NOTIFY:Replace text in files not implemented!") 
 ;; ___TO_SET___ dolphin_action_!lmet|replace+rsft+a   
 ;; ___TO_SET___ dolphin_action_!lmet|replace+rsft+b   
 ;; ___TO_SET___ dolphin_action_!lmet|replace+rsft+c   

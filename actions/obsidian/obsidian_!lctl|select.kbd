@@ -1,11 +1,10 @@
 (defvar
 ;; == !LCTL|SELECT actions ==========================================================
+;; ___TO_SET___ obsidian_action_!lctl|select+`         
+;; == !LCTL|SELECT actions ==========================================================
 ;; == select ========================================================
 ;; select + spc
 obsidian_action_!lctl|select+spc                   $obsidian_select_file
-;; select + lsft + spc
-obsidian_action_!lctl|select+lsft+spc              $obsidian_select_folder
-;; ___TO_SET___ obsidian_action_!lctl|select+rsft+spc  
 
 ;; == !LCTL actions ==========================================================
 obsidian_action_!lctl|select+a                        $obsidian_select_all_text
@@ -55,6 +54,10 @@ obsidian_action_!lctl|select+,                        $obsidian_action_setting
 ;; ___TO_SET___ obsidian_action_!lctl|select+9         
 ;; ___TO_SET___ obsidian_action_!lctl|select+0         
 ;; == !lctl|select+LSFT actions ======================================================
+;; ___TO_SET___ obsidian_action_!lctl|select+lsft+`    
+;; select + lsft + spc
+obsidian_action_!lctl|select+lsft+spc              $obsidian_select_folder
+
 ;; ___TO_SET___ obsidian_action_!lctl|select+lsft+a    
 ;; ___TO_SET___ obsidian_action_!lctl|select+lsft+b    
 ;; ___TO_SET___ obsidian_action_!lctl|select+lsft+c    
@@ -102,6 +105,9 @@ obsidian_action_!lctl|select+lsft+p                   $obsidian_commands
 ;; ___TO_SET___ obsidian_action_!lctl|select+lsft+9    
 ;; ___TO_SET___ obsidian_action_!lctl|select+lsft+0    
 ;; == !lctl|select+RSFT actions ==========================================================
+;; ___TO_SET___ obsidian_action_!lctl|select+rsft+`    
+;; ___TO_SET___ obsidian_action_!lctl|select+rsft+spc  
+
 ;; ___TO_SET___ obsidian_action_!lctl|select+rsft+a    
 ;; ___TO_SET___ obsidian_action_!lctl|select+rsft+b    
 ;; ___TO_SET___ obsidian_action_!lctl|select+rsft+c    

@@ -1,12 +1,10 @@
 (defvar
 ;; == !LALT|SEARCH actions ==========================================================
 
+;; ___TO_SET___ obsidian_action_!lalt|search+`         
 ;; == search ============================================================
 ;; search + spc
 obsidian_action_!lalt|search+spc               $obsidian_search_in_file
-;; search + lsft + spc
-obsidian_action_!lalt|search+lsft+spc         $obsidian_search_in_files
-;; ___TO_SET___ obsidian_action_!lalt|search+rsft+spc  
 
 ;; ___TO_SET___ obsidian_action_!lalt|search+a         
 ;; ___TO_SET___ obsidian_action_!lalt|search+b         
@@ -56,6 +54,10 @@ obsidian_action_!lalt|search+lsft+spc         $obsidian_search_in_files
 ;; ___TO_SET___ obsidian_action_!lalt|search+0         
 ;;
 ;; == !lalt|search+LSFT actions ==========================================================
+;; ___TO_SET___ obsidian_action_!lalt|search+lsft+`    
+;; search + lsft + spc
+obsidian_action_!lalt|search+lsft+spc         $obsidian_search_in_files
+
 ;; ___TO_SET___ obsidian_action_!lalt|search+lsft+a    
 ;; ___TO_SET___ obsidian_action_!lalt|search+lsft+b    
 ;; ___TO_SET___ obsidian_action_!lalt|search+lsft+c    
@@ -104,6 +106,9 @@ obsidian_action_!lalt|search+lsft+spc         $obsidian_search_in_files
 ;; ___TO_SET___ obsidian_action_!lalt|search+lsft+0    
 ;;
 ;; == !lalt|search+RSFT actions ==========================================================
+;; ___TO_SET___ obsidian_action_!lalt|search+rsft+`    
+;; ___TO_SET___ obsidian_action_!lalt|search+rsft+spc  
+
 ;; ___TO_SET___ obsidian_action_!lalt|search+rsft+a    
 ;; ___TO_SET___ obsidian_action_!lalt|search+rsft+b    
 ;; ___TO_SET___ obsidian_action_!lalt|search+rsft+c    

@@ -1,11 +1,10 @@
 (defvar
 ;; == !LCTL|SELECT actions ==========================================================
+;; ___TO_SET___ chrome_action_!lctl|select+`         
+;; == !LCTL|SELECT actions ==========================================================
 ;; == select ========================================================
 ;; select + spc
 chrome_action_!lctl|select+spc                      $chrome_select    
-;; select + lsft + spc
-chrome_action_!lctl|select+lsft+spc                 XX
-;; ___TO_SET___ chrome_action_!lctl|select+rsft+spc  
 
 ;; ___TO_SET___ chrome_action_!lctl|select+a         
 ;; ___TO_SET___ chrome_action_!lctl|select+b         
@@ -54,6 +53,10 @@ chrome_action_!lctl|select+lsft+spc                 XX
 ;; ___TO_SET___ chrome_action_!lctl|select+9         
 ;; ___TO_SET___ chrome_action_!lctl|select+0         
 ;; == !lctl|select+LSFT actions ======================================================
+;; ___TO_SET___ chrome_action_!lctl|select+lsft+`    
+;; select + lsft + spc
+chrome_action_!lctl|select+lsft+spc                 XX
+
 ;; ___TO_SET___ chrome_action_!lctl|select+lsft+a    
 ;; ___TO_SET___ chrome_action_!lctl|select+lsft+b    
 ;; ___TO_SET___ chrome_action_!lctl|select+lsft+c    
@@ -101,6 +104,9 @@ chrome_action_!lctl|select+lsft+spc                 XX
 ;; ___TO_SET___ chrome_action_!lctl|select+lsft+9    
 ;; ___TO_SET___ chrome_action_!lctl|select+lsft+0    
 ;; == !lctl|select+RSFT actions ==========================================================
+;; ___TO_SET___ chrome_action_!lctl|select+rsft+`    
+;; ___TO_SET___ chrome_action_!lctl|select+rsft+spc  
+
 ;; ___TO_SET___ chrome_action_!lctl|select+rsft+a    
 ;; ___TO_SET___ chrome_action_!lctl|select+rsft+b    
 ;; ___TO_SET___ chrome_action_!lctl|select+rsft+c    

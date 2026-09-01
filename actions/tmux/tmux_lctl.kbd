@@ -1,5 +1,10 @@
 (defvar
+
+;; == LCTL actions ==========================================================
+;; ___TO_SET___ tmux_action_lctl+tab               
+;; ___TO_SET___ tmux_action_lctl+`                 
 ;; ___TO_SET___ tmux_action_lctl+spc               
+
 ;; ___TO_SET___ tmux_action_lctl+a                 
 ;; ___TO_SET___ tmux_action_lctl+b                 
 ;; ___TO_SET___ tmux_action_lctl+c                 
@@ -64,7 +69,12 @@ tmux_action_lctl+8             $tmux_go_tab_8
 ;; If not implemented, defaults to: C-9
 tmux_action_lctl+9             $tmux_go_tab_9 
 ;; ___TO_SET___ tmux_action_lctl+0                 
+
 ;; == LCTL+LSFT actions ==========================================================
+;; ___TO_SET___ tmux_action_lctl+lsft+tab          
+;; ___TO_SET___ tmux_action_lctl+lsft+`            
+;; ___TO_SET___ tmux_action_lctl+lsft+spc          
+
 ;; ___TO_SET___ tmux_action_lctl+lsft+a            
 ;; ___TO_SET___ tmux_action_lctl+lsft+b            
 ;; ___TO_SET___ tmux_action_lctl+lsft+c            
@@ -111,7 +121,12 @@ tmux_action_lctl+9             $tmux_go_tab_9
 ;; ___TO_SET___ tmux_action_lctl+lsft+8            
 ;; ___TO_SET___ tmux_action_lctl+lsft+9            
 ;; ___TO_SET___ tmux_action_lctl+lsft+0            
+
 ;; == LCTL+RSFT actions ==========================================================
+;; ___TO_SET___ tmux_action_lctl+rsft+tab          
+;; ___TO_SET___ tmux_action_lctl+rsft+`            
+;; ___TO_SET___ tmux_action_lctl+rsft+spc          
+
 ;; ___TO_SET___ tmux_action_lctl+rsft+a            
 ;; ___TO_SET___ tmux_action_lctl+rsft+b            
 ;; ___TO_SET___ tmux_action_lctl+rsft+c            

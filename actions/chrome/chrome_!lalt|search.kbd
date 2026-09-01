@@ -1,11 +1,10 @@
 (defvar
 ;; == !LALT|SEARCH actions ==========================================================
 
+;; ___TO_SET___ chrome_action_!lalt|search+`         
 ;; == search ============================================================
 ;; search + spc
 chrome_action_!lalt|search+spc        $chrome_search
-;; ___TO_SET___ chrome_action_!lalt|search+lsft+spc  
-;; ___TO_SET___ chrome_action_!lalt|search+rsft+spc  
 
 ;; ___TO_SET___ chrome_action_!lalt|search+a         
 ;; ___TO_SET___ chrome_action_!lalt|search+b         
@@ -55,6 +54,9 @@ chrome_action_!lalt|search+spc        $chrome_search
 ;; ___TO_SET___ chrome_action_!lalt|search+0         
 ;;
 ;; == !lalt|search+LSFT actions ==========================================================
+;; ___TO_SET___ chrome_action_!lalt|search+lsft+`    
+;; ___TO_SET___ chrome_action_!lalt|search+lsft+spc  
+
 ;; ___TO_SET___ chrome_action_!lalt|search+lsft+a    
 ;; ___TO_SET___ chrome_action_!lalt|search+lsft+b    
 ;; ___TO_SET___ chrome_action_!lalt|search+lsft+c    
@@ -103,6 +105,9 @@ chrome_action_!lalt|search+spc        $chrome_search
 ;; ___TO_SET___ chrome_action_!lalt|search+lsft+0    
 ;;
 ;; == !lalt|search+RSFT actions ==========================================================
+;; ___TO_SET___ chrome_action_!lalt|search+rsft+`    
+;; ___TO_SET___ chrome_action_!lalt|search+rsft+spc  
+
 ;; ___TO_SET___ chrome_action_!lalt|search+rsft+a    
 ;; ___TO_SET___ chrome_action_!lalt|search+rsft+b    
 ;; ___TO_SET___ chrome_action_!lalt|search+rsft+c    

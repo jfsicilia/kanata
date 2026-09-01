@@ -13,9 +13,10 @@
   )
 
   ;; == LCTL actions ==========================================================
-  action_lctl+tab    $walk_through_apps
-  action_lctl+`      $walk_through_same_app
+  (t! 0app_action action_lctl+tab $walk_through_apps)
+  (t! 0app_action action_lctl+` $walk_through_same_app)
   (t! 1app_action action_lctl+spc C-spc foot)
+
   (t! 0app_action action_lctl+a C-a)
   (t! 1app_action action_lctl+b C-b obsidian)
   (t! 0app_action action_lctl+c C-c)
@@ -62,7 +63,12 @@
   (t! 3app_action action_lctl+8 C-8 firefox nvim tmux)
   (t! 3app_action action_lctl+9 C-9 firefox nvim tmux)
   (t! 1app_action action_lctl+0 C-0 firefox)
+
   ;; == LCTL+LSFT actions ==========================================================
+  (t! 0app_action action_lctl+lsft+tab C-S-tab)
+  (t! 0app_action action_lctl+lsft+` C-S-`)
+  (t! 0app_action action_lctl+lsft+spc C-S-spc)
+
   (t! 0app_action action_lctl+lsft+a C-S-a)
   (t! 0app_action action_lctl+lsft+b C-S-b)
   (t! 1app_action action_lctl+lsft+c C-S-c foot)
@@ -109,7 +115,12 @@
   (t! 0app_action action_lctl+lsft+8 C-S-8)
   (t! 0app_action action_lctl+lsft+9 C-S-9)
   (t! 0app_action action_lctl+lsft+0 C-S-0)
+
   ;; == LCTL+RSFT actions ==========================================================
+  (t! 0app_action action_lctl+rsft+tab C-S-tab)
+  (t! 0app_action action_lctl+rsft+` C-S-`)
+  (t! 0app_action action_lctl+rsft+spc C-S-spc)
+
   (t! 0app_action action_lctl+rsft+a C-S-a)
   (t! 0app_action action_lctl+rsft+b C-S-b)
   (t! 0app_action action_lctl+rsft+c C-S-c)

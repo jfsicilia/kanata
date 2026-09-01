@@ -1,10 +1,9 @@
 (defvar
 ;; == !LALT|SEARCH actions ==========================================================
 
+;; ___TO_SET___ nvim_action_!lalt|search+`         
 ;; == search ============================================================
 nvim_action_!lalt|search+spc        $nvim_search_in_buffer
-nvim_action_!lalt|search+lsft+spc   $nvim_search_in_workspace 
-;; ___TO_SET___ nvim_action_!lalt|search+rsft+spc  
 
 ;; ___TO_SET___ nvim_action_!lalt|search+a         
 ;; ___TO_SET___ nvim_action_!lalt|search+b         
@@ -54,6 +53,9 @@ nvim_action_!lalt|search+lsft+spc   $nvim_search_in_workspace
 ;; ___TO_SET___ nvim_action_!lalt|search+0         
 ;;
 ;; == !lalt|search+LSFT actions ==========================================================
+;; ___TO_SET___ nvim_action_!lalt|search+lsft+`    
+nvim_action_!lalt|search+lsft+spc   $nvim_search_in_workspace 
+
 ;; ___TO_SET___ nvim_action_!lalt|search+lsft+a    
 ;; ___TO_SET___ nvim_action_!lalt|search+lsft+b    
 ;; ___TO_SET___ nvim_action_!lalt|search+lsft+c    
@@ -102,6 +104,9 @@ nvim_action_!lalt|search+lsft+spc   $nvim_search_in_workspace
 ;; ___TO_SET___ nvim_action_!lalt|search+lsft+0    
 ;;
 ;; == !lalt|search+RSFT actions ==========================================================
+;; ___TO_SET___ nvim_action_!lalt|search+rsft+`    
+;; ___TO_SET___ nvim_action_!lalt|search+rsft+spc  
+
 ;; ___TO_SET___ nvim_action_!lalt|search+rsft+a    
 ;; ___TO_SET___ nvim_action_!lalt|search+rsft+b    
 ;; ___TO_SET___ nvim_action_!lalt|search+rsft+c    

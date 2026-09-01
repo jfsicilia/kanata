@@ -2,12 +2,10 @@
 
 ;; == !LMET|REPLACE actions ==========================================================
 
+;; ___TO_SET___ obsidian_action_!lmet|replace+`        
 ;; == replace ==========================================================
 ;; replace + spc
 obsidian_action_!lmet|replace+spc            $obsidian_replace_in_file
-;; replace + lsft + spc
-obsidian_action_!lmet|replace+lsft+spc      $obsidian_replace_in_files
-;; ___TO_SET___ obsidian_action_!lmet|replace+rsft+spc 
 
 ;; ___TO_SET___ obsidian_action_!lmet|replace+a        
 ;; ___TO_SET___ obsidian_action_!lmet|replace+b        
@@ -55,7 +53,11 @@ obsidian_action_!lmet|replace+lsft+spc      $obsidian_replace_in_files
 ;; ___TO_SET___ obsidian_action_!lmet|replace+8        
 ;; ___TO_SET___ obsidian_action_!lmet|replace+9        
 ;; ___TO_SET___ obsidian_action_!lmet|replace+0        
+
 ;; == !LMET|REPLACE+LSFT actions ==========================================================
+;; ___TO_SET___ obsidian_action_!lmet|replace+lsft+`   
+;; replace + lsft + spc
+obsidian_action_!lmet|replace+lsft+spc      $obsidian_replace_in_files
 ;; ___TO_SET___ obsidian_action_!lmet|replace+lsft+a   
 ;; ___TO_SET___ obsidian_action_!lmet|replace+lsft+b   
 ;; ___TO_SET___ obsidian_action_!lmet|replace+lsft+c   
@@ -102,7 +104,10 @@ obsidian_action_!lmet|replace+lsft+spc      $obsidian_replace_in_files
 ;; ___TO_SET___ obsidian_action_!lmet|replace+lsft+8   
 ;; ___TO_SET___ obsidian_action_!lmet|replace+lsft+9   
 ;; ___TO_SET___ obsidian_action_!lmet|replace+lsft+0   
+
 ;; == !LMET|REPLACE+RSFT actions ==========================================================
+;; ___TO_SET___ obsidian_action_!lmet|replace+rsft+`   
+;; ___TO_SET___ obsidian_action_!lmet|replace+rsft+spc 
 ;; ___TO_SET___ obsidian_action_!lmet|replace+rsft+a   
 ;; ___TO_SET___ obsidian_action_!lmet|replace+rsft+b   
 ;; ___TO_SET___ obsidian_action_!lmet|replace+rsft+c   

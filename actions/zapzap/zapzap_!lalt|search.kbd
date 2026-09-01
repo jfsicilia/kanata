@@ -1,13 +1,10 @@
 (defvar
 ;; == !LALT|SEARCH actions ==========================================================
 
+;; ___TO_SET___ zapzap_action_!lalt|search+`         
 ;; == search ============================================================
 ;; search + spc
 zapzap_action_!lalt|search+spc                 $zapzap_search_in_chat
-;; search + lsft + spc
-zapzap_action_!lalt|search+lsft+spc            $zapzap_search_chat
-;; search + rsft + spc
-zapzap_action_!lalt|search+rsft+spc            $zapzap_search_chat
 
 ;; ___TO_SET___ zapzap_action_!lalt|search+a         
 ;; ___TO_SET___ zapzap_action_!lalt|search+b         
@@ -57,6 +54,10 @@ zapzap_action_!lalt|search+rsft+spc            $zapzap_search_chat
 ;; ___TO_SET___ zapzap_action_!lalt|search+0         
 ;;
 ;; == !lalt|search+LSFT actions ==========================================================
+;; ___TO_SET___ zapzap_action_!lalt|search+lsft+`    
+;; search + lsft + spc
+zapzap_action_!lalt|search+lsft+spc            $zapzap_search_chat
+
 ;; ___TO_SET___ zapzap_action_!lalt|search+lsft+a    
 ;; ___TO_SET___ zapzap_action_!lalt|search+lsft+b    
 ;; ___TO_SET___ zapzap_action_!lalt|search+lsft+c    
@@ -105,6 +106,10 @@ zapzap_action_!lalt|search+rsft+spc            $zapzap_search_chat
 ;; ___TO_SET___ zapzap_action_!lalt|search+lsft+0    
 ;;
 ;; == !lalt|search+RSFT actions ==========================================================
+;; ___TO_SET___ zapzap_action_!lalt|search+rsft+`    
+;; search + rsft + spc
+zapzap_action_!lalt|search+rsft+spc            $zapzap_search_chat
+
 ;; ___TO_SET___ zapzap_action_!lalt|search+rsft+a    
 ;; ___TO_SET___ zapzap_action_!lalt|search+rsft+b    
 ;; ___TO_SET___ zapzap_action_!lalt|search+rsft+c    

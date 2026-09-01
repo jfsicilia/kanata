@@ -1,10 +1,10 @@
 (defvar
 ;; == !LCTL|SELECT actions ==========================================================
+;; ___TO_SET___ whatsapp_action_!lctl|select+`         
+;; == !LCTL|SELECT actions ==========================================================
 ;; == select ========================================================
 ;; select + spc
 whatsapp_action_!lctl|select+spc        $whatsapp_omni_search
-;; ___TO_SET___ whatsapp_action_!lctl|select+lsft+spc  
-;; ___TO_SET___ whatsapp_action_!lctl|select+rsft+spc  
 
 ;; ___TO_SET___ whatsapp_action_!lctl|select+a         
 ;; ___TO_SET___ whatsapp_action_!lctl|select+b         
@@ -70,6 +70,9 @@ whatsapp_action_!lctl|select+8                 $whatsapp_tabs_goto_8
 whatsapp_action_!lctl|select+9                 $whatsapp_tabs_goto_9
 ;; ___TO_SET___ whatsapp_action_!lctl|select+0         
 ;; == !lctl|select+LSFT actions ======================================================
+;; ___TO_SET___ whatsapp_action_!lctl|select+lsft+`    
+;; ___TO_SET___ whatsapp_action_!lctl|select+lsft+spc  
+
 ;; ___TO_SET___ whatsapp_action_!lctl|select+lsft+a    
 ;; ___TO_SET___ whatsapp_action_!lctl|select+lsft+b    
 ;; ___TO_SET___ whatsapp_action_!lctl|select+lsft+c    
@@ -117,6 +120,9 @@ whatsapp_action_!lctl|select+9                 $whatsapp_tabs_goto_9
 ;; ___TO_SET___ whatsapp_action_!lctl|select+lsft+9    
 ;; ___TO_SET___ whatsapp_action_!lctl|select+lsft+0    
 ;; == !lctl|select+RSFT actions ==========================================================
+;; ___TO_SET___ whatsapp_action_!lctl|select+rsft+`    
+;; ___TO_SET___ whatsapp_action_!lctl|select+rsft+spc  
+
 ;; ___TO_SET___ whatsapp_action_!lctl|select+rsft+a    
 ;; ___TO_SET___ whatsapp_action_!lctl|select+rsft+b    
 ;; ___TO_SET___ whatsapp_action_!lctl|select+rsft+c    

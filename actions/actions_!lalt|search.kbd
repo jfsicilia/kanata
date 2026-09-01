@@ -1,9 +1,8 @@
 (defvar
   ;; == !LALT|SEARCH actions ==========================================================
 
+  (t! 0app_action action_!lalt|search+` A-`)
   (t! 6app_action action_!lalt|search+spc XX whatsapp chrome zapzap obsidian dolphin nvim)
-  (t! 5app_action action_!lalt|search+lsft+spc XX whatsapp zapzap obsidian dolphin nvim)
-  (t! 3app_action action_!lalt|search+rsft+spc XX whatsapp zapzap dolphin)
 
   (t! 0app_action action_!lalt|search+a A-a)
   (t! 0app_action action_!lalt|search+b A-b)
@@ -53,6 +52,9 @@
   (t! 0app_action action_!lalt|search+0 A-0)
   ;;
   ;; == !lalt|search+LSFT actions ==========================================================
+  (t! 0app_action action_!lalt|search+lsft+` A-`)
+  (t! 5app_action action_!lalt|search+lsft+spc XX whatsapp zapzap obsidian dolphin nvim)
+
   (t! 0app_action action_!lalt|search+lsft+a A-S-a)
   (t! 0app_action action_!lalt|search+lsft+b A-S-b)
   (t! 0app_action action_!lalt|search+lsft+c A-S-c)
@@ -101,6 +103,9 @@
   (t! 0app_action action_!lalt|search+lsft+0 A-S-0)
   ;;
   ;; == !lalt|search+RSFT actions ==========================================================
+  (t! 0app_action action_!lalt|search+rsft+` A-`)
+  (t! 3app_action action_!lalt|search+rsft+spc XX whatsapp zapzap dolphin)
+
   (t! 0app_action action_!lalt|search+rsft+a A-S-a)
   (t! 0app_action action_!lalt|search+rsft+b A-S-b)
   (t! 0app_action action_!lalt|search+rsft+c A-S-c)

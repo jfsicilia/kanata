@@ -1,5 +1,7 @@
 (defvar
 ;; == LALT actions ==========================================================
+;; ___TO_SET___ foot_action_lalt+`                 
+;; ___TO_SET___ foot_action_lalt+spc               
 ;; ___TO_SET___ foot_action_lalt+tab               
 ;; ___TO_SET___ foot_action_lalt+a                 
 ;; ___TO_SET___ foot_action_lalt+b                 
@@ -47,7 +49,10 @@ foot_action_lalt+c        $foot_select_folder
 ;; ___TO_SET___ foot_action_lalt+8                 
 ;; ___TO_SET___ foot_action_lalt+9                 
 ;; ___TO_SET___ foot_action_lalt+0                 
+
 ;; == LALT+LSFT actions ==========================================================
+;; ___TO_SET___ foot_action_lalt+lsft+`            
+;; ___TO_SET___ foot_action_lalt+lsft+spc          
 ;; ___TO_SET___ foot_action_lalt+lsft+a            
 ;; ___TO_SET___ foot_action_lalt+lsft+b            
 ;; ___TO_SET___ foot_action_lalt+lsft+c            
@@ -94,7 +99,10 @@ foot_action_lalt+c        $foot_select_folder
 ;; ___TO_SET___ foot_action_lalt+lsft+8            
 ;; ___TO_SET___ foot_action_lalt+lsft+9            
 ;; ___TO_SET___ foot_action_lalt+lsft+0            
+
 ;; == LALT+RSFT actions ==========================================================
+;; ___TO_SET___ foot_action_lalt+rsft+`            
+;; ___TO_SET___ foot_action_lalt+rsft+spc          
 ;; ___TO_SET___ foot_action_lalt+rsft+a            
 ;; ___TO_SET___ foot_action_lalt+rsft+b            
 ;; ___TO_SET___ foot_action_lalt+rsft+c            

@@ -599,6 +599,7 @@
   (if-not-in-list w $ignore_keys w w)
   (if-not-in-list x $ignore_keys x x)
   (if-not-in-list y $ignore_keys y y)
+  (if-not-in-list z $ignore_keys z z)
   (if-not-in-list , $ignore_keys , ,)
   (if-not-in-list . $ignore_keys . .)
   (if-not-in-list / $ignore_keys / /)
@@ -609,6 +610,7 @@
   (if-not-in-list \ $ignore_keys \ \)
   (if-not-in-list - $ignore_keys - -)
   (if-not-in-list = $ignore_keys = =)
+  (if-not-in-list ` $ignore_keys ` `)
   (if-not-in-list 0 $ignore_keys 0 0)
   (if-not-in-list 1 $ignore_keys 1 1)
   (if-not-in-list 2 $ignore_keys 2 2)
@@ -619,6 +621,7 @@
   (if-not-in-list 7 $ignore_keys 7 7)
   (if-not-in-list 8 $ignore_keys 8 8)
   (if-not-in-list 9 $ignore_keys 9 9)
+  (if-not-in-list spc $ignore_keys spc spc)
 ) ;;""
 
 ;; Internal: Map all keys to action+key combinations.
@@ -655,6 +658,7 @@
   (if-not-in-list w $ignore_keys w (concat $action "+" w))
   (if-not-in-list x $ignore_keys x (concat $action "+" x))
   (if-not-in-list y $ignore_keys y (concat $action "+" y))
+  (if-not-in-list z $ignore_keys z (concat $action "+" z))
   (if-not-in-list , $ignore_keys , (concat $action "+" ,))
   (if-not-in-list . $ignore_keys . (concat $action "+" .))
   (if-not-in-list / $ignore_keys / (concat $action "+" /))
@@ -665,6 +669,7 @@
   (if-not-in-list \ $ignore_keys \ (concat $action "+" \))
   (if-not-in-list - $ignore_keys - (concat $action "+" -))
   (if-not-in-list = $ignore_keys = (concat $action "+" =))
+  (if-not-in-list ` $ignore_keys ` (concat $action "+" `))
   (if-not-in-list 0 $ignore_keys 0 (concat $action "+" 0))
   (if-not-in-list 1 $ignore_keys 1 (concat $action "+" 1))
   (if-not-in-list 2 $ignore_keys 2 (concat $action "+" 2))
@@ -675,6 +680,7 @@
   (if-not-in-list 7 $ignore_keys 7 (concat $action "+" 7))
   (if-not-in-list 8 $ignore_keys 8 (concat $action "+" 8))
   (if-not-in-list 9 $ignore_keys 9 (concat $action "+" 9))
+  (if-not-in-list spc $ignore_keys spc (concat $action "+" spc))
 ) ;;""
 
 ;; Map all alphanumeric and symbol keys.

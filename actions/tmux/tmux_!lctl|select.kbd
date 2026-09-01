@@ -1,8 +1,8 @@
 (defvar
 ;; == !LCTL|SELECT actions ==========================================================
+;; ___TO_SET___ tmux_action_!lctl|select+`         
+;; == !LCTL|SELECT actions ==========================================================
 tmux_action_!lctl|select+spc             $tmux_file_picker
-tmux_action_!lctl|select+lsft+spc        $tmux_folder_picker
-;; ___TO_SET___ tmux_action_!lctl|select+rsft+spc  
 
 ;; ___TO_SET___ tmux_action_!lctl|select+a         
 ;; ___TO_SET___ tmux_action_!lctl|select+b         
@@ -70,6 +70,9 @@ tmux_action_!lctl|select+8             $tmux_go_tab_8
 tmux_action_!lctl|select+9             $tmux_go_tab_9 
 ;; ___TO_SET___ tmux_action_!lctl|select+0         
 ;; == !lctl|select+LSFT actions ======================================================
+;; ___TO_SET___ tmux_action_!lctl|select+lsft+`    
+tmux_action_!lctl|select+lsft+spc        $tmux_folder_picker
+
 ;; ___TO_SET___ tmux_action_!lctl|select+lsft+a    
 ;; ___TO_SET___ tmux_action_!lctl|select+lsft+b    
 ;; ___TO_SET___ tmux_action_!lctl|select+lsft+c    
@@ -117,6 +120,9 @@ tmux_action_!lctl|select+9             $tmux_go_tab_9
 ;; ___TO_SET___ tmux_action_!lctl|select+lsft+9    
 ;; ___TO_SET___ tmux_action_!lctl|select+lsft+0    
 ;; == !lctl|select+RSFT actions ==========================================================
+;; ___TO_SET___ tmux_action_!lctl|select+rsft+`    
+;; ___TO_SET___ tmux_action_!lctl|select+rsft+spc  
+
 ;; ___TO_SET___ tmux_action_!lctl|select+rsft+a    
 ;; ___TO_SET___ tmux_action_!lctl|select+rsft+b    
 ;; ___TO_SET___ tmux_action_!lctl|select+rsft+c    

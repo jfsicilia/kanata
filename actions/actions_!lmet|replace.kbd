@@ -3,9 +3,8 @@
 
   ;; == !LMET|REPLACE actions ==========================================================
 
+  (t! 0app_action action_!lmet|replace+` M-`)
   (t! 3app_action action_!lmet|replace+spc XX obsidian dolphin nvim)
-  (t! 3app_action action_!lmet|replace+lsft+spc XX obsidian dolphin nvim)
-  (t! 2app_action action_!lmet|replace+rsft+spc XX dolphin nvim)
 
   (t! 0app_action action_!lmet|replace+a M-a)
   (t! 0app_action action_!lmet|replace+b M-b)
@@ -53,7 +52,10 @@
   (t! 0app_action action_!lmet|replace+8 M-8)
   (t! 0app_action action_!lmet|replace+9 M-9)
   (t! 0app_action action_!lmet|replace+0 M-0)
+
   ;; == !LMET|REPLACE+LSFT actions ==========================================================
+  (t! 0app_action action_!lmet|replace+lsft+` M-S-`)
+  (t! 3app_action action_!lmet|replace+lsft+spc XX obsidian dolphin nvim)
   (t! 0app_action action_!lmet|replace+lsft+a M-S-a)
   (t! 0app_action action_!lmet|replace+lsft+b M-S-b)
   (t! 0app_action action_!lmet|replace+lsft+c M-S-c)
@@ -100,7 +102,10 @@
   (t! 0app_action action_!lmet|replace+lsft+8 M-S-8)
   (t! 0app_action action_!lmet|replace+lsft+9 M-S-9)
   (t! 0app_action action_!lmet|replace+lsft+0 M-S-0)
+
   ;; == !LMET|REPLACE+RSFT actions ==========================================================
+  (t! 0app_action action_!lmet|replace+rsft+` M-S-`)
+  (t! 2app_action action_!lmet|replace+rsft+spc XX dolphin nvim)
   (t! 0app_action action_!lmet|replace+rsft+a M-S-a)
   (t! 0app_action action_!lmet|replace+rsft+b M-S-b)
   (t! 0app_action action_!lmet|replace+rsft+c M-S-c)
