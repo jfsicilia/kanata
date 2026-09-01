@@ -693,7 +693,7 @@
 ;; Parameters:
 ;;   action      - Action prefix for key bindings ("_" for pass-through)
 ;;   ignore_keys - List of keys to skip/exclude from binding
-(deftemplate map_keys (action ignore_keys)
+(deftemplate autobind_keys_except (action ignore_keys)
   (if-equal     $action _ (t! _map_keys_no_action           ($ignore_keys)))
   (if-not-equal $action _ (t! _map_keys_with_action $action ($ignore_keys)))
 )

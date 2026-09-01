@@ -1,21 +1,21 @@
 ;; "" !LCTL_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lctl|select_layer)
   (t! map_layers "$action_!lctl|select" "!lctl|select" ($<lalt $>lalt $<lmet $>lmet $lsft $rsft $!lalt $!lmet lsft rsft))
-  (t! map_keys   "$action_!lctl|select"                ($<lalt $>lalt $<lmet $>lmet $lsft $rsft))
+  (t! autobind_keys_except   "$action_!lctl|select"                ($<lalt $>lalt $<lmet $>lmet $lsft $rsft spc))
   spc $action_!lctl|select+spc
   $invert|keyb (t! invert_apps_sort $toggle_!lctl|select_layer)
 )
 
 (deflayermap (!lctl|select+lsft_layer)
   (t! map_layers "$action_!lctl|select+lsft" "!lctl|select+lsft" ($<lalt $>lalt $<lmet $>lmet $!lalt $!lmet))
-  (t! map_keys   "$action_!lctl|select+lsft"                     ($<lalt $>lalt $<lmet $>lmet ))
+  (t! autobind_keys_except   "$action_!lctl|select+lsft"                     ($<lalt $>lalt $<lmet $>lmet spc))
   spc $action_!lctl|select+lsft+spc
   $invert|keyb (t! invert_apps_sort $toggle_!lctl|select+lsft_layer)
 )
 
 (deflayermap (!lctl|select+rsft_layer)
   (t! map_layers "$action_!lctl|select+rsft" "!lctl|select+rsft" ($<lalt $>lalt $<lmet $>lmet $!lalt $!lmet))
-  (t! map_keys   "$action_!lctl|select+rsft"                     ($<lalt $>lalt $<lmet $>lmet ))
+  (t! autobind_keys_except   "$action_!lctl|select+rsft"                     ($<lalt $>lalt $<lmet $>lmet spc))
   spc $action_!lctl|select+rsft+spc
   $invert|keyb (t! invert_apps_sort $toggle_!lctl|select+rsft_layer)
 )
@@ -23,55 +23,55 @@
 ;; "" !LCTL+LALT_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lctl|select+lalt_layer)
   (t! map_layers _ "!lctl|select+lalt" ($<lmet $>lmet $lsft $rsft $!lmet lsft rsft))
-  (t! map_keys   _              ($<lmet $>lmet $lsft $rsft))
+  (t! autobind_keys_except   _              ($<lmet $>lmet $lsft $rsft))
   $invert|keyb (t! invert_apps_sort $toggle_!lctl|select+lalt_layer)
 )
 
 (deflayermap (!lctl|select+lalt+lsft_layer)
   (t! map_layers _ "!lctl|select+lalt+lsft" ($<lmet $>lmet $!lmet))
-  (t! map_keys   _                   ($<lmet $>lmet))
+  (t! autobind_keys_except   _                   ($<lmet $>lmet))
   $invert|keyb (t! invert_apps_sort $toggle_!lctl|select+lalt+lsft_layer)
 )
 
 (deflayermap (!lctl|select+lalt+rsft_layer)
   (t! map_layers _ "!lctl|select+lalt+rsft" ($<lmet $>lmet $!lmet))
-  (t! map_keys   _                   ($<lmet $>lmet))
+  (t! autobind_keys_except   _                   ($<lmet $>lmet))
   $invert|keyb (t! invert_apps_sort $toggle_!lctl|select+lalt+rsft_layer)
 )
 
 ;; "" !LCTL+LMET_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lctl|select+lmet_layer)
   (t! map_layers _ "!lctl|select+lmet" ($<lalt $>lalt $lsft $rsft $!lalt lsft rsft))
-  (t! map_keys   _              ($<lalt $>lalt $lsft $rsft))
+  (t! autobind_keys_except   _              ($<lalt $>lalt $lsft $rsft))
   $invert|keyb (t! invert_apps_sort $toggle_!lctl|select+lmet_layer)
 )
 
 (deflayermap (!lctl|select+lmet+lsft_layer)
   (t! map_layers _ "!lctl|select+lmet+lsft" ($<lalt $>lalt $!lalt))
-  (t! map_keys   _                   ($<lalt $>lalt))
+  (t! autobind_keys_except   _                   ($<lalt $>lalt))
   $invert|keyb (t! invert_apps_sort $toggle_!lctl|select+lmet+lsft_layer)
 )
 
 (deflayermap (!lctl|select+lmet+rsft_layer)
   (t! map_layers _ "!lctl|select+lmet+rsft" ($<lalt $>lalt $!lalt))
-  (t! map_keys   _                   ($<lalt $>lalt))
+  (t! autobind_keys_except   _                   ($<lalt $>lalt))
   $invert|keyb (t! invert_apps_sort $toggle_!lctl|select+lmet+rsft_layer)
 )
 
 ;; "" !LCTL+LALT+LMET_LAYER """""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (!lctl|select+lalt+lmet_layer)
   (t! map_layers _ "!lctl|select+lalt+lmet" ($lsft $rsft lsft rsft))
-  (t! map_keys   _                   ($lsft $rsft))
+  (t! autobind_keys_except   _                   ($lsft $rsft))
   $invert|keyb (t! invert_apps_sort $toggle_!lctl|select+lalt+lmet_layer)
 ) 
 
 (deflayermap (!lctl|select+lalt+lmet+lsft_layer)
-  (t! map_keys _ ())
+  (t! autobind_keys_except _ ())
   $invert|keyb (t! invert_apps_sort $toggle_!lctl|select+lalt+lmet+lsft_layer)
 )
 
 (deflayermap (!lctl|select+lalt+lmet+rsft_layer)
-  (t! map_keys _ ())
+  (t! autobind_keys_except _ ())
   $invert|keyb (t! invert_apps_sort $toggle_!lctl|select+lalt+lmet+rsft_layer)
 )
 

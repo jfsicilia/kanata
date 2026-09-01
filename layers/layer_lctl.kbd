@@ -1,7 +1,7 @@
 ;; "" LCTL_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lctl_layer)
   (t! map_layers "$action_lctl" "lctl" ($<lalt $>lalt $<lmet $>lmet $lsft $rsft $!lalt $!lmet lsft rsft))
-  (t! map_keys   "$action_lctl"        ($<lalt $>lalt $<lmet $>lmet $lsft $rsft))
+  (t! autobind_keys_except   "$action_lctl"        ($<lalt $>lalt $<lmet $>lmet $lsft $rsft `))
 
   ;; lctl is configured in the physical lalt key (like the cmd key in mac).
   ;; Special treatment is used to allow lctl+tab to mimic alt+tab to switch 
@@ -14,69 +14,69 @@
 
 (deflayermap (lctl+lsft_layer)
   (t! map_layers "$action_lctl+lsft" "lctl+lsft" ($<lalt $>lalt $<lmet $>lmet $!lalt $!lmet))
-  (t! map_keys   "$action_lctl+lsft"             ($<lalt $>lalt $<lmet $>lmet))
+  (t! autobind_keys_except   "$action_lctl+lsft"             ($<lalt $>lalt $<lmet $>lmet))
   $invert|keyb (t! invert_apps_sort $toggle_lctl+lsft_layer)
 )
 
 (deflayermap (lctl+rsft_layer)
   (t! map_layers "$action_lctl+rsft" "lctl+rsft" ($<lalt $>lalt $<lmet $>lmet $!lalt $!lmet))
-  (t! map_keys   "$action_lctl+rsft"             ($<lalt $>lalt $<lmet $>lmet))
+  (t! autobind_keys_except   "$action_lctl+rsft"             ($<lalt $>lalt $<lmet $>lmet))
   $invert|keyb (t! invert_apps_sort $toggle_lctl+rsft_layer)
 )
 
 ;; "" LCTL+LALT_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lctl+lalt_layer)
   (t! map_layers _ "lctl+lalt" ($<lmet $>lmet $lsft $rsft $!lmet lsft rsft))
-  (t! map_keys   _             ($<lmet $>lmet $lsft $rsft))
+  (t! autobind_keys_except   _             ($<lmet $>lmet $lsft $rsft))
 
   $invert|keyb (t! invert_apps_sort $toggle_lctl+lalt_layer)
 ) 
 
 (deflayermap (lctl+lalt+lsft_layer)
   (t! map_layers _ "lctl+lalt+lsft" ($<lmet $>lmet $!lmet))
-  (t! map_keys   _                  ($<lmet $>lmet))
+  (t! autobind_keys_except   _                  ($<lmet $>lmet))
   $invert|keyb (t! invert_apps_sort $toggle_lctl+lalt+lsft_layer)
 )
 
 (deflayermap (lctl+lalt+rsft_layer)
   (t! map_layers _ "lctl+lalt+rsft" ($<lmet $>lmet $!lmet))
-  (t! map_keys   _                  ($<lmet $>lmet))
+  (t! autobind_keys_except   _                  ($<lmet $>lmet))
   $invert|keyb (t! invert_apps_sort $toggle_lctl+lalt+rsft_layer)
 )
 
 ;; "" LCTL+LMET_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lctl+lmet_layer)
   (t! map_layers _ "lctl+lmet" ($<lalt $>lalt $lsft $rsft $!lalt lsft rsft))
-  (t! map_keys   _             ($<lalt $>lalt $lsft $rsft))
+  (t! autobind_keys_except   _             ($<lalt $>lalt $lsft $rsft))
   $invert|keyb (t! invert_apps_sort $toggle_lctl+lmet_layer)
 ) 
 
 (deflayermap (lctl+lmet+lsft_layer)
   (t! map_layers _ "lctl+lmet+lsft" ($<lalt $>lalt $!lalt))
-  (t! map_keys   _                  ($<lalt $>lalt))
+  (t! autobind_keys_except   _                  ($<lalt $>lalt))
   $invert|keyb (t! invert_apps_sort $toggle_lctl+lmet+lsft_layer)
 )
 
 (deflayermap (lctl+lmet+rsft_layer)
   (t! map_layers _ "lctl+lmet+rsft" ($<lalt $>lalt $!lalt))
-  (t! map_keys   _                  ($<lalt $>lalt))
+  (t! autobind_keys_except   _                  ($<lalt $>lalt))
   $invert|keyb (t! invert_apps_sort $toggle_lctl+lmet+rsft_layer)
 )
 
 ;; "" LCTL+LALT+LMET_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (lctl+lalt+lmet_layer)
   (t! map_layers _ "lctl+lalt+lmet" ($lsft $rsft lsft rsft))
-  (t! map_keys   _                  ($lsft $rsft))
+  (t! autobind_keys_except   _                  ($lsft $rsft))
   $invert|keyb (t! invert_apps_sort $toggle_lctl+lalt+lmet_layer)
 ) 
 
 (deflayermap (lctl+lalt+lmet+lsft_layer)
-  (t! map_keys _ ())
+  (t! autobind_keys_except _ ())
 
   $invert|keyb (t! invert_apps_sort $toggle_lctl+lalt+lmet+lsft_layer)
 )
 
 (deflayermap (lctl+lalt+lmet+rsft_layer)
-  (t! map_keys _ ())
+  (t! autobind_keys_except _ ())
   $invert|keyb (t! invert_apps_sort $toggle_lctl+lalt+lmet+rsft_layer)
 )

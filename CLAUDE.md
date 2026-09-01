@@ -38,7 +38,7 @@ Key templates:
 - `fast_th tap hold` — fast-typing-aware tap-hold with global timings
 - `th tap hold` — plain tap-hold-press using global timings (no fast-typing guard)
 - `2x action` / `3x action` — double/triple-tap detectors
-- `map_keys action ignore_keys` — fills a layer with all alpha/symbol keys (pass `_` as action for pass-through)
+- `autobind_keys_except action ignore_keys` — fills a layer with all alpha/symbol keys (pass `_` as action for pass-through)
 - `map_layers action layer ignore_keys` — wires modifier keys (f/j for lctl, s/l for lalt, a/; for lmet, d for lsft, k for rsft) to `+modifier` sub-layer variants
 - `mod_key_layer mod_key spc_action lsft+spc lsft+spc` — generates a complete mod layer with shift variants in one call
 - `char|alt_char letter` — outputs the letter normally, or with tap-dance accents when `vk_alt_chars` is active (Spanish mode)
