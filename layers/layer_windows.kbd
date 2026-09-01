@@ -7,6 +7,8 @@
   l            $action_windows+l
   j            $action_windows+j
 
+  $toggle      $action_windows+toggle
+
   ;; == SFT ======================
   $d|lsft         (t! th _                   $toggle_windows+lsft_layer)
   $k|rsft         (t! th $action_windows+k   $toggle_windows+rsft_layer)

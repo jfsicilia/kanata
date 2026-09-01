@@ -7,7 +7,7 @@
   windows_half_left             (t! unmod_all M-left)
   windows_half_right            (t! unmod_all M-right)
   windows_close                 (t! unmod_all A-f4)
-  windows_toggle                M-tab
+  windows_toggle                (t! unmod_all M-tab)
   windows_walk_through_same_app A-`
 )
 
@@ -23,7 +23,7 @@
   action_windows+h          $windows_half_left
   action_windows+l          $windows_half_right
 
-  action_windows_close      $windows_close
+;;  action_windows_close      $windows_close
 
-  action_windows_toggle     $windows_toggle
+  action_windows+toggle     $windows_toggle
 )
