@@ -10,4 +10,5 @@
   tmux_action_sessions+l      $tmux_session_next
   tmux_action_sessions+w      $tmux_session_kill
   tmux_action_sessions+r      $tmux_session_rename
+  tmux_action_sessions+c      $tmux_session_create
 )

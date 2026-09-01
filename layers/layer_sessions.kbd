@@ -3,6 +3,7 @@
   $invert|keyb (t! invert_apps_sort $toggle_sessions_layer)
   spc             $action_sessions+spc
   w               $action_sessions+w
+  c               $action_sessions+c
   r               $action_sessions+r 
   h               $action_sessions+h 
   j               $action_sessions+j 

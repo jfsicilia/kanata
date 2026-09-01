@@ -57,12 +57,14 @@ tmux_toggle_tab              (macro $tmux_prefix l)
 tmux_move_tab_right          (macro $tmux_prefix S-; s w a p - w i n d o w spc - t spc - Digit1 ; s e l e c t - w i n d o w spc - t spc - Digit1 ent) 
 tmux_move_tab_left           (macro $tmux_prefix S-; s w a p - w i n d o w spc - t spc S-= Digit1 ; s e l e c t - w i n d o w spc - t spc S-= Digit1 ent) 
 
+;;""
 ;; sessions
 tmux_session_select          (macro $tmux_prefix s)
 tmux_session_rename          (macro $tmux_prefix S-4)
 tmux_session_detach          (macro $tmux_prefix d)
 tmux_session_save_and_detach (macro $tmux_prefix A-s $tmux_prefix d)
 tmux_session_kill            (macro $tmux_prefix S-; c o n f i r m - b e f o r e spc - p S-' S-k i l l spc s e s s i o n spc S-3 S-s S-/ spc S-9 y / n S-0 S-' spc k i l l - s e s s i o n ent) 
-tmux_session_next            (macro $tmux_prefix S-9)
-tmux_session_prev            (macro $tmux_prefix S-0)
+tmux_session_create          (macro $tmux_prefix S-; n e w spc - s spc)
+tmux_session_next            (macro $tmux_prefix S-0)
+tmux_session_prev            (macro $tmux_prefix S-9)
 )

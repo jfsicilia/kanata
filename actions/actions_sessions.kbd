@@ -9,5 +9,6 @@
   (t! 1app_action action_sessions+l XX tmux)
   (t! 1app_action action_sessions+w XX tmux)
   (t! 1app_action action_sessions+r XX tmux)
+  (t! 1app_action action_sessions+c XX tmux)
 
 )
