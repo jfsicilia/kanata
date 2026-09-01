@@ -8,7 +8,7 @@
   shutdown_system         (multi (push-msg "NOTIFY: Shutting down...")    (cmd systemctl shutdown))
   print_screen            prnt
   print_window            S-prnt
-  sync_and_reload_kanata  (multi (cmd kanata_sync.sh) (push-msg "RELOAD:") lrld)
+  sync_and_reload_kanata  (macro (cmd kanata_sync.sh) (push-msg "RELOAD:") lrld)
   reload_kanata           lrld
   debug_message           (push-msg "DEBUG: This is a DEBUG message to check communication")
   sleep_system            (multi (push-msg "NOTIFY: Sleeping...")         (cmd systemctl suspend))
