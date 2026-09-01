@@ -27,7 +27,6 @@
   paste             C-v
   cut               C-x
   ;; Other operations
-  window_close      $windows_close
   settings          $action_domains+,+,
   tags              $action_domains+.+.
   help              $action_domains+/+/
@@ -125,7 +124,7 @@
 
   (t! 4app_action action_omni+p $nav_prev nvim tmux obsidian dolphin)
 
-  (t! 4app_action action_omni+q $window_close whatsapp nvim tmux zapzap)
+  (t! 4app_action action_omni+q $windows_close whatsapp nvim tmux zapzap)
 
   (t! 4app_action action_omni+r XX nvim tmux obsidian dolphin)
 
