@@ -1,8 +1,4 @@
 (defvar
-
-;; == LCTL actions ==========================================================
-;; ___TO_SET___ tmux_action_lctl+tab               
-;; ___TO_SET___ tmux_action_lctl+`                 
 ;; ___TO_SET___ tmux_action_lctl+spc               
 
 ;; ___TO_SET___ tmux_action_lctl+a                 

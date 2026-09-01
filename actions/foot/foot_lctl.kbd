@@ -1,8 +1,4 @@
 (defvar
-
-;; == LCTL actions ==========================================================
-;; ___TO_SET___ foot_action_lctl+tab               
-;; ___TO_SET___ foot_action_lctl+`                 
 foot_action_lctl+spc      $foot_autocomplete
 
 ;; ___TO_SET___ foot_action_lctl+a                 

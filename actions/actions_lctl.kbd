@@ -13,8 +13,8 @@
   )
 
   ;; == LCTL actions ==========================================================
-  (t! 0app_action action_lctl+tab $walk_through_apps)
-  (t! 0app_action action_lctl+` $walk_through_same_app)
+  action_lctl+tab $walk_through_apps
+  action_lctl+` $walk_through_same_app
   (t! 1app_action action_lctl+spc C-spc foot)
 
   (t! 0app_action action_lctl+a C-a)
