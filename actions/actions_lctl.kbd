@@ -22,7 +22,7 @@
   (t! 0app_action action_lctl+c C-c)
   (t! 1app_action action_lctl+d C-d foot)
   (t! 1app_action action_lctl+e C-e foot)
-  (t! 2app_action action_lctl+f C-f obsidian foot)
+  (t! 2app_action action_lctl+f C-f foot obsidian)
   (t! 0app_action action_lctl+g C-g)
   (t! 1app_action action_lctl+h C-h foot)
   (t! 1app_action action_lctl+i C-i foot)

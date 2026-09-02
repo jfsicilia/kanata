@@ -2,30 +2,30 @@
 
   ;; == groups =============================================================
 
-  (t! 6app_action action_groups+spc XX nvim chrome obsidian firefox tmux zellij)
+  (t! 6app_action action_groups+spc XX nvim chrome firefox obsidian tmux zellij)
 
-  (t! 6app_action action_groups+l C-tab nvim chrome obsidian firefox tmux zellij)
-  (t! 6app_action action_groups+h C-S-tab nvim chrome obsidian firefox tmux zellij)
+  (t! 6app_action action_groups+l C-tab nvim chrome firefox obsidian tmux zellij)
+  (t! 6app_action action_groups+h C-S-tab nvim chrome firefox obsidian tmux zellij)
   (t! 0app_action action_groups+j XX)
   (t! 0app_action action_groups+k XX)
 
-  (t! 4app_action action_groups+t XX chrome obsidian firefox tmux)
-  (t! 5app_action action_groups+w XX nvim chrome obsidian firefox tmux)
-  (t! 3app_action action_groups+lsft+t XX chrome obsidian firefox)
+  (t! 4app_action action_groups+t XX chrome firefox obsidian tmux)
+  (t! 5app_action action_groups+w XX nvim chrome firefox obsidian tmux)
+  (t! 3app_action action_groups+lsft+t XX chrome firefox obsidian)
 
   ;; == groups go by number ==================================================
-  (t! 5app_action action_groups+1 XX nvim chrome obsidian firefox tmux)
-  (t! 5app_action action_groups+2 XX nvim chrome obsidian firefox tmux)
-  (t! 5app_action action_groups+3 XX nvim chrome obsidian firefox tmux)
-  (t! 5app_action action_groups+4 XX nvim chrome obsidian firefox tmux)
-  (t! 5app_action action_groups+5 XX nvim chrome obsidian firefox tmux)
-  (t! 5app_action action_groups+6 XX nvim chrome obsidian firefox tmux)
-  (t! 5app_action action_groups+7 XX nvim chrome obsidian firefox tmux)
-  (t! 5app_action action_groups+8 XX nvim chrome obsidian firefox tmux)
-  (t! 5app_action action_groups+9 XX nvim chrome obsidian firefox tmux)
+  (t! 5app_action action_groups+1 XX nvim chrome firefox obsidian tmux)
+  (t! 5app_action action_groups+2 XX nvim chrome firefox obsidian tmux)
+  (t! 5app_action action_groups+3 XX nvim chrome firefox obsidian tmux)
+  (t! 5app_action action_groups+4 XX nvim chrome firefox obsidian tmux)
+  (t! 5app_action action_groups+5 XX nvim chrome firefox obsidian tmux)
+  (t! 5app_action action_groups+6 XX nvim chrome firefox obsidian tmux)
+  (t! 5app_action action_groups+7 XX nvim chrome firefox obsidian tmux)
+  (t! 5app_action action_groups+8 XX nvim chrome firefox obsidian tmux)
+  (t! 5app_action action_groups+9 XX nvim chrome firefox obsidian tmux)
 
   ;; == groups + toggle =====================================================
-  (t! 6app_action action_groups+toggle XX nvim chrome obsidian firefox tmux zellij)
+  (t! 6app_action action_groups+toggle XX nvim chrome firefox obsidian tmux zellij)
 
   ;; == groups + move =====================================================
   (t! 1app_action action_groups+move+h XX tmux)

@@ -2,7 +2,7 @@
 
   ;; == open =============================================================
   (t! 1app_action action_open+spc XX dolphin)
-  (t! 2app_action action_open+m XX obsidian dolphin)
-  (t! 2app_action action_open+t XX obsidian dolphin)
-  (t! 2app_action action_open+v XX obsidian dolphin)
+  (t! 2app_action action_open+m XX dolphin obsidian)
+  (t! 2app_action action_open+t XX dolphin obsidian)
+  (t! 2app_action action_open+v XX dolphin obsidian)
 )

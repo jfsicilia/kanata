@@ -21,31 +21,31 @@
 (defvar
   ;; == tabs ===============================================================
 
-  (t! 6app_action action_tabs+spc (push-msg "NOTIFY: Select tabs not implemented") chrome obsidian dolphin firefox nvim tmux)
+  (t! 6app_action action_tabs+spc (push-msg "NOTIFY: Select tabs not implemented") chrome dolphin firefox nvim obsidian tmux)
 
-  (t! 8app_action action_tabs+l $tab_next whatsapp chrome zapzap obsidian firefox nvim tmux zellij)
-  (t! 8app_action action_tabs+h $tab_prev whatsapp chrome zapzap obsidian firefox nvim tmux zellij)
+  (t! 8app_action action_tabs+l $tab_next whatsapp chrome firefox nvim obsidian tmux zapzap zellij)
+  (t! 8app_action action_tabs+h $tab_prev whatsapp chrome firefox nvim obsidian tmux zapzap zellij)
   (t! 1app_action action_tabs+j (push-msg "NOTIFY: Select first tab not implemented") dolphin)
   (t! 1app_action action_tabs+k (push-msg "NOTIFY: Select last tab not implemented") dolphin)
   (t! 1app_action action_tabs+r XX tmux)
-  (t! 4app_action action_tabs+t $tab_new chrome obsidian firefox tmux)
+  (t! 4app_action action_tabs+t $tab_new chrome firefox obsidian tmux)
   (t! 1app_action action_tabs+v (push-msg "NOTIFY: Tabs Vertical not implemented") obsidian)
-  (t! 5app_action action_tabs+w $tab_close chrome obsidian firefox nvim tmux)
-  (t! 3app_action action_tabs+lsft+t $tab_undo_close chrome obsidian firefox)
+  (t! 5app_action action_tabs+w $tab_close chrome firefox nvim obsidian tmux)
+  (t! 3app_action action_tabs+lsft+t $tab_undo_close chrome firefox obsidian)
 
   ;; == tabs go by number ==================================================
-  (t! 8app_action action_tabs+1 $tab_goto_1 whatsapp chrome zapzap obsidian dolphin firefox nvim tmux)
-  (t! 8app_action action_tabs+2 $tab_goto_2 whatsapp chrome zapzap obsidian dolphin firefox nvim tmux)
-  (t! 8app_action action_tabs+3 $tab_goto_3 whatsapp chrome zapzap obsidian dolphin firefox nvim tmux)
-  (t! 8app_action action_tabs+4 $tab_goto_4 whatsapp chrome zapzap obsidian dolphin firefox nvim tmux)
-  (t! 8app_action action_tabs+5 $tab_goto_5 whatsapp chrome zapzap obsidian dolphin firefox nvim tmux)
-  (t! 8app_action action_tabs+6 $tab_goto_6 whatsapp chrome zapzap obsidian dolphin firefox nvim tmux)
-  (t! 8app_action action_tabs+7 $tab_goto_7 whatsapp chrome zapzap obsidian dolphin firefox nvim tmux)
-  (t! 8app_action action_tabs+8 $tab_goto_8 whatsapp chrome zapzap obsidian dolphin firefox nvim tmux)
-  (t! 6app_action action_tabs+9 $tab_goto_last chrome obsidian dolphin firefox nvim tmux)
+  (t! 8app_action action_tabs+1 $tab_goto_1 whatsapp chrome dolphin firefox nvim obsidian tmux zapzap)
+  (t! 8app_action action_tabs+2 $tab_goto_2 whatsapp chrome dolphin firefox nvim obsidian tmux zapzap)
+  (t! 8app_action action_tabs+3 $tab_goto_3 whatsapp chrome dolphin firefox nvim obsidian tmux zapzap)
+  (t! 8app_action action_tabs+4 $tab_goto_4 whatsapp chrome dolphin firefox nvim obsidian tmux zapzap)
+  (t! 8app_action action_tabs+5 $tab_goto_5 whatsapp chrome dolphin firefox nvim obsidian tmux zapzap)
+  (t! 8app_action action_tabs+6 $tab_goto_6 whatsapp chrome dolphin firefox nvim obsidian tmux zapzap)
+  (t! 8app_action action_tabs+7 $tab_goto_7 whatsapp chrome dolphin firefox nvim obsidian tmux zapzap)
+  (t! 8app_action action_tabs+8 $tab_goto_8 whatsapp chrome dolphin firefox nvim obsidian tmux zapzap)
+  (t! 6app_action action_tabs+9 $tab_goto_last chrome dolphin firefox nvim obsidian tmux)
 
   ;; == tabs + toggle =====================================================
-  (t! 7app_action action_tabs+toggle (push-msg "NOTIFY: Toggle recent tab not implemented") chrome obsidian dolphin firefox nvim tmux zellij)
+  (t! 7app_action action_tabs+toggle (push-msg "NOTIFY: Toggle recent tab not implemented") chrome dolphin firefox nvim obsidian tmux zellij)
 
   ;; == tabs + move =====================================================
   (t! 4app_action action_tabs+move+h (push-msg "NOTIFY: Move tab left not implemented") chrome dolphin firefox tmux)

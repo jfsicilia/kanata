@@ -1,9 +1,9 @@
 (defvar
   ;; == !LCTL|SELECT actions ==========================================================
   (t! 0app_action action_!lctl|select+` C-`)
-  (t! 9app_action action_!lctl|select+spc XX whatsapp chrome zapzap obsidian dolphin firefox foot nvim tmux)
+  (t! 9app_action action_!lctl|select+spc XX whatsapp chrome dolphin firefox foot nvim obsidian tmux zapzap)
 
-  (t! 2app_action action_!lctl|select+a C-a obsidian nvim)
+  (t! 2app_action action_!lctl|select+a C-a nvim obsidian)
   (t! 1app_action action_!lctl|select+b C-b obsidian)
   (t! 0app_action action_!lctl|select+c C-c)
   (t! 0app_action action_!lctl|select+d C-d)
@@ -51,7 +51,7 @@
   (t! 1app_action action_!lctl|select+0 C-0 firefox) ;; ""
   ;; == !lctl|select+LSFT actions ======================================================
   (t! 0app_action action_!lctl|select+lsft+` C-S-`)
-  (t! 6app_action action_!lctl|select+lsft+spc XX chrome obsidian dolphin firefox foot tmux)
+  (t! 6app_action action_!lctl|select+lsft+spc XX chrome dolphin firefox foot obsidian tmux)
 
   (t! 0app_action action_!lctl|select+lsft+a C-S-a)
   (t! 0app_action action_!lctl|select+lsft+b C-S-b)
