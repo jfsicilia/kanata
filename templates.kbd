@@ -58,7 +58,7 @@
 
 ;; Temporarily invert app-priority order while held.
 ;; Tap toggles vk_apps_sort_desc persistently (stays inverted until toggled
-;; again). Hold inverts it only for the duration of the hold, runs $action,
+;; again). Hold inverts it only for the duration of the hold, runs $action,  
 ;; then restores the previous order on release. $action is typically the
 ;; current layer's own toggle (re-entered with this key held), so its
 ;; Napp_action calls re-resolve using the flipped priority. Bound to
@@ -66,13 +66,41 @@
 ;; SEE: Napp_action templates below for how the priority order is consumed.
 ;;
 ;; Parameters:
-;;   action - Action to run while the priority order is inverted
-(deftemplate invert_apps_sort (action)
+;;   hold - Action to run while the priority order is inverted
+(deftemplate invert_apps_sort (hold)
   (t! th (on-press toggle-vkey vk_apps_sort_toggle)
     (multi 
       (on-press tap-vkey vk_apps_sort_toggle) 
-      (on-release tap-vkey vk_apps_sort_toggle)
-      $action
+       (on-release tap-vkey vk_apps_sort_toggle)
+      $hold
+    )
+  )
+)
+
+(deftemplate rev_action (action)
+  (macro (on-press tap-vkey vk_apps_sort_toggle) 
+         $action
+         (on-press tap-vkey vk_apps_sort_toggle) 
+  )
+)
+
+(deftemplate rev_th (tap hold)
+  (if-equal $tap _ 
+    (t! th (on-press toggle-vkey vk_apps_sort_toggle)
+      (multi 
+        (on-press tap-vkey vk_apps_sort_toggle) 
+        (on-release tap-vkey vk_apps_sort_toggle)
+        $hold
+      )
+    )
+  )
+  (if-not-equal $tap _ 
+    (t! th (t! rev_action $tap)
+      (multi 
+        (on-press tap-vkey vk_apps_sort_toggle) 
+        (on-release tap-vkey vk_apps_sort_toggle)
+        $hold
+      )
     )
   )
 )
