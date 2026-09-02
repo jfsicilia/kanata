@@ -69,32 +69,32 @@
 
   (t! 2app_action action_omni $cancel nvim colab)
 
-  (t! 2app_action action_omni+spc $action_lctl+spc obsidian dolphin)
+  (t! 2app_action action_omni+spc $action_lctl+spc dolphin obsidian)
 
   (t! 2app_action action_omni+ent XX tmux dolphin)
 
-  (t! 2app_action action_omni+bcsp $delete dolphin colab)
+  (t! 2app_action action_omni+bcsp $delete colab dolphin)
 
-  (t! 4app_action action_omni+a XX nvim tmux obsidian dolphin)
-  (t! 4app_action action_omni+lsft+a XX nvim tmux obsidian dolphin)
-  (t! 4app_action action_omni+rsft+a XX nvim tmux obsidian dolphin)
+  (t! 4app_action action_omni+a XX nvim tmux dolphin obsidian)
+  (t! 4app_action action_omni+lsft+a XX nvim tmux dolphin obsidian)
+  (t! 4app_action action_omni+rsft+a XX nvim tmux dolphin obsidian)
 
   (t! 4app_action action_omni+b $page_up nvim tmux foot obsidian)
 
-  (t! 5app_action action_omni+c $copy nvim tmux foot obsidian dolphin)
+  (t! 5app_action action_omni+c $copy nvim tmux foot dolphin obsidian)
   (t! 3app_action action_omni+lsft+c $copy_path nvim tmux dolphin)
   (t! 3app_action action_omni+rsft+c $copy_path nvim tmux dolphin)
   (t! 3app_action action_omni+c+left XX nvim tmux dolphin)
   (t! 3app_action action_omni+c+right XX nvim tmux dolphin)
 
-  (t! 4app_action action_omni+d XX nvim tmux obsidian dolphin)
+  (t! 4app_action action_omni+d XX nvim tmux dolphin obsidian)
 
   (t! 4app_action action_omni+e XX nvim tmux foot dolphin)
   (t! 4app_action action_omni+lsft+e XX nvim tmux foot dolphin)
 
   (t! 4app_action action_omni+f $page_down nvim tmux foot obsidian)
 
-  (t! 8app_action action_omni+g XX whatsapp nvim tmux chrome zapzap obsidian dolphin firefox)
+  (t! 8app_action action_omni+g XX whatsapp nvim tmux chrome dolphin firefox obsidian zapzap)
 
   (t! 1app_action action_omni+h $nav_left nvim)
   (t! 0app_action action_omni+lsft+h $shift+nav_left)
@@ -116,17 +116,17 @@
 
   (t! 1app_action action_omni+m $clipboard_history nvim)
 
-  (t! 9app_action action_omni+n XX whatsapp nvim tmux chrome zapzap obsidian dolphin firefox colab)
-  (t! 7app_action action_omni+lsft+n XX whatsapp nvim tmux zapzap obsidian dolphin colab)
-  (t! 7app_action action_omni+rsft+n XX whatsapp nvim tmux zapzap obsidian dolphin colab)
+  (t! 9app_action action_omni+n XX whatsapp nvim tmux chrome colab dolphin firefox obsidian zapzap)
+  (t! 7app_action action_omni+lsft+n XX whatsapp nvim tmux colab dolphin obsidian zapzap)
+  (t! 7app_action action_omni+rsft+n XX whatsapp nvim tmux colab dolphin obsidian zapzap)
 
-  (t! 4app_action action_omni+o $nav_next nvim tmux obsidian dolphin)
+  (t! 4app_action action_omni+o $nav_next nvim tmux dolphin obsidian)
 
-  (t! 4app_action action_omni+p $nav_prev nvim tmux obsidian dolphin)
+  (t! 4app_action action_omni+p $nav_prev nvim tmux dolphin obsidian)
 
   (t! 4app_action action_omni+q $windows_close whatsapp nvim tmux zapzap)
 
-  (t! 4app_action action_omni+r XX nvim tmux obsidian dolphin)
+  (t! 4app_action action_omni+r XX nvim tmux dolphin obsidian)
 
   (t! 3app_action action_omni+s XX nvim tmux dolphin)
   (t! 3app_action action_omni+lsft+s XX nvim tmux dolphin)
@@ -136,11 +136,11 @@
 
   (t! 3app_action action_omni+u XX nvim tmux dolphin)
 
-  (t! 5app_action action_omni+v $paste nvim tmux foot obsidian dolphin)
+  (t! 5app_action action_omni+v $paste nvim tmux foot dolphin obsidian)
 
   (t! 3app_action action_omni+w $action_tabs+w nvim tmux dolphin)
 
-  (t! 4app_action action_omni+x $cut nvim tmux obsidian dolphin)
+  (t! 4app_action action_omni+x $cut nvim tmux dolphin obsidian)
   (t! 3app_action action_omni+x+left XX nvim tmux dolphin)
   (t! 3app_action action_omni+x+right XX nvim tmux dolphin)
   
@@ -151,15 +151,15 @@
 
 
   (t! 3app_action action_omni+0 $tab_goto_0 nvim tmux dolphin)
-  (t! 5app_action action_omni+1 $tab_goto_1 whatsapp nvim tmux zapzap dolphin)
-  (t! 5app_action action_omni+2 $tab_goto_2 whatsapp nvim tmux zapzap dolphin)
-  (t! 5app_action action_omni+3 $tab_goto_3 whatsapp nvim tmux zapzap dolphin)
-  (t! 5app_action action_omni+4 $tab_goto_4 whatsapp nvim tmux zapzap dolphin)
-  (t! 5app_action action_omni+5 $tab_goto_5 whatsapp nvim tmux zapzap dolphin)
-  (t! 5app_action action_omni+6 $tab_goto_6 whatsapp nvim tmux zapzap dolphin)
-  (t! 5app_action action_omni+7 $tab_goto_7 whatsapp nvim tmux zapzap dolphin)
-  (t! 5app_action action_omni+8 $tab_goto_8 whatsapp nvim tmux zapzap dolphin)
-  (t! 5app_action action_omni+9 $tab_goto_9 whatsapp nvim tmux zapzap dolphin)
+  (t! 5app_action action_omni+1 $tab_goto_1 whatsapp nvim tmux dolphin zapzap)
+  (t! 5app_action action_omni+2 $tab_goto_2 whatsapp nvim tmux dolphin zapzap)
+  (t! 5app_action action_omni+3 $tab_goto_3 whatsapp nvim tmux dolphin zapzap)
+  (t! 5app_action action_omni+4 $tab_goto_4 whatsapp nvim tmux dolphin zapzap)
+  (t! 5app_action action_omni+5 $tab_goto_5 whatsapp nvim tmux dolphin zapzap)
+  (t! 5app_action action_omni+6 $tab_goto_6 whatsapp nvim tmux dolphin zapzap)
+  (t! 5app_action action_omni+7 $tab_goto_7 whatsapp nvim tmux dolphin zapzap)
+  (t! 5app_action action_omni+8 $tab_goto_8 whatsapp nvim tmux dolphin zapzap)
+  (t! 5app_action action_omni+9 $tab_goto_9 whatsapp nvim tmux dolphin zapzap)
 
   (t! 3app_action action_omni+` XX nvim tmux dolphin)
 
@@ -167,9 +167,9 @@
 
   (t! 3app_action action_omni+= XX nvim tmux dolphin)
 
-  (t! 7app_action action_omni+] XX nvim tmux chrome kiwix obsidian dolphin firefox)
+  (t! 7app_action action_omni+] XX nvim tmux chrome dolphin firefox kiwix obsidian)
 
-  (t! 7app_action action_omni+[ XX nvim tmux chrome kiwix obsidian dolphin firefox)
+  (t! 7app_action action_omni+[ XX nvim tmux chrome dolphin firefox kiwix obsidian)
 
   (t! 4app_action action_omni+\ XX nvim tmux foot dolphin)
   (t! 3app_action action_omni+lsft+\ XX nvim tmux foot)
@@ -179,7 +179,7 @@
 
   (t! 3app_action action_omni+' XX nvim tmux dolphin)
 
-  (t! 6app_action action_omni+, $settings whatsapp nvim tmux chrome zapzap firefox)
+  (t! 6app_action action_omni+, $settings whatsapp nvim tmux chrome firefox zapzap)
 
   (t! 3app_action action_omni+. $tags nvim tmux dolphin)
   
