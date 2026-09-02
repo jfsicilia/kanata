@@ -29,7 +29,6 @@
       "Bash(python3 generate_help.py)",
       "Bash(cp -r help /tmp/help_afterfix)",
       "Bash(echo \"idempotent:$?\")",
-      "Bash(grep -c 'action_.*+.*\\\\s\\\\$' actions/actions_apps.kbd)",
       "Bash(awk '/^\\\\\\(defvar/{c++} {print c\": \"$0}' actions/actions_bookmarks.kbd)",
       "Bash(awk '/^\\\\\\(defvar/{c++} {print c\": \"$0}' actions/actions_domains.iface.kbd)",
       "Bash(echo \"diff-exit:$?\")",
