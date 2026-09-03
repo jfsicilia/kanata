@@ -30,7 +30,7 @@
 
 nvim_action_omni                   $nvim_esc
 
-;; ___TO_SET___ nvim_action_omni+spc               
+nvim_action_omni+spc               $nvim_command_line
 
 vim_action_omni+ent               (push-msg "NOTIFY:Omni combo not implemented!")
 

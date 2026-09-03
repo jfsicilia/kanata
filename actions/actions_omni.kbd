@@ -69,7 +69,7 @@
 
   (t! 2app_action action_omni $cancel nvim colab)
 
-  (t! 3app_action action_omni+spc $action_lctl+spc tmux dolphin obsidian)
+  (t! 4app_action action_omni+spc $action_lctl+spc nvim tmux dolphin obsidian)
 
   (t! 2app_action action_omni+ent XX tmux dolphin)
 
