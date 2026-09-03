@@ -67,4 +67,16 @@ tmux_session_kill            (macro $tmux_prefix S-; c o n f i r m - b e f o r e
 tmux_session_create          (macro $tmux_prefix S-; n e w spc - s spc)
 tmux_session_next            (macro $tmux_prefix S-0)
 tmux_session_prev            (macro $tmux_prefix S-9)
+
+tmux_session_select_0        (macro $tmux_prefix s Digit0)
+tmux_session_select_1        (macro $tmux_prefix s Digit1)
+tmux_session_select_2        (macro $tmux_prefix s Digit2)
+tmux_session_select_3        (macro $tmux_prefix s Digit3)
+tmux_session_select_4        (macro $tmux_prefix s Digit4)
+tmux_session_select_5        (macro $tmux_prefix s Digit5)
+tmux_session_select_6        (macro $tmux_prefix s Digit6)
+tmux_session_select_7        (macro $tmux_prefix s Digit7)
+tmux_session_select_8        (macro $tmux_prefix s Digit8)
+tmux_session_select_9        (macro $tmux_prefix s Digit9)
+
 )

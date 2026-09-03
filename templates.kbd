@@ -69,10 +69,10 @@
 ;;   hold - Action to run while the priority order is inverted
 (deftemplate invert_apps_sort (hold)
   (t! th (on-press toggle-vkey vk_apps_sort_toggle)
-    (multi 
+    (multi
       (on-press tap-vkey vk_apps_sort_toggle) 
-       (on-release tap-vkey vk_apps_sort_toggle)
       $hold
+      (on-release tap-vkey vk_apps_sort_toggle)
     )
   )
 )

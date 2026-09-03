@@ -11,4 +11,16 @@
   (t! 1app_action action_sessions+r XX tmux)
   (t! 1app_action action_sessions+c XX tmux)
 
+  (t! 1app_action action_sessions+0 XX tmux)
+  (t! 1app_action action_sessions+1 XX tmux)
+  (t! 1app_action action_sessions+2 XX tmux)
+  (t! 1app_action action_sessions+3 XX tmux)
+  (t! 1app_action action_sessions+4 XX tmux)
+  (t! 1app_action action_sessions+5 XX tmux)
+  (t! 1app_action action_sessions+6 XX tmux)
+  (t! 1app_action action_sessions+7 XX tmux)
+  (t! 1app_action action_sessions+8 XX tmux)
+  (t! 1app_action action_sessions+9 XX tmux)
+
+
 )

@@ -9,6 +9,17 @@
   j               $action_sessions+j 
   l               $action_sessions+l 
 
+  0               $action_sessions+0
+  1               $action_sessions+1
+  2               $action_sessions+2
+  3               $action_sessions+3
+  4               $action_sessions+4
+  5               $action_sessions+5
+  6               $action_sessions+6
+  7               $action_sessions+7
+  8               $action_sessions+8
+  9               $action_sessions+9
+
   ;; == SFT ======================
   $d|lsft         (t! th $action_sessions+d   $toggle_sessions+lsft_layer)
   $k|rsft         (t! th $action_sessions+k   $toggle_sessions+rsft_layer)

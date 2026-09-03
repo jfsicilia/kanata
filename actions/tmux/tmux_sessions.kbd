@@ -11,4 +11,15 @@
   tmux_action_sessions+w      $tmux_session_kill
   tmux_action_sessions+r      $tmux_session_rename
   tmux_action_sessions+c      $tmux_session_create
+
+  tmux_action_sessions+0      $tmux_session_select_0
+  tmux_action_sessions+1      $tmux_session_select_1 
+  tmux_action_sessions+2      $tmux_session_select_2
+  tmux_action_sessions+3      $tmux_session_select_3
+  tmux_action_sessions+4      $tmux_session_select_4
+  tmux_action_sessions+5      $tmux_session_select_5
+  tmux_action_sessions+6      $tmux_session_select_6
+  tmux_action_sessions+7      $tmux_session_select_7
+  tmux_action_sessions+8      $tmux_session_select_8
+  tmux_action_sessions+9      $tmux_session_select_9
 )
