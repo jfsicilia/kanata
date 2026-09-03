@@ -1,6 +1,10 @@
 ;; "" PANES_TOGGLES """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (defvar
   toggle_panes_layer                  (t! toggle_layer             panes_layer)
+  toggle_rev_panes_layer              (multi (on-press tap-vkey vk_apps_sort_toggle) 
+                                             (t! toggle_layer panes_layer)
+                                             (on-release tap-vkey vk_apps_sort_toggle)
+                                      )
   toggle_panes+lsft_layer             (t! toggle_mod_layer   lsft  panes+lsft_layer)
   toggle_panes+rsft_layer             (t! toggle_mod_layer   rsft  panes+rsft_layer)
   toggle_panes+move_layer             (t! toggle_layer             panes+move_layer)
