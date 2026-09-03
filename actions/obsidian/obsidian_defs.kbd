@@ -14,7 +14,7 @@ obsidian_paste            C-A-v
 obsidian_cut              C-A-x
 obsidian_forward          C-A-right
 obsidian_backward         C-A-left
-obsidian_command_palette  C-spc
+obsidian_command_palette  C-p
 
 obsidian_action_bookmarks+spc                  C-o
 obsidian_symbols                               A-S-o
