@@ -1,0 +1,5 @@
+;; "" AGENTS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (agents_layer)
+  $invert|keyb (t! invert_apps_sort $toggle_agents_layer)
+  _ XX
+)

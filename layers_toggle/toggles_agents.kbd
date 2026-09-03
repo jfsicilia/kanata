@@ -1,0 +1,6 @@
+(defvar
+  ;; Agents layer
+  toggle_agents_layer                  (t! toggle_layer             agents_layer)
+;;  toggle_agents+lsft_layer             (t! toggle_mod_layer   lsft  agents+lsft_layer)
+;;  toggle_agents+rsft_layer             (t! toggle_mod_layer   rsft  agents+rsft_layer)
+)

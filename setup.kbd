@@ -296,8 +296,8 @@
       w|workflow            w          ;; Tap: w,                Hold: workflow_layer 
       e|refactor            e          ;; Tap: e,                Hold: refactor_layer 
       r|run                 r          ;; Tap: r,                Hold: run_layer 
-      t|sessions            t          ;; Tap: t,                Hold: sessions_layer 
-      y|sessions            y          ;; Tap: y,                Hold: sessions_layer
+      t|agents              t          ;; Tap: t,                Hold: agents_layer 
+      y|agents              y          ;; Tap: y,                Hold: agents_layer
       u|run                 u          ;; Tap: u,                Hold: run_layer 
       i|refactor            i          ;; Tap: i,                Hold: refactor_layer 
       o|workflow            o          ;; Tap: o,                Hold: workflow_layer 
@@ -324,14 +324,14 @@
   ;; Low row keys. 
  invert|keyb                lsgt       ;; Tap: Invert apps sort, Hold: keyb_layer
       z|workspaces          z          ;; Tap: z,                Hold: workspaces_layer
-      x|rev_panes           x          ;; Tap: x,                Hold: rev(panes_layer)
+      x|sessions            x          ;; Tap: x,                Hold: sessions_layer
       c|panes               c          ;; Tap: c,                Hold: panes_layer 
       v|tabs                v          ;; Tap: v,                Hold: tabs_layer 
       b|rev_tabs            b          ;; Tap: b,                Hold: rev(tabs_layer)
       n|rev_tabs            n          ;; Tap: n,                Hold: rev(tabs_layer)
       m|tabs                m          ;; Tap: m,                Hold: tabs_layer 
       ,|panes               ,          ;; Tap: ,,                Hold: panes_layer 
-      .|rev_panes           .          ;; Tap: .,                Hold: rev(panes_layer)
+      .|sessions            .          ;; Tap: .,                Hold: sessions_layer
       /|workspaces          /          ;; Tap: /,                Hold: workspaces_layer
   
   ;; Modifiers row
@@ -425,8 +425,8 @@ copilot|bookm               $copilot   ;; 2xTab: Last session,   Hold: bookmarks
       $w|workflow          (t! fast_th (t! char w)                            $toggle_workflow_layer)
       $e|refactor          (t! fast_th (t! char e)                            $toggle_refactor_layer)
       $r|run               (t! fast_th (t! char r)                            $toggle_run_layer)
-      $t|sessions          (t! fast_th (t! char t)                            $toggle_sessions_layer)
-      $y|sessions          (t! fast_th (t! char y)                            $toggle_sessions_layer)
+      $t|agents            (t! fast_th (t! char t)                            $toggle_agents_layer)
+      $y|agents            (t! fast_th (t! char y)                            $toggle_agents_layer)
       $u|run               (t! fast_th (t! char u)                            $toggle_run_layer) 
       $i|refactor          (t! fast_th (t! char i)                            $toggle_refactor_layer) 
       $o|workflow          (t! fast_th (t! char o)                            $toggle_workflow_layer) 
@@ -453,14 +453,14 @@ copilot|bookm               $copilot   ;; 2xTab: Last session,   Hold: bookmarks
   lsft                     (t!      th (t! 2x $action_tabs+h)                 $toggle_lsft_layer)
  $invert|keyb              (t!      th $APPS_SORT_TOGGLE                      $toggle_keyb_layer)
       $z|workspaces        (t! fast_th (t! char z)                            $toggle_workspaces_layer)
-      $x|rev_panes         (t! fast_th (t! char x)                            $toggle_rev_panes_layer)
+      $x|sessions          (t! fast_th (t! char x)                            $toggle_sessions_layer)
       $c|panes             (t! fast_th (t! char c)                            $toggle_panes_layer)
       $v|tabs              (t! fast_th (t! char v)                            $toggle_tabs_layer)
       $b|rev_tabs          (t! fast_th (t! char b)                            $toggle_rev_tabs_layer)
       $n|rev_tabs          (t! fast_th (t! char n)                            $toggle_rev_tabs_layer)
       $m|tabs              (t! fast_th (t! char m)                            $toggle_tabs_layer)
       $,|panes             (t! fast_th (t! char ,)                            $toggle_panes_layer)
-      $.|rev_panes         (t! fast_th (t! char .)                            $toggle_rev_panes_layer)
+      $.|sessions          (t! fast_th (t! char .)                            $toggle_sessions_layer)
       $/|workspaces        (t! fast_th (t! char /)                            $toggle_workspaces_layer)
   rsft                     (t!      th (t! 2x $action_tabs+l)                 $toggle_rsft_layer)
 
