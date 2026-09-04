@@ -18,6 +18,7 @@ tmux_action_tabs+r             $tmux_rename_tab
 ;; tabs + t
 ;; If not implemented, defaults to: C-t
 tmux_action_tabs+t             $tmux_new_tab 
+tmux_action_tabs+c             $tmux_new_tab 
 ;; ___TO_SET___ tmux_action_tabs+v                 
 ;; tabs + w
 ;; If not implemented, defaults to: C-w

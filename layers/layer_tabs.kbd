@@ -12,6 +12,7 @@
   up    $action_tabs+k
 
   r     $action_tabs+r
+  c     $action_tabs+c
   t     $action_tabs+t
   w     $action_tabs+w
 

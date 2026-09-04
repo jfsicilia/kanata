@@ -29,6 +29,7 @@
   (t! 1app_action action_tabs+k (push-msg "NOTIFY: Select last tab not implemented") dolphin)
   (t! 1app_action action_tabs+r XX tmux)
   (t! 4app_action action_tabs+t $tab_new chrome firefox obsidian tmux)
+  (t! 4app_action action_tabs+c $tab_new chrome firefox obsidian tmux)
   (t! 1app_action action_tabs+v (push-msg "NOTIFY: Tabs Vertical not implemented") obsidian)
   (t! 5app_action action_tabs+w $tab_close chrome firefox nvim obsidian tmux)
   (t! 3app_action action_tabs+lsft+t $tab_undo_close chrome firefox obsidian)

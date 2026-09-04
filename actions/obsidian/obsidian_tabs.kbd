@@ -16,6 +16,7 @@ obsidian_action_tabs+h              $obsidian_left_tab
 ;; tabs + t
 ;; If not implemented, defaults to: C-t
 obsidian_action_tabs+t              $obsidian_new_tab
+obsidian_action_tabs+c              $obsidian_new_tab
 ;; tabs + v
 obsidian_action_tabs+v              $obsidian_vertical_tabs
 ;; tabs + w
