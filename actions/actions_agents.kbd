@@ -1,0 +1,21 @@
+(defvar
+  ;; == agents =====================================================
+  (t! 1app_action action_agents+spc XX tmux)
+
+  (t! 1app_action action_agents+h XX tmux)
+  (t! 1app_action action_agents+j XX tmux)
+  (t! 1app_action action_agents+k XX tmux)
+  (t! 1app_action action_agents+l XX tmux)
+
+  (t! 1app_action action_agents+1 XX tmux)
+  (t! 1app_action action_agents+2 XX tmux)
+  (t! 1app_action action_agents+3 XX tmux)
+  (t! 1app_action action_agents+4 XX tmux)
+  (t! 1app_action action_agents+5 XX tmux)
+  (t! 1app_action action_agents+6 XX tmux)
+  (t! 1app_action action_agents+7 XX tmux)
+  (t! 1app_action action_agents+8 XX tmux)
+  (t! 1app_action action_agents+9 XX tmux)
+
+
+)

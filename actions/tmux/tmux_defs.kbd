@@ -79,4 +79,30 @@ tmux_session_select_7        (macro $tmux_prefix s Digit7)
 tmux_session_select_8        (macro $tmux_prefix s Digit8)
 tmux_session_select_9        (macro $tmux_prefix s Digit9)
 
+;;""
+;; agents
+tmux_agent_select          (macro $tmux_prefix C-d)
+
+tmux_agent_select_1        (macro $tmux_prefix C-d 100 Digit1)
+tmux_agent_select_2        (macro $tmux_prefix C-d 100 Digit2)
+tmux_agent_select_3        (macro $tmux_prefix C-d 100 Digit3)
+tmux_agent_select_4        (macro $tmux_prefix C-d 100 Digit4)
+tmux_agent_select_5        (macro $tmux_prefix C-d 100 Digit5)
+tmux_agent_select_6        (macro $tmux_prefix C-d 100 Digit6)
+tmux_agent_select_7        (macro $tmux_prefix C-d 100 Digit7)
+tmux_agent_select_8        (macro $tmux_prefix C-d 100 Digit8)
+tmux_agent_select_9        (macro $tmux_prefix C-d 100 Digit9)
+;;tmux_agent_select_1        (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc j u m p spc Digit1 S-' ent)
+;;tmux_agent_select_2        (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc j u m p spc Digit2 S-' ent)
+;;tmux_agent_select_3        (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc j u m p spc Digit3 S-' ent)
+;;tmux_agent_select_4        (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc j u m p spc Digit4 S-' ent)
+;;tmux_agent_select_5        (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc j u m p spc Digit5 S-' ent)
+;;tmux_agent_select_6        (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc j u m p spc Digit6 S-' ent)
+;;tmux_agent_select_7        (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc j u m p spc Digit7 S-' ent)
+;;tmux_agent_select_8        (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc j u m p spc Digit8 S-' ent)
+;;tmux_agent_select_9        (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc j u m p spc Digit9 S-' ent)
+
+tmux_agent_next            (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc n e x t S-' ent)
+tmux_agent_prev            (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc p r e v S-' ent)
+
 )

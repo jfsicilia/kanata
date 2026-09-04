@@ -1,5 +1,21 @@
 ;; "" AGENTS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (agents_layer)
+  spc             $action_agents+spc
+
+  h               $action_agents+h
+  j               $action_agents+j
+  k               $action_agents+k
+  l               $action_agents+l
+
+  1               $action_agents+1
+  2               $action_agents+2
+  3               $action_agents+3
+  4               $action_agents+4
+  5               $action_agents+5
+  6               $action_agents+6
+  7               $action_agents+7
+  8               $action_agents+8
+  9               $action_agents+9
   $invert|keyb (t! invert_apps_sort $toggle_agents_layer)
   _ XX
-)
+)   

@@ -1,0 +1,21 @@
+(defvar
+  tmux_action_agents+0      $tmux_agent_select_0
+;; == agents =====================================================
+;; agents + spc
+  tmux_action_agents+spc    $tmux_agent_select
+
+  tmux_action_agents+h      $tmux_agent_prev
+  tmux_action_agents+j      $tmux_agent_next
+  tmux_action_agents+k      $tmux_agent_prev
+  tmux_action_agents+l      $tmux_agent_next
+
+  tmux_action_agents+1      $tmux_agent_select_1 
+  tmux_action_agents+2      $tmux_agent_select_2
+  tmux_action_agents+3      $tmux_agent_select_3
+  tmux_action_agents+4      $tmux_agent_select_4
+  tmux_action_agents+5      $tmux_agent_select_5
+  tmux_action_agents+6      $tmux_agent_select_6
+  tmux_action_agents+7      $tmux_agent_select_7
+  tmux_action_agents+8      $tmux_agent_select_8
+  tmux_action_agents+9      $tmux_agent_select_9
+)
