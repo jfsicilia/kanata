@@ -1,6 +1,0 @@
-;; "" LAYOUTS LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-(deflayermap (layouts_layer)
-  $invert|keyb (t! invert_apps_sort $toggle_layouts_layer)
-  spc   $action_layouts+spc
-)
-

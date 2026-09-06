@@ -32,8 +32,7 @@
   help              $action_domains+/+/
   panes_toggle      $action_panes+toggle
   tabs_toggle       $action_tabs+toggle
-  apps_toggle       $windows_toggle 
-  groups_toggle     $action_groups+toggle
+  apps_toggle       $windows_toggle
   sessions_toggle   $action_sessions+toggle
 )
 

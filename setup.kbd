@@ -60,7 +60,7 @@
 ;; w / o   → tap: w / o         hold: worktrees_layer
 ;; e / i   → tap: e / i         hold: refactor_layer
 ;; r / u   → tap: r / u         hold: run_layer
-;; t / y   → tap: t / y         hold: layouts_layer
+;; t / y   → tap: t / y         hold: agents_layer
 ;; [ ] \   → tap: [ ] \         hold: (nothing yet — void_layer)
 ;;
 ;; MIDDLE ROW
@@ -83,7 +83,7 @@
 ;; lsft    → tap: 2x tab_prev   hold: lsft_layer
 ;; keyb    → tap: toggle ES/US  hold: alt_chars_layer (< > key on Spanish keyboard)
 ;; z / /   → tap: z / /         hold: workspaces_layer
-;; x / .   → tap: x / .         hold: groups_layer
+;; x / .   → tap: x / .         hold: sessions_layer
 ;; c / ,   → tap: c / ,         hold: panes_layer
 ;; v / m   → tap: v / m         hold: tabs_layer
 ;; b / n   → tap: b / n         hold: sessions_layer
@@ -98,7 +98,7 @@
 ;; ralt    → tap: 2x windows toggle    hold: apps_layer
 ;; prnt    → tap: 2x session toggle    hold: bookmarks_layer
 ;; copilot → tap: 2x session toggle    hold: bookmarks_layer (same as prnt; physical F23)
-;; rctl    → tap: 2x groups toggle     hold: opts_layer
+;; rctl    → tap: 2x (unassigned)      hold: opts_layer
 ;; esc     → tap: esc                  hold: opts_layer
 ;;
 ;; STACKED MODS: !lctl / !lalt / !lmet are two things at once
@@ -342,7 +342,7 @@
    ralt|apps                ralt       ;; 2xTap: Last app,       Hold: apps_layer
    prnt|bookm               prnt       ;; 2xTab: Last session,   Hold: bookmarks_layer
 copilot|bookm               $copilot   ;; 2xTab: Last session,   Hold: bookmarks_layer
-   rctl|opts                rctl       ;; 2xTab: Last group,     Hold: opts_layer
+   rctl|opts                rctl       ;; 2xTab: (unassigned),   Hold: opts_layer
     esc|opts                esc        ;; Tap: esc,              Hold: opts_layer
 
   ;; Omni + modifiers row
@@ -475,7 +475,7 @@ copilot|sessions     $copilot          ;; Omni+: Last session
    $prnt|bookm             (t!      th (t! 2x $action_sessions+toggle)        $toggle_bookmarks_layer)
 ;;$copilot|bookm             (t!      th (t! 2x $action_sessions+toggle)        $toggle_bookmarks_layer)
 $copilot|bookm             (t!      th $action_sessions+toggle                $toggle_bookmarks_layer)
-   $rctl|opts              (t!      th (t! 2x $action_groups+toggle)          $toggle_opts_layer)
+   $rctl|opts              (t!      th (t! 2x XX)                             $toggle_opts_layer)
 
      enter                 (t!      th enter                                  (layer-toggle void_layer))
 )

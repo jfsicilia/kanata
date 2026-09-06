@@ -37,7 +37,7 @@
 | ]          | forward           | forward             |                   |                 |                    |                            |                |
 | \          | compare           | compare             |                   |                 |                    |                            |                |
 | `          | ~format           | !format             |                   |                 |                    |                            |                |
-| -          |                   | zommOut             |                   |                 |                    |                            |                |
+| -          |                   | zoomOut             |                   |                 |                    |                            |                |
 | =          |                   | zoomIn              |                   |                 |                    |                            |                |
 | 1          | tab1              | tab1                |                   |                 |                    | tab1                       | chat1          |
 | 2          | tab2              | tab2                |                   |                 |                    | tab2                       | chat2          |
@@ -55,8 +55,7 @@
 | !lalt      | toggle_panes      | toggle_panes        | toggle_panes      | toggle_panes    | toggle_panes       | toggle_panes               |                |
 | !lmet      | toggle_desktops   | toggle_desktops     | toggle_desktops   | toggle_desktops | toggle_desktops    | toggle_desktops            |                |
 | ralt       | toggle_apps       | toggle_apps         | toggle_apps       | toggle_apps     | toggle_apps        | toggle_apps                |                |
-| prnt       | toggle_groups     | !toggle_groups      |                   | toggle_groups   |                    | toggle_groups              |                |
-| rctl       |                   | !toogle_sessions    |                   |                 |                    | toggle_sessions            |                |
+| copilot    | toggle_sessions   | toggle_sessions     | toggle_sessions   | toggle_sessions | toggle_sessions    | toggle_sessions            |                |
 | tab        |                   |                     |                   |                 |                    |                            |                |
 | esc        |                   |                     |                   |                 |                    |                            |                |
 | bspc       |                   | delete              |                   |                 |                    |                            |                |

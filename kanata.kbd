@@ -12,7 +12,7 @@
 ;; of this file: virtual key definitions and include statements.
 ;;
 ;; Per-interface priority is controlled by an optional index in the per-app
-;; action filename (e.g. nvim_groups.1.kbd = priority 1).
+;; action filename (e.g. nvim_omni.39.kbd = priority 39).
 ;; Lower numbers are checked first in switch conditions.
 (defcfg
   process-unmapped-keys yes
@@ -38,9 +38,7 @@
 (include layers_toggle/toggles_workspaces.kbd)
 (include layers_toggle/toggles_panes.kbd)
 (include layers_toggle/toggles_tabs.kbd)
-(include layers_toggle/toggles_groups.kbd)
 (include layers_toggle/toggles_sessions.kbd)
-(include layers_toggle/toggles_layouts.kbd)
 (include layers_toggle/toggles_apps.kbd)
 (include layers_toggle/toggles_bookmarks.kbd)
 (include layers_toggle/toggles_domains.kbd)
@@ -60,8 +58,6 @@
 (include layers/layer_workspaces.kbd)
 (include layers/layer_panes.kbd)
 (include layers/layer_tabs.kbd)
-(include layers/layer_groups.kbd)
-(include layers/layer_layouts.kbd)
 (include layers/layer_sessions.kbd)
 (include layers/layer_apps.kbd)
 (include layers/layer_bookmarks.kbd)
@@ -102,9 +98,7 @@
 (include actions/actions_lmet.kbd)
 (include actions/actions_!lmet|replace.kbd)
 (include actions/actions_sft.kbd)
-(include actions/actions_layouts.kbd)
 (include actions/actions_bookmarks.kbd)
-(include actions/actions_groups.kbd)
 (include actions/actions_domains.kbd)
 (include actions/actions_omni.kbd)
 (include actions/actions_open.kbd)
@@ -144,7 +138,6 @@
 (include actions/chrome/chrome_bookmarks.kbd)
 (include actions/chrome/chrome_defs.kbd)
 (include actions/chrome/chrome_domains.kbd)
-(include actions/chrome/chrome_groups.4.kbd)
 (include actions/chrome/chrome_omni.kbd)
 (include actions/chrome/chrome_panes.kbd)
 (include actions/chrome/chrome_tabs.kbd)
@@ -166,7 +159,6 @@
 (include actions/firefox/firefox_bookmarks.kbd)
 (include actions/firefox/firefox_defs.kbd)
 (include actions/firefox/firefox_domains.kbd)
-(include actions/firefox/firefox_groups.4.kbd)
 (include actions/firefox/firefox_lctl.kbd)
 (include actions/firefox/firefox_omni.kbd)
 (include actions/firefox/firefox_panes.kbd)
@@ -190,7 +182,6 @@
 (include actions/nvim/nvim_bare.kbd)
 (include actions/nvim/nvim_defs.kbd)
 (include actions/nvim/nvim_domains.kbd)
-(include actions/nvim/nvim_groups.1.kbd)
 (include actions/nvim/nvim_lctl.kbd)
 (include actions/nvim/nvim_omni.39.kbd)
 (include actions/nvim/nvim_open.kbd)
@@ -201,7 +192,6 @@
 (include actions/obsidian/obsidian_!lmet|replace.kbd)
 (include actions/obsidian/obsidian_defs.kbd)
 (include actions/obsidian/obsidian_domains.kbd)
-(include actions/obsidian/obsidian_groups.4.kbd)
 (include actions/obsidian/obsidian_lctl.kbd)
 (include actions/obsidian/obsidian_omni.kbd)
 (include actions/obsidian/obsidian_open.kbd)
@@ -211,8 +201,6 @@
 (include actions/tmux/tmux_agents.kbd)
 (include actions/tmux/tmux_defs.kbd)
 (include actions/tmux/tmux_domains.kbd)
-(include actions/tmux/tmux_groups.19.kbd)
-(include actions/tmux/tmux_layouts.kbd)
 (include actions/tmux/tmux_lctl.kbd)
 (include actions/tmux/tmux_omni.49.kbd)
 (include actions/tmux/tmux_panes.kbd)
@@ -235,7 +223,6 @@
 (include actions/zapzap/zapzap_tabs.kbd)
 (include actions/zellij/zellij_defs.kbd)
 (include actions/zellij/zellij_domains.kbd)
-(include actions/zellij/zellij_groups.29.kbd)
 (include actions/zellij/zellij_omni.kbd)
 (include actions/zellij/zellij_panes.kbd)
 (include actions/zellij/zellij_sessions.kbd)
