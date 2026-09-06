@@ -4,4 +4,5 @@
 ;; ___TO_SET___ tmux_action_workflow+toggle        
   tmux_action_workflow+n      $tmux_workflow_new
   tmux_action_workflow+m      $tmux_workflow_merge
+  tmux_action_workflow+w      $tmux_workflow_close
 )

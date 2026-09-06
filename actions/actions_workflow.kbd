@@ -4,4 +4,5 @@
   (t! 0app_action action_workflow+toggle (push-msg "NOTIFY: Workflow+toggle not implemented"))
   (t! 1app_action action_workflow+n (push-msg "NOTIFY: Workflow+n not implemented") tmux)
   (t! 1app_action action_workflow+m (push-msg "NOTIFY: Workflow+m not implemented") tmux)
+  (t! 1app_action action_workflow+w (push-msg "NOTIFY: Workflow+w not implemented") tmux)
 )

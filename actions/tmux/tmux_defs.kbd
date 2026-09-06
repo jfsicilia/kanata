@@ -1,14 +1,18 @@
 (defvar
 
 tmux_prefix                  A-b
-_tmux_popup                  ($tmux_prefix S-; 100 d i s p l a y - p o p u p spc - d spc S-' S-3 S-[ p a n e S-- c u r r e n t S-- p a t h S-] S-' spc - S-e spc S-' S-' left)
-_tmux_run_shell              ($tmux_prefix S-; 100 r u n - s h e l l spc S-' S-' left)
+_tmux:                       ($tmux_prefix S-; 100) 
+_tmux_popup                  (d i s p l a y - p o p u p spc - d spc S-' S-3 S-[ p a n e S-- c u r r e n t S-- p a t h S-] S-' spc - S-e spc S-' S-' left)
+_tmux_run                    (r u n - s h e l l spc S-' S-' left)
+_tmux_float                  (n e w - p a n e spc - c spc S-' S-3 S-[ p a n e S-- c u r r e n t S-- p a t h S-] S-' ent 100)
+_tmux_confirm                (c o n f i r m - b e f o r e spc - p spc S-' S-' left)
 
-tmux_commands                (macro $tmux_prefix S-;)
+
+tmux_commands                (macro $_tmux:)
 tmux_keybindings             (macro $tmux_prefix S-/)
 tmux_reload_config           (macro $tmux_prefix S-; 100 s o u r c e - f i l e spc S-` / . c o n f i g / t m u x / t m u x . c o n f ent) 
-tmux_file_picker             (macro $_tmux_popup t m u x - f i l e - p i c k e r ent)
-tmux_folder_picker           (macro $_tmux_popup t m u x - f i l e - p i c k e r spc - d ent)
+tmux_file_picker             (macro $_tmux: $_tmux_popup t m u x - f i l e - p i c k e r ent)
+tmux_folder_picker           (macro $_tmux: $_tmux_popup t m u x - f i l e - p i c k e r spc - d ent)
 
 ;;""
 ;;== omni ================================================================
@@ -37,7 +41,7 @@ tmux_pane_h_split            (macro $tmux_prefix S-')
 tmux_pane_v_split            (macro $tmux_prefix S-5)
 tmux_pane_close              (macro $tmux_prefix x)
 tmux_pane_toggle             (macro $tmux_prefix ;)  
-tmux_pane_sidebar            (macro $tmux_prefix S-; 100 r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r S-' ent)
+tmux_pane_sidebar            (macro $_tmux: $_tmux_run w o r k m u x spc s i d e b a r ent)
 tmux_move_pane_right         (macro $tmux_prefix S-]) 
 tmux_move_pane_left          (macro $tmux_prefix S-[) 
 tmux_move_pane_up            (macro $tmux_prefix S-; 100 s e l e c t - p a n e spc - S-u spc ; spc s w a p - p a n e spc - S-u ent) 
@@ -77,12 +81,12 @@ tmux_session_rename          (macro $tmux_prefix S-4)
 tmux_session_detach          (macro $tmux_prefix d)
 tmux_session_save            (macro $tmux_prefix A-s)
 tmux_session_save_and_detach (macro $tmux_prefix A-s $tmux_prefix d)
-tmux_session_kill            (macro $tmux_prefix S-; 100 c o n f i r m - b e f o r e spc - p S-' S-k i l l spc s e s s i o n spc S-3 S-s S-/ spc S-9 y / n S-0 S-' spc k i l l - s e s s i o n ent) 
+tmux_session_kill            (macro $_tmux: $_tmux_confirm S-k i l l spc s e s s i o n spc S-3 S-s S-/ spc S-9 y / n S-0 right spc k i l l - s e s s i o n ent) 
 tmux_session_new             (macro $tmux_prefix S-; 100 n e w spc - s spc)
 tmux_session_next            (macro $tmux_prefix S-0)
 tmux_session_prev            (macro $tmux_prefix S-9)
 
-tmux_session_toggle          (macro $_tmux_run_shell s e s h spc l a s t ent)
+tmux_session_toggle          (macro $_tmux: $_tmux_run s e s h spc l a s t ent)
 
 tmux_session_select_0        XX
 tmux_session_select_1        (macro $tmux_prefix s 80 ent)
@@ -99,7 +103,7 @@ tmux_session_select_9        (macro $tmux_prefix s 80 up up up up up up up up en
 ;;== agents ==============================================================
 
 ;;tmux_agent_select        display-popup -d "#{pane_current_path}" -E "workmux dashboard"
-_tmux_agent_select         ($_tmux_popup w o r k m u x spc d a s h b o a r d ent 100)
+_tmux_agent_select         ($_tmux: $_tmux_popup w o r k m u x spc d a s h b o a r d ent 100)
 tmux_agent_select          (macro $_tmux_agent_select)
 
 tmux_agent_select_1        (macro $_tmux_agent_select Digit1)
@@ -112,14 +116,14 @@ tmux_agent_select_7        (macro $_tmux_agent_select Digit7)
 tmux_agent_select_8        (macro $_tmux_agent_select Digit8) 
 tmux_agent_select_9        (macro $_tmux_agent_select Digit9) 
 
-tmux_agent_next            (macro $_tmux_run_shell w o r k m u x spc s i d e b a r spc n e x t ent)
-tmux_agent_prev            (macro $_tmux_run_shell w o r k m u x spc s i d e b a r spc p r e v ent)
+tmux_agent_next            (macro $_tmux: $_tmux_run w o r k m u x spc s i d e b a r spc n e x t ent)
+tmux_agent_prev            (macro $_tmux: $_tmux_run w o r k m u x spc s i d e b a r spc p r e v ent)
 
 ;;""
 ;;== workflow ============================================================
 
 ;;_tmux_workflow_select    display-popup -d "#{pane_current_path}" -E "workmux dashboard -t worktrees"
-_tmux_workflow_select      ($_tmux_popup w o r k m u x spc d a s h b o a r d spc - t spc w o r k t r e e s ent 100)
+_tmux_workflow_select      ($_tmux: $_tmux_popup w o r k m u x spc d a s h b o a r d spc - t spc w o r k t r e e s ent 100)
 
 tmux_workflow_select       (macro $_tmux_workflow_select)
 tmux_workflow_select_1     (macro $_tmux_workflow_select Digit1)
@@ -132,8 +136,11 @@ tmux_workflow_select_7     (macro $_tmux_workflow_select Digit7)
 tmux_workflow_select_8     (macro $_tmux_workflow_select Digit8)
 tmux_workflow_select_9     (macro $_tmux_workflow_select Digit9)
 
-tmux_workflow_new          (macro $_tmux_popup w o r k m u x spc a d d spc)
-tmux_workflow_merge        (macro $_tmux_popup w o r k m u x spc m e r g e ent)
+tmux_workflow_new          (macro $_tmux: $_tmux_popup w o r k m u x spc a d d spc)
+;;""
+;;tmux_workflow_merge      confirm-before -p "Merge worktree? (y/n)" 'display-popup -d "#{pane_current_path}" -E "workmux merge"'
+tmux_workflow_merge        (macro $_tmux: $_tmux_confirm S-m e r g e spc w o r k t r e e S-/ spc S-9 y / n S-0 right spc ' $_tmux_popup w o r k m u x spc m e r g e right ' ent)
+tmux_workflow_close        (macro $_tmux: $_tmux_float w o r k m u x spc c l o s e ent)
 
 ;;_tmux_run_in_float_pane    ($tmux_prefix S-; n e w - p a n e spc - c spc S-' S-3 S-[ p a n e S-- c u r r e n t S-- p a t h S-] S-' ent 100)
 )
