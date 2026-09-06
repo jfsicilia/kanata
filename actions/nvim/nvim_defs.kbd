@@ -100,7 +100,9 @@ nvim_replace_in_workspace  (macro esc S-; t o p l e f t spc v e r t i c a l spc 
 nvim_open_buffers          (macro esc S-; S-t e l e s c o p e spc b u f f e r s ret)  ;;""
 
 nvim_tabs_next             (macro esc S-; b n e x t ret)
-nvim_tabs_prev             (macro esc S-; b p r e v i o u s ret)  ;;""
+nvim_tabs_prev             (macro esc S-; b p r e v i o u s ret)
+nvim_tabs_first            (macro esc S-; b f i r s t ret)
+nvim_tabs_last             (macro esc S-; b l a s t ret)  ;;""
 nvim_toggle_tab            (macro esc S-; b S-3 ret) ;;""
 
 nvim_cursor_left           left

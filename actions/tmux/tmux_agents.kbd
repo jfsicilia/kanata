@@ -7,8 +7,6 @@
   tmux_action_agents+done   $tmux_agent_done
 
   tmux_action_agents+h      $tmux_agent_prev
-  tmux_action_agents+j      $tmux_agent_next
-  tmux_action_agents+k      $tmux_agent_prev
   tmux_action_agents+l      $tmux_agent_next
 
   tmux_action_agents+1      $tmux_agent_select_1 

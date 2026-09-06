@@ -25,8 +25,8 @@
 
   (t! 8app_action action_tabs+l $tab_next whatsapp chrome firefox nvim obsidian tmux zapzap zellij)
   (t! 8app_action action_tabs+h $tab_prev whatsapp chrome firefox nvim obsidian tmux zapzap zellij)
-  (t! 1app_action action_tabs+j (push-msg "NOTIFY: Select first tab not implemented") dolphin)
-  (t! 1app_action action_tabs+k (push-msg "NOTIFY: Select last tab not implemented") dolphin)
+  (t! 5app_action action_tabs+j $tab_goto_1 chrome dolphin firefox nvim obsidian)
+  (t! 5app_action action_tabs+k $tab_goto_last chrome dolphin firefox nvim obsidian)
   (t! 1app_action action_tabs+r XX tmux)
   (t! 6app_action action_tabs+n $tab_new chrome dolphin firefox nvim obsidian tmux)
   (t! 1app_action action_tabs+v (push-msg "NOTIFY: Tabs Vertical not implemented") obsidian)

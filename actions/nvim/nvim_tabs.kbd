@@ -10,8 +10,8 @@ nvim_action_tabs+l                      $nvim_tabs_next
 ;; tabs + h | tabs + left | rsft + lsft | 2x lsft | !lmet + sft + tab
 ;; If not implemented, defaults to: C-S-tab
 nvim_action_tabs+h                      $nvim_tabs_prev 
-;; ___TO_SET___ nvim_action_tabs+j                 
-;; ___TO_SET___ nvim_action_tabs+k                 
+nvim_action_tabs+j                      $nvim_tabs_first
+nvim_action_tabs+k                      $nvim_tabs_last
 ;; ___TO_SET___ nvim_action_tabs+r                 
 nvim_action_tabs+n                      $nvim_new_tab 
 ;; ___TO_SET___ nvim_action_tabs+v                 

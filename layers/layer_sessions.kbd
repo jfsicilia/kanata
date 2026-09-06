@@ -6,9 +6,8 @@
   w               $action_sessions+w
   n               $action_sessions+n
   r               $action_sessions+r 
-  h               $action_sessions+h 
-  j               $action_sessions+j 
-  l               $action_sessions+l 
+  h               $action_sessions+h
+  l               $action_sessions+l
   bspc            $action_sessions+bspc
 
   0               $action_sessions+0
@@ -24,7 +23,7 @@
 
   ;; == SFT ======================
   $d|lsft         (t! th $action_sessions+d   $toggle_sessions+lsft_layer)
-  $k|rsft         (t! th $action_sessions+k   $toggle_sessions+rsft_layer)
+  $k|rsft         (t! th _                    $toggle_sessions+rsft_layer)
   lsft            (t! th _                    $toggle_sessions+lsft_layer)
   rsft            (t! th _                    $toggle_sessions+rsft_layer)
 )

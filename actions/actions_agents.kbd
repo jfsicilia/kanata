@@ -5,8 +5,6 @@
   (t! 1app_action action_agents+done XX tmux)
 
   (t! 1app_action action_agents+h XX tmux)
-  (t! 1app_action action_agents+j XX tmux)
-  (t! 1app_action action_agents+k XX tmux)
   (t! 1app_action action_agents+l XX tmux)
 
   (t! 1app_action action_agents+1 XX tmux)

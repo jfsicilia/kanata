@@ -10,8 +10,8 @@ chrome_action_tabs+l                       $chrome_tabs_next
 ;; tabs + h | tabs + left | rsft + lsft | 2x lsft | !lmet + sft + tab
 ;; If not implemented, defaults to: C-S-tab
 chrome_action_tabs+h                       $chrome_tabs_prev
-;; ___TO_SET___ chrome_action_tabs+j                 
-;; ___TO_SET___ chrome_action_tabs+k                 
+chrome_action_tabs+j                       $chrome_tabs_goto_1
+chrome_action_tabs+k                       $chrome_tabs_goto_9
 ;; ___TO_SET___ chrome_action_tabs+r                 
 chrome_action_tabs+n                        $chrome_tabs_new
 ;; ___TO_SET___ chrome_action_tabs+v                 

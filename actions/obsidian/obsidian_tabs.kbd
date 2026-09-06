@@ -10,8 +10,8 @@ obsidian_action_tabs+l              $obsidian_right_tab
 ;; tabs + h | tabs + left | rsft + lsft | 2x lsft | !lmet + sft + tab
 ;; If not implemented, defaults to: C-S-tab
 obsidian_action_tabs+h              $obsidian_left_tab
-;; ___TO_SET___ obsidian_action_tabs+j                 
-;; ___TO_SET___ obsidian_action_tabs+k                 
+obsidian_action_tabs+j              $obsidian_go_tab_1
+obsidian_action_tabs+k              $obsidian_go_tab_9
 ;; ___TO_SET___ obsidian_action_tabs+r                 
 obsidian_action_tabs+n              $obsidian_new_tab
 ;; tabs + v

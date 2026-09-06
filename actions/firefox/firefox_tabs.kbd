@@ -11,8 +11,8 @@ firefox_action_tabs+l                       $firefox_tabs_next
 ;; tabs + h | tabs + left | rsft + lsft | 2x lsft | !lmet + sft + tab
 ;; If not implemented, defaults to: C-S-tab
 firefox_action_tabs+h                       $firefox_tabs_prev
-;; ___TO_SET___ firefox_action_tabs+j                 
-;; ___TO_SET___ firefox_action_tabs+k                 
+firefox_action_tabs+j                       $firefox_tabs_goto_1
+firefox_action_tabs+k                       $firefox_tabs_goto_9
 ;; ___TO_SET___ firefox_action_tabs+r                 
 firefox_action_tabs+n                        $firefox_tabs_new
 ;; ___TO_SET___ firefox_action_tabs+v                 
