@@ -119,5 +119,13 @@ tmux_agent_select_9        (macro $tmux_prefix C-d 100 Digit9)
 
 tmux_agent_next            (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc n e x t S-' ent)
 tmux_agent_prev            (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc p r e v S-' ent)
+;;""
+;; workflow
+
+;;tmux_workflow_select          display-popup -h 30 -w 100 -E "workmux dashboard" tab
+tmux_workflow_select          (macro $tmux_prefix S-; d i s p l a y - p o p u p spc - h spc Digit3 Digit0 spc - w spc Digit1 Digit0 Digit0 spc - S-e spc S-' w o r k m u x spc d a s h b o a r d S-' ent 100 tab)  
+tmux_workflow_create          (macro $tmux_prefix S-; n e w - p a n e spc - c spc S-' S-3 S-[ p a n e S-- c u r r e n t S-- p a t h S-] S-' ent 100 w m spc a d d spc spc S-7 S-7 spc e x i t left left left left left left left left)
+tmux_workflow_merge           (macro $tmux_prefix S-; n e w - p a n e spc - c spc S-' S-3 S-[ p a n e S-- c u r r e n t S-- p a t h S-] S-' ent 100 w m spc m e r g e ent)
+;;tmux_workflow_create          (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc a d d spc S-' left)
 
 )

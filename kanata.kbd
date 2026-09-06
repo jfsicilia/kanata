@@ -218,6 +218,7 @@
 (include actions/tmux/tmux_panes.kbd)
 (include actions/tmux/tmux_sessions.kbd)
 (include actions/tmux/tmux_tabs.kbd)
+(include actions/tmux/tmux_workflow.kbd)
 (include actions/vscode/vscode_defs.kbd)
 (include actions/vscode/vscode_omni.kbd)
 (include actions/whatsapp/whatsapp_!lalt|search.10.kbd)

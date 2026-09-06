@@ -1,0 +1,7 @@
+(defvar
+;; == workflow ============================================================
+  tmux_action_workflow+spc    $tmux_workflow_select
+;; ___TO_SET___ tmux_action_workflow+toggle        
+  tmux_action_workflow+c      $tmux_workflow_create
+  tmux_action_workflow+m      $tmux_workflow_merge
+)
