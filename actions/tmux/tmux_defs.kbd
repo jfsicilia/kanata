@@ -104,18 +104,20 @@ tmux_session_select_9        (macro $tmux_prefix s 80 up up up up up up up up en
 ;;== agents ==============================================================
 
 ;;tmux_agent_select        display-popup -d "#{pane_current_path}" -E "workmux dashboard"
-_tmux_agent_select         ($_tmux: $_tmux_popup w o r k m u x spc d a s h b o a r d ent 100)
-tmux_agent_select          (macro $_tmux_agent_select)
+_tmux_agent_select         ($_tmux_popup w o r k m u x spc d a s h b o a r d ent 100)
+tmux_agent_select          (macro $_tmux: $_tmux_agent_select)
+tmux_agent_done            (macro $_tmux: $_tmux_run w o r k m u x spc l a s t - d o n e ent) 
+tmux_agent_toggle          (macro $_tmux: $_tmux_run w o r k m u x spc l a s t - a g e n t ent)
 
-tmux_agent_select_1        (macro $_tmux_agent_select Digit1)
-tmux_agent_select_2        (macro $_tmux_agent_select Digit2)  
-tmux_agent_select_3        (macro $_tmux_agent_select Digit3) 
-tmux_agent_select_4        (macro $_tmux_agent_select Digit4) 
-tmux_agent_select_5        (macro $_tmux_agent_select Digit5) 
-tmux_agent_select_6        (macro $_tmux_agent_select Digit6) 
-tmux_agent_select_7        (macro $_tmux_agent_select Digit7) 
-tmux_agent_select_8        (macro $_tmux_agent_select Digit8) 
-tmux_agent_select_9        (macro $_tmux_agent_select Digit9) 
+tmux_agent_select_1        (macro $_tmux: $_tmux_agent_select Digit1)
+tmux_agent_select_2        (macro $_tmux: $_tmux_agent_select Digit2)  
+tmux_agent_select_3        (macro $_tmux: $_tmux_agent_select Digit3) 
+tmux_agent_select_4        (macro $_tmux: $_tmux_agent_select Digit4) 
+tmux_agent_select_5        (macro $_tmux: $_tmux_agent_select Digit5) 
+tmux_agent_select_6        (macro $_tmux: $_tmux_agent_select Digit6) 
+tmux_agent_select_7        (macro $_tmux: $_tmux_agent_select Digit7) 
+tmux_agent_select_8        (macro $_tmux: $_tmux_agent_select Digit8) 
+tmux_agent_select_9        (macro $_tmux: $_tmux_agent_select Digit9) 
 
 tmux_agent_next            (macro $_tmux: $_tmux_run w o r k m u x spc s i d e b a r spc n e x t ent)
 tmux_agent_prev            (macro $_tmux: $_tmux_run w o r k m u x spc s i d e b a r spc p r e v ent)
