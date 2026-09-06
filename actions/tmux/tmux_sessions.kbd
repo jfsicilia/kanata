@@ -1,8 +1,7 @@
 (defvar
 ;; == sessions =====================================================
-;; sessions + spc
   tmux_action_sessions+spc    $tmux_session_select
-;; ___TO_SET___ tmux_action_sessions+toggle        
+  tmux_action_sessions+toggle $tmux_session_toggle
   tmux_action_sessions+d      $tmux_session_save_and_detach
   tmux_action_sessions+h      $tmux_session_prev
   tmux_action_sessions+j      $tmux_session_next

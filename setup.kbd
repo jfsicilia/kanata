@@ -471,7 +471,8 @@ copilot|bookm               $copilot   ;; 2xTab: Last session,   Hold: bookmarks
     $spc|domains           (t! fast_th spc                                    $toggle_domains_layer) 
    $ralt|apps              (t!      th (t! 2x $windows_toggle)                $toggle_apps_layer)
    $prnt|bookm             (t!      th (t! 2x $action_sessions+toggle)        $toggle_bookmarks_layer)
-$copilot|bookm             (t!      th (t! 2x $action_sessions+toggle)        $toggle_bookmarks_layer)
+;;$copilot|bookm             (t!      th (t! 2x $action_sessions+toggle)        $toggle_bookmarks_layer)
+$copilot|bookm             (t!      th $action_sessions+toggle                $toggle_bookmarks_layer)
    $rctl|opts              (t!      th (t! 2x $action_groups+toggle)          $toggle_opts_layer)
 
      enter                 (t!      th enter                                  (layer-toggle void_layer))
