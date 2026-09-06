@@ -10,6 +10,7 @@
   (t! 1app_action action_sessions+w XX tmux)
   (t! 1app_action action_sessions+r XX tmux)
   (t! 1app_action action_sessions+n XX tmux)
+  (t! 1app_action action_sessions+bspc XX tmux)
 
   (t! 1app_action action_sessions+0 XX tmux)
   (t! 1app_action action_sessions+1 XX tmux)

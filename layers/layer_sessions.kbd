@@ -9,6 +9,7 @@
   h               $action_sessions+h 
   j               $action_sessions+j 
   l               $action_sessions+l 
+  bspc            $action_sessions+bspc
 
   0               $action_sessions+0
   1               $action_sessions+1
