@@ -1,24 +1,33 @@
 (defvar
 
 tmux_prefix                  A-b
+_tmux_popup                  ($tmux_prefix S-; 100 d i s p l a y - p o p u p spc - d spc S-' S-3 S-[ p a n e S-- c u r r e n t S-- p a t h S-] S-' spc - S-e spc S-' S-' left)
+_tmux_run_shell              ($tmux_prefix S-; 100 r u n - s h e l l spc S-' S-' left)
 
 tmux_commands                (macro $tmux_prefix S-;)
 tmux_keybindings             (macro $tmux_prefix S-/)
-tmux_reload_config           (macro $tmux_prefix S-; s o u r c e - f i l e spc S-` / . c o n f i g / t m u x / t m u x . c o n f ent) 
-tmux_file_picker             (macro $tmux_prefix S-; d i s p l a y - p o p u p spc - S-e spc t m u x - f i l e - p i c k e r ent)
-tmux_folder_picker           (macro $tmux_prefix S-; d i s p l a y - p o p u p spc - S-e spc t m u x - f i l e - p i c k e r spc - d ent)
+tmux_reload_config           (macro $tmux_prefix S-; 100 s o u r c e - f i l e spc S-` / . c o n f i g / t m u x / t m u x . c o n f ent) 
+tmux_file_picker             (macro $_tmux_popup t m u x - f i l e - p i c k e r ent)
+tmux_folder_picker           (macro $_tmux_popup t m u x - f i l e - p i c k e r spc - d ent)
 
-;; omni
+;;""
+;;== omni ================================================================
+
 tmux_pgup                    (macro $tmux_prefix pgup)
 tmux_copy                    (macro $tmux_prefix [)
 tmux_pgdn                    C-f
-tmux_new_window              (macro $tmux_prefix c)
-tmux_rename                  (macro $tmux_prefix ,)
 tmux_paste                   (macro $tmux_prefix ])
 tmux_change_layout           (macro $tmux_prefix spc)
-tmux_session_save            (macro $tmux_prefix A-s)
 
-;; panes
+;;""
+;;== Windows =============================================================
+
+tmux_window_new              (macro $tmux_prefix c)
+tmux_window_rename           (macro $tmux_prefix ,)
+
+;;""
+;;== pane ================================================================
+
 tmux_pane_maximize           (macro $tmux_prefix z)
 tmux_pane_left               (macro $tmux_prefix left)
 tmux_pane_right              (macro $tmux_prefix right)
@@ -27,7 +36,7 @@ tmux_pane_below              (macro $tmux_prefix down)
 tmux_pane_h_split            (macro $tmux_prefix S-')
 tmux_pane_v_split            (macro $tmux_prefix S-5)
 tmux_pane_close              (macro $tmux_prefix x)
-tmux_pane_toggle             (macro $tmux_prefix ;)
+tmux_pane_toggle             (macro $tmux_prefix ;)  
 tmux_pane_sidebar            (macro $tmux_prefix S-; 100 r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r S-' ent)
 tmux_move_pane_right         (macro $tmux_prefix S-]) 
 tmux_move_pane_left          (macro $tmux_prefix S-[) 
@@ -38,7 +47,9 @@ tmux_resize_pane_left        (macro $tmux_prefix C-left)
 tmux_resize_pane_up          (macro $tmux_prefix C-up)
 tmux_resize_pane_down        (macro $tmux_prefix C-down)
 
-;; tabs
+;;""
+;;== tabs ================================================================
+
 tmux_rename_tab              (macro $tmux_prefix ,)
 tmux_select_tab              (macro $tmux_prefix w) ;; prefix + w (choose window) 
 tmux_right_tab               (macro $tmux_prefix n) 
@@ -55,80 +66,74 @@ tmux_go_tab_7                (macro $tmux_prefix Digit7)
 tmux_go_tab_8                (macro $tmux_prefix Digit8)  
 tmux_go_tab_9                (macro $tmux_prefix Digit9)  
 tmux_toggle_tab              (macro $tmux_prefix l)        
-tmux_move_tab_right          (macro $tmux_prefix S-; s w a p - w i n d o w spc - t spc - Digit1 ; s e l e c t - w i n d o w spc - t spc - Digit1 ent) 
-tmux_move_tab_left           (macro $tmux_prefix S-; s w a p - w i n d o w spc - t spc S-= Digit1 ; s e l e c t - w i n d o w spc - t spc S-= Digit1 ent) 
+tmux_move_tab_right          (macro $tmux_prefix S-; 100 s w a p - w i n d o w spc - t spc - Digit1 ; s e l e c t - w i n d o w spc - t spc - Digit1 ent) 
+tmux_move_tab_left           (macro $tmux_prefix S-; 100 s w a p - w i n d o w spc - t spc S-= Digit1 ; s e l e c t - w i n d o w spc - t spc S-= Digit1 ent) 
 
 ;;""
-;; sessions
+;;== sessions ============================================================
+
 tmux_session_select          (macro $tmux_prefix s)
 tmux_session_rename          (macro $tmux_prefix S-4)
 tmux_session_detach          (macro $tmux_prefix d)
+tmux_session_save            (macro $tmux_prefix A-s)
 tmux_session_save_and_detach (macro $tmux_prefix A-s $tmux_prefix d)
-tmux_session_kill            (macro $tmux_prefix S-; c o n f i r m - b e f o r e spc - p S-' S-k i l l spc s e s s i o n spc S-3 S-s S-/ spc S-9 y / n S-0 S-' spc k i l l - s e s s i o n ent) 
-tmux_session_create          (macro $tmux_prefix S-; n e w spc - s spc)
+tmux_session_kill            (macro $tmux_prefix S-; 100 c o n f i r m - b e f o r e spc - p S-' S-k i l l spc s e s s i o n spc S-3 S-s S-/ spc S-9 y / n S-0 S-' spc k i l l - s e s s i o n ent) 
+tmux_session_new             (macro $tmux_prefix S-; 100 n e w spc - s spc)
 tmux_session_next            (macro $tmux_prefix S-0)
 tmux_session_prev            (macro $tmux_prefix S-9)
 
-tmux_session_toggle          (macro $tmux_prefix S-; 100 r u n - s h e l l spc S-' s e s h spc l a s t S-' ent)
-
-
-;;tmux_session_select_0        (macro $tmux_prefix s Digit0)
-;;tmux_session_select_1        (macro $tmux_prefix s Digit1)
-;;tmux_session_select_2        (macro $tmux_prefix s Digit2)
-;;tmux_session_select_3        (macro $tmux_prefix s Digit3)
-;;tmux_session_select_4        (macro $tmux_prefix s Digit4)
-;;tmux_session_select_5        (macro $tmux_prefix s Digit5)
-;;tmux_session_select_6        (macro $tmux_prefix s Digit6)
-;;tmux_session_select_7        (macro $tmux_prefix s Digit7)
-;;tmux_session_select_8        (macro $tmux_prefix s Digit8)
-;;tmux_session_select_9        (macro $tmux_prefix s Digit9)
+tmux_session_toggle          (macro $_tmux_run_shell s e s h spc l a s t ent)
 
 tmux_session_select_0        XX
 tmux_session_select_1        (macro $tmux_prefix s 80 ent)
-tmux_session_select_2        (macro $tmux_prefix s 80 down ent)
-tmux_session_select_3        (macro $tmux_prefix s 80 down down ent)
-tmux_session_select_4        (macro $tmux_prefix s 80 down down down ent)
-tmux_session_select_5        (macro $tmux_prefix s 80 down down down down ent)
-tmux_session_select_6        (macro $tmux_prefix s 80 down down down down down ent)
-tmux_session_select_7        (macro $tmux_prefix s 80 down down down down down down ent)
-tmux_session_select_8        (macro $tmux_prefix s 80 down down down down down down down ent)
-tmux_session_select_9        (macro $tmux_prefix s 80 down down down down down down down down ent)
+tmux_session_select_2        (macro $tmux_prefix s 80 up ent)
+tmux_session_select_3        (macro $tmux_prefix s 80 up up ent)
+tmux_session_select_4        (macro $tmux_prefix s 80 up up up ent)
+tmux_session_select_5        (macro $tmux_prefix s 80 up up up up ent)
+tmux_session_select_6        (macro $tmux_prefix s 80 up up up up up ent)
+tmux_session_select_7        (macro $tmux_prefix s 80 up up up up up up ent)
+tmux_session_select_8        (macro $tmux_prefix s 80 up up up up up up up ent)
+tmux_session_select_9        (macro $tmux_prefix s 80 up up up up up up up up ent)
 
 ;;""
-;; agents
+;;== agents ==============================================================
 
-;;tmux_agent_select          display-popup -h 30 -w 100 -E "workmux dashboard"
-tmux_agent_select            (macro $tmux_prefix S-; d i s p l a y - p o p u p spc - h spc Digit3 Digit0 spc - w spc Digit1 Digit0 Digit0 spc - S-e spc S-' w o r k m u x spc d a s h b o a r d S-' ent)
+;;tmux_agent_select        display-popup -d "#{pane_current_path}" -E "workmux dashboard"
+_tmux_agent_select         ($_tmux_popup w o r k m u x spc d a s h b o a r d ent 100)
+tmux_agent_select          (macro $_tmux_agent_select)
 
-tmux_agent_select_1        (macro $tmux_prefix C-d 100 Digit1)
-tmux_agent_select_2        (macro $tmux_prefix C-d 100 Digit2)
-tmux_agent_select_3        (macro $tmux_prefix C-d 100 Digit3)
-tmux_agent_select_4        (macro $tmux_prefix C-d 100 Digit4)
-tmux_agent_select_5        (macro $tmux_prefix C-d 100 Digit5)
-tmux_agent_select_6        (macro $tmux_prefix C-d 100 Digit6)
-tmux_agent_select_7        (macro $tmux_prefix C-d 100 Digit7)
-tmux_agent_select_8        (macro $tmux_prefix C-d 100 Digit8)
-tmux_agent_select_9        (macro $tmux_prefix C-d 100 Digit9)
-;;tmux_agent_select_1        (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc j u m p spc Digit1 S-' ent)
-;;tmux_agent_select_2        (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc j u m p spc Digit2 S-' ent)
-;;tmux_agent_select_3        (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc j u m p spc Digit3 S-' ent)
-;;tmux_agent_select_4        (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc j u m p spc Digit4 S-' ent)
-;;tmux_agent_select_5        (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc j u m p spc Digit5 S-' ent)
-;;tmux_agent_select_6        (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc j u m p spc Digit6 S-' ent)
-;;tmux_agent_select_7        (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc j u m p spc Digit7 S-' ent)
-;;tmux_agent_select_8        (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc j u m p spc Digit8 S-' ent)
-;;tmux_agent_select_9        (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc j u m p spc Digit9 S-' ent)
+tmux_agent_select_1        (macro $_tmux_agent_select Digit1)
+tmux_agent_select_2        (macro $_tmux_agent_select Digit2)  
+tmux_agent_select_3        (macro $_tmux_agent_select Digit3) 
+tmux_agent_select_4        (macro $_tmux_agent_select Digit4) 
+tmux_agent_select_5        (macro $_tmux_agent_select Digit5) 
+tmux_agent_select_6        (macro $_tmux_agent_select Digit6) 
+tmux_agent_select_7        (macro $_tmux_agent_select Digit7) 
+tmux_agent_select_8        (macro $_tmux_agent_select Digit8) 
+tmux_agent_select_9        (macro $_tmux_agent_select Digit9) 
 
-tmux_agent_next            (macro $tmux_prefix S-; 100 r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc n e x t S-' ent)
-tmux_agent_prev            (macro $tmux_prefix S-; 100 r u n - s h e l l spc S-' w o r k m u x spc s i d e b a r spc p r e v S-' ent)
+tmux_agent_next            (macro $_tmux_run_shell w o r k m u x spc s i d e b a r spc n e x t ent)
+tmux_agent_prev            (macro $_tmux_run_shell w o r k m u x spc s i d e b a r spc p r e v ent)
 
 ;;""
-;; workflow
+;;== workflow ============================================================
 
-;;tmux_workflow_select          display-popup -h 30 -w 100 -E "workmux dashboard" tab
-tmux_workflow_select          (macro $tmux_prefix S-; d i s p l a y - p o p u p spc - h spc Digit3 Digit0 spc - w spc Digit1 Digit0 Digit0 spc - S-e spc S-' w o r k m u x spc d a s h b o a r d S-' ent 100 tab)  
-tmux_workflow_create          (macro $tmux_prefix S-; n e w - p a n e spc - c spc S-' S-3 S-[ p a n e S-- c u r r e n t S-- p a t h S-] S-' ent 100 w m spc a d d spc spc S-7 S-7 spc e x i t left left left left left left left left)
-tmux_workflow_merge           (macro $tmux_prefix S-; n e w - p a n e spc - c spc S-' S-3 S-[ p a n e S-- c u r r e n t S-- p a t h S-] S-' ent 100 w m spc m e r g e ent)
-;;tmux_workflow_create          (macro $tmux_prefix S-; r u n - s h e l l spc S-' w o r k m u x spc a d d spc S-' left)
+;;_tmux_workflow_select    display-popup -d "#{pane_current_path}" -E "workmux dashboard -t worktrees"
+_tmux_workflow_select      ($_tmux_popup w o r k m u x spc d a s h b o a r d spc - t spc w o r k t r e e s ent 100)
 
+tmux_workflow_select       (macro $_tmux_workflow_select)
+tmux_workflow_select_1     (macro $_tmux_workflow_select Digit1)
+tmux_workflow_select_2     (macro $_tmux_workflow_select Digit2)
+tmux_workflow_select_3     (macro $_tmux_workflow_select Digit3)
+tmux_workflow_select_4     (macro $_tmux_workflow_select Digit4)
+tmux_workflow_select_5     (macro $_tmux_workflow_select Digit5)
+tmux_workflow_select_6     (macro $_tmux_workflow_select Digit6)
+tmux_workflow_select_7     (macro $_tmux_workflow_select Digit7)
+tmux_workflow_select_8     (macro $_tmux_workflow_select Digit8)
+tmux_workflow_select_9     (macro $_tmux_workflow_select Digit9)
+
+tmux_workflow_new          (macro $_tmux_popup w o r k m u x spc a d d spc)
+tmux_workflow_merge        (macro $_tmux_popup w o r k m u x spc m e r g e ent)
+
+;;_tmux_run_in_float_pane    ($tmux_prefix S-; n e w - p a n e spc - c spc S-' S-3 S-[ p a n e S-- c u r r e n t S-- p a t h S-] S-' ent 100)
 )
