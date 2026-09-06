@@ -342,7 +342,7 @@
    ralt|apps                ralt       ;; 2xTap: Last app,       Hold: apps_layer
    prnt|bookm               prnt       ;; 2xTab: Last session,   Hold: bookmarks_layer
 copilot|bookm               $copilot   ;; 2xTab: Last session,   Hold: bookmarks_layer
-   rctl|opts                rctl       ;; 2xTab: (unassigned),   Hold: opts_layer
+   ;; rctl|opts                rctl       ;; 2xTab: (unassigned),   Hold: opts_layer
     esc|opts                esc        ;; Tap: esc,              Hold: opts_layer
 
   ;; Omni + modifiers row
@@ -351,7 +351,7 @@ copilot|bookm               $copilot   ;; 2xTab: Last session,   Hold: bookmarks
   !lctl|tabs         $!lctl            ;; Omni+: Last tab
 ;; ralt|apps         ralt              ;; Omni+: Last app
 copilot|sessions     $copilot          ;; Omni+: Last session
-   rctl|worktrees    rctl              ;; Omni+: Last worktree
+   ;; rctl|worktrees    rctl              ;; Omni+: Last worktree
 
   ;; Standard modifiers
   <lctl              f          
@@ -375,8 +375,7 @@ copilot|sessions     $copilot          ;; Omni+: Last session
   ;; Copilot key issues alt+sft+f23 when pressed. If present will be used as bookm key.
   ;; See (deflayermap (!lalt+lsft_layer)...) in layer_mod_physical.kbd to see how this key
   ;; is captured.
-  copilot            f23
-  opts               rctl       ;; Physical rctl key will be used for option layer when hold.    
+  copilot            f23        ;; Physical copilot key will be used for bookmark layer when hold.
   replace            $!lmet     ;; Physical lctl key will be used for replace layer when hold.
   search             $!lalt     ;; Physical lwin key will be used for search layer when hold.
   select             $!lctl     ;; Physical lalt key will be used for select layer when hold.
@@ -475,7 +474,7 @@ copilot|sessions     $copilot          ;; Omni+: Last session
    $prnt|bookm             (t!      th (t! 2x $action_sessions+toggle)        $toggle_bookmarks_layer)
 ;;$copilot|bookm             (t!      th (t! 2x $action_sessions+toggle)        $toggle_bookmarks_layer)
 $copilot|bookm             (t!      th $action_sessions+toggle                $toggle_bookmarks_layer)
-   $rctl|opts              (t!      th (t! 2x XX)                             $toggle_opts_layer)
+  ;; $rctl|opts              (t!      th (t! 2x XX)                             $toggle_opts_layer)
 
      enter                 (t!      th enter                                  (layer-toggle void_layer))
 )
