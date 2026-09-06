@@ -1,0 +1,11 @@
+(defvar
+  ;; == worktrees ============================================================
+  (t! 1app_action action_worktrees+spc (push-msg "NOTIFY: Worktrees+spc not implemented") tmux)
+  (t! 0app_action action_worktrees+toggle (push-msg "NOTIFY: Worktrees+toggle not implemented"))
+  (t! 1app_action action_worktrees+n (push-msg "NOTIFY: Worktrees+n not implemented") tmux)
+  (t! 1app_action action_worktrees+m (push-msg "NOTIFY: Worktrees+m not implemented") tmux)
+  (t! 1app_action action_worktrees+w (push-msg "NOTIFY: Worktrees+w not implemented") tmux)
+  (t! 1app_action action_worktrees+bspc (push-msg "NOTIFY: Worktrees+bspc not implemented") tmux)
+  (t! 1app_action action_worktrees+b (push-msg "NOTIFY: Worktrees+b not implemented") tmux)
+  (t! 1app_action action_worktrees+r (push-msg "NOTIFY: Worktrees+r not implemented") tmux)
+)

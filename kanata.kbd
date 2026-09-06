@@ -52,7 +52,7 @@
 (include layers_toggle/toggles_opts.kbd)
 (include layers_toggle/toggles_run.kbd)
 (include layers_toggle/toggles_refactor.kbd)
-(include layers_toggle/toggles_workflow.kbd)
+(include layers_toggle/toggles_worktrees.kbd)
 (include layers_toggle/toggles_system.kbd)
 
 ;; Layers ==============================================================
@@ -73,7 +73,7 @@
 (include layers/layer_agents.kbd)
 (include layers/layer_run.kbd)
 (include layers/layer_refactor.kbd)
-(include layers/layer_workflow.kbd)
+(include layers/layer_worktrees.kbd)
 (include layers/layer_system.kbd)
 (include layers/layer_lctl.kbd)
 (include layers/layer_!lctl|select.kbd)
@@ -114,7 +114,7 @@
 (include actions/actions_tabs.kbd)
 (include actions/actions_run.kbd)
 (include actions/actions_refactor.kbd)
-(include actions/actions_workflow.kbd)
+(include actions/actions_worktrees.kbd)
 (include actions/actions_system.kbd)
 
 ;; DO NOT REMOVE NEXT COMMENT!
@@ -218,7 +218,7 @@
 (include actions/tmux/tmux_panes.kbd)
 (include actions/tmux/tmux_sessions.kbd)
 (include actions/tmux/tmux_tabs.kbd)
-(include actions/tmux/tmux_workflow.kbd)
+(include actions/tmux/tmux_worktrees.kbd)
 (include actions/vscode/vscode_defs.kbd)
 (include actions/vscode/vscode_omni.kbd)
 (include actions/whatsapp/whatsapp_!lalt|search.10.kbd)

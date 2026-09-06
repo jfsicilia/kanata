@@ -1,0 +1,13 @@
+;; "" WORKTREES_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
+(deflayermap (worktrees_layer)
+  spc             $action_worktrees+spc
+  n               $action_worktrees+n
+  m               $action_worktrees+m
+  w               $action_worktrees+w
+  b               $action_worktrees+b
+  r               $action_worktrees+r
+  bspc            $action_worktrees+bspc
+
+  $invert|keyb (t! invert_apps_sort $toggle_worktrees_layer)
+  _ XX
+)
