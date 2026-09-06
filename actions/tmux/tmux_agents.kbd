@@ -3,6 +3,8 @@
 ;; == agents =====================================================
 ;; agents + spc
   tmux_action_agents+spc    $tmux_agent_select
+  tmux_action_agents+toggle $tmux_agent_toggle
+  tmux_action_agents+done   $tmux_agent_done
 
   tmux_action_agents+h      $tmux_agent_prev
   tmux_action_agents+j      $tmux_agent_next

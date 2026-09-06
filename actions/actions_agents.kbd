@@ -1,6 +1,8 @@
 (defvar
   ;; == agents =====================================================
   (t! 1app_action action_agents+spc XX tmux)
+  (t! 1app_action action_agents+toggle XX tmux)
+  (t! 1app_action action_agents+done XX tmux)
 
   (t! 1app_action action_agents+h XX tmux)
   (t! 1app_action action_agents+j XX tmux)

@@ -387,6 +387,7 @@ copilot|bookm               $copilot   ;; 2xTab: Last session,   Hold: bookmarks
   move              $!lctl
   toggle            ralt       
   float_&_snap      $copilot
+  done         $copilot
   ;; Depending on the physical keyboard, the following keys can be used to trigger GUI object layers:
   ;; float_&_snap    prnt      
   ;; swap            rctl        

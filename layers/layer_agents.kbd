@@ -1,6 +1,8 @@
 ;; "" AGENTS_LAYER """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (agents_layer)
   spc             $action_agents+spc
+  $toggle         $action_agents+toggle
+  $done           $action_agents+done
 
   h               $action_agents+h
   j               $action_agents+j
