@@ -24,7 +24,7 @@ tmux_action_panes+j                      $tmux_pane_below
 tmux_action_panes+-                      $tmux_pane_h_split
 ;; panes + \
 ;; #panes + \
-tmux_action_panes+\                      $tmux_pane_v_split
+tmux_action_panes+\                      $tmux_pane_v_split   ;;""
 
 ;; panes + w
 ;; #panes + w
@@ -96,7 +96,7 @@ tmux_action_panes+resize+j        $tmux_resize_pane_down
 ;; ___TO_SET___ tmux_action_panes+lsft+.           
 
 ;; ___TO_SET___ tmux_action_panes+a                
-;; ___TO_SET___ tmux_action_panes+s                
+tmux_action_panes+s                $tmux_pane_sidebar            
 ;; ___TO_SET___ tmux_action_panes+lsft+s           
 ;; ___TO_SET___ tmux_action_panes+d                
 ;; ___TO_SET___ tmux_action_panes+f                
