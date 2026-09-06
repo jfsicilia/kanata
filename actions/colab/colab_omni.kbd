@@ -160,7 +160,5 @@ colab_action_omni+rsft+n            $colab_new_cell_above
 
 ;; ___TO_SET___ colab_action_omni+ralt              
 
-;; ___TO_SET___ colab_action_omni+prnt              
-
-;; ___TO_SET___ colab_action_omni+rctl              
+;; ___TO_SET___ colab_action_omni+copilot           
 )

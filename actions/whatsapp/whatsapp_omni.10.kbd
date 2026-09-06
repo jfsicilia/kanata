@@ -180,7 +180,5 @@ whatsapp_action_omni+,                 $whatsapp_settings
 
 ;; ___TO_SET___ whatsapp_action_omni+ralt              
 
-;; ___TO_SET___ whatsapp_action_omni+prnt              
-
-;; ___TO_SET___ whatsapp_action_omni+rctl              
+;; ___TO_SET___ whatsapp_action_omni+copilot           
 )

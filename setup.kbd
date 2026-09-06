@@ -349,8 +349,9 @@ copilot|bookm               $copilot   ;; 2xTab: Last session,   Hold: bookmarks
   !lmet|desktops     $!lmet            ;; Omni+: Last desktop
   !lalt|panes        $!lalt            ;; Omni+: Last pane
   !lctl|tabs         $!lctl            ;; Omni+: Last tab
-   prnt|groups       prnt              ;; Omni+: Last group
-   rctl|sessions     rctl              ;; Omni+: Last session
+;; ralt|apps         ralt              ;; Omni+: Last app
+copilot|sessions     $copilot          ;; Omni+: Last session
+   rctl|worktrees    rctl              ;; Omni+: Last worktree
 
   ;; Standard modifiers
   <lctl              f          

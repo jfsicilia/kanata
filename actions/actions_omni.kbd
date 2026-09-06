@@ -193,7 +193,5 @@
 
   (t! 2app_action action_omni+ralt $apps_toggle nvim tmux)
 
-  (t! 3app_action action_omni+prnt $groups_toggle nvim tmux dolphin)
-
-  (t! 3app_action action_omni+rctl $sessions_toggle nvim tmux dolphin)
+  (t! 3app_action action_omni+copilot $sessions_toggle nvim tmux dolphin)
 )

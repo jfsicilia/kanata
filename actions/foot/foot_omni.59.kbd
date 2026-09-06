@@ -172,7 +172,5 @@ foot_action_omni+lsft+\           $foot_compare_dirs
 
 ;; ___TO_SET___ foot_action_omni+ralt              
 
-;; ___TO_SET___ foot_action_omni+prnt              
-
-;; ___TO_SET___ foot_action_omni+rctl              
+;; ___TO_SET___ foot_action_omni+copilot           
 )

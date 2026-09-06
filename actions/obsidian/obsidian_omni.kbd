@@ -184,7 +184,5 @@ obsidian_action_omni+[                    $obsidian_backward
 
 ;; ___TO_SET___ obsidian_action_omni+ralt              
 
-;; ___TO_SET___ obsidian_action_omni+prnt              
-
-;; ___TO_SET___ obsidian_action_omni+rctl              
+;; ___TO_SET___ obsidian_action_omni+copilot           
 )

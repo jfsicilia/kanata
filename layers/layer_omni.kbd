@@ -61,8 +61,7 @@
   $!lalt|panes     $action_omni+!lalt
   $!lctl|tabs      $action_omni+!lctl
    $ralt|apps      $action_omni+ralt
-   $prnt|groups    $action_omni+prnt
-   $rctl|sessions  $action_omni+rctl
+$copilot|sessions  $action_omni+copilot
 )
 
 (deflayermap (omni+lsft_layer)
