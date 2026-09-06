@@ -13,14 +13,13 @@ nvim_action_tabs+h                      $nvim_tabs_prev
 ;; ___TO_SET___ nvim_action_tabs+j                 
 ;; ___TO_SET___ nvim_action_tabs+k                 
 ;; ___TO_SET___ nvim_action_tabs+r                 
-nvim_action_tabs+t                      $nvim_new_tab 
 nvim_action_tabs+n                      $nvim_new_tab 
 ;; ___TO_SET___ nvim_action_tabs+v                 
 ;; tabs + w
 ;; If not implemented, defaults to: C-w
 ;; tabs + v
 nvim_action_tabs+w                      $nvim_close_tab
-;; ___TO_SET___ nvim_action_tabs+lsft+t            
+;; ___TO_SET___ nvim_action_tabs+lsft+n            
 
 ;; == tabs go by number ==================================================
 ;; tabs + 1

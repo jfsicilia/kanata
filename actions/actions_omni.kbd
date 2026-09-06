@@ -130,8 +130,8 @@
   (t! 3app_action action_omni+s XX nvim tmux dolphin)
   (t! 3app_action action_omni+lsft+s XX nvim tmux dolphin)
 
-  (t! 3app_action action_omni+t $action_tabs+t nvim tmux dolphin)
-  (t! 3app_action action_omni+lsft+t $action_tabs+lsft+t nvim tmux dolphin)
+  (t! 3app_action action_omni+t $action_tabs+n nvim tmux dolphin)
+  (t! 3app_action action_omni+lsft+t $action_tabs+lsft+n nvim tmux dolphin)
 
   (t! 3app_action action_omni+u XX nvim tmux dolphin)
 

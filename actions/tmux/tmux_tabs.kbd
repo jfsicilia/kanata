@@ -15,16 +15,13 @@ tmux_action_tabs+h             $tmux_left_tab
 ;; tabs + r
 ;; If not implemented, defaults to: XX
 tmux_action_tabs+r             $tmux_rename_tab
-;; tabs + t
-;; If not implemented, defaults to: C-t
-tmux_action_tabs+t             $tmux_new_tab 
 tmux_action_tabs+n             $tmux_new_tab 
 ;; ___TO_SET___ tmux_action_tabs+v                 
 ;; tabs + w
 ;; If not implemented, defaults to: C-w
 ;; tabs + v
 tmux_action_tabs+w             $tmux_close_tab         
-;; ___TO_SET___ tmux_action_tabs+lsft+t            
+;; ___TO_SET___ tmux_action_tabs+lsft+n            
 
 ;; == tabs go by number ==================================================
 ;; tabs + 1

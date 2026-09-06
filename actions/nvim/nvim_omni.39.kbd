@@ -136,12 +136,12 @@ nvim_action_omni+s                 $nvim_sort
 nvim_action_omni+lsft+s            $nvim_sort_reverse
 
 ;; omni + t
-;; If not implemented, defaults to: action_tabs+t
+;; If not implemented, defaults to: action_tabs+n
 ;; see tab
 ;; nvim_action_omni+t           `{esc}:tabnew{ent}`
 nvim_action_omni+t                 $nvim_new_tab
 ;; omni + lsft + t
-;; If not implemented, defaults to: action_tabs+lsft+t
+;; If not implemented, defaults to: action_tabs+lsft+n
 ;; see tab
 nvim_action_omni+lsft+t            $nvim_undo_tab
 

@@ -13,7 +13,6 @@
 
   r     $action_tabs+r
   n     $action_tabs+n
-  t     $action_tabs+t
   w     $action_tabs+w
 
   1     $action_tabs+1
@@ -49,9 +48,9 @@
 )
 (deflayermap (tabs+lsft_layer)
   $invert|keyb (t! invert_apps_sort $toggle_tabs+lsft_layer)
-  t $action_tabs+lsft+t
+  n $action_tabs+lsft+n
 )
 (deflayermap (tabs+rsft_layer)
   $invert|keyb (t! invert_apps_sort $toggle_tabs+rsft_layer)
-  t $action_tabs+lsft+t
+  n $action_tabs+lsft+n
 )

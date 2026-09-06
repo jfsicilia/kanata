@@ -123,11 +123,11 @@ dolphin_action_omni+s          $dolphin_toggle_sort_by
 dolphin_action_omni+lsft+s     $dolphin_sort_order_toggle
 
 ;; omni + t
-;; If not implemented, defaults to: action_tabs+t
+;; If not implemented, defaults to: action_tabs+n
 ;; see tab
 dolphin_action_omni+t          $dolphin_new_tab
 ;; omni + lsft + t
-;; If not implemented, defaults to: action_tabs+lsft+t
+;; If not implemented, defaults to: action_tabs+lsft+n
 ;; see tab
 dolphin_action_omni+lsft+t     $dolphin_undo_tab
 

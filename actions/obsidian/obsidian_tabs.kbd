@@ -13,9 +13,6 @@ obsidian_action_tabs+h              $obsidian_left_tab
 ;; ___TO_SET___ obsidian_action_tabs+j                 
 ;; ___TO_SET___ obsidian_action_tabs+k                 
 ;; ___TO_SET___ obsidian_action_tabs+r                 
-;; tabs + t
-;; If not implemented, defaults to: C-t
-obsidian_action_tabs+t              $obsidian_new_tab
 obsidian_action_tabs+n              $obsidian_new_tab
 ;; tabs + v
 obsidian_action_tabs+v              $obsidian_vertical_tabs
@@ -25,7 +22,7 @@ obsidian_action_tabs+v              $obsidian_vertical_tabs
 obsidian_action_tabs+w              $obsidian_close_tab
 ;; tabs + lsft + t
 ;; If not implemented, defaults to: C-S-t
-obsidian_action_tabs+lsft+t         $obsidian_undo_close_tab
+obsidian_action_tabs+lsft+n         $obsidian_undo_close_tab
 
 ;; == tabs go by number ==================================================
 ;; tabs + 1

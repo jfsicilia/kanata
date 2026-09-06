@@ -14,9 +14,6 @@ firefox_action_tabs+h                       $firefox_tabs_prev
 ;; ___TO_SET___ firefox_action_tabs+j                 
 ;; ___TO_SET___ firefox_action_tabs+k                 
 ;; ___TO_SET___ firefox_action_tabs+r                 
-;; tabs + t
-;; If not implemented, defaults to: C-t
-firefox_action_tabs+t                        $firefox_tabs_new
 firefox_action_tabs+n                        $firefox_tabs_new
 ;; ___TO_SET___ firefox_action_tabs+v                 
 ;; tabs + w
@@ -25,7 +22,7 @@ firefox_action_tabs+n                        $firefox_tabs_new
 firefox_action_tabs+w                      $firefox_tabs_close
 ;; tabs + lsft + t
 ;; If not implemented, defaults to: C-S-t
-firefox_action_tabs+lsft+t                 $firefox_tabs_undo_close
+firefox_action_tabs+lsft+n                 $firefox_tabs_undo_close
 
 ;; == tabs go by number ==================================================
 ;; tabs + 1
