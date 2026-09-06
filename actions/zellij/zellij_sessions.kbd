@@ -2,15 +2,18 @@
 ;; == sessions =====================================================
 ;; ___TO_SET___ zellij_action_sessions+spc           
 ;; ___TO_SET___ zellij_action_sessions+toggle        
+
+;; ___TO_SET___ zellij_action_sessions+n             
+;; ___TO_SET___ zellij_action_sessions+bspc          
 ;; ___TO_SET___ zellij_action_sessions+d             
+;; ___TO_SET___ zellij_action_sessions+w             
+
 ;; ___TO_SET___ zellij_action_sessions+h             
 ;; ___TO_SET___ zellij_action_sessions+j             
 ;; ___TO_SET___ zellij_action_sessions+k             
 ;; ___TO_SET___ zellij_action_sessions+l             
-;; ___TO_SET___ zellij_action_sessions+w             
+
 ;; ___TO_SET___ zellij_action_sessions+r             
-;; ___TO_SET___ zellij_action_sessions+n             
-;; ___TO_SET___ zellij_action_sessions+bspc          
 
 ;; ___TO_SET___ zellij_action_sessions+0             
 ;; ___TO_SET___ zellij_action_sessions+1             
