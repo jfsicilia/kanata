@@ -11,10 +11,10 @@ dolphin_action_tabs+j             (push-msg "NOTIFY:Select first tab not impleme
 ;; tabs + k | tabs + up
 dolphin_action_tabs+k              (push-msg "NOTIFY:Select last tab not implemented!")
 ;; ___TO_SET___ dolphin_action_tabs+r                 
-;; ___TO_SET___ dolphin_action_tabs+n                 
+dolphin_action_tabs+n          $dolphin_new_tab
 ;; ___TO_SET___ dolphin_action_tabs+v                 
 ;; ___TO_SET___ dolphin_action_tabs+w                 
-;; ___TO_SET___ dolphin_action_tabs+lsft+n            
+dolphin_action_tabs+lsft+n     $dolphin_undo_tab
 
 ;; == tabs go by number ==================================================
 ;; tabs + 1
