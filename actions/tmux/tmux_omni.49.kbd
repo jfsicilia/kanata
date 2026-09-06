@@ -99,7 +99,7 @@ tmux_action_omni+i                 (push-msg "NOTIFY:Tmux_Omni not implemented!"
 ;; ___TO_SET___ tmux_action_omni+m                 
 
 ;; omni + n
-tmux_action_omni+n                 $tmux_new_window ;; prefix + c (new window)
+tmux_action_omni+n                 $tmux_window_new ;; prefix + c (new window)
 ;; omni + lsft + n
 tmux_action_omni+lsft+n            (push-msg "NOTIFY:Tmux_Omni not implemented!")
 ;; omni + rsft + n
@@ -118,7 +118,7 @@ tmux_action_omni+p                 (push-msg "NOTIFY:Tmux_Omni not implemented!"
 tmux_action_omni+q                 $tmux_session_save_and_detach
 
 ;; omni + r
-tmux_action_omni+r                 $tmux_rename ;; prefix + , (rename window)
+tmux_action_omni+r                 $tmux_window_rename ;; prefix + , (rename window)
 
 ;; omni + s
 tmux_action_omni+s                 (push-msg "NOTIFY:Tmux_Omni not implemented!")
@@ -127,7 +127,7 @@ tmux_action_omni+lsft+s            (push-msg "NOTIFY:Tmux_Omni not implemented!"
 
 ;; omni + t
 ;; If not implemented, defaults to: action_tabs+t
-tmux_action_omni+t                 $tmux_new_window ;; prefix + c (new window)
+tmux_action_omni+t                 $tmux_window_new ;; prefix + c (new window)
 ;; omni + lsft + t
 ;; If not implemented, defaults to: action_tabs+lsft+t
 tmux_action_omni+lsft+t            (push-msg "NOTIFY:Tmux_Omni not implemented!")

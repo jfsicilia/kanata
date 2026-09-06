@@ -1,4 +1,5 @@
 (defvar
+firefox_action_tabs+c                        $firefox_tabs_new
 ;; == tabs ===============================================================
 
 ;; tabs + spc
@@ -16,7 +17,7 @@ firefox_action_tabs+h                       $firefox_tabs_prev
 ;; tabs + t
 ;; If not implemented, defaults to: C-t
 firefox_action_tabs+t                        $firefox_tabs_new
-firefox_action_tabs+c                        $firefox_tabs_new
+firefox_action_tabs+n                        $firefox_tabs_new
 ;; ___TO_SET___ firefox_action_tabs+v                 
 ;; tabs + w
 ;; If not implemented, defaults to: C-w

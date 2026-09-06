@@ -2,6 +2,6 @@
   ;; == workflow ============================================================
   (t! 1app_action action_workflow+spc (push-msg "NOTIFY: Workflow+spc not implemented") tmux)
   (t! 0app_action action_workflow+toggle (push-msg "NOTIFY: Workflow+toggle not implemented"))
-  (t! 1app_action action_workflow+c (push-msg "NOTIFY: Workflow+c not implemented") tmux)
+  (t! 1app_action action_workflow+n (push-msg "NOTIFY: Workflow+n not implemented") tmux)
   (t! 1app_action action_workflow+m (push-msg "NOTIFY: Workflow+m not implemented") tmux)
 )

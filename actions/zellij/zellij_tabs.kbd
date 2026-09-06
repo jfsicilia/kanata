@@ -13,7 +13,7 @@ zellij_action_tabs+h             $zellij_tabs_prev
 ;; ___TO_SET___ zellij_action_tabs+k                 
 ;; ___TO_SET___ zellij_action_tabs+r                 
 ;; ___TO_SET___ zellij_action_tabs+t                 
-;; ___TO_SET___ zellij_action_tabs+c                 
+;; ___TO_SET___ zellij_action_tabs+n                 
 ;; ___TO_SET___ zellij_action_tabs+v                 
 ;; ___TO_SET___ zellij_action_tabs+w                 
 ;; ___TO_SET___ zellij_action_tabs+lsft+t            

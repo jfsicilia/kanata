@@ -9,7 +9,7 @@
   tmux_action_sessions+l      $tmux_session_next
   tmux_action_sessions+w      $tmux_session_kill
   tmux_action_sessions+r      $tmux_session_rename
-  tmux_action_sessions+c      $tmux_session_create
+  tmux_action_sessions+n      $tmux_session_new
 
   tmux_action_sessions+0      $tmux_session_select_0
   tmux_action_sessions+1      $tmux_session_select_1 

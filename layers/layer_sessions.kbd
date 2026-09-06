@@ -4,7 +4,7 @@
   spc             $action_sessions+spc
   $toggle         $action_sessions+toggle
   w               $action_sessions+w
-  c               $action_sessions+c
+  n               $action_sessions+n
   r               $action_sessions+r 
   h               $action_sessions+h 
   j               $action_sessions+j 

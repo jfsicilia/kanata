@@ -1,7 +1,7 @@
 ;; "" WORKFLOW_LAYER """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 (deflayermap (workflow_layer)
   spc             $action_workflow+spc
-  c               $action_workflow+c
+  n               $action_workflow+n
   m               $action_workflow+m
 
   $invert|keyb (t! invert_apps_sort $toggle_workflow_layer)

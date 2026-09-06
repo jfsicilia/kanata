@@ -13,8 +13,8 @@ nvim_action_tabs+h                      $nvim_tabs_prev
 ;; ___TO_SET___ nvim_action_tabs+j                 
 ;; ___TO_SET___ nvim_action_tabs+k                 
 ;; ___TO_SET___ nvim_action_tabs+r                 
-;; ___TO_SET___ nvim_action_tabs+t                 
-;; ___TO_SET___ nvim_action_tabs+c                 
+nvim_action_tabs+t                      $nvim_new_tab 
+nvim_action_tabs+n                      $nvim_new_tab 
 ;; ___TO_SET___ nvim_action_tabs+v                 
 ;; tabs + w
 ;; If not implemented, defaults to: C-w
