@@ -120,27 +120,32 @@ tmux_agent_next            (macro $_tmux: $_tmux_run w o r k m u x spc s i d e b
 tmux_agent_prev            (macro $_tmux: $_tmux_run w o r k m u x spc s i d e b a r spc p r e v ent)
 
 ;;""
-;;== workflow ============================================================
+;;== worktree ============================================================
 
-;;_tmux_workflow_select    display-popup -d "#{pane_current_path}" -E "workmux dashboard -t worktrees"
-_tmux_workflow_select      ($_tmux: $_tmux_popup w o r k m u x spc d a s h b o a r d spc - t spc w o r k t r e e s ent 100)
+;;_tmux_worktree_select    display-popup -d "#{pane_current_path}" -E "workmux dashboard -t worktrees"
+_tmux_worktree_select      ($_tmux: $_tmux_popup w o r k m u x spc d a s h b o a r d spc - t spc w o r k t r e e s ent 100)
 
-tmux_workflow_select       (macro $_tmux_workflow_select)
-tmux_workflow_select_1     (macro $_tmux_workflow_select Digit1)
-tmux_workflow_select_2     (macro $_tmux_workflow_select Digit2)
-tmux_workflow_select_3     (macro $_tmux_workflow_select Digit3)
-tmux_workflow_select_4     (macro $_tmux_workflow_select Digit4)
-tmux_workflow_select_5     (macro $_tmux_workflow_select Digit5)
-tmux_workflow_select_6     (macro $_tmux_workflow_select Digit6)
-tmux_workflow_select_7     (macro $_tmux_workflow_select Digit7)
-tmux_workflow_select_8     (macro $_tmux_workflow_select Digit8)
-tmux_workflow_select_9     (macro $_tmux_workflow_select Digit9)
+tmux_worktree_select       (macro $_tmux_worktree_select)
+tmux_worktree_select_1     (macro $_tmux_worktree_select Digit1)
+tmux_worktree_select_2     (macro $_tmux_worktree_select Digit2)
+tmux_worktree_select_3     (macro $_tmux_worktree_select Digit3)
+tmux_worktree_select_4     (macro $_tmux_worktree_select Digit4)
+tmux_worktree_select_5     (macro $_tmux_worktree_select Digit5)
+tmux_worktree_select_6     (macro $_tmux_worktree_select Digit6)
+tmux_worktree_select_7     (macro $_tmux_worktree_select Digit7)
+tmux_worktree_select_8     (macro $_tmux_worktree_select Digit8)
+tmux_worktree_select_9     (macro $_tmux_worktree_select Digit9)
 
-tmux_workflow_new          (macro $_tmux: $_tmux_popup w o r k m u x spc a d d spc)
+tmux_worktree_new          (macro $_tmux: $_tmux_popup w o r k m u x spc a d d spc)
 ;;""
-;;tmux_workflow_merge      confirm-before -p "Merge worktree? (y/n)" 'display-popup -d "#{pane_current_path}" -E "workmux merge"'
-tmux_workflow_merge        (macro $_tmux: $_tmux_confirm S-m e r g e spc w o r k t r e e S-/ spc S-9 y / n S-0 right spc ' $_tmux_popup w o r k m u x spc m e r g e right ' ent)
-tmux_workflow_close        (macro $_tmux: $_tmux_float w o r k m u x spc c l o s e ent)
-
-;;_tmux_run_in_float_pane    ($tmux_prefix S-; n e w - p a n e spc - c spc S-' S-3 S-[ p a n e S-- c u r r e n t S-- p a t h S-] S-' ent 100)
+;;tmux_worktree_merge      confirm-before -p "Merge worktree? (y/n)" 'display-popup -d "#{pane_current_path}" -E "workmux merge"'
+tmux_worktree_merge        (macro $_tmux: $_tmux_confirm S-m e r g e spc w o r k t r e e S-/ spc S-9 y / n S-0 right spc ' $_tmux_popup w o r k m u x spc m e r g e right ' ent)
+tmux_worktree_close        (macro $_tmux: $_tmux_float w o r k m u x spc c l o s e ent)
+;;""
+;;tmux_worktree_merge      confirm-before -p "Delete worktree? (y/n)" 'display-popup -d "#{pane_current_path}" -E "workmux remove"'
+tmux_worktree_delete       (macro $_tmux: $_tmux_confirm S-d e l e t e spc w o r k t r e e S-/ spc S-9 y / n S-0 right spc ' $_tmux_popup w o r k m u x spc r e m o v e right ' ent)
+;;""
+;;tmux_worktree_merge      confirm-before -p "Rebase worktree? (y/n)" 'display-popup -d "#{pane_current_path}" -E "workmux rebase"'
+tmux_worktree_rebase       (macro $_tmux: $_tmux_confirm S-r e b a s e spc w o r k t r e e S-/ spc S-9 y / n S-0 right spc ' $_tmux_popup w o r k m u x spc r e b a s e right ' ent)
+tmux_worktree_rename       (macro $_tmux: $_tmux_popup w o r k m u x spc r e n a m e spc)
 )

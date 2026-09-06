@@ -4,6 +4,9 @@
   n               $action_workflow+n
   m               $action_workflow+m
   w               $action_workflow+w
+  b               $action_workflow+b
+  r               $action_workflow+r
+  bspc            $action_workflow+bspc
 
   $invert|keyb (t! invert_apps_sort $toggle_workflow_layer)
   _ XX
