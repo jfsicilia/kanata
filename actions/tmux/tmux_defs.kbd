@@ -89,15 +89,15 @@ tmux_session_prev            (macro $tmux_prefix S-9)
 tmux_session_toggle          (macro $_tmux: $_tmux_run s e s h spc l a s t ent)
 
 tmux_session_select_0        XX
-tmux_session_select_1        (macro $tmux_prefix s 80 ent)
-tmux_session_select_2        (macro $tmux_prefix s 80 up ent)
-tmux_session_select_3        (macro $tmux_prefix s 80 up up ent)
-tmux_session_select_4        (macro $tmux_prefix s 80 up up up ent)
-tmux_session_select_5        (macro $tmux_prefix s 80 up up up up ent)
-tmux_session_select_6        (macro $tmux_prefix s 80 up up up up up ent)
-tmux_session_select_7        (macro $tmux_prefix s 80 up up up up up up ent)
-tmux_session_select_8        (macro $tmux_prefix s 80 up up up up up up up ent)
-tmux_session_select_9        (macro $tmux_prefix s 80 up up up up up up up up ent)
+tmux_session_select_1        (macro $tmux_prefix A-1)
+tmux_session_select_2        (macro $tmux_prefix A-2)
+tmux_session_select_3        (macro $tmux_prefix A-3)
+tmux_session_select_4        (macro $tmux_prefix A-4)
+tmux_session_select_5        (macro $tmux_prefix A-5)
+tmux_session_select_6        (macro $tmux_prefix A-6)
+tmux_session_select_7        (macro $tmux_prefix A-7)
+tmux_session_select_8        (macro $tmux_prefix A-8)
+tmux_session_select_9        (macro $tmux_prefix A-9)
 
 ;;""
 ;;== agents ==============================================================
