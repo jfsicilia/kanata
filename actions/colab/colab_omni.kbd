@@ -36,8 +36,8 @@ colab_action_omni                   $colab_command_mode
 
 ;; ___TO_SET___ colab_action_omni+ent               
 
-;; omni + bcsp
-colab_action_omni+bcsp              $colab_delete
+;; omni + bspc
+colab_action_omni+bspc              $colab_delete
 
 ;; ___TO_SET___ colab_action_omni+a                 
 ;; ___TO_SET___ colab_action_omni+lsft+a            

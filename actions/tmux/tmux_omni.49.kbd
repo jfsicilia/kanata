@@ -35,7 +35,7 @@ tmux_action_omni+spc               $tmux_commands
 ;; omni + ent
 tmux_action_omni+ent               (push-msg "NOTIFY:Tmux_Omni not implemented!")
 
-;; ___TO_SET___ tmux_action_omni+bcsp              
+;; ___TO_SET___ tmux_action_omni+bspc              
 
 ;; omni + a
 tmux_action_omni+a                 (push-msg "NOTIFY:Tmux_Omni not implemented!")

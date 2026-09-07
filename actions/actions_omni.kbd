@@ -72,7 +72,7 @@
 
   (t! 2app_action action_omni+ent XX tmux dolphin)
 
-  (t! 2app_action action_omni+bcsp $delete colab dolphin)
+  (t! 2app_action action_omni+bspc $delete colab dolphin)
 
   (t! 4app_action action_omni+a XX nvim tmux dolphin obsidian)
   (t! 4app_action action_omni+lsft+a XX nvim tmux dolphin obsidian)

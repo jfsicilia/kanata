@@ -37,7 +37,7 @@
   `                $action_omni+`
   -                $action_omni+-
   =                $action_omni+=
-  bspc             $action_omni+bcsp 
+  bspc             $action_omni+bspc 
   [                $action_omni+[
   ]                $action_omni+]
   \                $action_omni+\
@@ -83,6 +83,9 @@ $copilot|sessions  $action_omni+copilot
 )
 
 (deflayermap (omni+rsft_layer)
+  ;; lsft and rsft are two independent shift spaces: keys point to their own
+  ;; +rsft+ action, or fall back to the +lsft+ variant when there is no
+  ;; rsft-specific behaviour (e/z/s/t below).
   $invert|keyb (t! invert_apps_sort $toggle_omni+rsft_layer)
   e $action_omni+lsft+e
   a $action_omni+rsft+a

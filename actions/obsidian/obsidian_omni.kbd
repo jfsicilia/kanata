@@ -37,7 +37,7 @@ obsidian_action_omni+spc                  $obsidian_command_palette
 
 ;; ___TO_SET___ obsidian_action_omni+ent               
 
-;; ___TO_SET___ obsidian_action_omni+bcsp              
+;; ___TO_SET___ obsidian_action_omni+bspc              
 
 ;; omni + a
 obsidian_action_omni+a                    $obsidian_select_all

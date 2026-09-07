@@ -34,7 +34,7 @@ nvim_action_omni+spc               $nvim_command_line
 
 vim_action_omni+ent               (push-msg "NOTIFY:Omni combo not implemented!")
 
-;; ___TO_SET___ nvim_action_omni+bcsp              
+;; ___TO_SET___ nvim_action_omni+bspc              
 
 nvim_action_omni+a                 $nvim_select_all
 nvim_action_omni+lsft+a            (push-msg "NOTIFY:Omni combo not implemented!")

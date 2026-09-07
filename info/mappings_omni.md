@@ -23,7 +23,7 @@
 | S          | sort              | sort                |                   |                 |                    |                            |                |
 | T          | new tab/undo tab  | new tab/undo tab    | !new tab/undo tab |                 |                    | new tab/undo tab           |                |
 | U          | unique            | UI                  |                   |                 |                    |                            |                |
-| U          | paste             | paste               | paste             |                 |                    | paste                      | paste          |
+| V          | paste             | paste               | paste             |                 |                    | paste                      | paste          |
 | W          | close tab         | close tab           | !close tab        |                 |                    | close tab                  |                |
 | X          | cut               | cut                 | cut               |                 |                    | cut                        | cut            |
 | Y          | history (cmds)    | !history            | history           |                 |                    | history                    |                |

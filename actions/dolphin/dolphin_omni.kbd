@@ -37,8 +37,8 @@ dolphin_action_omni+spc        $dolphin_select
 ;; omni + ent
 dolphin_action_omni+ent        $dolphin_preview
 
-;; omni + bcsp
-dolphin_action_omni+bcsp       $dolphin_delete 
+;; omni + bspc
+dolphin_action_omni+bspc       $dolphin_delete 
 
 ;; omni + a
 dolphin_action_omni+a          $dolphin_select_all
