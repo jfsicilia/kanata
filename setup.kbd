@@ -35,17 +35,30 @@
 ;; In non-vim applications, both sets have the same functionality.
 ;;
 ;; FIRST CLASS CITIZENS: GUI ELEMENTS
-;; -----------------------------------
-;; Windows, workspaces (desktops/monitors), panes, tabs, groups and sessions
-;; are first-class citizens: each gets its own mod key, and each is reachable
-;; with either hand. The lower row mirrors around its centre, so the same GUI
-;; element sits under symmetric fingers:
+;; ---------------------------------
+;; Windows, workspaces (desktops/monitors), panes, tabs, sessions, agents and
+;; worktrees are first-class citizens: each has its own mod key, reachable with
+;; either hand.
 ;;
-;;        z     x     c     v     b   |   n     m     ,     .     /
-;;      wksp  grps  panes  tabs  sess | sess  tabs  panes  grps  wksp
+;;   citizen       left    right     row
+;;   workspaces     z        /       lower  (pinky)
+;;   sessions       x        .       lower  (ring)
+;;   panes          c        ,       lower  (middle)
+;;   tabs           v        m       lower  (index, inner)
+;;   rev_tabs       b        n       lower  (index, outer)   also keyb+v / keyb+m
+;;   rev_panes    keyb+c  keyb+,     via keyb layer
+;;   windows        g        h       home   (index)
+;;   agents         t        y       upper  (index)
+;;   worktrees      w        o       upper  (ring)
 ;;
-;; Windows are the exception: they live on g/h, the two index-finger keys of
-;; the home row.
+;; The lower row mirrors around its centre:
+;;
+;;        z      x      c      v       b    |    n       m      ,      .      /
+;;      wksp   sess   panes   tabs  rev_tabs | rev_tabs  tabs  panes  sess   wksp
+;;
+;; rev_tabs / rev_panes open the tabs / panes layer with the app-priority sort
+;; flipped — use them to act on the *other* app when two are stacked (e.g. tmux
+;; under nvim).
 ;;
 ;; MOD LAYERS
 ;; ----------
@@ -80,26 +93,28 @@
 ;;
 ;; LOWER ROW
 ;; ---------
-;; lsft    → tap: 2x tab_prev   hold: lsft_layer
-;; keyb    → tap: toggle ES/US  hold: alt_chars_layer (< > key on Spanish keyboard)
-;; z / /   → tap: z / /         hold: workspaces_layer
-;; x / .   → tap: x / .         hold: sessions_layer
-;; c / ,   → tap: c / ,         hold: panes_layer
-;; v / m   → tap: v / m         hold: tabs_layer
-;; b / n   → tap: b / n         hold: sessions_layer
-;; rsft    → tap: 2x tab_next   hold: rsft_layer
+;; lsft    → tap: 2x tab_prev       hold: lsft_layer
+;; keyb    → tap: invert apps sort  hold: keyb_layer  (< > key on Spanish kbd;
+;;                                        Spanish chars, ES/US toggle, numpad,
+;;                                        emojis, rev_tabs / rev_panes)
+;; z / /   → tap: z / /             hold: workspaces_layer
+;; x / .   → tap: x / .             hold: sessions_layer
+;; c / ,   → tap: c / ,             hold: panes_layer
+;; v / m   → tap: v / m             hold: tabs_layer
+;; b / n   → tap: b / n             hold: rev_tabs_layer  (tabs, sort flipped)
+;; rsft    → tap: 2x tab_next       hold: rsft_layer
 ;;
 ;; MODIFIER ROW
 ;; ------------
-;; !lmet   → tap: 2x workspace toggle  hold: replace + !lmet (physical lctl)
-;; !lalt   → tap: 2x pane toggle       hold: search  + !lalt (physical lmet)
-;; !lctl   → tap: 2x tab toggle        hold: select  + !lctl (physical lalt)
-;; spc     → tap: space                hold: domains_layer
-;; ralt    → tap: 2x windows toggle    hold: apps_layer
-;; prnt    → tap: 2x session toggle    hold: bookmarks_layer
-;; copilot → tap: 2x session toggle    hold: bookmarks_layer (same as prnt; physical F23)
-;; rctl    → tap: 2x (unassigned)      hold: opts_layer
-;; esc     → tap: esc                  hold: opts_layer
+;; !lmet   → tap: 2x last desktop   hold: !lmet_layer  (+spc → replace; physical lctl)
+;; !lalt   → tap: 2x last pane      hold: !lalt_layer  (+spc → search;  physical lmet)
+;; !lctl   → tap: 2x last tab       hold: !lctl_layer  (+spc → select;  physical lalt)
+;; spc     → tap: space             hold: domains_layer
+;; ralt    → tap: 2x last app       hold: apps_layer
+;; prnt    → tap: 2x last session   hold: bookmarks_layer
+;; copilot → tap: last session      hold: bookmarks_layer  (physical F23)
+;; esc     → tap: esc               hold: opts_layer
+;; (rctl is not present on this keyboard)
 ;;
 ;; STACKED MODS: !lctl / !lalt / !lmet are two things at once
 ;; ----------------------------------------------------------
@@ -128,13 +143,14 @@
 ;; spc+t terminal, spc+g git, spc+q quickfix, spc+r references, spc+s symbols,
 ;; spc+u UI, … Every other thing you hold is a mod, not a domain.
 ;;
-;; SPANISH CHARACTERS (vk_alt_chars)
-;; ----------------------------------
-;; Toggle the Keyb key to enable Spanish character composition:
-;;   Double-tap vowels (a,e,i,o,u) → accented (á,é,í,ó,ú)
-;;   Double-tap n → ñ
-;;   Triple-tap e → €
-;;   Triple-tap u → ü
+;; SPANISH CHARACTERS
+;; -----------------
+;; Two ways to type accents:
+;;   - Hold keyb, tap a/e/i/o/u → á é í ó ú ; keyb+n → ñ
+;;   - keyb+l toggles a sticky ES/US mode (vk_alt_chars); while ES is on,
+;;     double-tap a vowel → accent, double-tap n → ñ, triple-tap e → €,
+;;     triple-tap u → ü
+;; keyb+k toggles the numpad overlay (vk_numpad). keyb+spc → emoji picker.
 ;;
 ;; =============================================================================
 ;;
@@ -450,7 +466,7 @@ copilot|sessions     $copilot          ;; Omni+: Last session
       $;|lmet              (t! fast_th (t! char ;)                            $toggle_lmet_layer)
       $'|mod'              (t! fast_th (t! char ')                            (layer-toggle void_layer)) 
                      
-  ;; Lower row keys (z, x, c, v, b, n, m, work as window, workspace, pane, tab, groups and session.
+  ;; Lower row keys: z/ = workspaces, x/. = sessions, c/, = panes, v/m = tabs, b/n = rev_tabs.
   lsft                     (t!      th (t! 2x $action_tabs+h)                 $toggle_lsft_layer)
  $invert|keyb              (t!      th $APPS_SORT_TOGGLE                      $toggle_keyb_layer)
       $z|workspaces        (t! fast_th (t! char z)                            $toggle_workspaces_layer)
