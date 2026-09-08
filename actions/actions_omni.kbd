@@ -119,9 +119,9 @@
   (t! 7app_action action_omni+lsft+n XX whatsapp nvim tmux colab dolphin obsidian zapzap)
   (t! 7app_action action_omni+rsft+n XX whatsapp nvim tmux colab dolphin obsidian zapzap)
 
-  (t! 4app_action action_omni+o $nav_next nvim tmux dolphin obsidian)
+  (t! 5app_action action_omni+o $nav_next nvim yazi tmux dolphin obsidian)
 
-  (t! 4app_action action_omni+p $nav_prev nvim tmux dolphin obsidian)
+  (t! 5app_action action_omni+p $nav_prev nvim yazi tmux dolphin obsidian)
 
   (t! 4app_action action_omni+q $windows_close whatsapp nvim tmux zapzap)
 

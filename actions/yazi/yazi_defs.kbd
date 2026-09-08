@@ -1,0 +1,4 @@
+(defvar
+  yazi_open             right
+  yazi_parent           left
+)
